@@ -8,7 +8,7 @@ Public Class FRM_REPORT_TABEAN
         Try
             _CLS = Session("CLS")
         Catch ex As Exception
-            Response.Redirect("http://privus.fda.moph.go.th")
+            Response.Redirect("https://privus.fda.moph.go.th")
         End Try
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
