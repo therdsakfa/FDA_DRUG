@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://medicina.fda.moph.go.th/FDA_DRUG/SV_REQUEST_NO.asmx?disco" filename="SV_REQUEST_NO.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://medicina.fda.moph.go.th/FDA_DRUG/SV_REQUEST_NO.asmx?wsdl" filename="SV_REQUEST_NO.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

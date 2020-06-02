@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://model.task.dbd.com" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://sub.model.task.dbd.com" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://model.task.dbd.com" />
+      <s:element name="WS_TRADER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaxNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TRADERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TRADERResult" type="s1:JuristicCertificateInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TRADER_EGA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Citizenid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="citizen_authorize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TRADER_EGAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TRADER_EGAResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TRADER_INSERT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaxNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_TRADER_INSERTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_TRADER_INSERTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://model.task.dbd.com">
+      <s:import namespace="http://sub.model.task.dbd.com" />
+      <s:complexType name="JuristicCertificateInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicType" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicID" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="registerDate" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="oldJuristicID" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicName" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicNameEng" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="numberOfCommittee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="committeeInformation" nillable="true" type="s1:ArrayOfCommitteeInformation" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="registerCapital" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="paidRegisterCapital" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicBuilding" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicRoomNo" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicFloor" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicVillageName" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicAddressNo" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicMoo" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicSoi" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicRoad" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicTumbol" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicAmpur" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicProvince" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="numberOfObjective" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="numberOfPageOfObjective" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="authorizeDescription" nillable="true" type="s1:ArrayOfAuthorizeDescription" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="address" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="bfileFromDB" nillable="true" type="s1:ArrayOfBfileFromDB" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="standardObjective" nillable="true" type="s2:StandardObjective" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="juristicStatus" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCommitteeInformation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="CommitteeInformation" nillable="true" type="s2:CommitteeInformation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAuthorizeDescription">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="AuthorizeDescription" nillable="true" type="s2:AuthorizeDescription" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBfileFromDB">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="BfileFromDB" nillable="true" type="s2:BfileFromDB" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://sub.model.task.dbd.com">
+      <s:complexType name="CommitteeInformation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="citizenID" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="name" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="lastName" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="title" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AuthorizeDescription">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="authorizeDescription" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BfileFromDB">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="bfileData" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="bfileName" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StandardObjective">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="objectiveDescription" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" form="unqualified" name="standdardId" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WS_TRADERSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TRADER" />
+  </wsdl:message>
+  <wsdl:message name="WS_TRADERSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TRADERResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TRADER_EGASoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TRADER_EGA" />
+  </wsdl:message>
+  <wsdl:message name="WS_TRADER_EGASoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TRADER_EGAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_TRADER_INSERTSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_TRADER_INSERT" />
+  </wsdl:message>
+  <wsdl:message name="WS_TRADER_INSERTSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_TRADER_INSERTResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_TRADERSoap">
+    <wsdl:operation name="WS_TRADER">
+      <wsdl:input message="tns:WS_TRADERSoapIn" />
+      <wsdl:output message="tns:WS_TRADERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TRADER_EGA">
+      <wsdl:input message="tns:WS_TRADER_EGASoapIn" />
+      <wsdl:output message="tns:WS_TRADER_EGASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_TRADER_INSERT">
+      <wsdl:input message="tns:WS_TRADER_INSERTSoapIn" />
+      <wsdl:output message="tns:WS_TRADER_INSERTSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_TRADERSoap" type="tns:WS_TRADERSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_TRADER">
+      <soap:operation soapAction="http://tempuri.org/WS_TRADER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TRADER_EGA">
+      <soap:operation soapAction="http://tempuri.org/WS_TRADER_EGA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TRADER_INSERT">
+      <soap:operation soapAction="http://tempuri.org/WS_TRADER_INSERT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_TRADERSoap12" type="tns:WS_TRADERSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_TRADER">
+      <soap12:operation soapAction="http://tempuri.org/WS_TRADER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TRADER_EGA">
+      <soap12:operation soapAction="http://tempuri.org/WS_TRADER_EGA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_TRADER_INSERT">
+      <soap12:operation soapAction="http://tempuri.org/WS_TRADER_INSERT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_TRADER">
+    <wsdl:port name="WS_TRADERSoap" binding="tns:WS_TRADERSoap">
+      <soap:address location="http://10.111.28.108/WS_TRADER/WS_TRADER.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_TRADERSoap12" binding="tns:WS_TRADERSoap12">
+      <soap12:address location="http://10.111.28.108/WS_TRADER/WS_TRADER.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

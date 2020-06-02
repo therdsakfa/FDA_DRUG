@@ -1,0 +1,148 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MAIN_STAFF.master.vb" Inherits="FDA_DRUG.MAIN_STAFF" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+     <%--<script src="../js/jquery-1.8.3.js"></script>--%>
+        
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> ระบบยา</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server"></telerik:RadScriptManager>
+        <div class="main-wrapper">
+        <div class="brand-top">
+            <div class="container">
+                <div class="brand-img">
+                    <img src="../assets/images/logo.png">
+                </div>
+                <div class="brand-text">
+                    <h1>ระบบยา</h1>
+                    <p> <small>สำนักงานคณะกรรมการอาหารและยา กระทรวงสาธารณสุข</small> </p>
+                </div>
+                <div class="info-right">
+                    <div class="row">
+                        <span class="title">
+                            <h4>เจ้าหน้าที่ : </h4>
+                        </span>
+                        <span class="content">
+                            <h4><asp:Label ID="lb_login" runat="server"></asp:Label>
+                            </h4>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="title" style="display:none;">
+                            <h4>หน่วยงาน : </h4>
+                        </span>
+                        <span class="content" style="display:none;">
+                            <h4>
+                                <asp:Label ID="lbl_position" runat="server"></asp:Label>
+                            </h4>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <center>
+                   <asp:Literal ID="ltr_header_nav" runat="server"></asp:Literal>
+                    <%--<ul class='nav navbar-nav'>
+                        <li>
+                            <a href="../MAIN_STAFF/FRM_PROCESS.aspx"> 
+                                หน้าแรก
+                            </a>
+                        </li>
+                        <li>
+							<a href="../MAIN_STAFF/FRM_REPORT_PROCESS.aspx"><i class="fa fa-search"></i> รายงาน<span></span></a>
+					</li>
+                     <li>
+							<a href="../MAIN_STAFF/FRM_STAFF_REPLACEMENT_LICENSE_PANEL.aspx"><i class="fa fa-search"></i> รับเรื่องแทนผู้ประกอบการ<span></span></a>
+					</li>
+					<li>
+						<a href="http://privus.fda.moph.go.th/"><i class="fa fa-power-off"></i> ออกจากระบบ<span></span></a>
+					</li>
+
+                    </ul>--%>
+                    </center>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#"> 
+                                <img src="../assets/images/nav_icon-search.png">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <span class="border"></span>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-3">
+                    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                    <%--<h4 class="text-center"><strong><asp:Label ID="lbl_nav_side_top" runat="server" Text="ระบบจัดการ"></asp:Label></strong></h4>
+                    <asp:Literal ID="ltr_nav_top" runat="server"></asp:Literal>
+                    <br />
+
+                    <h4 class="text-center"><strong>
+                        <asp:Label ID="lbl_nav_side_bar1" runat="server" Text="ระบบสถานที่ด้านยา"></asp:Label>
+                                            </strong></h4>
+                    <asp:Literal ID="ltr_nav1" runat="server"></asp:Literal>
+                    <br />
+                     <h4 class="text-center"><strong>
+                         <asp:Label ID="lbl_nav_side_bar2" runat="server" Text="ระบบผลิตภัณฑ์ยา"></asp:Label>
+                                             </strong></h4>
+                    <asp:Literal ID="ltr_nav2" runat="server"></asp:Literal>
+                    <br />
+                     <h4 class="text-center"><strong>
+                         <asp:Label ID="lbl_nav_side_bar3" runat="server" Text="ระบบเภสัชเคมีภัณฑ์"></asp:Label>
+                                             </strong></h4>
+                    <asp:Literal ID="ltr_nav3" runat="server"></asp:Literal>--%>
+                </div>
+
+                <div class="col-md-9 section-right">
+                  
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            
+                        </asp:ContentPlaceHolder>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-nav">
+       
+    </div>
+        
+       
+
+    </form>
+</body>
+</html>

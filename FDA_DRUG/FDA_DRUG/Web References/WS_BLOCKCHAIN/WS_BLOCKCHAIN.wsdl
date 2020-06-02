@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="WS_BLOCK_CHAIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML_BLOCKs" type="tns:XML_BLOCK" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="XML_BLOCK">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROCESS_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SYSTEM_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TR_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="XML_DATA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOP_STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOP_REMARK" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SEND_TIME" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="REF_TR_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REF_XML_DATA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MAIN_TR_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_BLOCK_CHAINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_BLOCK_CHAINResult" type="tns:XML_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="XML_RETURN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="HASH_DATA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CREATE_DATE" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MSG_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MSG_DES" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WS_BLOCK_CHAIN_GET_DATA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TR_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_BLOCK_CHAIN_GET_DATAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_BLOCK_CHAIN_GET_DATAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_BLOCK_CHAIN_GET_DATA_V2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TR_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_BLOCK_CHAIN_GET_DATA_V2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_BLOCK_CHAIN_GET_DATA_V2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_BLOCK_CHAIN_V3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML_BLOCKs" type="tns:XML_BLOCK" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_BLOCK_CHAIN_V3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_BLOCK_CHAIN_V3Result" type="tns:XML_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_BLOCK_CHAIN_V2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML_DATA" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_BLOCK_CHAIN_V2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_BLOCK_CHAIN_V2Result" type="tns:XML_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WS_BLOCK_CHAINSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_BLOCK_CHAIN" />
+  </wsdl:message>
+  <wsdl:message name="WS_BLOCK_CHAINSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_BLOCK_CHAINResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_BLOCK_CHAIN_GET_DATASoapIn">
+    <wsdl:part name="parameters" element="tns:WS_BLOCK_CHAIN_GET_DATA" />
+  </wsdl:message>
+  <wsdl:message name="WS_BLOCK_CHAIN_GET_DATASoapOut">
+    <wsdl:part name="parameters" element="tns:WS_BLOCK_CHAIN_GET_DATAResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_BLOCK_CHAIN_GET_DATA_V2SoapIn">
+    <wsdl:part name="parameters" element="tns:WS_BLOCK_CHAIN_GET_DATA_V2" />
+  </wsdl:message>
+  <wsdl:message name="WS_BLOCK_CHAIN_GET_DATA_V2SoapOut">
+    <wsdl:part name="parameters" element="tns:WS_BLOCK_CHAIN_GET_DATA_V2Response" />
+  </wsdl:message>
+  <wsdl:message name="WS_BLOCK_CHAIN_V3SoapIn">
+    <wsdl:part name="parameters" element="tns:WS_BLOCK_CHAIN_V3" />
+  </wsdl:message>
+  <wsdl:message name="WS_BLOCK_CHAIN_V3SoapOut">
+    <wsdl:part name="parameters" element="tns:WS_BLOCK_CHAIN_V3Response" />
+  </wsdl:message>
+  <wsdl:message name="WS_BLOCK_CHAIN_V2SoapIn">
+    <wsdl:part name="parameters" element="tns:WS_BLOCK_CHAIN_V2" />
+  </wsdl:message>
+  <wsdl:message name="WS_BLOCK_CHAIN_V2SoapOut">
+    <wsdl:part name="parameters" element="tns:WS_BLOCK_CHAIN_V2Response" />
+  </wsdl:message>
+  <wsdl:portType name="WS_BLOCKCHAINSoap">
+    <wsdl:operation name="WS_BLOCK_CHAIN">
+      <wsdl:input message="tns:WS_BLOCK_CHAINSoapIn" />
+      <wsdl:output message="tns:WS_BLOCK_CHAINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_BLOCK_CHAIN_GET_DATA">
+      <wsdl:input message="tns:WS_BLOCK_CHAIN_GET_DATASoapIn" />
+      <wsdl:output message="tns:WS_BLOCK_CHAIN_GET_DATASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_BLOCK_CHAIN_GET_DATA_V2">
+      <wsdl:input message="tns:WS_BLOCK_CHAIN_GET_DATA_V2SoapIn" />
+      <wsdl:output message="tns:WS_BLOCK_CHAIN_GET_DATA_V2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_BLOCK_CHAIN_V3">
+      <wsdl:input message="tns:WS_BLOCK_CHAIN_V3SoapIn" />
+      <wsdl:output message="tns:WS_BLOCK_CHAIN_V3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_BLOCK_CHAIN_V2">
+      <wsdl:input message="tns:WS_BLOCK_CHAIN_V2SoapIn" />
+      <wsdl:output message="tns:WS_BLOCK_CHAIN_V2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_BLOCKCHAINSoap" type="tns:WS_BLOCKCHAINSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_BLOCK_CHAIN">
+      <soap:operation soapAction="http://tempuri.org/WS_BLOCK_CHAIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_BLOCK_CHAIN_GET_DATA">
+      <soap:operation soapAction="http://tempuri.org/WS_BLOCK_CHAIN_GET_DATA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_BLOCK_CHAIN_GET_DATA_V2">
+      <soap:operation soapAction="http://tempuri.org/WS_BLOCK_CHAIN_GET_DATA_V2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_BLOCK_CHAIN_V3">
+      <soap:operation soapAction="http://tempuri.org/WS_BLOCK_CHAIN_V3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_BLOCK_CHAIN_V2">
+      <soap:operation soapAction="http://tempuri.org/WS_BLOCK_CHAIN_V2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_BLOCKCHAINSoap12" type="tns:WS_BLOCKCHAINSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WS_BLOCK_CHAIN">
+      <soap12:operation soapAction="http://tempuri.org/WS_BLOCK_CHAIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_BLOCK_CHAIN_GET_DATA">
+      <soap12:operation soapAction="http://tempuri.org/WS_BLOCK_CHAIN_GET_DATA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_BLOCK_CHAIN_GET_DATA_V2">
+      <soap12:operation soapAction="http://tempuri.org/WS_BLOCK_CHAIN_GET_DATA_V2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_BLOCK_CHAIN_V3">
+      <soap12:operation soapAction="http://tempuri.org/WS_BLOCK_CHAIN_V3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_BLOCK_CHAIN_V2">
+      <soap12:operation soapAction="http://tempuri.org/WS_BLOCK_CHAIN_V2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_BLOCKCHAIN">
+    <wsdl:port name="WS_BLOCKCHAINSoap" binding="tns:WS_BLOCKCHAINSoap">
+      <soap:address location="http://10.111.28.66/FDA_BLOCKV2/WS_BLOCKCHAIN.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_BLOCKCHAINSoap12" binding="tns:WS_BLOCKCHAINSoap12">
+      <soap12:address location="http://10.111.28.66/FDA_BLOCKV2/WS_BLOCKCHAIN.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

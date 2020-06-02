@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_FDA_XML_DRUG_ESUB">
+  <DataContextMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="96dcb708-7132-4cae-9dbc-9a539386d30e" isExpanded="false" absoluteBounds="0.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_SEARCH_DRUG_LCN_ESUB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5418d831-754f-4ab9-8c04-bb539cb024b5" absoluteBounds="0.765, 1.21, 1.9700000000000002, 10.0567626953125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8c704c92-a564-4fc2-91ab-ff3a8b2b4031" isExpanded="false" absoluteBounds="2.875, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_SEARCH_PRODUCT_GROUP_ESUB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9202661-3050-4a2f-bde0-b6df01c62775" absoluteBounds="2.89, 1.21, 1.9700000000000002, 17.941121419270832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c873dcca-894a-438f-b2e4-dc2bb09bd277" isExpanded="false" absoluteBounds="5.125, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_CONTAIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07c3e063-8b7d-433b-bb0d-1aaab9bfbbcf" absoluteBounds="5.1400000000000006, 1.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="42f5efba-9c26-4ab7-9033-3d776a0cc349" isExpanded="false" absoluteBounds="0.75, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_CODE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4672eaa9-52ae-40ac-88d9-6e1c7c93385b" absoluteBounds="0.76499999999999968, 1.71, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e40e7ee7-95da-4820-ac7d-f6b0de8ad0b2" isExpanded="false" absoluteBounds="2.875, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_COLOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef76ed08-f4a3-46cd-bb65-d527816881d5" absoluteBounds="2.89, 1.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a4233fc-480e-402e-8da0-299505f4e337" isExpanded="false" absoluteBounds="5.125, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_RECIPE_GROUP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f0282c7-f295-4a0c-9a3a-65d34f37105e" absoluteBounds="5.14, 1.71, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55c32ea1-eced-422b-8454-2b0244da73a4" isExpanded="false" absoluteBounds="0.75, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_STOWAGR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f68bab5-3ea7-4c15-a9e6-31745d6bce0a" absoluteBounds="0.76500000000000012, 2.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59ce6929-5b9a-4258-9ddd-5cf4b295d00a" isExpanded="false" absoluteBounds="2.875, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_ANIMAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63b01009-1460-4e75-9241-a559dd820531" absoluteBounds="2.89, 2.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e86f643-a085-42d8-a187-62afe0bc6aa3" isExpanded="false" absoluteBounds="5.125, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_SOURCE_OF_RM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="629709b6-65ed-4aac-b98a-45842a84418b" absoluteBounds="5.14, 2.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="88d5f5c1-8e0c-4570-93c9-8d047b0f7428" isExpanded="false" absoluteBounds="0.75, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_AGENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6eba359a-87b3-444d-b67c-193addd0beab" absoluteBounds="0.76500000000000012, 2.71, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="03a32b01-77f0-4d16-92ac-f86d7df32669" isExpanded="false" absoluteBounds="2.875, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_CONTROL_ANALYZE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6cf00730-59a1-4e49-aeb9-13d66d748205" absoluteBounds="2.89, 2.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d19d225d-b44c-4801-9d98-a54400e45ab6" isExpanded="false" absoluteBounds="2.875, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_CONDITION_TABEAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6bd4618-137b-475e-8ba9-2154adb2bd62" absoluteBounds="2.8899999999999997, 3.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="431a580b-c217-4545-bfde-1777af81e563" isExpanded="false" absoluteBounds="5.125, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_STORY_EDIT_HISTORY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4b0a00e-2e7a-41fc-88af-d7c0f5e20fe7" absoluteBounds="5.14, 3.21, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2714bc5a-0142-4ae2-b363-32a694f22911" isExpanded="false" absoluteBounds="0.75, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_FRGN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3264c9a-0c0f-41dc-991e-df6d34d012aa" absoluteBounds="0.76500000000000012, 3.71, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d3af58d6-dd6e-462d-a752-e5eb60d1fd91" isExpanded="false" absoluteBounds="2.875, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_ANIMAL_CONSUME" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eeb9235c-a911-43fa-a9a3-111009e943b0" absoluteBounds="2.89, 3.71, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="49648bf6-b4dd-491d-b9de-152b037a62e4" isExpanded="false" absoluteBounds="5.125, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_DOC_PDF" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f4c0e9a-7f1f-41ec-a717-bea25001995f" absoluteBounds="5.14, 3.71, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f12bc692-ac1b-4fa2-850e-ee4fb76eabc1" isExpanded="false" absoluteBounds="0.75, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_EXPORT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd3dac5b-790d-4bda-818c-45d6c7e5f87a" absoluteBounds="0.76500000000000012, 4.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a972bed-e582-4c06-a37c-7471e2e0b1cc" isExpanded="false" absoluteBounds="2.875, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_PI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0cd549a4-dfd9-4edd-9864-791e3bec6b8b" absoluteBounds="2.89, 4.21, 1.9700000000000002, 9.6721598307291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="806b20bd-fa7b-4170-98c5-37be169990b9" isExpanded="false" absoluteBounds="5.125, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_PIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="360a6395-5f27-47ce-8aeb-9fe80bbd7b0e" absoluteBounds="5.14, 4.21, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="33d15d7a-dcb1-4480-a731-7cd15f2af4ae" isExpanded="false" absoluteBounds="0.75, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_SPC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b5c924a-ac21-4267-b987-65c35cc42818" absoluteBounds="0.76500000000000012, 4.71, 1.9700000000000002, 11.979777018229166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="be3d4abc-7a86-4da1-a728-37763a155790" isExpanded="false" absoluteBounds="0.75, 4.875, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_IOW" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6dc22979-3d6e-4409-b60d-820e5f79e2f1" absoluteBounds="0.765, 5.335, 1.9700000000000002, 8.7106526692708321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f7afc2c5-b834-4cd4-9917-ed773aa2560e" isExpanded="false" absoluteBounds="0.75, 5.375, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_XML_DRUG_ESUBDataContext/XML_DRUG_IOW_EQ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="079dba89-e592-4623-98c7-99a42a763666" absoluteBounds="0.76500000000000012, 5.835, 1.9700000000000002, 7.7491455078125009" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mail" type="tns:Fields_Mail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Fields_Mail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL_FROM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL_PASS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL_TO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL_TILE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL_CONTENT" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendMailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendMailHTML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mail" type="tns:Fields_Mail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailHTMLResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendMail_CC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mail" type="tns:Fields_Mail" />
+            <s:element minOccurs="0" maxOccurs="1" name="CC" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMail_CCResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendMail_ATTACH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mail" type="tns:Fields_Mail" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FILENAME" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMail_ATTACHResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendMail_CC_ATTACH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mail" type="tns:Fields_Mail" />
+            <s:element minOccurs="0" maxOccurs="1" name="CC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FILENAME" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMail_CC_ATTACHResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendMailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMail" />
+  </wsdl:message>
+  <wsdl:message name="SendMailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMailHTMLSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMailHTML" />
+  </wsdl:message>
+  <wsdl:message name="SendMailHTMLSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailHTMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMail_CCSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMail_CC" />
+  </wsdl:message>
+  <wsdl:message name="SendMail_CCSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMail_CCResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMail_ATTACHSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMail_ATTACH" />
+  </wsdl:message>
+  <wsdl:message name="SendMail_ATTACHSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMail_ATTACHResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMail_CC_ATTACHSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMail_CC_ATTACH" />
+  </wsdl:message>
+  <wsdl:message name="SendMail_CC_ATTACHSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMail_CC_ATTACHResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FDA_MAILSoap">
+    <wsdl:operation name="SendMail">
+      <wsdl:input message="tns:SendMailSoapIn" />
+      <wsdl:output message="tns:SendMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMailHTML">
+      <wsdl:input message="tns:SendMailHTMLSoapIn" />
+      <wsdl:output message="tns:SendMailHTMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail_CC">
+      <wsdl:input message="tns:SendMail_CCSoapIn" />
+      <wsdl:output message="tns:SendMail_CCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail_ATTACH">
+      <wsdl:input message="tns:SendMail_ATTACHSoapIn" />
+      <wsdl:output message="tns:SendMail_ATTACHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMail_CC_ATTACH">
+      <wsdl:input message="tns:SendMail_CC_ATTACHSoapIn" />
+      <wsdl:output message="tns:SendMail_CC_ATTACHSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FDA_MAILSoap" type="tns:FDA_MAILSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMail">
+      <soap:operation soapAction="http://tempuri.org/SendMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailHTML">
+      <soap:operation soapAction="http://tempuri.org/SendMailHTML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail_CC">
+      <soap:operation soapAction="http://tempuri.org/SendMail_CC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail_ATTACH">
+      <soap:operation soapAction="http://tempuri.org/SendMail_ATTACH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail_CC_ATTACH">
+      <soap:operation soapAction="http://tempuri.org/SendMail_CC_ATTACH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FDA_MAILSoap12" type="tns:FDA_MAILSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMail">
+      <soap12:operation soapAction="http://tempuri.org/SendMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailHTML">
+      <soap12:operation soapAction="http://tempuri.org/SendMailHTML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail_CC">
+      <soap12:operation soapAction="http://tempuri.org/SendMail_CC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail_ATTACH">
+      <soap12:operation soapAction="http://tempuri.org/SendMail_ATTACH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMail_CC_ATTACH">
+      <soap12:operation soapAction="http://tempuri.org/SendMail_CC_ATTACH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FDA_MAIL">
+    <wsdl:port name="FDA_MAILSoap" binding="tns:FDA_MAILSoap">
+      <soap:address location="http://164.115.28.108/Mail/FDA_MAIL.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FDA_MAILSoap12" binding="tns:FDA_MAILSoap12">
+      <soap12:address location="http://164.115.28.108/Mail/FDA_MAIL.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

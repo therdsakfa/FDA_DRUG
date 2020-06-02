@@ -1,0 +1,49 @@
+﻿    .RadGrid_Default tr {
+            font-family:'Microsoft Sans Serif';
+        }
+    .RadGrid_Default th.rgHeader
+    {
+        background-image: none;
+        background-color: #8CB340;
+        color:white;
+    }
+    .RadGrid_Default tr.rgRow {
+        background-image: none;
+        background-color: #eff3fb;
+        font-family:'Microsoft Sans Serif';
+        text-wrap:normal;
+    }
+    .RadGrid_Default tr.rgRow a:link{
+        color: blue;
+    }
+
+    .RadGrid_Default tr.rgAltRow {
+        background-image: none;
+        background-color: #ffffff;
+        font-family:'Microsoft Sans Serif';
+        text-wrap:normal;
+    }
+    .RadGrid_Default tr.rgAltRow a:link{
+       color: blue;
+    }
+
+    .RadGrid_Default .rgHoveredRow
+    {
+        background-color:#c5f285 !important;
+        background-image:none !important;
+    }
+    .RadGrid_Default .rgSelectedRow
+    {
+        background: none !important;
+        background: none #c5f285 !important;
+        color: black !important;
+    }
+    .RadGrid_Default .rgSelectedRow a
+    {
+        color: black !important;
+    }
+    .RadGrid_Default .rgFooter td
+    {
+        text-align:right;
+        font-family:'Microsoft Sans Serif';
+    }

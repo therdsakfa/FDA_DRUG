@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Authen_Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authen_LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Authen_LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authen_Login_Cancel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Citizen_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authen_Login_CancelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Authen_Login_CancelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authen_Login_MENU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Citizen_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="system_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GROUP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MENU_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authen_Login_MENUResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Authen_Login_MENUResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AUTHEN_LOG_DATA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Citizen_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="system_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GROUP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MENU_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SYSTEM_CODE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="REF_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="URLs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACTION" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PROCESS_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Authen_LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Authen_Login" />
+  </wsdl:message>
+  <wsdl:message name="Authen_LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:Authen_LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="Authen_Login_CancelSoapIn">
+    <wsdl:part name="parameters" element="tns:Authen_Login_Cancel" />
+  </wsdl:message>
+  <wsdl:message name="Authen_Login_CancelSoapOut">
+    <wsdl:part name="parameters" element="tns:Authen_Login_CancelResponse" />
+  </wsdl:message>
+  <wsdl:message name="Authen_Login_MENUSoapIn">
+    <wsdl:part name="parameters" element="tns:Authen_Login_MENU" />
+  </wsdl:message>
+  <wsdl:message name="Authen_Login_MENUSoapOut">
+    <wsdl:part name="parameters" element="tns:Authen_Login_MENUResponse" />
+  </wsdl:message>
+  <wsdl:message name="AUTHEN_LOG_DATASoapIn">
+    <wsdl:part name="parameters" element="tns:AUTHEN_LOG_DATA" />
+  </wsdl:message>
+  <wsdl:portType name="AuthenticationSoap">
+    <wsdl:operation name="Authen_Login">
+      <wsdl:input message="tns:Authen_LoginSoapIn" />
+      <wsdl:output message="tns:Authen_LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Authen_Login_Cancel">
+      <wsdl:input message="tns:Authen_Login_CancelSoapIn" />
+      <wsdl:output message="tns:Authen_Login_CancelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Authen_Login_MENU">
+      <wsdl:input message="tns:Authen_Login_MENUSoapIn" />
+      <wsdl:output message="tns:Authen_Login_MENUSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AUTHEN_LOG_DATA">
+      <wsdl:input message="tns:AUTHEN_LOG_DATASoapIn" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AuthenticationSoap" type="tns:AuthenticationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authen_Login">
+      <soap:operation soapAction="http://tempuri.org/Authen_Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authen_Login_Cancel">
+      <soap:operation soapAction="http://tempuri.org/Authen_Login_Cancel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authen_Login_MENU">
+      <soap:operation soapAction="http://tempuri.org/Authen_Login_MENU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AUTHEN_LOG_DATA">
+      <soap:operation soapAction="http://tempuri.org/AUTHEN_LOG_DATA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AuthenticationSoap12" type="tns:AuthenticationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authen_Login">
+      <soap12:operation soapAction="http://tempuri.org/Authen_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authen_Login_Cancel">
+      <soap12:operation soapAction="http://tempuri.org/Authen_Login_Cancel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authen_Login_MENU">
+      <soap12:operation soapAction="http://tempuri.org/Authen_Login_MENU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AUTHEN_LOG_DATA">
+      <soap12:operation soapAction="http://tempuri.org/AUTHEN_LOG_DATA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Authentication">
+    <wsdl:port name="AuthenticationSoap" binding="tns:AuthenticationSoap">
+      <soap:address location="http://10.111.28.65/WS_AUTHEN4/Authentication.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AuthenticationSoap12" binding="tns:AuthenticationSoap12">
+      <soap12:address location="http://10.111.28.65/WS_AUTHEN4/Authentication.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

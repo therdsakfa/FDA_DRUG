@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FDA_FEE" Class="LINQ_FEEDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.158;Initial Catalog=FDA_FEE;Persist Security Info=True;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FDA_FEEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.fee" Member="fees">
+    <Type Name="fee">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pvncd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="dvcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="feetpcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="feeno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="feeabbr" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="feedate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="ref01" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="ref02" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lctnmcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcnscd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prnfeest" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="rcptst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="rcptyear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rcptno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rcptdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="feestfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="remark" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="expdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="enddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="cncstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cncdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="pvnbookno" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="pvnrcptno" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="feest" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="file_feename" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="identify" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="company_name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="company_addr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="company_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="acc_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="create_identify" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="create_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="staff_identify" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.feedtl" Member="feedtls">
+    <Type Name="feedtl">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pvncd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="dvcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="feetpcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="feeno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rcvabbr" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="rcvcd" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="rcvno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="apppvncd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="appabbr" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="appvcd" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="appvno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="timeno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="amt" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="finevalue" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fk_fee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fk_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="system_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="process_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lcnno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fk_reftype" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fk_refstatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rcvno_convert" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnno_convert" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fee_description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="amt_real" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="acctype" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

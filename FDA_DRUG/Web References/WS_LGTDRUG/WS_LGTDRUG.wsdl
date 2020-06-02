@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="dacnc">
+        <s:complexType />
+      </s:element>
+      <s:element name="dacncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dacncResult" type="tns:ArrayOfDacnc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDacnc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="dacnc" nillable="true" type="tns:dacnc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dacnc">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="cnccd" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="cncnm" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="dacncc">
+        <s:complexType />
+      </s:element>
+      <s:element name="dacnccResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dacnccResult" type="tns:ArrayOfDacncc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDacncc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="dacncc" nillable="true" type="tns:dacncc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dacncc">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="cnccscd" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="cnccsnm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cnccsst" nillable="true" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="dacnsd">
+        <s:complexType />
+      </s:element>
+      <s:element name="dacnsdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dacnsdResult" type="tns:ArrayOfDacnsd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDacnsd">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="dacnsd" nillable="true" type="tns:dacnsd" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dacnsd">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="cnsdcd" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="cnsdnm" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="dacscd">
+        <s:complexType />
+      </s:element>
+      <s:element name="dacscdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dacscdResult" type="tns:ArrayOfDacscd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDacscd">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="dacscd" nillable="true" type="tns:dacscd" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dacscd">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="cscd" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="csnm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="csst" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="dalcntype">
+        <s:complexType />
+      </s:element>
+      <s:element name="dalcntypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dalcntypeResult" type="tns:ArrayOfDalcntype" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDalcntype">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="dalcntype" nillable="true" type="tns:dalcntype" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dalcntype">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="lcntpcd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lcntpnm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lcntpnmeng" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="grplcncd" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="useinpvn" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="daphrcd">
+        <s:complexType />
+      </s:element>
+      <s:element name="daphrcdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="daphrcdResult" type="tns:ArrayOfDaphrcd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDaphrcd">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="daphrcd" nillable="true" type="tns:daphrcd" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="daphrcd">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="phrcd" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="phrnm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lcndtlnm" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="dasubctg">
+        <s:complexType />
+      </s:element>
+      <s:element name="dasubctgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dasubctgResult" type="tns:ArrayOfDasubctg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDasubctg">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="dasubctg" nillable="true" type="tns:dasubctg" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dasubctg">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ctgcd" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="subctgcd" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="subctgtha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subctgeng" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="djpctype">
+        <s:complexType />
+      </s:element>
+      <s:element name="djpctypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="djpctypeResult" type="tns:ArrayOfDjpctype" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDjpctype">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="djpctype" nillable="true" type="tns:djpctype" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="djpctype">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="jpctpcd" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="jpctpnm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="jpcyear" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="jpcabbr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="jpcst" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="stdno" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="notice1" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="notice2" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="orderno" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="rqttpcd" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="grpjpctpcd" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GET_DARQT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lcnsid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_DARQTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_DARQTResult" type="tns:CLC_DARQT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLC_DARQT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="lcnsid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lcnno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rcvno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rcvdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bsnage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expyear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bsnid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cnsddate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lctnmcd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lctcd" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GET_DARQTPHR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rcvno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_DARQTPHRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_DARQTPHRResult" type="tns:CLC_DARQTPHR" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLC_DARQTPHR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="rcvno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phrno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="opentime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GET_BSNADDRESS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lcnsid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_BSNADDRESSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_BSNADDRESSResult" type="tns:CLC_BSNADDRESS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLC_BSNADDRESS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FullBsnAddr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lcnsid" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GET_LOCATIONADDR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lcnsid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_LOCATIONADDRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_LOCATIONADDRResult" type="tns:CLC_LOCATIONADDR" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLC_LOCATIONADDR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FullLocaAddr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lcnsid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lctcd" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="daphrfunctcd">
+        <s:complexType />
+      </s:element>
+      <s:element name="daphrfunctcdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="daphrfunctcdResult" type="tns:ArrayOfDaphrfunctcd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDaphrfunctcd">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="daphrfunctcd" nillable="true" type="tns:daphrfunctcd" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="daphrfunctcd">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="functcd" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="functnm" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="daweek">
+        <s:complexType />
+      </s:element>
+      <s:element name="daweekResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="daweekResult" type="tns:ArrayOfDaweek" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDaweek">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="daweek" nillable="true" type="tns:daweek" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="daweek">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="weekcd" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="weeknm" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ArrayOfDacnc" nillable="true" type="tns:ArrayOfDacnc" />
+      <s:element name="ArrayOfDacncc" nillable="true" type="tns:ArrayOfDacncc" />
+      <s:element name="ArrayOfDacnsd" nillable="true" type="tns:ArrayOfDacnsd" />
+      <s:element name="ArrayOfDacscd" nillable="true" type="tns:ArrayOfDacscd" />
+      <s:element name="ArrayOfDalcntype" nillable="true" type="tns:ArrayOfDalcntype" />
+      <s:element name="ArrayOfDaphrcd" nillable="true" type="tns:ArrayOfDaphrcd" />
+      <s:element name="ArrayOfDasubctg" nillable="true" type="tns:ArrayOfDasubctg" />
+      <s:element name="ArrayOfDjpctype" nillable="true" type="tns:ArrayOfDjpctype" />
+      <s:element name="CLC_DARQT" nillable="true" type="tns:CLC_DARQT" />
+      <s:element name="CLC_DARQTPHR" nillable="true" type="tns:CLC_DARQTPHR" />
+      <s:element name="CLC_BSNADDRESS" nillable="true" type="tns:CLC_BSNADDRESS" />
+      <s:element name="CLC_LOCATIONADDR" nillable="true" type="tns:CLC_LOCATIONADDR" />
+      <s:element name="ArrayOfDaphrfunctcd" nillable="true" type="tns:ArrayOfDaphrfunctcd" />
+      <s:element name="ArrayOfDaweek" nillable="true" type="tns:ArrayOfDaweek" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="dacncSoapIn">
+    <wsdl:part name="parameters" element="tns:dacnc" />
+  </wsdl:message>
+  <wsdl:message name="dacncSoapOut">
+    <wsdl:part name="parameters" element="tns:dacncResponse" />
+  </wsdl:message>
+  <wsdl:message name="dacnccSoapIn">
+    <wsdl:part name="parameters" element="tns:dacncc" />
+  </wsdl:message>
+  <wsdl:message name="dacnccSoapOut">
+    <wsdl:part name="parameters" element="tns:dacnccResponse" />
+  </wsdl:message>
+  <wsdl:message name="dacnsdSoapIn">
+    <wsdl:part name="parameters" element="tns:dacnsd" />
+  </wsdl:message>
+  <wsdl:message name="dacnsdSoapOut">
+    <wsdl:part name="parameters" element="tns:dacnsdResponse" />
+  </wsdl:message>
+  <wsdl:message name="dacscdSoapIn">
+    <wsdl:part name="parameters" element="tns:dacscd" />
+  </wsdl:message>
+  <wsdl:message name="dacscdSoapOut">
+    <wsdl:part name="parameters" element="tns:dacscdResponse" />
+  </wsdl:message>
+  <wsdl:message name="dalcntypeSoapIn">
+    <wsdl:part name="parameters" element="tns:dalcntype" />
+  </wsdl:message>
+  <wsdl:message name="dalcntypeSoapOut">
+    <wsdl:part name="parameters" element="tns:dalcntypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="daphrcdSoapIn">
+    <wsdl:part name="parameters" element="tns:daphrcd" />
+  </wsdl:message>
+  <wsdl:message name="daphrcdSoapOut">
+    <wsdl:part name="parameters" element="tns:daphrcdResponse" />
+  </wsdl:message>
+  <wsdl:message name="dasubctgSoapIn">
+    <wsdl:part name="parameters" element="tns:dasubctg" />
+  </wsdl:message>
+  <wsdl:message name="dasubctgSoapOut">
+    <wsdl:part name="parameters" element="tns:dasubctgResponse" />
+  </wsdl:message>
+  <wsdl:message name="djpctypeSoapIn">
+    <wsdl:part name="parameters" element="tns:djpctype" />
+  </wsdl:message>
+  <wsdl:message name="djpctypeSoapOut">
+    <wsdl:part name="parameters" element="tns:djpctypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_DARQTSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_DARQT" />
+  </wsdl:message>
+  <wsdl:message name="GET_DARQTSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_DARQTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_DARQTPHRSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_DARQTPHR" />
+  </wsdl:message>
+  <wsdl:message name="GET_DARQTPHRSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_DARQTPHRResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_BSNADDRESSSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_BSNADDRESS" />
+  </wsdl:message>
+  <wsdl:message name="GET_BSNADDRESSSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_BSNADDRESSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_LOCATIONADDRSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_LOCATIONADDR" />
+  </wsdl:message>
+  <wsdl:message name="GET_LOCATIONADDRSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_LOCATIONADDRResponse" />
+  </wsdl:message>
+  <wsdl:message name="daphrfunctcdSoapIn">
+    <wsdl:part name="parameters" element="tns:daphrfunctcd" />
+  </wsdl:message>
+  <wsdl:message name="daphrfunctcdSoapOut">
+    <wsdl:part name="parameters" element="tns:daphrfunctcdResponse" />
+  </wsdl:message>
+  <wsdl:message name="daweekSoapIn">
+    <wsdl:part name="parameters" element="tns:daweek" />
+  </wsdl:message>
+  <wsdl:message name="daweekSoapOut">
+    <wsdl:part name="parameters" element="tns:daweekResponse" />
+  </wsdl:message>
+  <wsdl:message name="dacncHttpPostIn" />
+  <wsdl:message name="dacncHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDacnc" />
+  </wsdl:message>
+  <wsdl:message name="dacnccHttpPostIn" />
+  <wsdl:message name="dacnccHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDacncc" />
+  </wsdl:message>
+  <wsdl:message name="dacnsdHttpPostIn" />
+  <wsdl:message name="dacnsdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDacnsd" />
+  </wsdl:message>
+  <wsdl:message name="dacscdHttpPostIn" />
+  <wsdl:message name="dacscdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDacscd" />
+  </wsdl:message>
+  <wsdl:message name="dalcntypeHttpPostIn" />
+  <wsdl:message name="dalcntypeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDalcntype" />
+  </wsdl:message>
+  <wsdl:message name="daphrcdHttpPostIn" />
+  <wsdl:message name="daphrcdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDaphrcd" />
+  </wsdl:message>
+  <wsdl:message name="dasubctgHttpPostIn" />
+  <wsdl:message name="dasubctgHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDasubctg" />
+  </wsdl:message>
+  <wsdl:message name="djpctypeHttpPostIn" />
+  <wsdl:message name="djpctypeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDjpctype" />
+  </wsdl:message>
+  <wsdl:message name="GET_DARQTHttpPostIn">
+    <wsdl:part name="lcnsid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GET_DARQTHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_DARQT" />
+  </wsdl:message>
+  <wsdl:message name="GET_DARQTPHRHttpPostIn">
+    <wsdl:part name="rcvno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GET_DARQTPHRHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_DARQTPHR" />
+  </wsdl:message>
+  <wsdl:message name="GET_BSNADDRESSHttpPostIn">
+    <wsdl:part name="lcnsid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GET_BSNADDRESSHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_BSNADDRESS" />
+  </wsdl:message>
+  <wsdl:message name="GET_LOCATIONADDRHttpPostIn">
+    <wsdl:part name="lcnsid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GET_LOCATIONADDRHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_LOCATIONADDR" />
+  </wsdl:message>
+  <wsdl:message name="daphrfunctcdHttpPostIn" />
+  <wsdl:message name="daphrfunctcdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDaphrfunctcd" />
+  </wsdl:message>
+  <wsdl:message name="daweekHttpPostIn" />
+  <wsdl:message name="daweekHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDaweek" />
+  </wsdl:message>
+  <wsdl:portType name="WS_LGTDRUGSoap">
+    <wsdl:operation name="dacnc">
+      <wsdl:input message="tns:dacncSoapIn" />
+      <wsdl:output message="tns:dacncSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dacncc">
+      <wsdl:input message="tns:dacnccSoapIn" />
+      <wsdl:output message="tns:dacnccSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dacnsd">
+      <wsdl:input message="tns:dacnsdSoapIn" />
+      <wsdl:output message="tns:dacnsdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dacscd">
+      <wsdl:input message="tns:dacscdSoapIn" />
+      <wsdl:output message="tns:dacscdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dalcntype">
+      <wsdl:input message="tns:dalcntypeSoapIn" />
+      <wsdl:output message="tns:dalcntypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="daphrcd">
+      <wsdl:input message="tns:daphrcdSoapIn" />
+      <wsdl:output message="tns:daphrcdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dasubctg">
+      <wsdl:input message="tns:dasubctgSoapIn" />
+      <wsdl:output message="tns:dasubctgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="djpctype">
+      <wsdl:input message="tns:djpctypeSoapIn" />
+      <wsdl:output message="tns:djpctypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_DARQT">
+      <wsdl:input message="tns:GET_DARQTSoapIn" />
+      <wsdl:output message="tns:GET_DARQTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_DARQTPHR">
+      <wsdl:input message="tns:GET_DARQTPHRSoapIn" />
+      <wsdl:output message="tns:GET_DARQTPHRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_BSNADDRESS">
+      <wsdl:input message="tns:GET_BSNADDRESSSoapIn" />
+      <wsdl:output message="tns:GET_BSNADDRESSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATIONADDR">
+      <wsdl:input message="tns:GET_LOCATIONADDRSoapIn" />
+      <wsdl:output message="tns:GET_LOCATIONADDRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="daphrfunctcd">
+      <wsdl:input message="tns:daphrfunctcdSoapIn" />
+      <wsdl:output message="tns:daphrfunctcdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="daweek">
+      <wsdl:input message="tns:daweekSoapIn" />
+      <wsdl:output message="tns:daweekSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WS_LGTDRUGHttpPost">
+    <wsdl:operation name="dacnc">
+      <wsdl:input message="tns:dacncHttpPostIn" />
+      <wsdl:output message="tns:dacncHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dacncc">
+      <wsdl:input message="tns:dacnccHttpPostIn" />
+      <wsdl:output message="tns:dacnccHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dacnsd">
+      <wsdl:input message="tns:dacnsdHttpPostIn" />
+      <wsdl:output message="tns:dacnsdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dacscd">
+      <wsdl:input message="tns:dacscdHttpPostIn" />
+      <wsdl:output message="tns:dacscdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dalcntype">
+      <wsdl:input message="tns:dalcntypeHttpPostIn" />
+      <wsdl:output message="tns:dalcntypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="daphrcd">
+      <wsdl:input message="tns:daphrcdHttpPostIn" />
+      <wsdl:output message="tns:daphrcdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dasubctg">
+      <wsdl:input message="tns:dasubctgHttpPostIn" />
+      <wsdl:output message="tns:dasubctgHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="djpctype">
+      <wsdl:input message="tns:djpctypeHttpPostIn" />
+      <wsdl:output message="tns:djpctypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_DARQT">
+      <wsdl:input message="tns:GET_DARQTHttpPostIn" />
+      <wsdl:output message="tns:GET_DARQTHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_DARQTPHR">
+      <wsdl:input message="tns:GET_DARQTPHRHttpPostIn" />
+      <wsdl:output message="tns:GET_DARQTPHRHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_BSNADDRESS">
+      <wsdl:input message="tns:GET_BSNADDRESSHttpPostIn" />
+      <wsdl:output message="tns:GET_BSNADDRESSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATIONADDR">
+      <wsdl:input message="tns:GET_LOCATIONADDRHttpPostIn" />
+      <wsdl:output message="tns:GET_LOCATIONADDRHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="daphrfunctcd">
+      <wsdl:input message="tns:daphrfunctcdHttpPostIn" />
+      <wsdl:output message="tns:daphrfunctcdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="daweek">
+      <wsdl:input message="tns:daweekHttpPostIn" />
+      <wsdl:output message="tns:daweekHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_LGTDRUGSoap" type="tns:WS_LGTDRUGSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="dacnc">
+      <soap:operation soapAction="http://tempuri.org/dacnc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dacncc">
+      <soap:operation soapAction="http://tempuri.org/dacncc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dacnsd">
+      <soap:operation soapAction="http://tempuri.org/dacnsd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dacscd">
+      <soap:operation soapAction="http://tempuri.org/dacscd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dalcntype">
+      <soap:operation soapAction="http://tempuri.org/dalcntype" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="daphrcd">
+      <soap:operation soapAction="http://tempuri.org/daphrcd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dasubctg">
+      <soap:operation soapAction="http://tempuri.org/dasubctg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="djpctype">
+      <soap:operation soapAction="http://tempuri.org/djpctype" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DARQT">
+      <soap:operation soapAction="http://tempuri.org/GET_DARQT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DARQTPHR">
+      <soap:operation soapAction="http://tempuri.org/GET_DARQTPHR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_BSNADDRESS">
+      <soap:operation soapAction="http://tempuri.org/GET_BSNADDRESS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATIONADDR">
+      <soap:operation soapAction="http://tempuri.org/GET_LOCATIONADDR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="daphrfunctcd">
+      <soap:operation soapAction="http://tempuri.org/daphrfunctcd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="daweek">
+      <soap:operation soapAction="http://tempuri.org/daweek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_LGTDRUGSoap12" type="tns:WS_LGTDRUGSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="dacnc">
+      <soap12:operation soapAction="http://tempuri.org/dacnc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dacncc">
+      <soap12:operation soapAction="http://tempuri.org/dacncc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dacnsd">
+      <soap12:operation soapAction="http://tempuri.org/dacnsd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dacscd">
+      <soap12:operation soapAction="http://tempuri.org/dacscd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dalcntype">
+      <soap12:operation soapAction="http://tempuri.org/dalcntype" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="daphrcd">
+      <soap12:operation soapAction="http://tempuri.org/daphrcd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dasubctg">
+      <soap12:operation soapAction="http://tempuri.org/dasubctg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="djpctype">
+      <soap12:operation soapAction="http://tempuri.org/djpctype" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DARQT">
+      <soap12:operation soapAction="http://tempuri.org/GET_DARQT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DARQTPHR">
+      <soap12:operation soapAction="http://tempuri.org/GET_DARQTPHR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_BSNADDRESS">
+      <soap12:operation soapAction="http://tempuri.org/GET_BSNADDRESS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATIONADDR">
+      <soap12:operation soapAction="http://tempuri.org/GET_LOCATIONADDR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="daphrfunctcd">
+      <soap12:operation soapAction="http://tempuri.org/daphrfunctcd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="daweek">
+      <soap12:operation soapAction="http://tempuri.org/daweek" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_LGTDRUGHttpPost" type="tns:WS_LGTDRUGHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="dacnc">
+      <http:operation location="/dacnc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dacncc">
+      <http:operation location="/dacncc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dacnsd">
+      <http:operation location="/dacnsd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dacscd">
+      <http:operation location="/dacscd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dalcntype">
+      <http:operation location="/dalcntype" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="daphrcd">
+      <http:operation location="/daphrcd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dasubctg">
+      <http:operation location="/dasubctg" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="djpctype">
+      <http:operation location="/djpctype" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DARQT">
+      <http:operation location="/GET_DARQT" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DARQTPHR">
+      <http:operation location="/GET_DARQTPHR" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_BSNADDRESS">
+      <http:operation location="/GET_BSNADDRESS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATIONADDR">
+      <http:operation location="/GET_LOCATIONADDR" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="daphrfunctcd">
+      <http:operation location="/daphrfunctcd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="daweek">
+      <http:operation location="/daweek" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_LGTDRUG">
+    <wsdl:port name="WS_LGTDRUGSoap" binding="tns:WS_LGTDRUGSoap">
+      <soap:address location="http://164.115.28.108/WS_LGTDRUG/WS_LGTDRUG.ASMX" />
+    </wsdl:port>
+    <wsdl:port name="WS_LGTDRUGSoap12" binding="tns:WS_LGTDRUGSoap12">
+      <soap12:address location="http://164.115.28.108/WS_LGTDRUG/WS_LGTDRUG.ASMX" />
+    </wsdl:port>
+    <wsdl:port name="WS_LGTDRUGHttpPost" binding="tns:WS_LGTDRUGHttpPost">
+      <http:address location="http://164.115.28.108/WS_LGTDRUG/WS_LGTDRUG.ASMX" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,275 @@
+﻿Public Class CLS_SHOW
+
+    Private _transection_down As String
+    Public Property transection_down() As String
+        Get
+            Return _transection_down
+        End Get
+        Set(ByVal value As String)
+            _transection_down = value
+        End Set
+    End Property
+
+
+
+    Private _NAME As String
+    Public Property NAME() As String
+        Get
+            Return _NAME
+        End Get
+        Set(ByVal value As String)
+            _NAME = value
+        End Set
+    End Property
+
+
+    Private _DT_NAME As DataTable
+    Public Property DT_NAME() As DataTable
+        Get
+            Return _DT_NAME
+        End Get
+        Set(ByVal value As DataTable)
+            _DT_NAME = value
+        End Set
+    End Property
+
+    Private _DT1 As DataTable
+    Public Property DT1() As DataTable
+        Get
+            Return _DT1
+        End Get
+        Set(ByVal value As DataTable)
+            _DT1 = value
+        End Set
+    End Property
+
+
+
+    Private _DT2 As DataTable
+    Public Property DT2() As DataTable
+        Get
+            Return _DT2
+        End Get
+        Set(ByVal value As DataTable)
+            _DT2 = value
+        End Set
+    End Property
+
+    Private _DT3 As DataTable
+    Public Property DT3() As DataTable
+        Get
+            Return _DT3
+        End Get
+        Set(ByVal value As DataTable)
+            _DT3 = value
+        End Set
+    End Property
+
+    Private _DT4 As DataTable
+    Public Property DT4() As DataTable
+        Get
+            Return _DT4
+        End Get
+        Set(ByVal value As DataTable)
+            _DT4 = value
+        End Set
+    End Property
+
+
+    Private _DT5 As DataTable
+    Public Property DT5() As DataTable
+        Get
+            Return _DT5
+        End Get
+        Set(ByVal value As DataTable)
+            _DT5 = value
+        End Set
+    End Property
+
+    Private _DT6 As DataTable
+    Public Property DT6() As DataTable
+        Get
+            Return _DT6
+        End Get
+        Set(ByVal value As DataTable)
+            _DT6 = value
+        End Set
+    End Property
+
+    Private _DT7 As DataTable
+    Public Property DT7() As DataTable
+        Get
+            Return _DT7
+        End Get
+        Set(ByVal value As DataTable)
+            _DT7 = value
+        End Set
+    End Property
+
+    Private _DT8 As DataTable
+    Public Property DT8() As DataTable
+        Get
+            Return _DT8
+        End Get
+        Set(ByVal value As DataTable)
+            _DT8 = value
+        End Set
+    End Property
+
+    Private _DT9 As DataTable
+    Public Property DT9() As DataTable
+        Get
+            Return _DT9
+        End Get
+        Set(ByVal value As DataTable)
+            _DT9 = value
+        End Set
+    End Property
+
+    Private _DT10 As DataTable
+    Public Property DT10() As DataTable
+        Get
+            Return _DT10
+        End Get
+        Set(ByVal value As DataTable)
+            _DT10 = value
+        End Set
+    End Property
+
+    Private _DT11 As DataTable
+    Public Property DT11() As DataTable
+        Get
+            Return _DT11
+        End Get
+        Set(ByVal value As DataTable)
+            _DT11 = value
+        End Set
+    End Property
+
+    Private _DT12 As DataTable
+    Public Property DT12() As DataTable
+        Get
+            Return _DT12
+        End Get
+        Set(ByVal value As DataTable)
+            _DT12 = value
+        End Set
+    End Property
+
+    Private _DT13 As DataTable
+    Public Property DT13() As DataTable
+        Get
+            Return _DT13
+        End Get
+        Set(ByVal value As DataTable)
+            _DT13 = value
+        End Set
+    End Property
+
+    Private _DT14 As DataTable
+    Public Property DT14() As DataTable
+        Get
+            Return _DT14
+        End Get
+        Set(ByVal value As DataTable)
+            _DT14 = value
+        End Set
+    End Property
+
+    Private _DT15 As DataTable
+    Public Property DT15() As DataTable
+        Get
+            Return _DT15
+        End Get
+        Set(ByVal value As DataTable)
+            _DT15 = value
+        End Set
+    End Property
+
+    Private _DT16 As DataTable
+    Public Property DT16() As DataTable
+        Get
+            Return _DT16
+        End Get
+        Set(ByVal value As DataTable)
+            _DT16 = value
+        End Set
+    End Property
+
+    Private _DT17 As DataTable
+    Public Property DT17() As DataTable
+        Get
+            Return _DT17
+        End Get
+        Set(ByVal value As DataTable)
+            _DT17 = value
+        End Set
+    End Property
+
+    Private _DT18 As DataTable
+    Public Property DT18() As DataTable
+        Get
+            Return _DT18
+        End Get
+        Set(ByVal value As DataTable)
+            _DT18 = value
+        End Set
+    End Property
+    Private _DT19 As DataTable
+    Public Property DT19() As DataTable
+        Get
+            Return _DT19
+        End Get
+        Set(ByVal value As DataTable)
+            _DT19 = value
+        End Set
+    End Property
+
+    Private _DT20 As DataTable
+    Public Property DT20() As DataTable
+        Get
+            Return _DT20
+        End Get
+        Set(ByVal value As DataTable)
+            _DT20 = value
+        End Set
+    End Property
+
+    Private _DT21 As DataTable
+    Public Property DT21() As DataTable
+        Get
+            Return _DT21
+        End Get
+        Set(ByVal value As DataTable)
+            _DT21 = value
+        End Set
+    End Property
+    Private _DT22 As DataTable
+    Public Property DT22() As DataTable
+        Get
+            Return _DT22
+        End Get
+        Set(ByVal value As DataTable)
+            _DT22 = value
+        End Set
+    End Property
+
+    Private _DT23 As DataTable
+    Public Property DT23() As DataTable
+        Get
+            Return _DT23
+        End Get
+        Set(ByVal value As DataTable)
+            _DT23 = value
+        End Set
+    End Property
+    Private _DT24 As DataTable
+    Public Property DT24() As DataTable
+        Get
+            Return _DT24
+        End Get
+        Set(ByVal value As DataTable)
+            _DT24 = value
+        End Set
+    End Property
+End Class

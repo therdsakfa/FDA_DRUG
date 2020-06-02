@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="FDA_DRUG_WS_LGTDRUG_WS_LGTDRUG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.115.28.108/WS_LGTDRUG/WS_LGTDRUG.ASMX</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_CENTER_WS_CENTER" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.115.28.108/WS_CENTER/WS_CENTER.ASMX</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_AUTHENTICATION_Authentication" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.115.28.104/ws_authen/AUTHENTICATION.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

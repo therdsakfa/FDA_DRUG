@@ -1,0 +1,57 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="POPUP.master.vb" Inherits="FDA_DRUG.POPUP" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>FDA</title>
+     <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />   
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+   <link href="../css/plugins/morris.css" rel="stylesheet" />
+    <link href="../css/sb-admin5.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.8.2.js"></script>
+     <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Html5/html5shiv.min.js"></script>
+    <script src="../Html5/respond.min.js"></script>
+    <link href="../css/Theme.css" rel="stylesheet" />
+       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="Html5/html5shiv.min.js"></script>
+      <script src="Html5/respond.min.js"></script>
+    <![endif]-->
+
+     <link href="../css/Custom.css" rel="stylesheet" />
+    <link href="../css/Custom3.css" rel="stylesheet" />
+
+
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="user-scalable=0,initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
+	
+	<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />	
+	<link href="../css/font.css" rel="stylesheet" type="text/css" />
+	<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="../css/custom-bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+     <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+<%--         <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />   
+    <link href="../Content/bootstrap.css" rel="stylesheet" />--%>
+       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="Html5/html5shiv.min.js"></script>
+      <script src="Html5/respond.min.js"></script>
+    <![endif]-->
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

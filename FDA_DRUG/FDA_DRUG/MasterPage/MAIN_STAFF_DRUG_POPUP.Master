@@ -1,0 +1,38 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MAIN_STAFF_DRUG_POPUP.master.vb" Inherits="FDA_BOOKING.MAIN_STAFF_DRUG_POPUP" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+     <%--<script src="../js/jquery-1.8.3.js"></script>--%>
+        
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> ระบบนัดหมาย ด้านยา </title>
+     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../assets/css/style.css" rel="stylesheet" />
+   
+        <script src="../assets/js/jquery.min.js"></script>
+
+    <script src="../assets/js/bootstrap.min.js"></script>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server"></telerik:RadScriptManager>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

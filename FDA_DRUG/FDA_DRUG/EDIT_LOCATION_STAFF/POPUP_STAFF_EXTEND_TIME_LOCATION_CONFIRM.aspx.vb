@@ -1,0 +1,189 @@
+﻿Public Class POPUP_STAFF_EXTEND_TIME_LOCATION_CONFIRM
+    Inherits System.Web.UI.Page
+
+    Private _IDA As String
+    Private _TR_ID As String
+    Private _CLS As New CLS_SESSION
+    Private _ProcessID As String
+    Private _YEARS As String
+    Sub RunSession()
+        Try
+            _ProcessID = Request.QueryString("process")
+            _IDA = Request.QueryString("IDA")
+            _TR_ID = Request.QueryString("TR_ID")
+            _CLS = Session("CLS")
+            _YEARS = con_year(Date.Now.Year)
+        Catch ex As Exception
+            Response.Redirect("http://privus.fda.moph.go.th/")
+        End Try
+    End Sub
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        RunSession()
+        If Not IsPostBack Then
+            Bind_ddl_Status_staff()
+            load_ddl()
+            Dim dao As New DAO_DRUG.TB_LCN_EXTEND
+            If Request.QueryString("ida") <> "" Then
+                dao.GetDataby_IDA(_IDA)
+                get_data(dao)
+            End If
+        End If
+    End Sub
+    Private Sub load_ddl()
+        Dim dao_req As New DAO_DRUG.TB_LCN_EXTEND
+        dao_req.GetDataby_IDA(_IDA)
+
+        Dim dao As New DAO_DRUG.ClsDBdalcn
+        dao.GetDataby_IDA(dao_req.fields.FK_IDA)
+        Try
+            lbl_lcnno.Text = dao.fields.LCNNO_DISPLAY
+        Catch ex As Exception
+
+        End Try
+
+        'Dim dao As New DAO_DRUG.ClsDBdalcn
+        'dao.GetDataby_FK_IDA_and_PROCESS_ID_4(dao_req.fields.LOCATION_ADDRESS_IDA, 101, 102, 103, 104)
+        'ddl_lcnno.DataSource = dao.datas
+        'ddl_lcnno.DataTextField = "LCNNO_DISPLAY"
+        'ddl_lcnno.DataValueField = "IDA"
+        'ddl_lcnno.DataBind()
+        'Dim item As New ListItem
+        'item.Text = "กรุณาเลือกเลขที่ใบอนุญาต"
+        'item.Value = "0"
+        'ddl_lcnno.Items.Insert(0, item)
+    End Sub
+    Public Sub Bind_ddl_Status_staff()
+        Dim dt As New DataTable
+        Dim bao As New BAO.ClsDBSqlcommand
+        'bao.SP_MAS_STATUS_STAFF()
+        Dim int_group_ddl As Integer = 0
+        'Dim dao_la As New DAO_CPN.TB_LOCATION_ADDRESS
+        'dao_la.GetDataby_IDA(_IDA)
+        'bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(2, int_group_ddl)
+        'dt = bao.dt
+
+        'ddl_cnsdcd.DataSource = dt
+        'ddl_cnsdcd.DataValueField = "STATUS_ID"
+        'ddl_cnsdcd.DataTextField = "STATUS_NAME"
+        'ddl_cnsdcd.DataBind()
+
+        Dim dao As New DAO_DRUG.TB_LCN_EXTEND
+        dao.GetDataby_IDA(_IDA)
+
+        If dao.fields.STATUS_ID <= 2 Then
+            int_group_ddl = 1
+        ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
+            int_group_ddl = 2
+        ElseIf dao.fields.STATUS_ID >= 6 Then
+            int_group_ddl = 3
+        End If
+
+        bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(2, int_group_ddl)
+        dt = bao.dt
+
+        ddl_cnsdcd.DataSource = dt
+        ddl_cnsdcd.DataValueField = "STATUS_ID"
+        ddl_cnsdcd.DataTextField = "STATUS_NAME"
+        ddl_cnsdcd.DataBind()
+    End Sub
+
+    Private Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
+        Dim statusID As Integer = ddl_cnsdcd.SelectedItem.Value
+
+        Dim dao As New DAO_DRUG.TB_LCN_EXTEND
+        Dim bao As New BAO.GenNumber
+        Dim STATUS_ID As Integer = ddl_cnsdcd.SelectedItem.Value
+        Dim RCVNO As String = "0"
+
+        dao.GetDataby_IDA(_IDA)
+
+        Dim PROCESS_ID As Integer = 41
+      
+        Dim dao_date As New DAO_DRUG.ClsDBSTATUS_DATE
+        dao_date.fields.FK_IDA = _IDA
+        Try
+            dao_date.fields.STATUS_DATE = Date.Now 'CDate(txt_app_date.Text)
+        Catch ex As Exception
+
+        End Try
+
+        dao_date.fields.STATUS_GROUP = 2 'ใบอนุญาต ขย ต่างๆ
+        dao_date.fields.STATUS_ID = ddl_cnsdcd.SelectedValue
+        dao_date.fields.DATE_NOW = Date.Now
+        dao_date.fields.PROCESS_ID = 0
+        dao_date.insert()
+
+
+        If STATUS_ID = 3 Then
+            'dao.fields.STATUS_ID = STATUS_ID
+            'RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
+            'dao.fields.rcvno = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)
+
+
+            'dao.fields.RCVNO_DISPLAY = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
+            'Try
+            '    dao.fields.rcvdate = Date.Now 'CDate(txt_app_date.Text)
+            'Catch ex As Exception
+
+            'End Try
+            'dao.fields.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
+            'dao.update()
+            '("POPUP_STAFF_EDIT_LOCATION_RECEIVE.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & 31)
+            '-----------------ลิ้งไปหน้าคีย์มือ----------
+            Response.Redirect("POPUP_STAFF_EXTEND_TIME_LOCATION_RECEIVE.aspx?IDA=" & _IDA & "&process=" & PROCESS_ID)
+            '--------------------------------
+            'alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.rcvno)
+        ElseIf STATUS_ID = 6 Then
+            Response.Redirect("POPUP_STAFF_EXTEND_TIME_LOCATION_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & PROCESS_ID)
+        ElseIf STATUS_ID = 8 Then
+            RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
+            Dim rcv_format As String = bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)
+
+            dao.fields.rcvno = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year), LCNNO)
+            dao.fields.STATUS_ID = STATUS_ID
+            Dim chw As String = ""
+
+            Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
+            dao_lcn.GetDataby_IDA(dao.fields.FK_IDA)
+            dao_lcn.fields.CONSIDER_DATE = dao.fields.CONSIDER_DATE
+            dao_lcn.fields.appdate = dao.fields.CONSIDER_DATE
+            dao_lcn.fields.expyear = dao.fields.YEAR_EXTEXD
+            dao_lcn.update()
+
+
+            dao.fields.RCVNO_DISPLAY = bao.FORMAT_NUMBER_YEAR_FULL(con_year(Date.Now.Year), RCVNO) ' & " (ขย." & GROUP_NUMBER & ")"
+            dao.update()
+            alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
+        End If
+        'Dim statusID As Integer = ddl_cnsdcd.SelectedItem.Value
+
+        'If statusID = "8" Then
+        '    Response.Redirect("POPUP_STAFF_EXTEND_TIME_LOCATION_RECEIVE.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & 41)
+
+        'Else
+        '    Response.Redirect("POPUP_STAFF_EXTEND_TIME_LOCATION_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & 41)
+
+        'End If
+    End Sub
+    Sub alert(ByVal text As String)
+        Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');parent.close_modal();</script> ")
+    End Sub
+    Sub get_data(ByRef dao As DAO_DRUG.TB_LCN_EXTEND)
+        txt_year.Text = dao.fields.REMARK
+        txt_WRITE_AT.Text = dao.fields.WRITE_AT
+        Try
+            txt_WRITE_DATE.Text = CDate(dao.fields.WRITE_DATE)
+        Catch ex As Exception
+
+        End Try
+        'Try
+        '    ddl_lcnno.DropDownSelectData(dao.fields.FK_IDA)
+        'Catch ex As Exception
+
+        'End Try
+        txt_year.Text = dao.fields.YEAR_EXTEXD
+        RadioButtonList1.DataBind()
+        RadioButtonList1.SelectedValue = dao.fields.RQT_TYPE
+
+    End Sub
+End Class

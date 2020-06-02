@@ -1,0 +1,78 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="FDA_DRUG_WS_REQUEST_NO_SV_REQUEST_NO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://medicina.fda.moph.go.th/FDA_DRUG/SV_REQUEST_NO.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_QR_CODE_WS_QR_CODE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://medicina.fda.moph.go.th/WS_QR_CODE/WS_QR_CODE.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_DRUG_WS_DRUG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_FLATTEN_WS_FLATTEN" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.137/TEST_FLATEN/WS_FLATTEN.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_LGTDRUG_WS_LGTDRUG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.115.28.108/WS_LGTDRUG/WS_LGTDRUG.ASMX</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_CENTER_WS_CENTER" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.108/WS_CENTER/WS_CENTER.ASMX</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_Taxno_TaxnoAuthorize_WebService1" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.108/WS_Taxno_TaxnoAuthorize/WS_Taxno_TaxnoAuthorize.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_PVNCD_WebService1" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.108/WS_get_Profile_By_Identify/WS_Taxno_TaxnoAuthorize.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_SV_CHK_PAYMENT_SV_CHECK_PAYMENT" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.133/SPECIAL_PAYMENT_TXC_BSN/WEBSERVICE/SV_CHECK_PAYMENT.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_FDA_MAIL_FDA_MAIL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.108/Mail/FDA_MAIL.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_UPDATE_C_Service1" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.105/WS_BOOKING_DRUG/WS_UPDATE_BOOKING_DRUG.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_UPDATE_C_DEMO_Service1" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.105/WS_BOOKING_DRUG_DEMO/WS_UPDATE_BOOKING_DRUG.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_FDA_CITIZEN_WS_FDA_CITIZEN" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.108/WS_CITIZEN/WS_FDA_CITIZEN.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_TRADERS_WS_TRADER" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.108/WS_TRADER/WS_TRADER.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_ERROR_CENTERS_WS_ERROR_CENTER" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.105/WS_ERROR_CENTER/WEB_SERVICE/WS_ERROR_CENTER.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_AUTHENTICATION_Authentication" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.65/WS_AUTHEN4/Authentication.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_AUTHEN_LOG_Authentication" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.104/WS_AUTHEN4/Authentication.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_GETDATE_WORKING_Service1" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.108/WS_DATE/Service1.svc</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_SV_UPDATE_PAYMENT_SV_UPDATE_PAYMENT" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.133/SPECIAL_PAYMENT_TXC_BSN/WEBSERVICE/SV_UPDATE_PAYMENT.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_BLOCKCHAIN_WS_BLOCKCHAIN" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.66/FDA_BLOCKV2/WS_BLOCKCHAIN.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_AUTHENTICATION_104_Authentication" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.104/WS_AUTHEN4/Authentication.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_Authentication_66_Authentication" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.66/WS_AUTHEN4/Authentication.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_DRUG_LOG_DR_WS_DRUG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.107/WS_DRUG/WS_DRUG/WS_DRUG.asmx</Value>
+    </Setting>
+    <Setting Name="FDA_DRUG_WS_CREATE_XML_WS_INSERT_XML_DRUG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.107/WS_INSERT_XML_CPN/WS_INSERT_XML_CPN/WS_INSERT_XML_DRUG.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

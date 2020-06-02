@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetData_Changwat">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetData_ChangwatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetData_ChangwatResult" type="tns:ArrayOfSyschngwt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSyschngwt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="syschngwt" nillable="true" type="tns:syschngwt" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="syschngwt">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="chngwtcd" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="thachngwtnm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="engchngwtnm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="thacwabbr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="engcwabbr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mapgis" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="chngwtgrpcd" nillable="true" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Amphur">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chngwtcd" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="amphrcd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_AmphurResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_AmphurResult" type="tns:ArrayOfSysamphr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSysamphr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="sysamphr" nillable="true" type="tns:sysamphr" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="sysamphr">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="chngwtcd" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="amphrcd" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="thaamphrnm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="engamphrnm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mapgis" nillable="true" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetData_Amphur">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetData_AmphurResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetData_AmphurResult" type="tns:ArrayOfSysamphr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Thumbol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chngwtcd" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="amphrcd" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="thmblcd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_ThumbolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_ThumbolResult" type="tns:ArrayOfSysthmbl" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSysthmbl">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="systhmbl" nillable="true" type="tns:systhmbl" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="systhmbl">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="chngwtcd" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="amphrcd" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="thmblcd" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="thathmblnm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="engthmblnm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mapgis" nillable="true" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetData_Thumbol">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetData_ThumbolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetData_ThumbolResult" type="tns:ArrayOfSysthmbl" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_FULL_ADDR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lcnsid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lctcd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_FULL_ADDRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_FULL_ADDRResult" type="tns:CLC_NAMES" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLC_NAMES">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="THANM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="THAADDR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MUU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ROOM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FLOOR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BUILDING" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="THASOI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="THAROAD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="thaamphrnm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZIPCODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="chngwtcd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amphrcd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="thmblcd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lctnm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ctzno" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Chngwtcd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chngwtcd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_ChngwtcdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_ChngwtcdResult" type="tns:CLC_CHAWTCD" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLC_CHAWTCD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="chngwtcd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="thachngwtnm" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Amphrcd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chngwtcd" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="amphrcd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_AmphrcdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_AmphrcdResult" type="tns:CLC_AMPHRCD" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLC_AMPHRCD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="amphrcd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="thaamphrnm" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Get_Thmblcd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chngwtcd" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="amphrcd" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="thmblcd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_ThmblcdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_ThmblcdResult" type="tns:CLC_THMBLCD" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLC_THMBLCD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="thmblcd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="thathmblnm" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GET_PREFIX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="prefixcd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_PREFIXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_PREFIXResult" type="tns:CLC_NAMES" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_LOCATION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lcnsid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lctcd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_LOCATIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_LOCATIONResult" type="tns:CLC_NAMES" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_SUFFIX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="suffixcd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_SUFFIXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_SUFFIXResult" type="tns:CLC_NAMES" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_ADDR_CONTACT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="citiz_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_ADDR_CONTACTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_ADDR_CONTACTResult" type="tns:CLC_SYSADDR_CONTACT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLC_SYSADDR_CONTACT">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="citiz_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="number_addr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="room" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="floor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="building" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="moo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="soi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="road" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="thumbolcd" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="districtcd" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="provincecd" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="zipcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tel_home" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tel_telephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GET_LCNSID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="citiz_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_LCNSIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_LCNSIDResult" type="tns:CLC_CITIZ_NO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLC_CITIZ_NO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="lcnsid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trdregno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="citiz_no" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GET_CUSTNAME_BY_LCNSID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lcnsid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_CUSTNAME_BY_LCNSIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_CUSTNAME_BY_LCNSIDResult" type="tns:CLC_CUSTNAME" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLC_CUSTNAME">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="thanm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="thalnm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="lcnsid" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ArrayOfSyschngwt" nillable="true" type="tns:ArrayOfSyschngwt" />
+      <s:element name="ArrayOfSysamphr" nillable="true" type="tns:ArrayOfSysamphr" />
+      <s:element name="ArrayOfSysthmbl" nillable="true" type="tns:ArrayOfSysthmbl" />
+      <s:element name="CLC_NAMES" nillable="true" type="tns:CLC_NAMES" />
+      <s:element name="CLC_CHAWTCD" nillable="true" type="tns:CLC_CHAWTCD" />
+      <s:element name="CLC_AMPHRCD" nillable="true" type="tns:CLC_AMPHRCD" />
+      <s:element name="CLC_THMBLCD" nillable="true" type="tns:CLC_THMBLCD" />
+      <s:element name="CLC_SYSADDR_CONTACT" nillable="true" type="tns:CLC_SYSADDR_CONTACT" />
+      <s:element name="CLC_CITIZ_NO" nillable="true" type="tns:CLC_CITIZ_NO" />
+      <s:element name="CLC_CUSTNAME" nillable="true" type="tns:CLC_CUSTNAME" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetData_ChangwatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetData_Changwat" />
+  </wsdl:message>
+  <wsdl:message name="GetData_ChangwatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetData_ChangwatResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_AmphurSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Amphur" />
+  </wsdl:message>
+  <wsdl:message name="Get_AmphurSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_AmphurResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetData_AmphurSoapIn">
+    <wsdl:part name="parameters" element="tns:GetData_Amphur" />
+  </wsdl:message>
+  <wsdl:message name="GetData_AmphurSoapOut">
+    <wsdl:part name="parameters" element="tns:GetData_AmphurResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_ThumbolSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Thumbol" />
+  </wsdl:message>
+  <wsdl:message name="Get_ThumbolSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_ThumbolResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetData_ThumbolSoapIn">
+    <wsdl:part name="parameters" element="tns:GetData_Thumbol" />
+  </wsdl:message>
+  <wsdl:message name="GetData_ThumbolSoapOut">
+    <wsdl:part name="parameters" element="tns:GetData_ThumbolResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_FULL_ADDRSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_FULL_ADDR" />
+  </wsdl:message>
+  <wsdl:message name="GET_FULL_ADDRSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_FULL_ADDRResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_ChngwtcdSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Chngwtcd" />
+  </wsdl:message>
+  <wsdl:message name="Get_ChngwtcdSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_ChngwtcdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_AmphrcdSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Amphrcd" />
+  </wsdl:message>
+  <wsdl:message name="Get_AmphrcdSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_AmphrcdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_ThmblcdSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Thmblcd" />
+  </wsdl:message>
+  <wsdl:message name="Get_ThmblcdSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_ThmblcdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_PREFIXSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_PREFIX" />
+  </wsdl:message>
+  <wsdl:message name="GET_PREFIXSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_PREFIXResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_LOCATIONSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_LOCATION" />
+  </wsdl:message>
+  <wsdl:message name="GET_LOCATIONSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_LOCATIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_SUFFIXSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_SUFFIX" />
+  </wsdl:message>
+  <wsdl:message name="GET_SUFFIXSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_SUFFIXResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_ADDR_CONTACTSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_ADDR_CONTACT" />
+  </wsdl:message>
+  <wsdl:message name="GET_ADDR_CONTACTSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_ADDR_CONTACTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_LCNSIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_LCNSID" />
+  </wsdl:message>
+  <wsdl:message name="GET_LCNSIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_LCNSIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_CUSTNAME_BY_LCNSIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_CUSTNAME_BY_LCNSID" />
+  </wsdl:message>
+  <wsdl:message name="GET_CUSTNAME_BY_LCNSIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_CUSTNAME_BY_LCNSIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetData_ChangwatHttpPostIn" />
+  <wsdl:message name="GetData_ChangwatHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSyschngwt" />
+  </wsdl:message>
+  <wsdl:message name="Get_AmphurHttpPostIn">
+    <wsdl:part name="chngwtcd" type="s:string" />
+    <wsdl:part name="amphrcd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Get_AmphurHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSysamphr" />
+  </wsdl:message>
+  <wsdl:message name="GetData_AmphurHttpPostIn" />
+  <wsdl:message name="GetData_AmphurHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSysamphr" />
+  </wsdl:message>
+  <wsdl:message name="Get_ThumbolHttpPostIn">
+    <wsdl:part name="chngwtcd" type="s:string" />
+    <wsdl:part name="amphrcd" type="s:string" />
+    <wsdl:part name="thmblcd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Get_ThumbolHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSysthmbl" />
+  </wsdl:message>
+  <wsdl:message name="GetData_ThumbolHttpPostIn" />
+  <wsdl:message name="GetData_ThumbolHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSysthmbl" />
+  </wsdl:message>
+  <wsdl:message name="GET_FULL_ADDRHttpPostIn">
+    <wsdl:part name="lcnsid" type="s:string" />
+    <wsdl:part name="lctcd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GET_FULL_ADDRHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_NAMES" />
+  </wsdl:message>
+  <wsdl:message name="Get_ChngwtcdHttpPostIn">
+    <wsdl:part name="chngwtcd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Get_ChngwtcdHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_CHAWTCD" />
+  </wsdl:message>
+  <wsdl:message name="Get_AmphrcdHttpPostIn">
+    <wsdl:part name="chngwtcd" type="s:string" />
+    <wsdl:part name="amphrcd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Get_AmphrcdHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_AMPHRCD" />
+  </wsdl:message>
+  <wsdl:message name="Get_ThmblcdHttpPostIn">
+    <wsdl:part name="chngwtcd" type="s:string" />
+    <wsdl:part name="amphrcd" type="s:string" />
+    <wsdl:part name="thmblcd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Get_ThmblcdHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_THMBLCD" />
+  </wsdl:message>
+  <wsdl:message name="GET_PREFIXHttpPostIn">
+    <wsdl:part name="prefixcd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GET_PREFIXHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_NAMES" />
+  </wsdl:message>
+  <wsdl:message name="GET_LOCATIONHttpPostIn">
+    <wsdl:part name="lcnsid" type="s:string" />
+    <wsdl:part name="lctcd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GET_LOCATIONHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_NAMES" />
+  </wsdl:message>
+  <wsdl:message name="GET_SUFFIXHttpPostIn">
+    <wsdl:part name="suffixcd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GET_SUFFIXHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_NAMES" />
+  </wsdl:message>
+  <wsdl:message name="GET_ADDR_CONTACTHttpPostIn">
+    <wsdl:part name="citiz_no" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GET_ADDR_CONTACTHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_SYSADDR_CONTACT" />
+  </wsdl:message>
+  <wsdl:message name="GET_LCNSIDHttpPostIn">
+    <wsdl:part name="citiz_no" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GET_LCNSIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_CITIZ_NO" />
+  </wsdl:message>
+  <wsdl:message name="GET_CUSTNAME_BY_LCNSIDHttpPostIn">
+    <wsdl:part name="lcnsid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GET_CUSTNAME_BY_LCNSIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:CLC_CUSTNAME" />
+  </wsdl:message>
+  <wsdl:portType name="WS_CENTERSoap">
+    <wsdl:operation name="GetData_Changwat">
+      <wsdl:input message="tns:GetData_ChangwatSoapIn" />
+      <wsdl:output message="tns:GetData_ChangwatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Amphur">
+      <wsdl:input message="tns:Get_AmphurSoapIn" />
+      <wsdl:output message="tns:Get_AmphurSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData_Amphur">
+      <wsdl:input message="tns:GetData_AmphurSoapIn" />
+      <wsdl:output message="tns:GetData_AmphurSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Thumbol">
+      <wsdl:input message="tns:Get_ThumbolSoapIn" />
+      <wsdl:output message="tns:Get_ThumbolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData_Thumbol">
+      <wsdl:input message="tns:GetData_ThumbolSoapIn" />
+      <wsdl:output message="tns:GetData_ThumbolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_FULL_ADDR">
+      <wsdl:input message="tns:GET_FULL_ADDRSoapIn" />
+      <wsdl:output message="tns:GET_FULL_ADDRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Chngwtcd">
+      <wsdl:input message="tns:Get_ChngwtcdSoapIn" />
+      <wsdl:output message="tns:Get_ChngwtcdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Amphrcd">
+      <wsdl:input message="tns:Get_AmphrcdSoapIn" />
+      <wsdl:output message="tns:Get_AmphrcdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Thmblcd">
+      <wsdl:input message="tns:Get_ThmblcdSoapIn" />
+      <wsdl:output message="tns:Get_ThmblcdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_PREFIX">
+      <wsdl:input message="tns:GET_PREFIXSoapIn" />
+      <wsdl:output message="tns:GET_PREFIXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATION">
+      <wsdl:input message="tns:GET_LOCATIONSoapIn" />
+      <wsdl:output message="tns:GET_LOCATIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_SUFFIX">
+      <wsdl:input message="tns:GET_SUFFIXSoapIn" />
+      <wsdl:output message="tns:GET_SUFFIXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_ADDR_CONTACT">
+      <wsdl:input message="tns:GET_ADDR_CONTACTSoapIn" />
+      <wsdl:output message="tns:GET_ADDR_CONTACTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_LCNSID">
+      <wsdl:input message="tns:GET_LCNSIDSoapIn" />
+      <wsdl:output message="tns:GET_LCNSIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_CUSTNAME_BY_LCNSID">
+      <wsdl:input message="tns:GET_CUSTNAME_BY_LCNSIDSoapIn" />
+      <wsdl:output message="tns:GET_CUSTNAME_BY_LCNSIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WS_CENTERHttpPost">
+    <wsdl:operation name="GetData_Changwat">
+      <wsdl:input message="tns:GetData_ChangwatHttpPostIn" />
+      <wsdl:output message="tns:GetData_ChangwatHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Amphur">
+      <wsdl:input message="tns:Get_AmphurHttpPostIn" />
+      <wsdl:output message="tns:Get_AmphurHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData_Amphur">
+      <wsdl:input message="tns:GetData_AmphurHttpPostIn" />
+      <wsdl:output message="tns:GetData_AmphurHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Thumbol">
+      <wsdl:input message="tns:Get_ThumbolHttpPostIn" />
+      <wsdl:output message="tns:Get_ThumbolHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData_Thumbol">
+      <wsdl:input message="tns:GetData_ThumbolHttpPostIn" />
+      <wsdl:output message="tns:GetData_ThumbolHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_FULL_ADDR">
+      <wsdl:input message="tns:GET_FULL_ADDRHttpPostIn" />
+      <wsdl:output message="tns:GET_FULL_ADDRHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Chngwtcd">
+      <wsdl:input message="tns:Get_ChngwtcdHttpPostIn" />
+      <wsdl:output message="tns:Get_ChngwtcdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Amphrcd">
+      <wsdl:input message="tns:Get_AmphrcdHttpPostIn" />
+      <wsdl:output message="tns:Get_AmphrcdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Thmblcd">
+      <wsdl:input message="tns:Get_ThmblcdHttpPostIn" />
+      <wsdl:output message="tns:Get_ThmblcdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_PREFIX">
+      <wsdl:input message="tns:GET_PREFIXHttpPostIn" />
+      <wsdl:output message="tns:GET_PREFIXHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATION">
+      <wsdl:input message="tns:GET_LOCATIONHttpPostIn" />
+      <wsdl:output message="tns:GET_LOCATIONHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_SUFFIX">
+      <wsdl:input message="tns:GET_SUFFIXHttpPostIn" />
+      <wsdl:output message="tns:GET_SUFFIXHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_ADDR_CONTACT">
+      <wsdl:input message="tns:GET_ADDR_CONTACTHttpPostIn" />
+      <wsdl:output message="tns:GET_ADDR_CONTACTHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_LCNSID">
+      <wsdl:input message="tns:GET_LCNSIDHttpPostIn" />
+      <wsdl:output message="tns:GET_LCNSIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_CUSTNAME_BY_LCNSID">
+      <wsdl:input message="tns:GET_CUSTNAME_BY_LCNSIDHttpPostIn" />
+      <wsdl:output message="tns:GET_CUSTNAME_BY_LCNSIDHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_CENTERSoap" type="tns:WS_CENTERSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData_Changwat">
+      <soap:operation soapAction="http://tempuri.org/GetData_Changwat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Amphur">
+      <soap:operation soapAction="http://tempuri.org/Get_Amphur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData_Amphur">
+      <soap:operation soapAction="http://tempuri.org/GetData_Amphur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Thumbol">
+      <soap:operation soapAction="http://tempuri.org/Get_Thumbol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData_Thumbol">
+      <soap:operation soapAction="http://tempuri.org/GetData_Thumbol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_FULL_ADDR">
+      <soap:operation soapAction="http://tempuri.org/GET_FULL_ADDR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Chngwtcd">
+      <soap:operation soapAction="http://tempuri.org/Get_Chngwtcd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Amphrcd">
+      <soap:operation soapAction="http://tempuri.org/Get_Amphrcd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Thmblcd">
+      <soap:operation soapAction="http://tempuri.org/Get_Thmblcd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_PREFIX">
+      <soap:operation soapAction="http://tempuri.org/GET_PREFIX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATION">
+      <soap:operation soapAction="http://tempuri.org/GET_LOCATION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_SUFFIX">
+      <soap:operation soapAction="http://tempuri.org/GET_SUFFIX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_ADDR_CONTACT">
+      <soap:operation soapAction="http://tempuri.org/GET_ADDR_CONTACT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_LCNSID">
+      <soap:operation soapAction="http://tempuri.org/GET_LCNSID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_CUSTNAME_BY_LCNSID">
+      <soap:operation soapAction="http://tempuri.org/GET_CUSTNAME_BY_LCNSID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_CENTERSoap12" type="tns:WS_CENTERSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData_Changwat">
+      <soap12:operation soapAction="http://tempuri.org/GetData_Changwat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Amphur">
+      <soap12:operation soapAction="http://tempuri.org/Get_Amphur" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData_Amphur">
+      <soap12:operation soapAction="http://tempuri.org/GetData_Amphur" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Thumbol">
+      <soap12:operation soapAction="http://tempuri.org/Get_Thumbol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData_Thumbol">
+      <soap12:operation soapAction="http://tempuri.org/GetData_Thumbol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_FULL_ADDR">
+      <soap12:operation soapAction="http://tempuri.org/GET_FULL_ADDR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Chngwtcd">
+      <soap12:operation soapAction="http://tempuri.org/Get_Chngwtcd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Amphrcd">
+      <soap12:operation soapAction="http://tempuri.org/Get_Amphrcd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Thmblcd">
+      <soap12:operation soapAction="http://tempuri.org/Get_Thmblcd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_PREFIX">
+      <soap12:operation soapAction="http://tempuri.org/GET_PREFIX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATION">
+      <soap12:operation soapAction="http://tempuri.org/GET_LOCATION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_SUFFIX">
+      <soap12:operation soapAction="http://tempuri.org/GET_SUFFIX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_ADDR_CONTACT">
+      <soap12:operation soapAction="http://tempuri.org/GET_ADDR_CONTACT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_LCNSID">
+      <soap12:operation soapAction="http://tempuri.org/GET_LCNSID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_CUSTNAME_BY_LCNSID">
+      <soap12:operation soapAction="http://tempuri.org/GET_CUSTNAME_BY_LCNSID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_CENTERHttpPost" type="tns:WS_CENTERHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetData_Changwat">
+      <http:operation location="/GetData_Changwat" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Amphur">
+      <http:operation location="/Get_Amphur" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData_Amphur">
+      <http:operation location="/GetData_Amphur" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Thumbol">
+      <http:operation location="/Get_Thumbol" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData_Thumbol">
+      <http:operation location="/GetData_Thumbol" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_FULL_ADDR">
+      <http:operation location="/GET_FULL_ADDR" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Chngwtcd">
+      <http:operation location="/Get_Chngwtcd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Amphrcd">
+      <http:operation location="/Get_Amphrcd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Thmblcd">
+      <http:operation location="/Get_Thmblcd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_PREFIX">
+      <http:operation location="/GET_PREFIX" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_LOCATION">
+      <http:operation location="/GET_LOCATION" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_SUFFIX">
+      <http:operation location="/GET_SUFFIX" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_ADDR_CONTACT">
+      <http:operation location="/GET_ADDR_CONTACT" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_LCNSID">
+      <http:operation location="/GET_LCNSID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_CUSTNAME_BY_LCNSID">
+      <http:operation location="/GET_CUSTNAME_BY_LCNSID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_CENTER">
+    <wsdl:port name="WS_CENTERSoap" binding="tns:WS_CENTERSoap">
+      <soap:address location="http://164.115.28.108/WS_CENTER/WS_CENTER.ASMX" />
+    </wsdl:port>
+    <wsdl:port name="WS_CENTERSoap12" binding="tns:WS_CENTERSoap12">
+      <soap12:address location="http://164.115.28.108/WS_CENTER/WS_CENTER.ASMX" />
+    </wsdl:port>
+    <wsdl:port name="WS_CENTERHttpPost" binding="tns:WS_CENTERHttpPost">
+      <http:address location="http://164.115.28.108/WS_CENTER/WS_CENTER.ASMX" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="FlattenPDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sourcePdfPath" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlattenPDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FlattenPDFResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlattenPDF_DIGITAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sourcePdfPath" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlattenPDF_DIGITALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FlattenPDF_DIGITALResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PDF_DIGITAL_SIGN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sourcePdfPath" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PDF_DIGITAL_SIGNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PDF_DIGITAL_SIGNResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlattenPDF_file">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sourcePdfPath" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_FILEs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_FILEsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_FILEsResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FlattenPDFSoapIn">
+    <wsdl:part name="parameters" element="tns:FlattenPDF" />
+  </wsdl:message>
+  <wsdl:message name="FlattenPDFSoapOut">
+    <wsdl:part name="parameters" element="tns:FlattenPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="FlattenPDF_DIGITALSoapIn">
+    <wsdl:part name="parameters" element="tns:FlattenPDF_DIGITAL" />
+  </wsdl:message>
+  <wsdl:message name="FlattenPDF_DIGITALSoapOut">
+    <wsdl:part name="parameters" element="tns:FlattenPDF_DIGITALResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDF_DIGITAL_SIGNSoapIn">
+    <wsdl:part name="parameters" element="tns:PDF_DIGITAL_SIGN" />
+  </wsdl:message>
+  <wsdl:message name="PDF_DIGITAL_SIGNSoapOut">
+    <wsdl:part name="parameters" element="tns:PDF_DIGITAL_SIGNResponse" />
+  </wsdl:message>
+  <wsdl:message name="FlattenPDF_fileSoapIn">
+    <wsdl:part name="parameters" element="tns:FlattenPDF_file" />
+  </wsdl:message>
+  <wsdl:message name="Get_FILEsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_FILEs" />
+  </wsdl:message>
+  <wsdl:message name="Get_FILEsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_FILEsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_FLATTENSoap">
+    <wsdl:operation name="FlattenPDF">
+      <wsdl:input message="tns:FlattenPDFSoapIn" />
+      <wsdl:output message="tns:FlattenPDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_DIGITAL">
+      <wsdl:input message="tns:FlattenPDF_DIGITALSoapIn" />
+      <wsdl:output message="tns:FlattenPDF_DIGITALSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PDF_DIGITAL_SIGN">
+      <wsdl:input message="tns:PDF_DIGITAL_SIGNSoapIn" />
+      <wsdl:output message="tns:PDF_DIGITAL_SIGNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_file">
+      <wsdl:input message="tns:FlattenPDF_fileSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_FILEs">
+      <wsdl:input message="tns:Get_FILEsSoapIn" />
+      <wsdl:output message="tns:Get_FILEsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_FLATTENSoap" type="tns:WS_FLATTENSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FlattenPDF">
+      <soap:operation soapAction="http://tempuri.org/FlattenPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_DIGITAL">
+      <soap:operation soapAction="http://tempuri.org/FlattenPDF_DIGITAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PDF_DIGITAL_SIGN">
+      <soap:operation soapAction="http://tempuri.org/PDF_DIGITAL_SIGN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_file">
+      <soap:operation soapAction="http://tempuri.org/FlattenPDF_file" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Get_FILEs">
+      <soap:operation soapAction="http://tempuri.org/Get_FILEs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_FLATTENSoap12" type="tns:WS_FLATTENSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FlattenPDF">
+      <soap12:operation soapAction="http://tempuri.org/FlattenPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_DIGITAL">
+      <soap12:operation soapAction="http://tempuri.org/FlattenPDF_DIGITAL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PDF_DIGITAL_SIGN">
+      <soap12:operation soapAction="http://tempuri.org/PDF_DIGITAL_SIGN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_file">
+      <soap12:operation soapAction="http://tempuri.org/FlattenPDF_file" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Get_FILEs">
+      <soap12:operation soapAction="http://tempuri.org/Get_FILEs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_FLATTEN">
+    <wsdl:port name="WS_FLATTENSoap" binding="tns:WS_FLATTENSoap">
+      <soap:address location="http://10.111.28.137/TEST_FLATEN/WS_FLATTEN.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_FLATTENSoap12" binding="tns:WS_FLATTENSoap12">
+      <soap12:address location="http://10.111.28.137/TEST_FLATEN/WS_FLATTEN.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

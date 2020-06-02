@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="FDA_CITIZEN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Citizenid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="citizen_authorize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FDA_CITIZENResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FDA_CITIZENResult" type="tns:root" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="root">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CitizenID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameEN_Prefix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameEN_FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameEN_MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameEN_SurName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameTH_Prefix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameTH_FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameTH_MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameTH_SurName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SexID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BirthDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Age" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PersonStatusID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Moo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Alley" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Soi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Road" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Tumbol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Amphur" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Province" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssueDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpireDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuerPlace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuerAgency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality_Old" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality_ChangeDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Father_CitizenID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Father_Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Father_NameTH_FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Father_FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mother_CitizenID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mother_Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mother_NameTH_FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mother_FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DomicileType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DomicileStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DomicileDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FDA_CITIZEN_CHANGE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Citizenid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="citizen_authorize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FDA_CITIZEN_CHANGEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FDA_CITIZEN_CHANGEResult" type="tns:root" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FDA_HOUSE_NO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HOUSE_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="citizen_authorize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FDA_HOUSE_NOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FDA_HOUSE_NOResult" type="tns:HOUSE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HOUSE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AddressID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistryOffice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Moo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Alley" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Soi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Road" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Tumbol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Amphur" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Province" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HouseType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PermitDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisposeDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VillageName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HouseAttribute" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HouseSize" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HouseVolumn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerFile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerFileID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LandSize" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel01" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel02" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel03" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel04" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel05" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel06" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel07" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel08" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel09" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApproveID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CommunityName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FDA_CITIZENSoapIn">
+    <wsdl:part name="parameters" element="tns:FDA_CITIZEN" />
+  </wsdl:message>
+  <wsdl:message name="FDA_CITIZENSoapOut">
+    <wsdl:part name="parameters" element="tns:FDA_CITIZENResponse" />
+  </wsdl:message>
+  <wsdl:message name="FDA_CITIZEN_CHANGESoapIn">
+    <wsdl:part name="parameters" element="tns:FDA_CITIZEN_CHANGE" />
+  </wsdl:message>
+  <wsdl:message name="FDA_CITIZEN_CHANGESoapOut">
+    <wsdl:part name="parameters" element="tns:FDA_CITIZEN_CHANGEResponse" />
+  </wsdl:message>
+  <wsdl:message name="FDA_HOUSE_NOSoapIn">
+    <wsdl:part name="parameters" element="tns:FDA_HOUSE_NO" />
+  </wsdl:message>
+  <wsdl:message name="FDA_HOUSE_NOSoapOut">
+    <wsdl:part name="parameters" element="tns:FDA_HOUSE_NOResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_FDA_CITIZENSoap">
+    <wsdl:operation name="FDA_CITIZEN">
+      <wsdl:input message="tns:FDA_CITIZENSoapIn" />
+      <wsdl:output message="tns:FDA_CITIZENSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FDA_CITIZEN_CHANGE">
+      <wsdl:input message="tns:FDA_CITIZEN_CHANGESoapIn" />
+      <wsdl:output message="tns:FDA_CITIZEN_CHANGESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FDA_HOUSE_NO">
+      <wsdl:input message="tns:FDA_HOUSE_NOSoapIn" />
+      <wsdl:output message="tns:FDA_HOUSE_NOSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_FDA_CITIZENSoap" type="tns:WS_FDA_CITIZENSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FDA_CITIZEN">
+      <soap:operation soapAction="http://tempuri.org/FDA_CITIZEN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FDA_CITIZEN_CHANGE">
+      <soap:operation soapAction="http://tempuri.org/FDA_CITIZEN_CHANGE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FDA_HOUSE_NO">
+      <soap:operation soapAction="http://tempuri.org/FDA_HOUSE_NO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_FDA_CITIZENSoap12" type="tns:WS_FDA_CITIZENSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FDA_CITIZEN">
+      <soap12:operation soapAction="http://tempuri.org/FDA_CITIZEN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FDA_CITIZEN_CHANGE">
+      <soap12:operation soapAction="http://tempuri.org/FDA_CITIZEN_CHANGE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FDA_HOUSE_NO">
+      <soap12:operation soapAction="http://tempuri.org/FDA_HOUSE_NO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_FDA_CITIZEN">
+    <wsdl:port name="WS_FDA_CITIZENSoap" binding="tns:WS_FDA_CITIZENSoap">
+      <soap:address location="http://10.111.28.108/WS_CITIZEN/WS_FDA_CITIZEN.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_FDA_CITIZENSoap12" binding="tns:WS_FDA_CITIZENSoap12">
+      <soap12:address location="http://10.111.28.108/WS_CITIZEN/WS_FDA_CITIZEN.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FDA_SPECIAL_PAYMENT" Class="LINQ_SP_PAYMENTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.98;Initial Catalog=FDA_SPECIAL_PAYMENT;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FDA_SPECIAL_PAYMENTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PAYMENT_DETAIL" Member="PAYMENT_DETAILs">
+    <Type Name="PAYMENT_DETAIL">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LCNSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SYSTEMS_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDENTIFY_AUTHERIZED" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="COMPANY_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_REQUEST" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NAME_REQUEST" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SYSTEMS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REQUEST_TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REQUSET_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CITIZEN_STAFF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NAME_STAFF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DATE_CREATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PAYMENT_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STAMP_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RCVNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYSTEMS_PAYMENT_DETAIL" Member="SYSTEMS_PAYMENT_DETAILs">
+    <Type Name="SYSTEMS_PAYMENT_DETAIL">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pvncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LCNSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SYSTEMS_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REF_NO_SHOW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SUB_TYPE" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="RCVNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDENTIFY_AUTHERIZED" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="COMPANY_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LOCATION_MAIN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LOCATION_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCATION_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LOCATION_ADDRESS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_REQUEST" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NAME_REQUEST" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SYSTEMS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TOPIC_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOPIC_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REQUEST_SHOW" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REQUEST_TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REQUSET_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CAL_PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UNIT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CITIZEN_STAFF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NAME_STAFF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PAYMENT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PAYMENT_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STAMP_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STAMP_SYSTEMS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REMARK1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARK2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EXEMPTION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INSTALLMENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INSTALLMENT_PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STAFF_OR_BSN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STAFF_PAYMENT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FINANCE_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FINANCE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BANK_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SSJ_BILL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ACCOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SPD_LOG" Member="SPD_LOGs">
+    <Type Name="SPD_LOG">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="process" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.REQUEST_TEMPLATE" Member="REQUEST_TEMPLATEs">
+    <Type Name="REQUEST_TEMPLATE">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROCESS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQUEST_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REQUEST_SHOW" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REQUEST_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MAIN_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SUB_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EXPERT_TYPE" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SYSTEMS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE_PAYMENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHK_REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STAFF_REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHASE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATE_APPOINTMENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_SSJ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACCOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

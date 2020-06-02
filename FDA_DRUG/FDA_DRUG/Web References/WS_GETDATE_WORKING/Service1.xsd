@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GETDATE_WORKING">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_DATE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="days" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GETDATE_WORKINGResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GETDATE_WORKINGResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GETDATE_COUNT_DAY">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="S_DATE" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="E_DATE" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GETDATE_COUNT_DAYResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GETDATE_COUNT_DAYResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

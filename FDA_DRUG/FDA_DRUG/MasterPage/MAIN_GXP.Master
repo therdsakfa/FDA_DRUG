@@ -1,0 +1,179 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MAIN_GXP.Master.vb" Inherits="FDA_DRUG.MAIN_GXP" %>
+<%@ Register Src="~/UC/UC_NODE_AUTO2.ascx" TagPrefix="uc1" TagName="UC_NODE_AUTO2" %>
+
+<%@ Register src="../UC/UC_NEWS.ascx" tagname="UC_NEWS" tagprefix="uc2" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">	
+	<title>FDA</title>
+     <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />   
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+   <link href="../css/plugins/morris.css" rel="stylesheet" />
+    <link href="../css/sb-admin5.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.8.2.js"></script>
+     <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Html5/html5shiv.min.js"></script>
+    <script src="../Html5/respond.min.js"></script>
+    <link href="../css/Theme.css" rel="stylesheet" />
+
+     <link href="../css/Custom.css" rel="stylesheet" />
+      
+    <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />   
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery-1.8.2.js"></script>
+     <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Html5/html5shiv.min.js"></script>
+    <script src="../Html5/respond.min.js"></script>
+    <link href="../css/Custom3.css" rel="stylesheet" />
+
+
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="user-scalable=0,initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
+	
+	<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />	
+	<link href="../css/font.css" rel="stylesheet" type="text/css" />
+	<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="../css/custom-bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+     <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+         <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />   
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+   <link href="../css/plugins/morris.css" rel="stylesheet" />
+    <link href="../css/sb-admin5.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.8.2.js"></script>
+     <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Html5/html5shiv.min.js"></script>
+    <script src="../Html5/respond.min.js"></script>
+    <link href="../css/Theme.css" rel="stylesheet" />
+       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="Html5/html5shiv.min.js"></script>
+      <script src="Html5/respond.min.js"></script>
+    <![endif]-->
+
+     <link href="../css/Custom.css" rel="stylesheet" />
+
+	<div class="wrapper two">
+		<header class="header"  style="background: #8CB343">
+			<div class="inner">
+				<a href="" class="logo">
+					<img src="/imgs/logo@2x.png" alt="Logo" />
+				</a>
+				<div class="title-header">
+					<!-- For Mobile -->
+					<a href="" class="logo">
+						<img src="../imgs/logo@2x.png" alt="Logo" />
+					</a>
+					<!-- For Mobile -->
+					<span class="circle"  style="background: #8CB343"></span>
+					<div class="media-body">
+						<h1>หลักเกณฑ์และวิธีการที่ดีด้านยา</h1>
+						<p>สำนักงานคณะกรรมการอาหารและยา กระทรวงสาธารณสุข</p>
+					</div>
+				</div>
+			</div>
+		</header>
+		<nav class="nav-top">
+			<div class="inner">
+				<!-- For Mobile -->
+				<a href="#" class="nav-toggle">
+					<i class="fa fa-bars"></i> เมนู
+				</a>
+				<!-- For Mobile -->
+				<ul class="nav-menu">
+					<%--<li >
+						<a href=""><i class="fa fa-gear"></i> รายงาน<span></span></a>
+						<!-- For Mobile -->
+						<ul class="sub-menu">
+							<li class="active"><a href=""><span></span>สบ. 5</a></li>
+							<li><a href=""><span></span>สบ. 3</a></li>
+							<li><a href=""><span></span>ใบอนุญาตสถานที่</a></li>
+						</ul>
+						<!-- For Mobile -->
+					</li>--%>
+                    <li>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="../MAIN_STAFF/FRM_PROCESS.aspx" style="display:none;">ย้อนกลับหน้า จนท. <span></span></asp:HyperLink>
+                    </li>
+					<li>
+                       <%-- <asp:HyperLink ID="HyperLink1" runat="server">หน้าแรก<span></span></asp:HyperLink>--%>
+						<a href="../MAIN/FRM_MAIN_PAGE_GXP.aspx"><i class="fa fa-search"></i> หน้าแรก<span></span></a>
+					</li>
+					<li>
+						<a href="http://privus.fda.moph.go.th/"><i class="fa fa-power-off"></i> ออกจากระบบ<span></span></a>
+					</li>
+                     <li>  <asp:HyperLink ID="hl_name" runat="server"></asp:HyperLink></li>
+                    <li>
+                            <asp:HyperLink ID="hl_organization" runat="server"></asp:HyperLink>
+                    </li>
+				</ul>
+			</div>
+		</nav>
+		<div class="nav-catagory"  style="background: #ffed33">
+			<div class="inner">
+				<h3></h3>
+			</div>
+		</div>
+		<div class="container"   style="margin-left: 0px; margin-right:0px; text-align:left; width:100%;">
+			<%--<ul class="nav-left">
+             
+				<li class="active">
+					<a href=""><span></span>สบ. 5</a>
+				</li>
+				<li>
+					<a href=""><span></span>สบ. 3</a>
+				</li>
+				<li>
+					<a href=""><span></span>อาหารทั่วไป</a>
+				</li>
+			</ul>--%>
+       
+    
+			<div class="content"  style="width:100%; vertical-align:top; margin-left:0px; margin-right:0px">
+				<!-- Simple Bootstrap Framework -->
+
+                        <div class="row" style="width:100%">
+     <div style="width:20%;"  class="col-lg-4">
+         <uc1:UC_NODE_AUTO2 runat="server" ID="UC_NODE_AUTO2" />
+            </div>
+                            <div class="col-lg-8">
+ <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                            </div>
+
+                            
+
+            </div>
+				
+
+		
+					    </div>
+			</div>
+			</div>
+				<!-- Simple Bootstrap Framework -->
+	<%--		</div>	
+		</div>--%>
+		<footer class="footer">
+			<div class="inner"><strong>สำนักงานคณะกรรมการอาหารและยา :</strong> 88/24 ถนนติวานนท์ อำเภอเมือง จังหวัดนนทบุรี 11000 โทรศัพท์ 0-2590-7000
+			</div>
+		</footer>
+<%--	</div>--%>
+	<script type="../text/javascript" src="js/jquery.js"></script>
+	<script type="../text/javascript" src="js/bootstrap.min.js"></script>	
+	<!--<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+	<script type="text/javascript" src="js/jquery.hoverdir.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.touch.js"></script>
+	<script type="text/javascript" src="js/waypoints.min.js"></script>-->
+	<script type="../text/javascript" src="js/custom.js"></script>
+        </form>
+</body>
+</html>

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LGT_DRUG" Class="Linq_DRUGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=164.115.28.103;Initial Catalog=LGT_DRUG;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LGT_DRUGConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="fda.darqt" Member="darqts">
+    <Type Name="darqt">
+      <Column Name="pvncd" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="lcntpcd" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="rcvno" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pvnabbr" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="rcvdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lcnscd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lctnmcd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bsnid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bsncd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bsnlctcd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="opentime" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="bsnage" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="remark" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="phrflg" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="cnsdcd" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="cnsddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="appdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="expyear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lcnno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fdano" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="cscd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="rqttpcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="cndno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="jpctpcd" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="dvcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="feepayst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="feetpcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="feeno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lstfcd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="fda.darqtphr" Member="darqtphrs">
+    <Type Name="darqtphr">
+      <Column Name="pvncd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lcntpcd" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="rcvno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="phrcd" Type="System.Int16" DbType="SmallInt" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="phrid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="phrnmcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="phrno" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="opentime" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="functcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="orderno" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.dacnc" Member="dacncs">
+    <Type Name="dacnc">
+      <Column Name="cnccd" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cncnm" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.dacnccs" Member="dacnccs">
+    <Type Name="dacncc">
+      <Column Name="cnccscd" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cnccsnm" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cnccsst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.dalcntype" Member="dalcntypes">
+    <Type Name="dalcntype">
+      <Column Name="lcntpcd" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lcntpnm" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="lcntpnmeng" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="grplcncd" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="useinpvn" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="fda.dalcnphr" Member="dalcnphrs">
+    <Type Name="dalcnphr">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pvncd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lcntpcd" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="lcnno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="phrcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="phrid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="phrnmcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="phrno" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="opentime" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="phrcncst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="functcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="orderno" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.dalcnkep" Member="dalcnkeps">
+    <Type Name="dalcnkep">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pvncd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lcntpcd" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="lcnno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="keplctnmcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="orderno" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.dalcn" Member="dalcns">
+    <Type Name="dalcn">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pvncd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lcntpcd" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="lcnno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pvnabbr" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcnscd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lctnmcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsnid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsnlctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsnage" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="opentime" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="remark" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="phrflg" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="frtappdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="appdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="expyear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fdano" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="cnccd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="cnccscd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="cncdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="lcnpayst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="rcptpayst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="amphrcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Co_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rcvno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rcvdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.sysplace" Member="sysplaces">
+    <Type Name="sysplace">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="trans_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nameplace" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="number_addr" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="room" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="moo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="floor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="soi" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="building" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="road" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thmblcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="amphrcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tel_home" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tel_telephone" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="type_process" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rcvno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="houseno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="gln" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

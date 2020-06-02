@@ -1,0 +1,477 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Main_PPK.master.vb" Inherits="FDA_DRUG.Main_PPK" %>
+<%@ Register Src="~/UC/UC_NODE_AUTO.ascx" TagPrefix="uc1" TagName="UC_NODE_AUTO" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+     <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <meta name='created_by' content='This is example, please fill you name.'>
+    <link href="../css/icomoon/styles.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/bootstrap_limitless.min.css" rel="stylesheet" />
+    <link href="../css/colors.min.css" rel="stylesheet" />
+    <link href="../css/components.min.css" rel="stylesheet" />
+    <link href="../css/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="../css/fonts.css" rel="stylesheet" />
+    <link href="../css/index.css" rel="stylesheet" />
+
+    <link href="../css/layout.min.css" rel="stylesheet" />
+    <link href="../css/mixins.css" rel="stylesheet" />
+		<!-- Core template -->
+		 <script type="text/javascript"> var base_url = "./"; base_url_lang = "./en/"; var lang = "en";</script>
+		 <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		 <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+		 <script type="text/javascript" src="../js/fontawesome-all.min.js"></script>
+		<!-- End of core template  -->
+
+		<!-- JS page -->
+		 <script type="text/javascript" src="../js/common.js"></script>
+		 <script type="text/javascript" src="../js/index.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   <header>
+			<section id="header">
+				<div class="wrap-header">
+					<div class="list-left">
+						<div class="menu"></div><a class="logo-site" href="./"><img src="../Images/layout/logo.svg"></a><span class="text-e">ระบบยา</span>
+					</div>
+                    <%--<div class="list-sub-menu">
+                    <div class="sub-menu">
+                       
+                    </div>--%>
+					<div class="list-sub-menu">
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="../MAIN_STAFF/FRM_PROCESS.aspx" style="display:none;">ย้อนกลับหน้า จนท.</asp:HyperLink> &nbsp;&nbsp;&nbsp;
+                        <asp:Label ID="lbl_name_user" runat="server" Text="-"></asp:Label>  &nbsp;&nbsp;&nbsp;
+                        <asp:Label ID="lbl_organization" runat="server" Text="-"></asp:Label>
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <form class="search hide-xs">
+                        <input name="search" type="text"></form><div class="sub-menu search hide-xs"></div><div class="sub-menu noti">
+					<div class="status red"></div>
+					<div class="contain-sub-extend noti-extend">
+						<div class="wrap-sub-extend">
+							<div class="sub-extend-header">
+								<div class="tt hh">เตือนเหตุการณ์</div><div class="ta hh-ex">ดูทั้งหมด</div>
+							</div>
+							<div class="sub-extend-body">
+								<div class="remind">
+									<a href="https://www.google.co.th/" class="list-tt">
+										<div class="tt">ประชุมฝ่ายบริหาร</div><div class="ta">Today</div>
+									</a>
+									<a class="list-tt">
+										<div class="tt">ประชุมฝ่ายแผนก</div><div class="ta">Next 2 Day</div>
+									</a>
+									<a class="list-tt">
+										<div class="tt">ซ้อมหนีไฟ</div><div class="ta">Next 3 Day</div>
+									</a>
+									<a class="list-tt">
+										<div class="tt">ประเมินบุคลากร</div><div class="ta">Next Week</div>
+									</a>
+								</div>
+								<div class="activity">
+									<a class="list-act" href="https://www.google.co.th/" title="www.google.co.th" target="_blank">
+										<div class="wrap-list-act">
+											<img class="profile-small" src="../Images/layout/pp.png"><div class="wrap-text-act"><span class="t15 name">แมรี่</span> <span class="atslug">@mari</span> <div class="action t13">ได้แสดงความคิดเห็นเกี่ยวกับคุณ</div>
+										</div>
+									</div>
+								</a>
+								<a class="list-act" href="https://www.google.co.th/" title="www.google.co.th" target="_blank">
+									<div class="wrap-list-act">
+										<img class="profile-small" src="../Images/layout/pp.png"><div class="wrap-text-act"><span class="t15 name">แมรี่</span> <span class="atslug">@mari</span> <div class="action t13">ได้แสดงความคิดเห็นเกี่ยวกับคุณ</div>
+									</div>
+								</div>
+							</a>
+							<a class="list-act" href="https://www.google.co.th/" title="www.google.co.th" target="_blank">
+								<div class="wrap-list-act">
+									<img class="profile-small" src="../Images/layout/pp.png"><div class="wrap-text-act"><span class="t15 name">แมรี่</span> <span class="atslug">@mari</span> <div class="action t13">ได้แสดงความคิดเห็นเกี่ยวกับคุณ</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="sub-extend-footer">
+					ดูทั้งหมด
+				</div>
+			</div>
+			</div>
+			</div><div class="sub-menu list-panel">
+			<div class="contain-sub-extend list-panel-extend">
+			<div class="wrap-sub-extend">
+			<div class="sub-extend-body">
+				<div data-target="i1" class="item-list ic1">
+					<img src="../Images/layout/icon/Asset%2010.png">
+					<div class="tt t13">ผลิตภัณฑ์สุขภาพ</div>
+				</div>
+				<div data-target="i2" class="item-list">
+					<img src="../Images/layout/icon/Asset%2020.png">
+					<div class="tt t13">ลักษณะ การทำงาน/คำขอ ภายใต้ผลิตภัณฑ์</div>
+				</div>
+				<div data-target="i3" class="item-list">
+					<img src="../Images/layout/icon/Asset%20170.png">
+					<div class="tt t13">กลุ่ม<br />งานด่าน</div>
+				</div>
+				<div class="contain-nest-item-list i1">
+					<div class="no-bot item-list">
+						<img src="../Images/layout/icon/Asset 130.png">
+						<div class="tt t13">เครื่องมือแพทย์<br />(MDC)</div>
+					</div>
+					<div class="no-bot item-list">
+						<img src="../Images/layout/icon/Asset 140.png">
+						<div class="tt t13">เครื่องสำอาง<br />(CMT)</div>
+					</div>
+					<div class="no-bot item-list">
+						<img src="../Images/layout/icon/Asset 260.png">
+						<div class="tt t13">ยา<br />(DRUG)</div>
+					</div>
+					<div class="no-bot item-list clear-left">
+						<img src="../Images/layout/icon/Asset 270.png">
+						<div class="tt t13">วัตถุเสพติด<br />(NCT)</div>
+					</div>
+					<div class="no-bot item-list">
+						<img src="../Images/layout/icon/Asset 380.png">
+						<div class="tt t13">วัตถุอันตราย<br />(TXC)</div>
+					</div>
+					<div class="no-bot item-list">
+						<img src="../Images/layout/icon/Asset 390.png">
+						<div class="tt t13">อาหาร<br />(FOOD)</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contain-nest-item-list i2">
+					<div data-target="ii1" class="no-bot item-list section_2 ic201">
+						<img src="../Images/layout/icon/Asset 120.png">
+						<div class="tt t13">ระบบจองคิว</div>
+					</div>
+					<div data-target="ii2" class="no-bot item-list section_2 ic202">
+						<img src="../Images/layout/icon/Asset 150.png">
+						<div class="tt t13">คำขออนุมัติ<br />เกี่ยวกับ<br />สถานที่</div>
+					</div>
+					<div data-target="ii3" class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 250.png">
+						<div class="tt t13">คำขออนุมัติเกี่ยวกับผลิตภัณฑ์</div>
+					</div>
+					<div class="section_item_list_3 ii2">
+						<ul class="item_list-3">
+							<li>คำขอตรวจสถานที่</li>
+							<li>ผลิต</li>
+							<li>นำเข้า</li>
+							<li>ขาย</li>
+							<li>ครอบครอง / เก็บ</li>
+						</ul>
+					</div>
+					<div class="section_item_list_3 ii3">
+						<ul class="item_list-3">
+							<li>ทะเบียน / ใบอนุญาต</li>
+							<li>ผลิต</li>
+							<li>นำเข้า</li>
+							<li>ครอบครอง</li>
+							<li>รายละเอียดผลิตภัณฑ์</li>
+							<li>เพื่อการส่งออก</li>
+						</ul>
+					</div>
+					<div data-target="ii4" class="no-bot item-list section_2 clear-left ic204">
+						<img src="../Images/layout/icon/Asset 280.png">
+						<div class="tt t13">คำขอต่ออายุ</div>
+					</div>
+					<div data-target="ii5" class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 370.png">
+						<div class="tt t13">คำขอใบแทน</div>
+					</div>
+					<div data-target="ii6" class="no-bot item-list section_2 ic206">
+						<img src="../Images/layout/icon/Asset 400.png">
+						<div class="tt t13">คำขอแก้ไข / เปลี่ยนแปลง</div>
+					</div>
+					<div class="section_item_list_3 ii4">
+						<ul class="item_list-3">
+							<li>สถานที่</li>
+							<li>ผลิตภัณฑ์</li>
+						</ul>
+					</div>
+					<div class="section_item_list_3 ii6">
+						<ul class="item_list-3">
+							<li>รายละเอียดผลิตภัณฑ์</li>
+							<li>สถานที่</li>
+							<li>อื่นๆ</li>
+						</ul>
+					</div>
+					<div data-target="ii7" class="no-bot item-list section_2 clear-left">
+						<img src="../Images/layout/icon/Asset 30.png">
+						<div class="tt t13">คำขอวินิจฉัย<br />ผลิตภัณฑ์</div>
+					</div>
+					<div data-target="ii8" class="no-bot item-list section_2 ic208">
+						<img src="../Images/layout/icon/Asset 110.png">
+						<div class="tt t13">คำขอประเมิน<br />ความปลอดภัย<br />ของผลิตภัณฑ์</div>
+					</div>
+					<div data-target="ii9" class="no-bot item-list section_2 ic209">
+						<img src="../Images/layout/icon/Asset 160.png">
+						<div class="tt t13">คำขออนุมัติสูตร</div>
+					</div>
+					<div data-target="ii10" class="no-bot item-list section_2 clear-left ic210">
+						<img src="../Images/layout/icon/Asset 240.png">
+						<div class="tt t13">เพิ่มสาร / ส่วนประกอบ</div>
+					</div>
+					<div data-target="ii11" class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 290.png">
+						<div class="tt t13">คำขอใบรับรอง<br />(CER)</div>
+					</div>
+					<div data-target="ii12" class="no-bot item-list section_2 ic212">
+						<img src="../Images/layout/icon/Asset 360.png">
+						<div class="tt t13">คำขอใบอนุญาต<br />โฆษณา (AD)</div>
+					</div>
+					<div data-target="ii13" class="no-bot item-list section_2 clear-left ic213">
+						<img src="../Images/layout/icon/Asset 410.png">
+						<div class="tt t13">ชำระเงิน</div>
+					</div>
+					<div data-target="ii14" class="no-bot item-list section_2 ic214">
+						<img src="../Images/layout/icon/Asset 40.png">
+						<div class="tt t13">ระบบค้นหาข้อมูล (Search)</div>
+					</div>
+					<div data-target="ii15" class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 100.png">
+						<div class="tt t13">ระบบพิกัด<br />(GIS)</div>
+					</div>
+					<div class="section_item_list_3 ii13">
+						<ul class="item_list-3">
+							<li>ข้อมูลใบสั่ง</li>
+							<li>ข้อมูลใบเสร็จ</li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contain-nest-item-list i3">
+					<div class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 230.png">
+						<div class="tt t13">การแจ้ง รายละเอียดนำเข้าผลิตภัณฑ์สุขภาพ (LPI)</div>
+					</div>
+					<div class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 300.png">
+						<div class="tt t13">ระบบตรวจร่วม (NSW)</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div data-target="i4" class="item-list clear-left ic4">
+					<img src="../Images/layout/icon/Asset 350.png">
+					<div class="tt t13">ระบบอื่นๆ</div>
+				</div>
+				<div data-target="i5" class="item-list ic5">
+					<img src="../Images/layout/icon/Asset 210.png">
+					<div class="tt t13">กลุ่มผู้ใช้งาน</div>
+				</div>
+				<div class="contain-nest-item-list i4">
+					<div class="no-bot item-list section_2 ic401">
+						<img src="../Images/layout/icon/Asset 420.png">
+						<div class="tt t13">ระบบ<br />กำหนดสิทธิ์<br />(Permission)</div>
+					</div>
+					<div class="no-bot item-list section_2 ic402">
+						<img src="../Images/layout/icon/Asset 50.png">
+						<div class="tt t13">การเงินการคลัง<br />(BG)</div>
+					</div>
+					<div class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 90.png">
+						<div class="tt t13">สารบรรณ<br />(eDOC)</div>
+					</div>
+					<div class="no-bot item-list section_2 clear-left">
+						<img src="../Images/layout/icon/Asset 180.png">
+						<div class="tt t13">ระบบจัดประชุม<br />(eMeeting)</div>
+					</div>
+					<div class="no-bot item-list section_2 ic405">
+						<img src="../Images/layout/icon/Asset 220.png">
+						<div class="tt t13">ระบบติดตามผล<br />การพิจารณา<br />(eTracking)</div>
+					</div>
+					<div class="no-bot item-list section_2 ic406">
+						<img src="../Images/layout/icon/Asset 310.png">
+						<div class="tt t13">ระบบศูนย์<br />ปฏิบัติข้อมูล<br />ระดับกรม(DOC)</div>
+					</div>
+					<div class="no-bot item-list section_2 clear-left ic407">
+						<img src="../Images/layout/icon/Asset 340.png">
+						<div class="tt t13">ออกบัตร<br />พนักงาน<br />(OPM)</div>
+					</div>
+					<div class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 430.png">
+						<div class="tt t13">ระบบพัฒนา<br />บุคคลากร<br />(HRD)</div>
+					</div>
+					<div class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 450.png">
+						<div class="tt t13">ระบบรายงาน<br />การกระจายของ<br />ผลิตภัณฑ์สุขภาพ (BigData)</div>
+					</div>
+					<div class="no-bot item-list section_2 clear-left">
+						<img src="../Images/layout/icon/Asset 80.png">
+						<div class="tt t13">ระบบติดตามและประเมินผล (KPI)</div>
+					</div>
+					<div class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 190.png">
+						<div class="tt t13">ระบบทำแทน</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="contain-nest-item-list i5">
+					<div data-target="ii16" class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 320.png">
+						<div class="tt t13">ผู้ประกอบการ</div>
+					</div>
+					<div data-target="ii17" class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 330.png">
+						<div class="tt t13">ประชาชน</div>
+					</div>
+					<div data-target="ii18" class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 440.png">
+						<div class="tt t13">ผู้ประกอบวิชาชีพ</div>
+					</div>
+					<div class="section_item_list_3 ii16">
+						<ul class="item_list-3">
+							<li>ผลิต</li>
+							<li>ข้อมูลใบเสร็จ</li>
+							<li>จำหน่าย</li>
+							<li>ตัวแทน / ผู้รับมอบอำนาจ</li>
+						</ul>
+					</div>
+					<div data-target="ii19" class="no-bot item-list section_2 clear-left">
+						<img src="../Images/layout/icon/Asset 60.png">
+						<div class="tt t13">จนท. อย.</div>
+					</div>
+					<div data-target="ii20" class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 70.png">
+						<div class="tt t13">จนท. สสจ.</div>
+					</div>
+					<div class="no-bot item-list section_2">
+						<img src="../Images/layout/icon/Asset 200.png">
+						<div class="tt t13">จนท.ภายนอก</div>
+					</div>
+					<div class="section_item_list_3 ii19">
+						<ul class="item_list-3">
+							<li>Pre - ประสาน ผปก. รับเรื่องคำขอต่างๆ</li>
+							<li>Post - พิจารณาเรื่องที่ได้รับ</li>
+							<li>พัฒนาระบบ</li>
+						</ul>
+					</div>
+					<div class="section_item_list_3 ii20">
+						<ul class="item_list-3">
+							<li>Pre - ประสาน ผปก. รับเรื่องคำขอต่างๆ</li>
+							<li>Post - พิจารณาเรื่องที่ได้รับ</li>
+							<li>จำหน่าย</li>
+							<li>ตัวแทน / ผู้รับมอบอำนาจ</li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="sub-extend-footer">
+				ดูทั้งหมด
+			</div>
+			</div></div>
+			</div><div class="sub-menu sign-out"><i class="fas fa-sign-out-alt icon"></i></div>
+			</div>
+			<div class="clearfix"></div>
+			</div>
+			<div class="search-xs show-xs">
+				<form class="search"><input name="search" type="text"></form><div class="sub-menu search"></div>
+			</div>
+			<div class="line-header"></div>
+			</section>
+		</header>
+    <form id="form1" runat="server">
+        
+     <%--   เมนู--%>
+
+        <div class="page-header" width="100%">
+            <div class="card-tab-control page-header-content header-elements-md-inline container" width="100%">
+                <div class="tab-content" width="100%">
+                    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                    <div class="clearfix"></div>
+
+                </div>
+
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="content"  style="width:100%; vertical-align:top; margin-left:0px; margin-right:0px">
+				<!-- Simple Bootstrap Framework -->
+
+    
+				
+
+		
+					    </div>
+        <%--<div class="page-header">
+					        <div class="card-tab-control page-header-content header-elements-md-inline container">
+					            <div class="tab-content">
+
+					                <div class="wrap-tab-content-item-list">
+					               		<a class="tab-content-item"><i class="h-icon icon-active fas fa-bookmark"></i><i class="h-icon icon-off far fa-bookmark"></i>ขออนุญาตสถานที่ใหม่</a>
+                                        <div class="tab-content-item-list">
+                                            <div data-target="p1" class="tcil-item">
+                                                   <a href="../LCN/FRM_LCN_DRUG.aspx?process=101" class="tcil-item">ขย1</a>
+                                            </div>
+					               			<div data-target="p2" class="tcil-item">
+                                                   <a href="../LCN/FRM_LCN_DRUG.aspx?process=103">ขย3</a>
+					               			</div>
+					               			<div data-target="p3" class="tcil-item">
+					               				<a href="../LCN/FRM_LCN_DRUG.aspx?process=104">ขย4</a>
+					               			</div>
+					               			<div data-target="p4" class="tcil-item">
+					               				<a href="../LCN/FRM_LCN_DRUG.aspx?process=105">นย1</a>
+					               			</div>
+                                            <div data-target="p5" class="tcil-item">
+					               				<a href="../LCN/FRM_LCN_DRUG.aspx?process=106">ผย1</a>
+					               			</div>
+                                            <div data-target="p6" class="tcil-item">
+					               				<a href="../LCN/FRM_LCN_DRUG.aspx?process=107">ขยบ</a>
+					               			</div>
+                                            <div data-target="p7" class="tcil-item">
+					               				<a href="../LCN/FRM_LCN_DRUG.aspx?process=108">นยบ</a>
+					               			</div>
+                                            <div data-target="p8" class="tcil-item">
+					               				<a href="../LCN/FRM_LCN_DRUG.aspx?process=109">ผยบ</a>
+					               			</div>
+					               		</div>
+					                </div>
+					                <div class="clearfix"></div>
+					            </div>
+					        </div>
+					        <div class="clearfix"></div>
+					    </div>--%>
+        <%--เมนู--%>
+
+
+
+    <div>
+        <div style="width:20%;"  class="col-lg-4">
+         <uc1:UC_NODE_AUTO runat="server" ID="UC_NODE_AUTO" />
+            </div>
+
+        <div class="page-content container ">
+             
+            <div class="content-wrapper">
+                <div class="content">
+                    <div class="no-pm no-bg card no-border card-tab card-tab1 active">
+                       
+                                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                            </asp:ContentPlaceHolder>
+         
+ 
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </form>
+        <footer> 
+			<div class="ft1">
+				สำนักงานคณะกรรมการอาหารและยา กระทรวงสาธารณสุข
+			</div>
+			<div class="ft2">
+				88/24 ถนนติวานนท์ อ.เมือง จ.นนทบุรี 11000 <br>
+				โทรศัพท์ 0-2590-7000
+			</div>
+		</footer>
+</body>
+</html>

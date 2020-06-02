@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LGTCPN" Class="Linq_CPNDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.103;Initial Catalog=LGTCPN;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LGTCPNConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="fda.syslctnm" Member="syslctnms">
+    <Type Name="syslctnm">
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lctnmcd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="prefixcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="thanm" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="engnm" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="suffixcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lctst" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="tpnost" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ltntpcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hptno" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="lcttpcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lctnmno" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dvcd" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="grplctnmcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="thanmold" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="prefixcdold" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.sysusrid" Member="sysusrids">
+    <Type Name="sysusrid">
+      <Column Name="idcode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lcnscd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usrlcnsid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usrlcnscd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usrid" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="usrnm" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="pwd" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="usrst" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="dvcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="stfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="actcode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="appvdate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="expdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="loginst" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="grpcd" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="position" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="refno" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ccdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ccremark" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="lstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[fda.sysaddrhn]" Member="fda_sysaddrhns">
+    <Type Name="fda_sysaddrhn">
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="houseno" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="fda.syschngwt" Member="syschngwts">
+    <Type Name="syschngwt">
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="thachngwtnm" Type="System.String" DbType="VarChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="engchngwtnm" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="thacwabbr" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="engcwabbr" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="mapgis" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="chngwtgrpcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.sysamphr" Member="sysamphrs">
+    <Type Name="sysamphr">
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="amphrcd" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="thaamphrnm" Type="System.String" DbType="VarChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="engamphrnm" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="mapgis" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.systhmbl" Member="systhmbls">
+    <Type Name="systhmbl">
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="amphrcd" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="thmblcd" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="thathmblnm" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="engthmblnm" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="mapgis" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYSTEM_NAME" Member="SYSTEM_NAMEs">
+    <Type Name="SYSTEM_NAME">
+      <Column Name="SYSTEM_ID" Type="System.Int32" DbType="Int" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="SYSTEM_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.sysnmperson" Member="sysnmpersons">
+    <Type Name="sysnmperson">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="identify" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="taxno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcnscd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thanm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="engnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thalnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="englnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="bsncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prefixcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="suffixcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="create_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="last_connect_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="update_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.sysnitiperson" Member="sysnitipersons">
+    <Type Name="sysnitiperson">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="identify" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="taxno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lctnmcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thanm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lcnscd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="firstname_th" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lastname_th" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="prefix" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="firstname_eng" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lastname_eng" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnsst" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="create_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="last_connect_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="update_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOCATION_DETAIL" Member="LOCATION_DETAILs">
+    <Type Name="LOCATION_DETAIL">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BED_NUM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TREATMENT_TYPE_CD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TR_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sysprefix" Member="sysprefixes">
+    <Type Name="sysprefix">
+      <Column Name="prefixcd" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="thanm" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="engnm" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="thaabbr" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="engabbr" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="prefixst" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="cscprfxcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOCATION_BSN" Member="LOCATION_BSNs">
+    <Type Name="LOCATION_BSN">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BSN_PREFIXTHAICD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BSN_THAINAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_THAILASTNAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_THAIFULLNAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_PREFIXENGCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BSN_ENGNAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_ENGLASTNAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_ENGFULLNAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CHANGWAT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMPHR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TUMBON_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BSN_ADDR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_MOO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_SOI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_ROAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_FLOOR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_BUILDING" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_TELEPHONE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_ZIPCODE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_FAX" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOWN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CITIZEN_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_ID_UPLOAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="XMLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AGE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NATIONALITY" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_HOUSENO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_ENGADDR" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_ENGMU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_ENGSOI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_ENGROAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_CHWNGNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_AMPHR_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_THMBL_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_CHWNG_ENGNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_AMPHR_ENGNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_THMBL_ENGNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSN_NATIONALITY_CD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BSN_Mobile" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BSNID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BSNLCTCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BSNSCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcnscd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BSN_TEL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOCATION_ADDRESS" Member="LOCATION_ADDRESSes">
+    <Type Name="LOCATION_ADDRESS">
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thaaddr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="engaddr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tharoom" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thamu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thafloor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thasoi" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thabuilding" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="engsoi" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tharoad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="engroad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="zipcode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOWN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CITIZEN_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_ID_UPLOAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="XMLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="engmu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="engfloor" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="engbuilding" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rcvno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rcvdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thanameplace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="engnameplace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HOUSENO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Branch" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOCATION_TYPE_NORMAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCATION_TYPE_KEEP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCATION_TYPE_OTHER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCATION_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SYSTEM_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thmblcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="amphrcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="thathmblnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thaamphrnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thachngwtnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="engthmblnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="engamphrnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="engchngwtnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="longitude" Type="System.Decimal" DbType="Decimal(18,10)" CanBeNull="true" />
+      <Column Name="latitude" Type="System.Decimal" DbType="Decimal(18,10)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="groupdavision" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCATION_KIND" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bumbud" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="beds_amount" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_RECORDER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="system_id" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.syslctaddr" Member="syslctaddrs">
+    <Type Name="syslctaddr">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="identify" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thaaddr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="engaddr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="room" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="mu" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="floor" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="thasoi" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="building" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="engsoi" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="tharoad" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="engroad" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="thmblcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="thmblnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="amphrcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="amphrnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="chngwtnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="zipcode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="validdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="lstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="pvcode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="amcode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ttcode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="branch" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="Fulladdr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sysemail" Member="sysemails">
+    <Type Name="sysemail">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CITIZEN_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL_EGA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EMAIL_FDA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TEL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MOBILE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TEL_WORK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.syslcnsid" Member="syslcnsids">
+    <Type Name="syslcnsid">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="identify" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="crtlct" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="birthdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ntcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="taxno" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="trdregno" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ctzno" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="remark" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="idst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="phrno" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="stfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nmprnst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="cncdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="lstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcnsidst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="scridst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="url" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="cncremark" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="otaxno" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email_sro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="email_contract_real" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_main" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="person_status_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="person_status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="standard_description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="register_capital" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="gmail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.syslcnsnm" Member="syslcnsnms">
+    <Type Name="syslcnsnm">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="identify" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcnscd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prefixcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="prefixcd2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="prefixnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="prefixnm2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thanm" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="engnm" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thalnm" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="englnm" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="suffixcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lcnsst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="grplcnscd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="bsncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="lcnsidst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="validdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="oldid" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="create_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="update_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="middle_name_th" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="middle_name_en" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

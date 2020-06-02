@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_BOOKING">
+  <DataContextMoniker Name="/LINQ_BOOKINGDataContext" />
+  <nestedChildShapes>
+    <classShape Id="017c8105-96e5-41b4-aba5-a0c0f5865861" isExpanded="false" absoluteBounds="0.5, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/DRUG_SCHEDULE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa075554-a02e-4a66-b25e-35e8f544282d" absoluteBounds="0.51500000000000012, 1.96, 1.9700000000000002, 18.7103271484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="564abaaa-f685-4e7d-9cc9-ee66bbec59d9" isExpanded="false" absoluteBounds="3.125, 1.625, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/DRUG_GENNO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0081bfb1-0b07-44a6-884f-4080abbbe7bf" absoluteBounds="3.14, 2.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="858fb9cb-9f1d-4979-9076-e3d95ba6ee34" isExpanded="false" absoluteBounds="0.5, 2, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/MAS_WORK_GROUPV2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca527abd-e669-4a50-b6d2-897088b2a580" absoluteBounds="0.51500000000000012, 2.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a57153a8-b7e2-4c0d-a230-49a8dbba037c" isExpanded="false" absoluteBounds="3, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/DETAIL_BOOKING_DRUG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="98decf0b-34d8-49f5-9d55-c72be5700cc3" absoluteBounds="3.015, 2.585, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e1de2689-41cf-4477-b344-f66c00806990" isExpanded="false" absoluteBounds="0.5, 2.5, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/MAS_PROCESSV2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d66ce6fc-22e6-4336-9929-bb00d5470c0a" absoluteBounds="0.515, 2.96, 1.9700000000000002, 9.2875569661458321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ecd2379-ec70-40ea-9191-f7b107ed9fe7" isExpanded="false" absoluteBounds="3, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/MAS_TEMPLATE_PROCESSV2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="01a2868f-d47b-44b5-bb71-e9d79e33599a" absoluteBounds="3.015, 3.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12fb0fca-e401-419b-8956-0a7972e5b75a" isExpanded="false" absoluteBounds="0.5, 3, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/CENTER_SCHEDULE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6bda456d-04df-4088-8b18-a0c0799e35e6" absoluteBounds="0.51500000000000012, 3.46, 1.9700000000000002, 11.979777018229166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="42406ffe-ae48-41de-a686-9b0355823884" isExpanded="false" absoluteBounds="0.5, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/MAS_STATUSV2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3e168c5f-5ce5-4435-9dd2-60a83329ac94" absoluteBounds="0.51500000000000012, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8dc4d5e7-a21a-4555-8544-b8cec6ed9a26" isExpanded="false" absoluteBounds="2.875, 3.625, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/LOG_UPDATE_STATUS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3369364e-4ee4-4049-a795-4fca55553c67" absoluteBounds="2.89, 4.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a6cc8fd3-765b-434b-989d-85cac4f3da0e" isExpanded="false" absoluteBounds="0.625, 4, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/FILE_ATTACHV2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1066f9ca-4374-43c1-8025-055eb7453bec" absoluteBounds="0.64000000000000012, 4.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="25b870a1-f545-4881-b4b1-023321201e44" isExpanded="false" absoluteBounds="0.75, 4.5, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/CHANNEL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd3722f4-fa6c-4e3d-ba98-afe8e9068be5" absoluteBounds="0.76500000000000012, 4.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="244efdfd-476c-4e3c-bfd3-d2a8c2592ab2" isExpanded="false" absoluteBounds="2.75, 4.5, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/SCHEDULE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="37e19411-964e-45dd-96ed-9cfe9548e2fb" absoluteBounds="2.765, 4.96, 1.9700000000000002, 15.441202799479166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d0dea6f-67a6-40ce-afc4-30a90efa9507" isExpanded="false" absoluteBounds="0.625, 4.875, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_BOOKINGDataContext/DOCUMENT_TYPE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="772c7145-29d9-45e7-a4fc-88b350c3b465" absoluteBounds="0.64, 5.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

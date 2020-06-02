@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FDA_XML_DRUG" Class="Linq_DAO_DRUGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.124;Initial Catalog=FDA_XML_DRUG;Persist Security Info=True;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FDA_XML_DRUGConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.XML_SEARCH_DRUG_LCN" Member="XML_SEARCH_DRUG_LCNs">
+    <Type Name="XML_SEARCH_DRUG_LCN">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="lcnno" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="pvncd" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcntpcd" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="GROUPNAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_AUTHORIZE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Identify" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnno_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnno_noo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnno_not_pvnabbr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="typee" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="licen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="licen_addr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="licen_address" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="licen_time" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="grannm_lo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="grannm_addr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="grannm_address" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thanm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thanm_addr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thanm_address" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thaamphrnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thachngwtnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="cncnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="appdate" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="expyear" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Newcode_not" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

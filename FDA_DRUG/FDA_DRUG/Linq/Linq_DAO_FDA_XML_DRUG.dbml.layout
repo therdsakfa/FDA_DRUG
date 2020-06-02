@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Linq_DAO_DRUG">
+  <DataContextMoniker Name="/Linq_DAO_DRUGDataContext" />
+  <nestedChildShapes>
+    <classShape Id="602b399a-8145-4cca-889a-00804ed40b05" isExpanded="false" absoluteBounds="0.75, 0.875, 2, 0.45">
+      <DataClassMoniker Name="/Linq_DAO_DRUGDataContext/XML_SEARCH_DRUG_LCN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f9ab366d-1e9b-4b3e-8a78-bb6ed7c7e6a9" absoluteBounds="0.765, 1.335, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

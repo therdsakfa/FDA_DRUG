@@ -1,0 +1,644 @@
+@font-face {
+    font-family: 'SUKHUMVIT';
+    src: url("../fonts/SUKHUMVITSET-TEXT-WEBFONT.eot");
+    src: url("../fonts/SUKHUMVITSET-TEXT-WEBFONT.eot?#iefix") format("embedded-opentype"), url("../fonts/SUKHUMVITSET-TEXT-WEBFONT.woff") format("woff"), url("../fonts/SUKHUMVITSET-TEXT-WEBFONT.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'SUKHUMVIT';
+  src: url("../fonts/sukhumvitset-bold-webfont.eot");
+  src: url("../fonts/sukhumvitset-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sukhumvitset-bold-webfont.woff") format("woff"), url("../fonts/sukhumvitset-bold-webfont.ttf") format("truetype");
+  font-style: bold;
+  font-weight: bold;
+}
+
+body {
+    font-family: 'SUKHUMVIT';
+    font-size: 17px;
+    color: #666666;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #f0f0f0;
+}
+
+.main-wrapper {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -225px;
+    padding: 0 0 250px;
+}
+
+.section-right {
+    margin-top: 40px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.pl0 {
+    padding-left: 0 !important;
+}
+
+.pr0 {
+    padding-right: 0 !important;
+}
+
+.approve {
+    color: #107000;
+}
+
+.reject {
+    color: #ea1111;
+}
+
+.pending {
+    color: #ff7f01;
+}
+
+.color-white {
+    color: #ffffff;
+}
+
+.row-title {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.row-title .pull-left {
+    font-weight: bold;
+    font-size: 25px;
+    color: #;
+     ;
+}
+
+/* BRAND TOP */
+.brand-top {
+    display: table;
+    width: 100%;
+    height: 120px;
+    top: 0;
+    background-color: #f0f0f0;
+    z-index: 1000;
+}
+
+.brand-top .container {
+    display: table;
+    height: 100%;
+    padding: 11px 15px;
+}
+
+.brand-top .brand-img,
+  .brand-top .brand-text {
+    float: left;
+}
+
+.brand-top .brand-img {
+    width: 100px;
+}
+
+.brand-top .brand-img img {
+    text-align: left;
+}
+
+.brand-top .brand-text {
+    padding: 20px 10px;
+}
+
+.brand-top h1,
+  .brand-top p {
+    margin: 0;
+}
+
+.brand-top .info-right {
+    float: right;
+    padding-top: 30px;
+}
+
+.brand-top .info-right h4 {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.brand-top .info-right .title {
+    width: 100px;
+    text-align: right;
+    display: inline-block;
+    colorrr-inveve;
+    font-weight: bold;
+}
+
+.brand-top .info-right .content {
+    color: #333333;
+    font-weight: bold;
+}
+
+/* NAV */
+.navbar-inverse {
+    background-color: #ffd700;
+    border: 0;
+    border-radius: 0;
+    border-top: 8px solid #5da913;
+}
+
+.navbar-inverse .navbar-collapse {
+    padding: 0;
+}
+
+.navbar-inverse .navbar-nav .open > a, .navbar-inverse .navbar-nav .open > a:focus, .navbar-inverse .navbar-nav .open > a:hover {
+    background-color: #5a5a5a;
+}
+
+.navbar-inverse .navbar-nav > li {
+    border-style: solid;
+    border-right-width: 1px;
+    border-width: 0;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    padding: 17px 15px 17px 15px;
+    color: #000000;
+    font-size: 16px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #ffffff;
+    background-color: #5a5a5a;
+}
+
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #ffffff;
+    background-color: #5a5a5a;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    color: #ffffff;
+    background-color: #5a5a5a;
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover {
+    color: #ffffff;
+    background-color: #5a5a5a;
+}
+
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #5a5a5a;
+}
+
+.navbar-inverse .navbar-nav > .disabled > a {
+    color: #ffffff;
+    background-color: #5a5a5a;
+}
+
+.navbar-inverse .navbar-nav > .disabled > a:hover {
+    color: #ffffff;
+    background-color: #5a5a5a;
+}
+
+.navbar-inverse .navbar-nav > .disabled > a:focus {
+    color: #ffffff;
+    background-color: #5a5a5a;
+}
+
+.navbar-inverse .navbar-nav.navbar-right > li > a {
+    padding: 17px 20px 17px 20px;
+}
+
+.nav-pills > li:active > a, .nav-pills > li:visited > a, .nav-pills > li:hover > a, .nav-pills > li.active > a {
+    background-color: #ffd700;
+}
+
+.nav-pills > li > a {
+    background-color: #afafaf;
+    color: #000000;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.w100 {
+    width: 100%;
+}
+
+/* FOOTER */
+.footer-nav {
+    width: 100%;
+    height: 225px;
+    display: table;
+}
+
+.footer-nav > .container {
+    border-top: 1px solid #ffffff;
+}
+
+.footer-nav .content-left {
+    width: 20%;
+    height: 224px;
+    display: table;
+    padding: 30px 25px 20px 25px;
+    float: left;
+    background-color: #393f48;
+    color: #ffffff;
+}
+
+.footer-nav .content-left p {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.footer-nav .content-left p.header {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-nav .content-right {
+    width: 80%;
+    height: 224px;
+    display: table;
+    padding: 15px 30px 0px 70px;
+    margin: 0 auto;
+    float: left;
+}
+
+.footer-nav .content-right ul.nav-group {
+    width: 18.75%;
+}
+
+.footer-nav .content-right div.nav-group {
+    width: 25%;
+}
+
+.footer-nav .content-right .nav-group {
+    display: table;
+    float: left;
+    list-style: none;
+    padding: 0px 5px;
+    margin: 0;
+    font-size: 11px;
+}
+
+.footer-nav .content-right .nav-group li {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.footer-nav .content-right .nav-group li.header {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.footer-nav .content-right .nav-group li > a {
+    color: #9a9a9a;
+    text-decoration: none;
+}
+
+.footer-nav .content-right .nav-group div input[type="text"],
+      .footer-nav .content-right .nav-group div textarea {
+    border-radius: 3px;
+    border: 1px solid #e4e4e8;
+}
+
+.footer-nav .content-right .nav-group div .btn {
+    color: #ffffff;
+    background-color: #ffd700;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.table > thead > tr > th {
+    background-color: #ffd700;
+    color: #ffffff;
+    padding: 3px;
+    vertical-align: middle;
+}
+
+.table > tbody > tr > td {
+    padding: 3px;
+    vertical-align: middle;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td {
+    font-size: 13px;
+}
+
+.table-content > thead > tr > th,
+.table-content > thead > tr > td,
+.table-content > tbody > tr > th,
+.table-content > tbody > tr > td {
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffd700;
+    border-color: transparent;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #ffffff;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #eaeaea;
+}
+
+.control-label {
+    font-size: 15px;
+}
+
+.panel-default {
+    background-color: transparent;
+    border: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.panel-default > .panel-heading {
+    background-color: #ffd700;
+    color: #000000;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.panel-default > .panel-body {
+    border-top: 2px solid #ffd700;
+}
+
+.panel-default > .panel-body p {
+    text-indent: 20px;
+    font-size: 20px;
+    color: #000000;
+}
+
+.panel-default > .panel-color {
+    background-color: #ffd700;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-top: 15px;
+}
+
+.panel-default > .panel-color p {
+    color: #ffffff;
+}
+
+.panel-default .panel-bg {
+    background-color: #ecebeb;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.panel-default > .panel-border {
+    padding-top: 40px;
+}
+
+.panel-default > .panel-border hr {
+    margin-top: 50px;
+    border-top: 3px solidffff;
+
+12;
+    width: 50%;
+}
+
+.panel-default hr {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-top: 2px solidav-lis12;
+    width: 100%;
+}
+
+.nav-list {
+    width: 100%;
+    display: table;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-list.col-3 li {
+    width: 33.333333%;
+    float: left;
+}
+
+.nav-list.col-3 li > a {
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    background-color: #ffd700;
+    padding: 15px 20px;
+    margin: 5px;
+    display: block;
+    border-radius: 8px;
+}
+
+.nav-list.col-1 li {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.nav-list.col-1 li > a {
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    background-color: #ffd700;
+    padding: 15px 20px;
+    margin: 5px;
+    display: block;
+    border-radius: 8px;
+}
+
+.nav-list.col-2 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.nav-list.col-2 li {
+    width: 50%;
+    float: left;
+    margin: 0 auto;
+}
+
+.nav-list.col-2 li .btn-group {
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.nav-list.col-2 li .btn-group .btn-default {
+    width: 100%;
+    display: block;
+    padding: 15px 20px;
+    font-size: 17px;
+}
+
+.nav-list.col-2 li .btn-group .btn-default:link, .nav-list.col-2 li .btn-group .btn-default:hover, .nav-list.col-2 li .btn-group .btn-default:active, .nav-list.col-2 li .btn-group .btn-default:visited {
+    background-color: !important;
+    color: #ffffff;
+}
+
+.nav-list.col-2 li .btn-group .caret {
+    right: 0;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+}
+
+.nav-list.col-2 li .dropdown-menu {
+    width: 93%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: -13px;
+}
+
+.nav-list.col-2 li .dropdown-menu > li {
+    width: 100%;
+}
+
+.nav-list .open > .dropdown-toggle.btn-default {
+    background-color: #ffd700 !important;
+    color: #ffffff;
+}
+
+.title-page {
+    color: #008aff;
+}
+
+.title-page h3 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* RADIO CHECKBOX */
+.control-group {
+    padding-top: 5px;
+}
+
+.control-group > label.control {
+    position: relative;
+    display: block;
+    padding: 3px 0 0 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.control-group > label.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.control-group > label.control input:focus ~ .control__indicator {
+    background: #ffffff;
+}
+
+.control-group > label.control input:checked ~ .control__indicator {
+    background: #044f0b;
+}
+
+.control-group > label.control input:checked ~ .control__indicator:after {
+    display: block;
+}
+
+.control-group > label.control input:checked:focus ~ .control__indicator {
+    background: #044f0b;
+}
+
+.control-group > label.control input:disabled ~ .control__indicator {
+    pointer-events: none;
+    opacity: .6;
+    background: #e6e6e6;
+}
+
+.control-group > label.control:hover input ~ .control__indicator {
+    background: #ffffff;
+}
+
+.control-group > label.control:hover input:not([disabled]):checked ~ .control__indicator {
+    background: #dd99be;
+}
+
+.control-group > label.control--radio input:checked:focus ~ .control__indicator {
+    background: #ffffff;
+}
+
+.control-group > label.control--radio input:checked:checked ~ .control__indicator {
+    background: #ffffff;
+}
+
+.control-group > label.control--radio input:checked:checked ~ .control__indicator:after {
+    display: block;
+}
+
+.control-group > label.control--radio input:checked:checked:focus ~ .control__indicator {
+    background: #ffffff;
+}
+
+.control-group > label.control--radio input:checked:disabled ~ .control__indicator {
+    pointer-events: none;
+    opacity: .6;
+    background: #ffffff;
+}
+
+.control-group > label.control--radio:hover input ~ .control__indicator {
+    background: #ffffff;
+}
+
+.control-group .control__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #ffd700;
+}
+
+.control-group .control__indicator:after {
+    position: absolute;
+    display: none;
+    content: '';
+}
+
+.control-group .control--radio .control__indicator {
+    border-radius: 50%;
+}
+
+.control-group .control--radio .control__indicator:after {
+    width: 12px;
+    height: 12px;
+    margin-top: 2px;
+    margin-left: 2px;
+    border-radius: 50%;
+    background: #ffd700;
+}
+
+.btn-default {
+    background-color: #ffd700 !important;
+    font-weight: bold;
+    color: #ffffff;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+}
+
+.btn-transparent {
+    background: transparent;
+    color: #ffd700;
+    border-color: #ffd700;
+    font-weight: bold;
+    padding-left: 40px;
+    padding-right: 40px;
+}

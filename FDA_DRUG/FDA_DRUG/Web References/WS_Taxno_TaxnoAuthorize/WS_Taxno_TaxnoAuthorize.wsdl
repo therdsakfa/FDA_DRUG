@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insert_taxno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_taxno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_taxnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insert_taxnoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_taxno_authorize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_taxno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_taxno_authorizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insert_taxno_authorizeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProfile_byidentify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_identify" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProfile_byidentifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProfile_byidentifyResult" type="tns:Get_Profile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Get_Profile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SYSLCNSIDs" type="tns:syslcnsid" />
+          <s:element minOccurs="0" maxOccurs="1" name="SYSLCNSNMs" type="tns:syslcnsnm" />
+          <s:element minOccurs="0" maxOccurs="1" name="SYSLCTADDRs" type="tns:syslctaddr" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="syslcnsid">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IDA" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="identify" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="lcnsid" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="crtlct" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="birthdate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="chngwtcd" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="ntcd" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trdregno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ctzno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idst" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="phrno" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="stfcd" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="nmprnst" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="cncdate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="lstfcd" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="lcnsidst" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="scridst" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="lmdfdate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cncremark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="otaxno" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="type" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="email_sro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email_contract_real" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_main" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="status" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="person_status_ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="person_status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sex" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="syslcnsnm">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="identify" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="lcnsid" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="lcnscd" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="prefixcd" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="prefixcd2" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="prefixnm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="prefixnm2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="thanm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="engnm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="lctcd" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="thalnm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="englnm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="suffixcd" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="lcnsst" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="grplcnscd" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="bsncd" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="lstfcd" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="lmdfdate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="lcnsidst" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="validdate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="oldid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="type" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="create_date" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="update_date" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="syslctaddr">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="identify" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="lcnsid" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="lctcd" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="thaaddr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="engaddr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="room" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="floor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="thasoi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="building" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="engsoi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tharoad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="engroad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="thmblcd" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="thmblnm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="amphrcd" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="amphrnm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="chngwtcd" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="chngwtnm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="zipcode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="validdate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="lstfcd" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="lmdfdate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="pvcode" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="amcode" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="ttcode" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fulladdr" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insert_foreigner_syslcnsid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lcnsid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_foreigner_syslcnsidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insert_foreigner_syslcnsidResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_foreigner_syslcnsnm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bsncd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_foreigner_syslcnsnmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insert_foreigner_syslcnsnmResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_ID_main_person">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_taxno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_ID_main_personResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="update_ID_main_personResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDetail_Houseno_by_addressID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_houseno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HOUSENO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AddressID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistryOffice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Moo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Alley" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Soi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Road" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Tumbol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Amphur" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Province" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HouseType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PermitDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisposeDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VillageName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HouseAttribute" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HouseSize" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HouseVolumn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerFile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerFileID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LandSize" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel01" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel02" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel03" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel04" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel05" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel06" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel07" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel08" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel09" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApproveID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CommunityName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getDetail_Houseno_by_addressIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDetail_Houseno_by_addressIDResult" type="tns:HOUSENO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_taxno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_taxno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_taxnoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getData_By_Taxno_Form_Department_of_Local_administration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_taxno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ws_fields" type="tns:root" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="root">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CitizenID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameEN_Prefix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameEN_FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameEN_MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameEN_SurName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameTH_Prefix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameTH_FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameTH_MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameTH_SurName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SexID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BirthDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Age" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PersonStatusID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Moo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Alley" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Soi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Road" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Tumbol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Amphur" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_Province" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssueDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpireDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuerPlace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuerAgency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality_Old" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality_ChangeDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Father_CitizenID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Father_Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Father_NameTH_FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Father_FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mother_CitizenID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mother_Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mother_NameTH_FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mother_FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DomicileType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DomicileStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DomicileDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getData_By_Taxno_Form_Department_of_Local_administrationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getData_By_Taxno_Form_Department_of_Local_administrationResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="ws_fields" type="tns:root" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insert_taxnoSoapIn">
+    <wsdl:part name="parameters" element="tns:insert_taxno" />
+  </wsdl:message>
+  <wsdl:message name="insert_taxnoSoapOut">
+    <wsdl:part name="parameters" element="tns:insert_taxnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="insert_taxno_authorizeSoapIn">
+    <wsdl:part name="parameters" element="tns:insert_taxno_authorize" />
+  </wsdl:message>
+  <wsdl:message name="insert_taxno_authorizeSoapOut">
+    <wsdl:part name="parameters" element="tns:insert_taxno_authorizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProfile_byidentifySoapIn">
+    <wsdl:part name="parameters" element="tns:getProfile_byidentify" />
+  </wsdl:message>
+  <wsdl:message name="getProfile_byidentifySoapOut">
+    <wsdl:part name="parameters" element="tns:getProfile_byidentifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="insert_foreigner_syslcnsidSoapIn">
+    <wsdl:part name="parameters" element="tns:insert_foreigner_syslcnsid" />
+  </wsdl:message>
+  <wsdl:message name="insert_foreigner_syslcnsidSoapOut">
+    <wsdl:part name="parameters" element="tns:insert_foreigner_syslcnsidResponse" />
+  </wsdl:message>
+  <wsdl:message name="insert_foreigner_syslcnsnmSoapIn">
+    <wsdl:part name="parameters" element="tns:insert_foreigner_syslcnsnm" />
+  </wsdl:message>
+  <wsdl:message name="insert_foreigner_syslcnsnmSoapOut">
+    <wsdl:part name="parameters" element="tns:insert_foreigner_syslcnsnmResponse" />
+  </wsdl:message>
+  <wsdl:message name="update_ID_main_personSoapIn">
+    <wsdl:part name="parameters" element="tns:update_ID_main_person" />
+  </wsdl:message>
+  <wsdl:message name="update_ID_main_personSoapOut">
+    <wsdl:part name="parameters" element="tns:update_ID_main_personResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDetail_Houseno_by_addressIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getDetail_Houseno_by_addressID" />
+  </wsdl:message>
+  <wsdl:message name="getDetail_Houseno_by_addressIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getDetail_Houseno_by_addressIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="update_taxnoSoapIn">
+    <wsdl:part name="parameters" element="tns:update_taxno" />
+  </wsdl:message>
+  <wsdl:message name="update_taxnoSoapOut">
+    <wsdl:part name="parameters" element="tns:update_taxnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getData_By_Taxno_Form_Department_of_Local_administrationSoapIn">
+    <wsdl:part name="parameters" element="tns:getData_By_Taxno_Form_Department_of_Local_administration" />
+  </wsdl:message>
+  <wsdl:message name="getData_By_Taxno_Form_Department_of_Local_administrationSoapOut">
+    <wsdl:part name="parameters" element="tns:getData_By_Taxno_Form_Department_of_Local_administrationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="insert_taxno">
+      <wsdl:input message="tns:insert_taxnoSoapIn" />
+      <wsdl:output message="tns:insert_taxnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_taxno_authorize">
+      <wsdl:input message="tns:insert_taxno_authorizeSoapIn" />
+      <wsdl:output message="tns:insert_taxno_authorizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProfile_byidentify">
+      <wsdl:input message="tns:getProfile_byidentifySoapIn" />
+      <wsdl:output message="tns:getProfile_byidentifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_foreigner_syslcnsid">
+      <wsdl:input message="tns:insert_foreigner_syslcnsidSoapIn" />
+      <wsdl:output message="tns:insert_foreigner_syslcnsidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_foreigner_syslcnsnm">
+      <wsdl:input message="tns:insert_foreigner_syslcnsnmSoapIn" />
+      <wsdl:output message="tns:insert_foreigner_syslcnsnmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update_ID_main_person">
+      <wsdl:input message="tns:update_ID_main_personSoapIn" />
+      <wsdl:output message="tns:update_ID_main_personSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDetail_Houseno_by_addressID">
+      <wsdl:input message="tns:getDetail_Houseno_by_addressIDSoapIn" />
+      <wsdl:output message="tns:getDetail_Houseno_by_addressIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update_taxno">
+      <wsdl:input message="tns:update_taxnoSoapIn" />
+      <wsdl:output message="tns:update_taxnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getData_By_Taxno_Form_Department_of_Local_administration">
+      <wsdl:input message="tns:getData_By_Taxno_Form_Department_of_Local_administrationSoapIn" />
+      <wsdl:output message="tns:getData_By_Taxno_Form_Department_of_Local_administrationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert_taxno">
+      <soap:operation soapAction="http://tempuri.org/insert_taxno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_taxno_authorize">
+      <soap:operation soapAction="http://tempuri.org/insert_taxno_authorize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProfile_byidentify">
+      <soap:operation soapAction="http://tempuri.org/getProfile_byidentify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_foreigner_syslcnsid">
+      <soap:operation soapAction="http://tempuri.org/insert_foreigner_syslcnsid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_foreigner_syslcnsnm">
+      <soap:operation soapAction="http://tempuri.org/insert_foreigner_syslcnsnm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_ID_main_person">
+      <soap:operation soapAction="http://tempuri.org/update_ID_main_person" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDetail_Houseno_by_addressID">
+      <soap:operation soapAction="http://tempuri.org/getDetail_Houseno_by_addressID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_taxno">
+      <soap:operation soapAction="http://tempuri.org/update_taxno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData_By_Taxno_Form_Department_of_Local_administration">
+      <soap:operation soapAction="http://tempuri.org/getData_By_Taxno_Form_Department_of_Local_administration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert_taxno">
+      <soap12:operation soapAction="http://tempuri.org/insert_taxno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_taxno_authorize">
+      <soap12:operation soapAction="http://tempuri.org/insert_taxno_authorize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProfile_byidentify">
+      <soap12:operation soapAction="http://tempuri.org/getProfile_byidentify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_foreigner_syslcnsid">
+      <soap12:operation soapAction="http://tempuri.org/insert_foreigner_syslcnsid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_foreigner_syslcnsnm">
+      <soap12:operation soapAction="http://tempuri.org/insert_foreigner_syslcnsnm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_ID_main_person">
+      <soap12:operation soapAction="http://tempuri.org/update_ID_main_person" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDetail_Houseno_by_addressID">
+      <soap12:operation soapAction="http://tempuri.org/getDetail_Houseno_by_addressID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_taxno">
+      <soap12:operation soapAction="http://tempuri.org/update_taxno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData_By_Taxno_Form_Department_of_Local_administration">
+      <soap12:operation soapAction="http://tempuri.org/getData_By_Taxno_Form_Department_of_Local_administration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://10.111.28.108/WS_Taxno_TaxnoAuthorize/WS_Taxno_TaxnoAuthorize.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://10.111.28.108/WS_Taxno_TaxnoAuthorize/WS_Taxno_TaxnoAuthorize.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

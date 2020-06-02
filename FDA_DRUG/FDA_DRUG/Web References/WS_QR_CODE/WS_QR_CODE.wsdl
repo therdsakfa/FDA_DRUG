@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetQRImgByte">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StrToQR" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQRImgByteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQRImgByteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetQRImgByteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQRImgByte" />
+  </wsdl:message>
+  <wsdl:message name="GetQRImgByteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQRImgByteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_QR_CODESoap">
+    <wsdl:operation name="GetQRImgByte">
+      <wsdl:input message="tns:GetQRImgByteSoapIn" />
+      <wsdl:output message="tns:GetQRImgByteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_QR_CODESoap" type="tns:WS_QR_CODESoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetQRImgByte">
+      <soap:operation soapAction="http://tempuri.org/GetQRImgByte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_QR_CODESoap12" type="tns:WS_QR_CODESoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetQRImgByte">
+      <soap12:operation soapAction="http://tempuri.org/GetQRImgByte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_QR_CODE">
+    <wsdl:port name="WS_QR_CODESoap" binding="tns:WS_QR_CODESoap">
+      <soap:address location="http://medicina.fda.moph.go.th/WS_QR_CODE/WS_QR_CODE.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_QR_CODESoap12" binding="tns:WS_QR_CODESoap12">
+      <soap12:address location="http://medicina.fda.moph.go.th/WS_QR_CODE/WS_QR_CODE.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

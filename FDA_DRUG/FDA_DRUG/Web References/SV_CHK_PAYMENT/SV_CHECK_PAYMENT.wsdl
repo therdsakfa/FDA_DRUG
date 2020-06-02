@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CHECK_PAYMENT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="refno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="identify" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="system" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CHECK_PAYMENTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CHECK_PAYMENTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CHECK_PRICE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="refno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="identify" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CHECK_PRICEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CHECK_PRICEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPM_CANCEL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDA" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPM_CANCELResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SPM_CANCELResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CHECK_PAYMENTSoapIn">
+    <wsdl:part name="parameters" element="tns:CHECK_PAYMENT" />
+  </wsdl:message>
+  <wsdl:message name="CHECK_PAYMENTSoapOut">
+    <wsdl:part name="parameters" element="tns:CHECK_PAYMENTResponse" />
+  </wsdl:message>
+  <wsdl:message name="CHECK_PRICESoapIn">
+    <wsdl:part name="parameters" element="tns:CHECK_PRICE" />
+  </wsdl:message>
+  <wsdl:message name="CHECK_PRICESoapOut">
+    <wsdl:part name="parameters" element="tns:CHECK_PRICEResponse" />
+  </wsdl:message>
+  <wsdl:message name="SPM_CANCELSoapIn">
+    <wsdl:part name="parameters" element="tns:SPM_CANCEL" />
+  </wsdl:message>
+  <wsdl:message name="SPM_CANCELSoapOut">
+    <wsdl:part name="parameters" element="tns:SPM_CANCELResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SV_CHECK_PAYMENTSoap">
+    <wsdl:operation name="CHECK_PAYMENT">
+      <wsdl:input message="tns:CHECK_PAYMENTSoapIn" />
+      <wsdl:output message="tns:CHECK_PAYMENTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CHECK_PRICE">
+      <wsdl:input message="tns:CHECK_PRICESoapIn" />
+      <wsdl:output message="tns:CHECK_PRICESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SPM_CANCEL">
+      <wsdl:input message="tns:SPM_CANCELSoapIn" />
+      <wsdl:output message="tns:SPM_CANCELSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SV_CHECK_PAYMENTSoap" type="tns:SV_CHECK_PAYMENTSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CHECK_PAYMENT">
+      <soap:operation soapAction="http://tempuri.org/CHECK_PAYMENT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHECK_PRICE">
+      <soap:operation soapAction="http://tempuri.org/CHECK_PRICE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPM_CANCEL">
+      <soap:operation soapAction="http://tempuri.org/SPM_CANCEL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SV_CHECK_PAYMENTSoap12" type="tns:SV_CHECK_PAYMENTSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CHECK_PAYMENT">
+      <soap12:operation soapAction="http://tempuri.org/CHECK_PAYMENT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CHECK_PRICE">
+      <soap12:operation soapAction="http://tempuri.org/CHECK_PRICE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPM_CANCEL">
+      <soap12:operation soapAction="http://tempuri.org/SPM_CANCEL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SV_CHECK_PAYMENT">
+    <wsdl:port name="SV_CHECK_PAYMENTSoap" binding="tns:SV_CHECK_PAYMENTSoap">
+      <soap:address location="http://10.111.28.133/SPECIAL_PAYMENT_TXC_BSN/WEBSERVICE/SV_CHECK_PAYMENT.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SV_CHECK_PAYMENTSoap12" binding="tns:SV_CHECK_PAYMENTSoap12">
+      <soap12:address location="http://10.111.28.133/SPECIAL_PAYMENT_TXC_BSN/WEBSERVICE/SV_CHECK_PAYMENT.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

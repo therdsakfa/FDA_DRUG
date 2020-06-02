@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LGT_PERMISSION" Class="LINQ_PERMISSIONDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=164.115.28.103;Initial Catalog=LGT_PERMISSION;Persist Security Info=True;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LGT_PERMISSIONConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.namemenu" Member="namemenus">
+    <Type Name="namemenu">
+      <Column Name="IDmenu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="menu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDnamesys" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Margin" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SEQ" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.namesystem" Member="namesystems">
+    <Type Name="namesystem">
+      <Column Name="IDnamesys" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="namesystem" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="path_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="url" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="groupdavision" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="groupdavision_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type_admin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status_permission" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.grouppermission" Member="grouppermissions">
+    <Type Name="grouppermission">
+      <Column Name="IDgroup" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="grouppermission" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="grouptype" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="taxno" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="taxno_authorize" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thachngwtnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="type_admin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEPARTMENT_CODE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="groupdavision" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.taxnogrouppermission" Member="taxnogrouppermissions">
+    <Type Name="taxnogrouppermission">
+      <Column Name="IDpimary" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDgroup" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="create_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="taxno" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="grouppermission" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="taxno_authorize" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="explair_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pvncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thachngwtnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="groupdavision" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="staff_id" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="staff_pvncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="staff_name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="staff_province_name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="status_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="permission_description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FDA_code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

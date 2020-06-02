@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CLASS_DARQT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <thanm>146</thanm>
+  <thachngwtnm>กรุงเทพมหานคร</thachngwtnm>
+  <thathmblnm>คลองจั่น</thathmblnm>
+  <lcnno>0</lcnno>
+  <rcvno>0</rcvno>
+  <lcnsid>0</lcnsid>
+  <bsnid>0</bsnid>
+  <lctcd>0</lctcd>
+  <lctnmcd>0</lctnmcd>
+  <bsnage>0</bsnage>
+  <rcvdate>2015-08-24T17:10:40.5324467+07:00</rcvdate>
+  <expdate>0001-01-01T00:00:00</expdate>
+  <thaamphrnm>บางกะปิ</thaamphrnm>
+  <amphrcd>0</amphrcd>
+  <chngwtcd>0</chngwtcd>
+  <thasoi>ลาดพร้าว 109 (สหบัญชี)</thasoi>
+  <tharoad>ลาดพร้าว</tharoad>
+  <mu />
+  <tel>0 2731 0085</tel>
+  <jpctpcd>0</jpctpcd>
+  <cnsdcd>0</cnsdcd>
+  <cscd>0</cscd>
+</CLASS_DARQT>

@@ -1,0 +1,651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{F53AC5D7-E5AA-4A59-86CA-55E2999E0C52}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FDA_DRUG</RootNamespace>
+    <AssemblyName>FDA_DRUG</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>FDA_DRUG.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>FDA_DRUG.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.7.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\iTextSharp.5.5.7\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\brand\bootstrap-outline.svg" />
+    <Content Include="assets\brand\bootstrap-punchout.svg" />
+    <Content Include="assets\brand\bootstrap-solid.svg" />
+    <Content Include="assets\css\docs.min.css" />
+    <Content Include="assets\css\_src\docs.css" />
+    <Content Include="assets\css\_src\pygments-manni.css" />
+    <Content Include="assets\flash\ZeroClipboard.swf" />
+    <Content Include="assets\img\components.png" />
+    <Content Include="assets\img\devices.png" />
+    <Content Include="assets\img\sass-less.png" />
+    <Content Include="assets\js\customize.min.js" />
+    <Content Include="assets\js\docs.min.js" />
+    <Content Include="assets\js\ie-emulation-modes-warning.js" />
+    <Content Include="assets\js\ie10-viewport-bug-workaround.js" />
+    <Content Include="assets\js\ie8-responsive-file-warning.js" />
+    <Content Include="assets\js\raw-files.min.js" />
+    <Content Include="assets\js\_src\application.js" />
+    <Content Include="assets\js\_src\customizer.js" />
+    <Content Include="assets\js\_vendor\blob.js" />
+    <Content Include="assets\js\_vendor\filesaver.js" />
+    <Content Include="assets\js\_vendor\holder.js" />
+    <Content Include="assets\js\_vendor\jszip.min.js" />
+    <Content Include="assets\js\_vendor\less.min.js" />
+    <Content Include="assets\js\_vendor\uglify.min.js" />
+    <Content Include="assets\js\_vendor\ZeroClipboard.min.js" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\grid.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="css\custom-theme\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="css\custom-theme\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="css\custom-theme\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="css\custom-theme\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="css\custom-theme\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="css\custom-theme\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\custom-theme\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="css\custom-theme\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="css\custom-theme\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="css\custom-theme\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\custom-theme\jquery-ui-1.9.2.css" />
+    <Content Include="css\custom-theme\jquery-ui-1.9.2.min.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\Custom2.css" />
+    <Content Include="css\jquery.contextmenu.css" />
+    <Content Include="css\plugins\morris.css" />
+    <Content Include="css\sb-admin5.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\style.ie6.css" />
+    <Content Include="css\style.ie7.css" />
+    <Content Include="css\Theme.css" />
+    <Content Include="FRM_XML.aspx" />
+    <Content Include="Html5\html5shiv.min.js" />
+    <Content Include="Html5\respond.min.js" />
+    <Content Include="Images\01.png" />
+    <Content Include="Images\02.png" />
+    <Content Include="Images\03.png" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\blockcontentbullets.png" />
+    <Content Include="Images\Bottom_texture.jpg" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\button.png" />
+    <Content Include="Images\calendar.gif" />
+    <Content Include="Images\contact.jpg" />
+    <Content Include="Images\flow.png" />
+    <Content Include="Images\footer_b.png" />
+    <Content Include="Images\footer_s.png" />
+    <Content Include="Images\footer_t.png" />
+    <Content Include="Images\header-01.jpg" />
+    <Content Include="Images\header.jpg" />
+    <Content Include="Images\header.png" />
+    <Content Include="Images\header5.png" />
+    <Content Include="Images\headerManage.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\link photo.txt" />
+    <Content Include="Images\menuitem.png" />
+    <Content Include="Images\menuseparator.png" />
+    <Content Include="Images\Middle_texture.jpg" />
+    <Content Include="Images\nav.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\page_gl.png" />
+    <Content Include="Images\postquote.png" />
+    <Content Include="Images\preview.jpg" />
+    <Content Include="Images\rssicon.png" />
+    <Content Include="Images\sheet_h.png" />
+    <Content Include="Images\sheet_s.png" />
+    <Content Include="Images\sheet_v.png" />
+    <Content Include="Images\spacer.gif" />
+    <Content Include="Images\subitem.png" />
+    <Content Include="Images\VS.png" />
+    <Content Include="js\jquery-1.8.3.js" />
+    <Content Include="js\jquery-ui-1.9.2.js" />
+    <Content Include="js\jquery-ui-1.9.2.min.js" />
+    <Content Include="js\jquery.contextmenu.js" />
+    <Content Include="MAIN\FRM_CHECK_TOKEN.aspx" />
+    <Content Include="sh\help.png" />
+    <Content Include="sh\magnifier.png" />
+    <Content Include="sh\page_white_code.png" />
+    <Content Include="sh\page_white_copy.png" />
+    <Content Include="sh\printer.png" />
+    <Content Include="sh\Scripts\bootstrap.js" />
+    <Content Include="sh\Scripts\bootstrap.min.js" />
+    <Content Include="sh\Scripts\dataTables.bootstrap.js" />
+    <Content Include="sh\Scripts\jquery-1.4.2.min.js" />
+    <Content Include="sh\Scripts\jquery-1.7.2.js" />
+    <Content Include="LCN_TYPE_1\FRM_LCN_TYPE_1.aspx" />
+    <Content Include="POPUP.Master" />
+    <Content Include="LCN_TYPE_1\POPUP_LCN_TYPE_1.aspx" />
+    <Content Include="Linq\Linq_DRUG.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Linq_DRUG.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web References\WS_AUTHENTICATION\AUTHENTICATION.disco" />
+    <Content Include="XML\PDFdarqt.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Linq\Linq_CPN.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Linq_CPN.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="My Project\PublishProfiles\FDA_DRUG.pubxml" />
+    <Content Include="packages.config" />
+    <None Include="sh\Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="sh\Scripts\jquery-1.8.2.js" />
+    <Content Include="sh\Scripts\jquery-1.8.2.min.js" />
+    <None Include="sh\Scripts\jquery-1.9.1-vsdoc.js" />
+    <None Include="sh\Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="sh\Scripts\jquery-1.9.1.js" />
+    <Content Include="sh\Scripts\jquery-1.9.1.min.js" />
+    <Content Include="sh\Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="sh\Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="sh\Scripts\jquery.dataTables.min.js" />
+    <Content Include="sh\Scripts\jquery.searchabledropdown-1.0.7.min.js" />
+    <Content Include="sh\Scripts\jquery.searchabledropdown-1.0.7.src.js" />
+    <Content Include="sh\Scripts\modernizr-2.6.2.js" />
+    <Content Include="sh\Scripts\WebForms\DetailsView.js" />
+    <Content Include="sh\Scripts\WebForms\Focus.js" />
+    <Content Include="sh\Scripts\WebForms\GridView.js" />
+    <Content Include="sh\Scripts\WebForms\Menu.js" />
+    <Content Include="sh\Scripts\WebForms\MenuStandards.js" />
+    <Content Include="sh\Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="sh\Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="sh\Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="sh\Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="sh\Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="sh\Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="sh\Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="sh\Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="sh\Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="sh\Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="sh\Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="sh\Scripts\WebForms\SmartNav.js" />
+    <Content Include="sh\Scripts\WebForms\TreeView.js" />
+    <Content Include="sh\Scripts\WebForms\WebForms.js" />
+    <Content Include="sh\Scripts\WebForms\WebParts.js" />
+    <Content Include="sh\Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="sh\Scripts\_references.js" />
+    <Content Include="sh\shBrushJScript.js" />
+    <Content Include="sh\shCore.css" />
+    <Content Include="sh\shCore.js" />
+    <Content Include="sh\shThemeDefault.css" />
+    <Content Include="Web References\WS_CENTER\CLC_AMPHRCD.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_CENTER\CLC_CHAWTCD.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_CENTER\CLC_NAMES.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_CENTER\CLC_THMBLCD.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_CENTER\CLC_CITIZ_NO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_CENTER\CLC_CUSTNAME.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_CENTER\CLC_SYSADDR_CONTACT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_AUTHENTICATION\AUTHENTICATION.wsdl" />
+    <Content Include="Web References\WS_AUTHENTICATION\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <None Include="Web References\WS_CENTER\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Web References\WS_CENTER\sysamphr.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_CENTER\syschngwt.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_CENTER\systhmbl.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\WS_CENTER\WS_CENTER.disco" />
+    <Content Include="Web References\WS_LGTDRUG\CLC_DARQT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\CLC_DARQTPHR.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\dacnsd.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\dacscd.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\dalcntype.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\daphrcd.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\dasubctg.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\djpctype.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\CLC_BSNADDRESS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\CLC_LOCATIONADDR.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\dacnc.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\dacncc.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\daphrfunctcd.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_LGTDRUG\daweek.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\WS_LGTDRUG\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_LGTDRUG\WS_LGTDRUG.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="class\BAO.vb" />
+    <Compile Include="class\ClassDataset.vb" />
+    <Compile Include="class\CLASS_CENTER.vb" />
+    <Compile Include="class\CLASS_DALCN.vb" />
+    <Compile Include="class\CLASS_DARQT.vb" />
+    <Compile Include="class\CLASS_DARQTPHR.vb" />
+    <Compile Include="class\Cls_XML.vb" />
+    <Compile Include="class\DAO.vb" />
+    <Compile Include="class\DAO_CPN.vb" />
+    <Compile Include="class\MainCompany.vb" />
+    <Compile Include="class\MainPerson.vb" />
+    <Compile Include="class\PDF_System.vb" />
+    <Compile Include="FRM_XML.aspx.designer.vb">
+      <DependentUpon>FRM_XML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_XML.aspx.vb">
+      <DependentUpon>FRM_XML.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Linq\Linq_CPN.designer.vb">
+      <DependentUpon>Linq_CPN.dbml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Linq\Linq_CPN.vb">
+      <DependentUpon>Linq_CPN.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\Linq_DRUG.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Linq_DRUG.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\Linq_DRUG.vb">
+      <DependentUpon>Linq_DRUG.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN.Master.designer.vb">
+      <DependentUpon>MAIN.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN.Master.vb">
+      <DependentUpon>MAIN.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MAIN\FRM_CHECK_TOKEN.aspx.designer.vb">
+      <DependentUpon>FRM_CHECK_TOKEN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN\FRM_CHECK_TOKEN.aspx.vb">
+      <DependentUpon>FRM_CHECK_TOKEN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="LCN_TYPE_1\FRM_LCN_TYPE_1.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_TYPE_1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_TYPE_1\FRM_LCN_TYPE_1.aspx.vb">
+      <DependentUpon>FRM_LCN_TYPE_1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="POPUP.Master.designer.vb">
+      <DependentUpon>POPUP.Master</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP.Master.vb">
+      <DependentUpon>POPUP.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_TYPE_1\POPUP_LCN_TYPE_1.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_TYPE_1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_TYPE_1\POPUP_LCN_TYPE_1.aspx.vb">
+      <DependentUpon>POPUP_LCN_TYPE_1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Web References\WS_AUTHENTICATION\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_CENTER\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_LGTDRUG\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\Linq_DRUG.dbml.layout">
+      <DependentUpon>Linq_DRUG.dbml</DependentUpon>
+    </None>
+    <None Include="Linq\Linq_CPN.dbml.layout">
+      <DependentUpon>Linq_CPN.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MAIN.Master" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="sh\Scripts\jquery-1.9.1.min.map" />
+    <None Include="Web References\WS_LGTDRUG\WS_LGTDRUG.wsdl" />
+    <None Include="Web References\WS_CENTER\WS_CENTER.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://164.115.28.104/ws_authen/AUTHENTICATION.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_AUTHENTICATION\</RelPath>
+      <UpdateFromURL>http://164.115.28.104/ws_authen/AUTHENTICATION.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_DRUG_WS_AUTHENTICATION_Authentication</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://164.115.28.108/WS_CENTER/WS_CENTER.ASMX">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_CENTER\</RelPath>
+      <UpdateFromURL>http://164.115.28.108/WS_CENTER/WS_CENTER.ASMX</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_DRUG_WS_CENTER_WS_CENTER</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://164.115.28.108/WS_LGTDRUG/WS_LGTDRUG.ASMX">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_LGTDRUG\</RelPath>
+      <UpdateFromURL>http://164.115.28.108/WS_LGTDRUG/WS_LGTDRUG.ASMX</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_DRUG_WS_LGTDRUG_WS_LGTDRUG</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5193/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

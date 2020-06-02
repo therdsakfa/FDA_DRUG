@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_SP_PAYMENT">
+  <DataContextMoniker Name="/LINQ_SP_PAYMENTDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2b15e828-2ada-4621-8cd6-14dc2cc182cf" isExpanded="false" absoluteBounds="0.5, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_SP_PAYMENTDataContext/PAYMENT_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8c5dfe79-b93f-4c74-b34a-4b38a5d7457c" absoluteBounds="0.51500000000000012, 1.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7cfd40f1-b12d-4c65-b68f-1d1cd8260a5f" isExpanded="false" absoluteBounds="0.5, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_SP_PAYMENTDataContext/SYSTEMS_PAYMENT_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a6cf924-fd8c-4d74-8fd3-4930a8ac92f8" absoluteBounds="0.515, 1.71, 1.9700000000000002, 9.0952555338541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93284e5b-512a-4522-b7a5-bb88afacc697" absoluteBounds="3.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LINQ_SP_PAYMENTDataContext/SPD_LOG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9b2abb4-e704-4618-af97-d7b805f794c3" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="01ee352e-fe0a-437a-8e80-7b691d2073d3" isExpanded="false" absoluteBounds="0.5, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_SP_PAYMENTDataContext/REQUEST_TEMPLATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c5d6870-43c6-4ef1-bffa-0b61eb348073" absoluteBounds="0.51500000000000012, 2.335, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
