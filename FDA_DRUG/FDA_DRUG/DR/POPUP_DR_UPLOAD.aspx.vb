@@ -2186,11 +2186,12 @@ Public Class POPUP_DR_UPLOAD
                     With dao_rgt_cas.fields
                         .AORI = dao_cas.fields.aori
                         .BASE_FORM = dao_cas.fields.qtytxt_all
-                        .FK_IDA = 0
+                        '.FK_IDA = 0
                         .FK_SET = dao_cas.fields.flineno
                         .IOWA = dao_cas.fields.iowacd
                         .QTY = dao_cas.fields.qty
                         .ROWS = dao_cas.fields.rid
+                        .FK_IDA = IDA_rgt
                         Try
                             .REMARK = dao_cas.fields.remark
                         Catch ex As Exception
