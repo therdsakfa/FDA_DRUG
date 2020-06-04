@@ -2398,7 +2398,7 @@ Public Class WebForm36
     Protected Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
         Dim ws_drug1 As New WS_DRUG.WS_DRUG
         ws_drug1.Timeout = 50000
-        ws_drug1.DRUG_INSERT_DR("10", "1D", "2", "6300008", "อนุมัติทะเบียน", "1710500118665", "DRUG")
+        ws_drug1.DRUG_INSERT_DR(txt_pvncd.Text, txt_rgttpcd.Text, txt_drgtpcd.Text, txt_rgtno.Text, "อนุมัติทะเบียน", "1710500118665", "DRUG")
     End Sub
 
     Protected Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click

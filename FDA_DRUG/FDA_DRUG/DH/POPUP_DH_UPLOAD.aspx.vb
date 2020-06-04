@@ -20,6 +20,7 @@ Public Class POPUP_DH_UPLOAD
                 _CLS = Session("CLS")
             End If
             ' _ProcessID = Request.QueryString("type")
+            '  dsd
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try

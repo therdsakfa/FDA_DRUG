@@ -300,6 +300,20 @@
 
         <p>
             <asp:Button ID="btn_geneqto" runat="server" Text="Gen EQTO" />
+        </p>
+        <p>
+            pvncd :
+            <asp:TextBox ID="txt_pvncd" runat="server"></asp:TextBox><br />
+             rgttpcd :
+            <asp:TextBox ID="txt_rgttpcd" runat="server"></asp:TextBox><br />
+             drgtpcd :
+            <asp:TextBox ID="txt_drgtpcd" runat="server"></asp:TextBox><br />
+             rgtno :
+            <asp:TextBox ID="txt_rgtno" runat="server"></asp:TextBox>
+
+        </p>
+        <p>
+      
             <asp:Button ID="Button20" runat="server" Text="ดึง DR ไประบบทราย" />
         </p>
         <p>

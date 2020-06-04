@@ -1896,6 +1896,7 @@ Public Class POPUP_DR_UPLOAD
                 .QTY = dao_cas.fields.QTY
                 .ROWS = dao_cas.fields.ROWS
                 .SUNITCD = dao_cas.fields.SUNITCD
+                .REMARK = dao_cas.fields.REMARK
             End With
             dao_rgt_cas.insert()
 
@@ -1913,6 +1914,7 @@ Public Class POPUP_DR_UPLOAD
                     .SUNITCD = dao_eq.fields.SUNITCD
                     .FK_SET = dao_eq.fields.FK_SET
                     .FK_DRRQT_IDA = IDA_rgt
+                    .REMARK = dao_eq.fields.REMARK
                 End With
                 dao_eq_rgt.insert()
             Next
@@ -2095,6 +2097,50 @@ Public Class POPUP_DR_UPLOAD
                 .FK_LCN_IDA = dao_dtb.fields.FK_LCN_IDA
             End With
             dao_dtb_rqt.insert()
+        Next
+
+        Dim dao_ani_rq As New DAO_DRUG.ClsDBdramldrg
+        dao_ani_rq.GetData_by_FK_IDA(fk_transfer)
+        For Each dao_ani_rq.fields In dao_ani_rq.datas
+            Dim dao_ani_rg As New DAO_DRUG.ClsDBdramldrg
+            With dao_ani_rg.fields
+                .amlsubcd = dao_ani_rq.fields.amlsubcd
+                .amltpcd = dao_ani_rq.fields.amltpcd
+                .drgtpcd = dao_ani_rq.fields.drgtpcd
+                .FK_IDA = IDA_rgt
+                .pvncd = dao_ani_rq.fields.pvncd
+                .rgtno = dao_ani_rq.fields.rgtno
+                .rgttpcd = dao_ani_rq.fields.rgttpcd
+                .usetpcd = dao_ani_rq.fields.usetpcd
+            End With
+            dao_ani_rg.insert()
+        Next
+
+        Dim dao_aniuse_rq As New DAO_DRUG.ClsDBdramluse
+        dao_aniuse_rq.GetDataby_FK_IDA(fk_transfer)
+        For Each dao_aniuse_rq.fields In dao_aniuse_rq.datas
+            Dim dao_aniuse_rg As New DAO_DRUG.ClsDBdramluse
+            With dao_aniuse_rg.fields
+                .amlsubcd = dao_aniuse_rg.fields.amlsubcd
+                .amltpcd = dao_aniuse_rg.fields.amltpcd
+                .drgtpcd = dao_aniuse_rg.fields.drgtpcd
+                .FK_IDA = IDA_rgt
+                .pvncd = dao_aniuse_rg.fields.pvncd
+                .rgtno = dao_aniuse_rg.fields.rgtno
+                .rgttpcd = dao_aniuse_rg.fields.rgttpcd
+                .usetpcd = dao_aniuse_rg.fields.usetpcd
+                .nouse = dao_aniuse_rg.fields.nouse
+                .packuse = dao_aniuse_rg.fields.packuse
+                .pvncd = dao_aniuse_rg.fields.pvncd
+                .STOP_UNIT1 = dao_aniuse_rg.fields.STOP_UNIT1
+                .STOP_UNIT2 = dao_aniuse_rg.fields.STOP_UNIT2
+                .STOP_VALUE1 = dao_aniuse_rg.fields.STOP_VALUE1
+                .STOP_VALUE2 = dao_aniuse_rg.fields.STOP_VALUE2
+                .stpdrg = dao_aniuse_rg.fields.stpdrg
+                .stpdrgcd = dao_aniuse_rg.fields.stpdrgcd
+                .usetpcd = dao_aniuse_rg.fields.usetpcd
+            End With
+            dao_aniuse_rg.insert()
         Next
 
     End Sub
@@ -2432,7 +2478,7 @@ Public Class POPUP_DR_UPLOAD
                 dao_dtl_rqt.insert()
             Next
         End If
-        
+
 
 
         'Dim dao_color As New DAO_DRUG.TB_DRRGT_COLOR
@@ -2463,6 +2509,136 @@ Public Class POPUP_DR_UPLOAD
         '    End With
         '    dao_dtb_rqt.insert()
         'Next
+        Dim dao_ani_rq As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_ANIMAL
+        dao_ani_rq.GetDataby_Newcode(newcode)
+        For Each dao_ani_rq.fields In dao_ani_rq.datas
+            Dim dao_anih_ins As New DAO_DRUG.ClsDBdramldrg
+            With dao_anih_ins.fields
+                Try
+                    Dim dao_amlsub As New DAO_DRUG.TB_dramlsubtp
+                    dao_amlsub.GetDataby_amlsubnm(dao_ani_rq.fields.amlsubnm)
+                    .amlsubcd = dao_amlsub.fields.amlsubcd
+                Catch ex As Exception
 
+                End Try
+
+                Try
+                    Dim dao_amlt As New DAO_DRUG.TB_dramltype
+                    dao_amlt.GetDataby_amltpnm(dao_ani_rq.fields.amltpnm)
+                    .amltpcd = dao_amlt.fields.amltpcd
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .drgtpcd = dao_copy.fields.drgtpcd
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .pvncd = dao_copy.fields.pvncd
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .rgtno = dao_copy.fields.rgtno
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .rgttpcd = dao_copy.fields.rgttpcd
+                Catch ex As Exception
+
+                End Try
+                Try
+                    Dim dao_uset As New DAO_DRUG.TB_dramlusetp
+                    dao_uset.GetDataby_usetpnm(dao_ani_rq.fields.usetpnm)
+                    .usetpcd = dao_uset.fields.usetpcd
+                Catch ex As Exception
+
+                End Try
+                .FK_IDA = IDA_rgt
+            End With
+            dao_anih_ins.insert()
+            Dim IDA_anih As Integer = dao_anih_ins.fields.IDA
+
+
+        Next
+
+        Dim dao_aniuse_rq As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_ANIMAL_CONSUME
+        dao_aniuse_rq.GetDataby_Newcode(newcode)
+        For Each dao_aniuse_rq.fields In dao_aniuse_rq.datas
+            Dim dao_ani_ins As New DAO_DRUG.ClsDBdramluse
+            With dao_ani_ins.fields
+                Try
+                    Dim dao_amlsub As New DAO_DRUG.TB_dramlsubtp
+                    dao_amlsub.GetDataby_amlsubnm(dao_aniuse_rq.fields.amlsubnm)
+                    .amlsubcd = dao_amlsub.fields.amlsubcd
+                Catch ex As Exception
+
+                End Try
+                Try
+                    Dim dao_amlt As New DAO_DRUG.TB_dramltype
+                    dao_amlt.GetDataby_amltpnm(dao_aniuse_rq.fields.amltpnm)
+                    .amltpcd = ""
+                Catch ex As Exception
+
+                End Try
+                Try
+                    Dim dao_amlpt As New DAO_DRUG.TB_dramlpart
+                    dao_amlpt.GetDataby_ampartnm(dao_aniuse_rq.fields.ampartnm)
+                    .ampartcd = dao_amlpt.fields.ampartcd
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .drgtpcd = dao_copy.fields.drgtpcd
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .FK_IDA = IDA_rgt
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .nouse = dao_aniuse_rq.fields.nouse
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .packuse = dao_aniuse_rq.fields.packuse
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .pvncd = dao_aniuse_rq.fields.pvncd
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .rgtno = dao_aniuse_rq.fields.rgtno
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .rgttpcd = dao_aniuse_rq.fields.rgttpcd
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .stpdrg = dao_aniuse_rq.fields.stpdrg
+                Catch ex As Exception
+
+                End Try
+                Try
+                    Dim dao_amluse As New DAO_DRUG.TB_dramlusetp
+                    dao_amluse.GetDataby_usetpnm(dao_aniuse_rq.fields.usetpnm)
+                    .usetpcd = dao_amluse.fields.usetpcd
+                Catch ex As Exception
+
+                End Try
+            End With
+            dao_ani_ins.insert()
+        Next
     End Sub
 End Class

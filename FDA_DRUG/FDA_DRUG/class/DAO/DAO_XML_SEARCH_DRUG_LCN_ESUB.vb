@@ -551,5 +551,110 @@
             Next
         End Sub
     End Class
+    Public Class TB_XML_DRUG_ANIMAL
+        Inherits MAINCONTEXT2 'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
 
+        Public fields As New XML_DRUG_ANIMAL
+        Private _Details As New List(Of XML_DRUG_ANIMAL)
+        Public Property Details() As List(Of XML_DRUG_ANIMAL)
+            Get
+                Return _Details
+            End Get
+            Set(ByVal value As List(Of XML_DRUG_ANIMAL))
+                _Details = value
+            End Set
+        End Property
+
+        Private Sub AddDetails()
+            Details.Add(fields)
+            fields = New XML_DRUG_ANIMAL
+        End Sub
+        Public Sub insert()
+            db.XML_DRUG_ANIMALs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.XML_DRUG_ANIMALs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.XML_DRUG_ANIMALs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.XML_DRUG_ANIMALs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_Newcode(ByVal newcode As String)
+
+            datas = (From p In db.XML_DRUG_ANIMALs Where p.Newcode = newcode Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+    End Class
+    Public Class TB_XML_DRUG_ANIMAL_CONSUME
+        Inherits MAINCONTEXT2 'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
+
+        Public fields As New XML_DRUG_ANIMAL_CONSUME
+        Private _Details As New List(Of XML_DRUG_ANIMAL_CONSUME)
+        Public Property Details() As List(Of XML_DRUG_ANIMAL_CONSUME)
+            Get
+                Return _Details
+            End Get
+            Set(ByVal value As List(Of XML_DRUG_ANIMAL_CONSUME))
+                _Details = value
+            End Set
+        End Property
+
+        Private Sub AddDetails()
+            Details.Add(fields)
+            fields = New XML_DRUG_ANIMAL_CONSUME
+        End Sub
+        Public Sub insert()
+            db.XML_DRUG_ANIMAL_CONSUMEs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.XML_DRUG_ANIMAL_CONSUMEs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.XML_DRUG_ANIMAL_CONSUMEs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.XML_DRUG_ANIMAL_CONSUMEs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_Newcode(ByVal newcode As String)
+
+            datas = (From p In db.XML_DRUG_ANIMAL_CONSUMEs Where p.Newcode = newcode Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+    End Class
 End Namespace

@@ -230,6 +230,7 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
             ddl_status.DataValueField = "STATUS_ID"
             ddl_status.DataTextField = "STATUS_NAME_STAFF"
             ddl_status.DataBind()
+            ddl_status.Items.Insert(0, New ListItem("อนุมัติโดยไม่แก้ไข", 8))
         Else
             dt = Get_DDL_DATA(8, int_group_ddl1, int_group_ddl2)
             ddl_status.DataSource = dt
@@ -798,13 +799,13 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
 
             dao.update()
             Dim result As String = ""
-            Dim ws_drug As New WS_DRUG_LOG_DR.WS_DRUG
-            result = "APPROVE"
-            ws_drug.Timeout = 8000
+            'Dim ws_drug As New WS_DRUG_LOG_DR.WS_DRUG
+            'result = "APPROVE"
+            'ws_drug.Timeout = 8000
             Dim url As String = HttpContext.Current.Request.Url.AbsoluteUri
             Dim dao_rg2 As New DAO_DRUG.ClsDBdrrgt
             dao_rg2.GetDataby_IDA(dao.fields.FK_IDA)
-            result = ws_drug.XML_DRUG_MERGE_UPDATE(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, _CLS.CITIZEN_ID)
+            'result = ws_drug.XML_DRUG_MERGE_UPDATE(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, _CLS.CITIZEN_ID)
 
             KEEP_LOGS_TABEAN_BC(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, dao_rg2.fields.IDA, _
                                                 dao_rg2.fields.IDENTIFY, "", "", "", result, url, _CLS.CITIZEN_ID)

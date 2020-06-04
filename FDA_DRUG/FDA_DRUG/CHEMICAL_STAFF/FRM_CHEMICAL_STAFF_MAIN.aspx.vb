@@ -141,7 +141,7 @@ Public Class FRM_CHEMICAL_STAFF_MAIN
         End Try
 
         'If IDGroup = 21020 Then
-        '    RadGrid1.DataSource = dt
+        RadGrid1.DataSource = dt
         'ElseIf IDGroup = 63346 Then
         '    RadGrid1.DataSource = dt.Select("STATUS_ID = 2")
         'ElseIf IDGroup = 63347 Then
