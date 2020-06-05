@@ -48,27 +48,44 @@ Public Class POPUP_DR_CONFIRM_STAFF
             txt_appdate.Text = Date.Now.ToShortDateString()
             set_hide(_IDA)
             show_btn(_IDA)
-            BindData_PDF()
-            Bind_ddl_Status_staff()
-            set_lbl()
 
+            Dim dao_copy As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+
+            Dim newcode As String = ""
             Try
-                ' If _TR_ID <> "" Then
-                If Request.QueryString("STATUS_ID") = "8" Then
-                    Dim dao As New DAO_DRUG.ClsDBdrrgt
-                    dao.GetDataby_IDA(_IDA)
-                    UC_GRID_ATTACH.load_gv(dao.fields.TR_ID)
-                Else
-                    Dim dao As New DAO_DRUG.ClsDBdrrqt
-                    dao.GetDataby_IDA(_IDA)
-                    UC_GRID_ATTACH.load_gv(dao.fields.TR_ID)
-                End If
-
-                'End If
+                dao_copy.GetDataby_IDA_drrgt(_IDA)
+                newcode = dao_copy.fields.Newcode_U
             Catch ex As Exception
 
             End Try
-        End If
+
+            If Request.QueryString("STATUS_ID") = "8" Then
+                BindData_PDF_SAI(newcode)
+            Else
+                BindData_PDF()
+            End If
+
+
+            Bind_ddl_Status_staff()
+                set_lbl()
+
+                Try
+                    ' If _TR_ID <> "" Then
+                    If Request.QueryString("STATUS_ID") = "8" Then
+                        Dim dao As New DAO_DRUG.ClsDBdrrgt
+                        dao.GetDataby_IDA(_IDA)
+                        UC_GRID_ATTACH.load_gv(dao.fields.TR_ID)
+                    Else
+                        Dim dao As New DAO_DRUG.ClsDBdrrqt
+                        dao.GetDataby_IDA(_IDA)
+                        UC_GRID_ATTACH.load_gv(dao.fields.TR_ID)
+                    End If
+
+                    'End If
+                Catch ex As Exception
+
+                End Try
+            End If
     End Sub
     Sub set_lbl()
         If Request.QueryString("STATUS_ID") = "8" Then
@@ -905,7 +922,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
             Catch ex As Exception
 
             End Try
-            
+
             lcnno = dao.fields.lcnno
             IDA_regist = dao.fields.FK_IDA
             tr_id = dao.fields.TR_ID
@@ -1012,6 +1029,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
             End Try
 
         Else
+
             Dim dao As New DAO_DRUG.ClsDBdrrgt
             dao.GetDataby_IDA(_IDA)
             Dim dao2 As New DAO_DRUG.ClsDBdrrqt
@@ -1928,6 +1946,600 @@ Public Class POPUP_DR_CONFIRM_STAFF
     '    '    show_btn() 'ตรวจสอบปุ่ม
     'End Sub
 
+    Private Sub BindData_PDF_SAI(ByVal newcode As String)
+        Dim bao As New BAO.AppSettings
+        bao.RunAppSettings()
+
+        Dim lcnno_format As String = ""
+        Dim lcnno_auto As String = ""
+        Dim lcn_long_type As String = ""
+        Dim lcnno As String = ""
+
+        Dim rgtno_format As String = ""
+        Dim rgtno_auto As String = ""
+        Dim rgttpcd As String = ""
+        Dim drgtpcd As String = ""
+        Dim drug_name As String = ""
+        Dim drug_name_th As String = ""
+        Dim drug_name_eng As String = ""
+        Dim pvncd As String = ""
+        Dim rcvno_format As String = ""
+        Dim rcvno_auto As String = ""
+        Dim PACK_SIZE As String = ""
+        Dim DRUG_STRENGTH As String = ""
+        Dim tr_id As Integer = 0
+        Dim IDA_regist As Integer = 0
+        Dim lcnsid As Integer = 0
+        Dim lcntpcd As String = ""
+        Dim appdate As Date
+        Dim expdate As Date
+        Dim pvnabbr As String = ""
+        Dim dsgcd As String = ""
+        Dim STATUS_ID As Integer = 0
+        Dim CHK_LCN_SUBTYPE1 As String = ""
+        Dim CHK_LCN_SUBTYPE2 As String = ""
+        Dim CHK_LCN_SUBTYPE3 As String = ""
+        Dim TABEAN_TYPE1 As String = ""
+        Dim TABEAN_TYPE2 As String = ""
+        Dim LCNTPCD_GROUP As String = ""
+        Dim FK_LCN_IDA As Integer = 0
+        Dim wong_lep As String = ""
+        Try
+            STATUS_ID = Request.QueryString("STATUS_ID") 'Get_drrqt_Status(_IDA)
+        Catch ex As Exception
+
+        End Try
+        Dim tamrap_id As Integer = 0
+        Dim class_xml As New CLASS_DR
+
+        Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+        dao_e.GetDataby_u1_frn_no(newcode)
+        Dim dao As New DAO_DRUG.ClsDBdrrgt
+        dao.GetDataby_IDA(_IDA)
+        Dim dao2 As New DAO_DRUG.ClsDBdrrqt
+        Try
+            class_xml.drrgts = dao.fields
+        Catch ex As Exception
+
+        End Try
+        Try
+            dao2.GetDataby_IDA(dao.fields.FK_DRRQT)
+            'regis_ida = dao.fields.FK_IDA
+            tamrap_id = dao2.fields.feepayst
+        Catch ex As Exception
+
+        End Try
+        Try
+            Dim dao_color As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_COLOR
+            dao_color.GetDataby_Newcode(newcode)
+            class_xml.DRUG_PROPERTIES_AND_DETAIL = dao_color.fields.drgchrtha
+        Catch ex As Exception
+
+        End Try
+        Try
+            'Dim dao_class As New DAO_DRUG.TB_drkdofdrg
+            'dao_class.GetData_by_kindcd(dao.fields.kindcd)
+            class_xml.DRUG_CLASS_NAME = dao_e.fields.thakindnm
+        Catch ex As Exception
+
+        End Try
+        Try
+            If dao.fields.lcntpcd.Contains("ผย") Then
+                LCNTPCD_GROUP = "2"
+            Else
+                LCNTPCD_GROUP = "1"
+            End If
+        Catch ex As Exception
+
+        End Try
+        lcnno = dao_e.fields.lcnno
+        Try
+            If dao_e.fields.lcntpcd.Contains("ผยบ") Or dao_e.fields.lcntpcd.Contains("นยบ") Then
+                TABEAN_TYPE1 = "1"
+                'cls_xml.TABEAN_TYPE2 = "2"
+            Else
+                TABEAN_TYPE1 = "2"
+                'cls_xml.TABEAN_TYPE2 = "0"
+            End If
+        Catch ex As Exception
+
+        End Try
+        Try
+            CHK_LCN_SUBTYPE1 = dao.fields.CHK_LCN_SUBTYPE1
+        Catch ex As Exception
+
+        End Try
+        Try
+            CHK_LCN_SUBTYPE2 = dao.fields.CHK_LCN_SUBTYPE2
+        Catch ex As Exception
+
+        End Try
+        Try
+            CHK_LCN_SUBTYPE3 = dao.fields.CHK_LCN_SUBTYPE3
+        Catch ex As Exception
+
+        End Try
+        Try
+            tr_id = dao.fields.TR_ID
+        Catch ex As Exception
+
+        End Try
+        Dim dao_rq As New DAO_DRUG.ClsDBdrrqt
+        Try
+            dao_rq.GetDataby_IDA(dao.fields.FK_DRRQT)
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            IDA_regist = dao_rq.fields.FK_IDA
+        Catch ex As Exception
+
+        End Try
+        Try
+            FK_LCN_IDA = dao.fields.FK_LCN_IDA
+        Catch ex As Exception
+
+        End Try
+        Try
+            lcnsid = dao.fields.lcnsid
+        Catch ex As Exception
+
+        End Try
+
+        DRUG_STRENGTH = dao.fields.DRUG_STRENGTH
+        pvncd = dao_e.fields.pvncd
+        rgttpcd = dao_e.fields.rgttpcd
+        dsgcd = dao_e.fields.dsgcd
+        Try
+            STATUS_ID = dao.fields.STATUS_ID
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            rcvno_auto = dao.fields.rcvno
+        Catch ex As Exception
+
+        End Try
+        Try
+            lcnno_auto = dao_e.fields.lcnno
+        Catch ex As Exception
+
+        End Try
+        Try
+            rgtno_auto = dao_e.fields.rgtno
+        Catch ex As Exception
+
+        End Try
+        Try
+            drgtpcd = dao_e.fields.drgtpcd
+        Catch ex As Exception
+
+        End Try
+        Try
+            appdate = dao_e.fields.appdate
+        Catch ex As Exception
+
+        End Try
+        Try
+            expdate = dao_e.fields.expdate
+        Catch ex As Exception
+
+        End Try
+        pvnabbr = dao_e.fields.pvnabbr
+        Try
+            drug_name_th = dao_e.fields.thadrgnm
+            'drug_name
+        Catch ex As Exception
+            drug_name_th = "-"
+        End Try
+        Try
+            drug_name_eng = dao_e.fields.engdrgnm
+        Catch ex As Exception
+            drug_name_eng = "-"
+        End Try
+
+        Dim dao_re As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+        Try
+            dao_re.GetDataby_IDA(IDA_regist)
+        Catch ex As Exception
+
+        End Try
+
+        Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+        Try
+            dao_lcn.GetDataby_u1(dao_e.fields.Newcode_not)
+            lcntpcd = dao_lcn.fields.lcntpcd
+            pvnabbr = dao_lcn.fields.pvnabbr
+        Catch ex As Exception
+
+        End Try
+        Dim cls As New CLASS_GEN_XML.DR(_CLS.CITIZEN_ID, lcnsid, dao_lcn.fields.lcnno, pvncd, dao_lcn.fields.IDA)
+        Dim _process As Integer = 0
+        Try
+            Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+            dao_tr.GetDataby_IDA(tr_id)
+            _process = dao_tr.fields.PROCESS_ID
+        Catch ex As Exception
+
+        End Try
+
+
+        Try
+            class_xml.DRUG_STRENGTH = dao_e.fields.potency
+        Catch ex As Exception
+
+        End Try
+        Try
+            Dim dao_cas As New DAO_DRUG.TB_DRRGT_DETAIL_CAS
+            dao_cas.GetDataby_FKIDA(_IDA)
+            'Dim dao_cas As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_IOW
+            'dao_cas.GetDataby_Newcode_U(newcode)
+            class_xml.DRRGT_DETAIL_Cs = dao_cas.fields
+            'class_xml.DRRGT_DETAIL_Cs.AORI = dao_cas.fields.aori
+        Catch ex As Exception
+
+        End Try
+        Try
+            Dim dao_packk As New DAO_DRUG.TB_DRRGT_PACKAGE_DETAIL
+            dao_packk.GetDataby_FKIDA(_IDA)
+            class_xml.DRRGT_PACKAGE_DETAILs = dao_packk.fields
+        Catch ex As Exception
+
+        End Try
+
+
+
+
+        'class_xml = cls.gen_xml()
+        Dim head_type As String = ""
+        Try
+            head_type = ""
+            If lcntpcd.Contains("บ") Then
+                head_type = "โบราณ"
+            Else
+                head_type = "ปัจจุบัน"
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        Dim dao_dos As New DAO_DRUG.TB_drdosage
+        Try
+
+            dao_dos.GetDataby_cd(dsgcd)
+            If head_type = "โบราณ" Then
+                If dao_dos.fields.thadsgnm <> "-" Then
+                    class_xml.Dossage_form = dao_dos.fields.thadsgnm
+                Else
+                    class_xml.Dossage_form = dao_dos.fields.engdsgnm
+                End If
+
+            ElseIf head_type = "ปัจจุบัน" Then
+                If Trim(dao_dos.fields.engdsgnm) = "-" Then
+                    class_xml.Dossage_form = dao_dos.fields.thadsgnm
+                Else
+                    class_xml.Dossage_form = dao_dos.fields.engdsgnm
+                End If
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            pvncd = pvncd
+        Catch ex As Exception
+            pvncd = ""
+        End Try
+        Try
+            Try
+                Dim dao_type As New DAO_DRUG.TB_DRRGT_DRUG_GROUP
+                dao_type.GetDataby_rgttpcd(rgttpcd)
+                lcn_long_type = dao_type.fields.thargttpnm_short
+            Catch ex As Exception
+                lcn_long_type = ""
+            End Try
+        Catch ex As Exception
+
+        End Try
+
+
+
+        If IsNothing(appdate) = False Then
+            Dim appdate2 As Date
+            If Date.TryParse(appdate, appdate2) = True Then
+                class_xml.SHOW_LCNDATE_DAY = appdate.Day
+                class_xml.SHOW_LCNDATE_MONTH = appdate.ToString("MMMM")
+                class_xml.SHOW_LCNDATE_YEAR = con_year(appdate.Year)
+
+                If class_xml.SHOW_LCNDATE_YEAR = 544 Then
+                    class_xml.SHOW_LCNDATE_DAY = ""
+                    class_xml.SHOW_LCNDATE_MONTH = ""
+                    class_xml.SHOW_LCNDATE_YEAR = ""
+                End If
+
+                class_xml.RCVDAY = appdate.Day
+                class_xml.RCVMONTH = appdate.ToString("MMMM")
+                class_xml.RCVYEAR = con_year(appdate.Year)
+            End If
+        End If
+
+        If IsNothing(expdate) = False Then
+            Dim expdate2 As Date
+            If Date.TryParse(expdate, expdate2) = True Then
+                class_xml.EXPDAY = expdate.Day
+                class_xml.EXPMONTH = expdate.ToString("MMMM")
+                class_xml.EXP_YEAR = con_year(expdate.Year)
+                Try
+                    class_xml.EXPDATESHORT = expdate.Day & "/" & expdate.Month & "/" & con_year(expdate.Year)
+                Catch ex As Exception
+
+                End Try
+
+                If class_xml.EXP_YEAR = 544 Then
+                    class_xml.EXPDAY = ""
+                    class_xml.EXPMONTH = ""
+                    class_xml.EXP_YEAR = ""
+                    class_xml.EXPDATESHORT = ""
+                End If
+
+
+            End If
+        End If
+
+        Dim aa As String = ""
+        Dim aa2 As String = ""
+
+        Try
+            If Len(rgtno_auto) > 0 Then
+                rgtno_format = dao_e.fields.register 'rgttpcd & " " & CStr(CInt(Right(rgtno_auto, 5))) & "/" & Left(rgtno_auto, 2) & " " & aa
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        lcnno_format = dao_e.fields.lcnno_no 'dao4.fields.pvnabbr2 & " " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
+
+        Try
+            rcvno_format = dao_e.fields.register_rcvno 'rgttpcd & " " & CStr(CInt(Right(rcvno_auto, 5))) & "/" & Left(rcvno_auto, 2) & " " & aa2
+        Catch ex As Exception
+
+        End Try
+
+        If (Trim(drug_name_th) = "-" Or Trim(drug_name_th) = "") And Trim(drug_name_eng) <> "" Then
+            drug_name = drug_name_eng
+        ElseIf (Trim(drug_name_eng) = "-" Or Trim(drug_name_eng) = "") And Trim(drug_name_th) <> "" Then
+            drug_name = drug_name_th
+        Else
+            drug_name = drug_name_th & " / " & drug_name_eng
+        End If
+
+        If Trim(drug_name) = "/" Then
+            drug_name = ""
+        End If
+
+
+        Try
+            rgtno_format = dao_e.fields.register
+        Catch ex As Exception
+
+        End Try
+
+
+        class_xml.LCNNO_FORMAT = lcnno_format
+        class_xml.RCVNO_FORMAT = rcvno_format
+        class_xml.TABEAN_TYPE = "ใบสำคัญการขึ้นทะเบียนตำรับยาแผน" & head_type 'แผนโบราณ แผนปัจจุบัน
+        class_xml.LCN_TYPE = lcn_long_type 'ยานี้
+        class_xml.TABEAN_FORMAT = rgtno_format
+        class_xml.DRUG_NAME = drug_name
+        class_xml.COUNTRY = "ไทย"
+        class_xml.CHK_LCN_SUBTYPE1 = CHK_LCN_SUBTYPE1
+        class_xml.CHK_LCN_SUBTYPE2 = CHK_LCN_SUBTYPE2
+        class_xml.CHK_LCN_SUBTYPE3 = CHK_LCN_SUBTYPE3
+        class_xml.TABEAN_TYPE1 = TABEAN_TYPE1
+        class_xml.TABEAN_TYPE2 = TABEAN_TYPE2
+
+        Dim bao_show As New BAO_SHOW
+        class_xml.DT_SHOW.DT6 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.IDA_dalcn) 'ข้อมูลสถานที่จำลอง
+
+        Try
+            Dim dt_thanm As DataTable = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_e.fields.Identify, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
+            For Each dr As DataRow In dt_thanm.Rows
+                dr("thanm") = dao_e.fields.licen_loca
+            Next
+            'Dim dt_thanm2 As DataTable
+            'dt_thanm2 = dt_thanm.Clone
+            'Dim dr_nm As DataRow = dt_thanm2.NewRow()
+            'dr_nm("thanm") = dao_e.fields.licen_loca
+            'dt_thanm2.Rows.Add(dr_nm)
+            class_xml.DT_SHOW.DT17 = dt_thanm
+        Catch ex As Exception
+
+        End Try
+
+        Dim dao_det_prop As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_COLOR
+        dao_det_prop.GetDataby_Newcode(newcode)
+        Try
+            class_xml.DRUG_PROPERTIES_AND_DETAIL = dao_det_prop.fields.drgchrtha
+        Catch ex As Exception
+
+        End Try
+
+        class_xml.DT_SHOW.DT13 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_ANDTYPE_NEWCODE(newcode, 1)
+        class_xml.DT_SHOW.DT13.TableName = "SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA_AND_TYPE_2NO"
+        class_xml.DT_SHOW.DT14 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_ANDTYPE_NEWCODE(newcode, 2)
+        class_xml.DT_SHOW.DT14.TableName = "SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA_AND_TYPE_3NO"
+        class_xml.DT_SHOW.DT16 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_ANDTYPE_NEWCODE(newcode, 10)
+        class_xml.DT_SHOW.DT16.TableName = "SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA_AND_TYPE_3_2NO"
+
+        class_xml.DT_SHOW.DT15 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_ANDTYPE_NEWCODE(newcode, 3)
+        class_xml.DT_SHOW.DT15.TableName = "SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA_AND_TYPE_4NO"
+
+
+
+        Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+        dao_dal.GetDataby_IDA(dao_lcn.fields.IDA)
+        class_xml.DT_SHOW.DT18 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_NEWCODE_SAI(newcode)
+        class_xml.DT_SHOW.DT18.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_FULLADDR"
+        class_xml.DT_SHOW.DT23 = bao_show.SP_drrgt_cas(_IDA)
+        class_xml.DT_SHOW.DT23.TableName = "SP_regis"
+        class_xml.DT_SHOW.DT21 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE_OTHER(_IDA, 9, LCNTPCD_GROUP)
+        class_xml.DT_SHOW.DT21.TableName = "SP_DRRQT_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE_OTHER"
+        class_xml.DT_SHOW.DT23 = bao_show.SP_DRRGT_CAS_EQTO(_IDA)
+        class_xml.DT_SHOW.DT23.TableName = "SP_regis"
+
+
+        Dim lcntype As String = "0" 'dao.fields.lcntpcd
+
+        Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
+        dao_pro.GetDataby_Process_ID(_ProcessID)
+        Try
+            lcntype = dao_pro.fields.PROCESS_DESCRIPTION
+        Catch ex As Exception
+
+        End Try
+        Try
+            Dim dt_temp As New DataTable
+            dt_temp = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_lcn.fields.IDA) 'ผู้ดำเนิน
+
+            class_xml.BSN_THAIFULLNAME = dt_temp(0)("BSN_THAIFULLNAME")
+        Catch ex As Exception
+
+        End Try
+        p_dr = class_xml
+
+
+
+        Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
+        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW_AND_GROUP(_ProcessID, STATUS_ID, HiddenField2.Value, 0)
+        '------------------------(E)------------------------
+        Dim E_VALUE As String = ""
+        Dim dao_drgtpcd As New DAO_DRUG.ClsDBdrdrgtype
+        Try
+
+            dao = New DAO_DRUG.ClsDBdrrgt
+            dao.GetDataby_IDA(_IDA)
+            dao_drgtpcd.GetDataby_drgtpcd(dao.fields.drgtpcd)
+            E_VALUE = dao_drgtpcd.fields.engdrgtpnm
+
+        Catch ex As Exception
+
+        End Try
+
+        Dim NAME_TEMPLATE As String = ""
+        If E_VALUE <> "(E)" Then
+            NAME_TEMPLATE = dao_pdftemplate.fields.PDF_TEMPLATE
+
+            If Request.QueryString("STATUS_ID") = "8" Then
+                If rgttpcd = "G" Or rgttpcd = "H" Or rgttpcd = "K" Then
+                    'NAME_TEMPLATE = "DA_YOR_2_1.pdf"
+                    Try
+                        Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
+                        dao_rg.GetDataby_IDA(_IDA)
+                        dao_rq = New DAO_DRUG.ClsDBdrrqt
+                        dao_rq.GetDataby_IDA(dao_rg.fields.FK_DRRQT)
+                        Dim dao_tr As New DAO_DRUG.TB_MAS_TAMRAP_NAME
+                        dao_tr.GetDataby_TAMRAP_ID(dao_rq.fields.dvcd)
+                        If rgttpcd = "G" And dao_tr.fields.IS_AUTO = 1 Then
+                            NAME_TEMPLATE = "DA_YOR_2_1_AUTO.pdf"
+                        Else
+                            NAME_TEMPLATE = "DA_YOR_2_1.pdf"
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                End If
+            Else
+
+            End If
+
+            If Request.QueryString("STATUS_ID") = "14" And HiddenField2.Value = 1 Then
+                If rgttpcd = "G" Or rgttpcd = "H" Or rgttpcd = "K" Then
+                    NAME_TEMPLATE = "DA_YOR_2_1.pdf"
+                End If
+            End If
+        Else
+            If Request.QueryString("STATUS_ID") = "8" Or Request.QueryString("STATUS_ID") = "14" Then
+                NAME_TEMPLATE = "DA_YOR_2_E_READONLY.pdf"
+            Else
+                NAME_TEMPLATE = dao_pdftemplate.fields.PDF_TEMPLATE
+            End If
+        End If
+
+        '-----------------------------------------------------
+
+
+
+        Dim paths As String = bao._PATH_DEFAULT
+        Dim PDF_OUTPUT As String = ""
+        Dim XML_PATH As String = ""
+
+        If STATUS_ID = "1" Then
+            PDF_OUTPUT = "PDF_TRADER_STAFF_UPLOAD"
+            XML_PATH = "XML_TRADER_STAFF_UPLOAD"
+        ElseIf STATUS_ID = "2" Or STATUS_ID = "3" Or STATUS_ID = "4" Then
+            PDF_OUTPUT = "PDF_TRADER_STAFF_EMP"
+            XML_PATH = "XML_TRADER_STAFF_EMP"
+        Else
+            PDF_OUTPUT = dao_pdftemplate.fields.PDF_OUTPUT
+            XML_PATH = dao_pdftemplate.fields.XML_PATH
+        End If
+
+        If tamrap_id <> 0 Then
+            If Request.QueryString("status") = "8" Then
+                Dim dao3 As New DAO_DRUG.ClsDBdrrgt
+                dao3.GetDataby_IDA(_IDA)
+                dao_rq = New DAO_DRUG.ClsDBdrrqt
+                Try
+                    dao_rq.GetDataby_IDA(dao3.fields.FK_DRRQT)
+                    If dao_rq.fields.feetpcd = "1" Then
+                        NAME_TEMPLATE = "DA_YOR_2_1_AUTO.pdf"
+                    ElseIf dao_rq.fields.feetpcd = "99" Then
+                        NAME_TEMPLATE = "DA_YOR_2_1.pdf"
+                    End If
+                Catch ex As Exception
+
+                End Try
+
+            ElseIf Request.QueryString("status") = "15" Or Request.QueryString("status") = "14" Then
+                If HiddenField2.Value = "1" Then
+                    dao_rq = New DAO_DRUG.ClsDBdrrqt
+                    Try
+                        dao_rq.GetDataby_IDA(_IDA)
+                        If dao_rq.fields.feetpcd = "1" Then
+                            NAME_TEMPLATE = "DA_YOR_2_1_AUTO.pdf"
+                        ElseIf dao_rq.fields.feetpcd = "99" Then
+                            NAME_TEMPLATE = "DA_YOR_2_1.pdf"
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                Else
+                    NAME_TEMPLATE = "DA_YOR_1_AUTO_READONLY.pdf"
+                End If
+
+            Else
+                NAME_TEMPLATE = "DA_YOR_1_AUTO_READONLY.pdf"
+            End If
+        End If
+
+
+        Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & NAME_TEMPLATE 'dao_pdftemplate.fields.PDF_TEMPLATE
+        Dim filename As String = paths & PDF_OUTPUT & "\" & NAME_PDF("DA", _process, _YEARS, _TR_ID) ' dao_pdftemplate.fields.PDF_OUTPUT
+        Dim Path_XML As String = paths & XML_PATH & "\" & NAME_XML("DA", _process, _YEARS, _TR_ID) 'dao_pdftemplate.fields.XML_PATH
+        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+
+
+        lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+        hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+        HiddenField1.Value = filename
+        _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
+        _CLS.PDFNAME = filename
+
+    End Sub
     Protected Sub btn_load0_Click(sender As Object, e As EventArgs) Handles btn_load0.Click
         Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")
     End Sub

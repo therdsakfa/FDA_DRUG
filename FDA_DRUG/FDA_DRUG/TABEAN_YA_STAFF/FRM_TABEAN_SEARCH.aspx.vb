@@ -147,8 +147,11 @@ Public Class FRM_TABEAN_SEARCH
         Dim dt As New DataTable
         Dim bao As New BAO.ClsDBSqlcommand
         'bao.SP_DRRGT_FOR_SEARCH(txt_lcnno_no.Text)
-        bao.SP_DRRGT_FOR_SEARCH_FROM_SAI(txt_lcnno_no.Text)
-        dt = bao.dt
+        If txt_lcnno_no.Text <> "" Then
+            bao.SP_DRRGT_FOR_SEARCH_FROM_SAI(txt_lcnno_no.Text)
+            dt = bao.dt
+        End If
+
 
         RadGrid1.DataSource = dt
     End Sub

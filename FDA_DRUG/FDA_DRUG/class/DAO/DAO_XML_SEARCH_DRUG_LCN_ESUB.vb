@@ -115,8 +115,9 @@
         End Sub
         Public Sub GetDataby_u1_frn_no(ByVal u1 As String)
 
-            datas = (From p In db.XML_SEARCH_PRODUCT_GROUP_ESUBs Where p.Newcode_U = u1 And p.frn_no = 1 Select p)
+            datas = (From p In db.XML_SEARCH_PRODUCT_GROUP_ESUBs Where p.Newcode_U = u1 And p.frn_no = "1" Select p)
             For Each Me.fields In datas
+
             Next
         End Sub
     End Class

@@ -86,6 +86,24 @@ Partial Public Class WebForm36
     Protected WithEvents ddl_status As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
+    '''TextBox11 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBox11 As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''btn_gen_dh control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_gen_dh As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''RadScriptManager1 control.
     '''</summary>
     '''<remarks>

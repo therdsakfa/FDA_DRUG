@@ -671,6 +671,13 @@ Public Class BAO_SHOW
         Return dta
     End Function
     '
+    Public Function SP_DRRGT_PRODUCER_BY_FK_IDA_ANDTYPE_NEWCODE(ByVal newcode As String, ByVal _type As Integer) As DataTable
+        Dim sql As String = "exec SP_DRRGT_PRODUCER_BY_FK_IDA_ANDTYPE_NEWCODE @newcode='" & newcode & "' ,@type=" & _type
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_DRRGT_PRODUCER_BY_FK_IDA_ANDTYPE_V2"
+        Return dta
+    End Function
     Public Function SP_DRRGT_PRODUCER_BY_FK_IDA_V2(ByVal fk_ida As Integer) As DataTable
         Dim sql As String = "exec SP_DRRGT_PRODUCER_BY_FK_IDA_V2 @FK_IDA=" & fk_ida
         Dim dta As New DataTable
@@ -1327,6 +1334,25 @@ Public Class BAO_SHOW
     Public Function SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_MUTI_LOCATION(ByVal LOCATION_ADDRESS_IDA As Integer) As DataTable
         Dim clsds As New ClassDataset
         Dim sql As String = "exec SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_MUTI_LOCATION @LOCATION_ADDRESS_IDA = " & LOCATION_ADDRESS_IDA
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        dt.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA"
+        Return dt
+    End Function
+    '
+    Public Function SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_NEWCODE_SAI(ByVal newcode As String) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_NEWCODE_SAI @newcode = '" & newcode & "'"
         Dim dt As New DataTable
         Try
             dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)

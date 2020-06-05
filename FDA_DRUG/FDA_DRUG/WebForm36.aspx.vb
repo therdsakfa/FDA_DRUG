@@ -2441,7 +2441,7 @@ Public Class WebForm36
 
     Protected Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
         Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_INSERT_DR15(50880, "1710500118665")
+        ws_update.DRUG_INSERT_DR15(50945, "1710500118665")
     End Sub
 
     Protected Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
@@ -2527,5 +2527,10 @@ Public Class WebForm36
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub btn_gen_dh_Click(sender As Object, e As EventArgs) Handles btn_gen_dh.Click
+        Dim ws_gen As New WS_GEN_DH_NO
+        ws_gen.GEN_DH_NO(TextBox11.Text)
     End Sub
 End Class
