@@ -780,6 +780,7 @@
     <Content Include="MAIN_STAFF\FRM_CLOSE.aspx" />
     <Content Include="PDF\FRM_PDF_VIEW.aspx" />
     <Content Include="PDF\FRM_REPORT_RDLC.aspx" />
+    <Content Include="PDF\FRM_RPT_PDF.aspx" />
     <Content Include="REGISTRATION\FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx" />
     <Content Include="REGISTRATION\FRM_REGISTRATION_EQTO.aspx" />
     <Content Include="REGISTRATION\FRM_REGISTRATION_MAIN_V2.aspx" />
@@ -3088,6 +3089,13 @@
     </Compile>
     <Compile Include="PDF\FRM_REPORT_RDLC.aspx.vb">
       <DependentUpon>FRM_REPORT_RDLC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PDF\FRM_RPT_PDF.aspx.designer.vb">
+      <DependentUpon>FRM_RPT_PDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDF\FRM_RPT_PDF.aspx.vb">
+      <DependentUpon>FRM_RPT_PDF.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="REGISTRATION\FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx.designer.vb">

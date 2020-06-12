@@ -2118,7 +2118,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
         End Try
         Try
-            appdate = dao_e.fields.appdate
+            appdate = dao.fields.appdate
         Catch ex As Exception
 
         End Try
@@ -2301,7 +2301,14 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
         End Try
 
-        lcnno_format = dao_e.fields.lcnno_no 'dao4.fields.pvnabbr2 & " " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
+        Try
+            Dim dao_lcnsai As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+            dao_lcnsai.GetDataby_u1(dao_e.fields.Newcode_not)
+            lcnno_format = dao_lcnsai.fields.lcnno_noo
+        Catch ex As Exception
+
+        End Try
+        'dao4.fields.pvnabbr2 & " " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
 
         Try
             rcvno_format = dao_e.fields.register_rcvno 'rgttpcd & " " & CStr(CInt(Right(rcvno_auto, 5))) & "/" & Left(rcvno_auto, 2) & " " & aa2

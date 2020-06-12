@@ -111,6 +111,32 @@
 
     <br /><hr />
     <h2>
+        เลือกการยื่นเอกสาร
+    </h2>
+     <table width="100%" class="table">
+         <tr>
+             <td>
+                  <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True">
+                     <asp:ListItem Value="1">1. ยื่นผ่านระบบ skynet Smart Dropbox</asp:ListItem>
+                     <asp:ListItem Value="2">2. ยื่นผ่านไปรษณีย์ลงทะเบียนไปยัง (บอกที่อยู่และใบนำส่งเอกสาร)</asp:ListItem>
+                     <asp:ListItem Value="3">3. ยื่นด้วยตนเองที่ อย. (โปรดระบุบเลขดำเนินการและใบนำส่งเอกสาร)</asp:ListItem>
+                 </asp:RadioButtonList>
+             </td>
+             <td>
+                  <asp:TextBox ID="txt_ATTACH_DETAIL" runat="server" Width="300px" TextMode="MultiLine" Height="100px"></asp:TextBox>
+             </td>
+         </tr>
+         <tr>
+             <td>
+                  <asp:Button ID="btn_att_type" runat="server" Text="บันทึกการยื่นเอกสาร" />
+             </td>
+             <td>
+                  &nbsp;</td>
+         </tr>
+        </table>
+
+    <br /><hr />
+    <h2>
         รายการไฟล์แนบ
     </h2>
     <table width="100%" class="table">

@@ -1000,10 +1000,15 @@ Public Class POPUP_DR_UPLOAD
                 dao.insert()
             Else
                 '----------------------------------------------------------------------------------------------------
-                Dim dao_rgt As New DAO_DRUG.ClsDBdrrgt
-
+                Dim dao_rgt1 As New DAO_DRUG.ClsDBdrrgt
+                Dim dao_rgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
                 Try
-                    dao_rgt.GetDataby_IDA(Trim(p2.TRANSFER))
+                    dao_rgt1.GetDataby_IDA(Trim(p2.TRANSFER))
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao_rgt.GetDataby_IDA_drrgt(Trim(p2.TRANSFER))
                 Catch ex As Exception
 
                 End Try
@@ -1018,27 +1023,27 @@ Public Class POPUP_DR_UPLOAD
 
                 End Try
                 Try
-                    dao.fields.accttp = dao_rgt.fields.accttp
+                    dao.fields.accttp = dao_rgt1.fields.accttp
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.CHK_LCN_SUBTYPE1 = dao_rgt.fields.CHK_LCN_SUBTYPE1
+                    dao.fields.CHK_LCN_SUBTYPE1 = dao_rgt1.fields.CHK_LCN_SUBTYPE1
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.CHK_LCN_SUBTYPE2 = dao_rgt.fields.CHK_LCN_SUBTYPE2
+                    dao.fields.CHK_LCN_SUBTYPE2 = dao_rgt1.fields.CHK_LCN_SUBTYPE2
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.CHK_LCN_SUBTYPE3 = dao_rgt.fields.CHK_LCN_SUBTYPE3
+                    dao.fields.CHK_LCN_SUBTYPE3 = dao_rgt1.fields.CHK_LCN_SUBTYPE3
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.classcd = dao_rgt.fields.classcd
+                    dao.fields.classcd = dao_rgt1.fields.classcd
                 Catch ex As Exception
 
                 End Try
@@ -1053,17 +1058,17 @@ Public Class POPUP_DR_UPLOAD
 
                 End Try
                 Try
-                    dao.fields.drgbiost = dao_rgt.fields.drgbiost
+                    dao.fields.drgbiost = dao_rgt1.fields.drgbiost
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.drgexpst = dao_rgt.fields.drgexpst
+                    dao.fields.drgexpst = dao_rgt1.fields.drgexpst
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.drgnewst = dao_rgt.fields.drgnewst
+                    dao.fields.drgnewst = dao_rgt1.fields.drgnewst
                 Catch ex As Exception
 
                 End Try
@@ -1073,22 +1078,22 @@ Public Class POPUP_DR_UPLOAD
 
                 End Try
                 Try
-                    dao.fields.DRUG_COLOR = dao_rgt.fields.DRUG_COLOR
+                    dao.fields.DRUG_COLOR = dao_rgt1.fields.DRUG_COLOR
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.DRUG_PACKING = dao_rgt.fields.DRUG_PACKING
+                    dao.fields.DRUG_PACKING = dao_rgt1.fields.DRUG_PACKING
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.DRUG_STRENGTH = dao_rgt.fields.DRUG_STRENGTH
+                    dao.fields.DRUG_STRENGTH = dao_rgt1.fields.DRUG_STRENGTH
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.DRUG_STYLE = dao_rgt.fields.DRUG_STYLE
+                    dao.fields.DRUG_STYLE = dao_rgt1.fields.DRUG_STYLE
                 Catch ex As Exception
 
                 End Try
@@ -1103,7 +1108,7 @@ Public Class POPUP_DR_UPLOAD
 
                 End Try
                 Try
-                    dao.fields.FK_DOSAGE_FORM = dao_rgt.fields.FK_DOSAGE_FORM
+                    dao.fields.FK_DOSAGE_FORM = dao_rgt1.fields.FK_DOSAGE_FORM
                 Catch ex As Exception
 
                 End Try
@@ -1133,12 +1138,12 @@ Public Class POPUP_DR_UPLOAD
 
                 'End Try
                 Try
-                    dao.fields.kindcd = dao_rgt.fields.kindcd
+                    dao.fields.kindcd = dao_rgt1.fields.kindcd
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.lcnabbr = dao_rgt.fields.lcnabbr
+                    dao.fields.lcnabbr = dao_rgt1.fields.lcnabbr
                 Catch ex As Exception
 
                 End Try
@@ -1163,12 +1168,12 @@ Public Class POPUP_DR_UPLOAD
 
                 End Try
                 Try
-                    dao.fields.PACKAGE_DETAIL = dao_rgt.fields.PACKAGE_DETAIL
+                    dao.fields.PACKAGE_DETAIL = dao_rgt1.fields.PACKAGE_DETAIL
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.packcd = dao_rgt.fields.packcd
+                    dao.fields.packcd = dao_rgt1.fields.packcd
                 Catch ex As Exception
 
                 End Try
@@ -1203,17 +1208,17 @@ Public Class POPUP_DR_UPLOAD
 
                 End Try
                 Try
-                    dao.fields.TABEAN_TYPE = dao_rgt.fields.TABEAN_TYPE
+                    dao.fields.TABEAN_TYPE = dao_rgt1.fields.TABEAN_TYPE
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.TABEAN_TYPE1 = dao_rgt.fields.TABEAN_TYPE1
+                    dao.fields.TABEAN_TYPE1 = dao_rgt1.fields.TABEAN_TYPE1
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.TABEAN_TYPE2 = dao_rgt.fields.TABEAN_TYPE2
+                    dao.fields.TABEAN_TYPE2 = dao_rgt1.fields.TABEAN_TYPE2
                 Catch ex As Exception
 
                 End Try
@@ -1233,12 +1238,12 @@ Public Class POPUP_DR_UPLOAD
 
                 End Try
                 Try
-                    dao.fields.UNIT_BIO = dao_rgt.fields.UNIT_BIO
+                    dao.fields.UNIT_BIO = dao_rgt1.fields.UNIT_BIO
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao.fields.UNIT_NORMAL = dao_rgt.fields.UNIT_NORMAL
+                    dao.fields.UNIT_NORMAL = dao_rgt1.fields.UNIT_NORMAL
                 Catch ex As Exception
 
                 End Try
@@ -1735,7 +1740,7 @@ Public Class POPUP_DR_UPLOAD
                 dao_up.update()
 
             Else
-                insert_tabean(dao.fields.IDA, p2.TRANSFER)
+                insert_tabean2(dao.fields.IDA, p2.TRANSFER)
             End If
 
         Catch ex As Exception
@@ -2228,14 +2233,12 @@ Public Class POPUP_DR_UPLOAD
 
             End Try
 
-
-            Try
-                Dim dao_XML_DRUG_FRGN As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_FRGN
+            Dim dao_XML_DRUG_FRGN As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_FRGN
                 dao_XML_DRUG_FRGN.GetDataby_u1(newcode)
                 If dao_XML_DRUG_FRGN.fields.engcntnm = "ไทย" Then
                     For Each dao_XML_DRUG_FRGN.fields In dao_XML_DRUG_FRGN.datas
-                        Dim dao_in As New DAO_DRUG.TB_DRRGT_PRODUCER_IN
-                        With dao_in.fields
+                    Dim dao_in As New DAO_DRUG.TB_DRRQT_PRODUCER_IN
+                    With dao_in.fields
                             .FK_IDA = IDA_rgt
                             Try
                                 Dim dao_dal As New DAO_DRUG.ClsDBdalcn
@@ -2251,8 +2254,8 @@ Public Class POPUP_DR_UPLOAD
                     Next
                 Else
                     For Each dao_XML_DRUG_FRGN.fields In dao_XML_DRUG_FRGN.datas
-                        Dim dao_pro As New DAO_DRUG.TB_DRRGT_PRODUCER
-                        With dao_pro.fields
+                    Dim dao_pro As New DAO_DRUG.TB_DRRQT_PRODUCER
+                    With dao_pro.fields
                             .FK_IDA = IDA_rgt
                             .PRODUCER_WORK_TYPE = dao_XML_DRUG_FRGN.fields.funccd
                             .funccd = dao_XML_DRUG_FRGN.fields.funccd
@@ -2293,16 +2296,11 @@ Public Class POPUP_DR_UPLOAD
                             .FK_PRODUCER = FK_PRODUCER
                             .frgnlctcd = frgnlctcd
                         End With
-                        ' dao_pro.insert()
+                        dao_pro.insert()
                     Next
 
 
                 End If
-
-            Catch ex As Exception
-
-            End Try
-
 
 
             'Dim dao_pack As New DAO_DRUG.TB_DRRGT_PACKAGE_DETAIL

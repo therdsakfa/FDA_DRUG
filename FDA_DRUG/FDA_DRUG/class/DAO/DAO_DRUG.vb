@@ -13683,6 +13683,66 @@ Namespace DAO_DRUG
             db.SubmitChanges()
         End Sub
     End Class
+    Public Class TB_LCN_EXTEND_LITE_GPP
+
+        Inherits MAINCONTEXT
+        ''' <summary>
+        ''' รายชื่อ Fields ของตาราง MAS_CUSTOMER
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public fields As New LCN_EXTEND_LITE_GPP
+
+
+        Public Sub GetDataby_All()
+
+            datas = (From p In db.LCN_EXTEND_LITE_GPPs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        ''' <summary>
+        ''' แสดงข้อมูลแบบมีเงื่อนไข
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public Sub Getdata_by_ID(ByVal IDA As Integer)
+            datas = From p In db.LCN_EXTEND_LITE_GPPs Where p.IDA = IDA Select p
+            For Each Me.fields In datas
+
+            Next
+
+        End Sub
+        Public Function Countdata_by_FK_IDA_year(ByVal FK_IDA As Integer, ByVal _year As Integer) As Integer
+            Dim i As Integer = 0
+            datas = From p In db.LCN_EXTEND_LITE_GPPs Where p.IDA = FK_IDA And p.YEARS = _year Select p
+            For Each Me.fields In datas
+                i += 1
+            Next
+            Return i
+        End Function
+        ''' <summary>
+        ''' เพิ่มข้อมูล
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public Sub insert()
+            db.LCN_EXTEND_LITE_GPPs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        ''' <summary>
+        ''' แก้ไข
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+        ''' <summary>
+        ''' ลบข้อมูล
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public Sub delete()
+            db.LCN_EXTEND_LITE_GPPs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+    End Class
 End Namespace
 
 

@@ -2473,7 +2473,7 @@ Public Class WS_DRUG_XML
         Return Result
     End Function
 
-    Private Sub insrt_extend_to_database(ByVal TR_ID As String, ByVal _lcn_ida As Integer, ByVal Process_id As String, ByVal CITIZEN_ID As String)
+    Private Sub insrt_extend_to_database(ByVal TR_ID As String, ByVal _lcn_ida As Integer, ByVal Process_id As String, ByVal CITIZEN_ID As String, Optional gpp As String = "", Optional tel As String = "")
         Dim check As Boolean = True
         Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
         dao_lcn.GetDataby_IDA(_lcn_ida)
@@ -2657,6 +2657,23 @@ Public Class WS_DRUG_XML
         End Try
 
         dao_lcnre.insert()
+
+        If gpp <> "" Then
+            Dim i As Integer = 0
+            Dim dao_gpp As New DAO_DRUG.TB_LCN_EXTEND_LITE_GPP
+            i = dao_gpp.Countdata_by_FK_IDA_year(_lcn_ida, newyear)
+
+            If i = 0 Then
+                If dao_lcn.fields.lcntpcd = "ขย1" Then
+                    dao_gpp = New DAO_DRUG.TB_LCN_EXTEND_LITE_GPP
+                    dao_gpp.fields.FK_IDA = _lcn_ida
+                    dao_gpp.fields.YEARS = newyear
+                    dao_gpp.insert()
+                End If
+
+            End If
+
+        End If
     End Sub
 
     Private Sub StremeFile(ByVal Str64 As String, ByVal Filename As String, ByVal serverpath As String)

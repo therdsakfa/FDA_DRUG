@@ -30,6 +30,7 @@
         <asp:Button ID="Button24" runat="server" Text="ดึงใบอนุญาตไประบบทราย" />
         <asp:Button ID="Button25" runat="server" Text="ดึง DRM ไปทราย" />
         <asp:Button ID="Button27" runat="server" Text="test สารจากระบบทราย" />
+        <asp:Button ID="btn_t_auto" runat="server" Text="ทะเบียนยาออโต้" />
         <asp:DropDownList ID="ddl_status" runat="server" Height="16px" Width="80%">
         </asp:DropDownList>
         <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>

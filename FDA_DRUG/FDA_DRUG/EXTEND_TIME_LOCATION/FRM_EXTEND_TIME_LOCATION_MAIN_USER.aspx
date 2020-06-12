@@ -302,7 +302,7 @@
                <SortedDescendingCellStyle BackColor="#E9EBEF" />
                <SortedDescendingHeaderStyle BackColor="#4870BE" />
            </asp:GridView>
-                      <div class="h5" style ="background-color:#8CB343;color:white" > &nbsp;&nbsp;&nbsp; เมื่อยื่นคำขอเสร็จ ท่านสามารถออกใบสั่งชำระได้ที่นี้ ==========================>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                  
+                      <div class="h5" style ="background-color:#8CB343;color:white;display:none;" > &nbsp;&nbsp;&nbsp; เมื่อยื่นคำขอเสร็จ ท่านสามารถออกใบสั่งชำระได้ที่นี้ ==========================>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                  
                       <asp:HyperLink ID="hl_pay" runat="server"  target="_blank" style="color:white;"> คลิกที่นี้เพื่อออกใบสั่งชำระเงิน</asp:HyperLink>
                           <br />
                           <br />

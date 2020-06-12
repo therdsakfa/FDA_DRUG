@@ -237,6 +237,22 @@
           <DataField>TR_ID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="cnccsnm">
+          <DataField>cnccsnm</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cncnm">
+          <DataField>cncnm</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cncdate_th">
+          <DataField>cncdate_th</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="remark">
+          <DataField>remark</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>FDA_PAGE_CENTER</rd:DataSetName>
@@ -743,7 +759,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="วันที่สร้าง : " &amp; First(Fields!printdate.Value, "rp_print_nm")</Value>
+                                  <Value>="สถานะ : " &amp; Fields!cncnm.Value</Value>
                                   <Style>
                                     <FontFamily>TH SarabunPSK</FontFamily>
                                     <FontSize>16pt</FontSize>
@@ -779,7 +795,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="ผู้สร้าง : " &amp; First(Fields!thanm.Value, "rp_print_nm")</Value>
+                                  <Value>="วันที่สถานะ (ถ้ามี) : " &amp; Fields!cncdate_th.Value</Value>
                                   <Style>
                                     <FontFamily>TH SarabunPSK</FontFamily>
                                     <FontSize>16pt</FontSize>
@@ -791,6 +807,84 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox64</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>3</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox48">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="สาเหตุ (ถ้ามี) : " &amp; Fields!cnccsnm.Value</Value>
+                                  <Style>
+                                    <FontFamily>TH SarabunPSK</FontFamily>
+                                    <FontSize>16pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox48</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>2</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox60">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="หมายเหตุ :"</Value>
+                                  <Style>
+                                    <FontFamily>TH SarabunPSK</FontFamily>
+                                    <FontSize>16pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox60</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -2378,6 +2472,7 @@
                     <TablixMember />
                     <TablixMember />
                     <TablixMember />
+                    <TablixMember />
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>
@@ -2385,7 +2480,7 @@
             <DataSetName>rp_drug_general</DataSetName>
             <Top>1.16271cm</Top>
             <Left>0.68616cm</Left>
-            <Height>11.60122cm</Height>
+            <Height>12.20122cm</Height>
             <Width>17.6822cm</Width>
             <Style>
               <Border>
@@ -2400,19 +2495,6 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value xml:space="preserve">                                                         </Value>
-                    <Style>
-                      <FontSize>14pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve">  </Value>
-                    <Style>
-                      <FontFamily>TH SarabunPSK</FontFamily>
-                      <FontSize>14pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
                     <Value>แบบฟอร์มทะเบียน</Value>
                     <Style>
                       <FontFamily>TH SarabunPSK</FontFamily>
@@ -2421,14 +2503,16 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
             <Top>0.25077cm</Top>
             <Left>0.07016cm</Left>
             <Height>0.59682cm</Height>
-            <Width>15.23964cm</Width>
+            <Width>20.92984cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -3298,7 +3382,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rp_drug_formula</DataSetName>
-            <Top>16.99279cm</Top>
+            <Top>17.62779cm</Top>
             <Left>0.68616cm</Left>
             <Height>2.74395cm</Height>
             <Width>17.68245cm</Width>
@@ -3407,7 +3491,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rp_drug_general</DataSetName>
-            <Top>19.89874cm</Top>
+            <Top>20.53374cm</Top>
             <Left>0.68616cm</Left>
             <Height>0.73229cm</Height>
             <Width>19.9225cm</Width>
@@ -3559,7 +3643,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rp_drug_recipe_group</DataSetName>
-            <Top>21.71609cm</Top>
+            <Top>22.35109cm</Top>
             <Left>0.68617cm</Left>
             <Height>0.74111cm</Height>
             <Width>13.22234cm</Width>
@@ -4112,7 +4196,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rp_drug_animal</DataSetName>
-            <Top>22.63359cm</Top>
+            <Top>23.26859cm</Top>
             <Left>0.68616cm</Left>
             <Height>1.98522cm</Height>
             <Width>16.40764cm</Width>
@@ -4562,7 +4646,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rp_drug_stowagr</DataSetName>
-            <Top>26.44499cm</Top>
+            <Top>27.07999cm</Top>
             <Left>0.62833cm</Left>
             <Height>2.92917cm</Height>
             <Width>9.67399cm</Width>
@@ -4679,7 +4763,7 @@
             </TablixRowHierarchy>
             <RepeatColumnHeaders>true</RepeatColumnHeaders>
             <DataSetName>rp_drug_general</DataSetName>
-            <Top>25.07742cm</Top>
+            <Top>25.71242cm</Top>
             <Left>0.62833cm</Left>
             <Height>0.70583cm</Height>
             <Width>17.20189cm</Width>
@@ -5086,7 +5170,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rp_drug_frgn</DataSetName>
-            <Top>12.87275cm</Top>
+            <Top>13.50775cm</Top>
             <Left>0.68616cm</Left>
             <Height>2.88166cm</Height>
             <Width>17.68245cm</Width>
@@ -5196,7 +5280,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rp_drug_general</DataSetName>
-            <Top>20.80741cm</Top>
+            <Top>21.44241cm</Top>
             <Left>0.68616cm</Left>
             <Height>0.73229cm</Height>
             <Width>17.25634cm</Width>
@@ -5318,7 +5402,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rp_drug_general</DataSetName>
-            <Top>30.20346cm</Top>
+            <Top>30.83846cm</Top>
             <Left>0.62833cm</Left>
             <Height>0.65292cm</Height>
             <Width>17.31417cm</Width>
@@ -5427,7 +5511,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rp_drug_general</DataSetName>
-            <Top>32.92979cm</Top>
+            <Top>33.56479cm</Top>
             <Left>0.62833cm</Left>
             <Height>0.70583cm</Height>
             <Width>6.15752cm</Width>
@@ -5545,7 +5629,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rp_drug_general</DataSetName>
-            <Top>15.78248cm</Top>
+            <Top>16.41748cm</Top>
             <Left>0.68616cm</Left>
             <Height>1.2cm</Height>
             <Width>14.90408cm</Width>
@@ -5655,7 +5739,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rp_drug_general</DataSetName>
-            <Top>29.55055cm</Top>
+            <Top>30.18555cm</Top>
             <Left>0.62833cm</Left>
             <Height>0.6cm</Height>
             <Width>19.02783cm</Width>
@@ -6174,7 +6258,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rp_drug_edit</DataSetName>
-            <Top>30.92694cm</Top>
+            <Top>31.56194cm</Top>
             <Left>0.62833cm</Left>
             <Height>1.93229cm</Height>
             <Width>17.31417cm</Width>
@@ -6187,17 +6271,94 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>34.93737cm</Height>
+        <Height>37.12812cm</Height>
         <Style />
       </Body>
       <Width>21cm</Width>
       <Page>
+        <PageFooter>
+          <Height>2.57412cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox66">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="วันที่สร้าง : " &amp; First(Fields!printdate.Value, "rp_print_nm")</Value>
+                      <Style>
+                        <FontFamily>TH SarabunPSK</FontFamily>
+                        <FontSize>14pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox66</rd:DefaultName>
+              <Top>1.31266cm</Top>
+              <Left>9.00146cm</Left>
+              <Height>0.6cm</Height>
+              <Width>5.64302cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox71">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="ผู้สร้าง : " &amp; First(Fields!thanm.Value, "rp_print_nm")</Value>
+                      <Style>
+                        <FontFamily>TH SarabunPSK</FontFamily>
+                        <FontSize>14pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox71</rd:DefaultName>
+              <Top>1.31266cm</Top>
+              <Left>14.5938cm</Left>
+              <Height>0.6cm</Height>
+              <Width>6.01486cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>0cm</LeftMargin>
         <RightMargin>0cm</RightMargin>
-        <TopMargin>0.5cm</TopMargin>
-        <BottomMargin>0.5cm</BottomMargin>
+        <TopMargin>0cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>

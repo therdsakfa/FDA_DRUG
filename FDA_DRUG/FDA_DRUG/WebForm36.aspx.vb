@@ -15,7 +15,7 @@ Public Class WebForm36
         Dim asas As String = ""
         asas = CDate("2020-03-23").ToLongDateString()
 
-       
+
 
 
         If Not IsPostBack Then
@@ -65,7 +65,60 @@ Public Class WebForm36
         'Dim zzz As String = ""
         'zzz = GET_FORMAT_RCVNO2("15555/63")
         Set_rcvno_txt()
+        product_q()
     End Sub
+    Sub product_q()
+        Dim newcode As String = "U1DR1C1052630003611C"
+        Dim dao_XML_DRUG_FRGN As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_FRGN
+        dao_XML_DRUG_FRGN.GetDataby_u1(newcode)
+        For Each dao_XML_DRUG_FRGN.fields In dao_XML_DRUG_FRGN.datas
+            Dim dao_pro As New DAO_DRUG.TB_DRRGT_PRODUCER
+            With dao_pro.fields
+                .FK_IDA = 0
+                .PRODUCER_WORK_TYPE = dao_XML_DRUG_FRGN.fields.funccd
+                .funccd = dao_XML_DRUG_FRGN.fields.funccd
+                Dim frgncd As Integer = 0
+                Dim FK_PRODUCER As Integer = 0
+                Dim addr_ida As Integer = 0
+                Dim frgnlctcd As Integer = 0
+                Dim dao_frgn_name As New DAO_DRUG.ClsDBsyspdcfrgn
+                dao_frgn_name.GetData_by_engfrgnnm(dao_XML_DRUG_FRGN.fields.engfrgnnm)
+                For Each dao_frgn_name.fields In dao_frgn_name.datas
+                    Dim icc As Integer = 0
+                    Dim bao_iso As New BAO.ClsDBSqlcommand
+                    Dim dt_iso As New DataTable
+                    dt_iso = bao_iso.SP_sysisocnt_SAI_by_engcntnm(dao_XML_DRUG_FRGN.fields.engcntnm) '
+                    Dim alpha3 As String = ""
+                    Try
+                        alpha3 = dt_iso(0)("alpha3")
+                    Catch ex As Exception
+
+                    End Try
+                    Dim dao_frgn_addr As New DAO_DRUG.ClsDBdrfrgnaddr
+                    'dao_frgn_addr.GetDataAll_v2(dao_XML_DRUG_FRGN.fields.addr, alpha3, dao_XML_DRUG_FRGN.fields.district, dao_XML_DRUG_FRGN.fields.fax, dao_XML_DRUG_FRGN.fields.mu, _
+                    'dao_XML_DRUG_FRGN.fields.Province, dao_XML_DRUG_FRGN.fields.road, dao_XML_DRUG_FRGN.fields.soi, dao_XML_DRUG_FRGN.fields.subdiv, dao_XML_DRUG_FRGN.fields.tel, _
+                    'dao_XML_DRUG_FRGN.fields.zipcode, dao_frgn_name.fields.frgncd)
+                    dao_frgn_addr.GetDataAll_v3(dao_XML_DRUG_FRGN.fields.addr, alpha3, dao_XML_DRUG_FRGN.fields.district, dao_XML_DRUG_FRGN.fields.Province, dao_XML_DRUG_FRGN.fields.subdiv, dao_frgn_name.fields.frgncd)
+
+                    For Each dao_frgn_addr.fields In dao_frgn_addr.datas
+                        addr_ida = dao_frgn_addr.fields.IDA
+                        frgnlctcd = dao_frgn_addr.fields.frgnlctcd
+                        frgncd = dao_frgn_addr.fields.frgnlctcd
+
+                    Next
+                    FK_PRODUCER = dao_frgn_name.fields.IDA
+                Next
+
+                .frgncd = dao_frgn_name.fields.frgncd
+                .addr_ida = addr_ida
+                .FK_PRODUCER = FK_PRODUCER
+                .frgnlctcd = frgnlctcd
+            End With
+            'dao_pro.insert()
+        Next
+
+    End Sub
+
     Function CHK_Extension(ByVal transection As String, ByVal PROCESS_ID As String, ByVal year As String, ByVal type As String) As Integer 'ปรับ เพิ่มtype
         Dim aa As String = System.IO.Path.GetExtension(FileUpload1.FileName)
         Dim i As Integer = 0
@@ -2441,7 +2494,7 @@ Public Class WebForm36
 
     Protected Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
         Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_INSERT_DR15(50945, "1710500118665")
+        ws_update.DRUG_INSERT_DR15(51040, "1710500118665")
     End Sub
 
     Protected Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
@@ -2532,5 +2585,10 @@ Public Class WebForm36
     Private Sub btn_gen_dh_Click(sender As Object, e As EventArgs) Handles btn_gen_dh.Click
         Dim ws_gen As New WS_GEN_DH_NO
         ws_gen.GEN_DH_NO(TextBox11.Text)
+    End Sub
+
+    Protected Sub btn_t_auto_Click(sender As Object, e As EventArgs) Handles btn_t_auto.Click
+        Dim ws As New WS_ACCEPT_RGT_AUTO
+        ws.ACCEPT_AND_RUNNING_RGTNO(97039)
     End Sub
 End Class

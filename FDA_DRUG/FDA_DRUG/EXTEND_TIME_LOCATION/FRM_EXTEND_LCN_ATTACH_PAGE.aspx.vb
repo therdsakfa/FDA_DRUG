@@ -77,4 +77,15 @@
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
         End If
     End Sub
+
+    Protected Sub btn_att_type_Click(sender As Object, e As EventArgs) Handles btn_att_type.Click
+        If Request.QueryString("TR_ID") <> "" Then
+            Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
+            dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+            dao_edt.fields.ATTACH_TYPE = RadioButtonList1.SelectedValue
+            dao_edt.fields.ATTACH_DETAIL = txt_ATTACH_DETAIL.Text
+            dao_edt.update()
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
+        End If
+    End Sub
 End Class

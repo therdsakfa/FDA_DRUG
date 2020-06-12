@@ -97,7 +97,7 @@
         '
         Public Sub GetDataby_IDA_drrgt(ByVal IDA As Integer)
 
-            datas = (From p In db.XML_SEARCH_PRODUCT_GROUP_ESUBs Where p.IDA_drrgt = IDA Select p)
+            datas = (From p In db.XML_SEARCH_PRODUCT_GROUP_ESUBs Where p.IDA_drrgt = IDA And p.frn_no = "1" Select p)
             For Each Me.fields In datas
             Next
         End Sub
