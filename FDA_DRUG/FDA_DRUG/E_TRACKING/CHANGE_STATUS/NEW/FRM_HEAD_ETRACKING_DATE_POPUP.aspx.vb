@@ -103,7 +103,15 @@
                 If dao.fields.HEAD_STATUS_ID = 10 Then
                     dao.fields.REF_NO = txt_ref_no.Text
                     dao.fields.SUB_STATUS_ID = ddl_app.SelectedValue
+
+                    Dim dao_d As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
+                    dao_d.GetDataby_IDA(Request.QueryString("id_r"))
+                    dao_d.fields.SUB_STATUS = ddl_app.SelectedValue
+                    dao_d.update()
                 End If
+
+                'Dim bao_update As New BAO.ClsDBSqlcommand
+                'bao_update.SP_DRUG_CONSIDER_REQUESTS_FINISH_DATE(Request.QueryString("id_r"))
             Catch ex As Exception
 
             End Try

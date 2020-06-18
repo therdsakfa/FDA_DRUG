@@ -1127,6 +1127,15 @@ Namespace BAO
             dta.TableName = "SP_sysisocnt_SAI_by_engcntnm"
             Return dta
         End Function
+
+        Public Function Query_get_data_lcn_no_sai() As DataTable
+            Dim sql As String
+            sql = "select IDA from [fda].[dalcn] where lcnno >= 6300065 and lcntpcd = N'ขย1' and pvncd = 10 and IDA not in ("
+            sql &= "61109,	61112,	61285,	61286,	63996,	62662,	62682,	62567,	62633,	62764,	62770,	62887,	62888,	61132,	61133,	61291,	61304,	62782,	62785,	62893,	62910,	62726,	62730,	61134,	61160,	62735,	62736,	62815,	62852,	62929,	62979,	61185,	62876,	62878,	63987,	63988,	62755,	63990)"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
         Public Function SP_drug_formula_rg_by_Newcode(ByVal newcode As String) As DataTable
             Dim sql As String = "exec SP_drug_formula_rg_by_Newcode @newcode='" & newcode & "'"
             Dim dta As New DataTable
@@ -3402,6 +3411,30 @@ Namespace BAO
             'Return dt
         End Sub
         '
+        Public Sub SP_DRUG_CONSIDER_REQUESTS_STOP_DAY(ByVal IDA As Integer)
+            Dim dt As New DataTable
+            Dim command As String = " "
+            command = "exec dbo.SP_DRUG_CONSIDER_REQUESTS_STOP_DAY @IDA=" & IDA
+            dt = Queryds(command)
+
+            'Return dt
+        End Sub
+        Public Sub SP_DRUG_CONSIDER_REQUESTS_MAX_STOP_DAY(ByVal IDA As Integer)
+            Dim dt As New DataTable
+            Dim command As String = " "
+            command = "exec dbo.SP_DRUG_CONSIDER_REQUESTS_MAX_STOP_DAY @IDA=" & IDA
+            dt = Queryds(command)
+
+            'Return dt
+        End Sub
+        Public Sub SP_DRUG_CONSIDER_REQUESTS_FINISH_DATE(ByVal IDA As Integer)
+            Dim dt As New DataTable
+            Dim command As String = " "
+            command = "exec dbo.SP_DRUG_CONSIDER_REQUESTS_FINISH_DATE @IDA=" & IDA
+            dt = Queryds(command)
+
+            'Return dt
+        End Sub
         Public Function SELECT_LCN_EXTEND_LITE_UPDATE() As DataTable
             Dim dt As New DataTable
             Dim command As String = " "

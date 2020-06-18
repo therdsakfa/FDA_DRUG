@@ -91,7 +91,7 @@ Public Class POPUP_DR_CONFIRM
     Sub show_btn(ByVal IDA As String)
         Dim dao As New DAO_DRUG.ClsDBdrrqt
         dao.GetDataby_IDA(IDA)
-        If dao.fields.STATUS_ID <> 1 Then
+        If Request.QueryString("status") = "8" Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
             btn_confirm.CssClass = "btn-danger btn-lg"

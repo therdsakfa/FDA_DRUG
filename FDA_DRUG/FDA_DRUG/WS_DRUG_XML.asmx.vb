@@ -2398,8 +2398,8 @@ Public Class WS_DRUG_XML
         Return filename
     End Function
 
-    <WebMethod()> _
-    Public Function INSERT_EXTENDTIME(ByVal LCN_IDA As Integer, ByVal Process_ID As String, ByVal CITIZEN_ID As String) As String
+    <WebMethod()>
+    Public Function INSERT_EXTENDTIME(ByVal LCN_IDA As Integer, ByVal Process_ID As String, ByVal CITIZEN_ID As String, ByVal gpp As String, ByVal tel As String) As String
         Dim Result As String = ""
         Try
             Dim chk As Boolean = True
@@ -2452,7 +2452,7 @@ Public Class WS_DRUG_XML
                     dao_edit.fields.STATUS_ID = 6
                     dao_edit.update()
                 Else
-                    insrt_extend_to_database(TR_ID, LCN_IDA, Process_ID, CITIZEN_ID)
+                    insrt_extend_to_database(TR_ID, LCN_IDA, Process_ID, CITIZEN_ID, gpp:=gpp, tel:=tel)
                 End If
                 'If check = True Then
                 '    SET_ATTACH(_TR_ID, _ProcessID, con_year(Date.Now.Year))
@@ -2617,6 +2617,11 @@ Public Class WS_DRUG_XML
         Try
             dao_cpn.GetData_by_chngwtcd(dao_lcn.fields.pvncd)
             chw = dao_cpn.fields.thachngwtnm
+        Catch ex As Exception
+
+        End Try
+        Try
+            dao_lcnre.fields.MOBILE = tel
         Catch ex As Exception
 
         End Try

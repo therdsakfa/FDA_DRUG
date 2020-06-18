@@ -880,6 +880,7 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
 
         End Try
         KEEP_LOGS_EDIT(Request.QueryString("ida"), "แก้ไขเวลาทำการ", _CLS.CITIZEN_ID)
+
     End Sub
 
     Private Sub btn_appdate_Click(sender As Object, e As EventArgs) Handles btn_appdate.Click

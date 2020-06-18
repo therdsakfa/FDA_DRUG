@@ -727,7 +727,7 @@ Public Class WebForm36
 
     Protected Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim bao As New BAO.ClsDBSqlcommand
-        bao.insert_tabean_sub(95350)
+        bao.insert_tabean_sub(95738)
         ' insert_tabean(TextBox1.Text)
     End Sub
     Sub insert_tabean(ByVal FK_IDA As Integer)
@@ -2489,7 +2489,13 @@ Public Class WebForm36
     Protected Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
         Dim ws_update As New WS_DRUG.WS_DRUG
         'ws_update.DRUG_UPDATE_LICEN(dr("IDA_dalcn"), "1710500118665")
-        ws_update.DRUG_INSERT_LICEN(1880, "1710500118665")
+        Dim bao_iso As New BAO.ClsDBSqlcommand
+        Dim dt_iso As New DataTable
+        dt_iso = bao_iso.Query_get_data_lcn_no_sai()
+        For Each dr As DataRow In dt_iso.Rows
+            ws_update.DRUG_INSERT_LICEN(dr("IDA"), "1710500118665")
+        Next
+
     End Sub
 
     Protected Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click

@@ -87,5 +87,6 @@ Public Class FRM_ETRACKING_STATUS_HEAD_MAIN
         dao.insert()
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
         RadGrid1.Rebind()
+
     End Sub
 End Class

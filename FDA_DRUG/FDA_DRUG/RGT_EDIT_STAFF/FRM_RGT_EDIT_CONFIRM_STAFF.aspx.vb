@@ -274,9 +274,9 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
 
-        Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
+        Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB 'DAO_DRUG.ClsDBdalcn
         Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
-        Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
+        Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB 'DAO_DRUG.ClsDBdrrgt
 
 
         dao.GetDatabyIDA(_IDA)
@@ -288,9 +288,15 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Catch ex As Exception
 
         End Try
-        dao_drrgt.GetDataby_IDA(dao.fields.FK_IDA)
+
         Try
-            dao_lcn.GetDataby_IDA(dao_drrgt.fields.FK_LCN_IDA)
+            dao_drrgt.GetDataby_IDA_drrgt(dao.fields.FK_IDA)
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            dao_lcn.GetDataby_u1(dao_drrgt.fields.Newcode_not)
         Catch ex As Exception
 
         End Try
@@ -513,7 +519,7 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         class_xml.DT_SHOW.DT1 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao.fields.CITIZEN_ID_AUTHORIZE, lcnsid) 'ข้อมูลบริษัท
         Try
             Dim dt_temp As New DataTable
-            dt_temp = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_drrgt.fields.FK_LCN_IDA) 'ผู้ดำเนิน
+            dt_temp = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_lcn.fields.IDA_dalcn) 'ผู้ดำเนิน
 
             class_xml.BSN_THAIFULLNAME = dt_temp(0)("BSN_THAIFULLNAME")
             'class_xml.DT_SHOW.DT14.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"

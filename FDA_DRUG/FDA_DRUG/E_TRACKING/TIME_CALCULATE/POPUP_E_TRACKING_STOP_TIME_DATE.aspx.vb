@@ -87,6 +87,14 @@
 
 
                 dao.update()
+                Try
+                    Dim bao_update As New BAO.ClsDBSqlcommand
+                    bao_update.SP_DRUG_CONSIDER_REQUESTS_STOP_DAY(dao.fields.FK_IDA)
+                    bao_update.SP_DRUG_CONSIDER_REQUESTS_MAX_STOP_DAY(dao.fields.FK_IDA)
+                    bao_update.SP_DRUG_CONSIDER_REQUESTS_FINISH_DATE(dao.fields.FK_IDA)
+                Catch ex As Exception
+
+                End Try
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
             Else
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกข้อมูลไม่ถูกต้อง');", True)

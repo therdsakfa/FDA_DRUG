@@ -356,7 +356,7 @@ Namespace WS_DRUG
         End Sub
         
         '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/XML_DRUG_BC_UPDATE_TB", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/XML_DRUG_BC_UPDATE_TB", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
         Public Sub XML_DRUG_BC_UPDATE_TB(ByVal Newcode As String, ByVal IDENTIFY_EDIT As String)
             Me.Invoke("XML_DRUG_BC_UPDATE_TB", New Object() {Newcode, IDENTIFY_EDIT})
         End Sub

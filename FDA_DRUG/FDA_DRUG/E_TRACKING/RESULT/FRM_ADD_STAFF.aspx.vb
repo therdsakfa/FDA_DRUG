@@ -58,7 +58,7 @@
         Dim dao_con As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
         dao_con.GetDataby_IDA(Request.QueryString("ida"))
         dao_con.fields.STAFF_IDENTIFY = txt_staff_iden.Text
-
+        dao_con.fields.STAFF_NAME = lbl_staff.Text
         AddLogStatusEtracking(status_id:=0, STATUS_TYPE:=1, iden:=_CLS.CITIZEN_ID, description:="เพิ่มเจ้าหน้าที่ผู้รับผิดชอบคำขอ --> " & txt_staff_iden.Text, PROCESS_NAME:="เพิ่มเจ้าหน้าที่ผู้รับผิดชอบคำขอ", FK_IDA:=Request.QueryString("id_r"), SUB_IDA:=0, SUB_STATUS:=0, url:=HttpContext.Current.Request.Url.AbsoluteUri)
         'AddLogStatusEtracking(0, 1, _CLS.CITIZEN_ID, "", "เพิ่มเจ้าหน้าที่ผู้รับผิดชอบคำขอ", Request.QueryString("IDA"), 0, 0)
         dao_con.update()

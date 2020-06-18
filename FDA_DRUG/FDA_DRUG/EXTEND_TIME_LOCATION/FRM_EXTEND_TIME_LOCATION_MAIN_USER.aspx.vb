@@ -371,7 +371,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
         Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
         Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
         dao_lcn.GetDataby_IDA(_lcn_ida)
-        dao.GetDataby_FK_IDA(_lcn_ida)
+        'dao.GetDataby_IDA(str_ID)
         If e.CommandName = "sel" Then
             dao.GetDataby_IDA(str_ID)
             Dim tr_id As Integer = 0

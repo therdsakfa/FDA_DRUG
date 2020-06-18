@@ -7814,7 +7814,11 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
-
+        Public Sub Get_HEAD_STATUS_by_FK_IDA_MAX(ByVal fk_ida As Integer)
+            datas = (From p In db.E_TRACKING_HEAD_CURRENT_STATUS Where p.FK_IDA = fk_ida And p.HEAD_STATUS_ID <> 99 Order By CInt(p.HEAD_STATUS_ID) Descending, p.START_DATE Descending, p.END_DATE Descending Select p).Take(1)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Function GetDataby_FK_IDA_AND_STAT(ByVal fk_ida As Integer, ByVal stat_id As Integer) As Integer
             Dim i As Integer = 0
             datas = (From p In db.E_TRACKING_HEAD_CURRENT_STATUS Where p.FK_IDA = fk_ida And p.HEAD_STATUS_ID = stat_id Select p)

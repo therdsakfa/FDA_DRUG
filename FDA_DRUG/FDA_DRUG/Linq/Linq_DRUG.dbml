@@ -4564,52 +4564,6 @@
       <Column Name="NO_USE_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DRUG_CONSIDER_REQUESTS" Member="DRUG_CONSIDER_REQUESTs">
-    <Type Name="DRUG_CONSIDER_REQUEST">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TYPE_REQUESTS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TYPE_REQUESTS_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="REQUESTS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ALLOW_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CITIZEN_ID_AUTHORIZE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CITIZEN_ID_UPLOAD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="REQUESTS_AUTHORITIES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CITIZEN_ID_REQUESTS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RESPONSIBLE_AUTHORITIES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FK_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CONREQ_CREATION_DATE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CONREQ_LAST_UPDATE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CONREQ_PDF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CONREQ_NUMBER_DAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CONREQ_APPOINTMENT_DATE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RCVNO_DISPLAY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RCVNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="REQUESTS_DATE_DISPLAY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RCVDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="RCVDATE_DISPLAY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PERMIT_IDA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PERMIT_UPLOAD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="PERMIT_UPLOAD_DATE_DISPLAY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="WORK_GROUP_NAME" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="WORK_GROUP_ID" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="TXT_LCNNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SUB_TYPE_REQUESTS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ACTIVE" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="DRUG_NAME_ENG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DRUG_NAME_THAI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PVNCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="REQUEST_CENTER_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="FK_REQUEST_CENTER" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CITIZEN_AUTHIRIZE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CITIZEN_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="FK_LOCATION_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="STAFF_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CONREQ_LAST_UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.DRUG_REGISTRATION_ANIMAL" Member="DRUG_REGISTRATION_ANIMALs">
     <Type Name="DRUG_REGISTRATION_ANIMAL">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6669,6 +6623,57 @@
       <Column Name="MOBILE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="ATTACH_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ATTACH_DETAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DRUG_CONSIDER_REQUESTS" Member="DRUG_CONSIDER_REQUESTs">
+    <Type Name="DRUG_CONSIDER_REQUEST">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TYPE_REQUESTS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TYPE_REQUESTS_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REQUESTS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ALLOW_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_ID_AUTHORIZE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CITIZEN_ID_UPLOAD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REQUESTS_AUTHORITIES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_ID_REQUESTS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RESPONSIBLE_AUTHORITIES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CONREQ_CREATION_DATE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CONREQ_LAST_UPDATE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CONREQ_PDF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CONREQ_NUMBER_DAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CONREQ_APPOINTMENT_DATE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RCVNO_DISPLAY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RCVNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REQUESTS_DATE_DISPLAY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RCVDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RCVDATE_DISPLAY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PERMIT_IDA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PERMIT_UPLOAD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PERMIT_UPLOAD_DATE_DISPLAY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WORK_GROUP_NAME" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="WORK_GROUP_ID" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TXT_LCNNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SUB_TYPE_REQUESTS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DRUG_NAME_ENG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DRUG_NAME_THAI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PVNCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQUEST_CENTER_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FK_REQUEST_CENTER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CITIZEN_AUTHIRIZE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FK_LOCATION_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STAFF_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CONREQ_LAST_UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FINISH_DATE_CAL" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MAX_STOP_DAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LASTEST_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SUB_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -2302,9 +2302,14 @@ Public Class POPUP_DR_CONFIRM_STAFF
         End Try
 
         Try
-            Dim dao_lcnsai As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
-            dao_lcnsai.GetDataby_u1(dao_e.fields.Newcode_not)
-            lcnno_format = dao_lcnsai.fields.lcnno_noo
+            'Dim dao_lcnsai As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+            'dao_lcnsai.GetDataby_u1(dao_e.fields.Newcode_not)
+            If dao_e.fields.pvnabbr <> "กท" Then
+                lcnno_format = dao_e.fields.pvnabbr & " " & CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
+            Else
+                lcnno_format = CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
+            End If
+
         Catch ex As Exception
 
         End Try

@@ -123,6 +123,18 @@ Public Class FRM_ETRACKING_STATUS_HEAD_MAIN_RQ_CENTER
 
         dao.insert()
 
+        Try
+            Dim dao_h As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
+            dao_h.Get_HEAD_STATUS_by_FK_IDA_MAX(Request.QueryString("id_r"))
+
+            Dim dao_d As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
+            dao_d.GetDataby_IDA(Request.QueryString("id_r"))
+            dao_d.fields.LASTEST_STATUS = dao_h.fields.HEAD_STATUS_ID
+            dao_d.update()
+        Catch ex As Exception
+
+        End Try
+
         'Dim ws As New AUTHEN_LOG.Authentication
         'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "เพิ่มช่วงสถานะ ->" & ddl_head_status.SelectedItem.Text, "")
         Dim ws_118 As New WS_AUTHENTICATION.Authentication

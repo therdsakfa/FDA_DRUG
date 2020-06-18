@@ -144,6 +144,9 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="XML_DRUG_BC_UPDATE_TBResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="XML_DRUG_FORMULA">
         <s:complexType>
           <s:sequence>
@@ -268,6 +271,9 @@
   <wsdl:message name="XML_DRUG_BC_UPDATE_TBSoapIn">
     <wsdl:part name="parameters" element="tns:XML_DRUG_BC_UPDATE_TB" />
   </wsdl:message>
+  <wsdl:message name="XML_DRUG_BC_UPDATE_TBSoapOut">
+    <wsdl:part name="parameters" element="tns:XML_DRUG_BC_UPDATE_TBResponse" />
+  </wsdl:message>
   <wsdl:message name="XML_DRUG_FORMULASoapIn">
     <wsdl:part name="parameters" element="tns:XML_DRUG_FORMULA" />
   </wsdl:message>
@@ -342,6 +348,7 @@
     <wsdl:operation name="XML_DRUG_BC_UPDATE_TB">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">XML_DRUG_BC_UPDATE_TB</wsdl:documentation>
       <wsdl:input message="tns:XML_DRUG_BC_UPDATE_TBSoapIn" />
+      <wsdl:output message="tns:XML_DRUG_BC_UPDATE_TBSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="XML_DRUG_FORMULA">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ทะเบียนยา+สาร</wsdl:documentation>
@@ -448,6 +455,9 @@
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="XML_DRUG_FORMULA">
       <soap:operation soapAction="http://tempuri.org/XML_DRUG_FORMULA" style="document" />
@@ -574,6 +584,9 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="XML_DRUG_FORMULA">
       <soap12:operation soapAction="http://tempuri.org/XML_DRUG_FORMULA" style="document" />

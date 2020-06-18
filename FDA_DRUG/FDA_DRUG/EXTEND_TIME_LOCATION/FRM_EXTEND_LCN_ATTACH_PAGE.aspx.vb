@@ -11,6 +11,12 @@
                 dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
                 txt_latitude.Text = dao_edt.fields.MAP_X
                 txt_longitude.Text = dao_edt.fields.MAP_Y
+                Try
+                    RadioButtonList1.SelectedValue = dao_edt.fields.ATTACH_TYPE
+                    txt_ATTACH_DETAIL.Text = dao_edt.fields.ATTACH_DETAIL
+                Catch ex As Exception
+
+                End Try
             Else
                 btn_upload.Style.Add("display", "none")
             End If
