@@ -13,6 +13,7 @@ Option Explicit On
 
 Imports System
 Imports System.ComponentModel
+Imports System.Data
 Imports System.Diagnostics
 Imports System.Web.Services
 Imports System.Web.Services.Protocols
@@ -24,7 +25,7 @@ Imports System.Xml.Serialization
 Namespace WS_UPDATE_C
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
      System.Web.Services.WebServiceBindingAttribute(Name:="Service1Soap", [Namespace]:="http://tempuri.org/")>  _
@@ -32,6 +33,22 @@ Namespace WS_UPDATE_C
         Inherits System.Web.Services.Protocols.SoapHttpClientProtocol
         
         Private UPDATE_STATUS_BOOKING_DRUGOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private INSERT_BOOKINGOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private INSERT_BOOKING_CLASSOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private INSERT_BOOKING_CLASS_ONEWAYOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private INSERT_BOOKING_ONEWAYOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private LOAD_DATA_BOOKINGOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private LOAD_DATA_BOOKING_by_BOX_TR_IDOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private VIEW_BOOKING_HISTORYOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDOperationCompleted As System.Threading.SendOrPostCallback
         
         Private useDefaultCredentialsSetExplicitly As Boolean
         
@@ -75,6 +92,30 @@ Namespace WS_UPDATE_C
         Public Event UPDATE_STATUS_BOOKING_DRUGCompleted As UPDATE_STATUS_BOOKING_DRUGCompletedEventHandler
         
         '''<remarks/>
+        Public Event INSERT_BOOKINGCompleted As INSERT_BOOKINGCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event INSERT_BOOKING_CLASSCompleted As INSERT_BOOKING_CLASSCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event INSERT_BOOKING_CLASS_ONEWAYCompleted As INSERT_BOOKING_CLASS_ONEWAYCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event INSERT_BOOKING_ONEWAYCompleted As INSERT_BOOKING_ONEWAYCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event LOAD_DATA_BOOKINGCompleted As LOAD_DATA_BOOKINGCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event LOAD_DATA_BOOKING_by_BOX_TR_IDCompleted As LOAD_DATA_BOOKING_by_BOX_TR_IDCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event VIEW_BOOKING_HISTORYCompleted As VIEW_BOOKING_HISTORYCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDCompleted As UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDCompletedEventHandler
+        
+        '''<remarks/>
         <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UPDATE_STATUS_BOOKING_DRUG", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
         Public Function UPDATE_STATUS_BOOKING_DRUG(ByVal C_NUMBER As String) As String
             Dim results() As Object = Me.Invoke("UPDATE_STATUS_BOOKING_DRUG", New Object() {C_NUMBER})
@@ -102,6 +143,219 @@ Namespace WS_UPDATE_C
         End Sub
         
         '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/INSERT_BOOKING", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function INSERT_BOOKING(ByVal REF_NO As String, ByVal SYSTEM_ID As String) As String
+            Dim results() As Object = Me.Invoke("INSERT_BOOKING", New Object() {REF_NO, SYSTEM_ID})
+            Return CType(results(0),String)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub INSERT_BOOKINGAsync(ByVal REF_NO As String, ByVal SYSTEM_ID As String)
+            Me.INSERT_BOOKINGAsync(REF_NO, SYSTEM_ID, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub INSERT_BOOKINGAsync(ByVal REF_NO As String, ByVal SYSTEM_ID As String, ByVal userState As Object)
+            If (Me.INSERT_BOOKINGOperationCompleted Is Nothing) Then
+                Me.INSERT_BOOKINGOperationCompleted = AddressOf Me.OnINSERT_BOOKINGOperationCompleted
+            End If
+            Me.InvokeAsync("INSERT_BOOKING", New Object() {REF_NO, SYSTEM_ID}, Me.INSERT_BOOKINGOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnINSERT_BOOKINGOperationCompleted(ByVal arg As Object)
+            If (Not (Me.INSERT_BOOKINGCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent INSERT_BOOKINGCompleted(Me, New INSERT_BOOKINGCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/INSERT_BOOKING_CLASS", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function INSERT_BOOKING_CLASS(ByVal data_b As DATA_BOOKING_FOR_INSERT) As String
+            Dim results() As Object = Me.Invoke("INSERT_BOOKING_CLASS", New Object() {data_b})
+            Return CType(results(0),String)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub INSERT_BOOKING_CLASSAsync(ByVal data_b As DATA_BOOKING_FOR_INSERT)
+            Me.INSERT_BOOKING_CLASSAsync(data_b, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub INSERT_BOOKING_CLASSAsync(ByVal data_b As DATA_BOOKING_FOR_INSERT, ByVal userState As Object)
+            If (Me.INSERT_BOOKING_CLASSOperationCompleted Is Nothing) Then
+                Me.INSERT_BOOKING_CLASSOperationCompleted = AddressOf Me.OnINSERT_BOOKING_CLASSOperationCompleted
+            End If
+            Me.InvokeAsync("INSERT_BOOKING_CLASS", New Object() {data_b}, Me.INSERT_BOOKING_CLASSOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnINSERT_BOOKING_CLASSOperationCompleted(ByVal arg As Object)
+            If (Not (Me.INSERT_BOOKING_CLASSCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent INSERT_BOOKING_CLASSCompleted(Me, New INSERT_BOOKING_CLASSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/INSERT_BOOKING_CLASS_ONEWAY", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub INSERT_BOOKING_CLASS_ONEWAY(ByVal data_b As DATA_BOOKING_FOR_INSERT)
+            Me.Invoke("INSERT_BOOKING_CLASS_ONEWAY", New Object() {data_b})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub INSERT_BOOKING_CLASS_ONEWAYAsync(ByVal data_b As DATA_BOOKING_FOR_INSERT)
+            Me.INSERT_BOOKING_CLASS_ONEWAYAsync(data_b, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub INSERT_BOOKING_CLASS_ONEWAYAsync(ByVal data_b As DATA_BOOKING_FOR_INSERT, ByVal userState As Object)
+            If (Me.INSERT_BOOKING_CLASS_ONEWAYOperationCompleted Is Nothing) Then
+                Me.INSERT_BOOKING_CLASS_ONEWAYOperationCompleted = AddressOf Me.OnINSERT_BOOKING_CLASS_ONEWAYOperationCompleted
+            End If
+            Me.InvokeAsync("INSERT_BOOKING_CLASS_ONEWAY", New Object() {data_b}, Me.INSERT_BOOKING_CLASS_ONEWAYOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnINSERT_BOOKING_CLASS_ONEWAYOperationCompleted(ByVal arg As Object)
+            If (Not (Me.INSERT_BOOKING_CLASS_ONEWAYCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent INSERT_BOOKING_CLASS_ONEWAYCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/INSERT_BOOKING_ONEWAY", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub INSERT_BOOKING_ONEWAY(ByVal REF_NO As String, ByVal SYSTEM_ID As String)
+            Me.Invoke("INSERT_BOOKING_ONEWAY", New Object() {REF_NO, SYSTEM_ID})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub INSERT_BOOKING_ONEWAYAsync(ByVal REF_NO As String, ByVal SYSTEM_ID As String)
+            Me.INSERT_BOOKING_ONEWAYAsync(REF_NO, SYSTEM_ID, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub INSERT_BOOKING_ONEWAYAsync(ByVal REF_NO As String, ByVal SYSTEM_ID As String, ByVal userState As Object)
+            If (Me.INSERT_BOOKING_ONEWAYOperationCompleted Is Nothing) Then
+                Me.INSERT_BOOKING_ONEWAYOperationCompleted = AddressOf Me.OnINSERT_BOOKING_ONEWAYOperationCompleted
+            End If
+            Me.InvokeAsync("INSERT_BOOKING_ONEWAY", New Object() {REF_NO, SYSTEM_ID}, Me.INSERT_BOOKING_ONEWAYOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnINSERT_BOOKING_ONEWAYOperationCompleted(ByVal arg As Object)
+            If (Not (Me.INSERT_BOOKING_ONEWAYCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent INSERT_BOOKING_ONEWAYCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/LOAD_DATA_BOOKING", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function LOAD_DATA_BOOKING(ByVal REF_NO As String) As data_booking
+            Dim results() As Object = Me.Invoke("LOAD_DATA_BOOKING", New Object() {REF_NO})
+            Return CType(results(0),data_booking)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub LOAD_DATA_BOOKINGAsync(ByVal REF_NO As String)
+            Me.LOAD_DATA_BOOKINGAsync(REF_NO, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub LOAD_DATA_BOOKINGAsync(ByVal REF_NO As String, ByVal userState As Object)
+            If (Me.LOAD_DATA_BOOKINGOperationCompleted Is Nothing) Then
+                Me.LOAD_DATA_BOOKINGOperationCompleted = AddressOf Me.OnLOAD_DATA_BOOKINGOperationCompleted
+            End If
+            Me.InvokeAsync("LOAD_DATA_BOOKING", New Object() {REF_NO}, Me.LOAD_DATA_BOOKINGOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnLOAD_DATA_BOOKINGOperationCompleted(ByVal arg As Object)
+            If (Not (Me.LOAD_DATA_BOOKINGCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent LOAD_DATA_BOOKINGCompleted(Me, New LOAD_DATA_BOOKINGCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/LOAD_DATA_BOOKING_by_BOX_TR_ID", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function LOAD_DATA_BOOKING_by_BOX_TR_ID(ByVal BOX_TR_ID As String) As data_booking
+            Dim results() As Object = Me.Invoke("LOAD_DATA_BOOKING_by_BOX_TR_ID", New Object() {BOX_TR_ID})
+            Return CType(results(0),data_booking)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub LOAD_DATA_BOOKING_by_BOX_TR_IDAsync(ByVal BOX_TR_ID As String)
+            Me.LOAD_DATA_BOOKING_by_BOX_TR_IDAsync(BOX_TR_ID, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub LOAD_DATA_BOOKING_by_BOX_TR_IDAsync(ByVal BOX_TR_ID As String, ByVal userState As Object)
+            If (Me.LOAD_DATA_BOOKING_by_BOX_TR_IDOperationCompleted Is Nothing) Then
+                Me.LOAD_DATA_BOOKING_by_BOX_TR_IDOperationCompleted = AddressOf Me.OnLOAD_DATA_BOOKING_by_BOX_TR_IDOperationCompleted
+            End If
+            Me.InvokeAsync("LOAD_DATA_BOOKING_by_BOX_TR_ID", New Object() {BOX_TR_ID}, Me.LOAD_DATA_BOOKING_by_BOX_TR_IDOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnLOAD_DATA_BOOKING_by_BOX_TR_IDOperationCompleted(ByVal arg As Object)
+            If (Not (Me.LOAD_DATA_BOOKING_by_BOX_TR_IDCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent LOAD_DATA_BOOKING_by_BOX_TR_IDCompleted(Me, New LOAD_DATA_BOOKING_by_BOX_TR_IDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/VIEW_BOOKING_HISTORY", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function VIEW_BOOKING_HISTORY(ByVal BOX_TR_ID As String) As System.Data.DataTable
+            Dim results() As Object = Me.Invoke("VIEW_BOOKING_HISTORY", New Object() {BOX_TR_ID})
+            Return CType(results(0),System.Data.DataTable)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub VIEW_BOOKING_HISTORYAsync(ByVal BOX_TR_ID As String)
+            Me.VIEW_BOOKING_HISTORYAsync(BOX_TR_ID, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub VIEW_BOOKING_HISTORYAsync(ByVal BOX_TR_ID As String, ByVal userState As Object)
+            If (Me.VIEW_BOOKING_HISTORYOperationCompleted Is Nothing) Then
+                Me.VIEW_BOOKING_HISTORYOperationCompleted = AddressOf Me.OnVIEW_BOOKING_HISTORYOperationCompleted
+            End If
+            Me.InvokeAsync("VIEW_BOOKING_HISTORY", New Object() {BOX_TR_ID}, Me.VIEW_BOOKING_HISTORYOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnVIEW_BOOKING_HISTORYOperationCompleted(ByVal arg As Object)
+            If (Not (Me.VIEW_BOOKING_HISTORYCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent VIEW_BOOKING_HISTORYCompleted(Me, New VIEW_BOOKING_HISTORYCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UPDATE_STATUS_ID_BOOKING_by_BOX_TR_ID", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub UPDATE_STATUS_ID_BOOKING_by_BOX_TR_ID(ByVal BOX_TR_ID As String, ByVal STATUS_ID As String)
+            Me.Invoke("UPDATE_STATUS_ID_BOOKING_by_BOX_TR_ID", New Object() {BOX_TR_ID, STATUS_ID})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDAsync(ByVal BOX_TR_ID As String, ByVal STATUS_ID As String)
+            Me.UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDAsync(BOX_TR_ID, STATUS_ID, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDAsync(ByVal BOX_TR_ID As String, ByVal STATUS_ID As String, ByVal userState As Object)
+            If (Me.UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDOperationCompleted Is Nothing) Then
+                Me.UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDOperationCompleted = AddressOf Me.OnUPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDOperationCompleted
+            End If
+            Me.InvokeAsync("UPDATE_STATUS_ID_BOOKING_by_BOX_TR_ID", New Object() {BOX_TR_ID, STATUS_ID}, Me.UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnUPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDOperationCompleted(ByVal arg As Object)
+            If (Not (Me.UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
         Public Shadows Sub CancelAsync(ByVal userState As Object)
             MyBase.CancelAsync(userState)
         End Sub
@@ -121,11 +375,617 @@ Namespace WS_UPDATE_C
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class DATA_BOOKING_FOR_INSERT
+        
+        Private cOMPANY_NAMEField As String
+        
+        Private rEQUEST_SHOWField As String
+        
+        Private rEQUSET_IDField As String
+        
+        Private nAME_STAFFField As String
+        
+        Private cITIZEN_STAFFField As String
+        
+        Private nAME_REQUESTField As String
+        
+        Private cITIZEN_REQUESTField As String
+        
+        Private iDENTIFY_AUTHERIZEDField As String
+        
+        Private rEF_NOField As String
+        
+        Private iDAField As String
+        
+        Private lOCATION_NAMEField As String
+        
+        Private lOCATION_ADDRESSField As String
+        
+        Private lOCATION_IDAField As String
+        
+        Private sYSTEM_IDField As String
+        
+        Private tEL_REQUESTField As String
+        
+        Private eMAIL_REQUESTField As String
+        
+        Private aPPOINTMENT_DATEField As String
+        
+        Private wAY_TYPEField As String
+        
+        Private bOX_TR_IDField As String
+        
+        '''<remarks/>
+        Public Property COMPANY_NAME() As String
+            Get
+                Return Me.cOMPANY_NAMEField
+            End Get
+            Set
+                Me.cOMPANY_NAMEField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property REQUEST_SHOW() As String
+            Get
+                Return Me.rEQUEST_SHOWField
+            End Get
+            Set
+                Me.rEQUEST_SHOWField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property REQUSET_ID() As String
+            Get
+                Return Me.rEQUSET_IDField
+            End Get
+            Set
+                Me.rEQUSET_IDField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property NAME_STAFF() As String
+            Get
+                Return Me.nAME_STAFFField
+            End Get
+            Set
+                Me.nAME_STAFFField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CITIZEN_STAFF() As String
+            Get
+                Return Me.cITIZEN_STAFFField
+            End Get
+            Set
+                Me.cITIZEN_STAFFField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property NAME_REQUEST() As String
+            Get
+                Return Me.nAME_REQUESTField
+            End Get
+            Set
+                Me.nAME_REQUESTField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CITIZEN_REQUEST() As String
+            Get
+                Return Me.cITIZEN_REQUESTField
+            End Get
+            Set
+                Me.cITIZEN_REQUESTField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property IDENTIFY_AUTHERIZED() As String
+            Get
+                Return Me.iDENTIFY_AUTHERIZEDField
+            End Get
+            Set
+                Me.iDENTIFY_AUTHERIZEDField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property REF_NO() As String
+            Get
+                Return Me.rEF_NOField
+            End Get
+            Set
+                Me.rEF_NOField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property IDA() As String
+            Get
+                Return Me.iDAField
+            End Get
+            Set
+                Me.iDAField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property LOCATION_NAME() As String
+            Get
+                Return Me.lOCATION_NAMEField
+            End Get
+            Set
+                Me.lOCATION_NAMEField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property LOCATION_ADDRESS() As String
+            Get
+                Return Me.lOCATION_ADDRESSField
+            End Get
+            Set
+                Me.lOCATION_ADDRESSField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property LOCATION_IDA() As String
+            Get
+                Return Me.lOCATION_IDAField
+            End Get
+            Set
+                Me.lOCATION_IDAField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SYSTEM_ID() As String
+            Get
+                Return Me.sYSTEM_IDField
+            End Get
+            Set
+                Me.sYSTEM_IDField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property TEL_REQUEST() As String
+            Get
+                Return Me.tEL_REQUESTField
+            End Get
+            Set
+                Me.tEL_REQUESTField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property EMAIL_REQUEST() As String
+            Get
+                Return Me.eMAIL_REQUESTField
+            End Get
+            Set
+                Me.eMAIL_REQUESTField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property APPOINTMENT_DATE() As String
+            Get
+                Return Me.aPPOINTMENT_DATEField
+            End Get
+            Set
+                Me.aPPOINTMENT_DATEField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property WAY_TYPE() As String
+            Get
+                Return Me.wAY_TYPEField
+            End Get
+            Set
+                Me.wAY_TYPEField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property BOX_TR_ID() As String
+            Get
+                Return Me.bOX_TR_IDField
+            End Get
+            Set
+                Me.bOX_TR_IDField = value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class data_booking
+        
+        Private txt_nameField As String
+        
+        Private rdp_dateField As String
+        
+        Private rcb_docField As String
+        
+        Private txt_identifyField As String
+        
+        Private txt_remarkField As String
+        
+        Private txt_location_nameField As String
+        
+        Private txt_location_addressField As String
+        
+        Private ddl_SERVICEField As String
+        
+        Private txt_no_visitorField As String
+        
+        Private txt_name_visitorField As String
+        
+        Private rtp_time_startField As String
+        
+        Private rtp_time_endField As String
+        
+        Private vISITOR_TELField As String
+        
+        Private vISITOR_EMAILField As String
+        
+        Private rEF_NOField As String
+        
+        Private bOOKING_NO_DISPLAYField As String
+        
+        Private sYSTEM_NAMEField As String
+        
+        Private sERVICE_NAMEField As String
+        
+        Private cREATE_DATE_DISPLAYField As String
+        
+        Private cONSIDER_DATE_DISPLAYField As String
+        
+        Private cOMPANY_NAMEField As String
+        
+        Private dOCUMENT_TYPE_NAMEField As String
+        
+        Private vISITOR_NAMEField As String
+        
+        Private vISITOR_IDENTIFYField As String
+        
+        Private cOMPANY_IDENTIFYField As String
+        
+        Private vISITOR_NAME_IDENTIFYField As String
+        
+        Private cOMPANY_NAME_IDENTIFYField As String
+        
+        Private sTATUS_NAMEField As String
+        
+        Private rEMARK_ADDITIONALField As String
+        
+        Private rEMARKField As String
+        
+        '''<remarks/>
+        Public Property txt_name() As String
+            Get
+                Return Me.txt_nameField
+            End Get
+            Set
+                Me.txt_nameField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property rdp_date() As String
+            Get
+                Return Me.rdp_dateField
+            End Get
+            Set
+                Me.rdp_dateField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property rcb_doc() As String
+            Get
+                Return Me.rcb_docField
+            End Get
+            Set
+                Me.rcb_docField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property txt_identify() As String
+            Get
+                Return Me.txt_identifyField
+            End Get
+            Set
+                Me.txt_identifyField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property txt_remark() As String
+            Get
+                Return Me.txt_remarkField
+            End Get
+            Set
+                Me.txt_remarkField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property txt_location_name() As String
+            Get
+                Return Me.txt_location_nameField
+            End Get
+            Set
+                Me.txt_location_nameField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property txt_location_address() As String
+            Get
+                Return Me.txt_location_addressField
+            End Get
+            Set
+                Me.txt_location_addressField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property ddl_SERVICE() As String
+            Get
+                Return Me.ddl_SERVICEField
+            End Get
+            Set
+                Me.ddl_SERVICEField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property txt_no_visitor() As String
+            Get
+                Return Me.txt_no_visitorField
+            End Get
+            Set
+                Me.txt_no_visitorField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property txt_name_visitor() As String
+            Get
+                Return Me.txt_name_visitorField
+            End Get
+            Set
+                Me.txt_name_visitorField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property rtp_time_start() As String
+            Get
+                Return Me.rtp_time_startField
+            End Get
+            Set
+                Me.rtp_time_startField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property rtp_time_end() As String
+            Get
+                Return Me.rtp_time_endField
+            End Get
+            Set
+                Me.rtp_time_endField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property VISITOR_TEL() As String
+            Get
+                Return Me.vISITOR_TELField
+            End Get
+            Set
+                Me.vISITOR_TELField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property VISITOR_EMAIL() As String
+            Get
+                Return Me.vISITOR_EMAILField
+            End Get
+            Set
+                Me.vISITOR_EMAILField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property REF_NO() As String
+            Get
+                Return Me.rEF_NOField
+            End Get
+            Set
+                Me.rEF_NOField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property BOOKING_NO_DISPLAY() As String
+            Get
+                Return Me.bOOKING_NO_DISPLAYField
+            End Get
+            Set
+                Me.bOOKING_NO_DISPLAYField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SYSTEM_NAME() As String
+            Get
+                Return Me.sYSTEM_NAMEField
+            End Get
+            Set
+                Me.sYSTEM_NAMEField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property SERVICE_NAME() As String
+            Get
+                Return Me.sERVICE_NAMEField
+            End Get
+            Set
+                Me.sERVICE_NAMEField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CREATE_DATE_DISPLAY() As String
+            Get
+                Return Me.cREATE_DATE_DISPLAYField
+            End Get
+            Set
+                Me.cREATE_DATE_DISPLAYField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property CONSIDER_DATE_DISPLAY() As String
+            Get
+                Return Me.cONSIDER_DATE_DISPLAYField
+            End Get
+            Set
+                Me.cONSIDER_DATE_DISPLAYField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property COMPANY_NAME() As String
+            Get
+                Return Me.cOMPANY_NAMEField
+            End Get
+            Set
+                Me.cOMPANY_NAMEField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property DOCUMENT_TYPE_NAME() As String
+            Get
+                Return Me.dOCUMENT_TYPE_NAMEField
+            End Get
+            Set
+                Me.dOCUMENT_TYPE_NAMEField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property VISITOR_NAME() As String
+            Get
+                Return Me.vISITOR_NAMEField
+            End Get
+            Set
+                Me.vISITOR_NAMEField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property VISITOR_IDENTIFY() As String
+            Get
+                Return Me.vISITOR_IDENTIFYField
+            End Get
+            Set
+                Me.vISITOR_IDENTIFYField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property COMPANY_IDENTIFY() As String
+            Get
+                Return Me.cOMPANY_IDENTIFYField
+            End Get
+            Set
+                Me.cOMPANY_IDENTIFYField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property VISITOR_NAME_IDENTIFY() As String
+            Get
+                Return Me.vISITOR_NAME_IDENTIFYField
+            End Get
+            Set
+                Me.vISITOR_NAME_IDENTIFYField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property COMPANY_NAME_IDENTIFY() As String
+            Get
+                Return Me.cOMPANY_NAME_IDENTIFYField
+            End Get
+            Set
+                Me.cOMPANY_NAME_IDENTIFYField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property STATUS_NAME() As String
+            Get
+                Return Me.sTATUS_NAMEField
+            End Get
+            Set
+                Me.sTATUS_NAMEField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property REMARK_ADDITIONAL() As String
+            Get
+                Return Me.rEMARK_ADDITIONALField
+            End Get
+            Set
+                Me.rEMARK_ADDITIONALField = value
+            End Set
+        End Property
+        
+        '''<remarks/>
+        Public Property REMARK() As String
+            Get
+                Return Me.rEMARKField
+            End Get
+            Set
+                Me.rEMARKField = value
+            End Set
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
     Public Delegate Sub UPDATE_STATUS_BOOKING_DRUGCompletedEventHandler(ByVal sender As Object, ByVal e As UPDATE_STATUS_BOOKING_DRUGCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class UPDATE_STATUS_BOOKING_DRUGCompletedEventArgs
@@ -146,4 +1006,151 @@ Namespace WS_UPDATE_C
             End Get
         End Property
     End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub INSERT_BOOKINGCompletedEventHandler(ByVal sender As Object, ByVal e As INSERT_BOOKINGCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class INSERT_BOOKINGCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub INSERT_BOOKING_CLASSCompletedEventHandler(ByVal sender As Object, ByVal e As INSERT_BOOKING_CLASSCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class INSERT_BOOKING_CLASSCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub INSERT_BOOKING_CLASS_ONEWAYCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub INSERT_BOOKING_ONEWAYCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub LOAD_DATA_BOOKINGCompletedEventHandler(ByVal sender As Object, ByVal e As LOAD_DATA_BOOKINGCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class LOAD_DATA_BOOKINGCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As data_booking
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),data_booking)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub LOAD_DATA_BOOKING_by_BOX_TR_IDCompletedEventHandler(ByVal sender As Object, ByVal e As LOAD_DATA_BOOKING_by_BOX_TR_IDCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class LOAD_DATA_BOOKING_by_BOX_TR_IDCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As data_booking
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),data_booking)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub VIEW_BOOKING_HISTORYCompletedEventHandler(ByVal sender As Object, ByVal e As VIEW_BOOKING_HISTORYCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class VIEW_BOOKING_HISTORYCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataTable
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataTable)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
 End Namespace

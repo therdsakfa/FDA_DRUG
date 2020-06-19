@@ -649,12 +649,12 @@ Public Class WebForm36
         Dim dt_tp_stock As New DataTable
         Dim dt_edit_history As New DataTable
         'Dim dt_each
-        dt_drug_general = bao_master_2.SP_drug_general_rq(95589)
-        dt_formula = bao_master_2.SP_drug_formula_rq(95589)
-        dt_frgn = bao_show.SP_DRRGT_PRODUCER_ALL_BY_FK_IDA(95589)
-        dt_drug_recipe = bao_show.SP_DRRQT_ATC_DETAIL_BY_FK_IDA(95589)
-        dt_animal = bao_show.SP_drramldrg_BY_FK_IDA(95589)
-        dt_tp_stock = bao_show.SP_DRRQT_KEEP_DRUG_BY_FK_IDA(95589)
+        dt_drug_general = bao_master_2.SP_drug_general_rq(96767)
+        dt_formula = bao_master_2.SP_drug_formula_rq(96767)
+        dt_frgn = bao_show.SP_DRRQT_PRODUCER_ALL_BY_FK_IDA(96767)
+        dt_drug_recipe = bao_show.SP_DRRQT_ATC_DETAIL_BY_FK_IDA(96767)
+        dt_animal = bao_show.SP_drramldrg_BY_FK_IDA(96767)
+        dt_tp_stock = bao_show.SP_DRRQT_KEEP_DRUG_BY_FK_IDA(96767)
         Dim dt_print As New DataTable
         dt_print.Columns.Add("thanm")
         dt_print.Columns.Add("printdate")

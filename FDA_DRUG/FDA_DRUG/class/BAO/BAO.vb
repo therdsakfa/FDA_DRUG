@@ -62,6 +62,15 @@ Namespace BAO
             dta = Queryds(sql)
             Return dta
         End Function
+        '
+        Public Function SP_CUSTOMER_LCN_BY_IDENTIFY(ByVal IDENTITY As String) As DataTable
+
+            Dim sql As String = "exec SP_CUSTOMER_LCN_BY_IDENTIFY @iden= '" & IDENTITY & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+
         '      'SELECT TOP 1000 [IDpimary]
         '    ,[IDgroup]
         '    ,[IDnamesys]
@@ -573,6 +582,16 @@ Namespace BAO
                     .usetpcd = dao_aniuse_rg.fields.usetpcd
                 End With
                 dao_aniuse_rg.insert()
+            Next
+            Dim dao_nou As New DAO_DRUG.TB_DRRQT_NO_USE
+            dao_nou.GetDataby_FK_IDA(FK_IDA)
+            For Each dao_nou.fields In dao_nou.datas
+                Dim dao_no As New DAO_DRUG.TB_DRRGT_NO_USE
+                With dao_no.fields
+                    .FK_IDA = IDA_rgt
+                    .NO_USE_DESCRIPTION = dao_nou.fields.NO_USE_DESCRIPTION
+                End With
+                dao_no.insert()
             Next
         End Sub
         Public Function SP_TEMP_CASE1441() As DataTable

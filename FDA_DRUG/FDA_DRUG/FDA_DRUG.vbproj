@@ -778,6 +778,8 @@
     <Content Include="MAIN\FRM_HOME_PRODUCT_HERB.aspx" />
     <Content Include="MAIN\FRM_MAIN_PAGE_PRODUCT_HERB.aspx" />
     <Content Include="MAIN_STAFF\FRM_CLOSE.aspx" />
+    <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx" />
+    <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx" />
     <Content Include="PDF\FRM_PDF_VIEW.aspx" />
     <Content Include="PDF\FRM_REPORT_RDLC.aspx" />
     <Content Include="PDF\FRM_RPT_PDF.aspx" />
@@ -1679,11 +1681,14 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
     <None Include="Web References\WS_TRADERS\WS_TRADER.disco" />
-    <Content Include="Web References\WS_UPDATE_C\Reference.map">
+    <Content Include="Web References\WS_UPDATE_C\data_booking.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\WS_UPDATE_C\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
-    </Content>
-    <Content Include="Web References\WS_UPDATE_C\WS_UPDATE_BOOKING_DRUG.disco" />
+    </None>
+    <None Include="Web References\WS_UPDATE_C\WS_UPDATE_BOOKING_DRUG.disco" />
     <Content Include="Web References\WS_UPDATE_C_DEMO\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
@@ -3054,6 +3059,20 @@
     </Compile>
     <Compile Include="MAIN_STAFF\FRM_CLOSE.aspx.vb">
       <DependentUpon>FRM_CLOSE.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx.vb">
+      <DependentUpon>FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx.vb">
+      <DependentUpon>FRM_STAFF_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MasterPage\Main_PPK.Master.designer.vb">
@@ -6785,7 +6804,7 @@
     <None Include="Web References\WS_CENTER\WS_CENTER.wsdl" />
     <None Include="Web References\WS_Taxno_TaxnoAuthorize\WS_Taxno_TaxnoAuthorize.wsdl" />
     <None Include="Web References\WS_PVNCD\WS_Taxno_TaxnoAuthorize.wsdl" />
-    <Content Include="Web References\WS_UPDATE_C\WS_UPDATE_BOOKING_DRUG.wsdl" />
+    <None Include="Web References\WS_UPDATE_C\WS_UPDATE_BOOKING_DRUG.wsdl" />
     <Content Include="Web References\WS_UPDATE_C_DEMO\WS_UPDATE_BOOKING_DRUG.wsdl" />
     <None Include="Web References\WS_TRADERS\WS_TRADER.wsdl" />
     <None Include="Web.Debug.config">

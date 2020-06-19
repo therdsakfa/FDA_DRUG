@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:element name="UPDATE_STATUS_BOOKING_DRUG">
@@ -16,6 +16,167 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="INSERT_BOOKING">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="REF_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SYSTEM_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INSERT_BOOKINGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="INSERT_BOOKINGResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INSERT_BOOKING_CLASS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data_b" type="tns:DATA_BOOKING_FOR_INSERT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DATA_BOOKING_FOR_INSERT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COMPANY_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REQUEST_SHOW" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REQUSET_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NAME_STAFF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CITIZEN_STAFF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NAME_REQUEST" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CITIZEN_REQUEST" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY_AUTHERIZED" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REF_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LOCATION_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LOCATION_ADDRESS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LOCATION_IDA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SYSTEM_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TEL_REQUEST" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL_REQUEST" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APPOINTMENT_DATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WAY_TYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BOX_TR_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="INSERT_BOOKING_CLASSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="INSERT_BOOKING_CLASSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INSERT_BOOKING_CLASS_ONEWAY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data_b" type="tns:DATA_BOOKING_FOR_INSERT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INSERT_BOOKING_ONEWAY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="REF_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SYSTEM_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LOAD_DATA_BOOKING">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="REF_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LOAD_DATA_BOOKINGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LOAD_DATA_BOOKINGResult" type="tns:data_booking" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="data_booking">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="txt_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rdp_date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rcb_doc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_identify" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_remark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_location_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_location_address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ddl_SERVICE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_no_visitor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_name_visitor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rtp_time_start" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rtp_time_end" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VISITOR_TEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VISITOR_EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REF_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BOOKING_NO_DISPLAY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SYSTEM_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SERVICE_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CREATE_DATE_DISPLAY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CONSIDER_DATE_DISPLAY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMPANY_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DOCUMENT_TYPE_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VISITOR_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VISITOR_IDENTIFY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMPANY_IDENTIFY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VISITOR_NAME_IDENTIFY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMPANY_NAME_IDENTIFY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATUS_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REMARK_ADDITIONAL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REMARK" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LOAD_DATA_BOOKING_by_BOX_TR_ID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BOX_TR_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LOAD_DATA_BOOKING_by_BOX_TR_IDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LOAD_DATA_BOOKING_by_BOX_TR_IDResult" type="tns:data_booking" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VIEW_BOOKING_HISTORY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BOX_TR_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VIEW_BOOKING_HISTORYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VIEW_BOOKING_HISTORYResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPDATE_STATUS_ID_BOOKING_by_BOX_TR_ID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BOX_TR_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="STATUS_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="UPDATE_STATUS_BOOKING_DRUGSoapIn">
@@ -24,16 +185,159 @@
   <wsdl:message name="UPDATE_STATUS_BOOKING_DRUGSoapOut">
     <wsdl:part name="parameters" element="tns:UPDATE_STATUS_BOOKING_DRUGResponse" />
   </wsdl:message>
+  <wsdl:message name="INSERT_BOOKINGSoapIn">
+    <wsdl:part name="parameters" element="tns:INSERT_BOOKING" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_BOOKINGSoapOut">
+    <wsdl:part name="parameters" element="tns:INSERT_BOOKINGResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_BOOKING_CLASSSoapIn">
+    <wsdl:part name="parameters" element="tns:INSERT_BOOKING_CLASS" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_BOOKING_CLASSSoapOut">
+    <wsdl:part name="parameters" element="tns:INSERT_BOOKING_CLASSResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_BOOKING_CLASS_ONEWAYSoapIn">
+    <wsdl:part name="parameters" element="tns:INSERT_BOOKING_CLASS_ONEWAY" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_BOOKING_ONEWAYSoapIn">
+    <wsdl:part name="parameters" element="tns:INSERT_BOOKING_ONEWAY" />
+  </wsdl:message>
+  <wsdl:message name="LOAD_DATA_BOOKINGSoapIn">
+    <wsdl:part name="parameters" element="tns:LOAD_DATA_BOOKING" />
+  </wsdl:message>
+  <wsdl:message name="LOAD_DATA_BOOKINGSoapOut">
+    <wsdl:part name="parameters" element="tns:LOAD_DATA_BOOKINGResponse" />
+  </wsdl:message>
+  <wsdl:message name="LOAD_DATA_BOOKING_by_BOX_TR_IDSoapIn">
+    <wsdl:part name="parameters" element="tns:LOAD_DATA_BOOKING_by_BOX_TR_ID" />
+  </wsdl:message>
+  <wsdl:message name="LOAD_DATA_BOOKING_by_BOX_TR_IDSoapOut">
+    <wsdl:part name="parameters" element="tns:LOAD_DATA_BOOKING_by_BOX_TR_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="VIEW_BOOKING_HISTORYSoapIn">
+    <wsdl:part name="parameters" element="tns:VIEW_BOOKING_HISTORY" />
+  </wsdl:message>
+  <wsdl:message name="VIEW_BOOKING_HISTORYSoapOut">
+    <wsdl:part name="parameters" element="tns:VIEW_BOOKING_HISTORYResponse" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDSoapIn">
+    <wsdl:part name="parameters" element="tns:UPDATE_STATUS_ID_BOOKING_by_BOX_TR_ID" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDSoapOut">
+    <wsdl:part name="parameters" element="tns:UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDResponse" />
+  </wsdl:message>
   <wsdl:portType name="Service1Soap">
     <wsdl:operation name="UPDATE_STATUS_BOOKING_DRUG">
       <wsdl:input message="tns:UPDATE_STATUS_BOOKING_DRUGSoapIn" />
       <wsdl:output message="tns:UPDATE_STATUS_BOOKING_DRUGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_BOOKING">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">บันทึกข้อมูลนัดหมาย</wsdl:documentation>
+      <wsdl:input message="tns:INSERT_BOOKINGSoapIn" />
+      <wsdl:output message="tns:INSERT_BOOKINGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_BOOKING_CLASS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">บันทึกข้อมูลนัดหมายด้วย CLASS แบบ Return ผล</wsdl:documentation>
+      <wsdl:input message="tns:INSERT_BOOKING_CLASSSoapIn" />
+      <wsdl:output message="tns:INSERT_BOOKING_CLASSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_BOOKING_CLASS_ONEWAY">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">บันทึกข้อมูลนัดหมายด้วย CLASSแบบ ONEWAY</wsdl:documentation>
+      <wsdl:input message="tns:INSERT_BOOKING_CLASS_ONEWAYSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_BOOKING_ONEWAY">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">บันทึกข้อมูลนัดหมายแบบ ONEWAY</wsdl:documentation>
+      <wsdl:input message="tns:INSERT_BOOKING_ONEWAYSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="LOAD_DATA_BOOKING">
+      <wsdl:input message="tns:LOAD_DATA_BOOKINGSoapIn" />
+      <wsdl:output message="tns:LOAD_DATA_BOOKINGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LOAD_DATA_BOOKING_by_BOX_TR_ID">
+      <wsdl:input message="tns:LOAD_DATA_BOOKING_by_BOX_TR_IDSoapIn" />
+      <wsdl:output message="tns:LOAD_DATA_BOOKING_by_BOX_TR_IDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VIEW_BOOKING_HISTORY">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">แสดงข้อมูลประวัตินัดหมาย</wsdl:documentation>
+      <wsdl:input message="tns:VIEW_BOOKING_HISTORYSoapIn" />
+      <wsdl:output message="tns:VIEW_BOOKING_HISTORYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_STATUS_ID_BOOKING_by_BOX_TR_ID">
+      <wsdl:input message="tns:UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDSoapIn" />
+      <wsdl:output message="tns:UPDATE_STATUS_ID_BOOKING_by_BOX_TR_IDSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="UPDATE_STATUS_BOOKING_DRUG">
       <soap:operation soapAction="http://tempuri.org/UPDATE_STATUS_BOOKING_DRUG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_BOOKING">
+      <soap:operation soapAction="http://tempuri.org/INSERT_BOOKING" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_BOOKING_CLASS">
+      <soap:operation soapAction="http://tempuri.org/INSERT_BOOKING_CLASS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_BOOKING_CLASS_ONEWAY">
+      <soap:operation soapAction="http://tempuri.org/INSERT_BOOKING_CLASS_ONEWAY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_BOOKING_ONEWAY">
+      <soap:operation soapAction="http://tempuri.org/INSERT_BOOKING_ONEWAY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="LOAD_DATA_BOOKING">
+      <soap:operation soapAction="http://tempuri.org/LOAD_DATA_BOOKING" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LOAD_DATA_BOOKING_by_BOX_TR_ID">
+      <soap:operation soapAction="http://tempuri.org/LOAD_DATA_BOOKING_by_BOX_TR_ID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VIEW_BOOKING_HISTORY">
+      <soap:operation soapAction="http://tempuri.org/VIEW_BOOKING_HISTORY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_STATUS_ID_BOOKING_by_BOX_TR_ID">
+      <soap:operation soapAction="http://tempuri.org/UPDATE_STATUS_ID_BOOKING_by_BOX_TR_ID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -53,13 +357,79 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="INSERT_BOOKING">
+      <soap12:operation soapAction="http://tempuri.org/INSERT_BOOKING" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_BOOKING_CLASS">
+      <soap12:operation soapAction="http://tempuri.org/INSERT_BOOKING_CLASS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_BOOKING_CLASS_ONEWAY">
+      <soap12:operation soapAction="http://tempuri.org/INSERT_BOOKING_CLASS_ONEWAY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_BOOKING_ONEWAY">
+      <soap12:operation soapAction="http://tempuri.org/INSERT_BOOKING_ONEWAY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="LOAD_DATA_BOOKING">
+      <soap12:operation soapAction="http://tempuri.org/LOAD_DATA_BOOKING" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LOAD_DATA_BOOKING_by_BOX_TR_ID">
+      <soap12:operation soapAction="http://tempuri.org/LOAD_DATA_BOOKING_by_BOX_TR_ID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VIEW_BOOKING_HISTORY">
+      <soap12:operation soapAction="http://tempuri.org/VIEW_BOOKING_HISTORY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_STATUS_ID_BOOKING_by_BOX_TR_ID">
+      <soap12:operation soapAction="http://tempuri.org/UPDATE_STATUS_ID_BOOKING_by_BOX_TR_ID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service1">
     <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
-      <soap:address location="http://164.115.28.105/WS_BOOKING_DRUG/WS_UPDATE_BOOKING_DRUG.asmx" />
+      <soap:address location="http://10.111.28.105/WS_BOOKING_DRUG/WS_UPDATE_BOOKING_DRUG.asmx" />
     </wsdl:port>
     <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
-      <soap12:address location="http://164.115.28.105/WS_BOOKING_DRUG/WS_UPDATE_BOOKING_DRUG.asmx" />
+      <soap12:address location="http://10.111.28.105/WS_BOOKING_DRUG/WS_UPDATE_BOOKING_DRUG.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
