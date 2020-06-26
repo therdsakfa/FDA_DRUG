@@ -778,6 +778,7 @@
     <Content Include="MAIN\FRM_HOME_PRODUCT_HERB.aspx" />
     <Content Include="MAIN\FRM_MAIN_PAGE_PRODUCT_HERB.aspx" />
     <Content Include="MAIN_STAFF\FRM_CLOSE.aspx" />
+    <Content Include="MAIN_STAFF\FRM_REPLACEMENT_LICENSE_LOCATION_MENU2.aspx" />
     <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx" />
     <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx" />
     <Content Include="PDF\FRM_PDF_VIEW.aspx" />
@@ -3059,6 +3060,13 @@
     </Compile>
     <Compile Include="MAIN_STAFF\FRM_CLOSE.aspx.vb">
       <DependentUpon>FRM_CLOSE.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MAIN_STAFF\FRM_REPLACEMENT_LICENSE_LOCATION_MENU2.aspx.designer.vb">
+      <DependentUpon>FRM_REPLACEMENT_LICENSE_LOCATION_MENU2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN_STAFF\FRM_REPLACEMENT_LICENSE_LOCATION_MENU2.aspx.vb">
+      <DependentUpon>FRM_REPLACEMENT_LICENSE_LOCATION_MENU2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx.designer.vb">

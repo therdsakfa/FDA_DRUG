@@ -437,7 +437,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.63142cm</Height>
+                  <Height>0.5785cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -514,7 +514,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.63142cm</Height>
+                  <Height>0.47267cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -592,7 +592,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.80899cm</Height>
+                  <Height>0.59732cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -670,7 +670,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.52062cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1065,7 +1065,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>1.ชื่อยาไทย / อังกฤษ/อื่นๆ</Value>
+                                  <Value EvaluationMode="Constant">1.ชื่อการค้ายาไทย / อังกฤษ/อื่นๆ</Value>
                                   <Style>
                                     <FontFamily>TH SarabunPSK</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -1305,7 +1305,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>3.ประเภทยา</Value>
+                                  <Value EvaluationMode="Constant">3.ประเภทยาทางการใช้</Value>
                                   <Style>
                                     <FontFamily>TH SarabunPSK</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -1467,7 +1467,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>4.ชนิดของยา</Value>
+                                  <Value EvaluationMode="Constant">4.ประเภทยาตามกฎหมาย</Value>
                                   <Style>
                                     <FontFamily>TH SarabunPSK</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -2480,7 +2480,7 @@
             <DataSetName>rp_drug_general</DataSetName>
             <Top>1.16271cm</Top>
             <Left>0.68616cm</Left>
-            <Height>12.20122cm</Height>
+            <Height>11.69851cm</Height>
             <Width>17.6822cm</Width>
             <Style>
               <Border>
@@ -2664,7 +2664,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>A/I ตัวยา (Base From)</Value>
+                                  <Value EvaluationMode="Constant">A/I **</Value>
                                   <Style>
                                     <FontFamily>TH SarabunPSK</FontFamily>
                                     <FontSize>14pt</FontSize>

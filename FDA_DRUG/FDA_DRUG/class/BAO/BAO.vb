@@ -70,7 +70,22 @@ Namespace BAO
             dta = Queryds(sql)
             Return dta
         End Function
+        '
+        Public Function SP_CUSTOMER_LCN_DH_BY_IDENTIFY(ByVal IDENTITY As String) As DataTable
 
+            Dim sql As String = "exec SP_CUSTOMER_LCN_DH_BY_IDENTIFY @iden= '" & IDENTITY & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        '
+        Public Function SP_CUSTOMER_LCN_DR_BY_IDENTIFY(ByVal IDENTITY As String) As DataTable
+
+            Dim sql As String = "exec SP_CUSTOMER_LCN_DR_BY_IDENTIFY @iden= '" & IDENTITY & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
         '      'SELECT TOP 1000 [IDpimary]
         '    ,[IDgroup]
         '    ,[IDnamesys]

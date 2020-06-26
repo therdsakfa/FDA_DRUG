@@ -1,5 +1,5 @@
 ﻿Imports Telerik.Web.UI
-Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU
+Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU2
     Inherits System.Web.UI.Page
 
     Private _CLS As New CLS_SESSION
@@ -13,10 +13,16 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU
     End Sub
 
     Public Sub BindMenu(ByVal NodeGroup As Integer)
+        Dim sel_type As Integer = 0
+        If Request.QueryString("ttt") = "2" Then
+            sel_type = 2
+        Else
+            sel_type = 1
+        End If
         Dim TreeView1 As New RadTreeView
         TreeView1 = DirectCast(rcb_Process.Items(0).FindControl("rtv_Process"), RadTreeView)
-        Dim dao As New DAO_DRUG.ClsDBMAS_MENU_AUTO
-        dao.GetDataby_HEAD_ID(0, _MENU_GROUP)
+        Dim dao As New DAO_DRUG.ClsDBMAS_MENU_AUTO2
+        dao.GetDataby_HEAD_ID2(0, _MENU_GROUP, sel_type)
         For Each dao.fields In dao.datas
             Dim t_node As New RadTreeNode
             t_node.Value = dao.fields.IDA
@@ -44,8 +50,23 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU
             Catch ex As Exception
 
             End Try
+            Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+            Try
+                dao_dal.GetDataby_IDA(Request.QueryString("lcn_ida"))
+            Catch ex As Exception
 
-            TreeView1.Nodes.Add(t_node)
+            End Try
+
+            If (dao.fields.PROCESS_ID = "130001" Or dao.fields.PROCESS_ID = "130002") And dao_dal.fields.lcntpcd.Contains("บ") = False Then
+                TreeView1.Nodes.Add(t_node)
+            ElseIf (dao.fields.PROCESS_ID = "130003" Or dao.fields.PROCESS_ID = "130004") And dao_dal.fields.lcntpcd.Contains("บ") Then
+                TreeView1.Nodes.Add(t_node)
+            Else
+                If (dao.fields.PROCESS_ID <> "130003" And dao.fields.PROCESS_ID <> "130004" And dao.fields.PROCESS_ID <> "130001" And dao.fields.PROCESS_ID <> "130002") Then
+                    TreeView1.Nodes.Add(t_node)
+                End If
+            End If
+
 
             gen_child_node(t_node.Nodes, dao.fields.IDA, NodeGroup) '4292
 
@@ -56,7 +77,7 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU
 
     Private Function set_System_ID() As Integer
         Dim System_ID As Integer
-        If _CLS.Groups = "19871" Or _CLS.Groups = "19872" Or _CLS.Groups = "38031" Then
+        If _CLS.GROUPS = "19871" Or _CLS.GROUPS = "19872" Or _CLS.GROUPS = "38031" Then
             System_ID = 4292
         Else
             System_ID = 5323
@@ -65,8 +86,14 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU
         Return System_ID
     End Function
     Public Sub gen_child_node(ByVal t_node As RadTreeNodeCollection, Optional ByVal ParentID As Integer = 0, Optional NodeGroup As Integer = 1, Optional group_per As Integer = 0)
-        Dim dao As New DAO_DRUG.ClsDBMAS_MENU_AUTO
-        dao.GetDataby_HEAD_ID(ParentID, _MENU_GROUP)
+        Dim sel_type As Integer = 0
+        If Request.QueryString("ttt") = "2" Then
+            sel_type = 2
+        Else
+            sel_type = 1
+        End If
+        Dim dao As New DAO_DRUG.ClsDBMAS_MENU_AUTO2
+        dao.GetDataby_HEAD_ID2(ParentID, _MENU_GROUP, sel_type)
         For Each dao.fields In dao.datas
             Dim t_node2 As New RadTreeNode
             t_node2.Value = dao.fields.IDA
@@ -101,7 +128,25 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU
             Catch ex As Exception
 
             End Try
-            t_node.Add(t_node2)
+
+
+            Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+            Try
+                dao_dal.GetDataby_IDA(Request.QueryString("lcn_ida"))
+            Catch ex As Exception
+
+            End Try
+
+            If (dao.fields.PROCESS_ID = "130001" Or dao.fields.PROCESS_ID = "130002") And dao_dal.fields.lcntpcd.Contains("บ") = False Then
+                t_node.Add(t_node2)
+            ElseIf (dao.fields.PROCESS_ID = "130003" Or dao.fields.PROCESS_ID = "130004") And dao_dal.fields.lcntpcd.Contains("บ") Then
+                t_node.Add(t_node2)
+            Else
+                If (dao.fields.PROCESS_ID <> "130003" And dao.fields.PROCESS_ID <> "130004" And dao.fields.PROCESS_ID <> "130001" And dao.fields.PROCESS_ID <> "130002") Then
+                    t_node.Add(t_node2)
+                End If
+            End If
+
             gen_child_node(t_node2.Nodes, dao.fields.IDA, NodeGroup, group_per)
         Next
     End Sub

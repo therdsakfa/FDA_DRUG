@@ -2510,21 +2510,24 @@ Public Class WS_DRUG_XML
 
         If dao_lcn.fields.lcntpcd = "02" Then
             'If p2.CHK_TYPE = "3" Then
-            dao_lcn.fields.lcntpcd = "ผวจ3"
+            'dao_lcn.fields.lcntpcd = "ผวจ3"
+            dao_lcn.fields.lcntpcd = "ผจ"
             'Else
             '    dao_lcn.fields.lcntpcd = "ผวจ4"
             'End If
         End If
         If dao_lcn.fields.lcntpcd = "03" Then
             'If p2.CHK_TYPE = "3" Then
-            dao_lcn.fields.lcntpcd = "ขวจ3"
+            'dao_lcn.fields.lcntpcd = "ขวจ3"
+            dao_lcn.fields.lcntpcd = "ขจ"
             'Else
             '    dao_lcn.fields.lcntpcd = "ขวจ4"
             'End If
         End If
         If dao_lcn.fields.lcntpcd = "04" Then
             'If p2.CHK_TYPE = "3" Then
-            dao_lcn.fields.lcntpcd = "ขตวจ3"
+            dao_lcn.fields.lcntpcd = "ขนจ"
+            'dao_lcn.fields.lcntpcd = "ขตวจ3"
             'Else
             '    dao_lcn.fields.lcntpcd = "ขตวจ4"
             'End If

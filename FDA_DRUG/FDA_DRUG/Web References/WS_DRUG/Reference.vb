@@ -140,10 +140,11 @@ Namespace WS_DRUG
         Public Event XML_GET_SEARCH_DRUG_LCNCompleted As XML_GET_SEARCH_DRUG_LCNCompletedEventHandler
         
         '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_INSERT_LICEN", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Sub DRUG_INSERT_LICEN(ByVal IDA_dalcn As Integer, ByVal IDENTIFY_EDIT As String)
-            Me.Invoke("DRUG_INSERT_LICEN", New Object() {IDA_dalcn, IDENTIFY_EDIT})
-        End Sub
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_INSERT_LICEN", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function DRUG_INSERT_LICEN(ByVal IDA_dalcn As Integer, ByVal IDENTIFY_EDIT As String) As String
+            Dim results() As Object = Me.Invoke("DRUG_INSERT_LICEN", New Object() {IDA_dalcn, IDENTIFY_EDIT})
+            Return CType(results(0),String)
+        End Function
         
         '''<remarks/>
         Public Overloads Sub DRUG_INSERT_LICENAsync(ByVal IDA_dalcn As Integer, ByVal IDENTIFY_EDIT As String)
@@ -161,15 +162,16 @@ Namespace WS_DRUG
         Private Sub OnDRUG_INSERT_LICENOperationCompleted(ByVal arg As Object)
             If (Not (Me.DRUG_INSERT_LICENCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent DRUG_INSERT_LICENCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+                RaiseEvent DRUG_INSERT_LICENCompleted(Me, New DRUG_INSERT_LICENCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
         '''<remarks/>
         <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_UPDATE_LICEN", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Sub DRUG_UPDATE_LICEN(ByVal IDA_dalcn As Integer, ByVal IDENTIFY_EDIT As String)
-            Me.Invoke("DRUG_UPDATE_LICEN", New Object() {IDA_dalcn, IDENTIFY_EDIT})
-        End Sub
+        Public Function DRUG_UPDATE_LICEN(ByVal IDA_dalcn As Integer, ByVal IDENTIFY_EDIT As String) As String
+            Dim results() As Object = Me.Invoke("DRUG_UPDATE_LICEN", New Object() {IDA_dalcn, IDENTIFY_EDIT})
+            Return CType(results(0),String)
+        End Function
         
         '''<remarks/>
         Public Overloads Sub DRUG_UPDATE_LICENAsync(ByVal IDA_dalcn As Integer, ByVal IDENTIFY_EDIT As String)
@@ -187,15 +189,16 @@ Namespace WS_DRUG
         Private Sub OnDRUG_UPDATE_LICENOperationCompleted(ByVal arg As Object)
             If (Not (Me.DRUG_UPDATE_LICENCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent DRUG_UPDATE_LICENCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+                RaiseEvent DRUG_UPDATE_LICENCompleted(Me, New DRUG_UPDATE_LICENCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
         '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_INSERT_DR15", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Sub DRUG_INSERT_DR15(ByVal IDA_DH15 As Integer, ByVal IDENTIFY_EDIT As String)
-            Me.Invoke("DRUG_INSERT_DR15", New Object() {IDA_DH15, IDENTIFY_EDIT})
-        End Sub
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_INSERT_DR15", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function DRUG_INSERT_DR15(ByVal IDA_DH15 As Integer, ByVal IDENTIFY_EDIT As String) As String
+            Dim results() As Object = Me.Invoke("DRUG_INSERT_DR15", New Object() {IDA_DH15, IDENTIFY_EDIT})
+            Return CType(results(0),String)
+        End Function
         
         '''<remarks/>
         Public Overloads Sub DRUG_INSERT_DR15Async(ByVal IDA_DH15 As Integer, ByVal IDENTIFY_EDIT As String)
@@ -213,15 +216,16 @@ Namespace WS_DRUG
         Private Sub OnDRUG_INSERT_DR15OperationCompleted(ByVal arg As Object)
             If (Not (Me.DRUG_INSERT_DR15CompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent DRUG_INSERT_DR15Completed(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+                RaiseEvent DRUG_INSERT_DR15Completed(Me, New DRUG_INSERT_DR15CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
         '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_UPDATE_DH15", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Sub DRUG_UPDATE_DH15(ByVal IDA_DH15 As Integer, ByVal IDENTIFY_EDIT As String)
-            Me.Invoke("DRUG_UPDATE_DH15", New Object() {IDA_DH15, IDENTIFY_EDIT})
-        End Sub
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_UPDATE_DH15", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function DRUG_UPDATE_DH15(ByVal IDA_DH15 As Integer, ByVal IDENTIFY_EDIT As String) As String
+            Dim results() As Object = Me.Invoke("DRUG_UPDATE_DH15", New Object() {IDA_DH15, IDENTIFY_EDIT})
+            Return CType(results(0),String)
+        End Function
         
         '''<remarks/>
         Public Overloads Sub DRUG_UPDATE_DH15Async(ByVal IDA_DH15 As Integer, ByVal IDENTIFY_EDIT As String)
@@ -239,7 +243,7 @@ Namespace WS_DRUG
         Private Sub OnDRUG_UPDATE_DH15OperationCompleted(ByVal arg As Object)
             If (Not (Me.DRUG_UPDATE_DH15CompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent DRUG_UPDATE_DH15Completed(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+                RaiseEvent DRUG_UPDATE_DH15Completed(Me, New DRUG_UPDATE_DH15CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -271,10 +275,11 @@ Namespace WS_DRUG
         End Sub
         
         '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_INSERT_DR", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Sub DRUG_INSERT_DR(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String)
-            Me.Invoke("DRUG_INSERT_DR", New Object() {pvncd, rgttpcd, drgtpcd, rgtno, remark, IDENTIFY_EDIT, system})
-        End Sub
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_INSERT_DR", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function DRUG_INSERT_DR(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String) As String
+            Dim results() As Object = Me.Invoke("DRUG_INSERT_DR", New Object() {pvncd, rgttpcd, drgtpcd, rgtno, remark, IDENTIFY_EDIT, system})
+            Return CType(results(0),String)
+        End Function
         
         '''<remarks/>
         Public Overloads Sub DRUG_INSERT_DRAsync(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String)
@@ -292,15 +297,16 @@ Namespace WS_DRUG
         Private Sub OnDRUG_INSERT_DROperationCompleted(ByVal arg As Object)
             If (Not (Me.DRUG_INSERT_DRCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent DRUG_INSERT_DRCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+                RaiseEvent DRUG_INSERT_DRCompleted(Me, New DRUG_INSERT_DRCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
         '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_UPDATE_DR", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Sub DRUG_UPDATE_DR(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String)
-            Me.Invoke("DRUG_UPDATE_DR", New Object() {pvncd, rgttpcd, drgtpcd, rgtno, remark, IDENTIFY_EDIT, system})
-        End Sub
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_UPDATE_DR", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function DRUG_UPDATE_DR(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String) As String
+            Dim results() As Object = Me.Invoke("DRUG_UPDATE_DR", New Object() {pvncd, rgttpcd, drgtpcd, rgtno, remark, IDENTIFY_EDIT, system})
+            Return CType(results(0),String)
+        End Function
         
         '''<remarks/>
         Public Overloads Sub DRUG_UPDATE_DRAsync(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String)
@@ -318,15 +324,16 @@ Namespace WS_DRUG
         Private Sub OnDRUG_UPDATE_DROperationCompleted(ByVal arg As Object)
             If (Not (Me.DRUG_UPDATE_DRCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent DRUG_UPDATE_DRCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+                RaiseEvent DRUG_UPDATE_DRCompleted(Me, New DRUG_UPDATE_DRCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
         '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_DELETE_DR", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Sub DRUG_DELETE_DR(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String)
-            Me.Invoke("DRUG_DELETE_DR", New Object() {pvncd, rgttpcd, drgtpcd, rgtno, remark, IDENTIFY_EDIT, system})
-        End Sub
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_DELETE_DR", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function DRUG_DELETE_DR(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String) As String
+            Dim results() As Object = Me.Invoke("DRUG_DELETE_DR", New Object() {pvncd, rgttpcd, drgtpcd, rgtno, remark, IDENTIFY_EDIT, system})
+            Return CType(results(0),String)
+        End Function
         
         '''<remarks/>
         Public Overloads Sub DRUG_DELETE_DRAsync(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String)
@@ -344,7 +351,7 @@ Namespace WS_DRUG
         Private Sub OnDRUG_DELETE_DROperationCompleted(ByVal arg As Object)
             If (Not (Me.DRUG_DELETE_DRCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent DRUG_DELETE_DRCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+                RaiseEvent DRUG_DELETE_DRCompleted(Me, New DRUG_DELETE_DRCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -375,10 +382,11 @@ Namespace WS_DRUG
         End Sub
         
         '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/XML_DRUG_FORMULA", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Sub XML_DRUG_FORMULA(ByVal Newcode As String, ByVal IDENTIFY_EDIT As String)
-            Me.Invoke("XML_DRUG_FORMULA", New Object() {Newcode, IDENTIFY_EDIT})
-        End Sub
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/XML_DRUG_FORMULA", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function XML_DRUG_FORMULA(ByVal Newcode As String, ByVal IDENTIFY_EDIT As String) As String
+            Dim results() As Object = Me.Invoke("XML_DRUG_FORMULA", New Object() {Newcode, IDENTIFY_EDIT})
+            Return CType(results(0),String)
+        End Function
         
         '''<remarks/>
         Public Overloads Sub XML_DRUG_FORMULAAsync(ByVal Newcode As String, ByVal IDENTIFY_EDIT As String)
@@ -396,15 +404,16 @@ Namespace WS_DRUG
         Private Sub OnXML_DRUG_FORMULAOperationCompleted(ByVal arg As Object)
             If (Not (Me.XML_DRUG_FORMULACompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent XML_DRUG_FORMULACompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+                RaiseEvent XML_DRUG_FORMULACompleted(Me, New XML_DRUG_FORMULACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
         '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/XML_DRUG_LICENSE", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Sub XML_DRUG_LICENSE(ByVal Newcode As String)
-            Me.Invoke("XML_DRUG_LICENSE", New Object() {Newcode})
-        End Sub
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/XML_DRUG_LICENSE", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function XML_DRUG_LICENSE(ByVal Newcode As String) As String
+            Dim results() As Object = Me.Invoke("XML_DRUG_LICENSE", New Object() {Newcode})
+            Return CType(results(0),String)
+        End Function
         
         '''<remarks/>
         Public Overloads Sub XML_DRUG_LICENSEAsync(ByVal Newcode As String)
@@ -422,7 +431,7 @@ Namespace WS_DRUG
         Private Sub OnXML_DRUG_LICENSEOperationCompleted(ByVal arg As Object)
             If (Not (Me.XML_DRUG_LICENSECompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent XML_DRUG_LICENSECompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+                RaiseEvent XML_DRUG_LICENSECompleted(Me, New XML_DRUG_LICENSECompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -528,19 +537,111 @@ Namespace WS_DRUG
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
-    Public Delegate Sub DRUG_INSERT_LICENCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    Public Delegate Sub DRUG_INSERT_LICENCompletedEventHandler(ByVal sender As Object, ByVal e As DRUG_INSERT_LICENCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class DRUG_INSERT_LICENCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
-    Public Delegate Sub DRUG_UPDATE_LICENCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    Public Delegate Sub DRUG_UPDATE_LICENCompletedEventHandler(ByVal sender As Object, ByVal e As DRUG_UPDATE_LICENCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class DRUG_UPDATE_LICENCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
-    Public Delegate Sub DRUG_INSERT_DR15CompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    Public Delegate Sub DRUG_INSERT_DR15CompletedEventHandler(ByVal sender As Object, ByVal e As DRUG_INSERT_DR15CompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class DRUG_INSERT_DR15CompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
-    Public Delegate Sub DRUG_UPDATE_DH15CompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    Public Delegate Sub DRUG_UPDATE_DH15CompletedEventHandler(ByVal sender As Object, ByVal e As DRUG_UPDATE_DH15CompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class DRUG_UPDATE_DH15CompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
@@ -571,15 +672,84 @@ Namespace WS_DRUG
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
-    Public Delegate Sub DRUG_INSERT_DRCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    Public Delegate Sub DRUG_INSERT_DRCompletedEventHandler(ByVal sender As Object, ByVal e As DRUG_INSERT_DRCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class DRUG_INSERT_DRCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
-    Public Delegate Sub DRUG_UPDATE_DRCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    Public Delegate Sub DRUG_UPDATE_DRCompletedEventHandler(ByVal sender As Object, ByVal e As DRUG_UPDATE_DRCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class DRUG_UPDATE_DRCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
-    Public Delegate Sub DRUG_DELETE_DRCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    Public Delegate Sub DRUG_DELETE_DRCompletedEventHandler(ByVal sender As Object, ByVal e As DRUG_DELETE_DRCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class DRUG_DELETE_DRCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
@@ -587,11 +757,57 @@ Namespace WS_DRUG
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
-    Public Delegate Sub XML_DRUG_FORMULACompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    Public Delegate Sub XML_DRUG_FORMULACompletedEventHandler(ByVal sender As Object, ByVal e As XML_DRUG_FORMULACompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class XML_DRUG_FORMULACompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
-    Public Delegate Sub XML_DRUG_LICENSECompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    Public Delegate Sub XML_DRUG_LICENSECompletedEventHandler(ByVal sender As Object, ByVal e As XML_DRUG_LICENSECompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class XML_DRUG_LICENSECompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _

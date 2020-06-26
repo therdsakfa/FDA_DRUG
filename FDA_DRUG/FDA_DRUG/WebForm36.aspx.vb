@@ -649,12 +649,12 @@ Public Class WebForm36
         Dim dt_tp_stock As New DataTable
         Dim dt_edit_history As New DataTable
         'Dim dt_each
-        dt_drug_general = bao_master_2.SP_drug_general_rq(96767)
-        dt_formula = bao_master_2.SP_drug_formula_rq(96767)
-        dt_frgn = bao_show.SP_DRRQT_PRODUCER_ALL_BY_FK_IDA(96767)
-        dt_drug_recipe = bao_show.SP_DRRQT_ATC_DETAIL_BY_FK_IDA(96767)
-        dt_animal = bao_show.SP_drramldrg_BY_FK_IDA(96767)
-        dt_tp_stock = bao_show.SP_DRRQT_KEEP_DRUG_BY_FK_IDA(96767)
+        dt_drug_general = bao_master_2.SP_drug_general_rq(92049)
+        dt_formula = bao_master_2.SP_drug_formula_rq(92049)
+        dt_frgn = bao_show.SP_DRRQT_PRODUCER_ALL_BY_FK_IDA(92049)
+        dt_drug_recipe = bao_show.SP_DRRQT_ATC_DETAIL_BY_FK_IDA(92049)
+        dt_animal = bao_show.SP_drramldrg_BY_FK_IDA(92049)
+        dt_tp_stock = bao_show.SP_DRRQT_KEEP_DRUG_BY_FK_IDA(92049)
         Dim dt_print As New DataTable
         dt_print.Columns.Add("thanm")
         dt_print.Columns.Add("printdate")
@@ -727,7 +727,7 @@ Public Class WebForm36
 
     Protected Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim bao As New BAO.ClsDBSqlcommand
-        bao.insert_tabean_sub(95738)
+        bao.insert_tabean_sub(97068)
         ' insert_tabean(TextBox1.Text)
     End Sub
     Sub insert_tabean(ByVal FK_IDA As Integer)

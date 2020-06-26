@@ -102,7 +102,7 @@ Public Class FRM_RGT_EDIT_CONFIRM
         Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
         dao_rg.GetDataby_IDA(dao.fields.FK_IDA)
         Try
-            If dao_rg.fields.rgttpcd = "G" Or dao_rg.fields.rgttpcd = "H" Or dao_rg.fields.rgttpcd = "K" Then
+            If dao_rg.fields.rgttpcd = "G" Or dao_rg.fields.rgttpcd = "H" Or dao_rg.fields.rgttpcd = "K" Or ddl_req_type.SelectedValue = "599" Then
                 dao.fields.STATUS_ID = 3
             Else
                 dao.fields.STATUS_ID = 2

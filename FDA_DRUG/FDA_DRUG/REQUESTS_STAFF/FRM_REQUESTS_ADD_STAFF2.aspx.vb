@@ -58,6 +58,7 @@
 
             'Dim ws As New AUTHEN_LOG.Authentication
             'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "INSERT A", "1007001")
+
             Dim ws_118 As New WS_AUTHENTICATION.Authentication
             Dim ws_66 As New Authentication_66.Authentication
             Dim ws_104 As New AUTHENTICATION_104.Authentication

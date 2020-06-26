@@ -22,13 +22,13 @@
     <table width="100%">
     <tr>
         <td align="center">
-            <asp:Button ID="btn_new" runat="server" Text="คำขอใหม่" class="btn btn-green" style="color:DarkBlue;width:350px;height:210px;border-radius: 12px; border:solid; border-width:thin; border-color:lightgreen;" />
+            <asp:Button ID="btn_new" runat="server" Text="คำขอใหม่" class="btn btn-green" style="color:DarkBlue;width:350px;height:210px;border-radius: 12px; border:solid; border-width:thin; border-color:lightgreen;" BackColor="White" />
         </td>
         
     </tr>
         <tr>
 <td align="center">
-            <asp:Button ID="btn_other" runat="server" Text="คำขออื่นๆ" class="btn btn-green" style="color:DarkBlue;width:350px;height:210px;border-radius: 12px; border:solid; border-width:thin; border-color:lightgreen;" />
+            <asp:Button ID="btn_other" runat="server" Text="คำขออื่นๆ" class="btn btn-green" style="color:DarkBlue;width:350px;height:210px;border-radius: 12px; border:solid; border-width:thin; border-color:lightgreen;" BackColor="White" />
         </td>
         </tr>
 </table>

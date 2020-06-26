@@ -4155,6 +4155,12 @@ Partial Public Class Linq_DRUGDataContext
 			Return Me.GetTable(Of DRUG_CONSIDER_REQUEST)
 		End Get
 	End Property
+	
+	Public ReadOnly Property MAS_MENU_AUTO2s() As System.Data.Linq.Table(Of MAS_MENU_AUTO2)
+		Get
+			Return Me.GetTable(Of MAS_MENU_AUTO2)
+		End Get
+	End Property
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.RECIVE")>  _
@@ -133833,4 +133839,153 @@ Partial Public Class DRUG_CONSIDER_REQUEST
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
 	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.MAS_MENU_AUTO2")>  _
+Partial Public Class MAS_MENU_AUTO2
+	
+	Private _IDA As Integer
+	
+	Private _HEAD_ID As System.Nullable(Of Integer)
+	
+	Private _NAME As String
+	
+	Private _URL As String
+	
+	Private _GROUP_PAGE As System.Nullable(Of Integer)
+	
+	Private _NODE_SWITCH As System.Nullable(Of Integer)
+	
+	Private _PROCESS_ID As System.Nullable(Of Integer)
+	
+	Private _SEQ As System.Nullable(Of Integer)
+	
+	Private _IS_EXPAND As System.Nullable(Of Boolean)
+	
+	Private _TYPE_SELECT As System.Nullable(Of Integer)
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.Always, DbType:="Int NOT NULL IDENTITY", IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me._IDA = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_HEAD_ID", DbType:="Int")>  _
+	Public Property HEAD_ID() As System.Nullable(Of Integer)
+		Get
+			Return Me._HEAD_ID
+		End Get
+		Set
+			If (Me._HEAD_ID.Equals(value) = false) Then
+				Me._HEAD_ID = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NAME", DbType:="NVarChar(MAX)")>  _
+	Public Property NAME() As String
+		Get
+			Return Me._NAME
+		End Get
+		Set
+			If (String.Equals(Me._NAME, value) = false) Then
+				Me._NAME = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_URL", DbType:="NVarChar(MAX)")>  _
+	Public Property URL() As String
+		Get
+			Return Me._URL
+		End Get
+		Set
+			If (String.Equals(Me._URL, value) = false) Then
+				Me._URL = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_GROUP_PAGE", DbType:="Int")>  _
+	Public Property GROUP_PAGE() As System.Nullable(Of Integer)
+		Get
+			Return Me._GROUP_PAGE
+		End Get
+		Set
+			If (Me._GROUP_PAGE.Equals(value) = false) Then
+				Me._GROUP_PAGE = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NODE_SWITCH", DbType:="Int")>  _
+	Public Property NODE_SWITCH() As System.Nullable(Of Integer)
+		Get
+			Return Me._NODE_SWITCH
+		End Get
+		Set
+			If (Me._NODE_SWITCH.Equals(value) = false) Then
+				Me._NODE_SWITCH = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROCESS_ID", DbType:="Int")>  _
+	Public Property PROCESS_ID() As System.Nullable(Of Integer)
+		Get
+			Return Me._PROCESS_ID
+		End Get
+		Set
+			If (Me._PROCESS_ID.Equals(value) = false) Then
+				Me._PROCESS_ID = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEQ", DbType:="Int")>  _
+	Public Property SEQ() As System.Nullable(Of Integer)
+		Get
+			Return Me._SEQ
+		End Get
+		Set
+			If (Me._SEQ.Equals(value) = false) Then
+				Me._SEQ = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IS_EXPAND", DbType:="Bit")>  _
+	Public Property IS_EXPAND() As System.Nullable(Of Boolean)
+		Get
+			Return Me._IS_EXPAND
+		End Get
+		Set
+			If (Me._IS_EXPAND.Equals(value) = false) Then
+				Me._IS_EXPAND = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TYPE_SELECT", DbType:="Int")>  _
+	Public Property TYPE_SELECT() As System.Nullable(Of Integer)
+		Get
+			Return Me._TYPE_SELECT
+		End Get
+		Set
+			If (Me._TYPE_SELECT.Equals(value) = false) Then
+				Me._TYPE_SELECT = value
+			End If
+		End Set
+	End Property
 End Class

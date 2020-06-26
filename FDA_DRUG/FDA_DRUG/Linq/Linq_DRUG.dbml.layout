@@ -806,10 +806,10 @@
         <elementListCompartment Id="33fb4a20-0dba-47bb-a61a-2d1231e54bf5" absoluteBounds="10.265, 14.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="29f38d4b-8b9e-421b-8d04-3f7cacde0bde" isExpanded="false" absoluteBounds="7.125, 2.75, 2, 0.45">
+    <classShape Id="29f38d4b-8b9e-421b-8d04-3f7cacde0bde" isExpanded="false" absoluteBounds="8.875, 4.625, 2, 0.45">
       <DataClassMoniker Name="/Linq_DRUGDataContext/MAS_DOCUMENT_RECEIVER" />
       <nestedChildShapes>
-        <elementListCompartment Id="466364a2-ba48-41c1-a06e-906565fe26dd" absoluteBounds="7.14, 3.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="466364a2-ba48-41c1-a06e-906565fe26dd" absoluteBounds="8.89, 5.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="a30cca4c-e702-4992-92e9-09cf1827ec39" isExpanded="false" absoluteBounds="0.5, 5.75, 2, 0.45">
@@ -2064,6 +2064,12 @@
       <DataClassMoniker Name="/Linq_DRUGDataContext/DRUG_CONSIDER_REQUEST" />
       <nestedChildShapes>
         <elementListCompartment Id="77baf07c-737e-449d-9837-22385f82dde0" absoluteBounds="0.51500000000000012, 11.835, 1.9700000000000002, 9.2875569661458321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="81afc662-c3c5-4cee-bc0e-698a80654ff0" isExpanded="false" absoluteBounds="7, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/MAS_MENU_AUTO2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="167157ff-eef8-40b8-ab40-0f55d0f2baa0" absoluteBounds="7.015, 3.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

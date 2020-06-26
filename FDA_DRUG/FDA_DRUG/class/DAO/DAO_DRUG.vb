@@ -13747,6 +13747,60 @@ Namespace DAO_DRUG
             db.SubmitChanges()
         End Sub
     End Class
+    Public Class ClsDBMAS_MENU_AUTO2
+        Inherits MAINCONTEXT
+
+        Public fields As New MAS_MENU_AUTO2
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+            datas = (From p In db.MAS_MENU_AUTO2s Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_HEAD_ID(ByVal head_id As Integer, ByVal group_p As Integer)
+            datas = (From p In db.MAS_MENU_AUTO2s Where p.HEAD_ID = head_id And p.GROUP_PAGE = group_p Select p Order By p.SEQ Ascending)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_HEAD_ID2(ByVal head_id As Integer, ByVal group_p As Integer, ByVal sel_type As Integer)
+            datas = (From p In db.MAS_MENU_AUTO2s Where p.HEAD_ID = head_id And p.GROUP_PAGE = group_p And p.TYPE_SELECT = sel_type Select p Order By p.SEQ Ascending)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_Process(ByVal process As Integer)
+            datas = (From p In db.MAS_MENU_AUTO2s Where p.PROCESS_ID = process And p.GROUP_PAGE = 1 Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_Process2(ByVal process As Integer)
+            datas = (From p In db.MAS_MENU_AUTO2s Where p.PROCESS_ID = process Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub insert()
+            db.MAS_MENU_AUTO2s.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.MAS_MENU_AUTO2s.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+            datas = (From p In db.MAS_MENU_AUTO2s Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+    End Class
 End Namespace
 
 

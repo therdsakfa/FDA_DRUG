@@ -100,25 +100,30 @@ Public Class FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2
             'sql = "select URL from tb_User where IDA = '&MAS_MENU=" & 
 
             Dim H As HyperLink = e.Item.FindControl("HL_SELECT")
-            H.NavigateUrl = "FRM_REPLACEMENT_LICENSE_LOCATION_MENU.aspx?lct_ida=" & FK_IDA & "&TR_ID=" & TR_ID & "&MENU_GROUP=" & _MENU_GROUP & "&lcn_ida=IDA"  'URL หน้า ยืนยัน
-            H.Style.Add("display", "none")
-            Dim dao As New DAO_DRUG.TB_DALCN_LOCATION_ADDRESS
-            Try
-                _CLS.CITIZEN_ID_AUTHORIZE = item("IDENTIFY").Text
-            Catch ex As Exception
+            If Request.QueryString("ttt") = 2 Then
+                H.NavigateUrl = "FRM_REPLACEMENT_LICENSE_LOCATION_MENU2.aspx?lct_ida=" & FK_IDA & "&TR_ID=" & TR_ID & "&MENU_GROUP=" & _MENU_GROUP & "&lcn_ida=" & IDA & "&ttt=" & Request.QueryString("ttt") 'URL หน้า ยืนยัน
+            Else
+                H.NavigateUrl = "FRM_REPLACEMENT_LICENSE_LOCATION_MENU.aspx?lct_ida=" & FK_IDA & "&TR_ID=" & TR_ID & "&MENU_GROUP=" & _MENU_GROUP & "&lcn_ida=" & IDA & "&ttt=" & Request.QueryString("ttt")  'URL หน้า ยืนยัน
+            End If
 
-            End Try
+            'H.Style.Add("display", "none")
+            'Dim dao As New DAO_DRUG.TB_DALCN_LOCATION_ADDRESS
+            'Try
+            '    _CLS.CITIZEN_ID_AUTHORIZE = item("IDENTIFY").Text
+            'Catch ex As Exception
+
+            'End Try
             Session("CLS") = _CLS
-            Try
-                dao.GetDataby_IDA(IDA)
+            'Try
+            '    dao.GetDataby_IDA(IDA)
 
-                If dao.fields.STATUS_ID = 8 Then
-                    H.Style.Add("display", "block")
+            '    If dao.fields.STATUS_ID = 8 Then
+            '        H.Style.Add("display", "block")
 
-                End If
-            Catch ex As Exception
+            '    End If
+            'Catch ex As Exception
 
-            End Try
+            'End Try
 
         End If
     End Sub
@@ -139,7 +144,14 @@ Public Class FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2
 
             'RadGrid1.DataSource = BAO.SP_CUSTOMER_LOCATION_ADDRESS_by_LOCATION_TYPE_ID_and_IDEN(1, _CLS.LCNSID_CUSTOMER) 'เรียกใช้เพื่อดึงข้อมูลสถานที่ตั้ง
             'RadGrid1.DataSource = bao.SP_CUSTOMER_LOCATION_ADDRESS_by_LOCATION_TYPE_ID_and_IDEN(1, _CLS.CITIZEN_ID_AUTHORIZE)
-            RadGrid1.DataSource = bao.SP_CUSTOMER_LCN_BY_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE)
+            If Request.QueryString("MENU_GROUP") = "2" Then
+                RadGrid1.DataSource = bao.SP_CUSTOMER_LCN_DH_BY_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE)
+            ElseIf Request.QueryString("MENU_GROUP") = "3" Then
+                RadGrid1.DataSource = bao.SP_CUSTOMER_LCN_DR_BY_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE)
+            Else
+                RadGrid1.DataSource = bao.SP_CUSTOMER_LCN_BY_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE)
+            End If
+
             RadGrid1.Rebind()
         End If
     End Sub
