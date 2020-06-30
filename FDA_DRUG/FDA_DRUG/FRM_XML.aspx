@@ -90,6 +90,8 @@
          <asp:Button ID="Button3" runat="server" Text="gen_drrqt_all" />
          <asp:Button ID="Button4" runat="server" Text="วจ" Width="100px" />
          <asp:Button ID="Button5" runat="server" Text="วจ Temp" />
+         <asp:Button ID="Button6" runat="server" Text="dalcn edit rqt" />
+         <asp:Button ID="Button7" runat="server" Text="dalcn_sub" />
         </div>
     </form>
 </body>

@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class WebForm9
+Partial Public Class FRM_EDIT_LCN_MAIN
     
     '''<summary>
     '''lbl_name control.
@@ -21,6 +21,15 @@ Partial Public Class WebForm9
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_name As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Button1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''btn_download control.
@@ -41,11 +50,20 @@ Partial Public Class WebForm9
     Protected WithEvents btn_upload As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''GV_lcnno control.
+    '''RadGrid1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GV_lcnno As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
+    
+    '''<summary>
+    '''btn_reload control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
 End Class

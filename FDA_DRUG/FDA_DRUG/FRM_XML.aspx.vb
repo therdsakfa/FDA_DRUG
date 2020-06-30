@@ -2163,4 +2163,224 @@ Public Class FRM_XML
         x.Serialize(objStreamWriter, cls_xml)
         objStreamWriter.Close()
     End Sub
+
+    Protected Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim filename As String = "VORJOR_EDIT"
+        Dim bao_show As New BAO_SHOW
+        Dim cls As New CLASS_GEN_XML.DALCN_EDIT_REQUEST("0000000000000", 252565, "1", "10") 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
+        Dim cls_xml As New CLASS_DALCN_EDIT_REQUEST                                                                        ' ประกาศตัวแปรจาก CLASS_DALCN 
+        cls_xml = cls.gen_xml()                                                                               'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
+        Dim lct_ida As Integer = 101680
+
+        'Try
+        '    lct_ida = Request.QueryString("lct_ida")
+        'Catch ex As Exception
+
+        'End Try
+
+        cls_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(lct_ida) 'ข้อมูลสถานที่จำลอง
+
+        cls_xml.DT_SHOW.DT11 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(1, "0000000000000") 'ข้อมูลที่ตั้งหลัก
+        cls_xml.DT_SHOW.DT11.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSID_5"
+        cls_xml.DT_SHOW.DT12 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY("0000000000000", 252565) 'ข้อมูลบริษัท
+        cls_xml.DT_SHOW.DT13 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(2, "0000000000000") 'ที่เก็บ
+        If cls_xml.DT_SHOW.DT13.Rows.Count = 0 Then
+
+        End If
+        cls_xml.DT_SHOW.DT13.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSID_2"
+
+        Dim ws2 As New WS_Taxno_TaxnoAuthorize.WebService1
+        'If txt_bsn.Text <> "" Then
+        '    ws2.insert_taxno(txt_bsn.Text)
+        'End If
+
+
+
+        cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_IDENTIFY("1710500118665") 'ผู้ดำเนิน
+        cls_xml.DT_SHOW.DT14.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
+
+        Dim lcnno_auto As String = ""
+        Dim lcnno_format As String = ""
+        Dim MAIN_LCN_IDA As Integer = 61332
+        Dim dao_main As New DAO_DRUG.ClsDBdalcn
+        dao_main.GetDataby_IDA(61332)
+        Try
+            lcnno_auto = dao_main.fields.lcnno
+        Catch ex As Exception
+
+        End Try
+        Try
+            If Len(lcnno_auto) > 0 Then
+
+                If Right(Left(lcnno_auto, 3), 1) = "5" Then
+                    lcnno_format = "จ. " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
+                Else
+                    lcnno_format = dao_main.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+                End If
+                'lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If MAIN_LCN_IDA <> 0 Then
+            Dim dao_main2 As New DAO_DRUG.ClsDBdalcn
+            dao_main2.GetDataby_IDA(61332)
+
+            Try
+                'lcnno_format = 
+                cls_xml.HEAD_LCNNO = CStr(CInt(Right(dao_main2.fields.lcnno, 5))) & "/25" & Left(dao_main2.fields.lcnno, 2)
+            Catch ex As Exception
+
+            End Try
+
+        End If
+
+
+        Dim bao_cpn As New BAO.ClsDBSqlcommand
+
+        'cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_IDENTIFY(txt_bsn.Text) 'ผู้ดำเนิน
+        'cls_xml.DT_SHOW.DT14.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
+        cls_xml.DT_SHOW.DT15 = bao_cpn.SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2("0000000000000")
+        cls_xml.DT_SHOW.DT15.TableName = "SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2"
+
+        cls_xml.DT_SHOW.DT16 = bao_cpn.SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2("1710500118665")
+        cls_xml.DT_SHOW.DT16.TableName = "SP_BSN_LOCATION_ADDRESS_BY_IDEN_BSN_ADDR"
+
+        Dim bao_master As New BAO_MASTER
+        cls_xml.DT_SHOW.DT10 = bao_master.SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_BY_IDA(2427)
+
+        Dim _lcn_ida As Integer
+        ' If Integer.TryParse(_lcn_ida) = True Then
+        cls_xml.DT_MASTER.DT30 = bao_master.SP_MASTER_DALCN_by_IDA(61332)
+        ' End If
+        cls_xml.BSN_IDENTIFY = "1710500118665"
+        cls_xml.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
+        cls_xml.LCNNO_FORMAT = lcnno_format
+        cls_xml.RCVNO_FORMAT = "1/2563"
+        Try
+            'If dao.fields.BSN_NATIONALITY_CD = 1 Then
+            'cls_xml.dalcns.NATION = "ไทย"
+            'End If
+        Catch ex As Exception
+
+        End Try
+
+        Dim bao_app As New BAO.AppSettings
+        Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
+        path = path & filename.ToString() & ".xml"
+        Dim objStreamWriter As New StreamWriter(path)                                                         'ประกาศตัวแปร
+        Dim x As New XmlSerializer(cls_xml.GetType)                                                           'ประกาศ
+        x.Serialize(objStreamWriter, cls_xml)
+        objStreamWriter.Close()
+    End Sub
+
+    Protected Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Dim filename As String = "VORJOR_SUB"
+        Dim bao_show As New BAO_SHOW
+        Dim cls As New CLASS_GEN_XML.DALCN_NCT_SUB("0000000000000", 252565, "1", "10") 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
+        Dim cls_xml As New CLASS_DALCN_NCT_SUBSTITUTE                                                                       ' ประกาศตัวแปรจาก CLASS_DALCN 
+        cls_xml = cls.gen_xml()                                                                               'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
+        Dim lct_ida As Integer = 101680
+
+        'Try
+        '    lct_ida = Request.QueryString("lct_ida")
+        'Catch ex As Exception
+
+        'End Try
+
+        cls_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(lct_ida) 'ข้อมูลสถานที่จำลอง
+
+        cls_xml.DT_SHOW.DT11 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(1, "0000000000000") 'ข้อมูลที่ตั้งหลัก
+        cls_xml.DT_SHOW.DT11.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSID_5"
+        cls_xml.DT_SHOW.DT12 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY("0000000000000", 252565) 'ข้อมูลบริษัท
+        cls_xml.DT_SHOW.DT13 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(2, "0000000000000") 'ที่เก็บ
+        If cls_xml.DT_SHOW.DT13.Rows.Count = 0 Then
+
+        End If
+        cls_xml.DT_SHOW.DT13.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSID_2"
+
+        Dim ws2 As New WS_Taxno_TaxnoAuthorize.WebService1
+        'If txt_bsn.Text <> "" Then
+        '    ws2.insert_taxno(txt_bsn.Text)
+        'End If
+
+
+
+        cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_IDENTIFY("1710500118665") 'ผู้ดำเนิน
+        cls_xml.DT_SHOW.DT14.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
+
+        Dim lcnno_auto As String = ""
+        Dim lcnno_format As String = ""
+        Dim MAIN_LCN_IDA As Integer = 61332
+        Dim dao_main As New DAO_DRUG.ClsDBdalcn
+        dao_main.GetDataby_IDA(61332)
+        Try
+            lcnno_auto = dao_main.fields.lcnno
+        Catch ex As Exception
+
+        End Try
+        Try
+            If Len(lcnno_auto) > 0 Then
+
+                If Right(Left(lcnno_auto, 3), 1) = "5" Then
+                    lcnno_format = "จ. " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
+                Else
+                    lcnno_format = dao_main.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+                End If
+                'lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If MAIN_LCN_IDA <> 0 Then
+            Dim dao_main2 As New DAO_DRUG.ClsDBdalcn
+            dao_main2.GetDataby_IDA(61332)
+
+            Try
+                'lcnno_format = 
+                cls_xml.HEAD_LCNNO = CStr(CInt(Right(dao_main2.fields.lcnno, 5))) & "/25" & Left(dao_main2.fields.lcnno, 2)
+            Catch ex As Exception
+
+            End Try
+
+        End If
+
+
+        Dim bao_cpn As New BAO.ClsDBSqlcommand
+
+        'cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_IDENTIFY(txt_bsn.Text) 'ผู้ดำเนิน
+        'cls_xml.DT_SHOW.DT14.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
+        cls_xml.DT_SHOW.DT15 = bao_cpn.SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2("0000000000000")
+        cls_xml.DT_SHOW.DT15.TableName = "SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2"
+
+        cls_xml.DT_SHOW.DT16 = bao_cpn.SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2("1710500118665")
+        cls_xml.DT_SHOW.DT16.TableName = "SP_BSN_LOCATION_ADDRESS_BY_IDEN_BSN_ADDR"
+
+        Dim bao_master As New BAO_MASTER
+        cls_xml.DT_SHOW.DT10 = bao_master.SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_BY_IDA(2427)
+
+        Dim _lcn_ida As Integer
+        ' If Integer.TryParse(_lcn_ida) = True Then
+        cls_xml.DT_MASTER.DT30 = bao_master.SP_MASTER_DALCN_by_IDA(61332)
+        ' End If
+        cls_xml.BSN_IDENTIFY = "1710500118665"
+        cls_xml.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
+        cls_xml.LCNNO_FORMAT = lcnno_format
+        cls_xml.RCVNO_FORMAT = "1/2563"
+        Try
+            'If dao.fields.BSN_NATIONALITY_CD = 1 Then
+            'cls_xml.dalcns.NATION = "ไทย"
+            'End If
+        Catch ex As Exception
+
+        End Try
+
+        Dim bao_app As New BAO.AppSettings
+        Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
+        path = path & filename.ToString() & ".xml"
+        Dim objStreamWriter As New StreamWriter(path)                                                         'ประกาศตัวแปร
+        Dim x As New XmlSerializer(cls_xml.GetType)                                                           'ประกาศ
+        x.Serialize(objStreamWriter, cls_xml)
+        objStreamWriter.Close()
+    End Sub
 End Class

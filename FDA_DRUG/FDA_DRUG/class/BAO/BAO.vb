@@ -4671,6 +4671,19 @@ Namespace BAO
             Return dt
         End Function
         '
+        Public Function SP_DALCN_EDIT_REQUEST_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DALCN_EDIT_REQUEST_BY_FK_IDA @FK_IDA=" & fk_ida
+            Dim dt As New DataTable
+            Try
+                dt = clsds.dsQueryselect(sql, con_str).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
+
+            Return dt
+        End Function
         Public Function SP_STAFF_DALCN_BY_PVNCD(ByVal pvncd As Integer) As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_STAFF_DALCN_BY_PVNCD @pvncd=" & pvncd

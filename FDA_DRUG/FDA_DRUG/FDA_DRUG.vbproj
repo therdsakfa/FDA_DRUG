@@ -757,6 +757,9 @@
     <Content Include="DS\FRM_DS_DRUG8_ADD.aspx" />
     <Content Include="DS\UC\UC_DS_DRUG8_ADD.ascx" />
     <Content Include="DS_STAFF\FRM_DS_STAFF_REMARK2.aspx" />
+    <Content Include="EDIT_LCN\FRM_EDIT_LCN_CONFIRM.aspx" />
+    <Content Include="EDIT_LCN\FRM_EDIT_LCN_MAIN.aspx" />
+    <Content Include="EDIT_LCN\FRM_EDIT_LCN_UPLOAD.aspx" />
     <Content Include="EDIT_LOCATION_STAFF\FRM_PHR_CANCEL.aspx" />
     <Content Include="EDIT_LOCATION_STAFF\UC\UC_PHR_CANCEL.ascx" />
     <Content Include="EXTEND_TIME_LOCATION\FRM_EXTEND_LCN_ATTACH_PAGE.aspx" />
@@ -2219,6 +2222,8 @@
     <Compile Include="class\Untility_aspose.vb" />
     <Compile Include="class\UTILITY_CLS.vb" />
     <Compile Include="class\XML\CLASS_CER_FOREIGN.vb" />
+    <Compile Include="class\XML\CLASS_DALCN_EDIT_REQUEST.vb" />
+    <Compile Include="class\XML\CLASS_DALCN_NCT_SUBSTITUTE.vb" />
     <Compile Include="class\XML\CLASS_DRRGT_PI.vb" />
     <Compile Include="class\XML\CLASS_DRRGT_PIL.vb" />
     <Compile Include="class\XML\CLASS_DRRGT_SPC.vb" />
@@ -2906,6 +2911,27 @@
     <Compile Include="DS_STAFF\FRM_DS_STAFF_REMARK2.aspx.vb">
       <DependentUpon>FRM_DS_STAFF_REMARK2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EDIT_LCN\FRM_EDIT_LCN_CONFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_EDIT_LCN_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EDIT_LCN\FRM_EDIT_LCN_CONFIRM.aspx.vb">
+      <DependentUpon>FRM_EDIT_LCN_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EDIT_LCN\FRM_EDIT_LCN_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_EDIT_LCN_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EDIT_LCN\FRM_EDIT_LCN_MAIN.aspx.vb">
+      <DependentUpon>FRM_EDIT_LCN_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EDIT_LCN\FRM_EDIT_LCN_UPLOAD.aspx.designer.vb">
+      <DependentUpon>FRM_EDIT_LCN_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EDIT_LCN\FRM_EDIT_LCN_UPLOAD.aspx.vb">
+      <DependentUpon>FRM_EDIT_LCN_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="EDIT_LOCATION_STAFF\FRM_PHR_CANCEL.aspx.designer.vb">
       <DependentUpon>FRM_PHR_CANCEL.aspx</DependentUpon>

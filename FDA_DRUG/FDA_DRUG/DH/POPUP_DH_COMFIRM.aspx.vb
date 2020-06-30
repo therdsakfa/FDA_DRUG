@@ -80,6 +80,8 @@ Public Class POPUP_DH_COMFIRM
         'Dim ws As New AUTHEN_LOG.Authentication
         'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", _TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "ยื่นคำขอเภสัชเคมีภัณฑ์", _process)
         Dim lcn_ida As Integer = 0
+        Dim type_rqt As Integer = 0
+        Dim country As Integer = 0
 
         Dim dao As New DAO_DRUG.ClsDBdh15rqt
         dao.GetDataby_IDA(_IDA)
@@ -88,73 +90,29 @@ Public Class POPUP_DH_COMFIRM
         Catch ex As Exception
 
         End Try
-        'If _process <> 15 Then
-        If _process = 16 Or _process = 17 Or _process = 18 Then
-            dao.fields.STATUS_ID = 8
-
-            Dim RCVNO As String = ""
-            Dim run_number As String = ""
-            Dim dao2 As New DAO_DRUG.TB_DH15_DETAIL_CASCHEMICAL
-            dao2.GetDataby_FK_IDA(_IDA)
-            Dim bao2 As New BAO.GenNumber
-            RCVNO = bao2.GEN_NO_04(con_year(Date.Now.Year()), _CLS.PVCODE, _process, "", "", 0, _IDA, "")
-            dao.fields.rcvno = RCVNO
-            dao.fields.RCVNO_DISPLAY = bao2.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
-            dao.fields.rcvdate = Date.Now
-            dao.fields.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
-            dao.fields.REQUEST_DATE = Date.Now
-
-            Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
-            dao_lcn.GetDataby_IDA(lcn_ida)
-            Try
-                dao.fields.lcntpcd = dao_lcn.fields.lcntpcd
-            Catch ex As Exception
-
-            End Try
-            Try
-                dao.fields.pvnabbr = dao_lcn.fields.pvnabbr
-            Catch ex As Exception
-
-            End Try
-            Try
-                dao.fields.lcnsid = dao_lcn.fields.lcnsid
-            Catch ex As Exception
-
-            End Try
-            'For Each dao2.fields In dao2.datas
-            Dim CAS_ID As Integer = 0
-            Dim dao_cas As New DAO_DRUG.TB_MAS_CHEMICAL
-            Try
-                CAS_ID = RTrim(LTrim(dao2.fields.CAS_ID))
-            Catch ex As Exception
-
-            End Try
-            dao_cas.GetDataby_IDA(CAS_ID)
-
-
-            Dim bao As New BAO.GenNumber 'test
-
-            run_number = bao.GEN_DH15TDGT_NO(_YEARS, dao_cas.fields.aori, _process, _IDA, dao2.fields.IDA, dao.fields.QUOTA_TYPE)
-
-            Dim dao3 As New DAO_DRUG.TB_DH15_DETAIL_CASCHEMICAL
-            dao3.GetDataby_IDA(dao2.fields.IDA)
-            If Len(dao3.fields.phm15dgt) = 0 Then
-                dao3.fields.phm15dgt = run_number
-                dao3.update()
+        Try
+            If dao.fields.lcntpcd = "ผย1" Then
+                type_rqt = 1
             End If
-            dao.update()
+        Catch ex As Exception
 
-            Dim ws_update As New WS_DRUG.WS_DRUG
-            ws_update.DRUG_INSERT_DR15(_IDA, _CLS.CITIZEN_ID_AUTHORIZE)
+        End Try
+        Try
+            country = Trim(dao.fields.FOREIGN_COUNTRY_CD)
+        Catch ex As Exception
 
-            AddLogStatus(8, _process, _CLS.CITIZEN_ID, _IDA)
-            alert("ยื่นคำขอเรียบร้อยแล้ว เลขจดแจ้ง 15 หลักคือ คือ " & run_number)
+        End Try
+        'If _process <> 15 Then
+        If type_rqt = 1 And country <> 233 Then
+            Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถจดแจ้งสถานที่ผลิตต่างประเทศภายใต้ใบอนุญาตผลิตยาได้');</script> ")
         Else
-            If _process = 14 Then
-                dao.fields.STATUS_ID = 10
+            If _process = 16 Or _process = 17 Or _process = 18 Then
+                dao.fields.STATUS_ID = 8
 
                 Dim RCVNO As String = ""
                 Dim run_number As String = ""
+                Dim dao2 As New DAO_DRUG.TB_DH15_DETAIL_CASCHEMICAL
+                dao2.GetDataby_FK_IDA(_IDA)
                 Dim bao2 As New BAO.GenNumber
                 RCVNO = bao2.GEN_NO_04(con_year(Date.Now.Year()), _CLS.PVCODE, _process, "", "", 0, _IDA, "")
                 dao.fields.rcvno = RCVNO
@@ -180,16 +138,77 @@ Public Class POPUP_DH_COMFIRM
                 Catch ex As Exception
 
                 End Try
-                dao.update()
-            ElseIf _process = 15 Then
-                AddLogStatus(2, _process, _CLS.CITIZEN_ID, _IDA)
-                dao.fields.STATUS_ID = 2
-                dao.fields.REQUEST_DATE = Date.Now
-                dao.update()
-                alert("ยื่นคำขอเรียบร้อยแล้ว")
-            End If
+                'For Each dao2.fields In dao2.datas
+                Dim CAS_ID As Integer = 0
+                Dim dao_cas As New DAO_DRUG.TB_MAS_CHEMICAL
+                Try
+                    CAS_ID = RTrim(LTrim(dao2.fields.CAS_ID))
+                Catch ex As Exception
 
+                End Try
+                dao_cas.GetDataby_IDA(CAS_ID)
+
+
+                Dim bao As New BAO.GenNumber 'test
+
+                run_number = bao.GEN_DH15TDGT_NO(_YEARS, dao_cas.fields.aori, _process, _IDA, dao2.fields.IDA, dao.fields.QUOTA_TYPE)
+
+                Dim dao3 As New DAO_DRUG.TB_DH15_DETAIL_CASCHEMICAL
+                dao3.GetDataby_IDA(dao2.fields.IDA)
+                If Len(dao3.fields.phm15dgt) = 0 Then
+                    dao3.fields.phm15dgt = run_number
+                    dao3.update()
+                End If
+                dao.update()
+
+                Dim ws_update As New WS_DRUG.WS_DRUG
+                ws_update.DRUG_INSERT_DR15(_IDA, _CLS.CITIZEN_ID_AUTHORIZE)
+
+                AddLogStatus(8, _process, _CLS.CITIZEN_ID, _IDA)
+                alert("ยื่นคำขอเรียบร้อยแล้ว เลขจดแจ้ง 15 หลักคือ คือ " & run_number)
+            Else
+                If _process = 14 Then
+                    dao.fields.STATUS_ID = 10
+
+                    Dim RCVNO As String = ""
+                    Dim run_number As String = ""
+                    Dim bao2 As New BAO.GenNumber
+                    RCVNO = bao2.GEN_NO_04(con_year(Date.Now.Year()), _CLS.PVCODE, _process, "", "", 0, _IDA, "")
+                    dao.fields.rcvno = RCVNO
+                    dao.fields.RCVNO_DISPLAY = bao2.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
+                    dao.fields.rcvdate = Date.Now
+                    dao.fields.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
+                    dao.fields.REQUEST_DATE = Date.Now
+
+                    Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
+                    dao_lcn.GetDataby_IDA(lcn_ida)
+                    Try
+                        dao.fields.lcntpcd = dao_lcn.fields.lcntpcd
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        dao.fields.pvnabbr = dao_lcn.fields.pvnabbr
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        dao.fields.lcnsid = dao_lcn.fields.lcnsid
+                    Catch ex As Exception
+
+                    End Try
+                    dao.update()
+                ElseIf _process = 15 Then
+                    AddLogStatus(2, _process, _CLS.CITIZEN_ID, _IDA)
+                    dao.fields.STATUS_ID = 2
+                    dao.fields.REQUEST_DATE = Date.Now
+                    dao.update()
+                    alert("ยื่นคำขอเรียบร้อยแล้ว")
+                End If
+
+            End If
         End If
+
 
         'End If
 
