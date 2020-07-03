@@ -760,6 +760,11 @@
     <Content Include="EDIT_LCN\FRM_EDIT_LCN_CONFIRM.aspx" />
     <Content Include="EDIT_LCN\FRM_EDIT_LCN_MAIN.aspx" />
     <Content Include="EDIT_LCN\FRM_EDIT_LCN_UPLOAD.aspx" />
+    <Content Include="EDIT_LCN\POPUP_EDIT_LCN_APPOINTMENT_PREVIEW.aspx" />
+    <Content Include="EDIT_LCN_STAFF\FRM_EDIT_LCN_CONSIDER.aspx" />
+    <Content Include="EDIT_LCN_STAFF\FRM_EDIT_LCN_REMARK.aspx" />
+    <Content Include="EDIT_LCN_STAFF\FRM_EDIT_LCN_STAFF_MAIN.aspx" />
+    <Content Include="EDIT_LCN_STAFF\POPUP_EDIT_LCN_STAFF_CONFIRM.aspx" />
     <Content Include="EDIT_LOCATION_STAFF\FRM_PHR_CANCEL.aspx" />
     <Content Include="EDIT_LOCATION_STAFF\UC\UC_PHR_CANCEL.ascx" />
     <Content Include="EXTEND_TIME_LOCATION\FRM_EXTEND_LCN_ATTACH_PAGE.aspx" />
@@ -776,6 +781,7 @@
     <Content Include="LCN\POPUP_LCN_NCT_TEMP_CONFIRM.aspx" />
     <Content Include="LCN\POPUP_LCN_NCT_TEMP_INSERT.aspx" />
     <Content Include="LCN_STAFF\FRM_STAFF_LCN_ADD_LOCATION.aspx" />
+    <Content Include="LCN_STAFF\FRM_UPLOAD_ATTACH2.aspx" />
     <Content Include="MAIN\FRM_AUTHEN_SEARCH_REGIST.aspx" />
     <Content Include="MAIN\FRM_HERB_PRODUCT_MAIN.aspx" />
     <Content Include="MAIN\FRM_HOME_PRODUCT_HERB.aspx" />
@@ -816,6 +822,8 @@
     <Content Include="SqlServerTypes\x64\SqlServerSpatial110.dll" />
     <Content Include="SqlServerTypes\x86\SqlServerSpatial110.dll" />
     <Content Include="SUBSTITUTE_NCT\FRM_SUBSTITUTE_NCT_MAIN.aspx" />
+    <Content Include="SUBSTITUTE_NCT\POPUP_SUBSTITUTE_NCT_CONFIRM.aspx" />
+    <Content Include="SUBSTITUTE_NCT\POPUP_SUBSTITUTE_NCT_UPLOAD.aspx" />
     <Content Include="SUBSTITUTE_TABEAN\FRM_SUBSTITUTE_CONFIRM.aspx" />
     <Content Include="SUBSTITUTE_TABEAN\FRM_SUBSTITUTE_MAIN.aspx" />
     <Content Include="SUBSTITUTE_TABEAN\FRM_SUBSTITUTE_UPLOAD.aspx" />
@@ -2933,6 +2941,41 @@
       <DependentUpon>FRM_EDIT_LCN_UPLOAD.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="EDIT_LCN\POPUP_EDIT_LCN_APPOINTMENT_PREVIEW.aspx.designer.vb">
+      <DependentUpon>POPUP_EDIT_LCN_APPOINTMENT_PREVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EDIT_LCN\POPUP_EDIT_LCN_APPOINTMENT_PREVIEW.aspx.vb">
+      <DependentUpon>POPUP_EDIT_LCN_APPOINTMENT_PREVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EDIT_LCN_STAFF\FRM_EDIT_LCN_CONSIDER.aspx.designer.vb">
+      <DependentUpon>FRM_EDIT_LCN_CONSIDER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EDIT_LCN_STAFF\FRM_EDIT_LCN_CONSIDER.aspx.vb">
+      <DependentUpon>FRM_EDIT_LCN_CONSIDER.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EDIT_LCN_STAFF\FRM_EDIT_LCN_REMARK.aspx.designer.vb">
+      <DependentUpon>FRM_EDIT_LCN_REMARK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EDIT_LCN_STAFF\FRM_EDIT_LCN_REMARK.aspx.vb">
+      <DependentUpon>FRM_EDIT_LCN_REMARK.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EDIT_LCN_STAFF\FRM_EDIT_LCN_STAFF_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_EDIT_LCN_STAFF_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EDIT_LCN_STAFF\FRM_EDIT_LCN_STAFF_MAIN.aspx.vb">
+      <DependentUpon>FRM_EDIT_LCN_STAFF_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EDIT_LCN_STAFF\POPUP_EDIT_LCN_STAFF_CONFIRM.aspx.designer.vb">
+      <DependentUpon>POPUP_EDIT_LCN_STAFF_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EDIT_LCN_STAFF\POPUP_EDIT_LCN_STAFF_CONFIRM.aspx.vb">
+      <DependentUpon>POPUP_EDIT_LCN_STAFF_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="EDIT_LOCATION_STAFF\FRM_PHR_CANCEL.aspx.designer.vb">
       <DependentUpon>FRM_PHR_CANCEL.aspx</DependentUpon>
     </Compile>
@@ -3036,6 +3079,13 @@
     </Compile>
     <Compile Include="LCN_STAFF\FRM_STAFF_LCN_ADD_LOCATION.aspx.vb">
       <DependentUpon>FRM_STAFF_LCN_ADD_LOCATION.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_UPLOAD_ATTACH2.aspx.designer.vb">
+      <DependentUpon>FRM_UPLOAD_ATTACH2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_UPLOAD_ATTACH2.aspx.vb">
+      <DependentUpon>FRM_UPLOAD_ATTACH2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Linq\LINQ_BOOKING.designer.vb">
@@ -3338,6 +3388,20 @@
     </Compile>
     <Compile Include="SUBSTITUTE_NCT\FRM_SUBSTITUTE_NCT_MAIN.aspx.vb">
       <DependentUpon>FRM_SUBSTITUTE_NCT_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SUBSTITUTE_NCT\POPUP_SUBSTITUTE_NCT_CONFIRM.aspx.designer.vb">
+      <DependentUpon>POPUP_SUBSTITUTE_NCT_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUBSTITUTE_NCT\POPUP_SUBSTITUTE_NCT_CONFIRM.aspx.vb">
+      <DependentUpon>POPUP_SUBSTITUTE_NCT_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SUBSTITUTE_NCT\POPUP_SUBSTITUTE_NCT_UPLOAD.aspx.designer.vb">
+      <DependentUpon>POPUP_SUBSTITUTE_NCT_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUBSTITUTE_NCT\POPUP_SUBSTITUTE_NCT_UPLOAD.aspx.vb">
+      <DependentUpon>POPUP_SUBSTITUTE_NCT_UPLOAD.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="SUBSTITUTE_TABEAN\FRM_SUBSTITUTE_CONFIRM.aspx.designer.vb">

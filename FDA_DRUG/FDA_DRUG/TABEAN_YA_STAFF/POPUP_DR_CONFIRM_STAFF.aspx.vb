@@ -2300,26 +2300,25 @@ Public Class POPUP_DR_CONFIRM_STAFF
         Catch ex As Exception
 
         End Try
-
+        Dim pvnabbr2 As String = ""
         Try
-            'Dim dao_lcnsai As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
-            'dao_lcnsai.GetDataby_u1(dao_e.fields.Newcode_not)
-            If dao_e.fields.lcntpcd.Contains("ผย") Then
-                If dao_e.fields.pvnabbr = "กท" Then
-                    lcnno_format = CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
-                Else
-                    lcnno_format = dao_e.fields.pvnabbr & " " & CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2)
-                End If
+            pvnabbr2 = dao_e.fields.pvnabbr2
+        Catch ex As Exception
 
-            Else
-                lcnno_format = dao_e.fields.pvnabbr & " " & CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
-            End If
+        End Try
+        Try
 
-            'If dao_e.fields.pvnabbr <> "กท" Then
-            '    lcnno_format = dao_e.fields.pvnabbr & " " & CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
+            'If dao_e.fields.lcntpcd.Contains("ผย1") Then
+            '    If dao_e.fields.pvnabbr = "กท" Then
+            '        lcnno_format = CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
+            '    Else
+            '        lcnno_format = dao_e.fields.pvnabbr2 & " " & CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2)
+            '    End If
+
             'Else
-            '    lcnno_format = CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
+            lcnno_format = pvnabbr2 & " " & CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
             'End If
+
 
         Catch ex As Exception
 

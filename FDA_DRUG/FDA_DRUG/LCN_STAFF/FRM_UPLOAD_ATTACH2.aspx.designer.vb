@@ -11,50 +11,41 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class TABEAN_YA_MAIN_STAFF
+Partial Public Class FRM_UPLOAD_ATTACH2
     
     '''<summary>
-    '''btn_reload control.
+    '''rbtn_bangkok control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents rbtn_bangkok As Global.System.Web.UI.WebControls.RadioButton
     
     '''<summary>
-    '''RadGrid1 control.
+    '''rbtn_other control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
+    Protected WithEvents rbtn_other As Global.System.Web.UI.WebControls.RadioButton
     
     '''<summary>
-    '''GV_Drug_EX control.
+    '''FileUpload1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GV_Drug_EX As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
     
     '''<summary>
-    '''btn_back control.
+    '''btn_Upload control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_back As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''lbl_titlename control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbl_titlename As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btn_Upload As Global.System.Web.UI.WebControls.Button
 End Class

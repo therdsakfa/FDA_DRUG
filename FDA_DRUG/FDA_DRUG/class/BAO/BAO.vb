@@ -1450,6 +1450,14 @@ Namespace BAO
             dta.TableName = "SP_DDL_LCN_DI_by_type"
             Return dta
         End Function
+        '
+        Public Function SP_DDL_LCN_NCT(ByVal iden As String) As DataTable
+            Dim sql As String = "exec SP_DDL_LCN_NCT @iden='" & iden & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DDL_LCN_NCT"
+            Return dta
+        End Function
         Public Function SP_DRRGT_FOR_SEARCH_NEW(ByVal iden As String) As DataTable
             Dim sql As String = "exec SP_DRRGT_FOR_SEARCH_NEW @iden='" & iden & "'"
             Dim dta As New DataTable

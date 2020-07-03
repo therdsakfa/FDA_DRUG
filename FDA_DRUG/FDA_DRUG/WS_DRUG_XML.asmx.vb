@@ -2666,6 +2666,8 @@ Public Class WS_DRUG_XML
 
         dao_lcnre.insert()
 
+        AddLogStatus(1, Process_id, CITIZEN_ID, dao_lcnre.fields.IDA)
+
         If gpp <> "" Then
             Dim i As Integer = 0
             Dim dao_gpp As New DAO_DRUG.TB_LCN_EXTEND_LITE_GPP

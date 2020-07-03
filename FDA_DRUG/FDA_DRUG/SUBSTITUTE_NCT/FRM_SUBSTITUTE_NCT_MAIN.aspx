@@ -20,16 +20,16 @@
                 $('#spinner').toggle('slow');
             }
 
-            $('#ContentPlaceHolder1_btn_upload').click(function () {
-                var IDA = getQuerystring("rgt_ida");
-                //var FK_IDA = getQuerystring("FK_IDA");
-                var lcn_ida = getQuerystring("lcn_ida");
-                var process = getQuerystring("process");
-                //  $('#spinner').toggle('slow');
-                //Popups('POPUP_DH_UPLOAD.aspx?IDA=' + IDA + '&FK_IDA=' + FK_IDA + '&process=' + process);
-                Popups('FRM_SUBSTITUTE_UPLOAD.aspx?rgt_ida=' + IDA + '&process=' + process + '&lcn_ida=' + lcn_ida);
-                return false;
-            });
+            //$('#ContentPlaceHolder1_btn_upload').click(function () {
+            //    var IDA = getQuerystring("rgt_ida");
+            //    //var FK_IDA = getQuerystring("FK_IDA");
+            //    var lcn_ida = getQuerystring("lcn_ida");
+            //    var process = getQuerystring("process");
+            //    //  $('#spinner').toggle('slow');
+            //    //Popups('POPUP_DH_UPLOAD.aspx?IDA=' + IDA + '&FK_IDA=' + FK_IDA + '&process=' + process);
+            //    Popups('FRM_SUBSTITUTE_UPLOAD.aspx?rgt_ida=' + IDA + '&process=' + process + '&lcn_ida=' + lcn_ida);
+            //    return false;
+            //});
 
             $('#ContentPlaceHolder1_btn_download').click(function () {
                 $('#spinner').fadeIn('slow');

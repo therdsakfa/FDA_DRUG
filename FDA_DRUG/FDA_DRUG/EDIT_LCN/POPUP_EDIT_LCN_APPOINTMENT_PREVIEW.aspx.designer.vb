@@ -11,95 +11,77 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_EXTEND_LCN_ATTACH_PAGE
+Partial Public Class POPUP_EDIT_LCN_APPOINTMENT_PREVIEW
     
     '''<summary>
-    '''HyperLink1 control.
+    '''lbl_lcnno control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents HyperLink1 As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents lbl_lcnno As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''txt_latitude control.
+    '''lbl_nameplace control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txt_latitude As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lbl_nameplace As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''txt_longitude control.
+    '''lbl_phesajname control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txt_longitude As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lbl_phesajname As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''btn_save_lalong control.
+    '''lbl_receipt control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_save_lalong As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents lbl_receipt As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''RadioButtonList1 control.
+    '''lbl_bill control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadioButtonList1 As Global.System.Web.UI.WebControls.RadioButtonList
+    Protected WithEvents lbl_bill As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''txt_ATTACH_DETAIL control.
+    '''lbl_identify control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txt_ATTACH_DETAIL As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lbl_identify As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''btn_att_type control.
+    '''lbl_bsn control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_att_type As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents lbl_bsn As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''btn_upload control.
+    '''lbl_request_date control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_upload As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''btn_reload control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''gv control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents gv As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents lbl_request_date As Global.System.Web.UI.WebControls.Label
 End Class

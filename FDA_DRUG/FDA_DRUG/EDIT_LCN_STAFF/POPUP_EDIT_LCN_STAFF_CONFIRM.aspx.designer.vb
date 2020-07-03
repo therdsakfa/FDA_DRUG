@@ -11,131 +11,131 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
+Partial Public Class POPUP_EDIT_LCN_STAFF_CONFIRM
     
     '''<summary>
-    '''UC_INFMT control.
+    '''hl_reader control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents UC_INFMT As Global.FDA_DRUG.UC_INFMT
+    Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
     
     '''<summary>
-    '''lbl_name_2 control.
+    '''HiddenField1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_name_2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
-    '''lbl_name control.
+    '''HiddenField2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_name As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents HiddenField2 As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
-    '''RadioButtonList1 control.
+    '''lr_preview control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadioButtonList1 As Global.System.Web.UI.WebControls.RadioButtonList
+    Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''btn_download control.
+    '''lbl_Status control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_download As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents lbl_Status As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''btn_upload control.
+    '''lbl_app_date control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_upload As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents lbl_app_date As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''btn_reload control.
+    '''ddl_cnsdcd control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents ddl_cnsdcd As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Button1 control.
+    '''btn_confirm control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''btn_refresh control.
+    '''btn_cancel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_refresh As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''btn_extend control.
+    '''btn_load control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_extend As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''lbl_remark control.
+    '''btn_load0 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_remark As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''ddl_year control.
+    '''btn_drug_group control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddl_year As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents btn_drug_group As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''GV_lcnno control.
+    '''UC_GRID_ATTACH control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GV_lcnno As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents UC_GRID_ATTACH As Global.FDA_DRUG.UC_GRID_ATTACH
     
     '''<summary>
-    '''hl_pay control.
+    '''UC_GRID_PHARMACIST control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hl_pay As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents UC_GRID_PHARMACIST As Global.FDA_DRUG.UC_GRID_PHARMACIST
 End Class

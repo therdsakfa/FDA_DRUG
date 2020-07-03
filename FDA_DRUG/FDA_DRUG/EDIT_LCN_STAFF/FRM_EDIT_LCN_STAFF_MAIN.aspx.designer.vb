@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class TABEAN_YA_MAIN_STAFF
+Partial Public Class FRM_EDIT_LCN_STAFF_MAIN
     
     '''<summary>
     '''btn_reload control.
@@ -30,15 +30,6 @@ Partial Public Class TABEAN_YA_MAIN_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
-    
-    '''<summary>
-    '''GV_Drug_EX control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents GV_Drug_EX As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
     '''btn_back control.

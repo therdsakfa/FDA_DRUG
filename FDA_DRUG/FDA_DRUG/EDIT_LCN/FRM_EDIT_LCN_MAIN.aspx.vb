@@ -135,9 +135,9 @@ Public Class FRM_EDIT_LCN_MAIN
         End Try
         Try
             If dao_main.fields.lcntpcd.Contains("4") And dao_main.fields.lcntpcd.Contains("ขย4") = False Then
-                cls_xml.LCN_TYPE = "2"
+                cls_xml.LCN_TYPE = "1"
             ElseIf dao_main.fields.lcntpcd.Contains("3") And dao_main.fields.lcntpcd.Contains("ขย3") = False Then
-                cls_xml.LCN_TYPE = "3"
+                cls_xml.LCN_TYPE = "2"
             End If
 
         Catch ex As Exception

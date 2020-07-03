@@ -454,6 +454,72 @@ Namespace XML_CENTER
                 _LCN_TYPE = value
             End Set
         End Property
+
+        Private _LO_NAME As String
+        Public Property LO_NAME() As String
+            Get
+                Return _LO_NAME
+            End Get
+            Set(ByVal value As String)
+                _LO_NAME = value
+            End Set
+        End Property
+
+        Private _LO_ADDR As String
+        Public Property LO_ADDR() As String
+            Get
+                Return _LO_ADDR
+            End Get
+            Set(ByVal value As String)
+                _LO_ADDR = value
+            End Set
+        End Property
+        Private _LO_TEL As String
+        Public Property LO_TEL() As String
+            Get
+                Return _LO_TEL
+            End Get
+            Set(ByVal value As String)
+                _LO_TEL = value
+            End Set
+        End Property
+        Private _LO_HOUSENO As String
+        Public Property LO_HOUSENO() As String
+            Get
+                Return _LO_HOUSENO
+            End Get
+            Set(ByVal value As String)
+                _LO_HOUSENO = value
+            End Set
+        End Property
+        Private _KEEP_NAME As String
+        Public Property KEEP_NAME() As String
+            Get
+                Return _KEEP_NAME
+            End Get
+            Set(ByVal value As String)
+                _KEEP_NAME = value
+            End Set
+        End Property
+
+        Private _KEEP_ADDR As String
+        Public Property KEEP_ADDR() As String
+            Get
+                Return _KEEP_ADDR
+            End Get
+            Set(ByVal value As String)
+                _KEEP_ADDR = value
+            End Set
+        End Property
+        Private _KEEP_TEL As String
+        Public Property KEEP_TEL() As String
+            Get
+                Return _LO_TEL
+            End Get
+            Set(ByVal value As String)
+                _KEEP_TEL = value
+            End Set
+        End Property
 #End Region
 
     End Class

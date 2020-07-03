@@ -63,16 +63,15 @@
 
             AddLogStatus(9, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
 
-            Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+            'Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
 
-            Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
-            dao_p.GetDataby_Process_ID(PROCESS_ID)
-            Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
+            'Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
+            'dao_p.GetDataby_Process_ID(dao_up.fields.PROCESS_ID)
+            'Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
 
-            Dim CONSIDER_DATE As Date = CDate(TextBox1.Text)
-            dao.fields.remark = Txt_Remark.Text
+            dao.fields.REMARK = Txt_Remark.Text
             dao.fields.STATUS_ID = 9
-            dao.fields.CONSIDER_DATE = CONSIDER_DATE
+            dao.fields.CONSIDER_DATE = CDate(TextBox1.Text)
             dao.fields.OFF_CITIZEN = _CLS.CITIZEN_ID
             dao.fields.OFFICER_NAME = set_name_company(_CLS.CITIZEN_ID)
             dao.fields.FK_STAFF_OFFER_IDA = ddl_staff_offer.SelectedValue

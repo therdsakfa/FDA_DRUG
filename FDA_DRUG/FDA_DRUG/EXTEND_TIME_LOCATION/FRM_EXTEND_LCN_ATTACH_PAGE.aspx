@@ -76,12 +76,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>
-        พิกัด
+        พิกัด</h2> โปรดระบุพิกัดทางภูมิศาสตร์ของที่ตั้งร้านยา (วิธีการดูพิกัด <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="https://www.google.co.th/maps?hl=th&tab=wl">กดที่นี่</asp:HyperLink>)
         <table width="100%" class="table">
             <tr>
                 <td>
                     latitude
-                </td>
+                    (ละติจูด)</td>
                 <td>
 
                     <asp:TextBox ID="txt_latitude" runat="server"></asp:TextBox>
@@ -90,7 +90,7 @@
             </tr>
             <tr>
                 <td>
-                    longitude</td>
+                    longitude (ลองจิจูด)</td>
                 <td>
 
                     <asp:TextBox ID="txt_longitude" runat="server"></asp:TextBox>
@@ -107,7 +107,7 @@
                 </td>
             </tr>
         </table>
-    </h2>
+    
 
     <br /><hr />
     <h2>
@@ -117,13 +117,15 @@
          <tr>
              <td>
                   <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True">
-                     <asp:ListItem Value="1">1. ยื่นผ่านระบบ skynet Smart Dropbox</asp:ListItem>
-                     <asp:ListItem Value="2">2. ยื่นผ่านไปรษณีย์ลงทะเบียนไปยัง (บอกที่อยู่และใบนำส่งเอกสาร)</asp:ListItem>
-                     <asp:ListItem Value="3">3. ยื่นด้วยตนเองที่ อย. (โปรดระบุบเลขดำเนินการและใบนำส่งเอกสาร)</asp:ListItem>
+                     <asp:ListItem Value="1">1. ยื่น pdf ผ่านระบบนี้</asp:ListItem>
+                     <asp:ListItem Value="2">2. ยื่นผ่านระบบ skynet Smart Dropbox</asp:ListItem>
+                     <asp:ListItem Value="3">3. ยื่นผ่านไปรษณีย์ลงทะเบียน</asp:ListItem>
                  </asp:RadioButtonList>
              </td>
              <td>
-                  <asp:TextBox ID="txt_ATTACH_DETAIL" runat="server" Width="300px" TextMode="MultiLine" Height="100px"></asp:TextBox>
+                  <asp:TextBox ID="txt_ATTACH_DETAIL" runat="server" Width="300px" TextMode="MultiLine" Height="100px"></asp:TextBox> <br />
+                 - ระบุเลขรหัส Smart Dropbox <br />
+                 - กรณียื่นผ่านไปรษณีย์ลงทะเบียน โปรดระบุรหัสติดตามและพิมพ์ใบนำส่งเอกสารแนบไปกับไปรษณีย์ด้วย
              </td>
          </tr>
          <tr>

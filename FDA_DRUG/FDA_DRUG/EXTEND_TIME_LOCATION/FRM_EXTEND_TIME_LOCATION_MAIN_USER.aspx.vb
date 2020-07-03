@@ -691,4 +691,8 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
     Private Sub ddl_year_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_year.SelectedIndexChanged
         load_GV_lcnno()
     End Sub
+
+    Protected Sub btn_refresh_Click(sender As Object, e As EventArgs) Handles btn_refresh.Click
+        Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri)
+    End Sub
 End Class

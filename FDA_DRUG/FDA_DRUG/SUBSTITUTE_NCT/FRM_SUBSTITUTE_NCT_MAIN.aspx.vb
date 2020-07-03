@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Xml.Serialization
+Imports FDA_DRUG.XML_CENTER
 Imports Telerik.Web.UI
 Public Class FRM_SUBSTITUTE_NCT_MAIN
     Inherits System.Web.UI.Page
@@ -8,22 +9,42 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
     Private _process As String                  'ประกาศชื่อตัวแปร _process
     Private _lcn_ida As String = ""
     Private _lct_ida As String = ""
-    Private _rgt_ida As String = ""
+    Private _IDA As String = ""
     Private _type As String
     Private _process_for As String
     Private _pvncd As Integer
     Sub RunSession()
         Try
-            _rgt_ida = Request.QueryString("rgt_ida")
+            _IDA = Request.QueryString("lcn_ida")
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            _process_for = Request.QueryString("process_for")
+        Catch ex As Exception
+
+        End Try
+        Try
+            _type = Request.QueryString("type")
+        Catch ex As Exception
+
+        End Try
+        Try
+            _lct_ida = Request.QueryString("lct_ida")
+
+        Catch ex As Exception
+
+        End Try
+        Try
+            _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
+
         Catch ex As Exception
 
         End Try
         Try
             _CLS = Session("CLS")                               'นำค่า Session ใส่ ในตัวแปร _CLS
-            _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
-            _lct_ida = Request.QueryString("lct_ida")
-            _type = Request.QueryString("type")
-            _process_for = Request.QueryString("process_for")
+
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")  'เกิด  ERROR  จะเกิดกลับมาหน้า privus
         End Try
@@ -34,15 +55,15 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
             Dim bao As New BAO.ClsDBSqlcommand
             Dim dt As New DataTable
             Try
-                dt = bao.SP_DRRGT_BY_IDA(Request.QueryString("rgt_ida"))
-                lbl_rgtno.Text = dt(0)("rgtno_display")
+                'dt = bao.SP_DRRGT_BY_IDA(Request.QueryString("rgt_ida"))
+                'lbl_rgtno.Text = dt(0)("rgtno_display")
             Catch ex As Exception
 
             End Try
 
             Try
-                Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
-                dao_drrgt.GetDataby_IDA(_rgt_ida)
+                'Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
+                'dao_drrgt.GetDataby_IDA(_rgt_ida)
 
                 'Bind_ddl_phr(dao_drrgt.fields.FK_LCN_IDA)
             Catch ex As Exception
@@ -100,172 +121,120 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
     Private Sub convert_Database_To_XML(ByVal path As String)
         Dim bao_show As New BAO_SHOW
         Dim bao_mas As New BAO_MASTER
-        Dim cls As New CLASS_GEN_XML.DRRGT_SUB(_CLS.CITIZEN_ID, _CLS.LCNSID, "1", _CLS.PVCODE) 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
-        Dim cls_xml As New CLASS_DRRGT_SUB                                                                 ' ประกาศตัวแปรจาก CLASS_DALCN 
+        Dim cls As New CLASS_GEN_XML.DALCN_NCT_SUB(_CLS.CITIZEN_ID, _CLS.LCNSID, "1", _CLS.PVCODE) 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
+        Dim cls_xml As New CLASS_DALCN_NCT_SUBSTITUTE                                                                ' ประกาศตัวแปรจาก CLASS_DALCN 
         cls_xml = cls.gen_xml()
 
+        Dim identify As String = ""
 
-
-        Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
-        dao_drrgt.GetDataby_IDA(Request.QueryString("rgt_ida"))
-        Dim dao As New DAO_DRUG.ClsDBdalcn
+        Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
+        dao.Getdata_by_ID(Request.QueryString("IDA"))
+        Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+        Dim dao_bsn As New DAO_DRUG.TB_DALCN_LOCATION_BSN
         Try
-            dao.GetDataby_IDA(dao_drrgt.fields.FK_LCN_IDA)
-        Catch ex As Exception
-
-        End Try
-
-        'Dim dao_sub As New DAO_DRUG.TB_DRRGT_SUBSTITUTE
-        'Try
-        '    dao_sub.GetDatabyIDA(Request.QueryString("IDA"))
-        'Catch ex As Exception
-
-        'End Try
-
-        Dim rcvno_format As String = ""
-        Dim LCN_TYPE As String = ""
-        Dim LCNNO_FORMAT As String = ""
-        Dim TABEAN_FORMAT As String = ""
-        Dim LCNTPCD_GROUP As String = ""
-        Dim drug_name As String = ""
-        Dim rgtno_format As String = ""
-        Dim rgtno_auto As String = ""
-        Dim rgttpcd As String = ""
-        Dim rgtno As String = ""
-        Dim pvnabbr As String = ""
-        Dim rcvno As String = ""
-        Dim rcvno_auto As String = ""
-        Dim lcnno As String = ""
-        Dim lcnsid As String = ""
-        Try
-            rcvno_auto = "" 'dao_sub.fields.rcvno
+            dao_dal.GetDataby_IDA(dao.fields.FK_IDA)
         Catch ex As Exception
 
         End Try
         Try
-            rgttpcd = dao_drrgt.fields.rgttpcd
+            dao_bsn.GetDataby_LCN_IDA(dao_dal.fields.IDA)
         Catch ex As Exception
 
         End Try
         Try
-            rcvno = "" 'dao_sub.fields.rcvno
+            identify = dao_dal.fields.CITIZEN_ID_AUTHORIZE
         Catch ex As Exception
 
         End Try
         Try
-            lcnno = dao_drrgt.fields.lcnno
-        Catch ex As Exception
-
-        End Try
-        Try
-            lcnsid = dao_drrgt.fields.lcnsid
-        Catch ex As Exception
-
-        End Try
-        Try
-            rgtno = dao_drrgt.fields.rgtno
-        Catch ex As Exception
-
-        End Try
-        Try
-            rgtno_auto = rgtno
-        Catch ex As Exception
-
-        End Try
-        Try
-            pvnabbr = dao_drrgt.fields.pvnabbr
-        Catch ex As Exception
-
-        End Try
-        Try
-            drug_name = dao_drrgt.fields.thadrgnm & " / " & dao_drrgt.fields.engdrgnm
-        Catch ex As Exception
-
-        End Try
-        Try
-            If dao_drrgt.fields.lcntpcd.Contains("ผยบ") Or dao_drrgt.fields.lcntpcd.Contains("นยบ") Then
-                LCN_TYPE = "2"
-            Else
-                LCN_TYPE = "1"
-            End If
-        Catch ex As Exception
-
-        End Try
-        Try
-            If dao_drrgt.fields.lcntpcd.Contains("ผย") Then
-                LCNTPCD_GROUP = "2"
-            Else
-                LCNTPCD_GROUP = "1"
-            End If
-        Catch ex As Exception
-
-        End Try
-        Try
-            If Len(rcvno_auto) > 0 Then
-                rcvno_format = rgttpcd & " " & CStr(CInt(Right(rcvno_auto, 5))) & "/" & Left(rcvno_auto, 2)
-            End If
-        Catch ex As Exception
-
-        End Try
-        Try
-            LCNNO_FORMAT = dao.fields.lcntpcd & " " & CStr(CInt(Right(dao.fields.lcnno, 5))) & "/25" & Left(dao.fields.lcnno, 2)
-        Catch ex As Exception
-
-        End Try
-        Try
-            If Len(rgtno_auto) > 0 Then
-                rgtno_format = pvnabbr & " " & CStr(CInt(Right(rgtno_auto, 5))) & "/25" & Left(rgtno_auto, 2)
-            End If
+            cls_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_dal.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
         Catch ex As Exception
 
         End Try
 
-        Try
-            If Len(rgtno_auto) > 0 Then
-                rgtno_format = rgttpcd & " " & CStr(CInt(Right(rgtno_auto, 5))) & "/" & Left(rgtno_auto, 2)
-            End If
-        Catch ex As Exception
 
-        End Try
-        Try
-            If dao.fields.lcntpcd.Contains("ผยบ") Or dao.fields.lcntpcd.Contains("นยบ") Then
-                cls_xml.TABEAN_TYPE1 = "2"
-                'cls_xml.TABEAN_TYPE2 = "2"
-            Else
-                cls_xml.TABEAN_TYPE1 = "1"
-                'cls_xml.TABEAN_TYPE2 = "0"
-            End If
-        Catch ex As Exception
+        cls_xml.DT_SHOW.DT11 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(1, identify) 'ข้อมูลที่ตั้งหลัก
+        cls_xml.DT_SHOW.DT11.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSID_5"
+        cls_xml.DT_SHOW.DT12 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(identify, _CLS.LCNSID) 'ข้อมูลบริษัท
+        cls_xml.DT_SHOW.DT13 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(2, identify) 'ที่เก็บ
+        If cls_xml.DT_SHOW.DT13.Rows.Count = 0 Then
 
-        End Try
-
-        Try
-            Dim dao_dg As New DAO_DRUG.TB_DRRGT_DRUG_GROUP
-            dao_dg.GetDataby_rgttpcd(dao_drrgt.fields.rgttpcd)
-            cls_xml.CHK_LCN_SUBTYPE = dao_dg.fields.subtpcd
-        Catch ex As Exception
-
-        End Try
-        cls_xml.LCNNO_FORMAT = LCNNO_FORMAT
-        cls_xml.RCVNO_FORMAT = rcvno_format
-        cls_xml.RGTNO_FORMAT = rgtno_format
-        'cls_xml.TABEAN_TYPE1 = LCN_TYPE
-
-
-        cls_xml.DRUG_NAME = drug_name        'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
-
-        '------------------SHOW
-        'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
-        If Request.QueryString("identify") <> "" Then
-            cls_xml.DT_SHOW.DT17 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(Request.QueryString("identify"), _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
-        Else
-            cls_xml.DT_SHOW.DT17 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
         End If
+        cls_xml.DT_SHOW.DT13.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSID_2"
+
+        Dim ws2 As New WS_Taxno_TaxnoAuthorize.WebService1
+        'If txt_bsn.Text <> "" Then
+        '    ws2.insert_taxno(txt_bsn.Text)
+        'End If
+
+
         Try
-            cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_drrgt.fields.FK_LCN_IDA) 'ผู้ดำเนิน
+            cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_IDENTIFY(dao_bsn.fields.BSN_IDENTIFY) 'ผู้ดำเนิน
+            cls_xml.DT_SHOW.DT14.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
         Catch ex As Exception
 
         End Try
+
+
+        Dim lcnno_auto As String = ""
+        Dim lcnno_format As String = ""
+        Dim MAIN_LCN_IDA As Integer = 0
+        Dim dao_main As New DAO_DRUG.ClsDBdalcn
+        dao_main.GetDataby_IDA(dao_dal.fields.IDA)
+        Try
+            lcnno_auto = dao_main.fields.lcnno
+        Catch ex As Exception
+
+        End Try
+        Try
+            If Len(lcnno_auto) > 0 Then
+
+                If Right(Left(lcnno_auto, 3), 1) = "5" Then
+                    lcnno_format = "จ. " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
+                Else
+                    lcnno_format = dao_main.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+                End If
+                'lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+            End If
+        Catch ex As Exception
+
+        End Try
+
+
+        Dim bao_cpn As New BAO.ClsDBSqlcommand
+
+        'cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_IDENTIFY(txt_bsn.Text) 'ผู้ดำเนิน
+        'cls_xml.DT_SHOW.DT14.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
+        Try
+            cls_xml.DT_SHOW.DT15 = bao_cpn.SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2(dao_bsn.fields.BSN_IDENTIFY)
+            cls_xml.DT_SHOW.DT15.TableName = "SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2"
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            cls_xml.DT_SHOW.DT16 = bao_cpn.SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2(dao_bsn.fields.BSN_IDENTIFY)
+            cls_xml.DT_SHOW.DT16.TableName = "SP_BSN_LOCATION_ADDRESS_BY_IDEN_BSN_ADDR"
+        Catch ex As Exception
+
+        End Try
+
+
+        Dim bao_master As New BAO_MASTER
+        Try
+            cls_xml.DT_SHOW.DT10 = bao_master.SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_BY_IDA(dao_dal.fields.IDA)
+        Catch ex As Exception
+
+        End Try
+
+        Dim _lcn_ida As Integer
+        ' If Integer.TryParse(_lcn_ida) = True Then
+        cls_xml.DT_MASTER.DT30 = bao_master.SP_MASTER_DALCN_by_IDA(dao_dal.fields.IDA)
+        ' End If
+        cls_xml.BSN_IDENTIFY = dao_bsn.fields.BSN_IDENTIFY
+        cls_xml.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
+        cls_xml.LCNNO_FORMAT = lcnno_format
+        cls_xml.RCVNO_FORMAT = ""
 
         Dim objStreamWriter As New StreamWriter(path)                                                   'ประกาศตัวแปร
         Dim x As New XmlSerializer(cls_xml.GetType)                                                     'ประกาศ
@@ -299,8 +268,8 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
             Catch ex As Exception
 
             End Try
-            Dim dao As New DAO_DRUG.TB_DRRGT_SUBSTITUTE
-            dao.GetDatabyIDA(IDA)
+            Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
+            dao.Getdata_by_ID(IDA)
             Dim tr_id As Integer = 0
             Try
                 tr_id = dao.fields.TR_ID
@@ -318,10 +287,10 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
 
                 End Try
 
-                Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
-                dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
+                'Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
+                'dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
                 'lbl_titlename.Text = "พิจารณาคำขอขึ้นทะเบียนตำรับ"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_TABEAN/FRM_SUBSTITUTE_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&Process=" & _process_id & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_NCT/POPUP_SUBSTITUTE_NCT_CONFIRM.aspx.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&Process=" & _process_id & "');", True)
 
             End If
 
@@ -331,12 +300,16 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
     Private Sub RadGrid1_NeedDataSource(sender As Object, e As Telerik.Web.UI.GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
-        Try
-            dt = bao.SP_DRRGT_SUBSTITUTE_BY_FK_IDA(Request.QueryString("rgt_ida"))
-        Catch ex As Exception
+        'Try
+        '    dt = bao.SP_DRRGT_SUBSTITUTE_BY_FK_IDA(Request.QueryString("rgt_ida"))
+        'Catch ex As Exception
 
-        End Try
+        'End Try
 
         RadGrid1.DataSource = dt
+    End Sub
+
+    Private Sub btn_upload_Click(sender As Object, e As EventArgs) Handles btn_upload.Click
+        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../SUBSTITUTE_NCT/POPUP_SUBSTITUTE_NCT_UPLOAD.aspx?IDA=" & Request.QueryString("lcn_ida") & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "');", True)
     End Sub
 End Class

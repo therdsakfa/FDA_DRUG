@@ -63,6 +63,8 @@ Public Class FRM_SEARCH_LCN
             Else
                 dt = bao.SP_DDL_LCN_DI_by_type(_CLS.CITIZEN_ID_AUTHORIZE, 2)
             End If
+        ElseIf Request.QueryString("process") = "11103" Then
+            dt = bao.SP_DDL_LCN_NCT(_CLS.CITIZEN_ID_AUTHORIZE)
         Else
             dt = bao.SP_DDL_LCN_DI(_CLS.CITIZEN_ID_AUTHORIZE)
         End If
@@ -177,6 +179,8 @@ Public Class FRM_SEARCH_LCN
                     If Request.QueryString("st") <> "" Then
                         url &= "&st=" & Request.QueryString("st")
                     End If
+                ElseIf _process = "11103" Or _process = "11104" Then
+                    url = "../EDIT_LCN/FRM_EDIT_LCN_MAIN.aspx?lcn_ida=" & str_ID & "&lct_ida=" & dao.fields.FK_IDA & "&process=" & Request.QueryString("process") & "&IDA=" & str_ID
                 ElseIf _process >= 20 And _process <= 23 Then
                     url = "../CHEMICAL/FRM_CHEMICAL_MAIN.aspx?lcn_ida=" & str_ID & "&lct_ida=" & dao.fields.FK_IDA & "&process=" & Request.QueryString("process") & "&mt=" & Request.QueryString("mt") & "&st=" & Request.QueryString("st")
                 ElseIf _process = 12 Then

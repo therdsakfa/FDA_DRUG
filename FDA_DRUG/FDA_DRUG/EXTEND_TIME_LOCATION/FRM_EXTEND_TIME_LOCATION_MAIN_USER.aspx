@@ -131,7 +131,8 @@
                      <tr>
                          <td></td>
                          <td>
-                             <asp:Button ID="btn_extend" runat="server" Text="ระบบต่ออายุแบบเลือกได้หลายรายการ" CssClass="btn-lg" />
+                             <asp:Button ID="btn_refresh" runat="server" Text="รีเฟรชหน้าจอ" CssClass="btn-lg" />
+                             <asp:Button ID="btn_extend" runat="server" Text="ยื่นคำขอต่ออายุใบอนุญาต (ระบบใหม่)" CssClass="btn-lg" />
                          </td>
                      </tr>
                  </table>
@@ -154,8 +155,7 @@
            </table>
            <table width="100%">
                       <tr>
-                          <td width="20%">แสดงรายการ
-                          </td>
+                          <td width="20%">แสดงรายการที่ยื่นคำขอต่ออายุ</td>
                           <td>
                               <asp:DropDownList ID="ddl_year" runat="server" AutoPostBack="True">
                                   <asp:ListItem Selected="True" Value="1">ปีล่าสุด</asp:ListItem>

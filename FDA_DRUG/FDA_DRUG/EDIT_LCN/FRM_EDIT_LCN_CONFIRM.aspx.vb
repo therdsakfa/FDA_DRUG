@@ -163,6 +163,7 @@ Public Class FRM_EDIT_LCN_CONFIRM
         ' class_xml = cls_dalcn.gen_xml()
         Cls_XML.DALCN_EDIT_REQUESTs = dao.fields
 
+
         Dim dao_main As New DAO_DRUG.ClsDBdalcn
         Try
             dao_main.GetDataby_IDA(dao.fields.FK_IDA)
@@ -176,6 +177,61 @@ Public Class FRM_EDIT_LCN_CONFIRM
         Catch ex As Exception
 
         End Try
+
+        Dim dt_lo As New DataTable
+        Dim dt_keep As New DataTable
+
+        Try
+            dt_lo = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.NEW_LO_IDA)
+        Catch ex As Exception
+
+        End Try
+        Try
+            dt_keep = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.NEW_KEEP_IDA)
+        Catch ex As Exception
+
+        End Try
+
+        For Each dr As DataRow In dt_lo.Rows
+            Try
+                Cls_XML.LO_ADDR = dr("fulladdr3")
+            Catch ex As Exception
+
+            End Try
+            Try
+                Cls_XML.LO_NAME = dr("thanameplace")
+            Catch ex As Exception
+
+            End Try
+            Try
+                Cls_XML.LO_TEL = dr("tel")
+            Catch ex As Exception
+
+            End Try
+            Try
+                Cls_XML.LO_HOUSENO = dr("HOUSENO")
+            Catch ex As Exception
+
+            End Try
+        Next
+        For Each dr As DataRow In dt_keep.Rows
+            Try
+                Cls_XML.KEEP_ADDR = dr("fulladdr3")
+            Catch ex As Exception
+
+            End Try
+            Try
+                Cls_XML.KEEP_NAME = dr("thanameplace")
+            Catch ex As Exception
+
+            End Try
+            Try
+                Cls_XML.KEEP_TEL = dr("tel")
+            Catch ex As Exception
+
+            End Try
+        Next
+
 
         Cls_XML.DT_SHOW.DT9 = BAO_SHOW.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(lct_ida) 'ข้อมูลสถานที่จำลอง
 
@@ -214,9 +270,9 @@ Public Class FRM_EDIT_LCN_CONFIRM
         End Try
         Try
             If dao_main.fields.lcntpcd.Contains("4") And dao_main.fields.lcntpcd.Contains("ขย4") = False Then
-                Cls_XML.LCN_TYPE = "2"
+                Cls_XML.LCN_TYPE = "1"
             ElseIf dao_main.fields.lcntpcd.Contains("3") And dao_main.fields.lcntpcd.Contains("ขย3") = False Then
-                Cls_XML.LCN_TYPE = "3"
+                Cls_XML.LCN_TYPE = "2"
             End If
 
         Catch ex As Exception
