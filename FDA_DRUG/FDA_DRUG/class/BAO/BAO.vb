@@ -1247,11 +1247,26 @@ Namespace BAO
             Return dta
         End Function
         '
+        Public Function SP_DALCN_NCT_SUBSTITUTE_BY_FK_IDA(ByVal FK_IDA As Integer) As DataTable
+            Dim sql As String = "exec SP_DALCN_NCT_SUBSTITUTE_BY_FK_IDA @FK_IDA=" & FK_IDA
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DALCN_NCT_SUBSTITUTE_BY_FK_IDA"
+            Return dta
+        End Function
         Public Function SP_DRRGT_SUBSTITUTE_STAFF() As DataTable
             Dim sql As String = "exec SP_DRRGT_SUBSTITUTE_STAFF "
             Dim dta As New DataTable
             dta = Queryds(sql)
             dta.TableName = "SP_DRRGT_SUBSTITUTE_STAFF"
+            Return dta
+        End Function
+        '
+        Public Function SP_DALCN_NCT_SUBSTITUTE_STAFF() As DataTable
+            Dim sql As String = "exec SP_DALCN_NCT_SUBSTITUTE_STAFF "
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DALCN_NCT_SUBSTITUTE_STAFF"
             Return dta
         End Function
         Public Function SP_GET_DDL_PHR_BY_FK_IDA(ByVal FK_IDA As Integer) As DataTable
@@ -1443,6 +1458,13 @@ Namespace BAO
             Return dta
         End Function
         '
+        Public Function SP_DDL_LCN_DI_by_PROCESS_ID(ByVal process As String, ByVal iden As String) As DataTable
+            Dim sql As String = "exec SP_DDL_LCN_DI_by_PROCESS_ID @PROCESS_ID='" & process & "' ,@iden='" & iden & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DDL_LCN_DI_by_PROCESS_ID"
+            Return dta
+        End Function
         Public Function SP_DDL_LCN_DI_by_type(ByVal iden As String, ByVal _type As Integer) As DataTable
             Dim sql As String = "exec SP_DDL_LCN_DI_by_type @iden='" & iden & "' ,@type=" & _type
             Dim dta As New DataTable

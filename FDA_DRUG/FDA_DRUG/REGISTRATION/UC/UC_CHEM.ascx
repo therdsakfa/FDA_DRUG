@@ -48,6 +48,21 @@
                       <asp:Button ID="btn_save" runat="server" Text="บันทึก" />
                   </td>
               </tr>
+              <tr>
+                  <td>
+                      &nbsp;</td>
+                  <td>
+                      <asp:TextBox ID="txt_each_txt" runat="server"></asp:TextBox>
+                  </td>
+                  <td>
+                      (คำบรรยาย)</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>
+                        &nbsp;</td>
+                  <td>
+                      &nbsp;</td>
+              </tr>
           </table>
         </td>
     </tr>

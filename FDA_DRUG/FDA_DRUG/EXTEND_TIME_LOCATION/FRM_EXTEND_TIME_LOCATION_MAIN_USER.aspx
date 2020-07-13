@@ -131,8 +131,18 @@
                      <tr>
                          <td></td>
                          <td>
-                             <asp:Button ID="btn_refresh" runat="server" Text="รีเฟรชหน้าจอ" CssClass="btn-lg" />
-                             <asp:Button ID="btn_extend" runat="server" Text="ยื่นคำขอต่ออายุใบอนุญาต (ระบบใหม่)" CssClass="btn-lg" />
+                             <table>
+                                 <tr>
+                                     <td>
+<asp:Button ID="btn_refresh" runat="server" Text="รีเฟรชหน้าจอ" CssClass="btn-lg" />
+                                     </td>
+                                     <td>
+<asp:Button ID="btn_extend" runat="server" Text="ยื่นคำขอต่ออายุใบอนุญาต (ระบบใหม่)" CssClass="btn-lg" />
+                                     </td>
+                                 </tr>
+                             </table>
+                             
+                             
                          </td>
                      </tr>
                  </table>

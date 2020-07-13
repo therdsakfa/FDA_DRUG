@@ -101,6 +101,10 @@
                                                            <%--<asp:DropDownList ID="ddl_phr_name" runat="server">
                                                            </asp:DropDownList>--%>
 
+                                                           <asp:Label ID="lbl_search" runat="server" Text="เลขที่ใบอนุญาต " CssClass="btn-lg"></asp:Label>
+                                                           <telerik:RadComboBox ID="rcb_search" Runat="server" Filter="Contains" Width="60%">
+                                                           </telerik:RadComboBox>
+
                                                        </td>
                                                        <td align="right">
                                                            <asp:Button ID="btn_download" runat="server" Text="ดาวน์โหลดคำขอ" CssClass="btn-lg" />&nbsp;&nbsp;

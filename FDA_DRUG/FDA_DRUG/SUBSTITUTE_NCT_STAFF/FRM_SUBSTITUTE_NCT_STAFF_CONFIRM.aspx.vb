@@ -2,9 +2,8 @@
 Imports System.Xml.Serialization
 Imports iTextSharp.text.pdf
 Imports FDA_DRUG.XML_CENTER
-Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
+Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
     Inherits System.Web.UI.Page
-
     Private _IDA As String
     Private _TR_ID As String
     Private _CLS As New CLS_SESSION
@@ -42,7 +41,7 @@ Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
     Sub show_btn(ByVal IDA As String)
         Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
         dao.Getdata_by_ID(IDA)
-        If dao.fields.STATUS_ID <> 1 Then
+        If dao.fields.STATUS_ID = 8 Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
             btn_confirm.CssClass = "btn-danger btn-lg"
@@ -54,24 +53,6 @@ Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
             '    btn_cancel.CssClass = "btn-danger btn-lg"
         End If
 
-
-    End Sub
-
-    Protected Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
-        Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
-        Dim bao As New BAO.ClsDBSqlcommand
-        dao.Getdata_by_ID(Integer.Parse(_IDA))
-        dao.fields.STATUS_ID = 2
-
-        dao.update()
-
-        'If b64 = Nothing Then
-        '    b64 = Session("b64")
-        'End If
-        Dim years As String = ""
-        Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_tr.GetDataby_IDA(dao.fields.TR_ID)
-        alert("ยื่นเรื่องเรียบร้อยแล้ว")
 
     End Sub
     Sub alert(ByVal text As String)
@@ -103,19 +84,6 @@ Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
         objStreamReader.Close()
         ' Dim dao As New DAO_DRUG.ClsDBdalcn
     End Sub
-    Function get_p2(ByVal FileName As String) As CLASS_DALCN_NCT_SUBSTITUTE
-        Dim bao As New BAO.AppSettings
-        bao.RunAppSettings()
-        Dim objStreamReader As New StreamReader(bao._PATH_XML_TRADER & FileName & ".xml") '"C:\path\XML_TRADER\"
-        Dim p2 As New CLASS_DALCN_NCT_SUBSTITUTE
-        Dim x As New XmlSerializer(p2.GetType)
-        p2 = x.Deserialize(objStreamReader)
-        objStreamReader.Close()
-    End Function
-    ''' <summary>
-    ''' โหลดPDF
-    ''' </summary>
-    ''' <remarks></remarks>
     Private Sub load_PDF(ByVal path As String, ByVal fileName As String)
         Dim bao As New BAO.AppSettings
         Dim clsds As New ClassDataset
@@ -343,5 +311,67 @@ Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
     End Function
     Protected Sub btn_load0_Click(sender As Object, e As EventArgs) Handles btn_load0.Click
         Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")
+    End Sub
+
+    Protected Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
+        Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+        Dim bao As New BAO.GenNumber
+        Dim STATUS_ID As Integer = ddl_cnsdcd.SelectedItem.Value
+        Dim RCVNO As Integer = 0
+        Dim PROCESS_ID As Integer
+        Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
+        dao.Getdata_by_ID(_IDA)
+        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        PROCESS_ID = dao_up.fields.PROCESS_ID
+
+        Dim dao_date As New DAO_DRUG.ClsDBSTATUS_DATE
+        dao_date.fields.FK_IDA = _IDA
+        Try
+            dao_date.fields.STATUS_DATE = Date.Now 'CDate(txt_app_date.Text)
+        Catch ex As Exception
+
+        End Try
+
+        dao_date.fields.STATUS_GROUP = 2 'ใบอนุญาต ขย ต่างๆ
+        dao_date.fields.STATUS_ID = ddl_cnsdcd.SelectedValue
+        dao_date.fields.DATE_NOW = Date.Now
+        dao_date.fields.PROCESS_ID = PROCESS_ID
+        dao_date.insert()
+
+        If STATUS_ID = 3 Then
+            'dao.fields.STATUS_ID = STATUS_ID
+            'Dim bao2 As New BAO.GenNumber
+            'RCVNO = bao2.GEN_NO_07(con_year(Date.Now.Year), _CLS.PVCODE, IIf(IsDBNull(dao.fields.lcnno), "", dao.fields.lcnno), PROCESS_ID, 0, 0, _IDA, "")
+            'dao.fields.rcvno = RCVNO
+            'Try
+            '    dao.fields.rcvdate = txt_appdate.Text
+            'Catch ex As Exception
+
+            'End Try
+            dao.fields.STATUS_ID = STATUS_ID
+            RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
+            dao.fields.rcvno = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)
+
+            Try
+                dao.fields.rcvdate = Date.Now 'CDate(txt_app_date.Text)
+            Catch ex As Exception
+
+            End Try
+            dao.fields.STATUS_ID = STATUS_ID
+            dao.update()
+
+            alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.rcvno)
+        ElseIf STATUS_ID = 5 Then
+            'Response.Redirect("FRM_SUBSTITUTE_TABEAN_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & PROCESS_ID)
+            dao.fields.appdate = CDate(txt_appdate.Text)
+            dao.fields.STATUS_ID = STATUS_ID
+            dao.update()
+        ElseIf STATUS_ID = 8 Then
+            dao.fields.appdate = CDate(txt_appdate.Text)
+            dao.fields.STATUS_ID = STATUS_ID
+            dao.update()
+
+            alert("ดำเนินการอนุมัติแล้ว")
+        End If
     End Sub
 End Class

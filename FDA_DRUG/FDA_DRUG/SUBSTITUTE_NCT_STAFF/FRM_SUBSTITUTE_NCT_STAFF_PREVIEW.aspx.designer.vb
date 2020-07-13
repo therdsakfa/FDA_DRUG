@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
+Partial Public Class FRM_SUBSTITUTE_NCT_STAFF_PREVIEW
     
     '''<summary>
     '''hl_reader control.
@@ -32,6 +32,15 @@ Partial Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
+    '''HiddenField2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HiddenField2 As Global.System.Web.UI.WebControls.HiddenField
+    
+    '''<summary>
     '''lr_preview control.
     '''</summary>
     '''<remarks>
@@ -41,22 +50,13 @@ Partial Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
     Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''btn_confirm control.
+    '''ddl_template control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''btn_cancel control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents ddl_template As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''btn_load control.
@@ -66,22 +66,4 @@ Partial Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''btn_load0 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''UC_GRID_ATTACH control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents UC_GRID_ATTACH As Global.FDA_DRUG.UC_GRID_ATTACH
 End Class

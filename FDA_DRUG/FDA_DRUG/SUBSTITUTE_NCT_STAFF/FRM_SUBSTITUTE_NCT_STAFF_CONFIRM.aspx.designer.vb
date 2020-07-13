@@ -11,104 +11,104 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_SUBSTITUTE_NCT_MAIN
+Partial Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
     
     '''<summary>
-    '''lbl_name control.
+    '''hl_reader control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_name As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
     
     '''<summary>
-    '''lbl_rgtno control.
+    '''HiddenField1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_rgtno As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
-    '''lbl_search control.
+    '''lr_preview control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_search As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''rcb_search control.
+    '''RadScriptManager1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents rcb_search As Global.Telerik.Web.UI.RadComboBox
+    Protected WithEvents RadScriptManager1 As Global.Telerik.Web.UI.RadScriptManager
     
     '''<summary>
-    '''btn_download control.
+    '''ddl_cnsdcd control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_download As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents ddl_cnsdcd As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''btn_upload control.
+    '''txt_appdate control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_upload As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txt_appdate As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Button1 control.
+    '''btn_confirm control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''Button2 control.
+    '''btn_cancel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''RadGrid1 control.
+    '''btn_load control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
+    Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''hl_pay control.
+    '''btn_load0 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hl_pay As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''btn_reload control.
+    '''UC_GRID_ATTACH control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents UC_GRID_ATTACH As Global.FDA_DRUG.UC_GRID_ATTACH
 End Class

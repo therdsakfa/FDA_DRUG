@@ -219,6 +219,15 @@ Module BAO_COMMON
             _p_dalcn = value
         End Set
     End Property
+    Private _p_dalcn_sub As New XML_CENTER.CLASS_DALCN_NCT_SUBSTITUTE
+    Public Property p_dalcn_sub() As XML_CENTER.CLASS_DALCN_NCT_SUBSTITUTE
+        Get
+            Return _p_dalcn_sub
+        End Get
+        Set(ByVal value As XML_CENTER.CLASS_DALCN_NCT_SUBSTITUTE)
+            _p_dalcn_sub = value
+        End Set
+    End Property
     Private _p_dalcn_rqt As New XML_CENTER.CLASS_DALCN_EDIT_REQUEST
     Public Property p_dalcn_rqt() As XML_CENTER.CLASS_DALCN_EDIT_REQUEST
         Get
@@ -356,6 +365,9 @@ Module BAO_COMMON
                 ElseIf PROSESS_ID = 11103 Or PROSESS_ID = 11104 Then
                     Dim cls_xml As New CLASS_GEN_XML.DALCN_EDIT_REQUEST
                     cls_xml.GEN_XML_DALCN_EDT(PATH_XML, p_dalcn_rqt)
+                ElseIf PROSESS_ID = 100766 Or PROSESS_ID = 100767 Or PROSESS_ID = 100768 Or PROSESS_ID = 100769 Or PROSESS_ID = 100770 Or PROSESS_ID = 100771 Or PROSESS_ID = 100772 Or PROSESS_ID = 100773 Then
+                    Dim cls_xml As New CLASS_GEN_XML.DALCN_NCT_SUB
+                    cls_xml.GEN_XML_DALCN_SUB(PATH_XML, p_dalcn_sub)
                 ElseIf PROSESS_ID = 1 Or PROSESS_ID = 2 Or PROSESS_ID = 3 _
                 Or PROSESS_ID = 4 Or PROSESS_ID = 5 Then 'นยม
                     Dim cls_xml As New CLASS_GEN_XML.DI
@@ -489,7 +501,9 @@ Module BAO_COMMON
                 ElseIf PROSESS_ID = 11103 Or PROSESS_ID = 11104 Then
                     Dim cls_xml As New CLASS_GEN_XML.DALCN_EDIT_REQUEST
                     cls_xml.GEN_XML_DALCN_EDT(PATH_XML, p_dalcn_rqt)
-
+                ElseIf PROSESS_ID = 100766 Or PROSESS_ID = 100767 Or PROSESS_ID = 100768 Or PROSESS_ID = 100769 Or PROSESS_ID = 100770 Or PROSESS_ID = 100771 Or PROSESS_ID = 100772 Or PROSESS_ID = 100773 Then
+                    Dim cls_xml As New CLASS_GEN_XML.DALCN_NCT_SUB
+                    cls_xml.GEN_XML_DALCN_SUB(PATH_XML, p_dalcn_sub)
                     'ElseIf SUBSTITUTE <> "" And PROSESS_ID = "1400001" Then ' ทะเบียนยา
                     '    Dim cls_xml As New CLASS_GEN_XML.Center
                     '    cls_xml.GEN_XML_DR(PATH_XML, p_dr)
@@ -595,6 +609,17 @@ Module BAO_COMMON
                         End Using
                     End Using
                 End Using
+            ElseIf PROSESS_ID = 100766 Or PROSESS_ID = 100767 Or PROSESS_ID = 100768 Or PROSESS_ID = 100769 Or PROSESS_ID = 100770 Or PROSESS_ID = 100771 Or PROSESS_ID = 100772 Or PROSESS_ID = 100773 Then
+                Dim cls_xml As New CLASS_GEN_XML.DALCN_NCT_SUB
+                cls_xml.GEN_XML_DALCN_SUB(PATH_XML, p_dalcn_sub)
+                Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\
+                    Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"
+                        Using stamper = New iTextSharp.text.pdf.PdfStamper(pdfReader__1, outputStream, ControlChars.NullChar, True)
+                            stamper.AcroFields.Xfa.FillXfaForm(PATH_XML)
+                        End Using
+                    End Using
+                End Using
+
             ElseIf PROSESS_ID = "1400001" And STATUS_ID <> "1" Then ' ทะเบียนยา
                 Dim cls_xml As New CLASS_GEN_XML.Center
                 cls_xml.GEN_XML_DR(PATH_XML, p_dr)

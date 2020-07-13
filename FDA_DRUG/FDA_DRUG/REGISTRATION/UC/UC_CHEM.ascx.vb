@@ -348,6 +348,7 @@ Public Class UC_CHEM
             dao.fields.FK_IDA = Request.QueryString("IDA")
             dao.fields.sunitcd = ddl_unit.SelectedValue
             dao.fields.FK_SET = ddl_set_each.SelectedValue
+            dao.fields.EACH_TXT = txt_each_txt.Text
             dao.insert()
 
         Else
@@ -356,6 +357,7 @@ Public Class UC_CHEM
             dao.fields.EACH_AMOUNT = txt_each.Text
             dao.fields.sunitcd = ddl_unit.SelectedValue
             dao.fields.FK_SET = ddl_set_each.SelectedValue
+            dao.fields.EACH_TXT = txt_each_txt.Text
             dao.update()
         End If
         alert("บันทึกเรียบร้อย")
@@ -365,9 +367,14 @@ Public Class UC_CHEM
         Try
             Dim dao As New DAO_DRUG.TB_DRUG_REGISTRATION_EACH
             dao.GetDataby_FK_IDA(Request.QueryString("IDA"))
-            Dim dao_u As New DAO_DRUG.TB_DRUG_UNIT
-            dao_u.GetDataby_sunitcd(dao.fields.sunitcd)
-            lbl_each.Text = "Each " & dao.fields.EACH_AMOUNT & " " & dao_u.fields.unit_name & " Contains;"
+            If IsNothing(dao.fields.EACH_TXT) = False Or dao.fields.EACH_TXT <> "" Then
+                lbl_each.Text = "Each " & dao.fields.EACH_TXT & " Contains;"
+            Else
+                Dim dao_u As New DAO_DRUG.TB_DRUG_UNIT
+                dao_u.GetDataby_sunitcd(dao.fields.sunitcd)
+                lbl_each.Text = "Each " & dao.fields.EACH_AMOUNT & " " & dao_u.fields.unit_name & " Contains;"
+            End If
+
         Catch ex As Exception
 
         End Try

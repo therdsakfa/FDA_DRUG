@@ -54,6 +54,15 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
         If Not IsPostBack Then
             Dim bao As New BAO.ClsDBSqlcommand
             Dim dt As New DataTable
+            If Request.QueryString("lcn_ida") = "" Then
+                lbl_search.Style.Add("display", "block")
+                rcb_search.Style.Add("display", "block")
+                load_ddl()
+            Else
+                lbl_search.Style.Add("display", "none")
+                rcb_search.Style.Add("display", "none")
+            End If
+
             Try
                 'dt = bao.SP_DRRGT_BY_IDA(Request.QueryString("rgt_ida"))
                 'lbl_rgtno.Text = dt(0)("rgtno_display")
@@ -72,6 +81,47 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
             'load_HL()
         End If
     End Sub
+    Private Sub load_ddl()
+
+        Dim dt As New DataTable
+        Dim bao As New BAO.ClsDBSqlcommand
+        Dim process As String = ""
+
+        If _process = "100766" Then
+            process = "123"
+        ElseIf _process = "100767" Then
+            process = "124"
+        ElseIf _process = "100768" Then
+            process = "127"
+        ElseIf _process = "100769" Then
+            process = "128"
+        ElseIf _process = "100770" Then
+            process = "131"
+        ElseIf _process = "100771" Then
+            process = "132"
+        ElseIf _process = "100772" Then
+            process = "133"
+        ElseIf _process = "100773" Then
+            process = "134"
+        End If
+        'Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+        'If _IDA = "" Then
+        '    dao_dal.GetDataby_IDA(rcb_search.SelectedValue)
+        'Else
+        '    dao_dal.GetDataby_IDA(Request.QueryString("lcn_ida"))
+        'End If
+
+        dt = bao.SP_DDL_LCN_DI_by_PROCESS_ID(process, _CLS.CITIZEN_ID_AUTHORIZE)
+
+        rcb_search.DataSource = dt 'dao.datas
+        rcb_search.DataTextField = "LCNNO_MANUAL"
+        rcb_search.DataValueField = "IDA"
+        rcb_search.DataBind()
+        Dim item As New RadComboBoxItem
+        item.Text = "กรุณาเลือกเลขที่ใบอนุญาต"
+        item.Value = "0"
+        rcb_search.Items.Insert(0, item)
+    End Sub
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>alert('" + text + "');</script> ") 'จาวาคำสั่ง Alert
     End Sub
@@ -79,7 +129,16 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
         'If rcb_phr_name.SelectedValue = "0" Then
         '    alert("กรุณาเลือกเลขที่ใบอนุญาต")
         'Else
-        Bind_PDF()
+        If Request.QueryString("lcn_ida") = "" Then
+            If rcb_search.SelectedValue = "" Then
+                alert("กรุณาเลือกเลขที่ใบอนุญาต")
+            Else
+                Bind_PDF()
+            End If
+        Else
+                Bind_PDF()
+        End If
+
         'End If
 
     End Sub
@@ -127,12 +186,17 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
 
         Dim identify As String = ""
 
-        Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
-        dao.Getdata_by_ID(Request.QueryString("IDA"))
+        'Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
+        'dao.Getdata_by_ID(Request.QueryString("IDA"))
         Dim dao_dal As New DAO_DRUG.ClsDBdalcn
         Dim dao_bsn As New DAO_DRUG.TB_DALCN_LOCATION_BSN
         Try
-            dao_dal.GetDataby_IDA(dao.fields.FK_IDA)
+            If _IDA = "" Then
+                dao_dal.GetDataby_IDA(rcb_search.SelectedValue)
+            Else
+                dao_dal.GetDataby_IDA(Request.QueryString("lcn_ida"))
+            End If
+
         Catch ex As Exception
 
         End Try
@@ -151,7 +215,6 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
         Catch ex As Exception
 
         End Try
-
 
         cls_xml.DT_SHOW.DT11 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(1, identify) 'ข้อมูลที่ตั้งหลัก
         cls_xml.DT_SHOW.DT11.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSID_5"
@@ -180,7 +243,12 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
         Dim lcnno_format As String = ""
         Dim MAIN_LCN_IDA As Integer = 0
         Dim dao_main As New DAO_DRUG.ClsDBdalcn
-        dao_main.GetDataby_IDA(dao_dal.fields.IDA)
+        If _IDA = "" Then
+            dao_main.GetDataby_IDA(rcb_search.SelectedValue)
+        Else
+            dao_main.GetDataby_IDA(Request.QueryString("lcn_ida"))
+        End If
+
         Try
             lcnno_auto = dao_main.fields.lcnno
         Catch ex As Exception
@@ -290,7 +358,7 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
                 'Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
                 'dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
                 'lbl_titlename.Text = "พิจารณาคำขอขึ้นทะเบียนตำรับ"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_NCT/POPUP_SUBSTITUTE_NCT_CONFIRM.aspx.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&Process=" & _process_id & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_NCT/POPUP_SUBSTITUTE_NCT_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&Process=" & _process_id & "');", True)
 
             End If
 
@@ -300,16 +368,27 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
     Private Sub RadGrid1_NeedDataSource(sender As Object, e As Telerik.Web.UI.GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
-        'Try
-        '    dt = bao.SP_DRRGT_SUBSTITUTE_BY_FK_IDA(Request.QueryString("rgt_ida"))
-        'Catch ex As Exception
+        Try
+            If Request.QueryString("lcn_ida") = "" Then
+                dt = bao.SP_DALCN_NCT_SUBSTITUTE_BY_FK_IDA(rcb_search.SelectedValue)
+            Else
+                dt = bao.SP_DALCN_NCT_SUBSTITUTE_BY_FK_IDA(Request.QueryString("lcn_ida"))
+            End If
 
-        'End Try
+        Catch ex As Exception
+
+        End Try
 
         RadGrid1.DataSource = dt
     End Sub
 
     Private Sub btn_upload_Click(sender As Object, e As EventArgs) Handles btn_upload.Click
-        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../SUBSTITUTE_NCT/POPUP_SUBSTITUTE_NCT_UPLOAD.aspx?IDA=" & Request.QueryString("lcn_ida") & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "');", True)
+
+        If Request.QueryString("lcn_ida") = "" Then
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../SUBSTITUTE_NCT/POPUP_SUBSTITUTE_NCT_UPLOAD.aspx?IDA=" & rcb_search.SelectedValue & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "');", True)
+        Else
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../SUBSTITUTE_NCT/POPUP_SUBSTITUTE_NCT_UPLOAD.aspx?IDA=" & Request.QueryString("lcn_ida") & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "');", True)
+        End If
+
     End Sub
 End Class

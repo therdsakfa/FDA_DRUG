@@ -75,16 +75,16 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU2
 
     End Sub
 
-    Private Function set_System_ID() As Integer
-        Dim System_ID As Integer
-        If _CLS.GROUPS = "19871" Or _CLS.GROUPS = "19872" Or _CLS.GROUPS = "38031" Then
-            System_ID = 4292
-        Else
-            System_ID = 5323
-        End If
+    'Private Function set_System_ID() As Integer
+    '    Dim System_ID As Integer
+    '    If _CLS.GROUPS = "19871" Or _CLS.GROUPS = "19872" Or _CLS.GROUPS = "38031" Then
+    '        System_ID = 4292
+    '    Else
+    '        System_ID = 5323
+    '    End If
 
-        Return System_ID
-    End Function
+    '    Return System_ID
+    'End Function
     Public Sub gen_child_node(ByVal t_node As RadTreeNodeCollection, Optional ByVal ParentID As Integer = 0, Optional NodeGroup As Integer = 1, Optional group_per As Integer = 0)
         Dim sel_type As Integer = 0
         If Request.QueryString("ttt") = "2" Then

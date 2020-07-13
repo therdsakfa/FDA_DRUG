@@ -111,6 +111,14 @@ Namespace CLASS_GEN_XML
             objStreamWriter.Close()
 
         End Sub
+        Public Sub GEN_XML_DALCN_SUB(ByVal PATH As String, ByVal p2 As CLASS_DALCN_NCT_SUBSTITUTE)
+
+            Dim objStreamWriter As New StreamWriter(PATH)
+            Dim x As New XmlSerializer(p2.GetType)
+            x.Serialize(objStreamWriter, p2)
+            objStreamWriter.Close()
+
+        End Sub
         Public Sub GEN_XML_DH(ByVal PATH As String, ByVal p2 As CLASS_DH)
 
             Dim objStreamWriter As New StreamWriter(PATH)

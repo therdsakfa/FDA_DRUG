@@ -1621,6 +1621,11 @@ Public Class POPUP_DR_UPLOAD
 
                     End Try
                     Try
+                        dao_dr_each.fields.EACH_TXT = dao_each.fields.EACH_TXT
+                    Catch ex As Exception
+
+                    End Try
+                    Try
                         dao_dr_each.fields.FK_SET = dao_each.fields.FK_SET
                     Catch ex As Exception
 

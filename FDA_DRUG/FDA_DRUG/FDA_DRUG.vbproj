@@ -824,6 +824,9 @@
     <Content Include="SUBSTITUTE_NCT\FRM_SUBSTITUTE_NCT_MAIN.aspx" />
     <Content Include="SUBSTITUTE_NCT\POPUP_SUBSTITUTE_NCT_CONFIRM.aspx" />
     <Content Include="SUBSTITUTE_NCT\POPUP_SUBSTITUTE_NCT_UPLOAD.aspx" />
+    <Content Include="SUBSTITUTE_NCT_STAFF\FRM_SUBSTITUTE_NCT_MAIN_STAFF.aspx" />
+    <Content Include="SUBSTITUTE_NCT_STAFF\FRM_SUBSTITUTE_NCT_STAFF_CONFIRM.aspx" />
+    <Content Include="SUBSTITUTE_NCT_STAFF\FRM_SUBSTITUTE_NCT_STAFF_PREVIEW.aspx" />
     <Content Include="SUBSTITUTE_TABEAN\FRM_SUBSTITUTE_CONFIRM.aspx" />
     <Content Include="SUBSTITUTE_TABEAN\FRM_SUBSTITUTE_MAIN.aspx" />
     <Content Include="SUBSTITUTE_TABEAN\FRM_SUBSTITUTE_UPLOAD.aspx" />
@@ -3402,6 +3405,27 @@
     </Compile>
     <Compile Include="SUBSTITUTE_NCT\POPUP_SUBSTITUTE_NCT_UPLOAD.aspx.vb">
       <DependentUpon>POPUP_SUBSTITUTE_NCT_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SUBSTITUTE_NCT_STAFF\FRM_SUBSTITUTE_NCT_MAIN_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_SUBSTITUTE_NCT_MAIN_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUBSTITUTE_NCT_STAFF\FRM_SUBSTITUTE_NCT_MAIN_STAFF.aspx.vb">
+      <DependentUpon>FRM_SUBSTITUTE_NCT_MAIN_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SUBSTITUTE_NCT_STAFF\FRM_SUBSTITUTE_NCT_STAFF_CONFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_SUBSTITUTE_NCT_STAFF_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUBSTITUTE_NCT_STAFF\FRM_SUBSTITUTE_NCT_STAFF_CONFIRM.aspx.vb">
+      <DependentUpon>FRM_SUBSTITUTE_NCT_STAFF_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SUBSTITUTE_NCT_STAFF\FRM_SUBSTITUTE_NCT_STAFF_PREVIEW.aspx.designer.vb">
+      <DependentUpon>FRM_SUBSTITUTE_NCT_STAFF_PREVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUBSTITUTE_NCT_STAFF\FRM_SUBSTITUTE_NCT_STAFF_PREVIEW.aspx.vb">
+      <DependentUpon>FRM_SUBSTITUTE_NCT_STAFF_PREVIEW.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="SUBSTITUTE_TABEAN\FRM_SUBSTITUTE_CONFIRM.aspx.designer.vb">

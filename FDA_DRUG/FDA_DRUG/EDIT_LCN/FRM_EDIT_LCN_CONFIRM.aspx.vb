@@ -294,7 +294,7 @@ Public Class FRM_EDIT_LCN_CONFIRM
         End Try
         Try
             If Len(rcvno_auto) > 0 Then
-                lcnno_format = CStr(CInt(Right(rcvno_auto, 5))) & "/25" & Left(rcvno_auto, 2)
+                rcvno_format = CStr(CInt(Right(rcvno_auto, 5))) & "/25" & Left(rcvno_auto, 2)
             End If
         Catch ex As Exception
 

@@ -2500,7 +2500,7 @@ Public Class WebForm36
 
     Protected Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
         Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_INSERT_DR15(51040, "1710500118665")
+        ws_update.DRUG_INSERT_DR15(52333, "1710500118665")
     End Sub
 
     Protected Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click

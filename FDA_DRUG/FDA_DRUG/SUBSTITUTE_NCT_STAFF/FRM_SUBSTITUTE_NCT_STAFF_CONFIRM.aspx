@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="POPUP_SUBSTITUTE_NCT_CONFIRM.aspx.vb" Inherits="FDA_DRUG.POPUP_SUBSTITUTE_NCT_CONFIRM" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="FRM_SUBSTITUTE_NCT_STAFF_CONFIRM.aspx.vb" Inherits="FDA_DRUG.FRM_SUBSTITUTE_NCT_STAFF_CONFIRM" %>
 <%@ Register Src="~/UC/UC_GRID_ATTACH.ascx" TagPrefix="uc1" TagName="UC_GRID_ATTACH" %>
-
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 <%@ Register src="../UC/UC_GRID_PHARMACIST.ascx" tagname="UC_GRID_PHARMACIST" tagprefix="uc2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -83,10 +83,25 @@
     </div>
             </td>
              <td style="padding-left:10%;height:50%;">
-
+                 <telerik:RadScriptManager ID="RadScriptManager1" runat="server"></telerik:RadScriptManager>
                  <table class="table" style="width:90%"> 
-                     
-                     <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยื่นคำขอ" CssClass="btn-lg"   Width="80%" OnClientClick="return confirm('คุณต้องการบันทึกข้อมูลหรือไม่');"  /></td></tr>
+                     <%--<tr>
+                         <td>
+                             <asp:Label ID="lbl_rqt" runat="server" Text="โปรดเลือกกระบวนงานที่ท่านต้องการยื่น"></asp:Label>
+                             <telerik:radcombobox ID="ddl_req_type" Runat="server" Width="80%" Filter="Contains">
+                             </telerik:radcombobox>
+                         </td>
+                     </tr>--%>
+                     <tr><td>
+                                                  <asp:DropDownList ID="ddl_cnsdcd" runat="server" Width="80%" DataTextField="STATUS_NAME" DataValueField="STATUS_ID">
+                         </asp:DropDownList>
+                         
+                         </td></tr>
+                     <tr><td>
+                                                  <asp:TextBox ID="txt_appdate" runat="server" Width="80%"></asp:TextBox>
+                         
+                         </td></tr>
+                     <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยืนยัน" CssClass="btn-lg"   Width="80%" OnClientClick="return confirm('คุณต้องการบันทึกข้อมูลหรือไม่');"  /></td></tr>
                      <tr><td> <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก" CssClass="btn-lg"   Width="80%"/></td></tr>
                      <tr><td>  <asp:Button ID="btn_load" runat="server" Text="Download PDF" CssClass="btn-lg"   Width="80%" /></td></tr>
                      <tr><td>  <asp:Button ID="btn_load0" runat="server" Text="กลับหน้ารายการ" CssClass="btn-lg"   Width="80%" /></td></tr>
@@ -109,3 +124,4 @@
         </table> 
     
 </asp:Content>
+
