@@ -669,6 +669,7 @@
     <Content Include="DH\POPUP_DH_PRINT.aspx" />
     <Content Include="DI\FRM_CER_EXP_INSERT_AND_UPDATE.aspx" />
     <Content Include="DI\FRM_CER_EXP_MAIN.aspx" />
+    <Content Include="DI\FRM_SEARCH_DL.aspx" />
     <Content Include="DI\FRM_SEARCH_LCN.aspx" />
     <Content Include="DI\POPUP_DI_CONFIRM.aspx" />
     <Content Include="DI\FRM_DI_MAIN.aspx" />
@@ -2305,6 +2306,13 @@
     <Compile Include="DI\FRM_CER_EXP_MAIN.aspx.vb">
       <DependentUpon>FRM_CER_EXP_MAIN.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DI\FRM_SEARCH_DL.aspx.designer.vb">
+      <DependentUpon>FRM_SEARCH_DL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DI\FRM_SEARCH_DL.aspx.vb">
+      <DependentUpon>FRM_SEARCH_DL.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="DI\FRM_SEARCH_LCN.aspx.designer.vb">
       <DependentUpon>FRM_SEARCH_LCN.aspx</DependentUpon>

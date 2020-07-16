@@ -27,6 +27,17 @@
                 </td>
             </tr>--%>
             <tr>
+                <td>ประเภท</td>
+                <td Width="70%">
+                                <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
+                                    <asp:ListItem Value="1">Referred</asp:ListItem>
+                                    <asp:ListItem Value="2">Transferred</asp:ListItem>
+                                    <asp:ListItem Value="3">Copy</asp:ListItem>
+                                </asp:RadioButtonList>
+                </td>
+            </tr>
+
+            <tr>
                 <td>เลขทะเบียน</td>
                 <td Width="70%">
                                 <asp:TextBox ID="txt_lcnno_no" runat="server" CssClass="input-lg" Width="70%"></asp:TextBox>

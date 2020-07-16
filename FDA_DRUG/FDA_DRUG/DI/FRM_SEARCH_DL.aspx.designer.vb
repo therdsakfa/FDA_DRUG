@@ -11,34 +11,16 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class POPUP_DR_TRANSFER_DL
+Partial Public Class FRM_SEARCH_DL
     
     '''<summary>
-    '''RadScriptManager1 control.
+    '''rcb_search control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadScriptManager1 As Global.Telerik.Web.UI.RadScriptManager
-    
-    '''<summary>
-    '''RadioButtonList1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RadioButtonList1 As Global.System.Web.UI.WebControls.RadioButtonList
-    
-    '''<summary>
-    '''txt_lcnno_no control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txt_lcnno_no As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents rcb_search As Global.Telerik.Web.UI.RadComboBox
     
     '''<summary>
     '''btn_search control.
@@ -50,11 +32,29 @@ Partial Public Class POPUP_DR_TRANSFER_DL
     Protected WithEvents btn_search As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''RadGrid1 control.
+    '''btn_reload control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
+    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Button1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''hl_pay control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hl_pay As Global.System.Web.UI.WebControls.HyperLink
 End Class

@@ -62,7 +62,39 @@ Public Class WS_NORYORMOR_DATA
     Public Function Get_Pack_Size(ByVal DL_IDA As Integer) As DataTable
         Dim dt As New DataTable
         Dim bao As New BAO.ClsDBSqlcommand
-        dt = bao.SP_DRSAMP_PACKAGE_DETAIL_CHK_BY_FK_IDA(DL_IDA) 'ขนาดบรรจุ
+        dt = bao.SP_DRSAMP_PACKAGE_DETAIL_BY_FK_IDA_add(DL_IDA) 'ขนาดบรรจุ
         Return dt
     End Function
+    <WebMethod()>
+    Public Function Get_Pack_Size_Long_Txt(ByVal DL_IDA As Integer) As String
+        Dim str As String = ""
+        Dim dao_dl As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+        dao_dl.GetDataby_IDA(DL_IDA)
+        Try
+            str = dao_dl.fields.PACKAGE_DETAIL
+        Catch ex As Exception
+
+        End Try
+        Return str
+    End Function
+    <WebMethod()>
+    Public Function Get_Drug_per_Unit(ByVal DL_IDA As Integer) As String
+        Dim str As String = ""
+        Try
+            Dim dao As New DAO_DRUG.TB_DRUG_REGISTRATION_EACH
+            dao.GetDataby_FK_IDA(DL_IDA)
+            If IsNothing(dao.fields.EACH_TXT) = False Or dao.fields.EACH_TXT <> "" Then
+                str = "Each " & dao.fields.EACH_TXT & " Contains;"
+            Else
+                Dim dao_u As New DAO_DRUG.TB_DRUG_UNIT
+                dao_u.GetDataby_sunitcd(dao.fields.sunitcd)
+                str = "Each " & dao.fields.EACH_AMOUNT & " " & dao_u.fields.unit_name & " Contains;"
+            End If
+
+        Catch ex As Exception
+
+        End Try
+        Return str
+    End Function
+
 End Class

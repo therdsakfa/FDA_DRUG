@@ -1061,6 +1061,14 @@ Namespace BAO
             dta.TableName = "SP_drug_general_sai"
             Return dta
         End Function
+        '
+        Public Function SP_DRRGT_NAME_DRUG_EXPORT_BY_NEWCODE(ByVal newcode As String) As DataTable
+            Dim sql As String = "exec SP_DRRGT_NAME_DRUG_EXPORT_BY_NEWCODE @newcode='" & newcode & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DRRGT_NAME_DRUG_EXPORT_BY_NEWCODE"
+            Return dta
+        End Function
         Public Function SP_GET_REGIST_PRODUCCER_IN(ByVal IDA As Integer, ByVal FK_IDA As Integer) As DataTable
             Dim sql As String = "exec SP_GET_REGIST_PRODUCCER_IN @IDA=" & IDA & ", @FK_IDA=" & FK_IDA
             Dim dta As New DataTable

@@ -334,7 +334,7 @@ Public Class POPUP_DR_UPLOAD
 
             Try
                 If Trim(p2.TRANSFER) <> "" Then
-                    dao.fields.TRANSFER_TYPE = "1"
+                    dao.fields.TRANSFER_TYPE = p2.drrqts.TRANSFER_TYPE
 
                 End If
 
@@ -989,7 +989,7 @@ Public Class POPUP_DR_UPLOAD
                 End Try
                 Try
                     If Trim(p2.TRANSFER) <> "" Then
-                        dao.fields.TRANSFER_TYPE = "1"
+                        dao.fields.TRANSFER_TYPE = p2.drrqts.TRANSFER_TYPE
 
                     End If
 
@@ -1233,7 +1233,7 @@ Public Class POPUP_DR_UPLOAD
 
                 End Try
                 Try
-                    dao.fields.TRANSFER_TYPE = 1
+                    dao.fields.TRANSFER_TYPE = p2.drrqts.TRANSFER_TYPE
                 Catch ex As Exception
 
                 End Try

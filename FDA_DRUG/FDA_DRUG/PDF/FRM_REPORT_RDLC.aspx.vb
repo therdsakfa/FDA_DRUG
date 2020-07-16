@@ -37,6 +37,7 @@ Public Class FRM_REPORT_RDLC
         Dim dt_tp_stock As New DataTable
         Dim dt_edit_history As New DataTable
         Dim dt_print As New DataTable
+        'Dim dt_export As New DataTable
         dt_print.Columns.Add("thanm")
         dt_print.Columns.Add("printdate")
         Dim dr As DataRow = dt_print.NewRow()
@@ -83,6 +84,7 @@ Public Class FRM_REPORT_RDLC
             dt_animal = bao_show.SP_dramldrg_BY_newcode(Request.QueryString("NEWCODE")) '
             dt_tp_stock = bao_show.SP_DRRGT_KEEP_DRUG_BY_newcode(Request.QueryString("NEWCODE")) '
             dt_edit_history = bao_show.SP_DRRGT_EDIT_REQUEST_HISTORY(Request.QueryString("IDA"))
+            ' dt_export = bao_master_2.SP_DRRGT_NAME_DRUG_EXPORT_BY_NEWCODE(Request.QueryString("NEWCODE"))
         Else
             Try
                 Dim dao_rgt As New DAO_DRUG.ClsDBdrrqt
@@ -115,6 +117,8 @@ Public Class FRM_REPORT_RDLC
         Dim rds6 As New ReportDataSource("rp_drug_frgn", dt_frgn)
         Dim rds7 As New ReportDataSource("rp_drug_edit", dt_edit_history)
         Dim rds8 As New ReportDataSource("rp_print_nm", dt_print)
+        'Dim rds9 As New ReportDataSource("rp_drug_export", dt_export)
+
 
         ReportViewer1.LocalReport.DataSources.Add(rds)
         ReportViewer1.LocalReport.DataSources.Add(rds2)
@@ -124,6 +128,7 @@ Public Class FRM_REPORT_RDLC
         ReportViewer1.LocalReport.DataSources.Add(rds6)
         ReportViewer1.LocalReport.DataSources.Add(rds7)
         ReportViewer1.LocalReport.DataSources.Add(rds8)
+        'ReportViewer1.LocalReport.DataSources.Add(rds9)
         'ReportViewer1.LocalReport.Refresh()
         'ReportViewer1.DataBind()
         Dim ReportType As String = "PDF"

@@ -277,7 +277,7 @@
                        <div style="text-align: right; padding-left: 0%; height: 60px;">
                            <asp:Button ID="btn_download_t" runat="server" Text="สร้างคำขอ ย.1"  CssClass="btn-sm " />
                            &nbsp;&nbsp;
-                           <asp:Button ID="btn_download_t2" runat="server" Text="คำขอ Transfer" CssClass="btn-sm " />
+                           <asp:Button ID="btn_download_t2" runat="server" Text="คำขอ Transfer/Referred/Copy" CssClass="btn-sm " />
                            &nbsp;&nbsp;
        <asp:Button ID="btn_upload_t" runat="server" Text="อัพโหลดคำขอ" CssClass="btn-sm " />
                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

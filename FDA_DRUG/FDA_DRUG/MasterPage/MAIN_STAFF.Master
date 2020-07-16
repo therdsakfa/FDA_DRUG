@@ -17,6 +17,21 @@
     <link href="../assets/css/style.css" rel="stylesheet" />
     <script src="../Scripts/jquery-1.9.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
+ <%--    <style type="text/css">
+         body {font-family:EucrosiaUPC; font-size:x-large;
+         }
+
+         h4 {
+             font-size:x-large;
+         }
+          h5 {
+             font-size:x-large;
+         }
+         li {
+             font-size:x-large;
+         }
+
+     </style>--%>
     <asp:ContentPlaceHolder ID="head" runat="server">
 
     </asp:ContentPlaceHolder>

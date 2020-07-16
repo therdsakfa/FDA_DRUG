@@ -54,7 +54,7 @@ Public Class TABEAN_YA_MAIN
 
             lbl_tabean.Text = "การขอขึ้นทะเบียนผลิตภัณฑ์สมุนไพร (ยาจากสมุนไพร)"
 
-            hl_pay.Style.Add("display", "none")
+            'hl_pay.Style.Add("display", "none")
         End If
         ' btn_upload_t.Attributes.Add("onclick", "return  Popups2('../DR/POPUP_DR_UPLOAD.aspx?IDA=" & _IDA & "&process=" & _process & "');")
         ' btn_upload_ex.Attributes.Add("onclick", "return  Popups2('../DS/POPUP_DS_UPLOAD.aspx?IDA=" & _IDA & "&process=" & _process & "');")

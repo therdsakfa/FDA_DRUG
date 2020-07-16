@@ -164,7 +164,7 @@
                            HeaderText="ชื่อการค้า(อื่นๆ)" SortExpression="engdrgnm" UniqueName="engdrgnm">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="rgtno_t_display" FilterControlAltText="Filter rgtno_t_display column"
-                           HeaderText="เลขทะเบียนทรานสเฟอร์" SortExpression="rgtno_t_display" UniqueName="rgtno_t_display">
+                           HeaderText="เลขทะเบียน (Refer/Transfer/Copy)" SortExpression="rgtno_t_display" UniqueName="rgtno_t_display">
                        </telerik:GridBoundColumn>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_report"
                            CommandName="report" Text="แบบฟอร์มทะเบียน">

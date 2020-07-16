@@ -198,7 +198,9 @@
                         </td>
                     </tr>
                 </table>
-                สถานที่ตั้ง
+              <h5>
+ สถานที่ตั้ง
+              </h5> 
                 <telerik:RadGrid ID="RadGrid1" runat="server">
 <MasterTableView autogeneratecolumns="False" datakeynames="IDA">
 <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
@@ -286,7 +288,9 @@
 <FilterMenu EnableImageSprites="False"></FilterMenu>
            </telerik:RadGrid>
                 <br />
-                สถานที่เก็บ
+                 <h5>
+สถานที่เก็บ
+                            </h5>
                 <telerik:RadGrid ID="RadGrid2" runat="server">
 <MasterTableView autogeneratecolumns="False" datakeynames="IDA">
 <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>

@@ -26,8 +26,8 @@ Public Class FRM_RGT_EDIT_MAIN
             _CLS = Session("CLS")                               'นำค่า Session ใส่ ในตัวแปร _CLS
             _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
             _lct_ida = Request.QueryString("lct_ida")
-            _type = Request.QueryString("type")
-            _process_for = Request.QueryString("process_for")
+            '_type = Request.QueryString("type")
+            '_process_for = Request.QueryString("process_for")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")  'เกิด  ERROR  จะเกิดกลับมาหน้า privus
         End Try
@@ -333,8 +333,15 @@ Public Class FRM_RGT_EDIT_MAIN
         Catch ex As Exception
 
         End Try
-        cls_xml.DT_SHOW.DT18 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.FK_IDA)
-        cls_xml.DT_SHOW.DT18.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_FULLADDR"
+        Try
+            Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+            dao_dal.GetDataby_IDA(dao_lcn_e.fields.IDA_dalcn)
+            cls_xml.DT_SHOW.DT18 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_dal.fields.FK_IDA)
+            cls_xml.DT_SHOW.DT18.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_FULLADDR"
+        Catch ex As Exception
+
+        End Try
+
         Try
             Dim dt_temp As New DataTable
             dt_temp = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_drrgt.fields.FK_LCN_IDA) 'ผู้ดำเนิน

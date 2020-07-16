@@ -240,18 +240,21 @@
         'alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao_rqt.fields.rcvno)
         Dim bao_insert As New BAO.ClsDBSqlcommand
         bao_insert.insert_tabean_sub(_IDA)
-        
 
-        If dao_rqt.fields.FK_TRANSFER IsNot Nothing Then
-            Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
-            dao_rg.GetDataby_IDA(dao_rqt.fields.FK_TRANSFER)
-            dao_rg.fields.cnccd = 2
-            dao_rg.fields.cncdate = CDate(txt_rcvdate.Text)
-            dao_rg.fields.cnccscd = 68
-            dao_rg.update()
 
-            Dim ws_drug1 As New WS_DRUG.WS_DRUG
-            ws_drug1.DRUG_UPDATE_DR(dao_rg.fields.pvncd, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.rgtno, "เจ้าหน้าที่กดอนุมัติทะเบียนทรานสเฟอร์ ต้องทำการยกเลิกทะเบียนเดิม", _CLS.CITIZEN_ID, "DRUG")
+        If dao_rqt.fields.TRANSFER_TYPE IsNot Nothing Then
+            If dao_rqt.fields.TRANSFER_TYPE = 2 Then
+                Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
+                dao_rg.GetDataby_IDA(dao_rqt.fields.FK_TRANSFER)
+                dao_rg.fields.cnccd = 2
+                dao_rg.fields.cncdate = CDate(txt_rcvdate.Text)
+                dao_rg.fields.cnccscd = 68
+                dao_rg.update()
+
+                Dim ws_drug1 As New WS_DRUG.WS_DRUG
+                ws_drug1.DRUG_UPDATE_DR(dao_rg.fields.pvncd, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.rgtno, "เจ้าหน้าที่กดอนุมัติทะเบียนทรานสเฟอร์ ต้องทำการยกเลิกทะเบียนเดิม", _CLS.CITIZEN_ID, "DRUG")
+            End If
+
         End If
 
         Dim ws_drug As New WS_DRUG.WS_DRUG

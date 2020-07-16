@@ -81,9 +81,14 @@ Public Class POPUP_DR_TRANSFER_DL
             Dim IDA As String = item("IDA").Text
             If e.CommandName = "dow" Then
                 Try
-                    Dim dao As New DAO_DRUG.ClsDBdrrgt
-                    dao.GetDataby_IDA(IDA)
-                    Bind_PDF(_main_ida, _process, IDA, dao.fields.FK_LCN_IDA)
+                    If RadioButtonList1.SelectedValue <> "" Then
+                        Dim dao As New DAO_DRUG.ClsDBdrrgt
+                        dao.GetDataby_IDA(IDA)
+                        Bind_PDF(_main_ida, _process, IDA, dao.fields.FK_LCN_IDA)
+                    Else
+                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกประเภท');", True)
+                    End If
+
                 Catch ex As Exception
 
                 End Try
@@ -236,6 +241,11 @@ Public Class POPUP_DR_TRANSFER_DL
         cls_xml.DRUG_STRENGTH = dao_re.fields.DRUG_STRENGTH
         Try
             cls_xml.TRANSFER = ida_transfer
+        Catch ex As Exception
+
+        End Try
+        Try
+            cls_xml.drrqts.TRANSFER_TYPE = RadioButtonList1.SelectedValue
         Catch ex As Exception
 
         End Try
