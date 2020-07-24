@@ -18,7 +18,7 @@
         End Try
         'การ where 
         Try
-            tb_location.Getdata_by_fk_id2(Tb.fields.IDA)
+            tb_location.Getdata_by_fk_id2(TbNO.fields.IDA)
         Catch ex As Exception
 
         End Try

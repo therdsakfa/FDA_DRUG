@@ -2500,7 +2500,7 @@ Public Class WebForm36
 
     Protected Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
         Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_INSERT_DR15(52333, "1710500118665")
+        ws_update.DRUG_INSERT_DR15(52482, "1710500118665")
     End Sub
 
     Protected Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
@@ -2596,5 +2596,114 @@ Public Class WebForm36
     Protected Sub btn_t_auto_Click(sender As Object, e As EventArgs) Handles btn_t_auto.Click
         Dim ws As New WS_ACCEPT_RGT_AUTO
         ws.ACCEPT_AND_RUNNING_RGTNO(97039)
+    End Sub
+    Private Sub runpdf_lcn()
+        Dim dt_drug_general As New DataTable
+        Dim dt_phr As New DataTable
+        Dim dt_frgn As New DataTable
+        Dim bao_master_2 As New BAO.ClsDBSqlcommand
+        Dim bao_show As New BAO_SHOW
+        Dim BAO_MAS As New BAO_MASTER
+        Dim bao_app As New BAO.AppSettings
+        bao_app.RunAppSettings()
+
+
+        dt_drug_general = bao_master_2.SP_GET_DATA_DALCN_BY_IDA(57440)
+        dt_phr = BAO_MAS.SP_DALCN_PHR_BY_FK_IDA_2(57440)
+        'dt_frgn = bao_show.SP_REGIST_PRODUCER_BY_FK_IDA(Request.QueryString("IDA"))
+
+        'SP_DRRGT_ATC_DETAIL_BY_FK_IDA
+        Dim util As New cls_utility.Report_Utility
+        util.report = ReportViewer1
+        util.configWidthHeight(width:=1000)
+
+
+        'util.ShowReport(ReportViewer1, util.root & "D:/rp_drug.rdlc", "rp_drug_general", dt_drug_general)
+        'util.ShowReport(ReportViewer1, util.root & "D:/rp_drug.rdlc", "'rp_drug", dt_drug_general)
+        ReportViewer1.LocalReport.ReportPath = bao_app._RDLC & "\lcn_data.rdlc"
+        ReportViewer1.LocalReport.EnableExternalImages = True
+        ReportViewer1.LocalReport.DataSources.Clear()
+        'report.LocalReport.DataSources.Add(New Microsoft.Reporting.WebForms.ReportDataSource("Fields_Report_R2_001", getReportData()))
+        Dim rds As New ReportDataSource("rp_main_data", dt_drug_general)
+        Dim rds2 As New ReportDataSource("rp_phr", dt_phr)
+        'Dim rds3 As New ReportDataSource("rp_drug_recipe_group", dt_drug_recipe)
+
+
+        ReportViewer1.LocalReport.DataSources.Add(rds)
+        ReportViewer1.LocalReport.DataSources.Add(rds2)
+        'ReportViewer1.LocalReport.DataSources.Add(rds3)
+        'ReportViewer1.LocalReport.DataSources.Add(rds4)
+        'ReportViewer1.LocalReport.DataSources.Add(rds5)
+        'ReportViewer1.LocalReport.DataSources.Add(rds6)
+        'ReportViewer1.LocalReport.DataSources.Add(rds7)
+
+
+
+
+        Dim ReportType As String = "PDF"
+        Dim FileNameExtension As String = "pdf"
+
+        Dim warnings As Warning() = Nothing
+        Dim streams As String() = Nothing
+        Dim renderedbytes As Byte() = Nothing
+        renderedbytes = ReportViewer1.LocalReport.Render(ReportType, Nothing, Nothing, "UTF-8", FileNameExtension, streams, warnings)
+
+        Dim ws_platten As New WS_FLATTEN.WS_FLATTEN
+        renderedbytes = ws_platten.PDF_DIGITAL_SIGN(renderedbytes)
+        Dim clsds As New ClassDataset
+
+        clsds.bynaryToobject2(bao_app._RDLC & 57440 & ".pdf", renderedbytes)
+        Dim filename As String = 57440 & ".pdf"
+        Dim saveLocation As String = bao_app._RDLC & "/" & filename
+
+        'Response.Redirect(bao_app._RDLC & tr_id & ".pdf")
+        load_pdf(saveLocation, filename)
+        ' Response.Redirect("../PDF/" & tr_id & ".pdf")
+
+        'Response.Redirect("../PDF/" & tr_id & ".pdf")
+
+        ''ต้องให้ Content Type เป็น pdf และกำหนด filename ใน content-disposition ให้มีนามสกุลเป็น pdf เพื่อให้ IE เปิด Pdf Reader ได้ http://forums.asp.net/p/1036628/1436084.aspx
+        'Response.AddHeader("Accept-Ranges", "bytes")
+        'Response.AddHeader("Accept-Header", "2222")
+        'Response.AddHeader("Cache-Control", "public")
+        'Response.AddHeader("Cache-Control", "must-revalidate")
+        'Response.AddHeader("Pragma", "public")
+        ''Response.AddHeader()
+        ''Response.AddHeader("Content-Encoding", "UTF-8")
+
+        ''Response.ContentEncoding = System.Text.Encoding.Unicode   'GetEncoding(874)
+        ''Response.Charset = "windows-874"
+        'Response.ContentType = "application/pdf"
+        'Response.AddHeader("content-disposition", "inline; filename=""" + "Test.pdf" + """")
+        'Response.AddHeader("expires", "0")
+
+
+        'Response.BinaryWrite(renderedbytes)
+        'Response.Flush()
+    End Sub
+
+    Protected Sub btn_rp_lcn_Click(sender As Object, e As EventArgs) Handles btn_rp_lcn.Click
+        runpdf_lcn()
+    End Sub
+    Private Sub load_pdf(ByVal FilePath As String, ByVal filename As String)
+        'Response.ContentType = "Application/pdf"
+        Dim last_nm_file As String = ""
+        Dim split_nm As String() = filename.Split(".")
+        last_nm_file = split_nm(split_nm.Length - 1)
+        Response.ContentType = "Content-Disposition"
+        If last_nm_file = "txt" Then
+            Response.ContentType = "text/plain"
+        ElseIf last_nm_file = "jpg" Then
+            Response.ContentType = "image/JPEG"
+        ElseIf last_nm_file = "png" Then
+            Response.ContentType = "image/png"
+        ElseIf last_nm_file = "pdf" Then
+            Response.ContentType = "application/pdf"
+        ElseIf last_nm_file = "doc" Or last_nm_file = "docx" Then
+            Response.ContentType = "application/msword"
+        End If
+
+        Response.WriteFile(FilePath)
+        Response.End()
     End Sub
 End Class

@@ -225,6 +225,7 @@
             <asp:Button ID="Button2" runat="server" Text="RUN REPORT" />
             <asp:Button ID="Button3" runat="server" Text="Run Order ID" />
             <asp:Button ID="Button10" runat="server" Text="test_aa" />
+            <asp:Button ID="btn_rp_lcn" runat="server" Text="Run Report Lcn" />
         </p>
         <p>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>

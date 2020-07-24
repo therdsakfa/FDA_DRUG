@@ -419,6 +419,15 @@ Partial Public Class WebForm36
     Protected WithEvents Button10 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''btn_rp_lcn control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_rp_lcn As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''TextBox1 control.
     '''</summary>
     '''<remarks>

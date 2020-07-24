@@ -37,15 +37,15 @@
               }
 
 
-              function close_modal() { // คำสั่งสั่งปิด PopUp
-                  $('#myModal').modal('hide');
-                  $('#ContentPlaceHolder1_btn_reload').click(); // ตัวอย่างให้คำสั่งปุ่มที่ซ่อนอยู่ Click
-              }
+              
 
 
 
           });
-
+        function close_modal() { // คำสั่งสั่งปิด PopUp
+                  $('#myModal').modal('hide');
+                  $('#ContentPlaceHolder1_btn_reload').click(); // ตัวอย่างให้คำสั่งปุ่มที่ซ่อนอยู่ Click
+              }
           function Popups2(url) { // สำหรับทำ Div Popup
 
               $('#myModal').modal('toggle'); // เป็นคำสั่งเปิดปิด
@@ -76,6 +76,7 @@
                                <p style="text-align:right;padding-right:5%;">
 
                                    <asp:Button ID="Button1" runat="server" Text="Button" style="display:none;" />
+
 
             <asp:Button ID="btn_download" runat="server" Text="ดาวน์โหลดคำขอ" CssClass="btn-lg"   />
         &nbsp;&nbsp;

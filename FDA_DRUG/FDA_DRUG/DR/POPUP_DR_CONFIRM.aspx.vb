@@ -1350,8 +1350,14 @@ Public Class POPUP_DR_CONFIRM
 
         p_dr = class_xml
         If Request.QueryString("status") = 8 Or Request.QueryString("status") = 14 Then
-            lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "&status=" & Request.QueryString("status") & "' ></iframe>"
-            hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename & "&status=" & Request.QueryString("status")  ' Link เปิดไฟล์ตัวใหญ่
+            If tamrap_id <> 0 Then
+                lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='https://medicina.fda.moph.go.th/FDA_DRUG_DEMO/PDF/FRM_PDF_VIEW.aspx?FileName=" & filename & "' ></iframe>"
+                hl_reader.NavigateUrl = "https://medicina.fda.moph.go.th/FDA_DRUG_DEMO/PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+            Else
+                lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "&status=" & Request.QueryString("status") & "' ></iframe>"
+                hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename & "&status=" & Request.QueryString("status")  ' Link เปิดไฟล์ตัวใหญ่
+            End If
+
         Else
             If tamrap_id <> 0 Then
                 If Request.QueryString("status") = 1 Or Request.QueryString("status") = "2" Then

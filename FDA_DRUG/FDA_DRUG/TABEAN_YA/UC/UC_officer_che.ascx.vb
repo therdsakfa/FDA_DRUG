@@ -880,6 +880,7 @@ Public Class UC_officer_che
                 dao.fields.FK_IDA = Request.QueryString("IDA")
                 dao.fields.sunitcd = ddl_unit_each.SelectedValue
                 dao.fields.FK_SET = ddl_set_each.SelectedValue
+                dao.fields.EACH_TXT = txt_each_txt.Text
                 dao.insert()
 
             Else
@@ -888,6 +889,7 @@ Public Class UC_officer_che
                 dao.fields.EACH_AMOUNT = txt_each.Text
                 dao.fields.sunitcd = ddl_unit_each.SelectedValue
                 dao.fields.FK_SET = ddl_set_each.SelectedValue
+                dao.fields.EACH_TXT = txt_each_txt.Text
                 dao.update()
             End If
         End If

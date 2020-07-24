@@ -1086,6 +1086,13 @@ Namespace BAO
             Return dta
         End Function
         '
+        Public Function SP_GET_DATA_DALCN_BY_IDA(ByVal IDA As Integer) As DataTable
+            Dim sql As String = "exec SP_GET_DATA_DALCN_BY_IDA @IDA=" & IDA
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_GET_DATA_DALCN_BY_IDA"
+            Return dta
+        End Function
         Public Function SP_drug_general_REGIST(ByVal IDA As Integer) As DataTable
             Dim sql As String = "exec SP_drug_general_REGIST @ida=" & IDA
             Dim dta As New DataTable
@@ -3097,6 +3104,18 @@ Namespace BAO
             Return dt
         End Function
         '
+        Public Function DRUG_REGISTRATION_BY_IDA_NORYORMOR(ByVal ida As Integer) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec DRUG_REGISTRATION_BY_IDA_NORYORMOR @IDA=" & ida
+            Dim dt As New DataTable
+            Try
+                dt = Queryds(sql)
+            Catch ex As Exception
+
+            End Try
+            dt.TableName = "DRUG_REGISTRATION_BY_IDA_NORYORMOR"
+            Return dt
+        End Function
         Public Function SP_DRRQT_PACKAGE_DETAIL_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_DRRQT_PACKAGE_DETAIL_BY_FK_IDA @FK_IDA=" & fk_ida
@@ -4712,6 +4731,33 @@ Namespace BAO
         Public Function SP_DALCN_EDIT_REQUEST_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_DALCN_EDIT_REQUEST_BY_FK_IDA @FK_IDA=" & fk_ida
+            Dim dt As New DataTable
+            Try
+                dt = clsds.dsQueryselect(sql, con_str).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
+
+            Return dt
+        End Function
+        '
+        Public Function SP_GET_IDENTYFY_AND_NAME_BY_CTZNO(ByVal identify As String) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_GET_IDENTYFY_AND_NAME_BY_CTZNO @identify='" & identify & "'"
+            Dim dt As New DataTable
+            Try
+                dt = clsds.dsQueryselect(sql, con_str).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
+
+            Return dt
+        End Function
+        Public Function SP_DALCN_EDIT_REQUEST_STAFF() As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DALCN_EDIT_REQUEST_STAFF "
             Dim dt As New DataTable
             Try
                 dt = clsds.dsQueryselect(sql, con_str).Tables(0)

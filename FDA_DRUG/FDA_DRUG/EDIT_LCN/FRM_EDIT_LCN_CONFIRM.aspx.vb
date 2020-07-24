@@ -95,7 +95,7 @@ Public Class FRM_EDIT_LCN_CONFIRM
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');parent.close_modal();</script> ")
     End Sub
     Protected Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
-        Dim dao As New DAO_DRUG.ClsDBdalcn
+        Dim dao As New DAO_DRUG.TB_DALCN_EDIT_REQUEST
         dao.GetDataby_IDA(Integer.Parse(_IDA))
         dao.fields.STATUS_ID = 7
         dao.update()

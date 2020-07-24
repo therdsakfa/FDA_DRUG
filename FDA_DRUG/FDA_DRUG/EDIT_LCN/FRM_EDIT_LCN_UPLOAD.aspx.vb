@@ -10,8 +10,18 @@ Public Class FRM_EDIT_LCN_UPLOAD
     Private _ProcessID As Integer
     Private _pvncd As Integer
     Sub runQuery()
-        _ProcessID = Request.QueryString("process")
-        _IDA = Request.QueryString("IDA")
+        Try
+            _ProcessID = Request.QueryString("process")
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            _IDA = Request.QueryString("IDA")
+        Catch ex As Exception
+
+        End Try
+
         bao.RunAppSettings()
         _CLS = Session("CLS")
     End Sub

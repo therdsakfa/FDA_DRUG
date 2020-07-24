@@ -1723,6 +1723,7 @@
     <Content Include="WS_EDIT_DALCN.asmx" />
     <Content Include="WS_GEN_DH_NO.asmx" />
     <Content Include="WS_GET_REGIST.asmx" />
+    <Content Include="WS_LCN_EXTEND.asmx" />
     <Content Include="WS_NORYORMOR_DATA.asmx" />
     <Content Include="WS_UPDATE_EDIT_APPROVE.asmx" />
     <Content Include="XML\PDFdarqt.xml">
@@ -6868,6 +6869,10 @@
     </Compile>
     <Compile Include="WS_GET_REGIST.asmx.vb">
       <DependentUpon>WS_GET_REGIST.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS_LCN_EXTEND.asmx.vb">
+      <DependentUpon>WS_LCN_EXTEND.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WS_NORYORMOR_DATA.asmx.vb">
