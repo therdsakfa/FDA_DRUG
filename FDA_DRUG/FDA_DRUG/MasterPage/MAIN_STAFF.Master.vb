@@ -41,128 +41,131 @@
         Catch ex As Exception
 
         End Try
-        Try
-            dao_h.GetData_By_Group_Order_By_Seq(gg)
-        Catch ex As Exception
+        If gg <> "" Then
+            Try
+                dao_h.GetData_By_Group_Order_By_Seq(gg)
+            Catch ex As Exception
 
-        End Try
+            End Try
 
-        Dim str_all As String = ""
-        For Each dao_h.fields In dao_h.datas
-            If str_all = "" Then
-                str_all = "<h4 class='text-center'><strong>" & dao_h.fields.GROUP_NAME & "</strong></h4>"
-                Dim p_name As String = ""
-                Try
-                    p_name = get_page_name()
-                Catch ex As Exception
+            Dim str_all As String = ""
+            For Each dao_h.fields In dao_h.datas
+                If str_all = "" Then
+                    str_all = "<h4 class='text-center'><strong>" & dao_h.fields.GROUP_NAME & "</strong></h4>"
+                    Dim p_name As String = ""
+                    Try
+                        p_name = get_page_name()
+                    Catch ex As Exception
 
-                End Try
-                Dim aa As Integer = 0
+                    End Try
+                    Dim aa As Integer = 0
 
-                Try
-                    aa = _CLS.GROUPS
-                Catch ex As Exception
+                    Try
+                        aa = _CLS.GROUPS
+                    Catch ex As Exception
 
-                End Try
-                Dim _group As Integer = 0
-                If aa = 21020 Then
-                    _group = 1
+                    End Try
+                    Dim _group As Integer = 0
+                    If aa = 21020 Then
+                        _group = 1
+                    Else
+                        _group = 2
+                    End If
+                    '_group = 2
+                    Dim dao_g As New DAO_DRUG.TB_MAS_ADMIN_BUTTON
+                    dao_g.GetDataby_Btn_Group_and_IdGroup(dao_h.fields.GROUP_ID, aa)
+
+                    str_all &= "<ul class='nav nav-pills nav-stacked'>"
+                    For Each dao_g.fields In dao_g.datas
+                        Dim dao_u As New DAO_DRUG.TB_MAS_ADMIN_BUTTON
+                        Dim i As Integer = 0
+                        If p_name <> "" Then
+                            'i = dao_u.Check_Page(p_name, _CLS.Groups)
+                            Try
+                                If CStr(dao_g.fields.BTN_URL).Contains(p_name) Then
+                                    i += 1
+                                End If
+                            Catch ex As Exception
+
+                            End Try
+
+                        End If
+                        If i = 0 Then
+                            str_all &= "<li>"
+                        Else
+                            str_all &= "<li class='active'>"
+                        End If
+                        If dao_g.fields.BTN_URL.Contains("TOKEN") Or dao_g.fields.BTN_URL.Contains("AUTHEN") Then
+                            str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
+                        Else
+                            str_all &= "<a href='" & dao_g.fields.BTN_URL & "' target='" & dao_g.fields.TARGET & "'>" & dao_g.fields.BTN_NAME & "</a>"
+                        End If
+
+                        str_all &= "</li>"
+                        'i += 1
+                    Next
+                    str_all &= "</ul><br/>"
+
                 Else
-                    _group = 2
+                    str_all &= "<h4 class='text-center'><strong>" & dao_h.fields.GROUP_NAME & "</strong></h4>"
+                    Dim p_name As String = ""
+                    Try
+                        p_name = get_page_name()
+                    Catch ex As Exception
+
+                    End Try
+                    Dim aa As Integer = 0
+
+                    Try
+                        aa = _CLS.GROUPS
+                    Catch ex As Exception
+
+                    End Try
+                    Dim _group As Integer = 0
+                    If aa = 21020 Then
+                        _group = 1
+                    Else
+                        _group = 2
+                    End If
+                    '_group = 2
+                    Dim dao_g As New DAO_DRUG.TB_MAS_ADMIN_BUTTON
+                    dao_g.GetDataby_Btn_Group_and_IdGroup(dao_h.fields.GROUP_ID, aa)
+
+                    str_all &= "<ul class='nav nav-pills nav-stacked'>"
+                    For Each dao_g.fields In dao_g.datas
+                        Dim dao_u As New DAO_DRUG.TB_MAS_ADMIN_BUTTON
+                        Dim i As Integer = 0
+                        If p_name <> "" Then
+                            'i = dao_u.Check_Page(p_name, _CLS.Groups)
+                            Try
+                                If CStr(dao_g.fields.BTN_URL).Contains(p_name) Then
+                                    i += 1
+                                End If
+                            Catch ex As Exception
+
+                            End Try
+
+                        End If
+                        If i = 0 Then
+                            str_all &= "<li>"
+                        Else
+                            str_all &= "<li class='active'>"
+                        End If
+                        If dao_g.fields.BTN_URL.Contains("TOKEN") Or dao_g.fields.BTN_URL.Contains("AUTHEN") Then
+                            str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
+                        Else
+                            str_all &= "<a href='" & dao_g.fields.BTN_URL & "' target='" & dao_g.fields.TARGET & "'>" & dao_g.fields.BTN_NAME & "</a>"
+                        End If
+
+                        str_all &= "</li>"
+                        'i += 1
+                    Next
+                    str_all &= "</ul><br/>"
                 End If
-                '_group = 2
-                Dim dao_g As New DAO_DRUG.TB_MAS_ADMIN_BUTTON
-                dao_g.GetDataby_Btn_Group_and_IdGroup(dao_h.fields.GROUP_ID, aa)
+                Literal1.Text = str_all
+            Next
+        End If
 
-                str_all &= "<ul class='nav nav-pills nav-stacked'>"
-                For Each dao_g.fields In dao_g.datas
-                    Dim dao_u As New DAO_DRUG.TB_MAS_ADMIN_BUTTON
-                    Dim i As Integer = 0
-                    If p_name <> "" Then
-                        'i = dao_u.Check_Page(p_name, _CLS.Groups)
-                        Try
-                            If CStr(dao_g.fields.BTN_URL).Contains(p_name) Then
-                                i += 1
-                            End If
-                        Catch ex As Exception
-
-                        End Try
-
-                    End If
-                    If i = 0 Then
-                        str_all &= "<li>"
-                    Else
-                        str_all &= "<li class='active'>"
-                    End If
-                    If dao_g.fields.BTN_URL.Contains("TOKEN") Or dao_g.fields.BTN_URL.Contains("AUTHEN") Then
-                        str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
-                    Else
-                        str_all &= "<a href='" & dao_g.fields.BTN_URL & "' target='" & dao_g.fields.TARGET & "'>" & dao_g.fields.BTN_NAME & "</a>"
-                    End If
-
-                    str_all &= "</li>"
-                    'i += 1
-                Next
-                str_all &= "</ul><br/>"
-
-            Else
-                str_all &= "<h4 class='text-center'><strong>" & dao_h.fields.GROUP_NAME & "</strong></h4>"
-                Dim p_name As String = ""
-                Try
-                    p_name = get_page_name()
-                Catch ex As Exception
-
-                End Try
-                Dim aa As Integer = 0
-
-                Try
-                    aa = _CLS.GROUPS
-                Catch ex As Exception
-
-                End Try
-                Dim _group As Integer = 0
-                If aa = 21020 Then
-                    _group = 1
-                Else
-                    _group = 2
-                End If
-                '_group = 2
-                Dim dao_g As New DAO_DRUG.TB_MAS_ADMIN_BUTTON
-                dao_g.GetDataby_Btn_Group_and_IdGroup(dao_h.fields.GROUP_ID, aa)
-
-                str_all &= "<ul class='nav nav-pills nav-stacked'>"
-                For Each dao_g.fields In dao_g.datas
-                    Dim dao_u As New DAO_DRUG.TB_MAS_ADMIN_BUTTON
-                    Dim i As Integer = 0
-                    If p_name <> "" Then
-                        'i = dao_u.Check_Page(p_name, _CLS.Groups)
-                        Try
-                            If CStr(dao_g.fields.BTN_URL).Contains(p_name) Then
-                                i += 1
-                            End If
-                        Catch ex As Exception
-
-                        End Try
-
-                    End If
-                    If i = 0 Then
-                        str_all &= "<li>"
-                    Else
-                        str_all &= "<li class='active'>"
-                    End If
-                    If dao_g.fields.BTN_URL.Contains("TOKEN") Or dao_g.fields.BTN_URL.Contains("AUTHEN") Then
-                        str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
-                    Else
-                        str_all &= "<a href='" & dao_g.fields.BTN_URL & "' target='" & dao_g.fields.TARGET & "'>" & dao_g.fields.BTN_NAME & "</a>"
-                    End If
-
-                    str_all &= "</li>"
-                    'i += 1
-                Next
-                str_all &= "</ul><br/>"
-            End If
-            Literal1.Text = str_all
-        Next
 
 
     End Sub

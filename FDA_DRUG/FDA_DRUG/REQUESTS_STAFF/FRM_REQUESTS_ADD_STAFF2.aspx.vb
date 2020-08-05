@@ -372,6 +372,7 @@
         Dim date_result As Date
         ws.GETDATE_WORKING(CDate(txt_date.Text), True, txt_number.Text, True, date_result, True)
         lbl_number_day.Text = date_result.ToLongDateString()
+
     End Sub
     Function Chk_ref_no(ByVal ref_no As String) As Boolean
         Dim bool As Boolean = True

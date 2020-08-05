@@ -87,10 +87,18 @@
 
 
                 dao.update()
+                Dim bao_update As New BAO.ClsDBSqlcommand
                 Try
-                    Dim bao_update As New BAO.ClsDBSqlcommand
                     bao_update.SP_DRUG_CONSIDER_REQUESTS_STOP_DAY(dao.fields.FK_IDA)
+                Catch ex As Exception
+
+                End Try
+                Try
                     bao_update.SP_DRUG_CONSIDER_REQUESTS_MAX_STOP_DAY(dao.fields.FK_IDA)
+                Catch ex As Exception
+
+                End Try
+                Try
                     bao_update.SP_DRUG_CONSIDER_REQUESTS_FINISH_DATE(dao.fields.FK_IDA)
                 Catch ex As Exception
 

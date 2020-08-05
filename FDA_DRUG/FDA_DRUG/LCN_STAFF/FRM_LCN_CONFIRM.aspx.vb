@@ -381,6 +381,7 @@ Public Class WebForm35
             Catch ex As Exception
 
             End Try
+
             dao.update()
             '-----------------ลิ้งไปหน้าคีย์มือ----------
             'Response.Redirect("FRM_STAFF_LCN_LCNNO_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)

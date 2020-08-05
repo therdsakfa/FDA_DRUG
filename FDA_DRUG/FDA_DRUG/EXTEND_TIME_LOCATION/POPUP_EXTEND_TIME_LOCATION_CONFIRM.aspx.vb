@@ -32,7 +32,13 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
         show_panel()
         'show_check()
         If Not IsPostBack Then
-            BindData_PDF()
+            Try
+                BindData_PDF()
+            Catch ex As Exception
+                'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเปิดหน้าต่างนี้ใหม่');", True)
+                alert("กรุณาเปิดหน้าต่างนี้ใหม่")
+            End Try
+
             show_btn(_IDA)
             'UC_GRID_PHARMACIST.load_gv(_IDA)
             Open_or_Close()
@@ -345,23 +351,162 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
     Private Sub BindData_PDF()
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
-
+        Dim bao_show As New BAO_SHOW
         Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
         Dim dao_lcnre As New DAO_DRUG.TB_LCN_EXTEND_LITE
         dao_lcnre.GetDataby_IDA(_IDA)
         dao_lcn.GetDataby_IDA(dao_lcnre.fields.FK_IDA)
+        Dim lcnno_text As String = ""
+        Dim lcnno_auto As String = ""
+        Dim lcnno_format As String = ""
+        Try
+            lcnno_text = dao_lcn.fields.LCNNO_MANUAL
+        Catch ex As Exception
 
+        End Try
+        Try
+            lcnno_auto = dao_lcn.fields.lcnno
+        Catch ex As Exception
+
+        End Try
+        Dim CHK_SELL_TYPE As String = ""
+        Try
+            CHK_SELL_TYPE = dao_lcn.fields.CHK_SELL_TYPE
+        Catch ex As Exception
+
+        End Try
+        Dim lcntpcd_da As String = ""
+        Try
+            lcntpcd_da = dao_lcn.fields.lcntpcd
+        Catch ex As Exception
+
+        End Try
+        Dim lcnsid_da As Integer = 0
+        Try
+            lcnsid_da = dao_lcn.fields.lcnsid
+        Catch ex As Exception
+
+        End Try
+        Dim pvncd_da As Integer = 0
+        Try
+            pvncd_da = dao_lcn.fields.pvncd
+        Catch ex As Exception
+
+        End Try
 
         Dim cls_dalcn As New CLASS_GEN_XML.EXTEND(dao_lcn.fields.CITIZEN_ID_AUTHORIZE, dao_lcn.fields.lcnsid, dao_lcnre.fields.lcnno, dao_lcnre.fields.lcntpcd, dao_lcn.fields.pvncd, dao_lcn.fields.FK_IDA, _IDA)
 
         Dim class_xml As New CLASS_EXTEND
-        class_xml = cls_dalcn.gen_xml()
+        'class_xml = cls_dalcn.gen_xml()
         'class_xml.dalcns = dao.fields
         'p_lcnre = class_xml
         'class_xml.LCN_EXTEND_LITEs = dao_lcnre.fields
-        extend = class_xml
 
-        Dim bao_show As New BAO_SHOW
+
+        class_xml.DT_SHOW.DT10 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_MUTI_LOCATION(dao_lcn.fields.FK_IDA) 'bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(FK_IDA) 'ข้อมูลสถานที่จำลอง
+        'class_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.FK_IDA)
+        class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA(dao_lcn.fields.FK_IDA)
+        Dim dt9 As New DataTable
+
+        ' dt9 = class_xml.DT_SHOW.DT9
+        'For Each drr As DataRow In class_xml.DT_SHOW.DT10.Rows
+        '    Try
+        '        drr("thaaddr") = NumEng2Thai(drr("thaaddr"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("HOUSENO") = NumEng2Thai(drr("HOUSENO"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("tharoom") = NumEng2Thai(drr("tharoom"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        '
+        '        Try
+        '            drr("fulladdr2") = NumEng2Thai(drr("fulladdr2"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("thanameplace") = NumEng2Thai(drr("thanameplace"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("fulladdr_no") = NumEng2Thai(drr("fulladdr_no"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("tel1") = NumEng2Thai(drr("tel1"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("thamu") = NumEng2Thai(drr("thamu"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("thafloor") = NumEng2Thai(drr("thafloor"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("thasoi") = NumEng2Thai(drr("thasoi"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("thabuilding") = NumEng2Thai(drr("thabuilding"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("tharoad") = NumEng2Thai(drr("tharoad"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("zipcode") = NumEng2Thai(drr("zipcode"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("tel") = NumEng2Thai(drr("tel"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("fax") = NumEng2Thai(drr("fax"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("Mobile") = NumEng2Thai(drr("Mobile"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("thachngwtnm") = NumEng2Thai(drr("thachngwtnm"))
+        '    Catch ex As Exception
+
+        '    End Try
+
+        'Next
+
+
+
+
+
         'class_xml = cls_dalcn.gen_xml()
         'Dim newyear As Integer = 0
         'Dim year_present As Integer = 0
@@ -375,6 +520,414 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
         'End If
         class_xml.EXP_NEWYEAR = dao_lcnre.fields.extend_year 'ต่ออายุใบอนุญาติ
         class_xml.DT_SHOW.DT9 = bao_show.SP_GETDATA_EXTENDPDF_by_IDA(_IDA)
+
+        class_xml.DT_SHOW.DT11 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(1, dao_lcn.fields.CITIZEN_ID_AUTHORIZE) 'ข้อมูลที่ตั้งหลัก
+        Dim DT11 As New DataTable
+        Try
+            'DT11 = class_xml.DT_SHOW.DT11
+            'For Each drr As DataRow In class_xml.DT_SHOW.DT11.Rows
+            '    Try
+            '        drr("thaaddr") = NumEng2Thai(drr("thaaddr"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("tharoom") = NumEng2Thai(drr("tharoom"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("thamu") = NumEng2Thai(drr("thamu"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("thafloor") = NumEng2Thai(drr("thafloor"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("thasoi") = NumEng2Thai(drr("thasoi"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("thabuilding") = NumEng2Thai(drr("thabuilding"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("tharoad") = NumEng2Thai(drr("tharoad"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("zipcode") = NumEng2Thai(drr("zipcode"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("tel") = NumEng2Thai(drr("tel"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("fax") = NumEng2Thai(drr("fax"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("Mobile") = NumEng2Thai(drr("Mobile"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("thachngwtnm") = NumEng2Thai(drr("thachngwtnm"))
+            '    Catch ex As Exception
+
+            '    End Try
+            'Next
+        Catch ex As Exception
+
+        End Try
+
+        class_xml.DT_SHOW.DT11.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSID"
+        Try
+            class_xml.DT_SHOW.DT12 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFYV2(dao_lcn.fields.CITIZEN_ID_AUTHORIZE, dao_lcn.fields.lcnsid) 'ข้อมูลบริษัท
+        Catch ex As Exception
+
+        End Try
+
+        'class_xml.DT_SHOW.DT13 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSID(2, dao.fields.lcnsid) 'ที่เก็บ
+        class_xml.DT_SHOW.DT13 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(2, dao_lcn.fields.CITIZEN_ID_AUTHORIZE) 'ที่เก็บ
+        Dim DT13 As New DataTable
+        Try
+            'DT13 = class_xml.DT_SHOW.DT13
+            'For Each drr As DataRow In class_xml.DT_SHOW.DT13.Rows
+            '    Try
+            '        drr("thaaddr") = NumEng2Thai(drr("thaaddr"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("fulladdr") = NumEng2Thai(drr("fulladdr"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("tharoom") = NumEng2Thai(drr("tharoom"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("thamu") = NumEng2Thai(drr("thamu"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("thafloor") = NumEng2Thai(drr("thafloor"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("thasoi") = NumEng2Thai(drr("thasoi"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("thabuilding") = NumEng2Thai(drr("thabuilding"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("tharoad") = NumEng2Thai(drr("tharoad"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("zipcode") = NumEng2Thai(drr("zipcode"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("tel") = NumEng2Thai(drr("tel"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("fax") = NumEng2Thai(drr("fax"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("Mobile") = NumEng2Thai(drr("Mobile"))
+            '    Catch ex As Exception
+
+            '    End Try
+            '    Try
+            '        drr("thachngwtnm") = NumEng2Thai(drr("thachngwtnm"))
+            '    Catch ex As Exception
+
+            '    End Try
+            'Next
+        Catch ex As Exception
+
+        End Try
+        class_xml.DT_SHOW.DT13.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSID_2"
+
+
+        Dim MAIN_LCN_IDA As Integer = 0
+
+        Try
+            MAIN_LCN_IDA = dao_lcn.fields.MAIN_LCN_IDA
+        Catch ex As Exception
+
+        End Try
+        Dim BSN_IDENTIFY As String = ""
+        Dim BSN_IDENTIFY_yoi As String = ""
+        'Try
+
+        '    BSN_IDENTIFY = NumEng2Thai(dao_lcn.fields.BSN_IDENTIFY)
+        'Catch ex As Exception
+
+        'End Try
+
+        class_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_lcn.fields.IDA) 'ผู้ดำเนิน
+        Dim dt14 As New DataTable
+        Try
+
+            'For Each drr As DataRow In class_xml.DT_SHOW.DT14.Rows
+            '    drr("BSN_IDENTIFY") = NumEng2Thai(drr("BSN_IDENTIFY"))
+            '    Try
+            '        drr("BSN_HOUSENO") = NumEng2Thai(drr("BSN_HOUSENO"))
+            '    Catch ex As Exception
+
+            '    End Try
+            'Next
+        Catch ex As Exception
+
+        End Try
+
+        'End If
+        Dim bao_cpn As New BAO.ClsDBSqlcommand
+        Try
+            class_xml.DT_SHOW.DT15 = bao_cpn.SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2(dao_lcn.fields.CITIZEN_ID_AUTHORIZE)
+            class_xml.DT_SHOW.DT15.TableName = "SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2"
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            class_xml.DT_SHOW.DT16 = bao_cpn.SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2(dao_lcn.fields.CITIZEN_ID_AUTHORIZE)
+            'For Each dr As DataRow In class_xml.DT_SHOW.DT16.Rows
+            '    dr("tel") = NumEng2Thai(dr("tel"))
+            'Next
+            class_xml.DT_SHOW.DT16.TableName = "SP_BSN_LOCATION_ADDRESS_BY_IDEN_BSN_ADDR"
+        Catch ex As Exception
+
+        End Try
+
+
+
+
+        class_xml.DT_SHOW.DT14.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
+
+        Dim bao_master As New BAO_MASTER
+
+        class_xml.DT_MASTER.DT18 = bao_master.SP_PHR_BY_FK_IDA(dao_lcn.fields.IDA)
+
+        class_xml.DT_MASTER.DT24 = bao_master.SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_BY_IDA(dao_lcn.fields.IDA)
+
+        'Dim DT24 As New DataTable
+        'Try
+        '    DT24 = class_xml.DT_MASTER.DT24
+        '    For Each drr As DataRow In DT24.Rows
+        '        Try
+        '            drr("thanameplace2") = NumEng2Thai(drr("thanameplace2"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '        Try
+        '            drr("thaaddr") = NumEng2Thai(drr("thaaddr"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '        Try
+        '            drr("tharoom") = NumEng2Thai(drr("tharoom"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '        Try
+        '            drr("thamu") = NumEng2Thai(drr("thamu"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '        Try
+        '            drr("thafloor") = NumEng2Thai(drr("thafloor"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '        Try
+        '            drr("thasoi") = NumEng2Thai(drr("thasoi"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '        Try
+        '            drr("thabuilding") = NumEng2Thai(drr("thabuilding"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '        Try
+        '            drr("tharoad") = NumEng2Thai(drr("tharoad"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '        Try
+        '            drr("zipcode") = NumEng2Thai(drr("zipcode"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '        Try
+        '            drr("tel") = NumEng2Thai(drr("tel"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '        Try
+        '            drr("fax") = NumEng2Thai(drr("fax"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '        Try
+        '            drr("Mobile") = NumEng2Thai(drr("Mobile"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '        Try
+        '            drr("thachngwtnm") = NumEng2Thai(drr("thachngwtnm"))
+        '        Catch ex As Exception
+
+        '        End Try
+        '    Next
+
+        '    class_xml.DT_MASTER.DT24 = DT24
+        'Catch ex As Exception
+
+        'End Try
+
+
+        class_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(dao_lcn.fields.IDA)
+
+        'Dim DT25 As New DataTable
+        'Try
+        '    DT25 = class_xml.DT_MASTER.DT25
+        '    For Each drr As DataRow In DT25.Rows
+        '        drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
+        '        drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
+        '        drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
+        '        '
+        '    Next
+        'Catch ex As Exception
+
+        'End Try
+
+        class_xml.DT_MASTER.DT26 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(dao_lcn.fields.IDA, 1)
+        'Dim DT26 As New DataTable
+        'Try
+        '    DT26 = class_xml.DT_MASTER.DT26
+        '    For Each drr As DataRow In DT26.Rows
+        '        drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
+        '        drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
+        '        drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
+        '    Next
+        'Catch ex As Exception
+
+        'End Try
+
+        class_xml.DT_MASTER.DT27 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(dao_lcn.fields.IDA, 2)
+        'Dim DT27 As New DataTable
+        'Try
+        '    DT27 = class_xml.DT_MASTER.DT27
+        '    For Each drr As DataRow In DT27.Rows
+        '        drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
+        '        drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
+        '        drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
+        '    Next
+        'Catch ex As Exception
+
+        'End Try
+        class_xml.DT_MASTER.DT27.TableName = "SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE_2"
+        class_xml.DT_MASTER.DT28 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE_2(dao_lcn.fields.IDA, 1)
+        'Dim DT28 As New DataTable
+        'Try
+        '    DT28 = class_xml.DT_MASTER.DT28
+        '    For Each drr As DataRow In DT28.Rows
+        '        drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
+        '        drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
+        '        drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
+        '    Next
+        'Catch ex As Exception
+
+        'End Try
+
+        class_xml.DT_MASTER.DT29 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE_2(dao_lcn.fields.IDA, 2)
+        'Dim DT29 As New DataTable
+        'Try
+        '    DT29 = class_xml.DT_MASTER.DT29
+        '    For Each drr As DataRow In DT29.Rows
+        '        drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
+        '        drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
+        '        drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
+        '    Next
+        'Catch ex As Exception
+
+        'End Try
+        class_xml.DT_MASTER.DT29.TableName = "SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE_2_1_ROW"
+
+        class_xml.DT_MASTER.DT31 = bao_master.SP_DALCN_PHR_BY_FK_IDA_2(dao_lcn.fields.IDA)
+
+        Dim DT31 As New DataTable
+
+        DT31 = class_xml.DT_MASTER.DT31
+        'For Each drr As DataRow In DT31.Rows
+        '    Try
+        '        drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
+        '    Catch ex As Exception
+
+        '    End Try
+
+        'Next
+
+        class_xml.DT_MASTER.DT34 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE_2(dao_lcn.fields.IDA, 3)
+        Dim DT34 As New DataTable
+        'Try
+        '    DT34 = class_xml.DT_MASTER.DT34
+        '    For Each drr As DataRow In DT34.Rows
+        '        drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
+        '        drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
+        '        drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
+        '        drr("PHR_CERTIFICATE_TRAINING1") = NumEng2Thai(drr("PHR_CERTIFICATE_TRAINING1"))
+        '    Next
+        'Catch ex As Exception
+
+        'End Try
+        class_xml.DT_MASTER.DT34.TableName = "SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE_3_1_ROW"
+
+        Try
+            class_xml.DT_MASTER.DT30 = bao_master.SP_MASTER_DALCN_by_IDA(MAIN_LCN_IDA)
+        Catch ex As Exception
+
+        End Try
+
         'ขย15
         If dao_lcn.fields.lcntpcd = "ขย1" Then
             class_xml.CHK_TYPE = 1
@@ -413,6 +966,20 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
         If statusId = 0 Or statusId = 1 Then
             statusId = 5
         End If
+        If _process = "114" Then
+            class_xml.CHK_SELL_TYPE = "1"
+        ElseIf _process = "116" Then
+            class_xml.dalcns.CHK_SELL_TYPE = "2"
+        ElseIf _process = "117" Then
+            class_xml.dalcns.CHK_SELL_TYPE = "3"
+        ElseIf _process = "115" Then
+            class_xml.dalcns.CHK_SELL_TYPE = "4"
+        ElseIf _process = "127" Or _process = "123" Or _process = "125" Or _process = "129" Or _process = "131" Or _process = "133" Then
+            class_xml.dalcns.CHK_SELL_TYPE = "1"
+        ElseIf _process = "128" Or _process = "124" Or _process = "126" Or _process = "130" Or _process = "132" Or _process = "134" Then
+            class_xml.dalcns.CHK_SELL_TYPE = "2"
+        End If
+        extend = class_xml
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         dao_pdftemplate.GetDataby_TEMPLAETE2(_process, statusId, 0)
 

@@ -103,6 +103,22 @@
             Catch ex As Exception
 
             End Try
+            If IsNothing(dao.fields.appdate) = False Then
+                Dim appdate As Date = CDate(dao.fields.appdate)
+                Dim expyear As Integer = 0
+                Try
+                    expyear = Year(appdate)
+                    If expyear <> 0 Then
+                        If expyear < 2500 Then
+                            expyear += 543
+                        End If
+                        dao.fields.expyear = expyear
+                    End If
+                Catch ex As Exception
+
+                End Try
+            End If
+
             dao.update()
 
             Dim cls_sop As New CLS_SOP

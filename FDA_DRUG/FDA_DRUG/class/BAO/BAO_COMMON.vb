@@ -406,9 +406,10 @@ Module BAO_COMMON
                     cls_xml.GEN_XML_DR(PATH_XML, p_dr)
                 ElseIf PROSESS_ID = "1007411" Or PROSESS_ID = "1007412" Or PROSESS_ID = "1007413" Or PROSESS_ID = "1007414" Or PROSESS_ID = "1007421" Or PROSESS_ID = "1007431" Or PROSESS_ID = "1007441" _
                      Or PROSESS_ID = "1007442" Or PROSESS_ID = "1007443" Or PROSESS_ID = "1007491" Or PROSESS_ID = "1007492" Or PROSESS_ID = "1007493" _
-                    Or PROSESS_ID = "1007494" Or PROSESS_ID = "1007471" Or PROSESS_ID = "1007451" Or PROSESS_ID = "1007495" Or PROSESS_ID = "1007461" Or PROSESS_ID = "1007481" Then
+                    Or PROSESS_ID = "1007494" Or PROSESS_ID = "1007471" Or PROSESS_ID = "1007451" Or PROSESS_ID = "1007495" Or PROSESS_ID = "1007461" Or PROSESS_ID = "1007481" Or PROSESS_ID = "100753" Or PROSESS_ID = "100752" Or PROSESS_ID = "100754" Or PROSESS_ID = "100755" Then
                     Dim cls_xml As New CLASS_GEN_XML.EXTEND
                     cls_xml.GEN_XML_EXTEND(PATH_XML, extend)
+                    '100753
                     'ElseIf PROSESS_ID = "1400001" And SUBSTITUTE = "" Then ' ทะเบียนยา
                     '    Dim cls_xml As New CLASS_GEN_XML.Center
                     '    cls_xml.GEN_XML_DR(PATH_XML, p_dr)
@@ -458,7 +459,7 @@ Module BAO_COMMON
                     Dim cls_xml As New CLASS_GEN_XML.Cerf
                     cls_xml.GEN_XML_CER_FOREIGN(PATH_XML, p_cerf)
                 ElseIf PROSESS_ID = 100741 Or PROSESS_ID = 100742 Or PROSESS_ID = 100743 Or PROSESS_ID = 100744 Or PROSESS_ID = 100745 _
-                    Or PROSESS_ID = 100746 Or PROSESS_ID = 100747 Or PROSESS_ID = 100748 Or PROSESS_ID = 100749 Or PROSESS_ID = 100750 Or PROSESS_ID = 100751 Then 'ต่ออายุใบอนุญาตสถานที่
+                    Or PROSESS_ID = 100746 Or PROSESS_ID = 100747 Or PROSESS_ID = 100748 Or PROSESS_ID = 100749 Or PROSESS_ID = 100750 Or PROSESS_ID = 100751 Or PROSESS_ID = "100753" Or PROSESS_ID = "100752" Or PROSESS_ID = "100754" Or PROSESS_ID = "100755" Then 'ต่ออายุใบอนุญาตสถานที่
                     Dim cls_xml As New CLASS_GEN_XML.EXTEND
                     cls_xml.GEN_XML_EXTEND(PATH_XML, extend)
                 ElseIf PROSESS_ID = "130099" Then
@@ -599,6 +600,17 @@ Module BAO_COMMON
             Or PROSESS_ID = 34 Or PROSESS_ID = 35 Or PROSESS_ID = 36 Then 'cer
                 Dim cls_xml As New CLASS_GEN_XML.Center
                 cls_xml.GEN_XML_CER(PATH_XML, p_cer)
+            ElseIf PROSESS_ID = 100741 Or PROSESS_ID = 100742 Or PROSESS_ID = 100743 Or PROSESS_ID = 100744 Or PROSESS_ID = 100745 _
+                    Or PROSESS_ID = 100746 Or PROSESS_ID = 100747 Or PROSESS_ID = 100748 Or PROSESS_ID = 100749 Or PROSESS_ID = 100750 Or PROSESS_ID = 100751 Or PROSESS_ID = "100753" Or PROSESS_ID = "100752" Or PROSESS_ID = "100754" Or PROSESS_ID = "100755" Then 'cer
+                Dim cls_xml As New CLASS_GEN_XML.EXTEND
+                cls_xml.GEN_XML_EXTEND(PATH_XML, extend)
+                Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\
+                    Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"
+                        Using stamper = New iTextSharp.text.pdf.PdfStamper(pdfReader__1, outputStream, ControlChars.NullChar, True)
+                            stamper.AcroFields.Xfa.FillXfaForm(PATH_XML)
+                        End Using
+                    End Using
+                End Using
             ElseIf PROSESS_ID = "130099" Then
                 Dim cls_xml As New CLASS_GEN_XML.EDIT_DRRGT
                 cls_xml.GEN_XML_EDT_DRRGT(PATH_XML, p_rgt_edt)

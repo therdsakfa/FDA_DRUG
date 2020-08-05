@@ -147,4 +147,13 @@
             _SIGNNAME = value
         End Set
     End Property
+    Private _CHK_SELL_TYPE As String
+    Public Property CHK_SELL_TYPE() As String
+        Get
+            Return _CHK_SELL_TYPE
+        End Get
+        Set(ByVal value As String)
+            _CHK_SELL_TYPE = value
+        End Set
+    End Property
 End Class
