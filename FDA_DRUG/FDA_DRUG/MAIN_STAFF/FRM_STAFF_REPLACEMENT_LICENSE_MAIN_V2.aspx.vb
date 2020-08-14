@@ -113,7 +113,7 @@ Public Class FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2
             'Catch ex As Exception
 
             'End Try
-            Session("CLS") = _CLS
+            'Session("CLS") = _CLS
             'Try
             '    dao.GetDataby_IDA(IDA)
 

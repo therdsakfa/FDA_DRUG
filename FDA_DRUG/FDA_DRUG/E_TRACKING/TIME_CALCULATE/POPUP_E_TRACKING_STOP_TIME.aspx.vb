@@ -57,6 +57,24 @@ Public Class POPUP_E_TRACKING_STOP_TIME
                 'AddLogStatusEtracking(0, 1, _CLS.CITIZEN_ID, "ลบ" & dao_pe.fields.PERIOD_NAME & " ครั้งที่ " & dao.fields.PERIOD_COUNT, dao.fields.IDA, 0)
                 AddLogStatusEtracking(0, 1, _CLS.CITIZEN_ID, "ลบ" & dao_pe.fields.PERIOD_NAME & " ครั้งที่ " & dao.fields.PERIOD_COUNT, "TIME STOP", Request.QueryString("id_r"), dao.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
                 dao.delete()
+
+                Dim bao_update As New BAO.ClsDBSqlcommand
+                Try
+                    bao_update.SP_DRUG_CONSIDER_REQUESTS_STOP_DAY(dao.fields.FK_IDA)
+                Catch ex As Exception
+
+                End Try
+                Try
+                    bao_update.SP_DRUG_CONSIDER_REQUESTS_MAX_STOP_DAY(dao.fields.FK_IDA)
+                Catch ex As Exception
+
+                End Try
+                Try
+                    bao_update.SP_DRUG_CONSIDER_REQUESTS_FINISH_DATE(dao.fields.FK_IDA)
+                Catch ex As Exception
+
+                End Try
+
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ลบข้อมูลเรียบร้อย');", True)
                 RadGrid1.Rebind()
             ElseIf e.CommandName = "_date" Then

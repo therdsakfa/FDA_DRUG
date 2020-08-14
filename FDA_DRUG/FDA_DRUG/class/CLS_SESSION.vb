@@ -355,4 +355,13 @@ Public Class CLS_SESSION
             _NAME_VISITOR = value
         End Set
     End Property
+    Private _Is_People As String
+    Public Property Is_People() As String
+        Get
+            Return _Is_People
+        End Get
+        Set(ByVal value As String)
+            _Is_People = value
+        End Set
+    End Property
 End Class

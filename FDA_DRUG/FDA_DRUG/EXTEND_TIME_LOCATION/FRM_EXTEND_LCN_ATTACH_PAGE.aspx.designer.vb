@@ -77,6 +77,24 @@ Partial Public Class FRM_EXTEND_LCN_ATTACH_PAGE
     Protected WithEvents btn_att_type As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''Panel2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''Panel1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
     '''btn_upload control.
     '''</summary>
     '''<remarks>

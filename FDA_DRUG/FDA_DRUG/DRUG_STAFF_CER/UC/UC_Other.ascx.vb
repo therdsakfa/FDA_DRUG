@@ -116,6 +116,11 @@
         Catch ex As Exception
 
         End Try
+        Try
+            Label3.Text = dao.fields.DEPARTMENT_REGIST_CER_DOCNO
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub RadGrid1_NeedDataSource(sender As Object, e As Telerik.Web.UI.GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource

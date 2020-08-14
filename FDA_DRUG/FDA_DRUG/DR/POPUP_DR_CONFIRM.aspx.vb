@@ -1333,7 +1333,6 @@ Public Class POPUP_DR_CONFIRM
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & NAME_TEMPLATE
         Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, _YEARS, _TR_ID)
         Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, _YEARS, _TR_ID)
-        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
         Try
             Dim url As String = ""
             ' If Request.QueryString("status") = 8 Or Request.QueryString("status") = 14 Then
@@ -1349,6 +1348,11 @@ Public Class POPUP_DR_CONFIRM
         End Try
 
         p_dr = class_xml
+
+        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+
+
+        '
         If Request.QueryString("status") = 8 Or Request.QueryString("status") = 14 Then
             If tamrap_id <> 0 Then
                 lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='https://medicina.fda.moph.go.th/FDA_DRUG_DEMO/PDF/FRM_PDF_VIEW.aspx?FileName=" & filename & "' ></iframe>"

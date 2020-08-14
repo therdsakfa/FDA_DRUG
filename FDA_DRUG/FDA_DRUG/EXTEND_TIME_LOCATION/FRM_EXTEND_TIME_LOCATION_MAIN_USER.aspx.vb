@@ -21,12 +21,12 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
     ''' <remarks></remarks>
     Sub RunSession()
         Try
-            _CLS = Session("CLS")                               'นำค่า Session ใส่ ในตัวแปร _CLS
-            _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
-            _lct_ida = Request.QueryString("lct_ida")
-            _lcn_ida = Request.QueryString("lcn_ida")
-            _type = Request.QueryString("type")
-            '_process_for = Request.QueryString("process_for")
+            _staff = Request.QueryString("staff")
+        Catch ex As Exception
+
+        End Try
+        Try
+            _process = Request.QueryString("process")
             If _process = "101" Or _process = "102" Or _process = "103" Or _process = "104" Then
                 _process = "100741"
             ElseIf _process = "106" Then
@@ -54,8 +54,41 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
             ElseIf _process = "122" Then
                 _process = "100751" 'ผสม
             End If
-            _staff = Request.QueryString("staff")
+        Catch ex As Exception
+
+        End Try
+        Try
             _identify = Request.QueryString("identify")
+        Catch ex As Exception
+
+        End Try
+        Try
+            _lct_ida = Request.QueryString("lct_ida")
+        Catch ex As Exception
+
+        End Try
+        Try
+            _lcn_ida = Request.QueryString("lcn_ida")
+        Catch ex As Exception
+
+        End Try
+        Try
+            _type = Request.QueryString("type")
+        Catch ex As Exception
+
+        End Try
+        Try
+
+        Catch ex As Exception
+
+        End Try
+        Try
+            _CLS = Session("CLS")                               'นำค่า Session ใส่ ในตัวแปร _CLS
+            'เรียก Process ที่เราเรียก
+            '_process_for = Request.QueryString("process_for")
+
+
+
             'Dim ws As New AUTHEN_LOG.Authentication
             'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ต่ออายุ", _process)
             Dim ws_118 As New WS_AUTHENTICATION.Authentication

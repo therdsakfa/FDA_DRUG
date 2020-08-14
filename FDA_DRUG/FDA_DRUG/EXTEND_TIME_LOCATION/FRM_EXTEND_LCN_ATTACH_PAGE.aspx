@@ -118,13 +118,11 @@
              <td>
                   <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True">
                      <asp:ListItem Value="1">1. ยื่น pdf ผ่านระบบนี้</asp:ListItem>
-                     <asp:ListItem Value="2">2. ยื่นผ่านระบบ skynet Smart Dropbox</asp:ListItem>
-                     <asp:ListItem Value="3">3. ยื่นผ่านไปรษณีย์ลงทะเบียน</asp:ListItem>
+                     <asp:ListItem Value="2">2. ส่งเอกสารทางไปรษณีย์ลงทะเบียน</asp:ListItem>
                  </asp:RadioButtonList>
              </td>
              <td>
                   <asp:TextBox ID="txt_ATTACH_DETAIL" runat="server" Width="300px" TextMode="MultiLine" Height="100px"></asp:TextBox> <br />
-                 - ระบุเลขรหัส Smart Dropbox <br />
                  - กรณียื่นผ่านไปรษณีย์ลงทะเบียน โปรดระบุรหัสติดตามและพิมพ์ใบนำส่งเอกสารแนบไปกับไปรษณีย์ด้วย
              </td>
          </tr>
@@ -138,7 +136,24 @@
         </table>
 
     <br /><hr />
-    <h2>
+     <asp:Panel ID="Panel2" runat="server" style="display:none;">
+         <h2>
+        ส่งเอกสารทางไปรษณีย์
+    </h2>
+          <table width="100%" class="table">
+            <tr>
+                <td>
+                    1.พิมใบปะหน้าซองเพื่อส่งไปรษณีย์ ที่อยู่ อย. (เฉพาะ กทม) <br />
+2.พิมใบนำส่งเอกสารและตรวจสอบเอกสารให้ครบถ้วนก่อนส่งไปรษณีย์  (เฉพาะ กทม)<br />
+3.นำเอกสารใส่ซองและกรอกรหัสติดตามเอกสาร (เฉพาะ กทม)
+                </td>
+            </tr>
+            </table>
+         </asp:Panel>
+
+    <br /><hr />
+    <asp:Panel ID="Panel1" runat="server" style="display:none;">
+        <h2>
         รายการไฟล์แนบ
     </h2>
     <table width="100%" class="table">
@@ -178,6 +193,9 @@
                  </asp:GridView></td>
         </tr>
     </table>
+
+    </asp:Panel>
+    
     <div class="modal fade " id="myModal">
         <div class="panel panel-info" style="width: 100%">
             <div class="panel-heading">

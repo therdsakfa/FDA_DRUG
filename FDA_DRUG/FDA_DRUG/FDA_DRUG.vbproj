@@ -770,6 +770,7 @@
     <Content Include="EDIT_LOCATION_STAFF\UC\UC_PHR_CANCEL.ascx" />
     <Content Include="EXTEND_TIME_LOCATION\FRM_EXTEND_LCN_ATTACH_PAGE.aspx" />
     <Content Include="EXTEND_TIME_LOCATION\FRM_EXTEND_TIME_LOCATION_MAIN_USER.aspx" />
+    <Content Include="EXTEND_TIME_LOCATION\FRM_UPLOAD_ATTACH_EXTEND.aspx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\FRM_EXTEND_TIME_LOCATION_MAIN_STAFF.aspx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\FRM_LCN_PREVIEW.aspx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EDIT_LOCATION_STAFF_CONFIRM.aspx" />
@@ -786,6 +787,7 @@
     <Content Include="MAIN\FRM_AUTHEN_SEARCH_REGIST.aspx" />
     <Content Include="MAIN\FRM_HERB_PRODUCT_MAIN.aspx" />
     <Content Include="MAIN\FRM_HOME_PRODUCT_HERB.aspx" />
+    <Content Include="MAIN\FRM_LCN_EXTEND_HOME.aspx" />
     <Content Include="MAIN\FRM_MAIN_PAGE_PRODUCT_HERB.aspx" />
     <Content Include="MAIN_STAFF\FRM_CLOSE.aspx" />
     <Content Include="MAIN_STAFF\FRM_REPLACEMENT_LICENSE_LOCATION_MENU2.aspx" />
@@ -3016,6 +3018,13 @@
       <DependentUpon>FRM_EXTEND_TIME_LOCATION_MAIN_USER.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="EXTEND_TIME_LOCATION\FRM_UPLOAD_ATTACH_EXTEND.aspx.designer.vb">
+      <DependentUpon>FRM_UPLOAD_ATTACH_EXTEND.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EXTEND_TIME_LOCATION\FRM_UPLOAD_ATTACH_EXTEND.aspx.vb">
+      <DependentUpon>FRM_UPLOAD_ATTACH_EXTEND.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="EXTEND_TIME_LOCATION_STAFF\FRM_EXTEND_TIME_LOCATION_MAIN_STAFF.aspx.designer.vb">
       <DependentUpon>FRM_EXTEND_TIME_LOCATION_MAIN_STAFF.aspx</DependentUpon>
     </Compile>
@@ -3134,6 +3143,13 @@
     </Compile>
     <Compile Include="MAIN\FRM_HOME_PRODUCT_HERB.aspx.vb">
       <DependentUpon>FRM_HOME_PRODUCT_HERB.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MAIN\FRM_LCN_EXTEND_HOME.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_EXTEND_HOME.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN\FRM_LCN_EXTEND_HOME.aspx.vb">
+      <DependentUpon>FRM_LCN_EXTEND_HOME.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MAIN\FRM_MAIN_PAGE_PRODUCT_HERB.aspx.designer.vb">

@@ -61,7 +61,8 @@
 
     Private Sub btn_upload_Click(sender As Object, e As EventArgs) Handles btn_upload.Click
 
-        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../LCN_STAFF/FRM_UPLOAD_ATTACH.aspx?TR_ID=" & Request.QueryString("TR_ID") & "&process=" & Request.QueryString("process") & "');", True)
+        'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../LCN_STAFF/FRM_UPLOAD_ATTACH.aspx?TR_ID=" & Request.QueryString("TR_ID") & "&process=" & Request.QueryString("process") & "');", True)
+        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../EXTEND_TIME_LOCATION/FRM_UPLOAD_ATTACH_EXTEND.aspx?TR_ID=" & Request.QueryString("TR_ID") & "&process=" & Request.QueryString("process") & "');", True)
     End Sub
 
     Private Sub btn_reload_Click(sender As Object, e As EventArgs) Handles btn_reload.Click

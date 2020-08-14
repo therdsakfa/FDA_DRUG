@@ -1735,7 +1735,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
         Catch ex As Exception
 
         End Try
-        p_dr = class_xml
+
 
 
 
@@ -1876,7 +1876,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
                 NAME_TEMPLATE = "DA_YOR_1_AUTO_READONLY.pdf"
             End If
         End If
-
+        p_dr = class_xml
 
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & NAME_TEMPLATE 'dao_pdftemplate.fields.PDF_TEMPLATE
         Dim filename As String = paths & PDF_OUTPUT & "\" & NAME_PDF("DA", _process, _YEARS, _TR_ID) ' dao_pdftemplate.fields.PDF_OUTPUT
@@ -2431,7 +2431,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
         Catch ex As Exception
 
         End Try
-        p_dr = class_xml
+
 
 
 
@@ -2549,9 +2549,24 @@ Public Class POPUP_DR_CONFIRM_STAFF
         End If
 
 
+
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & NAME_TEMPLATE 'dao_pdftemplate.fields.PDF_TEMPLATE
         Dim filename As String = paths & PDF_OUTPUT & "\" & NAME_PDF("DA", _process, _YEARS, _TR_ID) ' dao_pdftemplate.fields.PDF_OUTPUT
         Dim Path_XML As String = paths & XML_PATH & "\" & NAME_XML("DA", _process, _YEARS, _TR_ID) 'dao_pdftemplate.fields.XML_PATH
+        Try
+            Dim url As String = ""
+            ' If Request.QueryString("status") = 8 Or Request.QueryString("status") = 14 Then
+            url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
+            'Else
+            '    url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF_VIEW.aspx?filename=" & filename
+            'End If
+
+            'Dim url As String 
+            class_xml.QR_CODE = QR_CODE_IMG(url)
+        Catch ex As Exception
+
+        End Try
+        p_dr = class_xml
         LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
 
 
