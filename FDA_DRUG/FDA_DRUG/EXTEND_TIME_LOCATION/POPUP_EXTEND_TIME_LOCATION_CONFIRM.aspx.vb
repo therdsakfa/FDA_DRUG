@@ -276,7 +276,7 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
     End Sub
     Protected Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
-        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ต้องการยกเลิกคำขอใช้หรือไม่?');", True)
+        'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ต้องการยกเลิกคำขอใช้หรือไม่?');", True)
         dao.GetDataby_IDA(Integer.Parse(_IDA))
         Dim dao_process As New DAO_DRUG.ClsDBPROCESS_NAME
         dao_process.GetDataby_Process_ID(_process)
@@ -308,6 +308,8 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
                 End Try
             End Try
         End Try
+
+        Response.Write("<script type='text/javascript'>window.parent.alert('ยกเลิกคำขอแล้ว');parent.close_modal();</script> ")
     End Sub
 
     Protected Sub btn_load_Click(sender As Object, e As EventArgs) Handles btn_load.Click

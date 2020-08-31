@@ -115,7 +115,15 @@
 
             End Try
             'dao.fields.
+
+            Try
+                send_mail_mini(dao.fields.CITIZEN_ID, "FDATH", "เจ้าหน้าที่ดำเนินการรับคำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " แล้ว")
+            Catch ex As Exception
+
+            End Try
             dao.update()
+
+
 
             Dim cls_sop As New CLS_SOP
             cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", PROCESS_ID, _CLS.PVCODE, 3, "รับคำขอ", "SOP-DRUG-10-" & PROCESS_ID & "-2", "เสนอลงนาม", "รอเจ้าหน้าที่เสนอลงนาม", "STAFF", _TR_ID, SOP_STATUS:="รับคำขอ")

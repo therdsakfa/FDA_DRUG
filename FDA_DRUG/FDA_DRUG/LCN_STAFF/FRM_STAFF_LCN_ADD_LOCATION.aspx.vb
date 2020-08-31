@@ -42,7 +42,7 @@
         End Try
         Try
             For Each dr As DataRow In dt.Rows
-                lbl_location_new.Text = dr("fulladdr")
+                lbl_location_new.Text = dr("fulladdr4")
             Next
 
         Catch ex As Exception

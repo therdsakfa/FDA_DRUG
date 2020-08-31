@@ -222,10 +222,17 @@
         <rsweb:ReportViewer ID="ReportViewer1" runat="server">
         </rsweb:ReportViewer>
         <p>
+            <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+        </p>
+        <p>
             <asp:Button ID="Button2" runat="server" Text="RUN REPORT" />
+            <asp:Button ID="Button28" runat="server" Text="RUN Checklist" />
             <asp:Button ID="Button3" runat="server" Text="Run Order ID" />
             <asp:Button ID="Button10" runat="server" Text="test_aa" />
             <asp:Button ID="btn_rp_lcn" runat="server" Text="Run Report Lcn" />
+            <asp:Button ID="Button29" runat="server" Text="Run Lit" />
+
+            <a href="WS_GET_REGIST.asmx" target="_blank"></a><a/>
         </p>
         <p>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>

@@ -33,39 +33,39 @@ Public Class WebForm36
             'aa = "ff"
             'Session("aa") = aa
             '    get_atc()
-            Dim dt As New DataTable
-            dt = Get_DDL_DATA(8, 3, 0)
-            Dim dt2 As New DataTable
-            dt2 = dt.Clone
-            For Each dr As DataRow In dt.Select("STATUS_ID <> 8")
-                Dim dr2 As DataRow = dt2.NewRow()
-                dr2("STATUS_ID") = dr("STATUS_ID")
-                dr2("STATUS_NAME_STAFF") = dr("STATUS_NAME_STAFF")
-                dr2("STATUS_NAME") = dr("STATUS_NAME")
-                dr2("seq") = dr("seq")
-                dt2.Rows.Add(dr2)
-            Next
-            'Dim dv As DataView = dt2
-            dt2.DefaultView.Sort = "seq ASC"
-            Dim dtResult As DataTable = dt2.DefaultView.ToTable()
-            ddl_status.DataSource = dtResult 'dt.Select("STATUS_ID <> 8")
-            ddl_status.DataValueField = "STATUS_ID"
-            ddl_status.DataTextField = "STATUS_NAME_STAFF"
-            ddl_status.DataBind()
+            '    Dim dt As New DataTable
+            '    dt = Get_DDL_DATA(8, 3, 0)
+            '    Dim dt2 As New DataTable
+            '    dt2 = dt.Clone
+            '    For Each dr As DataRow In dt.Select("STATUS_ID <> 8")
+            '        Dim dr2 As DataRow = dt2.NewRow()
+            '        dr2("STATUS_ID") = dr("STATUS_ID")
+            '        dr2("STATUS_NAME_STAFF") = dr("STATUS_NAME_STAFF")
+            '        dr2("STATUS_NAME") = dr("STATUS_NAME")
+            '        dr2("seq") = dr("seq")
+            '        dt2.Rows.Add(dr2)
+            '    Next
+            '    'Dim dv As DataView = dt2
+            '    dt2.DefaultView.Sort = "seq ASC"
+            '    Dim dtResult As DataTable = dt2.DefaultView.ToTable()
+            '    ddl_status.DataSource = dtResult 'dt.Select("STATUS_ID <> 8")
+            '    ddl_status.DataValueField = "STATUS_ID"
+            '    ddl_status.DataTextField = "STATUS_NAME_STAFF"
+            '    ddl_status.DataBind()
 
         End If
-        'Dim DS As String = ""
-        'DS = Format(Date.Now(), "MM/dd/yyyy")
-        'Dim int_no As Integer = 123
-        'Dim str_no As String = int_no.ToString()
-        'str_no = String.Format("{0:50000}", int_no.ToString("50000"))
-        'Dim rcvdate As Date = Date.Now
-        'Dim awa As String
-        'awa = rcvdate.ToString("MMM")
-        'Dim zzz As String = ""
-        'zzz = GET_FORMAT_RCVNO2("15555/63")
-        Set_rcvno_txt()
-        product_q()
+        ''Dim DS As String = ""
+        ''DS = Format(Date.Now(), "MM/dd/yyyy")
+        ''Dim int_no As Integer = 123
+        ''Dim str_no As String = int_no.ToString()
+        ''str_no = String.Format("{0:50000}", int_no.ToString("50000"))
+        ''Dim rcvdate As Date = Date.Now
+        ''Dim awa As String
+        ''awa = rcvdate.ToString("MMM")
+        ''Dim zzz As String = ""
+        ''zzz = GET_FORMAT_RCVNO2("15555/63")
+        'Set_rcvno_txt()
+        'product_q()
     End Sub
     Sub product_q()
         Dim newcode As String = "U1DR1C1052630003611C"
@@ -727,7 +727,7 @@ Public Class WebForm36
 
     Protected Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim bao As New BAO.ClsDBSqlcommand
-        bao.insert_tabean_sub(98222)
+        bao.insert_tabean_sub(98579)
         ' insert_tabean(TextBox1.Text)
     End Sub
     Sub insert_tabean(ByVal FK_IDA As Integer)
@@ -2469,7 +2469,21 @@ Public Class WebForm36
 
 
         Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_INSERT_DR15(txt_dh_ida.Text, "1710500118665")
+        Dim bao As New BAO.ClsDBSqlcommand
+
+        If txt_dh_ida.Text <> "" Then
+            ws_update.DRUG_INSERT_DR15(txt_dh_ida.Text, "1710500118665")
+        Else
+            Dim dt As New DataTable
+            dt = bao.SELECT_TEMP_DH()
+            For Each dr As DataRow In dt.Rows
+                ws_update.DRUG_INSERT_DR15(dr("IDA"), "1710500118665")
+            Next
+        End If
+
+
+
+
     End Sub
 
     Protected Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
@@ -2705,5 +2719,45 @@ Public Class WebForm36
 
         Response.WriteFile(FilePath)
         Response.End()
+    End Sub
+
+    Protected Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
+        Dim util As New cls_utility.Report_Utility
+        util.report = ReportViewer1
+        util.configWidthHeight()
+
+        Dim dt As New DataTable
+        dt.Columns.Add("Row")
+        dt.Columns.Add("edit_text")
+        dt.Columns.Add("count_edit")
+        dt.Columns.Add("lcnno_display")
+        dt.Columns.Add("RCVNO_T")
+        Dim dr As DataRow = dt.NewRow()
+
+        dr("row") = "1"
+        dt.Rows.Add(dr)
+        ReportViewer1.LocalReport.ReportPath = "D:\lcn_extend_list_doc.rdlc"
+        ReportViewer1.LocalReport.EnableExternalImages = True
+        ReportViewer1.LocalReport.DataSources.Clear()
+        Dim rds As New ReportDataSource("Fields_Report_EDIT", dt)
+
+        ReportViewer1.LocalReport.DataSources.Add(rds)
+        ReportViewer1.LocalReport.Refresh()
+        ReportViewer1.DataBind()
+    End Sub
+
+    Protected Sub Button29_Click(sender As Object, e As EventArgs) Handles Button29.Click
+        Dim dt As New DataTable
+        Dim bao As New BAO.ClsDBSqlcommand
+        dt = bao.SP_LCN_EXTEND_RECEIPT_LIST(24170)
+        Dim str_lit As String = ""
+        str_lit = "<table>"
+        For Each dr As DataRow In dt.Rows
+            str_lit &= "<tr><td>" & dr("fee_description") & "</td>"
+            str_lit &= "<td><a href='https://buisead.fda.moph.go.th/fda_budget/Module09/Report/Frm_Report_R9_003.aspx?ref01=" & dr("ref01") & "&ref02=" & dr("ref02") & "' target='_blank'> คลิกที่นี่<a/> </td>"
+            str_lit &= "</tr>"
+        Next
+        str_lit &= "</table>"
+        Literal1.Text = str_lit
     End Sub
 End Class

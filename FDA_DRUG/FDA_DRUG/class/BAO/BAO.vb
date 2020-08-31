@@ -63,6 +63,18 @@ Namespace BAO
             Return dta
         End Function
         '
+        Public Function SELECT_TEMP_DH() As DataTable
+            Dim sql As String = "select * from [dbo].[TEMP_DH]"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_LCN_EXTEND_RECEIPT_LIST(ByVal IDA As Integer) As DataTable
+            Dim sql As String = "exec SP_LCN_EXTEND_RECEIPT_LIST @ida=" & IDA
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
         Public Function SP_CUSTOMER_LCN_BY_IDENTIFY(ByVal IDENTITY As String) As DataTable
 
             Dim sql As String = "exec SP_CUSTOMER_LCN_BY_IDENTIFY @iden= '" & IDENTITY & "'"

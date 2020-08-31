@@ -102,7 +102,7 @@
                     &nbsp;</td>
                 <td>
 
-                    <asp:Button ID="btn_save_lalong" runat="server" Text="บันทึกพิกัด" />
+                    <asp:Button ID="btn_save_lalong" runat="server" Text="บันทึกพิกัด" style="display:none;" />
 
                 </td>
             </tr>
@@ -110,7 +110,36 @@
     
 
     <br /><hr />
-    <h2>
+    <asp:Panel ID="Panel4" runat="server">
+         <h2>
+       ขั้นตอนการจัดส่งเอกสาร
+    </h2>
+        <table>
+            <tr>
+                <td>1.พิมพ์ใบปะหน้าซองเพื่อส่งไปรษณีย์ ที่อยู่ อย. (เฉพาะ กทม) <asp:LinkButton ID="LinkButton1" runat="server">ที่นี่</asp:LinkButton>
+                </td>
+            </tr>
+            <tr>
+                <td>2.พิมพ์์ใบนำส่งเอกสารและตรวจสอบเอกสารให้ครบถ้วนก่อนส่งไปรษณีย์  (เฉพาะ กทม) <asp:LinkButton ID="LinkButton2" runat="server">ที่นี่</asp:LinkButton>
+                </td>
+            </tr>
+            <tr>
+                <td>3.เมื่องานใบอนุญาตดำเนินการเสร็จสิ้นแล้ว จะดำเนินการจัดส่งเอกสารให้กับผู้ประกอบการ</td>
+            </tr>
+        </table>
+    </asp:Panel>
+    <br /><hr />
+    <asp:Panel ID="Panel5" runat="server">
+        <h2>
+            รายการใบเสร็จ
+        </h2>
+        <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+    </asp:Panel>
+
+
+
+    <asp:Panel ID="Panel3" runat="server" style="display:none;">
+        <h2>
         เลือกการยื่นเอกสาร
     </h2>
      <table width="100%" class="table">
@@ -134,8 +163,11 @@
                   &nbsp;</td>
          </tr>
         </table>
+        <br /><hr />
+    </asp:Panel>
+    
 
-    <br /><hr />
+    
      <asp:Panel ID="Panel2" runat="server" style="display:none;">
          <h2>
         ส่งเอกสารทางไปรษณีย์
@@ -149,9 +181,10 @@
                 </td>
             </tr>
             </table>
+         <br /><hr />
          </asp:Panel>
 
-    <br /><hr />
+    
     <asp:Panel ID="Panel1" runat="server" style="display:none;">
         <h2>
         รายการไฟล์แนบ
@@ -201,7 +234,7 @@
             <div class="panel-heading">
                 <div class="modal-title text-center h1 ">
                     
-                    แนบไฟล์<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                    <asp:Label ID="Label1" runat="server" Text="lbl_head"></asp:Label> <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
                 </div>
                 <div class="panel-body panel-info" style="width: 100%">
 

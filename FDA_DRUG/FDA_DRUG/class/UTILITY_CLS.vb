@@ -27,8 +27,8 @@ Public Module UTILITY_CLS
         Return c
 
     End Function
-   
-    <System.Runtime.CompilerServices.Extension()> _
+
+    <System.Runtime.CompilerServices.Extension()>
     Public Function b64encode(ByVal StrEncode As String)
 
         Dim encodedString As String
@@ -37,6 +37,84 @@ Public Module UTILITY_CLS
 
         Return (encodedString)
 
+    End Function
+
+    Private Sub SendMail(ByVal Content As String, ByVal email As String, ByVal title As String, ByVal CC As String, ByVal string_xml As String, ByVal filename As String)
+        Dim mm As New FDA_MAIL.FDA_MAIL
+        Dim mcontent As New FDA_MAIL.Fields_Mail
+
+        mcontent.EMAIL_CONTENT = Content
+        mcontent.EMAIL_FROM = "fda_info@fda.moph.go.th"
+        mcontent.EMAIL_PASS = "deeku181"
+        mcontent.EMAIL_TILE = title
+        mcontent.EMAIL_TO = email
+
+
+        mm.SendMail_ASY(mcontent)
+
+    End Sub
+    <System.Runtime.CompilerServices.Extension()>
+    Function send_mail_mini(ByVal citizen As String, ByVal Title As String, ByVal Contents As String) As String
+        Dim aa As String = ""
+        Try
+
+            Dim email As String = ""
+
+            Dim dao_mail As New DAO_CPN.TB_sysemail
+
+            Try
+                dao_mail.GetDataby_identify(citizen)
+                email = dao_mail.fields.EMAIL_EGA
+            Catch ex As Exception
+
+            End Try
+
+            Try
+                If email <> "" Then
+                    email = email
+
+                    SendMail(Contents, email, Title, email, "", "")
+                    aa = "Success"
+                End If
+            Catch ex As Exception
+                aa = "Fail"
+            End Try
+        Catch ex As Exception
+
+        End Try
+        Return aa
+    End Function
+
+    <System.Runtime.CompilerServices.Extension()>
+    Function send_mail_mini2(ByVal mobile As String, ByVal Title As String, ByVal Contents As String) As String
+        Dim aa As String = ""
+        Try
+
+            Dim email As String = ""
+
+            Dim dao_mail As New DAO_CPN.TB_sysemail
+
+            Try
+                dao_mail.GetDataby_mobile(mobile)
+                email = dao_mail.fields.EMAIL_EGA
+            Catch ex As Exception
+
+            End Try
+
+            Try
+                If email <> "" Then
+                    email = email
+
+                    SendMail(Contents, email, Title, email, "", "")
+                    aa = "Success"
+                End If
+            Catch ex As Exception
+                aa = "Fail"
+            End Try
+        Catch ex As Exception
+
+        End Try
+        Return aa
     End Function
     '
     <System.Runtime.CompilerServices.Extension()> _

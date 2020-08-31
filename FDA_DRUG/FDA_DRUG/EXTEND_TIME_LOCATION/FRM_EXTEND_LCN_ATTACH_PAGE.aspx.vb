@@ -20,7 +20,7 @@
             Else
                 btn_upload.Style.Add("display", "none")
             End If
-
+            set_lit()
         End If
     End Sub
     Public Sub load_gv(ByVal TR_ID As String)
@@ -94,5 +94,33 @@
             dao_edt.update()
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
         End If
+    End Sub
+
+    Protected Sub LinkButton1_Click(sender As Object, e As EventArgs) Handles LinkButton1.Click
+        Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
+        dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+        Response.Write("<script>window.open ('../EXTEND_TIME_LOCATION/POPUP_SHOW_RDLC.aspx?IDA=" & dao_edt.fields.FK_IDA & "&type=1','_blank');</script>")
+    End Sub
+
+    Protected Sub LinkButton2_Click(sender As Object, e As EventArgs) Handles LinkButton2.Click
+        Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
+        dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+        Response.Write("<script>window.open ('../EXTEND_TIME_LOCATION/POPUP_SHOW_RDLC.aspx?IDA=" & dao_edt.fields.FK_IDA & "&type=2','_blank');</script>")
+    End Sub
+    Sub set_lit()
+        Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
+        dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+        Dim dt As New DataTable
+        Dim bao As New BAO.ClsDBSqlcommand
+        dt = bao.SP_LCN_EXTEND_RECEIPT_LIST(dao_edt.fields.IDA)
+        Dim str_lit As String = ""
+        str_lit = "<table width='100%'>"
+        For Each dr As DataRow In dt.Rows
+            str_lit &= "<tr><td>" & dr("fee_description") & "</td>"
+            str_lit &= "<td><a href='https://buisead.fda.moph.go.th/fda_budget/Module09/Report/Frm_Report_R9_003.aspx?ref01=" & dr("ref01") & "&ref02=" & dr("ref02") & "' target='_blank'> คลิกที่นี่<a/> </td>"
+            str_lit &= "</tr>"
+        Next
+        str_lit &= "</table>"
+        Literal1.Text = str_lit
     End Sub
 End Class

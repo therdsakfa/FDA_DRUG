@@ -44,8 +44,8 @@ Public Class TABEAN_YA_MAIN
             ' load_GV_Drug_EX()
             If Request.QueryString("identify") <> "" Then
                 If Request.QueryString("identify") <> _CLS.CITIZEN_ID_AUTHORIZE Then
-                    AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("identify"), 0, HttpContext.Current.Request.Url.AbsoluteUri)
-
+                    'AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("identify"), 0, HttpContext.Current.Request.Url.AbsoluteUri)
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('ระบบตรวจพบว่าท่านเปิดการใช้งานหลายหน้าจอ จะทำการออกจากระบบโดยอัตโนมัติ');window.location.href = 'https://privus.fda.moph.go.th';", True)
                 End If
             End If
         End If

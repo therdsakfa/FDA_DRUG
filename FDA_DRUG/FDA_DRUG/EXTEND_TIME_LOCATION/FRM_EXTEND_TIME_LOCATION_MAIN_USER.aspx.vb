@@ -165,10 +165,12 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
         '    End Try
         'End Try
 
-        hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug"
-        If Request.QueryString("staff") = "1" Then
+        'hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug"
+        If Request.QueryString("staff") <> "" Then
             hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=staffdrug&identify=" & _identify
             'hl_pay.NavigateUrl &= "&staff=1&identify=" & Request.QueryString("identify")
+        Else
+            hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug&identify=" & _identify
         End If
     End Sub
     'Private Sub load_lbl_name()
@@ -486,7 +488,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
             End If
         ElseIf e.CommandName = "_pay" Then
 
-            If _staff = 1 Then
+            If _staff <> "" Then
                 Response.Write("<script>window.open ('https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=staffdrug&identify=" & _identify & "','_blank');</script>")
             Else
                 Response.Write("<script>window.open ('https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&System=drug" & "','_blank');</script>")
@@ -718,7 +720,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
     End Sub
 
     Protected Sub btn_extend_Click(sender As Object, e As EventArgs) Handles btn_extend.Click
-        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "window.open('https://medicina.fda.moph.go.th/FDA_DRUG_EXT/AUTHEN/AUTHEN_GATEWAY?Token=" & _CLS.TOKEN & "&identify=" & _CLS.CITIZEN_ID_AUTHORIZE & "'); ", True)
+        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "window.open('https://medicina.fda.moph.go.th/FDA_DRUG_EXT/AUTHEN/AUTHEN_GATEWAY?Token=" & _CLS.TOKEN & "&identify=" & _CLS.CITIZEN_ID_AUTHORIZE & "&staff=" & Request.QueryString("staff") & "'); ", True)
     End Sub
 
     Private Sub ddl_year_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_year.SelectedIndexChanged

@@ -86,8 +86,11 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Dim dao As New DAO_DRUG.ClsDBdalcn
         Dim bao As New BAO.ClsDBSqlcommand
         dao.GetDataby_IDA(Integer.Parse(_IDA))
-        dao.fields.STATUS_ID = 2
-
+        If Request.QueryString("staff") <> "" Then
+            dao.fields.STATUS_ID = 11
+        Else
+            dao.fields.STATUS_ID = 2
+        End If
         dao.update()
 
         If b64 = Nothing Then

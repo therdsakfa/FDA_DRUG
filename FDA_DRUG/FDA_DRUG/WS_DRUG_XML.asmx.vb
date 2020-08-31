@@ -2399,7 +2399,7 @@ Public Class WS_DRUG_XML
     End Function
 
     <WebMethod()>
-    Public Function INSERT_EXTENDTIME(ByVal LCN_IDA As Integer, ByVal Process_ID As String, ByVal CITIZEN_ID As String, ByVal gpp As String, ByVal tel As String) As String
+    Public Function INSERT_EXTENDTIME(ByVal LCN_IDA As Integer, ByVal Process_ID As String, ByVal CITIZEN_ID As String, ByVal gpp As String, ByVal tel As String, ByVal _staff As String) As String
         Dim Result As String = ""
         Try
             Dim chk As Boolean = True
@@ -2407,8 +2407,11 @@ Public Class WS_DRUG_XML
             Dim dao_dal As New DAO_DRUG.ClsDBdalcn
             Dim dao_process As New DAO_DRUG.ClsDBPROCESS_NAME
             dao_process.GetDataby_Process_ID(Process_ID)
-            Dim cyear As Integer = 2563
-            'cyear = CInt(Year(Date.Now)) + 1
+            Dim cyear As Integer '= 2563
+            cyear = CInt(Year(Date.Now)) + 1
+            If cyear < 2500 Then
+                cyear += 543
+            End If
             'dao_edit.GetDataby_FK_IDA(LCN_IDA)
             'dao_dal.GetDataby_IDA(LCN_IDA)
             If dao_edit.fields.FK_IDA = dao_dal.fields.IDA And dao_edit.fields.extend_year = cyear And dao_edit.fields.STATUS_ID <> 7 And dao_edit.fields.STATUS_ID <> 5 And dao_edit.fields.PROCESS_ID <> "100747" And dao_edit.fields.PROCESS_ID <> "100745" Then
@@ -2473,7 +2476,7 @@ Public Class WS_DRUG_XML
         Return Result
     End Function
 
-    Private Sub insrt_extend_to_database(ByVal TR_ID As String, ByVal _lcn_ida As Integer, ByVal Process_id As String, ByVal CITIZEN_ID As String, Optional gpp As String = "", Optional tel As String = "")
+    Private Sub insrt_extend_to_database(ByVal TR_ID As String, ByVal _lcn_ida As Integer, ByVal Process_id As String, ByVal CITIZEN_ID As String, Optional gpp As String = "", Optional tel As String = "", Optional _staff As String = "")
         Dim check As Boolean = True
         Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
         dao_lcn.GetDataby_IDA(_lcn_ida)
@@ -2560,6 +2563,7 @@ Public Class WS_DRUG_XML
         dao_lcnre.fields.PROCESS_ID = Process_id
         dao_lcnre.fields.PAY_L44_STAMP = dao_t.fields.pay_amount44
         dao_lcnre.fields.PAY_STAMP = dao_t.fields.pay_amount
+        dao_lcnre.fields.SALE_MEDICIAN1 = _staff
         Try
             dao_lcnre.fields.licen = dt(0)("licen")
         Catch ex As Exception

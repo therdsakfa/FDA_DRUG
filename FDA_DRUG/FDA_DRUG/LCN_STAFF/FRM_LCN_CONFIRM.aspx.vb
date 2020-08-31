@@ -381,7 +381,11 @@ Public Class WebForm35
             Catch ex As Exception
 
             End Try
+            Try
+                send_mail_mini(dao.fields.CITIZEN_ID, "FDATH", "คำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " ได้รับการอนุมัติคำขอแล้ว")
+            Catch ex As Exception
 
+            End Try
             dao.update()
             '-----------------ลิ้งไปหน้าคีย์มือ----------
             'Response.Redirect("FRM_STAFF_LCN_LCNNO_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
@@ -432,13 +436,15 @@ Public Class WebForm35
         Dim dao As New DAO_DRUG.ClsDBdalcn
         dao.GetDataby_IDA(_IDA)
 
-        If dao.fields.STATUS_ID <= 2 Then
+        If dao.fields.STATUS_ID <= 2 Or dao.fields.STATUS_ID = 11 Then
             int_group_ddl = 1
         ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
             int_group_ddl = 2
-        ElseIf dao.fields.STATUS_ID >= 6 Then
+        ElseIf dao.fields.STATUS_ID >= 6 And dao.fields.STATUS_ID < 11 Then
             int_group_ddl = 3
         End If
+
+
 
         bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(2, int_group_ddl)
         dt = bao.dt

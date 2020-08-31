@@ -771,6 +771,7 @@
     <Content Include="EXTEND_TIME_LOCATION\FRM_EXTEND_LCN_ATTACH_PAGE.aspx" />
     <Content Include="EXTEND_TIME_LOCATION\FRM_EXTEND_TIME_LOCATION_MAIN_USER.aspx" />
     <Content Include="EXTEND_TIME_LOCATION\FRM_UPLOAD_ATTACH_EXTEND.aspx" />
+    <Content Include="EXTEND_TIME_LOCATION\POPUP_SHOW_RDLC.aspx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\FRM_EXTEND_TIME_LOCATION_MAIN_STAFF.aspx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\FRM_LCN_PREVIEW.aspx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EDIT_LOCATION_STAFF_CONFIRM.aspx" />
@@ -1576,11 +1577,11 @@
     <Content Include="UC\UC_SEARCH_thanameplace.ascx" />
     <None Include="Web References\AUTHENTICATION_104\AUTHENTICATION.disco" />
     <Content Include="Web References\Authentication_66\Authentication.disco" />
-    <Content Include="Web References\FDA_MAIL\FDA_MAIL.wsdl" />
-    <Content Include="Web References\FDA_MAIL\Reference.map">
+    <None Include="Web References\FDA_MAIL\FDA_MAIL.wsdl" />
+    <None Include="Web References\FDA_MAIL\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\AUTHEN_LOG\Authentication.wsdl" />
     <None Include="Web References\AUTHEN_LOG\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -1604,7 +1605,7 @@
     <Content Include="UC\UC_INFORMATION2.ascx" />
     <Content Include="UC\UC_INFMT.ascx" />
     <None Include="Web References\SV_CHK_PAYMENT\SV_CHECK_PAYMENT.disco" />
-    <Content Include="Web References\FDA_MAIL\FDA_MAIL.disco" />
+    <None Include="Web References\FDA_MAIL\FDA_MAIL.disco" />
     <None Include="Web References\WS_BLOCKCHAIN\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
@@ -3023,6 +3024,13 @@
     </Compile>
     <Compile Include="EXTEND_TIME_LOCATION\FRM_UPLOAD_ATTACH_EXTEND.aspx.vb">
       <DependentUpon>FRM_UPLOAD_ATTACH_EXTEND.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EXTEND_TIME_LOCATION\POPUP_SHOW_RDLC.aspx.designer.vb">
+      <DependentUpon>POPUP_SHOW_RDLC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EXTEND_TIME_LOCATION\POPUP_SHOW_RDLC.aspx.vb">
+      <DependentUpon>POPUP_SHOW_RDLC.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="EXTEND_TIME_LOCATION_STAFF\FRM_EXTEND_TIME_LOCATION_MAIN_STAFF.aspx.designer.vb">
@@ -7219,10 +7227,10 @@
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>FDA_DRUG_WS_DRUG_LOG_DR_WS_DRUG</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://10.111.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx">
+    <WebReferenceUrl Include="http://164.115.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WS_DRUG\</RelPath>
-      <UpdateFromURL>http://10.111.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx</UpdateFromURL>
+      <UpdateFromURL>http://164.115.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

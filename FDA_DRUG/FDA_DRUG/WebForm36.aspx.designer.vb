@@ -392,6 +392,15 @@ Partial Public Class WebForm36
     Protected WithEvents ReportViewer1 As Global.Microsoft.Reporting.WebForms.ReportViewer
     
     '''<summary>
+    '''Literal1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Literal1 As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
     '''Button2 control.
     '''</summary>
     '''<remarks>
@@ -399,6 +408,15 @@ Partial Public Class WebForm36
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Button28 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button28 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Button3 control.
@@ -426,6 +444,15 @@ Partial Public Class WebForm36
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_rp_lcn As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Button29 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button29 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''TextBox1 control.

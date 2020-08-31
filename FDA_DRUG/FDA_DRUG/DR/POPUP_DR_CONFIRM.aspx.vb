@@ -1257,7 +1257,7 @@ Public Class POPUP_DR_CONFIRM
         Dim NAME_TEMPLATE As String = ""
         If E_VALUE <> "(E)" Then
             NAME_TEMPLATE = dao_pdftemplate.fields.PDF_TEMPLATE
-            If Request.QueryString("STATUS_ID") = "8" Or Request.QueryString("STATUS_ID") = "14" Then
+            If Request.QueryString("STATUS_ID") = "8" Or Request.QueryString("STATUS_ID") = "14" Or Request.QueryString("STATUS_ID") = "18" Then
                 If rgttpcd = "G" Or rgttpcd = "H" Or rgttpcd = "K" Then
                     Try
                         Dim dao_rg As New DAO_DRUG.ClsDBdrrgt

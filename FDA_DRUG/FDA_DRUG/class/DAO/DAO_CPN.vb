@@ -653,7 +653,16 @@
             For Each Me.fields In datas
             Next
         End Sub
-
+        Public Sub GetDataby_identify(ByVal identify As String)
+            datas = (From p In db_cpn.sysemails Where p.CITIZEN_ID = identify Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_mobile(ByVal mobile As String)
+            datas = (From p In db_cpn.sysemails Where p.MOBILE = mobile Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
     End Class
     Public Class TB_syslcnsnm
         Inherits MAINCONTEXT1

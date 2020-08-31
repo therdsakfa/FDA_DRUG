@@ -24,7 +24,7 @@ Imports System.Xml.Serialization
 Namespace FDA_MAIL
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
      System.Web.Services.WebServiceBindingAttribute(Name:="FDA_MAILSoap", [Namespace]:="http://tempuri.org/")>  _
@@ -32,6 +32,10 @@ Namespace FDA_MAIL
         Inherits System.Web.Services.Protocols.SoapHttpClientProtocol
         
         Private SendMailOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private SendMail_ASY_ATTACHOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private SendMail_ASYOperationCompleted As System.Threading.SendOrPostCallback
         
         Private SendMailHTMLOperationCompleted As System.Threading.SendOrPostCallback
         
@@ -83,6 +87,12 @@ Namespace FDA_MAIL
         Public Event SendMailCompleted As SendMailCompletedEventHandler
         
         '''<remarks/>
+        Public Event SendMail_ASY_ATTACHCompleted As SendMail_ASY_ATTACHCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event SendMail_ASYCompleted As SendMail_ASYCompletedEventHandler
+        
+        '''<remarks/>
         Public Event SendMailHTMLCompleted As SendMailHTMLCompletedEventHandler
         
         '''<remarks/>
@@ -117,6 +127,58 @@ Namespace FDA_MAIL
             If (Not (Me.SendMailCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
                 RaiseEvent SendMailCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SendMail_ASY_ATTACH", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub SendMail_ASY_ATTACH(ByVal Mail As Fields_Mail, ByVal XMLs As String, ByVal FILENAME As String)
+            Me.Invoke("SendMail_ASY_ATTACH", New Object() {Mail, XMLs, FILENAME})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub SendMail_ASY_ATTACHAsync(ByVal Mail As Fields_Mail, ByVal XMLs As String, ByVal FILENAME As String)
+            Me.SendMail_ASY_ATTACHAsync(Mail, XMLs, FILENAME, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub SendMail_ASY_ATTACHAsync(ByVal Mail As Fields_Mail, ByVal XMLs As String, ByVal FILENAME As String, ByVal userState As Object)
+            If (Me.SendMail_ASY_ATTACHOperationCompleted Is Nothing) Then
+                Me.SendMail_ASY_ATTACHOperationCompleted = AddressOf Me.OnSendMail_ASY_ATTACHOperationCompleted
+            End If
+            Me.InvokeAsync("SendMail_ASY_ATTACH", New Object() {Mail, XMLs, FILENAME}, Me.SendMail_ASY_ATTACHOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnSendMail_ASY_ATTACHOperationCompleted(ByVal arg As Object)
+            If (Not (Me.SendMail_ASY_ATTACHCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent SendMail_ASY_ATTACHCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SendMail_ASY", RequestNamespace:="http://tempuri.org/", OneWay:=true, Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub SendMail_ASY(ByVal Mail As Fields_Mail)
+            Me.Invoke("SendMail_ASY", New Object() {Mail})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub SendMail_ASYAsync(ByVal Mail As Fields_Mail)
+            Me.SendMail_ASYAsync(Mail, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub SendMail_ASYAsync(ByVal Mail As Fields_Mail, ByVal userState As Object)
+            If (Me.SendMail_ASYOperationCompleted Is Nothing) Then
+                Me.SendMail_ASYOperationCompleted = AddressOf Me.OnSendMail_ASYOperationCompleted
+            End If
+            Me.InvokeAsync("SendMail_ASY", New Object() {Mail}, Me.SendMail_ASYOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnSendMail_ASYOperationCompleted(ByVal arg As Object)
+            If (Not (Me.SendMail_ASYCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent SendMail_ASYCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -244,7 +306,7 @@ Namespace FDA_MAIL
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -313,22 +375,30 @@ Namespace FDA_MAIL
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
     Public Delegate Sub SendMailCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub SendMail_ASY_ATTACHCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub SendMail_ASYCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
     Public Delegate Sub SendMailHTMLCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
     Public Delegate Sub SendMail_CCCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
     Public Delegate Sub SendMail_ATTACHCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
     Public Delegate Sub SendMail_CC_ATTACHCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
 End Namespace

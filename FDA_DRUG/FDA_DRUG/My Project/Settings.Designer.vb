@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -29,7 +29,7 @@ Namespace My
     Private Shared addedHandlerLockObject As New Object
 
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
-    Private Shared Sub AutoSaveSettings(ByVal sender As Global.System.Object, ByVal e As Global.System.EventArgs)
+    Private Shared Sub AutoSaveSettings(sender As Global.System.Object, e As Global.System.EventArgs)
         If My.Application.SaveMySettingsOnExit Then
             My.Settings.Save()
         End If
@@ -77,7 +77,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://10.111.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://164.115.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx")>  _
         Public ReadOnly Property FDA_DRUG_WS_DRUG_WS_DRUG() As String
             Get
                 Return CType(Me("FDA_DRUG_WS_DRUG_WS_DRUG"),String)
@@ -147,7 +147,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://10.111.28.108/Mail/FDA_MAIL.asmx")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://164.115.28.108/Mail/FDA_MAIL.asmx")>  _
         Public ReadOnly Property FDA_DRUG_FDA_MAIL_FDA_MAIL() As String
             Get
                 Return CType(Me("FDA_DRUG_FDA_MAIL_FDA_MAIL"),String)
@@ -277,20 +277,20 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://10.111.28.107/WS_DRUG/WS_DRUG/WS_DRUG.asmx")>  _
-        Public ReadOnly Property FDA_DRUG_WS_DRUG_LOG_DR_WS_DRUG() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("http://10.111.28.107/WS_INSERT_XML_CPN/WS_INSERT_XML_CPN/WS_INSERT_XML_DRUG.asmx")>  _
+        Public ReadOnly Property FDA_DRUG_WS_CREATE_XML_WS_INSERT_XML_DRUG() As String
             Get
-                Return CType(Me("FDA_DRUG_WS_DRUG_LOG_DR_WS_DRUG"),String)
+                Return CType(Me("FDA_DRUG_WS_CREATE_XML_WS_INSERT_XML_DRUG"),String)
             End Get
         End Property
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://10.111.28.107/WS_INSERT_XML_CPN/WS_INSERT_XML_CPN/WS_INSERT_XML_DRUG.asmx")>  _
-        Public ReadOnly Property FDA_DRUG_WS_CREATE_XML_WS_INSERT_XML_DRUG() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("http://164.115.28.107/WS_DRUG/WS_DRUG/WS_DRUG.asmx")>  _
+        Public ReadOnly Property FDA_DRUG_WS_DRUG_LOG_DR_WS_DRUG() As String
             Get
-                Return CType(Me("FDA_DRUG_WS_CREATE_XML_WS_INSERT_XML_DRUG"),String)
+                Return CType(Me("FDA_DRUG_WS_DRUG_LOG_DR_WS_DRUG"),String)
             End Get
         End Property
     End Class

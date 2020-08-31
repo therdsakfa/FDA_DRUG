@@ -360,7 +360,11 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
                 Catch ex As Exception
 
                 End Try
+                Try
+                    send_mail_mini2(dao.fields.MOBILE, "FDATH", "คำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " ได้รับการอนุมัติคำขอแล้ว")
+                Catch ex As Exception
 
+                End Try
 
                 '  dao.fields.ALLOW_CITIZEN = _CLS.CITIZEN_ID
                 dao.update()
@@ -448,6 +452,11 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
 
             End Try
             dao.fields.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
+            Try
+                send_mail_mini2(dao.fields.MOBILE, "FDATH", "เจ้าหน้าที่รับคำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " แล้ว")
+            Catch ex As Exception
+
+            End Try
             dao.update()
             alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.RCVNO_DISPLAY)
             AddLogStatusEtracking(5, 0, _CLS.CITIZEN_ID, "รับคำขอแล้วรอการตรวจสอบ " & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, dao.fields.FK_IDA, dao.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)

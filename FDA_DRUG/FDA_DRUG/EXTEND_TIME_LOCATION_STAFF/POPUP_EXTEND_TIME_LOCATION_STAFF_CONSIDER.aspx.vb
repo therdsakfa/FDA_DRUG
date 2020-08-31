@@ -91,6 +91,11 @@
             'Catch ex As Exception
 
             'End Try
+            Try
+                send_mail_mini2(dao.fields.MOBILE, "FDATH", "คำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " อยู่ระหว่างพิจารณาคำขอ")
+            Catch ex As Exception
+
+            End Try
             dao.update()
 
 

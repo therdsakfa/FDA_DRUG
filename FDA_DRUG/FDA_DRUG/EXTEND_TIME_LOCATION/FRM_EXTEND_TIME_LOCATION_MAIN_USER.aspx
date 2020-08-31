@@ -285,7 +285,7 @@
                    </asp:TemplateField>
                    <asp:TemplateField ItemStyle-Width="10%">
                        <ItemTemplate>
-                            <asp:Button ID="btn_attach" runat="server" Text="แนบไฟล์"   CommandName="_attach" Width="100%"  CssClass="btn-link"  CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>'  />
+                            <asp:Button ID="btn_attach" runat="server" Text="พิมพ์ใบปะหน้า"   CommandName="_attach" Width="100%"  CssClass="btn-link"  CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>'  />
                        </ItemTemplate>
                        <ItemStyle Width="10%"></ItemStyle>
                    </asp:TemplateField>

@@ -51,9 +51,11 @@ Public Class FRM_LCN_DRUG
         UC_INFMT.Shows(_lct_ida)
     End Sub
     Private Sub load_HL()
-        Dim urls As String = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug"
+        Dim urls As String = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN
         If Request.QueryString("staff") <> "" Then
-            urls &= "&staff=1&identify=" & Request.QueryString("identify")
+            urls &= "&staff=1&identify=" & Request.QueryString("identify") & "&system=staffdrug"
+        Else
+            urls &= "&staff=1&identify=" & Request.QueryString("identify") & "&system=drug"
         End If
 
         hl_pay.NavigateUrl = urls

@@ -30,6 +30,11 @@
             Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH
             dao.fields.NAME_FAKE = NAME_FAKE 'เก็บชื่อไฟล์ที่สร้างขึ้นใหม่เพื่อเรียกใช้
             dao.fields.NAME_REAL = NAME_REAL 'เก็บชื่อไฟล์ที่เบราไว้เก็บเผื่อไว้เฉยๆ
+            Try
+                dao.fields.DESCRIPTION = Label1.Text
+            Catch ex As Exception
+
+            End Try
             dao.fields.TYPE = type 'ลำดับไฟล์เก็บไว้เรียกข้อมูล
             dao.fields.TRANSACTION_ID = transection 'เลขอ้างอิงPDFเก็บไว้เรียกข้อมูล
             dao.fields.PROCESS_ID = PROCESS_ID

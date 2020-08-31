@@ -119,6 +119,12 @@
                 End Try
             End If
 
+            Try
+                send_mail_mini(dao.fields.CITIZEN_ID, "FDATH", "คำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " อยู่ระหว่างดำเนินการพิจารณา")
+            Catch ex As Exception
+
+            End Try
+
             dao.update()
 
             Dim cls_sop As New CLS_SOP

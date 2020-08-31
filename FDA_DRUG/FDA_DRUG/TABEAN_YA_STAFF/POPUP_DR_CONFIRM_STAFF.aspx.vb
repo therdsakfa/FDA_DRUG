@@ -2478,7 +2478,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
             End If
 
-            If Request.QueryString("STATUS_ID") = "14" And HiddenField2.Value = 1 Then
+            If Request.QueryString("STATUS_ID") = "14" Or Request.QueryString("STATUS_ID") = "18" And HiddenField2.Value = 1 Then
                 If rgttpcd = "G" Or rgttpcd = "H" Or rgttpcd = "K" Then
                     NAME_TEMPLATE = "DA_YOR_2_1.pdf"
                 End If

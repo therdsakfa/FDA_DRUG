@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://10.111.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx?wsdl" filename="WS_DRUG.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://10.111.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx?disco" filename="WS_DRUG.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://164.115.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx?wsdl" filename="WS_DRUG.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://164.115.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx?disco" filename="WS_DRUG.disco" />
   </Results>
 </DiscoveryClientResultsFile>

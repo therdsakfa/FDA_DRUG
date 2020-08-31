@@ -517,10 +517,10 @@
   </wsdl:binding>
   <wsdl:service name="WS_DRUG">
     <wsdl:port name="WS_DRUGSoap" binding="tns:WS_DRUGSoap">
-      <soap:address location="http://10.111.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx" />
+      <soap:address location="http://164.115.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx" />
     </wsdl:port>
     <wsdl:port name="WS_DRUGSoap12" binding="tns:WS_DRUGSoap12">
-      <soap12:address location="http://10.111.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx" />
+      <soap12:address location="http://164.115.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
