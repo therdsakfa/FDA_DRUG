@@ -142,6 +142,9 @@
                                         <telerik:GridBoundColumn DataField="Version_update" FilterControlAltText="Filter Version_update column"
                                             HeaderText="Version update" SortExpression="Version_update" UniqueName="Version_update">
                                         </telerik:GridBoundColumn>
+                                        <telerik:GridBoundColumn DataField="STATUS_IOWA" FilterControlAltText="Filter STATUS_IOWA column"
+                                            HeaderText="สถานะ" SortExpression="STATUS_IOWA" UniqueName="STATUS_IOWA">
+                                        </telerik:GridBoundColumn>
                                         <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
                                            CommandName="_edit" Text="แก้ไข">
                                            <HeaderStyle Width="70px" />

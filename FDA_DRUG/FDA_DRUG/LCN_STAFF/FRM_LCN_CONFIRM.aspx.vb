@@ -97,7 +97,7 @@ Public Class WebForm35
     Public Sub set_hide(ByVal IDA As String)
         Dim dao As New DAO_DRUG.ClsDBdalcn
         dao.GetDataby_IDA(IDA)
-        If dao.fields.STATUS_ID >= 8 Then
+        If dao.fields.STATUS_ID = 8 Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
             btn_confirm.CssClass = "btn-danger btn-lg"
@@ -248,8 +248,10 @@ Public Class WebForm35
         dao_date.fields.PROCESS_ID = 0
         dao_date.insert()
 
+        If STATUS_ID = 11 Then
+            Response.Redirect("FRM_STAFF_LCN_PAY_NOTE.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
 
-        If STATUS_ID = 3 Then
+        ElseIf STATUS_ID = 3 Then
             dao.fields.STATUS_ID = STATUS_ID
             RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
             dao.fields.rcvno = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)
@@ -274,7 +276,7 @@ Public Class WebForm35
         ElseIf STATUS_ID = 6 Then
             Response.Redirect("FRM_STAFF_LCN_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
         ElseIf STATUS_ID = 8 Then
-            
+
             dao.fields.STATUS_ID = STATUS_ID
             'Dim chw As String = ""
             'Dim dao_cpn As New DAO_CPN.clsDBsyschngwt
@@ -436,14 +438,22 @@ Public Class WebForm35
         Dim dao As New DAO_DRUG.ClsDBdalcn
         dao.GetDataby_IDA(_IDA)
 
-        If dao.fields.STATUS_ID <= 2 Or dao.fields.STATUS_ID = 11 Then
+        'If dao.fields.STATUS_ID <= 2 Then
+        '    int_group_ddl = 1
+        'ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
+        '    int_group_ddl = 2
+        'ElseIf dao.fields.STATUS_ID >= 6 And dao.fields.STATUS_ID < 11 Then
+        '    int_group_ddl = 3
+        'End If
+        If dao.fields.STATUS_ID <= 2 Then
             int_group_ddl = 1
-        ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
+        ElseIf dao.fields.STATUS_ID = 11 Then
             int_group_ddl = 2
-        ElseIf dao.fields.STATUS_ID >= 6 And dao.fields.STATUS_ID < 11 Then
+        ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
             int_group_ddl = 3
+        ElseIf dao.fields.STATUS_ID >= 6 And dao.fields.STATUS_ID < 11 Then
+            int_group_ddl = 4
         End If
-
 
 
         bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(2, int_group_ddl)

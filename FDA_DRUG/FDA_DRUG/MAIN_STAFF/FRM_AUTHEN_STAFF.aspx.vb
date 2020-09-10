@@ -93,6 +93,11 @@
         Dim clsxml As New Cls_XML
 
         clsxml.ReadData(xml)
+
+        For Each cc In clsxml.Get_ListValue_XML("")
+
+        Next
+
         _CLS.CITIZEN_ID = clsxml.Get_Value_XML("Citizen_ID")
         _CLS.CITIZEN_ID_AUTHORIZE = clsxml.Get_Value_XML("CITIEZEN_ID_AUTHORIZE")
         _CLS.TOKEN = token

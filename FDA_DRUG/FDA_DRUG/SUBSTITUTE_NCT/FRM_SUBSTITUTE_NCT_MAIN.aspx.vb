@@ -103,6 +103,14 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
             process = "133"
         ElseIf _process = "100773" Then
             process = "134"
+        ElseIf _process = "100774" Then
+            process = "125"
+        ElseIf _process = "100775" Then
+            process = "126"
+        ElseIf _process = "100776" Then
+            process = "126"
+        ElseIf _process = "100777" Then
+            process = "126"
         End If
         'Dim dao_dal As New DAO_DRUG.ClsDBdalcn
         'If _IDA = "" Then
@@ -303,6 +311,54 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
         cls_xml.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
         cls_xml.LCNNO_FORMAT = lcnno_format
         cls_xml.RCVNO_FORMAT = ""
+
+        cls_xml.HEAD_LCNNO_NCT = lcnno_format
+
+        Dim process As String = ""
+
+        If _process = "100766" Then
+            process = "123"
+        ElseIf _process = "100767" Then
+            process = "124"
+        ElseIf _process = "100768" Then
+            process = "127"
+        ElseIf _process = "100769" Then
+            process = "128"
+        ElseIf _process = "100770" Then
+            process = "131"
+        ElseIf _process = "100771" Then
+            process = "132"
+        ElseIf _process = "100772" Then
+            process = "133"
+        ElseIf _process = "100773" Then
+            process = "134"
+        ElseIf _process = "100774" Then
+            process = "125"
+        ElseIf _process = "100775" Then
+            process = "126"
+        ElseIf _process = "100776" Then
+            process = "126"
+        ElseIf _process = "100777" Then
+            process = "126"
+        End If
+        Try
+
+            If process = "114" Then
+                cls_xml.CHK_SELL_TYPE = "1"
+            ElseIf process = "116" Then
+                cls_xml.CHK_SELL_TYPE = "2"
+            ElseIf process = "117" Then
+                cls_xml.CHK_SELL_TYPE = "3"
+            ElseIf process = "115" Then
+                cls_xml.CHK_SELL_TYPE = "4"
+            ElseIf process = "127" Or process = "123" Or process = "125" Or process = "129" Or process = "131" Or process = "133" Then
+                cls_xml.CHK_SELL_TYPE = "1"
+            ElseIf process = "128" Or process = "124" Or process = "126" Or process = "130" Or process = "132" Or process = "134" Or process = "135" Or process = "136" Then
+                cls_xml.CHK_SELL_TYPE = "2"
+            End If
+        Catch ex As Exception
+
+        End Try
 
         Dim objStreamWriter As New StreamWriter(path)                                                   'ประกาศตัวแปร
         Dim x As New XmlSerializer(cls_xml.GetType)                                                     'ประกาศ

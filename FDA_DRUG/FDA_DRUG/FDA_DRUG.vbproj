@@ -784,6 +784,7 @@
     <Content Include="LCN\POPUP_LCN_NCT_TEMP_CONFIRM.aspx" />
     <Content Include="LCN\POPUP_LCN_NCT_TEMP_INSERT.aspx" />
     <Content Include="LCN_STAFF\FRM_STAFF_LCN_ADD_LOCATION.aspx" />
+    <Content Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx" />
     <Content Include="LCN_STAFF\FRM_UPLOAD_ATTACH2.aspx" />
     <Content Include="MAIN\FRM_AUTHEN_SEARCH_REGIST.aspx" />
     <Content Include="MAIN\FRM_HERB_PRODUCT_MAIN.aspx" />
@@ -3108,6 +3109,13 @@
     </Compile>
     <Compile Include="LCN_STAFF\FRM_STAFF_LCN_ADD_LOCATION.aspx.vb">
       <DependentUpon>FRM_STAFF_LCN_ADD_LOCATION.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_LCN_PAY_NOTE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx.vb">
+      <DependentUpon>FRM_STAFF_LCN_PAY_NOTE.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="LCN_STAFF\FRM_UPLOAD_ATTACH2.aspx.designer.vb">

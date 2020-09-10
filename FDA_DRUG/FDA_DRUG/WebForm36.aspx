@@ -39,6 +39,7 @@
         บันทึกข้อมูลวันที่ขอตรวจ
         <telerik:RadScriptManager ID="RadScriptManager1" Runat="server">
         </telerik:RadScriptManager>
+        <asp:Button ID="Button30" runat="server" Text="TEST XML" />
     </h2>
         <table>
             <tr>

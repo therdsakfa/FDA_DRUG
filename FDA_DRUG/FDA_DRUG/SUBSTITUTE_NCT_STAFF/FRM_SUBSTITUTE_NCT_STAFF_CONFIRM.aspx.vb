@@ -27,6 +27,7 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
         'End If
         If Not IsPostBack Then
             BindData_PDF()
+            Bind_ddl_Status_staff()
             show_btn(_IDA)
             UC_GRID_ATTACH.load_gv(_TR_ID)
             If Request.QueryString("identify") <> "" Then
@@ -37,7 +38,40 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
             End If
         End If
     End Sub
+    Public Sub Bind_ddl_Status_staff()
+        Dim dt As New DataTable
+        Dim bao As New BAO.ClsDBSqlcommand
+        Dim int_group_ddl As Integer = 0
+        Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
+        dao.Getdata_by_ID(_IDA)
 
+        'If dao.fields.STATUS_ID <= 2 Then
+        '    int_group_ddl = 1
+        'ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
+        '    int_group_ddl = 2
+        'ElseIf dao.fields.STATUS_ID >= 6 And dao.fields.STATUS_ID < 11 Then
+        '    int_group_ddl = 3
+        'End If
+
+        If dao.fields.STATUS_ID = 2 Then
+            int_group_ddl = 1
+        ElseIf dao.fields.STATUS_ID = 11 Then
+            int_group_ddl = 2
+        ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
+            int_group_ddl = 3
+        ElseIf dao.fields.STATUS_ID >= 6 And dao.fields.STATUS_ID < 11 Then
+            int_group_ddl = 4
+        End If
+
+
+        bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(22, int_group_ddl)
+        dt = bao.dt
+
+        ddl_cnsdcd.DataSource = dt
+        ddl_cnsdcd.DataValueField = "STATUS_ID"
+        ddl_cnsdcd.DataTextField = "STATUS_NAME"
+        ddl_cnsdcd.DataBind()
+    End Sub
     Sub show_btn(ByVal IDA As String)
         Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
         dao.Getdata_by_ID(IDA)
@@ -233,13 +267,40 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
         Catch ex As Exception
 
         End Try
+        Try
+            Cls_XML.DALCN_NCT_SUBSTITUTEs.PURPOSE_ID = dao.fields.PURPOSE_ID
+        Catch ex As Exception
+
+        End Try
         Cls_XML.LCNNO_FORMAT = lcnno_format
         Cls_XML.RCVNO_FORMAT = rcvno_format
+        Cls_XML.HEAD_LCNNO_NCT = lcnno_format
         Dim _lcn_ida As Integer
         ' If Integer.TryParse(_lcn_ida) = True Then
         Cls_XML.DT_MASTER.DT30 = bao_master.SP_MASTER_DALCN_by_IDA(dao_main.fields.IDA)
         ' End If
         Cls_XML.BSN_IDENTIFY = dao_bsn.fields.BSN_IDENTIFY
+        Try
+
+            If dao_main.fields.PROCESS_ID = "114" Then
+                Cls_XML.CHK_SELL_TYPE = "1"
+            ElseIf dao_main.fields.PROCESS_ID = "116" Then
+                Cls_XML.CHK_SELL_TYPE = "2"
+            ElseIf dao_main.fields.PROCESS_ID = "117" Then
+                Cls_XML.CHK_SELL_TYPE = "3"
+            ElseIf dao_main.fields.PROCESS_ID = "115" Then
+                Cls_XML.CHK_SELL_TYPE = "4"
+            ElseIf dao_main.fields.PROCESS_ID = "127" Or dao_main.fields.PROCESS_ID = "123" Or dao_main.fields.PROCESS_ID = "125" Or dao_main.fields.PROCESS_ID = "129" Or dao_main.fields.PROCESS_ID = "131" Or dao_main.fields.PROCESS_ID = "133" Then
+                Cls_XML.CHK_SELL_TYPE = "1"
+            ElseIf dao_main.fields.PROCESS_ID = "128" Or dao_main.fields.PROCESS_ID = "124" Or dao_main.fields.PROCESS_ID = "126" Or dao_main.fields.PROCESS_ID = "130" Or dao_main.fields.PROCESS_ID = "132" Or dao_main.fields.PROCESS_ID = "134" Or dao_main.fields.PROCESS_ID = "135" Or dao_main.fields.PROCESS_ID = "136" Then
+                Cls_XML.CHK_SELL_TYPE = "2"
+            End If
+        Catch ex As Exception
+
+        End Try
+
+
+
         p_dalcn_sub = Cls_XML
 
 

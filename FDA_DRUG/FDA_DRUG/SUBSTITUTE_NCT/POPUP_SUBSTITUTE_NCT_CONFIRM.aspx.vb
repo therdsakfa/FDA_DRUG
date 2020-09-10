@@ -261,6 +261,11 @@ Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
 
         Dim bao_master As New BAO_MASTER
         Try
+            Cls_XML.DALCN_NCT_SUBSTITUTEs.PURPOSE_ID = dao.fields.PURPOSE_ID
+        Catch ex As Exception
+
+        End Try
+        Try
             Cls_XML.DT_SHOW.DT10 = bao_master.SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_BY_IDA(dao_main.fields.IDA)
         Catch ex As Exception
 
@@ -272,6 +277,26 @@ Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
         Cls_XML.DT_MASTER.DT30 = bao_master.SP_MASTER_DALCN_by_IDA(dao_main.fields.IDA)
         ' End If
         Cls_XML.BSN_IDENTIFY = dao_bsn.fields.BSN_IDENTIFY
+        Cls_XML.HEAD_LCNNO_NCT = lcnno_format
+        Try
+
+            If dao_main.fields.PROCESS_ID = "114" Then
+                Cls_XML.CHK_SELL_TYPE = "1"
+            ElseIf dao_main.fields.PROCESS_ID = "116" Then
+                Cls_XML.CHK_SELL_TYPE = "2"
+            ElseIf dao_main.fields.PROCESS_ID = "117" Then
+                Cls_XML.CHK_SELL_TYPE = "3"
+            ElseIf dao_main.fields.PROCESS_ID = "115" Then
+                Cls_XML.CHK_SELL_TYPE = "4"
+            ElseIf dao_main.fields.PROCESS_ID = "127" Or dao_main.fields.PROCESS_ID = "123" Or dao_main.fields.PROCESS_ID = "125" Or dao_main.fields.PROCESS_ID = "129" Or dao_main.fields.PROCESS_ID = "131" Or dao_main.fields.PROCESS_ID = "133" Then
+                Cls_XML.CHK_SELL_TYPE = "1"
+            ElseIf dao_main.fields.PROCESS_ID = "128" Or dao_main.fields.PROCESS_ID = "124" Or dao_main.fields.PROCESS_ID = "126" Or dao_main.fields.PROCESS_ID = "130" Or dao_main.fields.PROCESS_ID = "132" Or dao_main.fields.PROCESS_ID = "134" Or dao_main.fields.PROCESS_ID = "135" Or dao_main.fields.PROCESS_ID = "136" Then
+                Cls_XML.CHK_SELL_TYPE = "2"
+            End If
+        Catch ex As Exception
+
+        End Try
+
         p_dalcn_sub = Cls_XML
 
 

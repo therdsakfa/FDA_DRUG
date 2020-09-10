@@ -78,7 +78,7 @@ Public Class POPUP_DH_COMFIRM_STAFF
             int_group_ddl = 4
         End If
 
-        bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(2, int_group_ddl)
+        bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(22, int_group_ddl)
         dt = bao.dt
 
         ddl_cnsdcd.DataSource = dt

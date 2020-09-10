@@ -111,7 +111,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT
         Dim dao_la As New DAO_CPN.TB_LOCATION_ADDRESS
         dao_la.GetDataby_IDA(_IDA)
 
-        bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(2, int_group_ddl)
+        bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(22, int_group_ddl)
         dt = bao.dt
 
         ddl_cnsdcd.DataSource = dt

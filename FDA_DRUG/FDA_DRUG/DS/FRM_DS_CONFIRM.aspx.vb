@@ -73,7 +73,7 @@ Public Class FRM_DS_CONFIRM
         Return rcvno
     End Function
     Protected Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
-        Dim dao As New DAO_DRUG.ClsDBdalcn
+        Dim dao As New DAO_DRUG.ClsDBdrsamp
         Dim bao As New BAO.ClsDBSqlcommand
         dao.GetDataby_IDA(Integer.Parse(_IDA))
         dao.fields.STATUS_ID = 2

@@ -175,4 +175,16 @@ Public Class WS_NORYORMOR_DATA
         dt = bao.SP_MASTER_sysisocnt()
         Return dt
     End Function
+
+    <WebMethod()>
+    Public Function Get_Unit() As DataTable
+        Dim bao As New BAO.ClsDBSqlcommand
+        Dim dt As New DataTable
+        dt = bao.SP_DRUG_UNIT_PHYSIC()
+        'ddl_unit_each.DataSource = dt
+        'ddl_unit_each.DataTextField = "unit_name"
+        'ddl_unit_each.DataValueField = "sunitcd"
+
+        Return dt
+    End Function
 End Class

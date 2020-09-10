@@ -2760,4 +2760,17 @@ Public Class WebForm36
         str_lit &= "</table>"
         Literal1.Text = str_lit
     End Sub
+
+    Protected Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
+        Dim clsxml As New Cls_XML
+        Dim xml_str As String
+        Dim ws_box As New WS_BLOCKCHAIN.WS_BLOCKCHAIN
+        xml_str = ws_box.WS_BLOCK_CHAIN_GET_DATA_V2("U1DR1C1012460009711C")
+        clsxml.ReadData(xml_str)
+
+        'Dim aa As String = ""
+        'For Each clsxml.Get_ListValue_XML In clsxml.Get_ListValue_XML("XML_SEARCH_DRUG_DR")
+        '    aa = cc("register")
+        'Next
+    End Sub
 End Class
