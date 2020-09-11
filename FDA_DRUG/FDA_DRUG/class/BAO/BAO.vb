@@ -1281,6 +1281,21 @@ Namespace BAO
             dta.TableName = "SP_DALCN_NCT_SUBSTITUTE_BY_FK_IDA"
             Return dta
         End Function
+        '
+        Public Function SP_DALCN_NCT_SUBSTITUTE_BY_IDENTIFY(ByVal identify As String) As DataTable
+            Dim sql As String = "exec SP_DALCN_NCT_SUBSTITUTE_BY_IDENTIFY @identify='" & identify & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DALCN_NCT_SUBSTITUTE_BY_IDENTIFY"
+            Return dta
+        End Function
+        Public Function SP_DALCN_NCT_SUBSTITUTE_BY_IDENTIFY_PROCESS(ByVal identify As String, ByVal _process As String) As DataTable
+            Dim sql As String = "exec SP_DALCN_NCT_SUBSTITUTE_BY_IDENTIFY_PROCESS @identify='" & identify & "' ,@process='" & _process & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DALCN_NCT_SUBSTITUTE_BY_IDENTIFY_PROCESS"
+            Return dta
+        End Function
         Public Function SP_DRRGT_SUBSTITUTE_STAFF() As DataTable
             Dim sql As String = "exec SP_DRRGT_SUBSTITUTE_STAFF "
             Dim dta As New DataTable
@@ -4753,10 +4768,24 @@ Namespace BAO
 
             Return dt
         End Function
-        '
+        'ผู้ดำเนิน
         Public Function SP_GET_IDENTYFY_AND_NAME_BY_CTZNO(ByVal identify As String) As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_GET_IDENTYFY_AND_NAME_BY_CTZNO @identify='" & identify & "'"
+            Dim dt As New DataTable
+            Try
+                dt = clsds.dsQueryselect(sql, con_str).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
+
+            Return dt
+        End Function
+        '
+        Public Function SP_GET_IDENTYFY_AND_NAME_BY_CTZNO_Phesaj(ByVal identify As String) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_GET_IDENTYFY_AND_NAME_BY_CTZNO_Phesaj @identify='" & identify & "'"
             Dim dt As New DataTable
             Try
                 dt = clsds.dsQueryselect(sql, con_str).Tables(0)

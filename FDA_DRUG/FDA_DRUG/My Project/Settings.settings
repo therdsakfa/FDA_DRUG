@@ -74,5 +74,8 @@
     <Setting Name="FDA_DRUG_WS_DRUG_LOG_DR_WS_DRUG" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://164.115.28.107/WS_DRUG/WS_DRUG/WS_DRUG.asmx</Value>
     </Setting>
+    <Setting Name="FDA_DRUG_WS_DRUG_126_WS_DRUG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.129/WS_DRUG_UPDATE_LCN_126/WS_DRUG_LCN/WS_DRUG.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

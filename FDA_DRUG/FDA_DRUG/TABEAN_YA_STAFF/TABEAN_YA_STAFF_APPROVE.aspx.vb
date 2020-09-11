@@ -253,11 +253,18 @@
 
                 Dim ws_drug1 As New WS_DRUG.WS_DRUG
                 ws_drug1.DRUG_UPDATE_DR(dao_rg.fields.pvncd, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.rgtno, "เจ้าหน้าที่กดอนุมัติทะเบียนทรานสเฟอร์ ต้องทำการยกเลิกทะเบียนเดิม", _CLS.CITIZEN_ID, "DRUG")
+
+
+                Dim ws_drug126 As New WS_DRUG_126.WS_DRUG
+                ws_drug126.DRUG_UPDATE_DR_126(dao_rg.fields.pvncd, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.rgtno, "เจ้าหน้าที่กดอนุมัติทะเบียนทรานสเฟอร์ ต้องทำการยกเลิกทะเบียนเดิม", _CLS.CITIZEN_ID, "DRUG")
             End If
 
         End If
 
         Dim ws_drug As New WS_DRUG.WS_DRUG
+        ws_drug.DRUG_INSERT_DR(dao_rqt.fields.pvncd, dao_rqt.fields.rgttpcd, dao_rqt.fields.drgtpcd, dao_rqt.fields.rgtno, "อนุมัติทะเบียน", _CLS.CITIZEN_ID, "DRUG")
+
+        Dim ws_drug111 As New WS_DRUG_126.WS_DRUG
         ws_drug.DRUG_INSERT_DR(dao_rqt.fields.pvncd, dao_rqt.fields.rgttpcd, dao_rqt.fields.drgtpcd, dao_rqt.fields.rgtno, "อนุมัติทะเบียน", _CLS.CITIZEN_ID, "DRUG")
         alert("อนุมัติคำขอเรียบร้อยแล้ว")
 

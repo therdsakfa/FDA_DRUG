@@ -378,6 +378,9 @@ Public Class WebForm35
                 End If
                 Dim ws_update As New WS_DRUG.WS_DRUG
                 ws_update.DRUG_INSERT_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+
+                Dim ws_update126 As New WS_DRUG_126.WS_DRUG
+                ws_update126.DRUG_INSERT_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
                 AddLogStatus(STATUS_ID, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
 
             Catch ex As Exception

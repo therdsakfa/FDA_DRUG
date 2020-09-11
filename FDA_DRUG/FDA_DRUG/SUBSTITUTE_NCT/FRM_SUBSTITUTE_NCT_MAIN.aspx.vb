@@ -424,16 +424,28 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
     Private Sub RadGrid1_NeedDataSource(sender As Object, e As Telerik.Web.UI.GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
-        Try
-            If Request.QueryString("lcn_ida") = "" Then
-                dt = bao.SP_DALCN_NCT_SUBSTITUTE_BY_FK_IDA(rcb_search.SelectedValue)
-            Else
-                dt = bao.SP_DALCN_NCT_SUBSTITUTE_BY_FK_IDA(Request.QueryString("lcn_ida"))
-            End If
+        'Try
+        'dt = bao.SP_DALCN_NCT_SUBSTITUTE_BY_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE)
+        'Catch ex As Exception
 
+        'End Try
+
+        Try
+            dt = bao.SP_DALCN_NCT_SUBSTITUTE_BY_IDENTIFY_PROCESS(_CLS.CITIZEN_ID_AUTHORIZE, _process)
         Catch ex As Exception
 
         End Try
+
+        'Try
+        '    If Request.QueryString("lcn_ida") = "" Then
+        '        dt = bao.SP_DALCN_NCT_SUBSTITUTE_BY_FK_IDA(rcb_search.SelectedValue)
+        '    Else
+        '        dt = bao.SP_DALCN_NCT_SUBSTITUTE_BY_FK_IDA(Request.QueryString("lcn_ida"))
+        '    End If
+
+        'Catch ex As Exception
+
+        'End Try
 
         RadGrid1.DataSource = dt
     End Sub
@@ -446,5 +458,26 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../SUBSTITUTE_NCT/POPUP_SUBSTITUTE_NCT_UPLOAD.aspx?IDA=" & Request.QueryString("lcn_ida") & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "');", True)
         End If
 
+    End Sub
+
+    Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound
+        If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
+            Dim item As GridDataItem
+            item = e.Item
+            Dim IDA As String = item("IDA").Text
+            Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
+            Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
+            dao.Getdata_by_ID(IDA)
+            btn_edit.Style.Add("display", "none")
+            Try
+                If dao.fields.STATUS_ID = 5 Then
+                    btn_edit.Style.Add("display", "block")
+                End If
+            Catch ex As Exception
+
+            End Try
+            Dim url As String = "../SUBSTITUTE_NCT/POPUP_SUBSTITUTE_NCT_UPLOAD.aspx?IDA=" & IDA & "&edit=1&process=" & dao.fields.PROCESS_ID
+            btn_edit.Attributes.Add("OnClick", "Popups('" & url & "'); return false;")
+        End If
     End Sub
 End Class

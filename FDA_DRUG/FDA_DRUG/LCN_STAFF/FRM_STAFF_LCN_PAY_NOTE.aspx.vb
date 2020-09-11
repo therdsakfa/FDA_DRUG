@@ -45,6 +45,6 @@
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Response.Redirect("FRM_TABEAN_CONFIRM_STAFF.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
+        Response.Redirect("FRM_LCN_CONFIRM.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & Request.QueryString("process"))
     End Sub
 End Class

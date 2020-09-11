@@ -89,8 +89,10 @@
                     <td>  <asp:Label ID="lbl_statname" runat="server" Text=""></asp:Label></td>
                 </tr>
                 <tr>
-                    <td> &nbsp;</td>
-                    <td>  &nbsp;</td>
+                    <td> วันที่มีผล :</td>
+                    <td>  
+                        <asp:Label ID="lbl_date_cancel" runat="server" Text="-"></asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2"> 
@@ -105,7 +107,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td> วันที่มีผล :</td>
+                    <td> เลือกวันที่มีผล :</td>
                     <td>  
                         <telerik:RadDatePicker ID="rdp_cncdate" Runat="server">
                         </telerik:RadDatePicker>

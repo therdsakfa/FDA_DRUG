@@ -1627,12 +1627,18 @@
     <None Include="Web References\WS_DRUG\WS_DRUG.disco" />
     <Content Include="Web References\SV_UPDATE_PAYMENT\SV_UPDATE_PAYMENT.disco" />
     <None Include="Web References\WS_BLOCKCHAIN\WS_BLOCKCHAIN.disco" />
+    <None Include="Web References\WS_DRUG_126\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_DRUG_126\WS_DRUG.wsdl" />
     <None Include="Web References\WS_DRUG_LOG_DR\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
     <None Include="Web References\WS_DRUG_LOG_DR\WS_DRUG.disco" />
     <None Include="Web References\WS_CREATE_XML\WS_INSERT_XML_DRUG.disco" />
+    <None Include="Web References\WS_DRUG_126\WS_DRUG.disco" />
     <Content Include="Web References\WS_ERROR_CENTERS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
@@ -6741,6 +6747,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\WS_DRUG_126\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\WS_DRUG_LOG_DR\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -7036,6 +7047,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>FDA_DRUG_WS_CREATE_XML_WS_INSERT_XML_DRUG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://10.111.28.129/WS_DRUG_UPDATE_LCN_126/WS_DRUG_LCN/WS_DRUG.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_DRUG_126\</RelPath>
+      <UpdateFromURL>http://10.111.28.129/WS_DRUG_UPDATE_LCN_126/WS_DRUG_LCN/WS_DRUG.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_DRUG_WS_DRUG_126_WS_DRUG</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://10.111.28.65/WS_AUTHEN4/Authentication.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>

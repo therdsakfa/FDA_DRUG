@@ -49,6 +49,8 @@
     <div class="h1">
         ค้นหาเลขสาร
     </div>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
     <hr />
 
     <table  style="width:100%;">
@@ -89,8 +91,33 @@
         </tr>
         <tr>
             <td colspan="4" style="text-align:center;">
-  <asp:GridView ID="GV_data" DataKeyNames="IDA" runat="server" Width="100%" CssClass="table" CellPadding="4" ForeColor="#333333"
-           GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="20" Font-Size="10pt">
+                <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="15" AllowFilteringByColumn="True">
+               <MasterTableView AutoGenerateColumns="False">
+                   <Columns>
+                       <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
+                           SortExpression="IDA" UniqueName="IDA" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="iowacd" FilterControlAltText="Filter iowacd column"
+                           HeaderText="เลขประจำสาร" SortExpression="iowacd" UniqueName="iowacd">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="iowanm" FilterControlAltText="Filter iowanm column"
+                           HeaderText="ชื่อสาร" SortExpression="iowanm" UniqueName="iowanm">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="cas_number" FilterControlAltText="Filter cas_number column"
+                           HeaderText="เลขสาร" SortExpression="cas_number" UniqueName="cas_number" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="aori" FilterControlAltText="Filter aori column"
+                           HeaderText="aori" SortExpression="aori" UniqueName="aori">
+                       </telerik:GridBoundColumn>
+                   </Columns>
+               </MasterTableView>
+           </telerik:RadGrid>
+
+
+
+
+<%--  <asp:GridView ID="GV_data" DataKeyNames="IDA" runat="server" Width="100%" CssClass="table" CellPadding="4" ForeColor="#333333"
+           GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="20" Font-Size="10pt" Visible="false">
            <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="IDA" HeaderText="รหัสประจำสาร" ItemStyle-Width="0%" ></asp:BoundField>
@@ -109,11 +136,11 @@
            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
            <SortedDescendingCellStyle BackColor="#E9EBEF" />
            <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                </asp:GridView>
+                </asp:GridView>--%>
 
 
 
-                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                
             </td>
         </tr>
     </table>

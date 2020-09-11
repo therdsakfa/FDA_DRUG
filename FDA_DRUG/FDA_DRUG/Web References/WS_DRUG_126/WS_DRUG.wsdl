@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DRUG_INSERT_LICEN_126">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDA_dalcn" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY_EDIT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_INSERT_LICEN_126Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DRUG_INSERT_LICEN_126Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_UPDATE_LICEN_126">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDA_dalcn" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY_EDIT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_UPDATE_LICEN_126Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DRUG_UPDATE_LICEN_126Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_INSERT_DH15_126">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDA_DH15" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY_EDIT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_INSERT_DH15_126Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DRUG_INSERT_DH15_126Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_UPDATE_DH15_126">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDA_DH15" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY_EDIT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_UPDATE_DH15_126Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DRUG_UPDATE_DH15_126Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_INSERT_DH15_126_DEMO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phm15dgt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_INSERT_DH15_126_DEMOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DRUG_INSERT_DH15_126_DEMOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_INSERT_DR_126">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pvncd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rgttpcd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drgtpcd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rgtno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY_EDIT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="system" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_INSERT_DR_126Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DRUG_INSERT_DR_126Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_UPDATE_DR_126">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pvncd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rgttpcd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drgtpcd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rgtno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY_EDIT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="system" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_UPDATE_DR_126Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DRUG_UPDATE_DR_126Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_DELETE_DR_126">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pvncd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rgttpcd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drgtpcd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rgtno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY_EDIT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="system" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DRUG_DELETE_DR_126Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DRUG_DELETE_DR_126Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XML_DRUG_BC_UPDATE_TB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Newcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY_EDIT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XML_DRUG_BC_UPDATE_TBResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="XML_DRUG_FORMULA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Newcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY_EDIT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XML_DRUG_FORMULAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML_DRUG_FORMULAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XML_DRUG_LICENSE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Newcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XML_DRUG_LICENSEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML_DRUG_LICENSEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XML_GET_SEARCH_DRUG_DR_IOW_ESUB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Newcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XML_GET_SEARCH_DRUG_DR_IOW_ESUBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML_GET_SEARCH_DRUG_DR_IOW_ESUBResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XML_GET_SEARCH_DRUG_DR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Newcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XML_GET_SEARCH_DRUG_DRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML_GET_SEARCH_DRUG_DRResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XML_GET_SEARCH_DRUG_LCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Newcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XML_GET_SEARCH_DRUG_LCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML_GET_SEARCH_DRUG_LCNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DRUG_INSERT_LICEN_126SoapIn">
+    <wsdl:part name="parameters" element="tns:DRUG_INSERT_LICEN_126" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_INSERT_LICEN_126SoapOut">
+    <wsdl:part name="parameters" element="tns:DRUG_INSERT_LICEN_126Response" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_UPDATE_LICEN_126SoapIn">
+    <wsdl:part name="parameters" element="tns:DRUG_UPDATE_LICEN_126" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_UPDATE_LICEN_126SoapOut">
+    <wsdl:part name="parameters" element="tns:DRUG_UPDATE_LICEN_126Response" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_INSERT_DH15_126SoapIn">
+    <wsdl:part name="parameters" element="tns:DRUG_INSERT_DH15_126" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_INSERT_DH15_126SoapOut">
+    <wsdl:part name="parameters" element="tns:DRUG_INSERT_DH15_126Response" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_UPDATE_DH15_126SoapIn">
+    <wsdl:part name="parameters" element="tns:DRUG_UPDATE_DH15_126" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_UPDATE_DH15_126SoapOut">
+    <wsdl:part name="parameters" element="tns:DRUG_UPDATE_DH15_126Response" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_INSERT_DH15_126_DEMOSoapIn">
+    <wsdl:part name="parameters" element="tns:DRUG_INSERT_DH15_126_DEMO" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_INSERT_DH15_126_DEMOSoapOut">
+    <wsdl:part name="parameters" element="tns:DRUG_INSERT_DH15_126_DEMOResponse" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_INSERT_DR_126SoapIn">
+    <wsdl:part name="parameters" element="tns:DRUG_INSERT_DR_126" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_INSERT_DR_126SoapOut">
+    <wsdl:part name="parameters" element="tns:DRUG_INSERT_DR_126Response" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_UPDATE_DR_126SoapIn">
+    <wsdl:part name="parameters" element="tns:DRUG_UPDATE_DR_126" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_UPDATE_DR_126SoapOut">
+    <wsdl:part name="parameters" element="tns:DRUG_UPDATE_DR_126Response" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_DELETE_DR_126SoapIn">
+    <wsdl:part name="parameters" element="tns:DRUG_DELETE_DR_126" />
+  </wsdl:message>
+  <wsdl:message name="DRUG_DELETE_DR_126SoapOut">
+    <wsdl:part name="parameters" element="tns:DRUG_DELETE_DR_126Response" />
+  </wsdl:message>
+  <wsdl:message name="XML_DRUG_BC_UPDATE_TBSoapIn">
+    <wsdl:part name="parameters" element="tns:XML_DRUG_BC_UPDATE_TB" />
+  </wsdl:message>
+  <wsdl:message name="XML_DRUG_BC_UPDATE_TBSoapOut">
+    <wsdl:part name="parameters" element="tns:XML_DRUG_BC_UPDATE_TBResponse" />
+  </wsdl:message>
+  <wsdl:message name="XML_DRUG_FORMULASoapIn">
+    <wsdl:part name="parameters" element="tns:XML_DRUG_FORMULA" />
+  </wsdl:message>
+  <wsdl:message name="XML_DRUG_FORMULASoapOut">
+    <wsdl:part name="parameters" element="tns:XML_DRUG_FORMULAResponse" />
+  </wsdl:message>
+  <wsdl:message name="XML_DRUG_LICENSESoapIn">
+    <wsdl:part name="parameters" element="tns:XML_DRUG_LICENSE" />
+  </wsdl:message>
+  <wsdl:message name="XML_DRUG_LICENSESoapOut">
+    <wsdl:part name="parameters" element="tns:XML_DRUG_LICENSEResponse" />
+  </wsdl:message>
+  <wsdl:message name="XML_GET_SEARCH_DRUG_DR_IOW_ESUBSoapIn">
+    <wsdl:part name="parameters" element="tns:XML_GET_SEARCH_DRUG_DR_IOW_ESUB" />
+  </wsdl:message>
+  <wsdl:message name="XML_GET_SEARCH_DRUG_DR_IOW_ESUBSoapOut">
+    <wsdl:part name="parameters" element="tns:XML_GET_SEARCH_DRUG_DR_IOW_ESUBResponse" />
+  </wsdl:message>
+  <wsdl:message name="XML_GET_SEARCH_DRUG_DRSoapIn">
+    <wsdl:part name="parameters" element="tns:XML_GET_SEARCH_DRUG_DR" />
+  </wsdl:message>
+  <wsdl:message name="XML_GET_SEARCH_DRUG_DRSoapOut">
+    <wsdl:part name="parameters" element="tns:XML_GET_SEARCH_DRUG_DRResponse" />
+  </wsdl:message>
+  <wsdl:message name="XML_GET_SEARCH_DRUG_LCNSoapIn">
+    <wsdl:part name="parameters" element="tns:XML_GET_SEARCH_DRUG_LCN" />
+  </wsdl:message>
+  <wsdl:message name="XML_GET_SEARCH_DRUG_LCNSoapOut">
+    <wsdl:part name="parameters" element="tns:XML_GET_SEARCH_DRUG_LCNResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_DRUGSoap">
+    <wsdl:operation name="DRUG_INSERT_LICEN_126">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">INSERT_LICENSE_DRUG_126</wsdl:documentation>
+      <wsdl:input message="tns:DRUG_INSERT_LICEN_126SoapIn" />
+      <wsdl:output message="tns:DRUG_INSERT_LICEN_126SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_UPDATE_LICEN_126">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">UPDATE_LICENSE_DRUG_126</wsdl:documentation>
+      <wsdl:input message="tns:DRUG_UPDATE_LICEN_126SoapIn" />
+      <wsdl:output message="tns:DRUG_UPDATE_LICEN_126SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_INSERT_DH15_126">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">INSERT_DH15_126</wsdl:documentation>
+      <wsdl:input message="tns:DRUG_INSERT_DH15_126SoapIn" />
+      <wsdl:output message="tns:DRUG_INSERT_DH15_126SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_UPDATE_DH15_126">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">UPDATE_DH15_126</wsdl:documentation>
+      <wsdl:input message="tns:DRUG_UPDATE_DH15_126SoapIn" />
+      <wsdl:output message="tns:DRUG_UPDATE_DH15_126SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_INSERT_DH15_126_DEMO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">INSERT_DH15_126_DEMO</wsdl:documentation>
+      <wsdl:input message="tns:DRUG_INSERT_DH15_126_DEMOSoapIn" />
+      <wsdl:output message="tns:DRUG_INSERT_DH15_126_DEMOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_INSERT_DR_126">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">INSERT_DR_ESUB_126</wsdl:documentation>
+      <wsdl:input message="tns:DRUG_INSERT_DR_126SoapIn" />
+      <wsdl:output message="tns:DRUG_INSERT_DR_126SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_UPDATE_DR_126">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">UPDATE_DR_ESUB_126</wsdl:documentation>
+      <wsdl:input message="tns:DRUG_UPDATE_DR_126SoapIn" />
+      <wsdl:output message="tns:DRUG_UPDATE_DR_126SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_DELETE_DR_126">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">UPDATE_DR_ESUB_126</wsdl:documentation>
+      <wsdl:input message="tns:DRUG_DELETE_DR_126SoapIn" />
+      <wsdl:output message="tns:DRUG_DELETE_DR_126SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XML_DRUG_BC_UPDATE_TB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">XML_DRUG_BC_UPDATE_TB</wsdl:documentation>
+      <wsdl:input message="tns:XML_DRUG_BC_UPDATE_TBSoapIn" />
+      <wsdl:output message="tns:XML_DRUG_BC_UPDATE_TBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XML_DRUG_FORMULA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ทะเบียนยา+สาร</wsdl:documentation>
+      <wsdl:input message="tns:XML_DRUG_FORMULASoapIn" />
+      <wsdl:output message="tns:XML_DRUG_FORMULASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XML_DRUG_LICENSE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ใบอนุญาตยา</wsdl:documentation>
+      <wsdl:input message="tns:XML_DRUG_LICENSESoapIn" />
+      <wsdl:output message="tns:XML_DRUG_LICENSESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XML_GET_SEARCH_DRUG_DR_IOW_ESUB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ทะเบียน DR_PART2</wsdl:documentation>
+      <wsdl:input message="tns:XML_GET_SEARCH_DRUG_DR_IOW_ESUBSoapIn" />
+      <wsdl:output message="tns:XML_GET_SEARCH_DRUG_DR_IOW_ESUBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XML_GET_SEARCH_DRUG_DR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ทะเบียน DR_PART1</wsdl:documentation>
+      <wsdl:input message="tns:XML_GET_SEARCH_DRUG_DRSoapIn" />
+      <wsdl:output message="tns:XML_GET_SEARCH_DRUG_DRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XML_GET_SEARCH_DRUG_LCN">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ใบอนุญาตสถานที่</wsdl:documentation>
+      <wsdl:input message="tns:XML_GET_SEARCH_DRUG_LCNSoapIn" />
+      <wsdl:output message="tns:XML_GET_SEARCH_DRUG_LCNSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_DRUGSoap" type="tns:WS_DRUGSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DRUG_INSERT_LICEN_126">
+      <soap:operation soapAction="http://tempuri.org/DRUG_INSERT_LICEN_126" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_UPDATE_LICEN_126">
+      <soap:operation soapAction="http://tempuri.org/DRUG_UPDATE_LICEN_126" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_INSERT_DH15_126">
+      <soap:operation soapAction="http://tempuri.org/DRUG_INSERT_DH15_126" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_UPDATE_DH15_126">
+      <soap:operation soapAction="http://tempuri.org/DRUG_UPDATE_DH15_126" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_INSERT_DH15_126_DEMO">
+      <soap:operation soapAction="http://tempuri.org/DRUG_INSERT_DH15_126_DEMO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_INSERT_DR_126">
+      <soap:operation soapAction="http://tempuri.org/DRUG_INSERT_DR_126" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_UPDATE_DR_126">
+      <soap:operation soapAction="http://tempuri.org/DRUG_UPDATE_DR_126" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_DELETE_DR_126">
+      <soap:operation soapAction="http://tempuri.org/DRUG_DELETE_DR_126" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XML_DRUG_BC_UPDATE_TB">
+      <soap:operation soapAction="http://tempuri.org/XML_DRUG_BC_UPDATE_TB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XML_DRUG_FORMULA">
+      <soap:operation soapAction="http://tempuri.org/XML_DRUG_FORMULA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XML_DRUG_LICENSE">
+      <soap:operation soapAction="http://tempuri.org/XML_DRUG_LICENSE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XML_GET_SEARCH_DRUG_DR_IOW_ESUB">
+      <soap:operation soapAction="http://tempuri.org/XML_GET_SEARCH_DRUG_DR_IOW_ESUB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XML_GET_SEARCH_DRUG_DR">
+      <soap:operation soapAction="http://tempuri.org/XML_GET_SEARCH_DRUG_DR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XML_GET_SEARCH_DRUG_LCN">
+      <soap:operation soapAction="http://tempuri.org/XML_GET_SEARCH_DRUG_LCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_DRUGSoap12" type="tns:WS_DRUGSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DRUG_INSERT_LICEN_126">
+      <soap12:operation soapAction="http://tempuri.org/DRUG_INSERT_LICEN_126" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_UPDATE_LICEN_126">
+      <soap12:operation soapAction="http://tempuri.org/DRUG_UPDATE_LICEN_126" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_INSERT_DH15_126">
+      <soap12:operation soapAction="http://tempuri.org/DRUG_INSERT_DH15_126" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_UPDATE_DH15_126">
+      <soap12:operation soapAction="http://tempuri.org/DRUG_UPDATE_DH15_126" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_INSERT_DH15_126_DEMO">
+      <soap12:operation soapAction="http://tempuri.org/DRUG_INSERT_DH15_126_DEMO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_INSERT_DR_126">
+      <soap12:operation soapAction="http://tempuri.org/DRUG_INSERT_DR_126" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_UPDATE_DR_126">
+      <soap12:operation soapAction="http://tempuri.org/DRUG_UPDATE_DR_126" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DRUG_DELETE_DR_126">
+      <soap12:operation soapAction="http://tempuri.org/DRUG_DELETE_DR_126" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XML_DRUG_BC_UPDATE_TB">
+      <soap12:operation soapAction="http://tempuri.org/XML_DRUG_BC_UPDATE_TB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XML_DRUG_FORMULA">
+      <soap12:operation soapAction="http://tempuri.org/XML_DRUG_FORMULA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XML_DRUG_LICENSE">
+      <soap12:operation soapAction="http://tempuri.org/XML_DRUG_LICENSE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XML_GET_SEARCH_DRUG_DR_IOW_ESUB">
+      <soap12:operation soapAction="http://tempuri.org/XML_GET_SEARCH_DRUG_DR_IOW_ESUB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XML_GET_SEARCH_DRUG_DR">
+      <soap12:operation soapAction="http://tempuri.org/XML_GET_SEARCH_DRUG_DR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XML_GET_SEARCH_DRUG_LCN">
+      <soap12:operation soapAction="http://tempuri.org/XML_GET_SEARCH_DRUG_LCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_DRUG">
+    <wsdl:port name="WS_DRUGSoap" binding="tns:WS_DRUGSoap">
+      <soap:address location="http://10.111.28.129/WS_DRUG_UPDATE_LCN_126/WS_DRUG_LCN/WS_DRUG.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_DRUGSoap12" binding="tns:WS_DRUGSoap12">
+      <soap12:address location="http://10.111.28.129/WS_DRUG_UPDATE_LCN_126/WS_DRUG_LCN/WS_DRUG.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,4 +1,6 @@
-﻿Public Class FRM_CHEMICAL_SEARCH
+﻿Imports Telerik.Web.UI
+
+Public Class FRM_CHEMICAL_SEARCH
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -6,17 +8,8 @@
     End Sub
 
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
-        Dim bao As New BAO.ClsDBSqlcommand
         If String.IsNullOrEmpty(txt_casname.Text) = False Then
-            '  GV_data.DataSource = bao.SP_MAS_CHEMICAL_by_IOWANM(txt_casname.Text)
-            Dim dt As New DataTable
-            If Request.QueryString("aori") <> "" Then
-                dt = bao.SP_MAS_CHEMICAL_by_IOWANM_AND_AORI(txt_casname.Text, Request.QueryString("aori"))
-            Else
-                dt = bao.SP_MAS_CHEMICAL_by_IOWANM(txt_casname.Text)
-            End If
-            GV_data.DataSource = dt
-            GV_data.DataBind()
+            RadGrid1.Rebind()
         Else
             alert("กรุณากรอกชื่อสาร")
         End If
@@ -29,7 +22,7 @@
 
     Private Sub btn_export_Click(sender As Object, e As EventArgs) Handles btn_export.Click
         export_excel2()
-        
+
     End Sub
     Private Sub export_excel()
         Dim bao As New BAO.ClsDBSqlcommand
@@ -160,4 +153,21 @@
 
         Return result.ToString()
     End Function
+
+    Private Sub RadGrid1_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
+        Dim bao As New BAO.ClsDBSqlcommand
+        'If String.IsNullOrEmpty(txt_casname.Text) = False Then
+        '  GV_data.DataSource = bao.SP_MAS_CHEMICAL_by_IOWANM(txt_casname.Text)
+        Dim dt As New DataTable
+            If Request.QueryString("aori") <> "" Then
+                dt = bao.SP_MAS_CHEMICAL_by_IOWANM_AND_AORI(txt_casname.Text, Request.QueryString("aori"))
+            Else
+                dt = bao.SP_MAS_CHEMICAL_by_IOWANM(txt_casname.Text)
+            End If
+        RadGrid1.DataSource = dt
+        ' RadGrid1.DataBind()
+        'Else
+        '    alert("กรุณากรอกชื่อสาร")
+        'End If
+    End Sub
 End Class

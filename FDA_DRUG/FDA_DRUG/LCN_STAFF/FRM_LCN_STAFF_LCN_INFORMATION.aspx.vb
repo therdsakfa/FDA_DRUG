@@ -15,8 +15,23 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
         End Try
     End Sub
     Sub Run_Service(ByVal IDA As Integer)
-        Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_UPDATE_LICEN(IDA, _CLS.CITIZEN_ID)
+        Try
+            Dim ws_update As New WS_DRUG.WS_DRUG
+            ws_update.DRUG_UPDATE_LICEN(IDA, _CLS.CITIZEN_ID)
+        Catch ex As Exception
+
+        End Try
+
+
+        Try
+            Dim ws_update126 As New WS_DRUG_126.WS_DRUG
+            ws_update126.DRUG_UPDATE_LICEN_126(IDA, _CLS.CITIZEN_ID)
+        Catch ex As Exception
+
+        End Try
+
+
+
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
@@ -53,7 +68,7 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
 
             End Try
             Try
-                rdp_cncdate.SelectedDate = CDate(dao.fields.cncdate)
+                lbl_date_cancel.Text = CDate(dao.fields.cncdate)
             Catch ex As Exception
 
             End Try
@@ -551,6 +566,10 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
                         End Try
                         Dim ws_update As New WS_DRUG.WS_DRUG
                         ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+
+                        Dim ws_update126 As New WS_DRUG_126.WS_DRUG
+                        ws_update126.DRUG_UPDATE_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+
                         rg_bsn.Rebind()
                         Try
                             Shows(Request.QueryString("IDA"))
@@ -625,6 +644,9 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
                 KEEP_LOGS_EDIT(Request.QueryString("IDA"), "อัพเดตข้อมูลผู้รับอนุญาต - " & dao.fields.CITIZEN_ID_AUTHORIZE, _CLS.CITIZEN_ID, url:=HttpContext.Current.Request.Url.AbsoluteUri)
                 Dim ws_update As New WS_DRUG.WS_DRUG
                 ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+
+                Dim ws_update126 As New WS_DRUG_126.WS_DRUG
+                ws_update126.DRUG_UPDATE_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
                 rglcnname.Rebind()
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('อัพเดทข้อมูลเรียบร้อยแล้ว');", True)
             End If
@@ -663,6 +685,9 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
 
                 Dim ws_update As New WS_DRUG.WS_DRUG
                 ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+
+                Dim ws_update126 As New WS_DRUG_126.WS_DRUG
+                ws_update126.DRUG_UPDATE_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
                 KEEP_LOGS_EDIT(Request.QueryString("ida"), "ลบผู้มีหน้าที่ปฏิบัติการ " & name_del, _CLS.CITIZEN_ID)
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ลบเรียบร้อยแล้ว');", True)
 

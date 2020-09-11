@@ -45,26 +45,26 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
         Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
         dao.Getdata_by_ID(_IDA)
 
-        'If dao.fields.STATUS_ID <= 2 Then
-        '    int_group_ddl = 1
-        'ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
-        '    int_group_ddl = 2
-        'ElseIf dao.fields.STATUS_ID >= 6 And dao.fields.STATUS_ID < 11 Then
-        '    int_group_ddl = 3
-        'End If
-
-        If dao.fields.STATUS_ID = 2 Then
+        If dao.fields.STATUS_ID = 11 Then
             int_group_ddl = 1
-        ElseIf dao.fields.STATUS_ID = 11 Then
-            int_group_ddl = 2
         ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
-            int_group_ddl = 3
+            int_group_ddl = 2
         ElseIf dao.fields.STATUS_ID >= 6 And dao.fields.STATUS_ID < 11 Then
-            int_group_ddl = 4
+            int_group_ddl = 3
         End If
 
+        'If dao.fields.STATUS_ID <= 2 Then
+        '    int_group_ddl = 1
+        'ElseIf dao.fields.STATUS_ID = 11 Then
+        '    int_group_ddl = 2
+        'ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
+        '    int_group_ddl = 3
+        'ElseIf dao.fields.STATUS_ID >= 6 And dao.fields.STATUS_ID < 11 Then
+        '    int_group_ddl = 4
+        'End If
 
-        bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(22, int_group_ddl)
+
+        bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(23, int_group_ddl)
         dt = bao.dt
 
         ddl_cnsdcd.DataSource = dt

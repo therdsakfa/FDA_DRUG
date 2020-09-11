@@ -66,6 +66,12 @@ Public Class WS_GEN_DH_NO
 
                     End Try
 
+                    Try
+                        Dim ws_update126 As New WS_DRUG_126.WS_DRUG
+                        ws_update126.DRUG_INSERT_DH15_126(IDA, "1710500118665")
+                    Catch ex As Exception
+
+                    End Try
                 End If
             End If
         Catch ex As Exception

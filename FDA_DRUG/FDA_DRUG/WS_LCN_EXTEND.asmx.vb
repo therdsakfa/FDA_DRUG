@@ -18,4 +18,12 @@ Public Class WS_LCN_EXTEND
         Return dt
     End Function
 
+    '
+    <WebMethod()>
+    Public Function Get_Name_Authorize_Phesaj(ByVal citizen_id As String) As DataTable
+        Dim dt As New DataTable
+        Dim bao As New BAO.ClsDBSqlcommand
+        dt = bao.SP_GET_IDENTYFY_AND_NAME_BY_CTZNO_Phesaj(citizen_id)
+        Return dt
+    End Function
 End Class

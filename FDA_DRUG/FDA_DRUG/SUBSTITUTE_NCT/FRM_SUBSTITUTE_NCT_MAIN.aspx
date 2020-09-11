@@ -156,6 +156,11 @@
                            CommandName="sel" Text="ดูข้อมูล">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
+
+                       <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
+                           CommandName="_edit" Text="แก้ไขข้อมูล">
+                           <HeaderStyle Width="70px" />
+                       </telerik:GridButtonColumn>
                    </Columns>
                </MasterTableView>
            </telerik:RadGrid>
