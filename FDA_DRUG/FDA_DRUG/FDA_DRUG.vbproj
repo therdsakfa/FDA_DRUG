@@ -789,10 +789,12 @@
     <Content Include="EXTEND_TIME_LOCATION_STAFF\FRM_LCN_PREVIEW.aspx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EDIT_LOCATION_STAFF_CONFIRM.aspx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EDIT_LOCATION_STAFF_CONFIRM_PREVIEW.aspx" />
+    <Content Include="EXTEND_TIME_LOCATION_STAFF\POPUP_IMPORT_GPP.aspx" />
     <Content Include="E_TRACKING\FRM_RQT_ALL.aspx" />
     <Content Include="E_TRACKING\FRM_RQT_ALL_STOPTIME.aspx" />
     <Content Include="E_TRACKING\FRM_RQT_ALL_STOPTIME_DATE.aspx" />
     <Content Include="GEN_XML_BC.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="LCN\FRM_LCN_NCT_TEMP_MAIN.aspx" />
     <Content Include="LCN\POPUP_LCN_NCT_TEMP_CONFIRM.aspx" />
     <Content Include="LCN\POPUP_LCN_NCT_TEMP_INSERT.aspx" />
@@ -3088,6 +3090,13 @@
       <DependentUpon>POPUP_EDIT_LOCATION_STAFF_CONFIRM_PREVIEW.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="EXTEND_TIME_LOCATION_STAFF\POPUP_IMPORT_GPP.aspx.designer.vb">
+      <DependentUpon>POPUP_IMPORT_GPP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EXTEND_TIME_LOCATION_STAFF\POPUP_IMPORT_GPP.aspx.vb">
+      <DependentUpon>POPUP_IMPORT_GPP.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="E_TRACKING\FRM_RQT_ALL.aspx.designer.vb">
       <DependentUpon>FRM_RQT_ALL.aspx</DependentUpon>
     </Compile>
@@ -3115,6 +3124,9 @@
     <Compile Include="GEN_XML_BC.aspx.vb">
       <DependentUpon>GEN_XML_BC.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LCN\FRM_LCN_NCT_TEMP_MAIN.aspx.designer.vb">
       <DependentUpon>FRM_LCN_NCT_TEMP_MAIN.aspx</DependentUpon>

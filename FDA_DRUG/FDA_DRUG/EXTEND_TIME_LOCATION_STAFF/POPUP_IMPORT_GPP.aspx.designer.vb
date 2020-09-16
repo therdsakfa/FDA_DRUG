@@ -11,34 +11,25 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_EXTEND_TIME_LOCATION_GPP
+Partial Public Class POPUP_IMPORT_GPP
     
     '''<summary>
-    '''lbl_name control.
+    '''FileUpload3 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_name As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents FileUpload3 As Global.System.Web.UI.WebControls.FileUpload
     
     '''<summary>
-    '''ddl_year control.
+    '''btn_upload control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddl_year As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''btn_add control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btn_add As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_upload As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''RadGrid1 control.
@@ -50,11 +41,11 @@ Partial Public Class FRM_EXTEND_TIME_LOCATION_GPP
     Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
     
     '''<summary>
-    '''btn_reload control.
+    '''Button1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
 End Class

@@ -2819,6 +2819,10 @@ Public Class WebForm36
 
                 GridView1.DataSource = dt
                 GridView1.DataBind()
+
+
+                RadGrid1.DataSource = dt
+                RadGrid1.DataBind()
             Next
         End Using
     End Sub
