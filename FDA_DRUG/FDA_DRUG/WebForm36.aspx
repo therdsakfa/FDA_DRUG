@@ -223,6 +223,9 @@
             <asp:Button ID="Button31" runat="server" Text="Button" />
             <asp:GridView ID="GridView1" runat="server">
             </asp:GridView>
+
+            <telerik:RadGrid ID="RadGrid1" runat="server"></telerik:RadGrid>
+
         </p>
         <rsweb:ReportViewer ID="ReportViewer1" runat="server">
         </rsweb:ReportViewer>

@@ -283,4 +283,9 @@ Public Class FRM_EXTEND_TIME_LOCATION_GPP
         RadGrid1.DataSource = dt
     End Sub
 
+    Protected Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
+        Dim url As String = "../POPUP_IMPORT_GPP.aspx.aspx"
+        'btn_edit.Attributes.Add("OnClick", "Popups2('" & url & "'); return false;")
+        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "Popups2('" & url & "'); return false;", True)
+    End Sub
 End Class

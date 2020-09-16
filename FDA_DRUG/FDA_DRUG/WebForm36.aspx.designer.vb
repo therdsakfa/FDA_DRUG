@@ -419,6 +419,15 @@ Partial Public Class WebForm36
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
+    '''RadGrid1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
+    
+    '''<summary>
     '''ReportViewer1 control.
     '''</summary>
     '''<remarks>

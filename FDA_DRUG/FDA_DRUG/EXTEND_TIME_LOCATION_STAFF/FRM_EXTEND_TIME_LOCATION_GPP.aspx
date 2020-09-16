@@ -129,6 +129,7 @@
                                   <asp:ListItem>2562</asp:ListItem>
                                   <asp:ListItem>2562</asp:ListItem>
                               </asp:DropDownList>
+                              <asp:Button ID="btn_add" runat="server" Text="Import ข้อมูล" />
                           </td>
                       </tr>
                   </table>
