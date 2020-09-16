@@ -1,12 +1,14 @@
-﻿Public Class POPUP_IMPORT_GPP
+﻿Imports ClosedXML.Excel
+
+Public Class POPUP_IMPORT_GPP
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
 
-    Protected Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
-        Protected Sub ImportExcel()
+
+    Protected Sub ImportExcel()
         'Open the Excel file using ClosedXML.
         Using workBook As New XLWorkbook(FileUpload3.PostedFile.InputStream)
             'Read the first Sheet from Excel file.
@@ -43,14 +45,12 @@
                 End If
 
 
-                GridView1.DataSource = dt
-                GridView1.DataBind()
-
-
                 RadGrid1.DataSource = dt
                 RadGrid1.DataBind()
             Next
         End Using
     End Sub
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
     End Sub
 End Class

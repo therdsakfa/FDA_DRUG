@@ -10,8 +10,18 @@
             </div>
             <div class="panel-body">
                 <p>
-            <asp:FileUpload ID="FileUpload3" runat="server" />
-            <asp:Button ID="btn_upload" runat="server" Text="Upload" />
+                    <table width="100%">
+                        <tr>
+                            <td>
+                                <asp:FileUpload ID="FileUpload3" runat="server" />
+                            </td>
+                            <td>
+                                <asp:Button ID="btn_upload" runat="server" Text="Upload" />
+                            </td>
+                        </tr>
+                    </table>
+            
+            
                     <telerik:RadGrid ID="RadGrid1" runat="server"></telerik:RadGrid>
         </p>
                 
