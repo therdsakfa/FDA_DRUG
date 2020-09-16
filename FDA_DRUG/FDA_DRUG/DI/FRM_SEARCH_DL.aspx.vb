@@ -42,8 +42,8 @@ Public Class FRM_SEARCH_DL
     Private Sub load_ddl()
         Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
         dao.GetDataby_CTZNO(_CLS.CITIZEN_ID_AUTHORIZE)
+        '-------------------------
         'Dim item As New ListItem("---กรุณาเลือก---", "0")
-
         rcb_search.DataSource = dao.datas 'dao.datas
         rcb_search.DataTextField = "REGIS_NO"
         rcb_search.DataValueField = "IDA"
