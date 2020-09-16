@@ -810,6 +810,7 @@
     <Content Include="MAIN_STAFF\FRM_REPLACEMENT_LICENSE_LOCATION_MENU2.aspx" />
     <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx" />
     <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_NEW.aspx" />
     <Content Include="PDF\FRM_PDF_VIEW.aspx" />
     <Content Include="PDF\FRM_REPORT_RDLC.aspx" />
     <Content Include="PDF\FRM_RPT_PDF.aspx" />
@@ -3268,6 +3269,13 @@
     <Compile Include="MasterPage\MAIN_STAFF_MAIN.Master.vb">
       <DependentUpon>MAIN_STAFF_MAIN.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_NEW.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM_NEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_NEW.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM_NEW.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="PDF\FRM_PDF_VIEW.aspx.designer.vb">
       <DependentUpon>FRM_PDF_VIEW.aspx</DependentUpon>
