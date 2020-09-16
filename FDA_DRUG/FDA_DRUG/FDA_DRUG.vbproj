@@ -107,15 +107,15 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="Telerik.Web.Design, Version=2010.3.1317.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Telerik.Web.Design.dll</HintPath>
+      <HintPath>..\..\..\bin\Telerik.Web.Design.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Web.UI, Version=2013.2.717.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Telerik.Web.UI.dll</HintPath>
+      <HintPath>..\..\..\bin\Telerik.Web.UI.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Web.UI.Skins, Version=2013.2.717.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Telerik.Web.UI.Skins.dll</HintPath>
+      <HintPath>..\..\..\bin\Telerik.Web.UI.Skins.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="zxing, Version=0.15.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
@@ -769,6 +769,7 @@
     <Content Include="DS\FRM_DS_DRUG8_ADD.aspx" />
     <Content Include="DS\UC\UC_DS_DRUG8_ADD.ascx" />
     <Content Include="DS_STAFF\FRM_DS_STAFF_REMARK2.aspx" />
+    <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_MAIN.aspx" />
     <Content Include="EDIT_LCN\FRM_EDIT_LCN_CONFIRM.aspx" />
     <Content Include="EDIT_LCN\FRM_EDIT_LCN_MAIN.aspx" />
     <Content Include="EDIT_LCN\FRM_EDIT_LCN_UPLOAD.aspx" />
@@ -2953,6 +2954,13 @@
     <Compile Include="DS_STAFF\FRM_DS_STAFF_REMARK2.aspx.vb">
       <DependentUpon>FRM_DS_STAFF_REMARK2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_DRUG_IMPORT_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_MAIN.aspx.vb">
+      <DependentUpon>FRM_DRUG_IMPORT_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="EDIT_LCN\FRM_EDIT_LCN_CONFIRM.aspx.designer.vb">
       <DependentUpon>FRM_EDIT_LCN_CONFIRM.aspx</DependentUpon>
