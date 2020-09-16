@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/Main_Auto_Menu.Master" CodeBehind="FRM_EXTEND_LCN_ATTACH_PAGE.aspx.vb" Inherits="FDA_DRUG.FRM_EXTEND_LCN_ATTACH_PAGE" %>
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" >
 
@@ -135,8 +136,31 @@
         </h2>
         <asp:Literal ID="Literal1" runat="server"></asp:Literal>
     </asp:Panel>
+    <br /><hr />
+    <asp:Panel ID="Panel6" runat="server">
+        <h2>
+            รูปถ่าย
+        </h2>
+        <table class="table">
+            <tr>
+                <td>
 
+                    <telerik:RadBinaryImage ID="RadBinaryImage1" runat="server" Width ="114px" Height="152px" />
 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="50%">
+                        <tr>
+                            <td width="50%"><asp:FileUpload ID="FileUpload1" runat="server" /></td>
+                            <td width="50%"><asp:Button ID="btn_upload_img" runat="server" Text="Upload รูป" CssClass="btn-sm" /></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
 
     <asp:Panel ID="Panel3" runat="server" style="display:none;">
         <h2>

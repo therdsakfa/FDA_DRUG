@@ -392,6 +392,33 @@ Partial Public Class WebForm36
     Protected WithEvents RadBinaryImage1 As Global.Telerik.Web.UI.RadBinaryImage
     
     '''<summary>
+    '''FileUpload3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents FileUpload3 As Global.System.Web.UI.WebControls.FileUpload
+    
+    '''<summary>
+    '''Button31 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button31 As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''GridView1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
     '''ReportViewer1 control.
     '''</summary>
     '''<remarks>

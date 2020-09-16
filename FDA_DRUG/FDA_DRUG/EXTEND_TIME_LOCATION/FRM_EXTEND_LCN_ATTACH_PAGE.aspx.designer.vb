@@ -95,6 +95,42 @@ Partial Public Class FRM_EXTEND_LCN_ATTACH_PAGE
     Protected WithEvents Literal1 As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
+    '''Panel6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel6 As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''RadBinaryImage1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RadBinaryImage1 As Global.Telerik.Web.UI.RadBinaryImage
+    
+    '''<summary>
+    '''FileUpload1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
+    
+    '''<summary>
+    '''btn_upload_img control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_upload_img As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''Panel3 control.
     '''</summary>
     '''<remarks>

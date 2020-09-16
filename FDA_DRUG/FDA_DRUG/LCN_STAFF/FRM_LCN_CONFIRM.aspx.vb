@@ -376,21 +376,34 @@ Public Class WebForm35
                     End If
 
                 End If
+
+
+            Catch ex As Exception
+
+            End Try
+
+            Try
                 Dim ws_update As New WS_DRUG.WS_DRUG
                 ws_update.DRUG_INSERT_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+            Catch ex As Exception
 
+            End Try
+
+            Try
                 Dim ws_update126 As New WS_DRUG_126.WS_DRUG
                 ws_update126.DRUG_INSERT_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
-                AddLogStatus(STATUS_ID, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
-
             Catch ex As Exception
 
             End Try
-            Try
-                send_mail_mini(dao.fields.CITIZEN_ID, "FDATH", "คำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " ได้รับการอนุมัติคำขอแล้ว")
-            Catch ex As Exception
 
-            End Try
+            AddLogStatus(STATUS_ID, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+
+            'Try
+            '    send_mail_mini(dao.fields.CITIZEN_ID, "FDATH", "คำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " ได้รับการอนุมัติคำขอแล้ว")
+            'Catch ex As Exception
+
+            'End Try
+
             dao.update()
             '-----------------ลิ้งไปหน้าคีย์มือ----------
             'Response.Redirect("FRM_STAFF_LCN_LCNNO_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
@@ -1412,6 +1425,8 @@ Public Class WebForm35
                 End Try
                 If template_id = 2 Then
                     dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, HiddenField2.Value, _group:=9)
+                ElseIf template_id = 3 Then
+                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 11, _group:=0)
                 Else
                     'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, HiddenField2.Value)
                     dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW_AND_GROUP(PROCESS_ID, statusId, HiddenField2.Value, 0)
@@ -1425,6 +1440,8 @@ Public Class WebForm35
                 End Try
                 If template_id = 2 Then
                     dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, HiddenField2.Value, _group:=9)
+                ElseIf template_id = 3 Then
+                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 11, _group:=0)
                 Else
                     dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW_AND_GROUP(PROCESS_ID, statusId, HiddenField2.Value, 0)
                 End If
@@ -1447,6 +1464,8 @@ Public Class WebForm35
             If _group = 1 Then
                 If template_id = 2 Then
                     dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, HiddenField2.Value, _group:=9)
+                ElseIf template_id = 3 Then
+                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 11, _group:=0)
                 Else
                     dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, HiddenField2.Value, _group:=0)
                     'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, HiddenField2.Value)

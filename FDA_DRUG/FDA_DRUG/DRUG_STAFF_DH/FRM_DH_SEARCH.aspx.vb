@@ -91,10 +91,17 @@ Public Class FRM_DH_SEARCH
 
     Private Sub btn_filter_Click(sender As Object, e As EventArgs) Handles btn_filter.Click
         Dim strMsg As String = ""
-        strMsg = "([STATUS_NAME] LIKE '%" & ddl_status.SelectedItem.Text & "%')" & _
-            " and ([TR_ID] LIKE '%" & txt_number.Text & "%') " & _
-            " and ([phm15dgt] LIKE '%" & txt_drm.Text & "%') " & _
+        If ddl_status.SelectedItem.Text = "ทั้งหมด" Then
+            strMsg = "([TR_ID] LIKE '%" & txt_number.Text & "%') " &
+            " and ([phm15dgt] LIKE '%" & txt_drm.Text & "%') " &
             " and ([CAS_NAME] LIKE '%" & txt_chem.Text & "%') "
+        Else
+            strMsg = "([STATUS_NAME] LIKE '%" & ddl_status.SelectedItem.Text & "%')" &
+             " and ([TR_ID] LIKE '%" & txt_number.Text & "%') " &
+             " and ([phm15dgt] LIKE '%" & txt_drm.Text & "%') " &
+             " and ([CAS_NAME] LIKE '%" & txt_chem.Text & "%') "
+        End If
+
 
         RadGrid1.EnableLinqExpressions = False
         RadGrid1.MasterTableView.FilterExpression = strMsg

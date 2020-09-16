@@ -186,6 +186,17 @@
 
                          </td>
                      </tr>--%>
+                     <tr>
+                         <td>
+                             <asp:DropDownList ID="ddl_template" runat="server" Width="80%" AutoPostBack="True">
+                                 <asp:ListItem Value="0">---เลือกแบบ pdf Preview---</asp:ListItem>
+                                 <asp:ListItem Value="1">pdf แบบปกติ</asp:ListItem>
+                                 <asp:ListItem Value="2">pdf แบบบ้านเลขที่ยาว</asp:ListItem>
+                                  <asp:ListItem Value="3">pdf แบบ QR</asp:ListItem>
+                             </asp:DropDownList>
+
+                         </td>
+                     </tr>
                      <tr><td>
                          <asp:DropDownList ID="ddl_cnsdcd" runat="server" AutoPostBack="True" Width="80%" DataTextField="STATUS_NAME" DataValueField="STATUS_ID">
                          </asp:DropDownList>

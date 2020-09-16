@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="POPUP_EDIT_LOCATION_STAFF_CONFIRM.aspx.vb" Inherits="FDA_DRUG.POPUP_STAFF_EDIT_LOCATION_CONFIRM2" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="FRM_EDIT_LOCATION_STAFF_CONFIRM.aspx.vb" Inherits="FDA_DRUG.POPUP_STAFF_EDIT_LOCATION_CONFIRM2" %>
 <%@ Register Src="~/UC/UC_GRID_ATTACH.ascx" TagPrefix="uc1" TagName="UC_GRID_ATTACH" %>
 
 <%@ Register src="../UC/UC_GRID_PHARMACIST.ascx" tagname="UC_GRID_PHARMACIST" tagprefix="uc2" %>
@@ -122,6 +122,17 @@
 
                          วันที่เสนอลงนาม :
                              <asp:Label ID="lbl_consider_date" runat="server" Text="-"></asp:Label>
+
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>
+                             <asp:DropDownList ID="ddl_template" runat="server" Width="80%" AutoPostBack="True">
+                                 <asp:ListItem Value="0">---เลือกแบบ pdf---</asp:ListItem>
+                                 <asp:ListItem Value="1">pdf แบบปกติ</asp:ListItem>
+                                 <asp:ListItem Value="2">pdf แบบบ้านเลขที่ยาว</asp:ListItem>
+                                  <asp:ListItem Value="3">pdf QR แบบบ้านเลขที่ยาว</asp:ListItem>
+                             </asp:DropDownList>
 
                          </td>
                      </tr>

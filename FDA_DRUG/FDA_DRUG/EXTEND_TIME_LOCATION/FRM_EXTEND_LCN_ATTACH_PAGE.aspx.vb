@@ -135,4 +135,23 @@
         str_lit &= "</table>"
         Literal1.Text = str_lit
     End Sub
+
+    Protected Sub btn_upload_img_Click(sender As Object, e As EventArgs) Handles btn_upload_img.Click
+        If FileUpload1.HasFile Then
+            Dim file_ex As String = ""
+            file_ex = file_extension_nm(FileUpload1.FileName)
+            If file_ex = "jpg" Or file_ex = "png" Then
+                Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
+                dao.GetDataby_IDA(Request.QueryString("IDA"))
+                dao.fields.IMAGE_BSN = Convert.ToBase64String(FileUpload1.FileBytes)
+                dao.update()
+                RadBinaryImage1.DataBind()
+
+            Else
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไฟล์ไม่ถูกต้อง ควรใช้ไฟล์นามสกุล .jpg หรือ .png');", True)
+            End If
+        Else
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาแนบไฟล์');", True)
+        End If
+    End Sub
 End Class

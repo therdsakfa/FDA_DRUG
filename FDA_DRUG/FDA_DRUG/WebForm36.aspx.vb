@@ -4,6 +4,8 @@ Imports Microsoft.Reporting.WebForms
 Imports System
 Imports System.Collections
 Imports System.Globalization
+Imports System.Data
+Imports ClosedXML.Excel
 Public Class WebForm36
     Inherits System.Web.UI.Page
     Dim aa As String
@@ -727,7 +729,7 @@ Public Class WebForm36
 
     Protected Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim bao As New BAO.ClsDBSqlcommand
-        bao.insert_tabean_sub(99734)
+        bao.insert_tabean_sub(96956)
         ' insert_tabean(TextBox1.Text)
     End Sub
     Sub insert_tabean(ByVal FK_IDA As Integer)
@@ -1871,7 +1873,7 @@ Public Class WebForm36
         Catch ex As Exception
 
         End Try
-        
+
         Try
             dao.fields.classcd = dao_rg.fields.GROUP_TYPE 'ประเภทของยา
         Catch ex As Exception
@@ -2440,7 +2442,7 @@ Public Class WebForm36
     End Sub
 
     Protected Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
-        
+
         Dim a As String = QR_CODE_IMG("https://medicina.fda.moph.go.th/FDA_DRUG/PDF/FRM_PDF.aspx?filename=D%3A%5Cpath%5CDRUG%5CPDF_TRADER_APPROVE%5CDA-1400001-2563-177262.pdf&fbclid=IwAR3FtzKM__HCxflcobFmXypHYLsw_zRLXZyoid3oayNKg1XRDeCm7_32VGg")
         RadBinaryImage1.DataValue = ConvertBase64ToByteArray(a)
     End Sub
@@ -2514,7 +2516,7 @@ Public Class WebForm36
 
     Protected Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
         Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_INSERT_DR15(52482, "1710500118665")
+        ws_update.DRUG_INSERT_DR15(54018, "1710500118665")
     End Sub
 
     Protected Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
@@ -2773,4 +2775,52 @@ Public Class WebForm36
         '    aa = cc("register")
         'Next
     End Sub
+
+    Protected Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
+        ImportExcel()
+    End Sub
+
+    Protected Sub ImportExcel()
+        'Open the Excel file using ClosedXML.
+        Using workBook As New XLWorkbook(FileUpload3.PostedFile.InputStream)
+            'Read the first Sheet from Excel file.
+            Dim workSheet As IXLWorksheet = workBook.Worksheet(1)
+
+            'Create a new DataTable.
+            Dim dt As New DataTable()
+
+            'Loop through the Worksheet rows.
+            Dim firstRow As Boolean = True
+            For Each row As IXLRow In workSheet.Rows()
+                'Use the first row to add columns to DataTable.
+                If row.Cell(1).Value.ToString <> "" And row.Cell(2).Value.ToString <> "" Then
+                    If firstRow Then
+                        For Each cell As IXLCell In row.Cells()
+                            If Len(cell.Value.ToString()) > 0 Then
+                                dt.Columns.Add(cell.Value.ToString())
+                            End If
+
+                        Next
+                        firstRow = False
+                    Else
+                        'Add rows to DataTable.
+                        dt.Rows.Add()
+                        Dim i As Integer = 0
+                        For Each cell As IXLCell In row.Cells()
+                            If Len(cell.Value.ToString()) > 0 Then
+                                dt.Rows(dt.Rows.Count - 1)(i) = cell.Value.ToString()
+                                i += 1
+                            End If
+
+                        Next
+                    End If
+                End If
+
+
+                GridView1.DataSource = dt
+                GridView1.DataBind()
+            Next
+        End Using
+    End Sub
 End Class
+

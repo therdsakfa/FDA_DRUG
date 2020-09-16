@@ -77,6 +77,15 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM2
     Protected WithEvents lbl_consider_date As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''ddl_template control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_template As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
     '''lbl_app_date control.
     '''</summary>
     '''<remarks>

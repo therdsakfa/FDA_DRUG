@@ -184,8 +184,8 @@
         dao_rqt.update()
 
 
-        Dim cls_sop As New CLS_SOP
-        cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", _ProcessID, _CLS.PVCODE, 2, "ตรวจรับคำขอ", "SOP-DRUG-10-" & _ProcessID & "-5", "ชำระเงินค่าประเมินคำขอ", "รอชำระเงินค่าประเมินคำขอ", "STAFF", tr_id, SOP_STATUS:="ตรวจรับคำขอ")
+        'Dim cls_sop As New CLS_SOP
+        'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", _ProcessID, _CLS.PVCODE, 2, "ตรวจรับคำขอ", "SOP-DRUG-10-" & _ProcessID & "-5", "ชำระเงินค่าประเมินคำขอ", "รอชำระเงินค่าประเมินคำขอ", "STAFF", tr_id, SOP_STATUS:="ตรวจรับคำขอ")
 
 
         AddLogStatus(6, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)

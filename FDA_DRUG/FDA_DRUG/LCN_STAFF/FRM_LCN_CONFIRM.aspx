@@ -150,6 +150,7 @@
                                  <asp:ListItem Value="0">---เลือกแบบ pdf---</asp:ListItem>
                                  <asp:ListItem Value="1">pdf แบบปกติ</asp:ListItem>
                                  <asp:ListItem Value="2">pdf แบบบ้านเลขที่ยาว</asp:ListItem>
+                                 <asp:ListItem Value="3">pdf QR แบบบ้านเลขที่ยาว</asp:ListItem>
                              </asp:DropDownList>
 
                          </td>

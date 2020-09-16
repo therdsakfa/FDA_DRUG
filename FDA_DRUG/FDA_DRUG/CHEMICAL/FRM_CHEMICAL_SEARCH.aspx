@@ -94,11 +94,11 @@
                 <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="15" AllowFilteringByColumn="True">
                <MasterTableView AutoGenerateColumns="False">
                    <Columns>
-                       <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
+                       <%--<telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
                            SortExpression="IDA" UniqueName="IDA" Display="false" AllowFiltering="true">
-                       </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="iowacd" FilterControlAltText="Filter iowacd column"
-                           HeaderText="เลขประจำสาร" SortExpression="iowacd" UniqueName="iowacd">
+                       </telerik:GridBoundColumn>--%>
+                       <telerik:GridBoundColumn DataField="IDA" FilterControlAltText="Filter IDA column"
+                           HeaderText="เลขประจำสาร" SortExpression="IDA" UniqueName="IDA">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="iowanm" FilterControlAltText="Filter iowanm column"
                            HeaderText="ชื่อสาร" SortExpression="iowanm" UniqueName="iowanm">

@@ -1108,6 +1108,12 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
         ' class_xml = cls_dalcn.gen_xml()
         class_xml.dalcns = dao.fields
         'p_lcn = class_xml
+        Try
+            class_xml.dalcns.IMAGE_BSN = dao.fields.IMAGE_BSN
+        Catch ex As Exception
+
+        End Try
+
 
         Dim bao_show As New BAO_SHOW
         'class_xml = cls_dalcn.gen_xml()
@@ -1245,6 +1251,12 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
                 class_xml.SHOW_LCNDATE_MONTH = appdate.ToString("MMMM")
                 class_xml.SHOW_LCNDATE_YEAR = con_year(appdate.Year)
 
+                Try
+                    class_xml.First_Appdate = appdate.Day & " " & appdate.ToString("MMMM") & " " & con_year(appdate.Year)
+                Catch ex As Exception
+
+                End Try
+
 
                 class_xml.RCVDAY = appdate.Day
                 class_xml.RCVMONTH = appdate.ToString("MMMM")
@@ -1314,7 +1326,7 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
 
         'End Try
 
-        p_dalcn = class_xml
+
 
         Dim statusId As Integer = dao.fields.STATUS_ID
         Dim lcntype As String = dao.fields.lcntpcd
@@ -1358,19 +1370,26 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
         '    dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
         'End If
 
+        Try
+            template_id = ddl_template.SelectedValue
+        Catch ex As Exception
+
+        End Try
         If statusId = 8 Then
             Dim Group As Integer
             If Integer.TryParse(dao_PHR.fields.PHR_MEDICAL_TYPE, Group) = True Then
 
                 'If PROCESS_ID = "104" Then
-                Try
-                    template_id = dao.fields.TEMPLATE_ID
-                Catch ex As Exception
-                    template_id = 0
-                End Try
+                'Try
+                '    template_id = dao.fields.TEMPLATE_ID
+                'Catch ex As Exception
+                '    template_id = 0
+                'End Try
 
                 If template_id = 2 Then
                     dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 0, _group:=9)
+                ElseIf template_id = 3 Then
+                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 11, _group:=0)
                 Else
                     'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
                     dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW_AND_GROUP(dao.fields.PROCESS_ID, statusId, 0, 0)
@@ -1381,11 +1400,11 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
             Else
 
                 'If PROCESS_ID = "104" Then
-                Try
-                    template_id = dao.fields.TEMPLATE_ID
-                Catch ex As Exception
-                    template_id = 0
-                End Try
+                'Try
+                '    template_id = dao.fields.TEMPLATE_ID
+                'Catch ex As Exception
+                '    template_id = 0
+                'End Try
                 If template_id = 2 Then
                     If statusId = 6 Then
                         dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(dao.fields.PROCESS_ID, lcntype, statusId, 0, _group:=9)
@@ -1393,7 +1412,8 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
                         dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(dao.fields.PROCESS_ID, lcntype, statusId, 0, _group:=9)
                         'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
                     End If
-
+                ElseIf template_id = 3 Then
+                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 11, _group:=0)
                 Else
                     dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(dao.fields.PROCESS_ID, lcntype, statusId, 0, _group:=0)
                     'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
@@ -1418,7 +1438,8 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
                 'Else
                 'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
                 'End If
-
+            ElseIf template_id = 3 Then
+                dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 11, _group:=0)
             Else
                 dao_pdftemplate.GetDataby_TEMPLAETE(dao.fields.PROCESS_ID, lcntype, statusId, 0)
             End If
@@ -1437,11 +1458,45 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
         Dim filename As String = paths & "PDF_EXTEND_TEMP\" & NAME_PDF("DA", dao.fields.PROCESS_ID, YEAR, _TR_ID)
         Dim Path_XML As String = paths & "XML_EXTEND_TEMP\" & NAME_XML("DA", dao.fields.PROCESS_ID, YEAR, _TR_ID)
         'load_PDF(filename)
+
+
+        Try
+            Dim url As String = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
+            'Dim ws As New WS_QR_CODE.WS_QR_CODE
+            'class_xml.QR_CODE = ws.GetQRImgByte(url)
+            class_xml.QR_CODE = QR_CODE_IMG(url)
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            Dim chw As String = ""
+            Dim dao_cpn As New DAO_CPN.clsDBsyschngwt
+            Try
+
+                dao_cpn.GetData_by_chngwtcd(dao.fields.chngwtcd)
+                chw = dao_cpn.fields.thachngwtnm
+
+            Catch ex As Exception
+
+            End Try
+            If dao.fields.chngwtcd <> 10 Then
+                class_xml.Position_name = "โดยสำนักงานสาธารณสุขจังหวัด" & chw
+            Else
+                class_xml.Position_name = "โดยสำนักงานคณะกรรมการอาหารและยา"
+            End If
+
+        Catch ex As Exception
+
+        End Try
+        p_dalcn = class_xml
+
+
         LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, dao.fields.PROCESS_ID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
 
 
-        lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename & "' ></iframe>"
-        hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+        lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+        hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
 
 
         HiddenField1.Value = filename

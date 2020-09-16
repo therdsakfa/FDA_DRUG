@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
-
+    
     '''<summary>
     '''hl_reader control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
-
+    
     '''<summary>
     '''HiddenField1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
-
+    
     '''<summary>
     '''HiddenField2 control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HiddenField2 As Global.System.Web.UI.WebControls.HiddenField
-
+    
     '''<summary>
     '''lr_preview control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''lbl_Status1 control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_Status1 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lbl_Status0 control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_Status0 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lbl_Status2 control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_Status2 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lbl_Status3 control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_Status3 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lbl_Status control.
     '''</summary>
@@ -93,7 +93,16 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_Status As Global.System.Web.UI.WebControls.Label
-
+    
+    '''<summary>
+    '''ddl_template control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_template As Global.System.Web.UI.WebControls.DropDownList
+    
     '''<summary>
     '''ddl_cnsdcd control.
     '''</summary>
@@ -102,7 +111,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_cnsdcd As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''Label1 control.
     '''</summary>
@@ -111,7 +120,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''ddl_permiss control.
     '''</summary>
@@ -120,7 +129,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_permiss As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''lbl_permiss control.
     '''</summary>
@@ -129,7 +138,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_permiss As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txt_appdate control.
     '''</summary>
@@ -138,7 +147,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_appdate As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btn_confirm control.
     '''</summary>
@@ -147,7 +156,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_cancel control.
     '''</summary>
@@ -156,7 +165,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_load control.
     '''</summary>
@@ -165,7 +174,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_preview control.
     '''</summary>
@@ -174,7 +183,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_preview As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_load0 control.
     '''</summary>
@@ -183,7 +192,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_drug_group control.
     '''</summary>
@@ -192,7 +201,7 @@ Partial Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_drug_group As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''UC_GRID_ATTACH control.
     '''</summary>

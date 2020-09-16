@@ -426,6 +426,26 @@
                 _syslctaddr_thasoi = value
             End Set
         End Property
+
+        Private _Position_name As String
+        Public Property Position_name() As String
+            Get
+                Return _Position_name
+            End Get
+            Set(ByVal value As String)
+                _Position_name = value
+            End Set
+        End Property
+
+        Private _First_Appdate As String
+        Public Property First_Appdate() As String
+            Get
+                Return _First_Appdate
+            End Get
+            Set(ByVal value As String)
+                _First_Appdate = value
+            End Set
+        End Property
 #End Region
 
     End Class
