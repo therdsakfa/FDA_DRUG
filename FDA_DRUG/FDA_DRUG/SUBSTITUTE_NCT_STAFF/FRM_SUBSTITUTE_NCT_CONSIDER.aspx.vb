@@ -126,8 +126,8 @@
 
             dao.update()
 
-            Dim cls_sop As New CLS_SOP
-            cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", PROCESS_ID, _CLS.PVCODE, 6, "เสนอลงนาม", "SOP-DRUG-10-" & PROCESS_ID & "-3", "อนุมัติ", "รอเจ้าหน้าที่อนุมัติคำขอ", "STAFF", _TR_ID, SOP_STATUS:="เสนอลงนาม")
+            'Dim cls_sop As New CLS_SOP
+            'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", PROCESS_ID, _CLS.PVCODE, 6, "เสนอลงนาม", "SOP-DRUG-10-" & PROCESS_ID & "-3", "อนุมัติ", "รอเจ้าหน้าที่อนุมัติคำขอ", "STAFF", _TR_ID, SOP_STATUS:="เสนอลงนาม")
             alert("บันทึกข้อมูลเรียบร้อย")
         Catch ex As Exception
             Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")

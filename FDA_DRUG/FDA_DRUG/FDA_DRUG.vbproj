@@ -784,6 +784,7 @@
     <Content Include="EXTEND_TIME_LOCATION\FRM_EXTEND_TIME_LOCATION_MAIN_USER.aspx" />
     <Content Include="EXTEND_TIME_LOCATION\FRM_UPLOAD_ATTACH_EXTEND.aspx" />
     <Content Include="EXTEND_TIME_LOCATION\POPUP_SHOW_RDLC.aspx" />
+    <Content Include="EXTEND_TIME_LOCATION_STAFF\FRM_EXTEND_TIME_LOCATION_GPP.aspx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\FRM_EXTEND_TIME_LOCATION_MAIN_STAFF.aspx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\FRM_LCN_PREVIEW.aspx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EDIT_LOCATION_STAFF_CONFIRM.aspx" />
@@ -1093,7 +1094,6 @@
     <Content Include="fonts\thaisansneue-regular-webfont.svg" />
     <Content Include="FRM_MAKE_REVIEW_CHEM.aspx" />
     <Content Include="FRM_XML.aspx" />
-    <Content Include="Global.asax" />
     <Content Include="Html5\html5shiv.min.js" />
     <Content Include="Html5\respond.min.js" />
     <Content Include="Images\01.png" />
@@ -3058,6 +3058,13 @@
     </Compile>
     <Compile Include="EXTEND_TIME_LOCATION\POPUP_SHOW_RDLC.aspx.vb">
       <DependentUpon>POPUP_SHOW_RDLC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EXTEND_TIME_LOCATION_STAFF\FRM_EXTEND_TIME_LOCATION_GPP.aspx.designer.vb">
+      <DependentUpon>FRM_EXTEND_TIME_LOCATION_GPP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EXTEND_TIME_LOCATION_STAFF\FRM_EXTEND_TIME_LOCATION_GPP.aspx.vb">
+      <DependentUpon>FRM_EXTEND_TIME_LOCATION_GPP.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="EXTEND_TIME_LOCATION_STAFF\FRM_EXTEND_TIME_LOCATION_MAIN_STAFF.aspx.designer.vb">
@@ -5167,9 +5174,6 @@
     <Compile Include="FRM_XML.aspx.vb">
       <DependentUpon>FRM_XML.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Global.asax.vb">
-      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LCN\FRM_LCN_CONFIRM_DRUG.aspx.designer.vb">
       <DependentUpon>FRM_LCN_CONFIRM_DRUG.aspx</DependentUpon>

@@ -75,6 +75,12 @@ Namespace BAO
             dta = Queryds(sql)
             Return dta
         End Function
+        Public Function SP_GPP_BY_YEAR_EXT(ByVal _year As Integer) As DataTable
+            Dim sql As String = "exec SP_GPP_BY_YEAR_EXT @year=" & _year
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
         Public Function SP_CUSTOMER_LCN_BY_IDENTIFY(ByVal IDENTITY As String) As DataTable
 
             Dim sql As String = "exec SP_CUSTOMER_LCN_BY_IDENTIFY @iden= '" & IDENTITY & "'"

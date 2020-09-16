@@ -428,11 +428,11 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
             dao.update()
 
             alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.rcvno)
-        ElseIf STATUS_ID = 5 Then
+        ElseIf STATUS_ID = 6 Then
             Response.Redirect("FRM_SUBSTITUTE_NCT_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & PROCESS_ID)
-            dao.fields.appdate = CDate(txt_appdate.Text)
-            dao.fields.STATUS_ID = STATUS_ID
-            dao.update()
+            'dao.fields.appdate = CDate(txt_appdate.Text)
+            'dao.fields.STATUS_ID = STATUS_ID
+            'dao.update()
         ElseIf STATUS_ID = 8 Then
             dao.fields.appdate = CDate(txt_appdate.Text)
             dao.fields.STATUS_ID = STATUS_ID
