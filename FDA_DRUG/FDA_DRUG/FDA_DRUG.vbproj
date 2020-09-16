@@ -1093,7 +1093,6 @@
     <Content Include="fonts\thaisansneue-regular-webfont.svg" />
     <Content Include="FRM_MAKE_REVIEW_CHEM.aspx" />
     <Content Include="FRM_XML.aspx" />
-    <Content Include="Global.asax" />
     <Content Include="Html5\html5shiv.min.js" />
     <Content Include="Html5\respond.min.js" />
     <Content Include="Images\01.png" />
@@ -5167,9 +5166,6 @@
     <Compile Include="FRM_XML.aspx.vb">
       <DependentUpon>FRM_XML.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Global.asax.vb">
-      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LCN\FRM_LCN_CONFIRM_DRUG.aspx.designer.vb">
       <DependentUpon>FRM_LCN_CONFIRM_DRUG.aspx</DependentUpon>
