@@ -30,6 +30,12 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
             Bind_ddl_Status_staff()
             show_btn(_IDA)
             UC_GRID_ATTACH.load_gv(_TR_ID)
+            Try
+                txt_appdate.Text = Date.Now.ToShortDateString()
+            Catch ex As Exception
+
+            End Try
+
             If Request.QueryString("identify") <> "" Then
                 If Request.QueryString("identify") <> _CLS.CITIZEN_ID_AUTHORIZE Then
                     AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("identify"), 0, HttpContext.Current.Request.Url.AbsoluteUri)
@@ -423,7 +429,7 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
 
             alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.rcvno)
         ElseIf STATUS_ID = 5 Then
-            Response.Redirect("FRM_SUBSTITUTE_TABEAN_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & PROCESS_ID)
+            Response.Redirect("FRM_SUBSTITUTE_NCT_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & PROCESS_ID)
             dao.fields.appdate = CDate(txt_appdate.Text)
             dao.fields.STATUS_ID = STATUS_ID
             dao.update()
