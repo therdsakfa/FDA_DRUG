@@ -225,34 +225,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_GPP
         End If
         'RadGrid1.Rebind()
     End Sub
-    Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
-        Search_FN()
-        RadGrid1.Rebind()
-        Dim ws As New AUTHEN_LOG.Authentication
-        'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ค้นหาข้อมูลหน้าเจ้าหน้าที่ระบบต่อายุใบอนุญาต", _process)
 
-        Dim ws_118 As New WS_AUTHENTICATION.Authentication
-        Dim ws_66 As New Authentication_66.Authentication
-        Dim ws_104 As New AUTHENTICATION_104.Authentication
-        Try
-            ws_118.Timeout = 10000
-            ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ค้นหาข้อมูลหน้าเจ้าหน้าที่ระบบต่อายุใบอนุญาต", _process)
-        Catch ex As Exception
-            Try
-                ws_66.Timeout = 10000
-                ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ค้นหาข้อมูลหน้าเจ้าหน้าที่ระบบต่อายุใบอนุญาต", _process)
-
-            Catch ex2 As Exception
-                Try
-                    ws_104.Timeout = 10000
-                    ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ค้นหาข้อมูลหน้าเจ้าหน้าที่ระบบต่อายุใบอนุญาต", _process)
-
-                Catch ex3 As Exception
-                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'http://privus.fda.moph.go.th';", True)
-                End Try
-            End Try
-        End Try
-    End Sub
     Public Sub set_color_rg()
         If RadGrid1.Items.Count > 0 Then
             Dim i As Integer = 0
