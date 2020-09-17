@@ -6,6 +6,8 @@ Imports System.Collections
 Imports System.Globalization
 Imports System.Data
 Imports ClosedXML.Excel
+Imports Telerik.Web.UI
+
 Public Class WebForm36
     Inherits System.Web.UI.Page
     Dim aa As String
@@ -1025,7 +1027,7 @@ Public Class WebForm36
         Next
 
 
-        Dim dao_prop_det As New DAO_DRUG.tb_DRRQT_PROPERTIES_AND_DETAIL
+        Dim dao_prop_det As New DAO_DRUG.TB_DRRQT_PROPERTIES_AND_DETAIL
         dao_prop_det.GetDataby_FKIDA(FK_IDA)
         For Each dao_prop_det.fields In dao_prop_det.datas
             Dim dao_rgt_pd As New DAO_DRUG.TB_DRRGT_PROPERTIES_AND_DETAIL
@@ -2825,6 +2827,14 @@ Public Class WebForm36
                 RadGrid1.DataBind()
             Next
         End Using
+    End Sub
+
+    Protected Sub Button32_Click(sender As Object, e As EventArgs) Handles Button32.Click
+        For Each item As GridDataItem In RadGrid1.Items
+            Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+            dao_dal.GetDataby_pvnabbr_lcnno(item("pvnabbr").Text, item("lcnno").Text)
+
+        Next
     End Sub
 End Class
 

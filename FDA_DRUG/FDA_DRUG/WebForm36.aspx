@@ -221,6 +221,7 @@
         <p>
             <asp:FileUpload ID="FileUpload3" runat="server" />
             <asp:Button ID="Button31" runat="server" Text="Button" />
+            <asp:Button ID="Button32" runat="server" Text="Button" />
             <asp:GridView ID="GridView1" runat="server">
             </asp:GridView>
 
