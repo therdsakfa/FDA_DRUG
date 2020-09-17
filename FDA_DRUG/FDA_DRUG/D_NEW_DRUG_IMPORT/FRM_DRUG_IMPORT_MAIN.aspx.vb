@@ -5,6 +5,7 @@ Imports Telerik.Web.UI
 Public Class FRM_DRUG_IMPORT_MAIN
     Inherits System.Web.UI.Page
     Private _CLS As New CLS_SESSION
+    Private _type As String
     Private _process As String = ""
 
     Sub RunSession()
@@ -19,6 +20,11 @@ Public Class FRM_DRUG_IMPORT_MAIN
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")  'เกิด  ERROR  จะเกิดกลับมาหน้า privus
         End Try
+        Try
+            _type = Request("type").ToString()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -26,8 +32,8 @@ Public Class FRM_DRUG_IMPORT_MAIN
     End Sub
 
     Protected Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
-        If rcb_search.SelectedValue <> "0" Then
-            Dim url As String = ""
+        'If rcb_search.SelectedValue <> "0" Then
+        Dim url As String = ""
             Dim NYM As String = ""
             If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
                 Select Case _process
@@ -40,10 +46,10 @@ Public Class FRM_DRUG_IMPORT_MAIN
                     Case "1030"
                         NYM = "5"
                 End Select
-                url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & rcb_search.SelectedValue & "&NYM=" & NYM
-                Response.Redirect(url)
+            url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & "&NYM=" & NYM
+            Response.Redirect(url)
             End If
-        End If
+        'End If
     End Sub
     Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand
         If TypeOf e.Item Is GridDataItem Then
@@ -80,4 +86,52 @@ Public Class FRM_DRUG_IMPORT_MAIN
 
         End If
     End Sub
+
+    Protected Sub RadGrid1_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
+        Dim bao As New BAO.ClsDBSqlcommand
+        Dim dt As New DataTable
+        'SP_STAFF_DALCN_BY_PVNCD
+        'If _pvncd = 10 Then
+        '    dt = bao.SP_STAFF_DALCN()
+        'Else
+        '    dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
+        'End If
+
+        dt = bao.SP_STAFF_NYM()
+        Dim IDGroup As Integer = 0
+        Try
+            IDGroup = _CLS.GROUPS
+            If _process = "" Then
+                Exit Sub
+            End If
+        Catch ex As Exception
+
+        End Try
+        If IDGroup = 21020 Then
+            If _type = "" Then
+                RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process)
+            Else
+                RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process & " and donate_type = " & _type)
+            End If
+        ElseIf IDGroup = 63346 Then
+            If _type = "" Then
+                RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process)
+            Else
+                RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process & " and donate_type = " & _type)
+            End If
+        ElseIf IDGroup = 63347 Then
+            If _type = "" Then
+                RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process)
+            Else
+                RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process & " and donate_type = " & _type)
+            End If
+        ElseIf IDGroup = 63348 Then
+            If _type = "" Then
+                RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process)
+            Else
+                RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process & " and donate_type = " & _type)
+            End If
+        End If
+    End Sub
+
 End Class

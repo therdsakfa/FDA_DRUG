@@ -158,4 +158,8 @@ Public Class FRM_NORYORMOR_2_to_5_MAIN1
             btn_sel.Style.Add("display", "none")
         End If
     End Sub
+
+    Protected Sub GV_data_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
