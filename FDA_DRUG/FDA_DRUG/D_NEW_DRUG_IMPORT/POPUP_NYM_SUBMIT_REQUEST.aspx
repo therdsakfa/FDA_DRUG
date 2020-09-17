@@ -104,12 +104,12 @@
 
             </td>
         </tr>
-        <tr>
+        <%--<tr>
             <td style="width: 30%; height: 50%; padding-left: 10%">
 
                 <uc1:UC_GRID_ATTACH runat="server" ID="UC_GRID_ATTACH" />
 
             </td>
-        </tr>
+        </tr>--%>
     </table>
 </asp:Content>
