@@ -97,7 +97,7 @@
     </div>
     <div>
         <div class="panel-heading panel-title" style="padding-left: 5%;">
-            <h2>ผลิตภัณฑ์ยาเพื่อโครงการวิจัย</h2>
+            <h2>ผลิตภัณฑ์ยาไม่ต้องขึ้นทะเบียน</h2>
            
             
             <br />
