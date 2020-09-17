@@ -95,6 +95,8 @@ Public Class FRM_SEARCH_DL
     End Sub
 
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
+        Dim DL As String
+        DL = rcb_search.SelectedValue
         If rcb_search.SelectedValue <> "0" Then
             Dim url As String = ""
             Dim NYM As String = ""
@@ -115,6 +117,10 @@ Public Class FRM_SEARCH_DL
         Else
             alert("กรุณาเลือกเลขบัญชีรายการยา")
         End If
+
+    End Sub
+
+    Protected Sub rcb_search_SelectedIndexChanged(sender As Object, e As RadComboBoxSelectedIndexChangedEventArgs) Handles rcb_search.SelectedIndexChanged
 
     End Sub
     'Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
