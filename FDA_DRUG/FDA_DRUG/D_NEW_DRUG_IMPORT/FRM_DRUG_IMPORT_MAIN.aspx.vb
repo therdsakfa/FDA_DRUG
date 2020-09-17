@@ -44,4 +44,39 @@ Public Class FRM_DRUG_IMPORT_MAIN
             Response.Redirect(url)
         End If
     End Sub
+    Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand
+        If TypeOf e.Item Is GridDataItem Then
+            Dim item As GridDataItem = e.Item
+
+            'drsamp IDA
+            Dim IDA As Integer = 0
+            Try
+                IDA = item("IDA").Text
+            Catch ex As Exception
+
+            End Try
+
+            Dim PROCESS_ID As Integer = 0
+            Try
+                PROCESS_ID = item("PROCESS_ID").Text
+            Catch ex As Exception
+
+            End Try
+
+            If e.CommandName = "sel" Then
+                Dim dao As New DAO_DRUG.ClsDBdrsamp
+                dao.GetDataby_IDA(IDA)
+                Dim tr_id As Integer = 0
+                Try
+                    tr_id = dao.fields.TR_ID
+                Catch ex As Exception
+
+                End Try
+
+
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & PROCESS_ID & "');", True)
+            End If
+
+        End If
+    End Sub
 End Class
