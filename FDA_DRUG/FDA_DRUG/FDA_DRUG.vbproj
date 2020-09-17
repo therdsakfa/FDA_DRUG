@@ -770,6 +770,7 @@
     <Content Include="DS\UC\UC_DS_DRUG8_ADD.ascx" />
     <Content Include="DS_STAFF\FRM_DS_STAFF_REMARK2.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_MAIN.aspx" />
+    <Content Include="D_NEW_DRUG_IMPORT\POPUP_NYM_SUBMIT_REQUEST.aspx" />
     <Content Include="EDIT_LCN\FRM_EDIT_LCN_CONFIRM.aspx" />
     <Content Include="EDIT_LCN\FRM_EDIT_LCN_MAIN.aspx" />
     <Content Include="EDIT_LCN\FRM_EDIT_LCN_UPLOAD.aspx" />
@@ -811,6 +812,7 @@
     <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx" />
     <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_NEW.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_SUBMIT_REQUEST.aspx" />
     <Content Include="PDF\FRM_PDF_VIEW.aspx" />
     <Content Include="PDF\FRM_REPORT_RDLC.aspx" />
     <Content Include="PDF\FRM_RPT_PDF.aspx" />
@@ -2965,6 +2967,13 @@
       <DependentUpon>FRM_DRUG_IMPORT_MAIN.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\POPUP_NYM_SUBMIT_REQUEST.aspx.designer.vb">
+      <DependentUpon>POPUP_NYM_SUBMIT_REQUEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\POPUP_NYM_SUBMIT_REQUEST.aspx.vb">
+      <DependentUpon>POPUP_NYM_SUBMIT_REQUEST.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="EDIT_LCN\FRM_EDIT_LCN_CONFIRM.aspx.designer.vb">
       <DependentUpon>FRM_EDIT_LCN_CONFIRM.aspx</DependentUpon>
     </Compile>
@@ -3276,6 +3285,13 @@
     <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_NEW.aspx.vb">
       <DependentUpon>FRM_STAFF_NYM_NEW.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_SUBMIT_REQUEST.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM_SUBMIT_REQUEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_SUBMIT_REQUEST.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM_SUBMIT_REQUEST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PDF\FRM_PDF_VIEW.aspx.designer.vb">
       <DependentUpon>FRM_PDF_VIEW.aspx</DependentUpon>
