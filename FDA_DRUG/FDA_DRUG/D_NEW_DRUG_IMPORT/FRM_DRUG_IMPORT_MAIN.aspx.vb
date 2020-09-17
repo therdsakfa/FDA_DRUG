@@ -26,22 +26,23 @@ Public Class FRM_DRUG_IMPORT_MAIN
     End Sub
 
     Protected Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
-
-        Dim url As String = ""
-        Dim NYM As String = ""
-        If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
-            Select Case _process
-                Case "1027"
-                    NYM = "2"
-                Case "1028"
-                    NYM = "3"
-                Case "1029"
-                    NYM = "4"
-                Case "1030"
-                    NYM = "5"
-            End Select
-            url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & rcb_search.SelectedValue & "&NYM=" & NYM
-            Response.Redirect(url)
+        If rcb_search.SelectedValue <> "0" Then
+            Dim url As String = ""
+            Dim NYM As String = ""
+            If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
+                Select Case _process
+                    Case "1027"
+                        NYM = "2"
+                    Case "1028"
+                        NYM = "3"
+                    Case "1029"
+                        NYM = "4"
+                    Case "1030"
+                        NYM = "5"
+                End Select
+                url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & rcb_search.SelectedValue & "&NYM=" & NYM
+                Response.Redirect(url)
+            End If
         End If
     End Sub
     Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand
