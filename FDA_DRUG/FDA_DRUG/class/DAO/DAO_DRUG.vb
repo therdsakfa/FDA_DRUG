@@ -1748,6 +1748,12 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_pvnabbr_lcnno(ByVal pvnabbr As String, ByVal lcnno As String)
+
+            datas = (From p In db.dalcns Where p.pvnabbr = pvnabbr And p.lcnno = lcnno And p.lcntpcd = "ขย1" Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub GetDataby_FK_IDA_and_PROCESS_ID(ByVal FK_IDA As Integer, ByVal PROCESS_ID As Integer)
 
             datas = (From p In db.dalcns Where p.FK_IDA = FK_IDA And p.PROCESS_ID = PROCESS_ID And p.STATUS_ID = 8 Select p)
