@@ -116,8 +116,8 @@
         <div style="text-align: right; padding-left: 5%; height: 60px;">
             <asp:Button ID="btn_add" runat="server" Text="เพิ่มคำขอ" Width="170px" CssClass="btn-lg" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <%--     <asp:Button ID="btn_reload" runat="server" Text="reload" Style="display: none" />
-            <asp:Button ID="Button1" runat="server" Text="Button" Style="display: none" />--%>
+            <asp:Button ID="btn_reload" runat="server" Text="reload" Style="display: none" />
+            <asp:Button ID="Button1" runat="server" Text="Button" Style="display: none" />
         </div>
     </div>
 
