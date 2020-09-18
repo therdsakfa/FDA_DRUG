@@ -95,6 +95,8 @@ Public Class FRM_SEARCH_DL
     End Sub
 
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
+        Dim DL As String
+        DL = rcb_search.SelectedValue
         If rcb_search.SelectedValue <> "0" Then
             Dim url As String = ""
             Dim NYM As String = ""
@@ -109,7 +111,7 @@ Public Class FRM_SEARCH_DL
                     Case "1030"
                         NYM = "5"
                 End Select
-                url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & rcb_search.SelectedValue & "&NYM=" & NYM
+                url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_MAIN?TOKEN=" & _CLS.TOKEN & "&DL=" & rcb_search.SelectedValue & "&NYM=" & NYM
                 Response.Redirect(url)
             End If
         Else
@@ -117,4 +119,31 @@ Public Class FRM_SEARCH_DL
         End If
 
     End Sub
+
+    Protected Sub rcb_search_SelectedIndexChanged(sender As Object, e As RadComboBoxSelectedIndexChangedEventArgs) Handles rcb_search.SelectedIndexChanged
+
+    End Sub
+    'Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
+    '    If rcb_search.SelectedValue <> "0" Then
+    '        Dim url As String = ""
+    '        Dim NYM As String = ""
+    '        If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
+    '            Select Case _process
+    '                Case "1027"
+    '                    NYM = "2"
+    '                Case "1028"
+    '                    NYM = "3"
+    '                Case "1029"
+    '                    NYM = "4"
+    '                Case "1030"
+    '                    NYM = "5"
+    '            End Select
+    '            url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & rcb_search.SelectedValue & "&NYM=" & NYM
+    '            Response.Redirect(url)
+    '        End If
+    '    Else
+    '        alert("กรุณาเลือกเลขบัญชีรายการยา")
+    '    End If
+
+    'End Sub
 End Class
