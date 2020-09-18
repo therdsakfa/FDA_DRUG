@@ -7,6 +7,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
     Private _CLS As New CLS_SESSION
     Private _type As String
     Private _process As String = ""
+    Private _DL As String = ""
 
     Sub RunSession()
 
@@ -14,6 +15,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
             _CLS = Session("CLS")
             ''นำค่า Session ใส่ ในตัวแปร _CLS
             _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
+            _DL = Request.QueryString("DL")
             '_lct_ida = Request.QueryString("lct_ida")
             '_type = Request.QueryString("type")
             '_process_for = Request.QueryString("process_for")
@@ -32,23 +34,25 @@ Public Class FRM_DRUG_IMPORT_MAIN
     End Sub
 
     Protected Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
+        'Dim DL As String
+        'DL = rcb_search.SelectedValue
         'If rcb_search.SelectedValue <> "0" Then
         Dim url As String = ""
-        Dim NYM As String = ""
-        If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
-            Select Case _process
-                Case "1027"
-                    NYM = "2"
-                Case "1028"
-                    NYM = "3"
-                Case "1029"
-                    NYM = "4"
-                Case "1030"
-                    NYM = "5"
-            End Select
-            url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & "&NYM=" & NYM
+            Dim NYM As String = ""
+            If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
+                Select Case _process
+                    Case "1027"
+                        NYM = "2"
+                    Case "1028"
+                        NYM = "3"
+                    Case "1029"
+                        NYM = "4"
+                    Case "1030"
+                        NYM = "5"
+                End Select
+            url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM
             Response.Redirect(url)
-        End If
+            End If
         'End If
     End Sub
     Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand
