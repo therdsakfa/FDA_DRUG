@@ -3,7 +3,7 @@ Imports System.Xml.Serialization
 Imports iTextSharp.text.pdf
 Imports FDA_DRUG.XML_CENTER
 
-Public Class POPUP_REGISTRATION_CONFIRM
+Public Class FRM_STAFF_NYM_SUBMIT_REQUEST
     Inherits System.Web.UI.Page
 
     Private _IDA As String
@@ -169,14 +169,14 @@ Public Class POPUP_REGISTRATION_CONFIRM
         alert("ยกเลิกข้อมุลเรียบร้อยแล้ว")
     End Sub
 
-    Protected Sub btn_load_Click(sender As Object, e As EventArgs) Handles btn_load.Click
-        Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
-        Dim dao_TR As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao.GetDataby_IDA(Integer.Parse(_IDA))
-        dao_TR.GetDataby_IDA(dao.fields.TR_ID)
+    'Protected Sub btn_load_Click(sender As Object, e As EventArgs) Handles btn_load.Click
+    '    Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+    '    Dim dao_TR As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+    '    dao.GetDataby_IDA(Integer.Parse(_IDA))
+    '    dao_TR.GetDataby_IDA(dao.fields.TR_ID)
 
-        load_PDF(_CLS.PDFNAME, _CLS.FILENAME_PDF)
-    End Sub
+    '    load_PDF(_CLS.PDFNAME, _CLS.FILENAME_PDF)
+    'End Sub
     Private Sub load_PDF(ByVal path As String, ByVal fileName As String)
         Dim bao As New BAO.AppSettings
         Dim clsds As New ClassDataset
