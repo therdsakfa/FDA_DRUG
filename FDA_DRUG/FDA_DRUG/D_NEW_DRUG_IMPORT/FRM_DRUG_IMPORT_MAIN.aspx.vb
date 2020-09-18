@@ -123,7 +123,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
         Try
             IDGroup = _CLS.GROUPS
             If _process = "" Then
-                Exit Sub
+
             End If
         Catch ex As Exception
 
