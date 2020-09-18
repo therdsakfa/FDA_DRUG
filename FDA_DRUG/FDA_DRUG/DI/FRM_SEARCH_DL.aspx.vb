@@ -40,18 +40,21 @@ Public Class FRM_SEARCH_DL
         'UC_INFMT1.Shows(_lct_ida)
     End Sub
     Private Sub load_ddl()
-        Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
-        dao.GetDataby_CTZNO(_CLS.CITIZEN_ID_AUTHORIZE)
+        ' Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+        'dao.GetDataby_CTZNO(_CLS.CITIZEN_ID_AUTHORIZE)
         '-------------------------
-        'Dim item As New ListItem("---กรุณาเลือก---", "0")
-        rcb_search.DataSource = dao.datas 'dao.datas
+        Dim item As New ListItem("---กรุณาเลือก---", "0")
+        Dim dao As New BAO.ClsDBSqlcommand
+        Dim dt As New DataTable
+        dao.SP_REGIS_NO()
+        'rcb_search.DataSource = dao.datas 'dao.datas
         rcb_search.DataTextField = "REGIS_NO"
         rcb_search.DataValueField = "IDA"
         rcb_search.DataBind()
-        Dim item As New RadComboBoxItem
+        Dim itemm As New RadComboBoxItem
         item.Text = "---กรุณาเลือก---"
         item.Value = "0"
-        rcb_search.Items.Insert(0, item)
+        rcb_search.Items.Insert(0, itemm)
     End Sub
     Private Sub load_HL()
         'hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug&ida_location=" & 0
