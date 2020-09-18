@@ -58,4 +58,7 @@
         End If
     End Sub
 
+    Protected Sub GV_data_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

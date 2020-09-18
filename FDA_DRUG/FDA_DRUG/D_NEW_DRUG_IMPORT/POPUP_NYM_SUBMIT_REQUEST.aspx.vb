@@ -76,15 +76,15 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")
     End Sub
 
-    Protected Sub btn_load_Click(sender As Object, e As EventArgs) Handles btn_load.Click
-        Dim dao As New DAO_DRUG.ClsDBdrimpfor
-        dao.GetDataby_IDA(Integer.Parse(_IDA))
-        If dao.fields.lcntpcd = 11 Then
-            fusion_XML_To_PDF("DA-41-2558-" & _IDA.ToString())
-        Else
-            fusion_XML_To_PDF("DA-41-2558-" & _IDA.ToString())
-        End If
-    End Sub
+    'Protected Sub btn_load_Click(sender As Object, e As EventArgs) Handles btn_load.Click
+    '    Dim dao As New DAO_DRUG.ClsDBdrimpfor
+    '    dao.GetDataby_IDA(Integer.Parse(_IDA))
+    '    If dao.fields.lcntpcd = 11 Then
+    '        fusion_XML_To_PDF("DA-41-2558-" & _IDA.ToString())
+    '    Else
+    '        fusion_XML_To_PDF("DA-41-2558-" & _IDA.ToString())
+    '    End If
+    'End Sub
     ''' <summary>
     ''' รวม XML เข้าไปที่ PDF จดทะเบียน
     ''' </summary>

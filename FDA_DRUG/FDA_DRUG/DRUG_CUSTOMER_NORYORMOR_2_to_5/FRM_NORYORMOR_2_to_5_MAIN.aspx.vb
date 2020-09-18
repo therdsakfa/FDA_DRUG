@@ -162,4 +162,8 @@ Public Class FRM_NORYORMOR_2_to_5_MAIN1
     Protected Sub GV_data_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
+
+    Protected Sub GV_data_SelectedIndexChanged1(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
