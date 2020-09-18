@@ -2,7 +2,6 @@
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register src="../UC/UC_Information.ascx" tagname="UC_Information" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../css/css_radgrid.css" rel="stylesheet" />
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -115,8 +114,8 @@
         <div style="text-align: right; padding-left: 5%; height: 60px;">
             <asp:Button ID="btn_add" runat="server" Text="เพิ่มคำขอ" Width="170px" CssClass="btn-lg" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btn_reload" runat="server" Text="reload" Style="display: none" />
-            <asp:Button ID="Button1" runat="server" Text="Button" Style="display: none" />
+       <%--     <asp:Button ID="btn_reload" runat="server" Text="reload" Style="display: none" />
+            <asp:Button ID="Button1" runat="server" Text="Button" Style="display: none" />--%>
         </div>
     </div>
   
