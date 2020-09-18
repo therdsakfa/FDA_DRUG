@@ -6,7 +6,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="panel" style="width:100%">
             <div class="panel-heading panel-title">
-                <h1>นำเข้าข้อมูล GPP (ขย1)</h1>
+                <h1>นำเข้าข้อมูล GPP (ขย1)<asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+                </h1>
             </div>
             <div class="panel-body">
                 <p>

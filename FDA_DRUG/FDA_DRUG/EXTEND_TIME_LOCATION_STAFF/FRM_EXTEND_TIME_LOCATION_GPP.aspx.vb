@@ -257,7 +257,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_GPP
             item = e.Item
             Dim IDA As String = item("IDA").Text
             Dim lc_IDA As String = ""
-            lc_IDA = item("lc_IDA").Text
+            'lc_IDA = item("lc_IDA").Text
             'Dim btn_Select1 As LinkButton = DirectCast(item("btn_Select1").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
             dao.GetDataby_IDA(IDA)
@@ -284,8 +284,12 @@ Public Class FRM_EXTEND_TIME_LOCATION_GPP
     End Sub
 
     Protected Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
-        Dim url As String = "../POPUP_IMPORT_GPP.aspx.aspx"
+        Dim url As String = "../EXTEND_TIME_LOCATION_STAFF/POPUP_IMPORT_GPP.aspx"
         'btn_edit.Attributes.Add("OnClick", "Popups2('" & url & "'); return false;")
-        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "Popups2('" & url & "'); return false;", True)
+        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "Popups2('" & url & "');", True)
+    End Sub
+
+    Private Sub ddl_year_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_year.SelectedIndexChanged
+        RadGrid1.Rebind()
     End Sub
 End Class
