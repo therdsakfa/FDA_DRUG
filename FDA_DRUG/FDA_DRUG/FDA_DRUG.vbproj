@@ -1485,6 +1485,14 @@
       <LastGenOutput>LINQ_FDA_XML_DRUG_ESUB.designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Linq\LINQ_FDA_DRUG_IMPORT.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LINQ_FDA_DRUG_IMPORT.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Linq\LINQ_FDA_DRUG_IMPORT.dbml.layout">
+      <DependentUpon>LINQ_FDA_DRUG_IMPORT.dbml</DependentUpon>
+    </None>
     <None Include="My Project\PublishProfiles\D2.pubxml" />
     <None Include="My Project\PublishProfiles\DDD.pubxml" />
     <None Include="My Project\PublishProfiles\DRUG.pubxml" />
@@ -2223,6 +2231,7 @@
     <Compile Include="class\CLS_SOP.vb" />
     <Compile Include="class\cls_utility.vb" />
     <Compile Include="class\DAO\DAO_BOOKING.vb" />
+    <Compile Include="class\DAO\DAO_DRUG_IMPORT.vb" />
     <Compile Include="class\DAO\DAO_FDA_XML_DRUG.vb" />
     <Compile Include="class\DAO\DAO_FEE.vb" />
     <Compile Include="class\DAO\DAO_NCT.vb" />
@@ -3184,6 +3193,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LINQ_BOOKING.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\LINQ_FDA_DRUG_IMPORT.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LINQ_FDA_DRUG_IMPORT.dbml</DependentUpon>
     </Compile>
     <Compile Include="Linq\LINQ_FDA_XML_DRUG_ESUB.designer.vb">
       <AutoGen>True</AutoGen>
