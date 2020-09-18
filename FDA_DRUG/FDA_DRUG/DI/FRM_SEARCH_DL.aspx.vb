@@ -111,7 +111,7 @@ Public Class FRM_SEARCH_DL
                     Case "1030"
                         NYM = "5"
                 End Select
-                url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_MAIN?TOKEN=" & _CLS.TOKEN & "&DL=" & rcb_search.SelectedValue & "&NYM=" & NYM
+                url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_MAIN.aspx?DL=" & rcb_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
                 Response.Redirect(url)
             End If
         Else
