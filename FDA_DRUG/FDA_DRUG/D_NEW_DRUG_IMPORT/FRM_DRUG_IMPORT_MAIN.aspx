@@ -6,7 +6,7 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script type="text/javascript" >
+    <%--<script type="text/javascript" >
         $(document).ready(function () {
             $(window).load(function () {
                 $.ajax({
@@ -91,13 +91,13 @@
              $('#ContentPlaceHolder1_Button1').click();
 
          }
-     </script>
+     </script>--%>
     <div id="spinner" style="background-color: transparent;display:none;">
         <img src="../imgs/spinner.gif" alt="Loading" style="position: absolute; top: 120px; left: 293px; height: 185px; width: 207px;" />
     </div>
     <div>
         <div class="panel-heading panel-title" style="padding-left: 5%;">
-            <h2>ผลิตภัณฑ์ยาไม่ต้องขึ้นทะเบียน</h2>
+       <%--     <h2>ผลิตภัณฑ์ยาไม่ต้องขึ้นทะเบียน</h2>--%>
            
             
             <br />
@@ -113,7 +113,7 @@
     
     <div class="panel-info" style="text-align: right; width: 100%">
         <div style="text-align: right; padding-left: 5%; height: 60px;">
-            <asp:Button ID="btn_add" runat="server" Text="เพิ่มคำขอ" Width="170px" CssClass="btn-lg " />
+            <asp:Button ID="btn_add" runat="server" Text="เพิ่มคำขอ" Width="170px" CssClass="btn-lg" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btn_reload" runat="server" Text="reload" Style="display: none" />
             <asp:Button ID="Button1" runat="server" Text="Button" Style="display: none" />
