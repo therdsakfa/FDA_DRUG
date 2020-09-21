@@ -2460,6 +2460,12 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_DLONLY(ByVal ctzno As String) 'min select only DL indatabase 
+
+            datas = (From p In db.DRUG_REGISTRATIONs Where p.CITIZEN_ID_AUTHORIZE = ctzno And p.REGIS_NO = "DL%" And p.REGIS_NO <> "" Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub GetDataby_FK_IDA2(ByVal FK_IDA As Integer)
 
             datas = (From p In db.DRUG_REGISTRATIONs Where p.FK_IDA = FK_IDA And p.STATUS_ID = 8 Select p)

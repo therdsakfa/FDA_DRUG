@@ -32,24 +32,41 @@ Public Class FRM_SEARCH_DL
         RunSession()                'ให้รันฟังก์ชั่นลำดับที่ 1
         If Not IsPostBack Then      'ให้รันฟังก์ชั่นลำดับที่ 2
 
-            load_ddl()
+            'load_ddl()                  พี่Xทำ ใช้อันนี้ถ้าเจ๊ง
             'load_lbl_name()         'ให้รันฟังก์ชั่นลำดับที่ 4
             load_HL()
-
+            load_DLONLY()
         End If
         'UC_INFMT1.Shows(_lct_ida)
     End Sub
-    Private Sub load_ddl()
+    'Private Sub load_ddl()
+    '    Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+    '    dao.GetDataby_CTZNO(_CLS.CITIZEN_ID_AUTHORIZE)
+    '    '-------------------------                                      ไม่เกี่ยวทำเพิ่มเอง โดยมิน
+    '    ' Dim item As New ListItem("---กรุณาเลือก---", "0")               ไม่เกี่ยวทำเพิ่มเอง โดยมิน
+    '    'Dim dao As New BAO.ClsDBSqlcommand                             ไม่เกี่ยวทำเพิ่มเอง โดยมิน
+    '    'Dim dt As New DataTable                                        ไม่เกี่ยวทำเพิ่มเอง โดยมิน
+    '    ' dao.SP_REGIS_NO()                                              ไม่เกี่ยวทำเพิ่มเอง โดยมิน
+    '    rcb_search.DataSource = dao.datas 'dao.datas
+    '    rcb_search.DataTextField = "REGIS_NO"    'น่าจะแก้ไขตรงนี้ได้
+    '    rcb_search.DataValueField = "IDA"        'น่าจะแก้ไขตรงนี้ได้
+    '    rcb_search.DataBind()
+    '    Dim item As New RadComboBoxItem
+    '    item.Text = "---กรุณาเลือก---"
+    '    item.Value = "0"
+    '    rcb_search.Items.Insert(0, item)
+    'End Sub
+    Private Sub load_DLONLY()
         Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
-        dao.GetDataby_CTZNO(_CLS.CITIZEN_ID_AUTHORIZE)
+        dao.GetDataby_DLONLY(_CLS.CITIZEN_ID_AUTHORIZE)
         '-------------------------
         ' Dim item As New ListItem("---กรุณาเลือก---", "0")
         'Dim dao As New BAO.ClsDBSqlcommand
         'Dim dt As New DataTable
-        'dao.SP_REGIS_NO()
+        ' dao.SP_REGIS_NO()
         rcb_search.DataSource = dao.datas 'dao.datas
-        rcb_search.DataTextField = "REGIS_NO"
-        rcb_search.DataValueField = "IDA"
+        rcb_search.DataTextField = "REGIS_NO"    'น่าจะแก้ไขตรงนี้ได้
+        rcb_search.DataValueField = "IDA"        'น่าจะแก้ไขตรงนี้ได้
         rcb_search.DataBind()
         Dim item As New RadComboBoxItem
         item.Text = "---กรุณาเลือก---"
