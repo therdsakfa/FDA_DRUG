@@ -433,7 +433,13 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
             'dao.fields.appdate = CDate(txt_appdate.Text)
             'dao.fields.STATUS_ID = STATUS_ID
             'dao.update()
-        ElseIf STATUS_ID = 8 Then
+            'ElseIf STATUS_ID = 8 Then
+            '    dao.fields.appdate = CDate(txt_appdate.Text)
+            '    dao.fields.STATUS_ID = STATUS_ID
+            '    dao.update()
+
+            '    alert("ดำเนินการอนุมัติแล้ว")
+        ElseIf STATUS_ID = 10 Then
             dao.fields.appdate = CDate(txt_appdate.Text)
             dao.fields.STATUS_ID = STATUS_ID
             dao.update()
