@@ -50,6 +50,15 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''btn_uploadevidence control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_uploadevidence As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''btn_cancel control.
     '''</summary>
     '''<remarks>

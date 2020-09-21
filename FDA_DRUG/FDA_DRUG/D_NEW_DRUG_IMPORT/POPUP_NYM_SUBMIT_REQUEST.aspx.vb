@@ -67,7 +67,10 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         dao.fields.rcvno = rcvno
         'dao.fields.regntfno = regntfno
         dao.update()
-        alert("เลขรับ คือ " + rcvno.ToString())
+        alert("เลขรับ คือ " + rcvno.ToString() +
+              "กรุณาอัพโหลดเอกสารยืนยันการบริจาคภายใน 1 เดือน หลังการแสดงนิทรรศการ")
+
+
     End Sub
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');parent.close_modal();</script> ")

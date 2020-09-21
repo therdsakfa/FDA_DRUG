@@ -6,6 +6,7 @@ Namespace BAO
 
     Public Class ClsDBSqlcommand
 
+
         ''' <summary>
         ''' ใส่ค่าว่างใน DT
         ''' </summary>
@@ -428,7 +429,7 @@ Namespace BAO
                     .CONDITION1 = dao_conq.fields.CONDITION1
                     .CONDITION2 = dao_conq.fields.CONDITION2
                     .FK_IDA = IDA_rgt
-                    
+
                 End With
                 dao_cong.insert()
             Next
@@ -1154,7 +1155,7 @@ Namespace BAO
         Public Function SP_DRRQT_GET_MAX_RCVNO_BY_RGTTPCD_DRGTPCD(ByVal rgttpcd As String, ByVal year_data As Integer, ByVal drgtpcd As String) As DataTable
             Dim sql As String = "exec SP_DRRQT_GET_MAX_RCVNO_BY_RGTTPCD_DRGTPCD @rgttpcd='" & rgttpcd & "' ,@drgtpcd='" & drgtpcd & "' ,@year=" & year_data
             Dim dta As New DataTable
-            dta = Queryds(Sql)
+            dta = Queryds(sql)
             dta.TableName = "SP_DRRQT_GET_MAX_RCVNO_BY_RGTTPCD_DRGTPCD"
             Return dta
         End Function
@@ -1276,7 +1277,7 @@ Namespace BAO
         Public Function SP_DRRGT_EDIT_REQUEST_BY_FK_IDA(ByVal FK_IDA As Integer) As DataTable
             Dim sql As String = "exec SP_DRRGT_EDIT_REQUEST_BY_FK_IDA @FK_IDA=" & FK_IDA
             Dim dta As New DataTable
-            dta = Queryds(Sql)
+            dta = Queryds(sql)
             dta.TableName = "SP_DRRGT_EDIT_REQUEST_BY_FK_IDA"
             Return dta
         End Function

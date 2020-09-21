@@ -23,7 +23,7 @@
      <script src="../Scripts/bootstrap.js"></script>
     <script src="../Html5/html5shiv.min.js"></script>
     <script src="../Html5/respond.min.js"></script>
-    <link href="../css/Custom3.css" rel="stylesheet" />
+    <%--<link href="../css/Custom3.css" rel="stylesheet" />--%>
 
 
 
