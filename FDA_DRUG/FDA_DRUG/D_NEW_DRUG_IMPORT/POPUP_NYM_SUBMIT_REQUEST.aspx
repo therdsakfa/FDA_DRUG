@@ -90,9 +90,9 @@
                             <asp:Button ID="btn_confirm" runat="server" Text="ยื่นคำขอ" CssClass="btn-lg" Width="80%" OnClientClick="return confirm('ต้องการส่งข้อมูลหรือไม่');" /></td>
                     </tr>
                     <tr>
-                        <td>
+                      <%--  <td>
                             <asp:Button ID="btn_uploadevidence" runat="server" Text="อัพโหลดเอกสารการส่งคืนยา" CssClass="btn-lg" Width="80%" OnClientClick="return confirm('ต้องการส่งข้อมูลหรือไม่');" /></td>
-                    </tr>
+                    </tr>--%>
                     <tr>
                         <td>
                             <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก" CssClass="btn-lg" Width="80%" /></td>

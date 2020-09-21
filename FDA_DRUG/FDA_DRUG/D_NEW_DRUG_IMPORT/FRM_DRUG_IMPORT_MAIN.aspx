@@ -7,7 +7,7 @@
         <link href="../css/css_radgrid.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-[    <%--<script type="text/javascript" >
+[   <%-- <script type="text/javascript" >
         $(document).ready(function () {
             $(window).load(function () {
                 $.ajax({
@@ -34,12 +34,13 @@
                 return false;
             });
 
-            $('#ContentPlaceHolder1_btn_add').click(function () {
+
+            $('#ContentPlaceHolder1_btn_add').click(function () { //MIN เพิ่มหน้า popup ดูเอกสาร 
                 //$('#spinner').fadeIn('slow');
-                Popups('POPUP_ADD_DRUG_FOR_RESEARCH.aspx');
+                Popups('POPUP_NYM_SUBMIT_REQUEST.aspx');
                 return false;
             });
-
+          
             function Popups(url) { // สำหรับทำ Div Popup
                 $('#myModal').modal('toggle'); // เป็นคำสั่งเปิดปิด
                 var i = $('#f1'); // ID ของ iframe   
@@ -83,8 +84,8 @@
                 return default_;
             else
                 return qs[1];
-        }
-        </script> 
+        }--%>
+</script> 
      <script type="text/javascript" >
          function closespinner() {
              $('#spinner').fadeOut('slow');
@@ -92,7 +93,8 @@
              $('#ContentPlaceHolder1_Button1').click();
 
          }
-     </script>--%>
+     </script>
+
     <div id="spinner" style="background-color: transparent; display: none;">
         <img src="../imgs/spinner.gif" alt="Loading" style="position: absolute; top: 120px; left: 293px; height: 185px; width: 207px;" />
     </div>
@@ -123,7 +125,7 @@
 
     <hr />
     <div>
-        <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="15">
+        <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="15" style="margin-left: 3px" Width="1396px">
             <MasterTableView AutoGenerateColumns="False">
                 <Columns>
                     <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
@@ -152,6 +154,10 @@
                     </telerik:GridBoundColumn>
                     <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
                         CommandName="sel" Text="ดูข้อมูล">
+                        <HeaderStyle Width="70px" />
+                    </telerik:GridButtonColumn>
+                    <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select2"
+                        CommandName="sel" Text="อัพโหลดเอกสารยืนยัน">
                         <HeaderStyle Width="70px" />
                     </telerik:GridButtonColumn>
                 </Columns>

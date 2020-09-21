@@ -771,6 +771,7 @@
     <Content Include="DS_STAFF\FRM_DS_STAFF_REMARK2.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_MAIN.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\POPUP_NYM_SUBMIT_REQUEST.aspx" />
+    <Content Include="D_NEW_DRUG_IMPORT\POPUP_NYM_UPLOAD_PDF_PROOF.aspx" />
     <Content Include="EDIT_LCN\FRM_EDIT_LCN_CONFIRM.aspx" />
     <Content Include="EDIT_LCN\FRM_EDIT_LCN_MAIN.aspx" />
     <Content Include="EDIT_LCN\FRM_EDIT_LCN_UPLOAD.aspx" />
@@ -2981,6 +2982,13 @@
     </Compile>
     <Compile Include="D_NEW_DRUG_IMPORT\POPUP_NYM_SUBMIT_REQUEST.aspx.vb">
       <DependentUpon>POPUP_NYM_SUBMIT_REQUEST.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\POPUP_NYM_UPLOAD_PDF_PROOF.aspx.designer.vb">
+      <DependentUpon>POPUP_NYM_UPLOAD_PDF_PROOF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\POPUP_NYM_UPLOAD_PDF_PROOF.aspx.vb">
+      <DependentUpon>POPUP_NYM_UPLOAD_PDF_PROOF.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="EDIT_LCN\FRM_EDIT_LCN_CONFIRM.aspx.designer.vb">

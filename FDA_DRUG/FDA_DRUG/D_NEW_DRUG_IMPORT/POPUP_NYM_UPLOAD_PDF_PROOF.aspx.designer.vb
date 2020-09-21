@@ -11,59 +11,50 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class POPUP_NYM_SUBMIT_REQUEST
+Partial Public Class POPUP_NYM_UPLOAD_PDF_PROOF
 
     '''<summary>
-    '''hl_reader control.
+    '''rbtn_bangkok control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents rbtn_bangkok As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
-    '''HiddenField1 control.
+    '''rbtn_other control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents rbtn_other As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
-    '''lr_preview control.
+    '''FileUpload1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
-    '''btn_confirm control.
+    '''btn_Upload control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_Upload As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''btn_cancel control.
+    '''Button1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''btn_load0 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
 End Class
