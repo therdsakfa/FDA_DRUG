@@ -60,7 +60,7 @@
             dao.Getdata_by_ID(_IDA)
             dao_up.GetDataby_IDA(dao.fields.TR_ID)
 
-            AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
+
 
             Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
 
@@ -125,7 +125,7 @@
             'End Try
 
             dao.update()
-
+            AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
             'Dim cls_sop As New CLS_SOP
             'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", PROCESS_ID, _CLS.PVCODE, 6, "เสนอลงนาม", "SOP-DRUG-10-" & PROCESS_ID & "-3", "อนุมัติ", "รอเจ้าหน้าที่อนุมัติคำขอ", "STAFF", _TR_ID, SOP_STATUS:="เสนอลงนาม")
             alert("บันทึกข้อมูลเรียบร้อย")
