@@ -116,6 +116,7 @@
 
     <div class="panel-info" style="text-align: right; width: 100%">
         <div style="text-align: right; padding-left: 5%; height: 60px;">
+            <asp:Button ID="Button2" runat="server" Height="50px" Text="Button" Width="175px" />
             <asp:Button ID="btn_add" runat="server" Text="เพิ่มคำขอ" Width="170px" CssClass="btn-lg" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btn_reload" runat="server" Text="reload" Style="display: none" />
