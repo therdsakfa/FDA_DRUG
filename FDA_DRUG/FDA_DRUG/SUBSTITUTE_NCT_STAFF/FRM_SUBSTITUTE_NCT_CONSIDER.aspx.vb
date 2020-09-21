@@ -62,11 +62,11 @@
 
 
 
-            Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+            Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID
 
-            Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
-            dao_p.GetDataby_Process_ID(PROCESS_ID)
-            Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
+            'Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
+            'dao_p.GetDataby_Process_ID(PROCESS_ID)
+            'Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
 
             Dim CONSIDER_DATE As Date = CDate(TextBox1.Text)
 
