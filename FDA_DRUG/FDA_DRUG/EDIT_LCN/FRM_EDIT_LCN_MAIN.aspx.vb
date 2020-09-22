@@ -206,6 +206,24 @@ Public Class FRM_EDIT_LCN_MAIN
         cls_xml.LCNNO_FORMAT = lcnno_format
         cls_xml.RCVNO_FORMAT = ""
         Try
+
+            If dao_main.fields.PROCESS_ID = "114" Then
+                cls_xml.CHK_SELL_TYPE = "1"
+            ElseIf dao_main.fields.PROCESS_ID = "116" Then
+                cls_xml.CHK_SELL_TYPE = "2"
+            ElseIf dao_main.fields.PROCESS_ID = "117" Then
+                cls_xml.CHK_SELL_TYPE = "3"
+            ElseIf dao_main.fields.PROCESS_ID = "115" Then
+                cls_xml.CHK_SELL_TYPE = "4"
+            ElseIf dao_main.fields.PROCESS_ID = "127" Or dao_main.fields.PROCESS_ID = "123" Or dao_main.fields.PROCESS_ID = "125" Or dao_main.fields.PROCESS_ID = "129" Or dao_main.fields.PROCESS_ID = "131" Or dao_main.fields.PROCESS_ID = "133" Then
+                cls_xml.CHK_SELL_TYPE = "1"
+            ElseIf dao_main.fields.PROCESS_ID = "128" Or dao_main.fields.PROCESS_ID = "124" Or dao_main.fields.PROCESS_ID = "126" Or dao_main.fields.PROCESS_ID = "130" Or dao_main.fields.PROCESS_ID = "132" Or dao_main.fields.PROCESS_ID = "134" Or dao_main.fields.PROCESS_ID = "135" Or dao_main.fields.PROCESS_ID = "136" Then
+                cls_xml.CHK_SELL_TYPE = "2"
+            End If
+        Catch ex As Exception
+
+        End Try
+        Try
             'If dao.fields.BSN_NATIONALITY_CD = 1 Then
             'cls_xml.dalcns.NATION = "ไทย"
             'End If

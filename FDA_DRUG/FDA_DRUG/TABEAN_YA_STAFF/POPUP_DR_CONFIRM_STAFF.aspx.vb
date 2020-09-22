@@ -2208,19 +2208,19 @@ Public Class POPUP_DR_CONFIRM_STAFF
         Dim dao_dos As New DAO_DRUG.TB_drdosage
         Try
 
-            dao_dos.GetDataby_cd(dsgcd)
+            'dao_dos.GetDataby_cd(dsgcd)
             If head_type = "โบราณ" Then
                 If dao_dos.fields.thadsgnm <> "-" Then
-                    class_xml.Dossage_form = dao_dos.fields.thadsgnm
+                    class_xml.Dossage_form = dao_e.fields.thadsgnm
                 Else
-                    class_xml.Dossage_form = dao_dos.fields.engdsgnm
+                    class_xml.Dossage_form = dao_e.fields.engdsgnm
                 End If
 
             ElseIf head_type = "ปัจจุบัน" Then
                 If Trim(dao_dos.fields.engdsgnm) = "-" Then
-                    class_xml.Dossage_form = dao_dos.fields.thadsgnm
+                    class_xml.Dossage_form = dao_e.fields.thadsgnm
                 Else
-                    class_xml.Dossage_form = dao_dos.fields.engdsgnm
+                    class_xml.Dossage_form = dao_e.fields.engdsgnm
                 End If
 
             End If

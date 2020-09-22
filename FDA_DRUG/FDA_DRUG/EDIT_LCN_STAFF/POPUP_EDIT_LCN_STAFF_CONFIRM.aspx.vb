@@ -567,7 +567,7 @@ Public Class POPUP_EDIT_LCN_STAFF_CONFIRM
 
 
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
-        dao_pdftemplate.GetDataby_TEMPLAETE_TABEAN(_ProcessID, 0, 0)
+        dao_pdftemplate.GetDataby_TEMPLAETE_TABEAN(_ProcessID, dao.fields.STATUS_ID, 0)
         Dim YEAR As String = dao_up.fields.YEAR
 
         Dim paths As String = bao._PATH_DEFAULT

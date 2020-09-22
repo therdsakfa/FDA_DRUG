@@ -104,24 +104,6 @@ Partial Public Class FRM_UPLOAD_ATTACH_EXTEND
     Protected WithEvents FileUpload4 As Global.System.Web.UI.WebControls.FileUpload
     
     '''<summary>
-    '''Label5 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''FileUpload5 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents FileUpload5 As Global.System.Web.UI.WebControls.FileUpload
-    
-    '''<summary>
     '''Label6 control.
     '''</summary>
     '''<remarks>

@@ -103,14 +103,14 @@
 ผู้รับอนุญาต /ผู้ดำเนินกิจการ และผู้มีหน้าที่ปฏิบัติการ
                  </td>
              </tr>
-             <tr>
+             <%--<tr>
                  <td style="width: 15%;">
                      <asp:Label ID="Label5" runat="server" Text="รูปถ่ายของผู้รับอนุญาต ผู้ดำเนินกิจการ (รูปถ่ายสีขนาด 3 x 4 ชม. ถ่ายไว้ไม่เกิน 6 เดือนจำนวน 3 รูป ต่อประเภทใบอนุญาต ( หน้าตรงไม่ยิ้ม ไม่สวมแว่นตาและหมวก พื้นหลังสีเรียบ )"></asp:Label>
                  </td>
                  <td>
                      <asp:FileUpload ID="FileUpload5" runat="server" CssClass="btn-default" />
                  </td>
-             </tr>
+             </tr>--%>
              <tr>
                  <td style="width: 15%;">
                      <asp:Label ID="Label6" runat="server" Text="คำรับรองของผู้มีหน้าที่ปฏิบัติการทุกคน"></asp:Label>
