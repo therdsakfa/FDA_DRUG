@@ -123,16 +123,16 @@ Public Class FRM_DRUG_IMPORT_MAIN
         '    dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
         'End If
 
-        dt = bao.SP_STAFFSP_DATA_NYM2_USER_NYM()
-        Dim IDGroup As Integer = 0
-        Try
-            IDGroup = _CLS.GROUPS
-            If _process = "" Then
+        dt = bao.SP_DATA_NYM2_USER()
+        '  Dim IDGroup As Integer = 0   เอาคืนนน
+        ' Try                           เอาคืนนน
+        'IDGroup = _CLS.GROUPS          เอาคืนนน
+        'If _process = "" Then          เอาคืนนน
+        '
+        'End If                         เอาคืนนน
+        'Catch ex As Exception          เอาคืนนน
 
-            End If
-        Catch ex As Exception
-
-        End Try
+        'End Try                        
         'If IDGroup = 21020 Then
         '    If _type = "" Then
         '        RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process)

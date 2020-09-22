@@ -4852,7 +4852,7 @@ Namespace BAO
 
             Return dt
         End Function
-        Public Function SP_STAFFSP_DATA_NYM2_USER_NYM() As DataTable
+        Public Function SP_DATA_NYM2_USER() As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_DATA_NYM2_USER"
             Dim dt As New DataTable

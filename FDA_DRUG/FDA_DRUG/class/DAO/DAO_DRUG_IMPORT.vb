@@ -52,9 +52,7 @@
 
             Next
         End Sub
-        Public Sub Getdataby()
 
-        End Sub
     End Class
 
     Public Class TB_FDA_DRUG_IMPORT_NYM_3
