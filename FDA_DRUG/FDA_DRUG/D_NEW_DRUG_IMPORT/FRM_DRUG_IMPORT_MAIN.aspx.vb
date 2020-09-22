@@ -56,7 +56,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
         End If
         'End If
     End Sub
-    Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand
+    Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand    'กดปุ่มใน grid ให้ทำอะไร จากหหน้
         If TypeOf e.Item Is GridDataItem Then
             Dim item As GridDataItem = e.Item
 
@@ -92,7 +92,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
         End If
     End Sub
 
-    Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound
+    Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound   'ในแต่ละแถวให้ทำอะไร ซ่อนปุ่ม โชว์ปุ่ม ปิดปุ่ม
         If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
             Dim item As GridDataItem
             item = e.Item
@@ -113,7 +113,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
         End If
     End Sub
 
-    Protected Sub RadGrid1_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
+    Protected Sub RadGrid1_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource  'หาข้อมูลมาใส่ 
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
         'SP_STAFF_DALCN_BY_PVNCD
@@ -123,7 +123,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
         '    dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
         'End If
 
-        dt = bao.SP_STAFF_NYM()
+        dt = bao.SP_STAFFSP_DATA_NYM2_USER_NYM()
         Dim IDGroup As Integer = 0
         Try
             IDGroup = _CLS.GROUPS

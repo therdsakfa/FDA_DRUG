@@ -2,7 +2,7 @@
 
 Public Class FRM_STAFF_NYM
     Inherits System.Web.UI.Page
-    Private _CLS As New CLS_SESSION
+    Private _CLS As New CLS_SESSION         'public class
     Private _process As String
     Private _type As String
     Private _pvncd As Integer

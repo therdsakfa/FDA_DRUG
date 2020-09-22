@@ -42,6 +42,7 @@ Namespace BAO
         Dim rdr As SqlDataReader
 
         Dim conn As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("LGT_DRUGConnectionString").ConnectionString)
+        Public condrugimport As String = System.Configuration.ConfigurationManager.ConnectionStrings("FDA_DRUG_IMPORTConnectionString").ConnectionString
         Public con_str As String = System.Configuration.ConfigurationManager.ConnectionStrings("LGT_DRUGConnectionString").ConnectionString
         Dim conn_CPN As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("LGTCPNConnectionString1").ConnectionString)
         Dim con_124 As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("FDA_XML_DRUGConnectionString1").ConnectionString)
@@ -4844,6 +4845,19 @@ Namespace BAO
             Dim dt As New DataTable
             Try
                 dt = clsds.dsQueryselect(sql, con_str).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
+
+            Return dt
+        End Function
+        Public Function SP_STAFFSP_DATA_NYM2_USER_NYM() As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DATA_NYM2_USER"
+            Dim dt As New DataTable
+            Try
+                dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
             Catch ex As Exception
 
             End Try
