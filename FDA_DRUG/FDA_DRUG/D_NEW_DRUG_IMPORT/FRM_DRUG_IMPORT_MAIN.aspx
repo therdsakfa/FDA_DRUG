@@ -148,7 +148,7 @@
                         HeaderText="ชื่อยา (Th/Eng)" SortExpression="drug_name" UniqueName="drug_name">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="ID" FilterControlAltText="Filter ID column"
-                        HeaderText="เลขดำเนินการ" SortExpression="ID" UniqueName="ID">
+                        HeaderText="เลขดำเนินการ" SortExpression="ID" UniqueName="ID">   
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
                         HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">

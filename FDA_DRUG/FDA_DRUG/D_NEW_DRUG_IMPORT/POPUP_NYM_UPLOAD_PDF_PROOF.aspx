@@ -1,4 +1,4 @@
-﻿<%--<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="POPUP_NYM_UPLOAD_PDF_PROOF.aspx.vb" Inherits="FDA_DRUG.POPUP_NYM_UPLOAD_PDF_PROOF" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="POPUP_NYM_UPLOAD_PDF_PROOF.aspx.vb" Inherits="FDA_DRUG.POPUP_NYM_UPLOAD_PDF_PROOF" %>
 <%@ Register src="../UC/UC_ATTACH_DRUG.ascx" tagname="UC_ATTACH_DRUG" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -75,4 +75,4 @@
          </table>
 
     </div>
-</asp:Content>--%>
+</asp:Content>
