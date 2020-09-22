@@ -170,6 +170,21 @@ Public Class FRM_EDIT_LCN_UPLOAD
         Catch ex As Exception
 
         End Try
+        Try
+            dao.fields.CHK_TYPE1 = p2.DALCN_EDIT_REQUESTs.CHK_TYPE1
+        Catch ex As Exception
+
+        End Try
+        Try
+            dao.fields.CHK_TYPE2 = p2.DALCN_EDIT_REQUESTs.CHK_TYPE2
+        Catch ex As Exception
+
+        End Try
+        Try
+            dao.fields.CHK_TYPE3 = p2.DALCN_EDIT_REQUESTs.CHK_TYPE3
+        Catch ex As Exception
+
+        End Try
         dao.fields.STATUS_ID = 1
         dao.fields.TR_ID = TR_ID
         dao.fields.FK_IDA = _IDA

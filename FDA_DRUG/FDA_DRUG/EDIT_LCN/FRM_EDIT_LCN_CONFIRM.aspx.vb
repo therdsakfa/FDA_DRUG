@@ -358,11 +358,29 @@ Public Class FRM_EDIT_LCN_CONFIRM
         Catch ex As Exception
 
         End Try
+        Try
+
+            If dao_main.fields.PROCESS_ID = "114" Then
+                Cls_XML.CHK_SELL_TYPE = "1"
+            ElseIf dao_main.fields.PROCESS_ID = "116" Then
+                Cls_XML.CHK_SELL_TYPE = "2"
+            ElseIf dao_main.fields.PROCESS_ID = "117" Then
+                Cls_XML.CHK_SELL_TYPE = "3"
+            ElseIf dao_main.fields.PROCESS_ID = "115" Then
+                Cls_XML.CHK_SELL_TYPE = "4"
+            ElseIf dao_main.fields.PROCESS_ID = "127" Or dao_main.fields.PROCESS_ID = "123" Or dao_main.fields.PROCESS_ID = "125" Or dao_main.fields.PROCESS_ID = "129" Or dao_main.fields.PROCESS_ID = "131" Or dao_main.fields.PROCESS_ID = "133" Then
+                Cls_XML.CHK_SELL_TYPE = "1"
+            ElseIf dao_main.fields.PROCESS_ID = "128" Or dao_main.fields.PROCESS_ID = "124" Or dao_main.fields.PROCESS_ID = "126" Or dao_main.fields.PROCESS_ID = "130" Or dao_main.fields.PROCESS_ID = "132" Or dao_main.fields.PROCESS_ID = "134" Or dao_main.fields.PROCESS_ID = "135" Or dao_main.fields.PROCESS_ID = "136" Then
+                Cls_XML.CHK_SELL_TYPE = "2"
+            End If
+        Catch ex As Exception
+
+        End Try
         p_dalcn_rqt = Cls_XML
 
 
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
-        dao_pdftemplate.GetDataby_TEMPLAETE_TABEAN(_ProcessID, 0, 0)
+        dao_pdftemplate.GetDataby_TEMPLAETE_TABEAN(_ProcessID, dao.fields.STATUS_ID, 0)
         Dim YEAR As String = dao_up.fields.YEAR
 
         Dim paths As String = bao._PATH_DEFAULT

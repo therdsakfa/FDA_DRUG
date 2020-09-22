@@ -146,7 +146,8 @@
                 <td>
 
                     <telerik:RadBinaryImage ID="RadBinaryImage1" runat="server" Width ="114px" Height="152px" />
-
+                    <br />
+                    รูปถ่ายของผู้รับอนุญาต ผู้ดำเนินกิจการ (รูปถ่ายสีขนาด 3 x 4 ชม. ถ่ายไว้ไม่เกิน 6 เดือนจำนวน 3 รูป ต่อประเภทใบอนุญาต ( หน้าตรงไม่ยิ้ม ไม่สวมแว่นตาและหมวก พื้นหลังสีเรียบ )
                 </td>
             </tr>
             <tr>
@@ -209,7 +210,7 @@
          </asp:Panel>
 
     
-    <asp:Panel ID="Panel1" runat="server" style="display:none;">
+    <asp:Panel ID="Panel1" runat="server">
         <h2>
         รายการไฟล์แนบ
     </h2>
