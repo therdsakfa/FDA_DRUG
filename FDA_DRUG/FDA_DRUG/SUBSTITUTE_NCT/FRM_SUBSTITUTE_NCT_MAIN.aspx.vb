@@ -342,7 +342,7 @@ Public Class FRM_SUBSTITUTE_NCT_MAIN
             process = "126"
         End If
         Try
-
+            process = dao_dal.fields.PROCESS_ID
             If process = "114" Then
                 cls_xml.CHK_SELL_TYPE = "1"
             ElseIf process = "116" Then

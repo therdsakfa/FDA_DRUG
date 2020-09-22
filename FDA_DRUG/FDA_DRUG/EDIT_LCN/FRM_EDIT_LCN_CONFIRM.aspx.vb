@@ -13,7 +13,7 @@ Public Class FRM_EDIT_LCN_CONFIRM
     Private b64 As String
     Sub RunQuery()
         Try
-            _ProcessID = Request.QueryString("Process")
+            _ProcessID = Request.QueryString("process")
             _IDA = Request.QueryString("IDA")
             _TR_ID = Request.QueryString("TR_ID")
             _CLS = Session("CLS")
@@ -332,6 +332,10 @@ Public Class FRM_EDIT_LCN_CONFIRM
 
         Dim bao_master As New BAO_MASTER
         Cls_XML.DT_SHOW.DT10 = bao_master.SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_BY_IDA(dao_main.fields.IDA)
+
+        Cls_XML.DT_SHOW.DT17 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.NEW_LO_IDA)
+
+        Cls_XML.DT_SHOW.DT18 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.NEW_KEEP_IDA)
 
         Dim _lcn_ida As Integer
         ' If Integer.TryParse(_lcn_ida) = True Then

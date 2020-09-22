@@ -90,11 +90,11 @@ Public Class FRM_EDIT_LCN_MAIN
         cls_xml = cls.gen_xml()
         'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
         Dim lct_ida As Integer = 0 '101680
-        Dim dao As New DAO_DRUG.TB_DALCN_EDIT_REQUEST
-        dao.GetDataby_IDA(Request.QueryString("IDA"))
+        'Dim dao As New DAO_DRUG.TB_DALCN_EDIT_REQUEST
+        'dao.GetDataby_IDA(Request.QueryString("IDA"))
         Dim dao_main As New DAO_DRUG.ClsDBdalcn
         Try
-            dao_main.GetDataby_IDA(dao.fields.FK_IDA)
+            dao_main.GetDataby_IDA(Request.QueryString("IDA"))
         Catch ex As Exception
 
         End Try
@@ -107,10 +107,10 @@ Public Class FRM_EDIT_LCN_MAIN
 
         cls_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(lct_ida) 'ข้อมูลสถานที่จำลอง
 
-        cls_xml.DT_SHOW.DT11 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(1, dao.fields.CITIZEN_ID_AUTHORIZE) 'ข้อมูลที่ตั้งหลัก
+        cls_xml.DT_SHOW.DT11 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(1, dao_main.fields.CITIZEN_ID_AUTHORIZE) 'ข้อมูลที่ตั้งหลัก
         cls_xml.DT_SHOW.DT11.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSID_5"
-        cls_xml.DT_SHOW.DT12 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao.fields.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID) 'ข้อมูลบริษัท
-        cls_xml.DT_SHOW.DT13 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(2, dao.fields.CITIZEN_ID_AUTHORIZE) 'ที่เก็บ
+        cls_xml.DT_SHOW.DT12 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_main.fields.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID) 'ข้อมูลบริษัท
+        cls_xml.DT_SHOW.DT13 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(2, dao_main.fields.CITIZEN_ID_AUTHORIZE) 'ที่เก็บ
         If cls_xml.DT_SHOW.DT13.Rows.Count = 0 Then
 
         End If
