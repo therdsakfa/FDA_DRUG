@@ -24,7 +24,8 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
         End Try
     End Sub
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Han
+es Me.Load
 
         RunSession()
         runQuery()
@@ -54,11 +55,10 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
             bao.RunAppSettings()
 
             Dim TR_ID As String = ""
-            'Dim bao_tran As New BAO_TRANSECTION
-            'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
-            'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-            '' TR_ID = bao_tran.insert_transection(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION      งงงงงงงงงงงงงงงงงงงงงไม่ใช้
-
+            Dim bao_tran As New BAO_TRANSECTION
+            bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+            bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+            TR_ID = bao_tran.insert_transection(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION     
             Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
             dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0)
             Dim PDF_TRADER As String = bao._PATH_DEFAULT & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_UPLOAD_PDF("DA", _ProcessID, Date.Now.Year, TR_ID)

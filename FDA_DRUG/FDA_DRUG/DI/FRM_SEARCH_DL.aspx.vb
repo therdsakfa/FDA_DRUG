@@ -42,11 +42,11 @@ Public Class FRM_SEARCH_DL
     'Private Sub load_ddl()
     '    Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
     '    dao.GetDataby_CTZNO(_CLS.CITIZEN_ID_AUTHORIZE)
-    '    '-------------------------                                      ไม่เกี่ยวทำเพิ่มเอง โดยมิน
-    '    ' Dim item As New ListItem("---กรุณาเลือก---", "0")               ไม่เกี่ยวทำเพิ่มเอง โดยมิน
-    '    'Dim dao As New BAO.ClsDBSqlcommand                             ไม่เกี่ยวทำเพิ่มเอง โดยมิน
-    '    'Dim dt As New DataTable                                        ไม่เกี่ยวทำเพิ่มเอง โดยมิน
-    '    ' dao.SP_REGIS_NO()                                              ไม่เกี่ยวทำเพิ่มเอง โดยมิน
+    '    '    -------------------------                                      ไม่เกี่ยวทำเพิ่มเอง โดยมิน
+    '    Dim item As New ListItem("---กรุณาเลือก---", "0")               ไม่เกี่ยวทำเพิ่มเอง โดยมิน
+    '    Dim dao As New BAO.ClsDBSqlcommand                             ไม่เกี่ยวทำเพิ่มเอง โดยมิน
+    'Dim dt As New DataTable                                        ไม่เกี่ยวทำเพิ่มเอง โดยมิน
+    '      dao.SP_REGIS_NO()                                              ไม่เกี่ยวทำเพิ่มเอง โดยมิน
     '    rcb_search.DataSource = dao.datas 'dao.datas
     '    rcb_search.DataTextField = "REGIS_NO"    'น่าจะแก้ไขตรงนี้ได้
     '    rcb_search.DataValueField = "IDA"        'น่าจะแก้ไขตรงนี้ได้
