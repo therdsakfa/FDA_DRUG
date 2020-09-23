@@ -85,7 +85,7 @@
             else
                 return qs[1];
         }--%>
-</script> 
+<%--</script> --%>
      <script type="text/javascript" >
          function closespinner() {
              $('#spinner').fadeOut('slow');
@@ -100,7 +100,7 @@
     </div>
     <div>
         <div class="panel-heading panel-title" style="padding-left: 5%;">
-            <%--     <h2>ผลิตภัณฑ์ยาไม่ต้องขึ้นทะเบียน</h2>--%>
+            <%--     <h2>ทะเบียนยานำเข้า</h2>--%>
 
 
             <br />
@@ -116,7 +116,6 @@
 
     <div class="panel-info" style="text-align: right; width: 100%">
         <div style="text-align: right; padding-left: 5%; height: 60px;">
-            <asp:Button ID="Button2" runat="server" Height="50px" Text="TestButton" Width="175px" />
             <asp:Button ID="btn_add" runat="server" Text="เพิ่มคำขอ" Width="170px" CssClass="btn-lg" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btn_reload" runat="server" Text="reload" Style="display: none" />
@@ -135,23 +134,23 @@
                     <telerik:GridBoundColumn DataField="PROCESS_ID" DataType="System.Int32" FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                         SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="UPLOAD_DATE" FilterControlAltText="Filter UPLOAD_DATE column"
-                        HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="UPLOAD_DATE" UniqueName="UPLOAD_DATE">
+                    <telerik:GridBoundColumn DataField="FK_IDA" FilterControlAltText="Filter FK_IDA column"
+                        HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="FK_IDA" UniqueName="FK_IDA">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="lcntpcd" FilterControlAltText="Filter lcntpcd column"
-                        HeaderText="ประเภท" SortExpression="lcntpcd" UniqueName="lcntpcd">
+                    <telerik:GridBoundColumn DataField="NYM2_DATE_TOP" FilterControlAltText="Filter NYM2_DATE_TOP column"
+                        HeaderText="ประเภท" SortExpression="NYM2_DATE_TOP" UniqueName="NYM2_DATE_TOP">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="LCNNO_DISPLAY" FilterControlAltText="Filter LCNNO_DISPLAY column"
-                        HeaderText="รหัสบัญชีรายการยา" SortExpression="LCNNO_DISPLAY" UniqueName="LCNNO_DISPLAY">
+                    <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
+                        HeaderText="รหัสบัญชีรายการยา" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="drug_name" FilterControlAltText="Filter drug_name column"
-                        HeaderText="ชื่อยา (Th/Eng)" SortExpression="drug_name" UniqueName="drug_name">
+                    <telerik:GridBoundColumn DataField="NYM2_WISH_MED" FilterControlAltText="Filter NYM2_WISH_MED column"
+                        HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM2_WISH_MED" UniqueName="NYM2_WISH_MED">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="ID" FilterControlAltText="Filter ID column"
-                        HeaderText="เลขดำเนินการ" SortExpression="ID" UniqueName="ID">   
+                    <telerik:GridBoundColumn DataField="NYM2_NO" FilterControlAltText="Filter NYM2_NO column"
+                        HeaderText="เลขดำเนินการ" SortExpression="NYM2_NO" UniqueName="NYM2_NO">   
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
-                        HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
+                    <telerik:GridBoundColumn DataField="STATUS_ID" FilterControlAltText="Filter STATUS_ID column"
+                        HeaderText="สถานะ" SortExpression="STATUS_ID" UniqueName="STATUS_ID">
                     </telerik:GridBoundColumn>
                     <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
                         CommandName="sel" Text="ดูข้อมูล">
