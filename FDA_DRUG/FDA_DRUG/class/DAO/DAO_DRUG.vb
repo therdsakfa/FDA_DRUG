@@ -760,6 +760,14 @@ Namespace DAO_DRUG
 
             Return i
         End Function
+        Public Function COUNT_REPEAT_RGTNO_PVNCD(ByVal rgtno As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal pvncd As Integer) As Integer
+            Dim i As Integer = 0
+            datas = (From p In db.drrgts Where p.rgtno = rgtno And p.rgttpcd = rgttpcd And p.drgtpcd = drgtpcd And p.pvncd = pvncd)
+            For Each Me.fields In datas
+                i += 1
+            Next
+            Return i
+        End Function
     End Class
     Public Class ClsDBdrrqt
         Inherits MAINCONTEXT
