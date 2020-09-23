@@ -642,6 +642,7 @@
     <Content Include="DESIGN\Scripts\jquery-1.4.2.min.js" />
     <Content Include="DESIGN\Scripts\jquery-1.7.2.js" />
     <Content Include="assets\Charts\DataJson.json" />
+    <Content Include="XML_DRUG_RGT.asmx" />
     <None Include="DESIGN\Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="DESIGN\Scripts\jquery-1.8.2.js" />
     <Content Include="DESIGN\Scripts\jquery-1.8.2.min.js" />
@@ -7013,6 +7014,10 @@
     </Compile>
     <Compile Include="WS_UPDATE_EDIT_APPROVE.asmx.vb">
       <DependentUpon>WS_UPDATE_EDIT_APPROVE.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XML_DRUG_RGT.asmx.vb">
+      <DependentUpon>XML_DRUG_RGT.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
