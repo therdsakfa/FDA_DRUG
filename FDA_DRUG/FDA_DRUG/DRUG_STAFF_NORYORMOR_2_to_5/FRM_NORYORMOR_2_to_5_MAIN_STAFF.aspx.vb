@@ -37,7 +37,7 @@
     Sub load_GV_data()
         Dim bao As New BAO.ClsDBSqlcommand
         'เอาเฉพาะที่ยืนยันข้อมูลแล้ว
-        bao.SP_DRIMPFOR_BY_STATUS(3, _ProcessID)
+        bao.SP_DRIMPFOR_BY_STATUS(3, _ProcessID)            'แล้วเปิดเอามา fill 
         GV_data.DataSource = bao.dt
         GV_data.DataBind()
     End Sub

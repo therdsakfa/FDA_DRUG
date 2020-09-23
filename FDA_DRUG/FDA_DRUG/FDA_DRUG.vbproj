@@ -751,6 +751,7 @@
     <Content Include="DRUG_STAFF_CER\FRM_CER_STAFF_SEARCH.aspx" />
     <Content Include="DRUG_STAFF_DH\POPUP_DH_COMFIRM_STAFF.aspx" />
     <Content Include="DRUG_STAFF_NORYORMOR1\POPUP_NORYORMOR1_CONFIRM_STAFF.aspx" />
+    <Content Include="DRUG_STAFF_NORYORMOR_2_to_5\DRUG_STAFF_NYM_MAIN_NEW.aspx" />
     <Content Include="DRUG_STAFF_NORYORMOR_2_to_5\FRM_NORYORMOR_2_to_5_MAIN_STAFF.aspx" />
     <Content Include="DRUG_STAFF_NORYORMOR_2_to_5\POPUP_NORYORMOR_2_to_5_CONFIRM_STAFF.aspx" />
     <Content Include="DRUG_STAFF_NORYORMOR1\FRM_STAFF_NORYORMOR1_MAIN.aspx" />
@@ -2842,6 +2843,13 @@
     </Compile>
     <Compile Include="DRUG_STAFF_NORYORMOR1\POPUP_NORYORMOR1_CONFIRM_STAFF.aspx.vb">
       <DependentUpon>POPUP_NORYORMOR1_CONFIRM_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_NORYORMOR_2_to_5\DRUG_STAFF_NYM_MAIN_NEW.aspx.designer.vb">
+      <DependentUpon>DRUG_STAFF_NYM_MAIN_NEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_NORYORMOR_2_to_5\DRUG_STAFF_NYM_MAIN_NEW.aspx.vb">
+      <DependentUpon>DRUG_STAFF_NYM_MAIN_NEW.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="DRUG_STAFF_NORYORMOR_2_to_5\FRM_NORYORMOR_2_to_5_MAIN_STAFF.aspx.designer.vb">
