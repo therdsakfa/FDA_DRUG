@@ -51,7 +51,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
                 Case "1030"
                     NYM = "5"
             End Select
-            url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM
+            url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process
             Response.Redirect(url)
         End If
         'End If
