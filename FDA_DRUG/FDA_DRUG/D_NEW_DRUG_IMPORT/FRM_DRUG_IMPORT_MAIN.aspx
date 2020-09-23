@@ -134,8 +134,8 @@
                     <telerik:GridBoundColumn DataField="PROCESS_ID" DataType="System.Int32" FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                         SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="NYM2_DATE_TOP"" FilterControlAltText="Filter NYM2_DATE_TOP column"
-                        HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="NYM2_DATE_TOP"" UniqueName="NYM2_DATE_TOP">
+                    <telerik:GridBoundColumn DataField="NYM2_DATE_TOP" FilterControlAltText="Filter NYM2_DATE_TOP column"
+                        HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="NYM2_DATE_TOP" UniqueName="NYM2_DATE_TOP">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
                         HeaderText="ประเภท" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
