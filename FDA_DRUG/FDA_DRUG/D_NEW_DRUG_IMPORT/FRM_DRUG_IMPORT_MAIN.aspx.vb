@@ -124,6 +124,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
         'End If
 
         dt = bao.SP_DATA_NYM2_USER()
+        RadGrid1.DataSource = dt
         '  Dim IDGroup As Integer = 0   เอาคืนนน
         ' Try                           เอาคืนนน
         'IDGroup = _CLS.GROUPS          เอาคืนนน
