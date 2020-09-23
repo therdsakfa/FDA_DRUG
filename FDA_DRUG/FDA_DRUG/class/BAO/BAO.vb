@@ -51,6 +51,8 @@ Namespace BAO
         Dim con_book As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("FDA_BOOKINGConnectionString").ConnectionString)
         Dim conn_PERMISSION As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("LGT_PERMISSIONConnectionString").ConnectionString)
         Dim conn_NCT As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("LGT_NCTConnectionString").ConnectionString)
+        Dim con_124_2 As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("FDA_XML_DRUG_ESUBConnectionString").ConnectionString)
+
         Dim SqlCmd As SqlCommand
         Dim dtAdapter As SqlDataAdapter
         Dim objds As New DataSet
@@ -62,6 +64,13 @@ Namespace BAO
             Dim sql As String = "exec SP_CUSTOMER_LOCATION_ADDRESS_by_LOCATION_TYPE_ID_and_IDENTITY @LOCATION_TYPE_ID=" & LOCATION_TYPE_ID & ",@IDENTITY= '" & IDENTITY & "'"
             Dim dta As New DataTable
             dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function XML_SEARCH_PRODUCT_GROUP(ByVal IDENTITY As String) As DataTable
+
+            Dim sql As String = "exec XML_SEARCH_PRODUCT_GROUP @IDENTITY= '" & IDENTITY & "'"
+            Dim dta As New DataTable
+            dta = Queryd_124_2(sql)
             Return dta
         End Function
         '
@@ -1004,6 +1013,14 @@ Namespace BAO
         Public Function Queryd_124(ByVal Commands As String) As DataTable
             Dim dt As New DataTable
             Dim MyConnection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("FDA_XML_DRUGConnectionString1").ConnectionString)
+            Dim mySqlDataAdapter As SqlDataAdapter = New SqlDataAdapter(Commands, MyConnection)
+            mySqlDataAdapter.Fill(dt)
+            MyConnection.Close()
+            Return dt
+        End Function
+        Public Function Queryd_124_2(ByVal Commands As String) As DataTable
+            Dim dt As New DataTable
+            Dim MyConnection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("FDA_XML_DRUG_ESUBConnectionString").ConnectionString)
             Dim mySqlDataAdapter As SqlDataAdapter = New SqlDataAdapter(Commands, MyConnection)
             mySqlDataAdapter.Fill(dt)
             MyConnection.Close()

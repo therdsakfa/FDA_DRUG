@@ -628,7 +628,7 @@ Public Class WebForm35
         class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA(_IDA)
         class_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_MUTI_LOCATION(dao.fields.FK_IDA) ' 'ข้อมูลสถานที่จำลอง
         'class_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.FK_IDA)
-
+        class_xml.DT_SHOW.DT19 = bao_show.SP_DRUG_GROUP_LCN(_IDA)
         Dim dt9 As New DataTable
 
         'dt9 = class_xml.DT_SHOW.DT9
@@ -1177,7 +1177,7 @@ Public Class WebForm35
         class_xml.DT_MASTER.DT32.TableName = "SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE_2_2_ROW"
         class_xml.DT_MASTER.DT33 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(dao.fields.IDA, 2)
         class_xml.DT_MASTER.DT33.TableName = "SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE_2_2_ROW"
-        class_xml.DT_SHOW.DT19 = bao_show.SP_DRUG_GROUP_LCN(_IDA)
+
 
         class_xml.DT_MASTER.DT34 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE_2(dao.fields.IDA, 3)
         Dim DT34 As New DataTable
@@ -1380,6 +1380,7 @@ Public Class WebForm35
         Catch ex As Exception
 
         End Try
+
 
         class_xml.syslctaddr_engaddr = dao.fields.syslctaddr_engaddr
         class_xml.syslctaddr_floor = dao.fields.syslctaddr_floor
