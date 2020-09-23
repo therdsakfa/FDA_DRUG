@@ -169,6 +169,9 @@
         <div style="text-align: center;">
         </div>
     </div>
+                          <div class="h5" style="padding-left:87%;">  
+                      <asp:HyperLink ID="hl_pay" runat="server"  target="_blank"> ชำระเงินคลิกที่นี้</asp:HyperLink>
+                        </div>
     <%--<div class=" modal fade" id="myModal">              
                <div class="panel panel-info" style="width:100%;">
                    <div class="panel-heading  text-center"><h1>ผลิตภัณฑ์ยาเพื่อโครงการวิจัย</h1></div>

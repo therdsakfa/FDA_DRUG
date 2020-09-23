@@ -48,4 +48,13 @@ Partial Public Class FRM_DRUG_IMPORT_MAIN
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
+
+    '''<summary>
+    '''hl_pay control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hl_pay As Global.System.Web.UI.WebControls.HyperLink
 End Class

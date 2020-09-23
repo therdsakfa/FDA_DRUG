@@ -4,6 +4,7 @@ Imports FDA_DRUG.XML_CENTER
 Imports Telerik.Web.UI
 Public Class FRM_DRUG_IMPORT_MAIN
     Inherits System.Web.UI.Page
+
     Private _CLS As New CLS_SESSION
     Private _type As String
     Private _process As String = ""
