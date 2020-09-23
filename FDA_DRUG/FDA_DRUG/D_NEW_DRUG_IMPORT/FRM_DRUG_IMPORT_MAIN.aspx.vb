@@ -93,26 +93,27 @@ Public Class FRM_DRUG_IMPORT_MAIN
         End If
     End Sub
 
-    'Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound   'ในแต่ละแถวให้ทำอะไร ซ่อนปุ่ม โชว์ปุ่ม ปิดปุ่ม
-    '    If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
-    '        Dim item As GridDataItem
-    '        item = e.Item
-    '        Dim IDA As String = item("IDA").Text
-    '        Dim _edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
-    '        Dim dao As New DAO_DRUG.ClsDBdalcn
-    '        dao.GetDataby_IDA(IDA)
-    '        _edit.Style.Add("display", "none")
-    '        Try
-    '            If dao.fields.STATUS_ID = 6 Then
-    '                _edit.Style.Add("display", "block")
-    '            End If
-    '        Catch ex As Exception
+    Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound   'ในแต่ละแถวให้ทำอะไร ซ่อนปุ่ม โชว์ปุ่ม ปิดปุ่ม
+        If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
+            Dim item As GridDataItem
+            item = e.Item
+            Dim IDA As String = item("IDA").Text
+            Dim _select As LinkButton = DirectCast(item("btn_Select ").Controls(0), LinkButton)
+            Dim dao As New DAO_DRUG.ClsDBdalcn
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+            dao.GetDataby_IDA(IDA)
+            _edit.Style.Add("display", "none")
+            Try
+                If dao.fields.STATUS_ID = 6 Then
+                    _edit.Style.Add("display", "block")
+                End If
+            Catch ex As Exception
 
-    '        End Try
-    '        'Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
-    '        'btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
-    '    End If
-    'End Sub
+            End Try
+            Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
+            btn_Select.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
+        End If
+    End Sub
 
     Protected Sub RadGrid1_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource  'หาข้อมูลมาใส่ 
         Dim bao As New BAO.ClsDBSqlcommand
