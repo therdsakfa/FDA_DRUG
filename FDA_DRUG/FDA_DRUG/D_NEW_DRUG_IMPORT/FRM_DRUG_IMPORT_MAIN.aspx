@@ -156,8 +156,8 @@
                         CommandName="sel" Text="ดูข้อมูล">
                         <HeaderStyle Width="70px" />
                     </telerik:GridButtonColumn>
-                    <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select2"
-                        CommandName="sel" Text="อัพโหลดเอกสารยืนยัน">
+                    <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
+                        CommandName="_edit" Text="อัพโหลดเอกสารยืนยัน">
                         <HeaderStyle Width="70px" />
                     </telerik:GridButtonColumn>
                 </Columns>
