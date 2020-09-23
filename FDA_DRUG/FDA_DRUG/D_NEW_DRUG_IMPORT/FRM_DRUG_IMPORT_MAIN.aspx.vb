@@ -98,13 +98,13 @@ Public Class FRM_DRUG_IMPORT_MAIN
     '        Dim item As GridDataItem
     '        item = e.Item
     '        Dim IDA As String = item("IDA").Text
-    '        Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
+    '        Dim _edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
     '        Dim dao As New DAO_DRUG.ClsDBdalcn
     '        dao.GetDataby_IDA(IDA)
-    '        btn_edit.Style.Add("display", "none")
+    '        _edit.Style.Add("display", "none")
     '        Try
     '            If dao.fields.STATUS_ID = 6 Then
-    '                btn_edit.Style.Add("display", "block")
+    '                _edit.Style.Add("display", "block")
     '            End If
     '        Catch ex As Exception
 

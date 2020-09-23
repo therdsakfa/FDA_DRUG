@@ -134,15 +134,15 @@
                     <telerik:GridBoundColumn DataField="PROCESS_ID" DataType="System.Int32" FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                         SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="FK_IDA" FilterControlAltText="Filter FK_IDA column"
-                        HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="FK_IDA" UniqueName="FK_IDA">
-                    </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="NYM2_DATE_TOP" FilterControlAltText="Filter NYM2_DATE_TOP column"
-                        HeaderText="ประเภท" SortExpression="NYM2_DATE_TOP" UniqueName="NYM2_DATE_TOP">
+                    <telerik:GridBoundColumn DataField="NYM2_DATE_TOP"" FilterControlAltText="Filter NYM2_DATE_TOP column"
+                        HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="NYM2_DATE_TOP"" UniqueName="NYM2_DATE_TOP">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
-                        HeaderText="รหัสบัญชีรายการยา" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
+                        HeaderText="ประเภท" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
                     </telerik:GridBoundColumn>
+                 <%--   <telerik:GridBoundColumn DataField="NYM_DL" FilterControlAltText="Filter NYM_DL column"
+                        HeaderText="รหัสบัญชีรายการยา" SortExpression="NYM_DL" UniqueName="NYM_DL">
+                    </telerik:GridBoundColumn>--%>
                     <telerik:GridBoundColumn DataField="NYM2_WISH_MED" FilterControlAltText="Filter NYM2_WISH_MED column"
                         HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM2_WISH_MED" UniqueName="NYM2_WISH_MED">
                     </telerik:GridBoundColumn>
