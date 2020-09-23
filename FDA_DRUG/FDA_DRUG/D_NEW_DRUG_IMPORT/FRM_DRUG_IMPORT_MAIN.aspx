@@ -7,7 +7,7 @@
         <link href="../css/css_radgrid.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    [   <%-- <script type="text/javascript" >
+       <%-- <script type="text/javascript" >
         $(document).ready(function () {
             $(window).load(function () {
                 $.ajax({
@@ -125,7 +125,7 @@
 
     <hr />
     <div>
-        <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="15" style="margin-left: 3px; margin-bottom: 5px;" Width="1396px">
+        <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="20" style="margin-left: 3px; margin-bottom: 10px;" Width="100%">
             <MasterTableView AutoGenerateColumns="False">
                 <Columns>
                     <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
@@ -156,8 +156,8 @@
                         CommandName="sel" Text="ดูข้อมูล">
                         <HeaderStyle Width="70px" />
                     </telerik:GridButtonColumn>
-                    <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
-                        CommandName="_edit" Text="อัพโหลดเอกสารยืนยัน">
+                    <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_upload"
+                        CommandName="upload" Text="อัพโหลดเอกสารยืนยัน">
                         <HeaderStyle Width="70px" />
                     </telerik:GridButtonColumn>
                 </Columns>
