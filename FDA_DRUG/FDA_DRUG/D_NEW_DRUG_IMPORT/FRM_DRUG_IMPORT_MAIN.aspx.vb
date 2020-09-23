@@ -98,7 +98,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
             Dim item As GridDataItem
             item = e.Item
             Dim IDA As String = item("IDA").Text
-            Dim btn_edit As LinkButton = DirectCast(item("btn_Select").Controls(0), LinkButton)
+            Dim btn_edit As LinkButton = DirectCast(item("btn_Select2").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG.ClsDBdalcn
             dao.GetDataby_IDA(IDA)
             btn_edit.Style.Add("display", "none")
