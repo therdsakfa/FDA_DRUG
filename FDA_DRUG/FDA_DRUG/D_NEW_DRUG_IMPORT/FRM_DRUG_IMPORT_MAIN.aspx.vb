@@ -77,8 +77,8 @@ Public Class FRM_DRUG_IMPORT_MAIN
             End Try
 
             If e.CommandName = "sel" Then
-                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-                dao.getdata_ida(IDA)
+                Dim dao As New DAO_DRUG.ClsDBdrsamp
+                dao.GetDataby_IDA(IDA)
                 Dim tr_id As Integer = 0
                 Try
                     tr_id = dao.fields.TR_ID
@@ -98,19 +98,20 @@ Public Class FRM_DRUG_IMPORT_MAIN
             Dim item As GridDataItem
             item = e.Item
             Dim IDA As String = item("IDA").Text
-            Dim btn_upload As LinkButton = DirectCast(item("btn_upload").Controls(0), LinkButton)
+            Dim _select As LinkButton = DirectCast(item("btn_Select ").Controls(0), LinkButton)
+            Dim dao As New DAO_DRUG.ClsDBdalcn
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-            dao.getdata_ida(IDA)
-            btn_upload.Style.Add("display", "none")
+            dao.GetDataby_IDA(IDA)
+            _edit.Style.Add("display", "none")
             Try
                 If dao.fields.STATUS_ID = 6 Then
-                    btn_upload.Style.Add("display", "block")
+                    _edit.Style.Add("display", "block")
                 End If
             Catch ex As Exception
 
             End Try
-            'Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
-            'btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
+            Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
+            btn_Select.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
         End If
     End Sub
 
