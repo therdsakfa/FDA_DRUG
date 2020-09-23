@@ -92,7 +92,12 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
             End Try
             Try
                 If dao.fields.STATUS_ID = 14 Or dao.fields.STATUS_ID = 15 Then
-                    btn_send_edit.Style.Add("display", "block")
+                    If dao.fields.cncdate IsNot Nothing Then
+                        btn_send_edit.Style.Add("display", "block")
+                    Else
+                        btn_send_edit.Style.Add("display", "none")
+                    End If
+
                 Else
                     btn_send_edit.Style.Add("display", "none")
                 End If
@@ -813,7 +818,7 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
             dao_rg2.GetDataby_IDA(dao.fields.FK_IDA)
             'result = ws_drug.XML_DRUG_MERGE_UPDATE(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, _CLS.CITIZEN_ID)
 
-            KEEP_LOGS_TABEAN_BC(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, dao_rg2.fields.IDA, _
+            KEEP_LOGS_TABEAN_BC(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, dao_rg2.fields.IDA,
                                                 dao_rg2.fields.IDENTIFY, "", "", "", result, url, _CLS.CITIZEN_ID)
 
             Dim cls_sop As New CLS_SOP
@@ -827,14 +832,34 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         ElseIf ddl_status.SelectedValue = 15 Then
             Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
             dao.GetDatabyIDA(_IDA)
-            dao.fields.STATUS_ID = ddl_status.SelectedValue
-            Try
-                dao.fields.cncdate = CDate(txt_appdate.Text)
-            Catch ex As Exception
+            If txt_appdate.Text = "" Then
+                Response.Write("<script type='text/javascript'>window.parent.alert('กรุณากรอกวันที่อนุมัติ')</script> ")
+            Else
+                dao.fields.STATUS_ID = ddl_status.SelectedValue
+                Try
+                    dao.fields.cncdate = CDate(txt_appdate.Text)
+                Catch ex As Exception
 
-            End Try
-            dao.update()
-            alert("บันทึกสถานะและวันที่มีผลอนุมัติเรียบร้อยแล้ว")
+                End Try
+                dao.update()
+                alert("บันทึกสถานะและวันที่มีผลอนุมัติเรียบร้อยแล้ว")
+            End If
+
+        ElseIf ddl_status.SelectedValue = 14 Then
+            Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
+            dao.GetDatabyIDA(_IDA)
+            If txt_appdate.Text = "" Then
+                Response.Write("<script type='text/javascript'>window.parent.alert('กรุณากรอกวันที่อนุมัติ')</script> ")
+            Else
+                dao.fields.STATUS_ID = ddl_status.SelectedValue
+                Try
+                    dao.fields.cncdate = CDate(txt_appdate.Text)
+                Catch ex As Exception
+
+                End Try
+                dao.update()
+                alert("บันทึกสถานะและวันที่มีผลอนุมัติเรียบร้อยแล้ว")
+            End If
         ElseIf ddl_status.SelectedValue = 7 Then
             Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
             dao.GetDatabyIDA(_IDA)
