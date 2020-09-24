@@ -148,33 +148,6 @@ Public Class FRM_DRUG_IMPORT_MAIN
         '
         'End If                         เอาคืนนน
         'Catch ex As Exception          เอาคืนนน
-
-        'End Try                        
-        'If IDGroup = 21020 Then
-        '    If _type = "" Then
-        '        RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process)
-        '    Else
-        '        RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process & " and donate_type = " & _type)
-        '    End If
-        'ElseIf IDGroup = 63346 Then
-        '    If _type = "" Then
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process)
-        '    Else
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process & " and donate_type = " & _type)
-        '    End If
-        'ElseIf IDGroup = 63347 Then
-        '    If _type = "" Then
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process)
-        '    Else
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process & " and donate_type = " & _type)
-        '    End If
-        'ElseIf IDGroup = 63348 Then
-        '    If _type = "" Then
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process)
-        '    Else
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process & " and donate_type = " & _type)
-        '    End If
-        'End If
     End Sub
 
 End Class
