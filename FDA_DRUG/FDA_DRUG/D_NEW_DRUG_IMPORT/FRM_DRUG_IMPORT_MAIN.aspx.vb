@@ -122,9 +122,23 @@ Public Class FRM_DRUG_IMPORT_MAIN
         'Else
         '    dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
         'End If
+        If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
+            Select Case _process
+                Case "1027"
+                    dt = bao.SP_DATA_NYM2_USER()
+                    RadGrid1.DataSource = dt
+                Case "1028"
+                    dt = bao.SP_DATA_NYM3_USER()
+                    RadGrid1.DataSource = dt
+                Case "1029"
+                    dt = bao.SP_DATA_NYM4_USER()
+                    RadGrid1.DataSource = dt
+                Case "1030"
+                    dt = bao.SP_DATA_NYM5_USER()
+                    RadGrid1.DataSource = dt
+            End Select
+        End If
 
-        dt = bao.SP_DATA_NYM2_USER()
-        RadGrid1.DataSource = dt
         '  Dim IDGroup As Integer = 0   เอาคืนนน
         ' Try                           เอาคืนนน
         'IDGroup = _CLS.GROUPS          เอาคืนนน
