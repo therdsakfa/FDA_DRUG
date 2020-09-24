@@ -14,6 +14,24 @@ Option Explicit On
 Partial Public Class POPUP_NYM_SUBMIT_REQUEST
 
     '''<summary>
+    '''hl_reader control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
+    '''HiddenField1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''lr_preview control.
     '''</summary>
     '''<remarks>
