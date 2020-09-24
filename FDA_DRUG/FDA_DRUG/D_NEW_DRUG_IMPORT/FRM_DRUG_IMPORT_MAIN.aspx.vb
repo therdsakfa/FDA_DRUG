@@ -62,31 +62,37 @@ Public Class FRM_DRUG_IMPORT_MAIN
             Dim item As GridDataItem = e.Item
 
             'drsamp IDA
+            Dim NYM As String = ""
             Dim IDA As Integer = 0
             Try
                 IDA = item("IDA").Text
             Catch ex As Exception
 
             End Try
+            If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
+                Select Case _process
+                    Case "1027"
+                        NYM = "2"
+                    Case "1028"
+                        NYM = "3"
+                    Case "1029"
+                        NYM = "4"
+                    Case "1030"
+                        NYM = "5"
+                End Select
 
-            Dim PROCESS_ID As Integer = 0
-            Try
-                PROCESS_ID = item("PROCESS_ID").Text
-            Catch ex As Exception
+                If e.CommandName = "sel" Then
+                    Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+                    dao.getdata_ida(IDA)
+                    Dim tr_id As Integer = 0
+                    Try
+                        tr_id = dao.fields.TR_ID
+                    Catch ex As Exception
 
-            End Try
+                    End Try
 
-            If e.CommandName = "sel" Then
-                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-                dao.getdata_ida(IDA)
-                Dim tr_id As Integer = 0
-                Try
-                    tr_id = dao.fields.TR_ID
-                Catch ex As Exception
-
-                End Try
-
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & PROCESS_ID & "');", True)
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2  ('" & "POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&NYM=" & NYM & "&process=" & _process & "');", True)
+                End If
             End If
 
         End If
@@ -122,8 +128,18 @@ Public Class FRM_DRUG_IMPORT_MAIN
         'Else
         '    dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
         'End If
-
-        dt = bao.SP_DATA_NYM2_USER()
+        If _process = 1027 Then
+            dt = bao.SP_DATA_NYM2_USER()
+        ElseIf _process = 1028 Then
+            dt = bao.SP_DATA_NYM3_USER()
+        ElseIf _process = 1029 Then
+            dt = bao.SP_DATA_NYM4_USER()
+        ElseIf _process = 1030 Then
+            dt = bao.SP_DATA_NYM5_USER()
+        ElseIf _process = 1031 Then
+            dt = bao.SP_DATA_NYM6_USER()
+        End If
+        'dt = bao.SP_DATA_NYM2_USER()
         RadGrid1.DataSource = dt
         '  Dim IDGroup As Integer = 0   เอาคืนนน
         ' Try                           เอาคืนนน

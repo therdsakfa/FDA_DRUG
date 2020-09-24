@@ -4884,7 +4884,7 @@ Namespace BAO
         End Function
         Public Function SP_DATA_NYM3_USER() As DataTable
             Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM2_USER"
+            Dim sql As String = "exec SP_DATA_NYM3_USER"
             Dim dt As New DataTable
             Try
                 dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
@@ -4897,7 +4897,7 @@ Namespace BAO
         End Function
         Public Function SP_DATA_NYM4_USER() As DataTable
             Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM2_USER"
+            Dim sql As String = "exec SP_DATA_NYM4_USER"
             Dim dt As New DataTable
             Try
                 dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
@@ -4910,7 +4910,7 @@ Namespace BAO
         End Function
         Public Function SP_DATA_NYM5_USER() As DataTable
             Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM2_USER"
+            Dim sql As String = "exec SP_DATA_NYM5_USER"
             Dim dt As New DataTable
             Try
                 dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
@@ -4923,7 +4923,7 @@ Namespace BAO
         End Function
         Public Function SP_DATA_NYM6_USER() As DataTable
             Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM2_USER"
+            Dim sql As String = "exec SP_DATA_NYM6_USER"
             Dim dt As New DataTable
             Try
                 dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
