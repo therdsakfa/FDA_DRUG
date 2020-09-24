@@ -91,7 +91,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
 
                     End Try
 
-                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2  ('" & "POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&NYM=" & NYM & "&process=" & _process & "');", True)
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups  ('" & "POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&NYM=" & NYM & "&process=" & _process & "');", True)
                 End If
             End If
 

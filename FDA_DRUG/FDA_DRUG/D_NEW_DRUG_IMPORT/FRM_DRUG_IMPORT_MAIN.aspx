@@ -7,7 +7,7 @@
         <link href="../css/css_radgrid.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <%-- <script type="text/javascript" >
+    <script type="text/javascript" >
         $(document).ready(function () {
             $(window).load(function () {
                 $.ajax({
@@ -75,17 +75,17 @@
             //$('#ContentPlaceHolder1_Button2').click(); // ตัวอย่างให้คำสั่งปุ่มที่ซ่อนอยู่ Click
         }
 
-        function getQuerystring(key, default_) {
-            if (default_ == null) default_ = "";
-            key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-            var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
-            var qs = regex.exec(window.location.href);
-            if (qs == null)
-                return default_;
-            else
-                return qs[1];
-        }--%>
-<%--</script> --%>
+        //function getQuerystring(key, default_) {
+        //    if (default_ == null) default_ = "";
+        //    key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        //    var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
+        //    var qs = regex.exec(window.location.href);
+        //    if (qs == null)
+        //        return default_;
+        //    else
+        //        return qs[1];
+        //}
+</script> 
      <script type="text/javascript" >
          function closespinner() {
              $('#spinner').fadeOut('slow');
