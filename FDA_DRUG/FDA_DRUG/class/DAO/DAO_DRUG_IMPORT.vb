@@ -52,12 +52,6 @@
 
             Next
         End Sub
-        Public Sub GetDataby_IDA(ByVal IDA As Integer)
-
-            datas = (From p In db.dalcns Where p.IDA = IDA Select p)
-            For Each Me.fields In datas
-            Next
-        End Sub
 
     End Class
 
