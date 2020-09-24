@@ -642,6 +642,7 @@
     <Content Include="DESIGN\Scripts\jquery-1.4.2.min.js" />
     <Content Include="DESIGN\Scripts\jquery-1.7.2.js" />
     <Content Include="assets\Charts\DataJson.json" />
+    <Content Include="D_NEW_DRUG_IMPORT\Nothingherewaitforpx.aspx" />
     <Content Include="XML_DRUG_RGT.asmx" />
     <None Include="DESIGN\Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="DESIGN\Scripts\jquery-1.8.2.js" />
@@ -1593,6 +1594,7 @@
     <Content Include="UC\UC_NODE_AUTO2.ascx" />
     <Content Include="UC\UC_NODE_DRUG.ascx" />
     <Content Include="UC\UC_REMARK_ATTACH.ascx" />
+    <Content Include="UC\BrowserFile1.browser" />
     <None Include="Web References\AUTHENTICATION_104\AUTHENTICATION.wsdl" />
     <None Include="Web References\AUTHENTICATION_104\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -2984,6 +2986,13 @@
     </Compile>
     <Compile Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_MAIN.aspx.vb">
       <DependentUpon>FRM_DRUG_IMPORT_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\Nothingherewaitforpx.aspx.designer.vb">
+      <DependentUpon>Nothingherewaitforpx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\Nothingherewaitforpx.aspx.vb">
+      <DependentUpon>Nothingherewaitforpx.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="D_NEW_DRUG_IMPORT\POPUP_NYM_SUBMIT_REQUEST.aspx.designer.vb">
