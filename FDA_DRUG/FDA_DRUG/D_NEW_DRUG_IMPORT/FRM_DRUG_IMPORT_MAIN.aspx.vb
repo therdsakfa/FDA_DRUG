@@ -98,7 +98,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
             Dim item As GridDataItem
             item = e.Item
             Dim IDA As String = item("IDA").Text
-            Dim _select As LinkButton = DirectCast(item("btn_Select ").Controls(0), LinkButton)
+            Dim _select As LinkButton = DirectCast(item("btn_Select").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG.ClsDBdalcn
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             dao.GetDataby_IDA(IDA)
@@ -124,9 +124,23 @@ Public Class FRM_DRUG_IMPORT_MAIN
         'Else
         '    dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
         'End If
+        If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Or _process = "" Then
+            Select Case _process
+                Case "1027"
+                    dt = bao.SP_DATA_NYM2_USER() Then
+                    RadGrid1.DataSource = dt
+                Case "1028"
+                    dt = bao.SP_DATA_NYM3_USER() Then
+                    RadGrid1.DataSource = dt
+                Case "1029"
+                    dt = bao.SP_DATA_NYM4_USER() Then
+                    RadGrid1.DataSource = dt
+                Case "1030"
+                    dt = bao.SP_DATA_NYM5_USER() Then
+                    RadGrid1.DataSource = dt
+                Case ""
+            End Select
 
-        dt = bao.SP_DATA_NYM2_USER()
-        RadGrid1.DataSource = dt
         '  Dim IDGroup As Integer = 0   เอาคืนนน
         ' Try                           เอาคืนนน
         'IDGroup = _CLS.GROUPS          เอาคืนนน
