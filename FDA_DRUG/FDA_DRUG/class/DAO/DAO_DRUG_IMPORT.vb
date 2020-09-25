@@ -90,7 +90,7 @@
             Next
         End Sub
 
-        Public Sub GetDataby_FK_IDA_and_PROCESS_ID(ByVal DL As Integer)
+        Public Sub GetDataby_FK_IDA_and_PROCESS_ID(ByVal DL As String)
             datas = (From p In db.FDA_DRUG_IMPORT_NYM_2s Where p.DL = DL And p.STATUS_ID = 8 Select p)     'อย่าลืมเช็คตรงนี้
             For Each Me.fields In datas
             Next
@@ -125,6 +125,49 @@
 
             Next
         End Sub
+        Public Sub getdata_dl(ByVal DL As String)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_3s Where p.DL = DL Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_TR_ID(ByVal TR_ID As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_3s Where p.TR_ID = TR_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataAll()
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_3s Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_3s Where p.NYM3_IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA_STATUS(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_3s Where p.NYM3_IDA = IDA And p.STATUS_ID Is Nothing Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA(ByVal FK_IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_3s Where p.FK_IDA = FK_IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA_and_PROCESS_ID(ByVal DL As String)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_3s Where p.DL = DL And p.STATUS_ID = 8 Select p)     'อย่าลืมเช็คตรงนี้
+            For Each Me.fields In datas
+            Next
+        End Sub
     End Class
     Public Class TB_FDA_DRUG_IMPORT_NYM_4
         Inherits MAINCONTEXT
@@ -147,6 +190,49 @@
             datas = (From p In db.FDA_DRUG_IMPORT_NYM_4s Where p.NYM4_IDA = ida Select p)
             For Each Me.fields In datas
 
+            Next
+        End Sub
+        Public Sub getdata_dl(ByVal DL As String)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4s Where p.DL = DL Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_TR_ID(ByVal TR_ID As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4s Where p.TR_ID = TR_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataAll()
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4s Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4s Where p.NYM4_IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA_STATUS(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4s Where p.NYM4_IDA = IDA And p.STATUS_ID Is Nothing Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA(ByVal FK_IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4s Where p.FK_IDA = FK_IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA_and_PROCESS_ID(ByVal DL As String)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4s Where p.DL = DL And p.STATUS_ID = 8 Select p)     'อย่าลืมเช็คตรงนี้
+            For Each Me.fields In datas
             Next
         End Sub
     End Class
@@ -174,6 +260,49 @@
 
             Next
         End Sub
+        Public Sub getdata_dl(ByVal DL As String)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_5s Where p.DL = DL Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_TR_ID(ByVal TR_ID As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_5s Where p.TR_ID = TR_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataAll()
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_5s Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_5s Where p.NYM5_IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA_STATUS(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_5s Where p.NYM5_IDA = IDA And p.STATUS_ID Is Nothing Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA(ByVal FK_IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_5s Where p.FK_IDA = FK_IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA_and_PROCESS_ID(ByVal DL As String)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_5s Where p.DL = DL And p.STATUS_ID = 8 Select p)     'อย่าลืมเช็คตรงนี้
+            For Each Me.fields In datas
+            Next
+        End Sub
     End Class
     Public Class TB_FDA_DRUG_IMPORT_NYM_6
         Inherits MAINCONTEXT
@@ -194,6 +323,49 @@
             datas = (From p In db.FDA_DRUG_IMPORT_NYM_6s Where p.NYM6_IDA = ida Select p)
             For Each Me.fields In datas
 
+            Next
+        End Sub
+        Public Sub getdata_dl(ByVal DL As String)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_6s Where p.DL = DL Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_TR_ID(ByVal TR_ID As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_6s Where p.TR_ID = TR_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataAll()
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_6s Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_6s Where p.NYM6_IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA_STATUS(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_6s Where p.NYM6_IDA = IDA And p.STATUS_ID Is Nothing Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA(ByVal FK_IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_6s Where p.FK_IDA = FK_IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA_and_PROCESS_ID(ByVal DL As String)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_6s Where p.DL = DL And p.STATUS_ID = 8 Select p)     'อย่าลืมเช็คตรงนี้
+            For Each Me.fields In datas
             Next
         End Sub
     End Class

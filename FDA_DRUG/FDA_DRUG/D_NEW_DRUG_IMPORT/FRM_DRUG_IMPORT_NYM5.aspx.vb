@@ -1,8 +1,6 @@
-﻿Imports System.IO
-Imports System.Xml.Serialization
-Imports FDA_DRUG.XML_CENTER
-Imports Telerik.Web.UI
-Public Class FRM_DRUG_IMPORT_MAIN
+﻿Imports Telerik.Web.UI
+
+Public Class FRM_DRUG_IMPORT_NYM5
     Inherits System.Web.UI.Page
 
     Private _CLS As New CLS_SESSION
@@ -82,7 +80,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
                 End Select
 
                 If e.CommandName = "sel" Then
-                    Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+                    Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_5
                     dao.getdata_ida(IDA)
                     Dim tr_id As Integer = 0
                     Try
@@ -105,7 +103,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
             Dim DL As String = item("DL").Text
             Dim btn_upload As LinkButton = DirectCast(item("btn_upload").Controls(0), LinkButton)
             Dim btn_Select As LinkButton = DirectCast(item("btn_Select").Controls(0), LinkButton)
-            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_5
             dao.getdata_dl(DL)
             btn_upload.Style.Add("display", "none")
             Dim NYM As String = ""
@@ -143,18 +141,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
         'Else
         '    dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
         'End If
-        If _process = 1027 Then
-            dt = bao.SP_DATA_NYM2_USER()
-        ElseIf _process = 1028 Then
-            dt = bao.SP_DATA_NYM3_USER()
-        ElseIf _process = 1029 Then
-            dt = bao.SP_DATA_NYM4_USER()
-        ElseIf _process = 1030 Then
-            dt = bao.SP_DATA_NYM5_USER()
-        ElseIf _process = 1031 Then
-            dt = bao.SP_DATA_NYM6_USER()
-        End If
-        'dt = bao.SP_DATA_NYM2_USER()
+        dt = bao.SP_DATA_NYM5_USER()
         RadGrid1.DataSource = dt
         '  Dim IDGroup As Integer = 0   เอาคืนนน
         ' Try                           เอาคืนนน

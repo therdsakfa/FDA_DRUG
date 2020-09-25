@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MAIN_PRODUCT_ID.Master" CodeBehind="FRM_DRUG_IMPORT_MAIN.aspx.vb" Inherits="FDA_DRUG.FRM_DRUG_IMPORT_MAIN" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MAIN_PRODUCT_ID.Master" CodeBehind="FRM_DRUG_IMPORT_NYM4.aspx.vb" Inherits="FDA_DRUG.FRM_DRUG_IMPORT_NYM4" %>
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
-<%--<%@ Register src="../UC/UC_Information.ascx" tagname="UC_Information" tagprefix="uc1" %>--%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link href="../css/css_radgrid.css" rel="stylesheet" />
 </asp:Content>
@@ -41,14 +40,14 @@
         <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="20" style="margin-left: 3px; margin-bottom: 10px;" Width="100%">
             <MasterTableView AutoGenerateColumns="False">
                 <Columns>
-                    <telerik:GridBoundColumn DataField="NYM2_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM2_IDA column" HeaderText="IDA"
-                        SortExpression="NYM2_IDA" UniqueName="NYM2_IDA" Display="false">
+                    <telerik:GridBoundColumn DataField="NYM4_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM4_IDA column" HeaderText="IDA"
+                        SortExpression="NYM4_IDA" UniqueName="NYM4_IDA" Display="false">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="PROCESS_ID"  FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                         SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="NYM2_DATE_TOP" FilterControlAltText="Filter NYM2_DATE_TOP column"
-                        HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="NYM2_DATE_TOP" UniqueName="NYM2_DATE_TOP">
+                    <telerik:GridBoundColumn DataField="NYM4_DATE_TOP" FilterControlAltText="Filter NYM4_DATE_TOP column"
+                        HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="NYM4_DATE_TOP" UniqueName="NYM4_DATE_TOP">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
                         HeaderText="ประเภท" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
@@ -56,11 +55,11 @@
                     <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
                         HeaderText="รหัสบัญชีรายการยา" SortExpression="DL" UniqueName="DL">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="NYM2_WISH_MED" FilterControlAltText="Filter NYM2_WISH_MED column"
-                        HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM2_WISH_MED" UniqueName="NYM2_WISH_MED">
+                    <telerik:GridBoundColumn DataField="NYM4_WISH_MED" FilterControlAltText="Filter NYM4_WISH_MED column"
+                        HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM4_WISH_MED" UniqueName="NYM4_WISH_MED">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="NYM2_NO" FilterControlAltText="Filter NYM2_NO column"
-                        HeaderText="เลขดำเนินการ" SortExpression="NYM2_NO" UniqueName="NYM2_NO">   
+                    <telerik:GridBoundColumn DataField="NYM4_NO" FilterControlAltText="Filter NYM4_NO column"
+                        HeaderText="เลขดำเนินการ" SortExpression="NYM4_NO" UniqueName="NYM4_NO">   
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="STATUS_ID" FilterControlAltText="Filter STATUS_ID column"
                         HeaderText="สถานะ" SortExpression="STATUS_ID" UniqueName="STATUS_ID">
@@ -85,14 +84,4 @@
                           <div class="h5" style="padding-left:87%;">  
                       <asp:HyperLink ID="hl_pay" runat="server"  target="_blank"> ชำระเงินคลิกที่นี้</asp:HyperLink>
                         </div>
-    <%--<div class=" modal fade" id="myModal">              
-               <div class="panel panel-info" style="width:100%;">
-                   <div class="panel-heading  text-center"><h1>ผลิตภัณฑ์ยาเพื่อโครงการวิจัย</h1></div>
-                   <button type="button" class="btn btn-default pull-right" data-dismiss="modal">ปิดหน้านี้</button>
-                   <div class="panel-body">
-                             <iframe id="f1"  style="width:100%; height:550px;" ></iframe>
-                   </div>
-                   <div class="panel-footer"></div>
-               </div>       
-</div>--%>
 </asp:Content>

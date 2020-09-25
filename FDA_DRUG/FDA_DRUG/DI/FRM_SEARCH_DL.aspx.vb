@@ -124,14 +124,22 @@ Public Class FRM_SEARCH_DL
                 Select Case _process
                     Case "1027"
                         NYM = "2"
+                        url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM2.aspx?DL=" & rcb_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
+
                     Case "1028"
                         NYM = "3"
+                        url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM3.aspx?DL=" & rcb_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
+
                     Case "1029"
                         NYM = "4"
+                        url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM4.aspx?DL=" & rcb_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
+
                     Case "1030"
                         NYM = "5"
+                        url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM5.aspx?DL=" & rcb_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
+
                 End Select
-                url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_MAIN.aspx?DL=" & rcb_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
+                'url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_MAIN.aspx?DL=" & rcb_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
                 Response.Redirect(url)
             End If
         Else
