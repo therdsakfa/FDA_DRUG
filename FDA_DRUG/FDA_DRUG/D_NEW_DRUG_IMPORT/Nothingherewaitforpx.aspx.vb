@@ -12,9 +12,9 @@
     Public Sub load_gv(ByVal TR_ID As String)
         If TR_ID <> "" And TR_ID <> "0" Then
             Dim dao As New DAO_DRUG_IMPORT.All_file_attrach 'เรียกใช้classตารางไฟล์แนบ
-            dao.GetDataby_TR_ID(TR_ID) 'ดึงข้อมูลโดยการ where TR_ID
-            gv.DataSource = dao.datas 'ใส่ข้อมูลลงตาราง
-            gv.DataBind() 'รันข้อมูลทุกrowของตาราง
+            '      dao.GetDataby_TR_ID(TR_ID) 'ดึงข้อมูลโดยการ where TR_ID
+            '     gv.DataSource = dao.datas 'ใส่ข้อมูลลงตาราง
+            '    gv.DataBind() 'รันข้อมูลทุกrowของตาราง
         End If
 
     End Sub

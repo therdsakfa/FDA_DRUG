@@ -4934,6 +4934,19 @@ Namespace BAO
 
             Return dt
         End Function
+        Public Function SP_DATA_NYM2_ALL_DATA() As DataTable   'ดึงข้อมูล นยม 2 ทั้งหมด เข้ามา ตารางซ้ำกันอยู่
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DATA_NYM2_ALL_DATA"
+            Dim dt As New DataTable
+            Try
+                dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
+
+            Return dt
+        End Function
         Public Function SP_STAFF_LCNREQUEST() As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_STAFF_LCNREQUEST "
@@ -5838,6 +5851,7 @@ Namespace BAO
         Public _PATH_EDIT As String = System.Configuration.ConfigurationManager.AppSettings("PATH_EDIT")              'ที่อยู่ Path
         Public _PATH_SUBS As String = System.Configuration.ConfigurationManager.AppSettings("PATH_EDIT")
         Public _RDLC As String = System.Configuration.ConfigurationManager.AppSettings("RDLC")
+        Public _PATH_PDF_IMPORT As String = System.Configuration.ConfigurationManager.AppSettings("PATH_FILE")
         Sub RunAppSettings()
             _PATH_PDF_TEMPLATE = System.Configuration.ConfigurationManager.AppSettings("PATH_PDF_TEMPLATE")                 'ที่อยู่ Path
             _PATH_XML_CLASS = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_CLASS")                       'ที่อยู่ Path

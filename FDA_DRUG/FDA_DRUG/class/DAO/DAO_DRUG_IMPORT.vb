@@ -58,6 +58,41 @@
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataAll()
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_2s Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_2s Where p.NYM2_IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA_STATUS(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_2s Where p.NYM2_IDA = IDA And p.STATUS_ID Is Nothing Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA(ByVal FK_IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_2s Where p.FK_IDA = FK_IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA_and_PROCESS_ID(ByVal DL As Integer)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_2s Where p.DL = DL And p.STATUS_ID = 8 Select p)     'อย่าลืมเช็คตรงนี้
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Friend Sub GetDataby_IDA()
+            Throw New NotImplementedException()
+        End Sub
 
     End Class
 
@@ -179,5 +214,42 @@
             '    Next
         End Sub
     End Class
+    Public Class ClsDBTRANSACTION_UPLOAD
+        Inherits MAINCONTEXT
+
+        Public fields As New FDA_DRUG_IMPORT_UPLOAD
+
+
+        Public Sub insert()
+            db.FDA_DRUG_IMPORT_UPLOADs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.FDA_DRUG_IMPORT_UPLOADs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.FDA_DRUG_IMPORT_UPLOADs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_UPLOADs Where p.FK_DRUG_IMPORT = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+
+
+
 
 End Class
