@@ -104,6 +104,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
             item = e.Item
             Dim DL As String = item("_DL").Text
             Dim btn_upload As LinkButton = DirectCast(item("btn_upload").Controls(0), LinkButton)
+            Dim btn_Select As LinkButton = DirectCast(item("btn_Select").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             dao.getdata_dl(DL)
             btn_upload.Style.Add("display", "none")
