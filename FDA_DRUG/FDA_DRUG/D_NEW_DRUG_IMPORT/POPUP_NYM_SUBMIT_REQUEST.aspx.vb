@@ -82,7 +82,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
         Return rcvno
     End Function
-    Protected Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
+    Protected Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click        ' ปรับสภาณะ
         Dim dao As New DAO_DRUG.ClsDBdalcn
         Dim bao As New BAO.ClsDBSqlcommand
         dao.GetDataby_IDA(Integer.Parse(_IDA))
@@ -179,12 +179,13 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Private Sub BindData_PDF()
         Dim bao As New BAO.AppSettings
 
-        Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+        Dim dao_up As New DAO_DRUG_IMPORT.ClsDBTRANSACTION_UPLOAD
         dao_up.GetDataby_IDA(_TR_ID)
         Dim dao As New DAO_DRUG.ClsDBdalcn
         Dim dao_PHR As New DAO_DRUG.ClsDBDALCN_PHR
         Dim dao_PHR2 As New DAO_DRUG.ClsDBDALCN_PHR
         Dim dao_DALCN_DETAIL_LOCATION_KEEP As New DAO_DRUG.TB_DALCN_DETAIL_LOCATION_KEEP
+        Dim bao_import As New BAO.ClsDBSqlcommand
 
         dao.GetDataby_IDA(_IDA)
         Dim FK_IDA As Integer = 0
@@ -249,19 +250,18 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         'Catch ex As Exception
 
         'End Try
-        If _ProcessID = "114" Then
+        If _ProcessID = "1027" Then
             class_xml.dalcns.CHK_SELL_TYPE = "1"
-        ElseIf _ProcessID = "116" Then
+        ElseIf _ProcessID = "1028" Then
             class_xml.dalcns.CHK_SELL_TYPE = "2"
-        ElseIf _ProcessID = "117" Then
+        ElseIf _ProcessID = "1029" Then
             class_xml.dalcns.CHK_SELL_TYPE = "3"
-        ElseIf _ProcessID = "115" Then
+        ElseIf _ProcessID = "1030" Then
             class_xml.dalcns.CHK_SELL_TYPE = "4"
-        ElseIf _ProcessID = "127" Or _ProcessID = "123" Or _ProcessID = "125" Or _ProcessID = "129" Or _ProcessID = "131" Or _ProcessID = "133" Then
+        ElseIf _ProcessID = "1031" Or _ProcessID = "123" Or _ProcessID = "125" Or _ProcessID = "129" Or _ProcessID = "131" Or _ProcessID = "133" Then
             class_xml.dalcns.CHK_SELL_TYPE = "1"
-        ElseIf _ProcessID = "128" Or _ProcessID = "124" Or _ProcessID = "126" Or _ProcessID = "130" Or _ProcessID = "132" Or _ProcessID = "134" Then
-            class_xml.dalcns.CHK_SELL_TYPE = "2"
         End If
+
         Try
             class_xml.dalcns.CATEGORY_DRUG = NumEng2Thai(class_xml.dalcns.CATEGORY_DRUG)
         Catch ex As Exception
@@ -1130,8 +1130,8 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
         Dim statusId As Integer = dao.fields.STATUS_ID
         Dim lcntype As String = dao.fields.lcntpcd
-        Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID
-        Dim YEAR As String = dao_up.fields.YEAR
+        '   Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID
+        '  Dim YEAR As String = dao_up.fields.YEAR
 
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         'If statusId = 8 Then
@@ -1182,10 +1182,10 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 End Try
 
                 If template_id = 2 Then
-                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(PROCESS_ID, lcntype, statusId, 0, _group:=9)
+                    '     dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(PROCESS_ID, lcntype, statusId, 0, _group:=9)
                 Else
                     'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
-                    dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW_AND_GROUP(PROCESS_ID, statusId, 0, 0)
+                    '    dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW_AND_GROUP(PROCESS_ID, statusId, 0, 0)
                 End If
                 'Else
                 '    dao_pdftemplate.GetDataby_TEMPLAETE_and_GROUP(PROCESS_ID, lcntype, statusId, Group, 0)
@@ -1200,14 +1200,14 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 End Try
                 If template_id = 2 Then
                     If statusId = 6 Then
-                        dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, 0, _group:=9)
+                        '      dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, 0, _group:=9)
                     Else
-                        dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, 0, _group:=9)
+                        '    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, 0, _group:=9)
                         'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
                     End If
 
                 Else
-                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, 0, _group:=0)
+                    '  dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, 0, _group:=0)
                     'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
                 End If
 
@@ -1226,14 +1226,14 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             End Try
             If template_id = 2 Then
                 'If statusId = 6 Then
-                dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(PROCESS_ID, lcntype, statusId, 0, _group:=0)
+                '  dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(PROCESS_ID, lcntype, statusId, 0, _group:=0)
                 'Else
                 'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
                 'End If
 
             Else
                 'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
-                dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(PROCESS_ID, lcntype, statusId, PREVIEW:=0, _group:=0)
+                '  dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(PROCESS_ID, lcntype, statusId, PREVIEW:=0, _group:=0)
             End If
             '    Else
             '    dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
@@ -1247,19 +1247,19 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim paths As String = bao._PATH_DEFAULT
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
 
-        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
-        Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", PROCESS_ID, YEAR, _TR_ID)
+        '   Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
+        '  Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", PROCESS_ID, YEAR, _TR_ID)
         'load_PDF(filename)
-        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+        ' LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
 
 
-        lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
-        hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+        ' lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+        'hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
 
 
-        HiddenField1.Value = filename
-        _CLS.FILENAME_PDF = NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
-        _CLS.PDFNAME = filename
+        ' HiddenField1.Value = filename
+        ' _CLS.FILENAME_PDF = NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
+        ' _CLS.PDFNAME = filename
         '    show_btn() 'ตรวจสอบปุ่ม
     End Sub
     Private Sub load_pdf(ByVal FilePath As String)

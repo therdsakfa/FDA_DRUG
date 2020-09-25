@@ -98,26 +98,41 @@ Public Class FRM_DRUG_IMPORT_MAIN
         End If
     End Sub
 
-    'Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound   'ในแต่ละแถวให้ทำอะไร ซ่อนปุ่ม โชว์ปุ่ม ปิดปุ่ม
-    '    If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
-    '        Dim item As GridDataItem
-    '        item = e.Item
-    '        Dim IDA As String = item("IDA").Text
-    '        Dim btn_upload As LinkButton = DirectCast(item("btn_upload").Controls(0), LinkButton)
-    '        Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-    '        dao.getdata_ida(IDA)
-    '        btn_upload.Style.Add("display", "none")
-    '        Try
-    '            If dao.fields.STATUS_ID = 6 Then
-    '                btn_upload.Style.Add("display", "block")
-    '            End If
-    '        Catch ex As Exception
-
-    '        End Try
-    '        'Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
-    '        'btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
-    '    End If
-    'End Sub
+    Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound   'ในแต่ละแถวให้ทำอะไร ซ่อนปุ่ม โชว์ปุ่ม ปิดปุ่ม
+        If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
+            Dim item As GridDataItem
+            item = e.Item
+            Dim DL As String = item("_DL").Text
+            Dim btn_upload As LinkButton = DirectCast(item("btn_upload").Controls(0), LinkButton)
+            Dim btn_Select As LinkButton = DirectCast(item("btn_Select").Controls(0), LinkButton)
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+            dao.getdata_dl(DL)
+            btn_upload.Style.Add("display", "none")
+            Dim NYM As String = ""
+            If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
+                Select Case _process
+                    Case "1027"
+                        NYM = "2"
+                    Case "1028"
+                        NYM = "3"
+                    Case "1029"
+                        NYM = "4"
+                    Case "1030"
+                        NYM = "5"
+                End Select
+            End If
+            ' Try
+            'If dao.fields.STATUS_ID = 6 Then
+            'btn_upload.Style.Add("display", "block")
+            'End If
+            '   Catch ex As Exception
+            '  End Try
+            'DL = 96703&NYM=2&process=1027
+            Dim url As String = "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?DL=" & _DL & "&NYM=" & NYM & "&process=" & _process & ""     'แก้ไขบรรทัดนี้
+            ' Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
+            btn_Select.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")                                                           'แก้ไขบรรทัดนี้
+        End If
+    End Sub
 
     Protected Sub RadGrid1_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource  'หาข้อมูลมาใส่ 
         Dim bao As New BAO.ClsDBSqlcommand
