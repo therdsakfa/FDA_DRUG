@@ -102,7 +102,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
         If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
             Dim item As GridDataItem
             item = e.Item
-            Dim DL As String = item("_DL").Text
+            Dim DL As String = item("DL").Text
             Dim btn_upload As LinkButton = DirectCast(item("btn_upload").Controls(0), LinkButton)
             Dim btn_Select As LinkButton = DirectCast(item("btn_Select").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
