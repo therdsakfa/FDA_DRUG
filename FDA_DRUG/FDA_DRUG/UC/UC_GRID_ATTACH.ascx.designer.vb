@@ -14,11 +14,11 @@ Option Explicit On
 Partial Public Class UC_GRID_ATTACH
 
     '''<summary>
-    '''gv control.
+    '''gv2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents gv As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents gv2 As Global.System.Web.UI.WebControls.GridView
 End Class
