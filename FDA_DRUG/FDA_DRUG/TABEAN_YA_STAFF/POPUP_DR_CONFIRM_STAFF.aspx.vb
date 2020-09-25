@@ -2210,7 +2210,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
             'dao_dos.GetDataby_cd(dsgcd)
             If head_type = "โบราณ" Then
-                If dao_dos.fields.thadsgnm <> "-" Then
+                If dao_e.fields.thadsgnm <> "-" Then
                     class_xml.Dossage_form = dao_e.fields.thadsgnm
                 Else
                     class_xml.Dossage_form = dao_e.fields.engdsgnm
