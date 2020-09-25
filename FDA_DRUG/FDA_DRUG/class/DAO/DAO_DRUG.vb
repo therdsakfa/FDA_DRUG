@@ -1361,7 +1361,7 @@ Namespace DAO_DRUG
         End Sub
         Public Sub GetDataby_TR_ID_type(ByVal TR_ID As Integer, ByVal type As Integer)
 
-            datas = (From p In db.FILE_ATTACHes Where p.TRANSACTION_ID = TR_ID And p.TYPE = type Select p)
+            datas = (From p In db.FILE_ATTACHes Where p.TRANSACTION_ID = TR_ID And p.TYPE = type And p.NAME_REAL <> "" Select p)
             For Each Me.fields In datas
             Next
         End Sub
