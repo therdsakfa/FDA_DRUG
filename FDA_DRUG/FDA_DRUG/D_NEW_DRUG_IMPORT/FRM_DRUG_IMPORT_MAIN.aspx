@@ -41,8 +41,8 @@
         <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="20" style="margin-left: 3px; margin-bottom: 10px;" Width="100%">
             <MasterTableView AutoGenerateColumns="False">
                 <Columns>
-                    <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
-                        SortExpression="IDA" UniqueName="IDA" Display="false">
+                    <telerik:GridBoundColumn DataField="NYM2_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM2_IDA column" HeaderText="IDA"
+                        SortExpression="NYM2_IDA" UniqueName="NYM2_IDA" Display="false">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="PROCESS_ID" DataType="System.Int32" FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                         SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
@@ -53,9 +53,9 @@
                     <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
                         HeaderText="ประเภท" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
                     </telerik:GridBoundColumn>
-                 <%--   <telerik:GridBoundColumn DataField="NYM_DL" FilterControlAltText="Filter NYM_DL column"
-                        HeaderText="รหัสบัญชีรายการยา" SortExpression="NYM_DL" UniqueName="NYM_DL">
-                    </telerik:GridBoundColumn>--%>
+                    <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
+                        HeaderText="รหัสบัญชีรายการยา" SortExpression="DL" UniqueName="DL">
+                    </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="NYM2_WISH_MED" FilterControlAltText="Filter NYM2_WISH_MED column"
                         HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM2_WISH_MED" UniqueName="NYM2_WISH_MED">
                     </telerik:GridBoundColumn>
