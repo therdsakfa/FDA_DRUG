@@ -7,93 +7,6 @@
         <link href="../css/css_radgrid.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <%-- <script type="text/javascript" >
-        $(document).ready(function () {
-            $(window).load(function () {
-                $.ajax({
-                    type: 'POST',
-                    data: { submit: true },
-                    success: function (result) {
-                        // $('#spinner').fadeOut('slow');
-                    }
-                });
-            });
-
-            function CloseSpin() {
-                $('#spinner').toggle('slow');
-            }
-
-
-            $('#ContentPlaceHolder1_btn_upload').click(function () {
-                //var lct_ida = getQuerystring("lct_ida");
-                //var lcn_ida = getQuerystring("lcn_ida");
-                var process = getQuerystring("process");
-                //  $('#spinner').toggle('slow');
-                //Popups('POPUP_RESEARCH_SUM_DL.aspx?lct_ida=' + lct_ida + '&lcn_ida=' + lcn_ida + '&process=' + process);
-                Popups('POPUP_RESEARCH_SUM_UL.aspx?process=' + process);
-                return false;
-            });
-
-
-            $('#ContentPlaceHolder1_btn_add').click(function () { //MIN เพิ่มหน้า popup ดูเอกสาร 
-                //$('#spinner').fadeIn('slow');
-                Popups('POPUP_NYM_SUBMIT_REQUEST.aspx');
-                return false;
-            });
-          
-            function Popups(url) { // สำหรับทำ Div Popup
-                $('#myModal').modal('toggle'); // เป็นคำสั่งเปิดปิด
-                var i = $('#f1'); // ID ของ iframe   
-                i.attr("src", url); //  url ของ form ที่จะเปิด
-            }
-
-
-        });
-        function getQuerystring(key, default_) {
-            if (default_ == null) default_ = "";
-            key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-            var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
-            var qs = regex.exec(window.location.href);
-            if (qs == null)
-                return default_;
-            else
-                return qs[1];
-        }
-        function Popups2(url) { // สำหรับทำ Div Popup
-            $('#myModal').modal('toggle'); // เป็นคำสั่งเปิดปิด
-            var i = $('#f1'); // ID ของ iframe   
-            i.attr("src", url); //  url ของ form ที่จะเปิด
-        }
-        function close_modal() { // คำสั่งสั่งปิด PopUp
-            $('#myModal').modal('hide');
-            $('#ContentPlaceHolder1_btn_reload').click(); // ตัวอย่างให้คำสั่งปุ่มที่ซ่อนอยู่ Click
-        }
-        function spin_space() { // คำสั่งสั่งปิด PopUp
-            //    alert('123456');
-            $('#spinner').toggle('slow');
-            //$('#myModal').modal('hide');
-            //$('#ContentPlaceHolder1_Button2').click(); // ตัวอย่างให้คำสั่งปุ่มที่ซ่อนอยู่ Click
-        }
-
-        function getQuerystring(key, default_) {
-            if (default_ == null) default_ = "";
-            key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-            var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
-            var qs = regex.exec(window.location.href);
-            if (qs == null)
-                return default_;
-            else
-                return qs[1];
-        }--%>
-<%--</script> --%>
-     <script type="text/javascript" >
-         function closespinner() {
-             $('#spinner').fadeOut('slow');
-             alert('Download Success');
-             $('#ContentPlaceHolder1_Button1').click();
-
-         }
-     </script>
 
     <div id="spinner" style="background-color: transparent; display: none;">
         <img src="../imgs/spinner.gif" alt="Loading" style="position: absolute; top: 120px; left: 293px; height: 185px; width: 207px;" />
@@ -128,8 +41,8 @@
         <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="20" style="margin-left: 3px; margin-bottom: 10px;" Width="100%">
             <MasterTableView AutoGenerateColumns="False">
                 <Columns>
-                    <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
-                        SortExpression="IDA" UniqueName="IDA" Display="false">
+                    <telerik:GridBoundColumn DataField="NYM2_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM2_IDA column" HeaderText="IDA"
+                        SortExpression="NYM2_IDA" UniqueName="NYM2_IDA" Display="false">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="PROCESS_ID" DataType="System.Int32" FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                         SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
@@ -140,9 +53,9 @@
                     <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
                         HeaderText="ประเภท" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
                     </telerik:GridBoundColumn>
-                 <%--   <telerik:GridBoundColumn DataField="NYM_DL" FilterControlAltText="Filter NYM_DL column"
-                        HeaderText="รหัสบัญชีรายการยา" SortExpression="NYM_DL" UniqueName="NYM_DL">
-                    </telerik:GridBoundColumn>--%>
+                    <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
+                        HeaderText="รหัสบัญชีรายการยา" SortExpression="DL" UniqueName="DL">
+                    </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="NYM2_WISH_MED" FilterControlAltText="Filter NYM2_WISH_MED column"
                         HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM2_WISH_MED" UniqueName="NYM2_WISH_MED">
                     </telerik:GridBoundColumn>

@@ -1,14 +1,8 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="POPUP_NYM_SUBMIT_REQUEST.aspx.vb" Inherits="FDA_DRUG.POPUP_NYM_SUBMIT_REQUEST" %>
 
-<%@ Register Src="~/UC/UC_GRID_ATTACH.ascx" TagPrefix="uc1" TagName="UC_GRID_ATTACH" %>
+<%--<%@ Register Src="~/UC/UC_GRID_ATTACH.ascx" TagPrefix="uc1" TagName="UC_GRID_ATTACH" %>  ต้องมาแก้ไข เป็น file ที่ผู้ประกอบการ upload
 
- <%--        <%@ Register src="../UC/UC_GRID_PHARMACIST.ascx" tagname="UC_GRID_PHARMACIST" tagprefix="uc2" %>   <%----%>--%>
-
-
-<%
-
-
-<%----%>
+<%@ Register src="../UC/UC_GRID_PHARMACIST.ascx" tagname="UC_GRID_PHARMACIST" tagprefix="uc2" %>--%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -105,12 +99,12 @@
              </td>
         </tr>
         <tr>
-             <td style="width:30%;height:50%;padding-left:10%">
+            <%-- <td style="width:30%;height:50%;padding-left:10%">
 
-                <%-- %> <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" />  -->%       <%--น่าจะเป็นไฟล์ที่โหลดเข้าไปในหน้าพี่ไอซ์ เปลี่ยน location หหนเาโลหดเอกสารที่โหลดไปบดเว --%>
-           <%%>
+                 <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" />    กลับมาแก้ code ตรงนี้ --%>
+           
                  <br />
-                
+                 <%--<uc2:UC_GRID_PHARMACIST ID="UC_GRID_PHARMACIST" runat="server" />--%>
            
              </td>
         </tr>

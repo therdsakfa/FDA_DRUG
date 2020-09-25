@@ -30,7 +30,8 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         If Not IsPostBack Then
             BindData_PDF()
             show_btn(_IDA)
-
+            ' UC_GRID_PHARMACIST.load_gv(_IDA)
+            'UC_GRID_ATTACH.load_gv(_TR_ID)
             If Request.QueryString("identify") <> "" Then
                 If Request.QueryString("identify") <> _CLS.CITIZEN_ID_AUTHORIZE Then
                     AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("identify"), 0, HttpContext.Current.Request.Url.AbsoluteUri)

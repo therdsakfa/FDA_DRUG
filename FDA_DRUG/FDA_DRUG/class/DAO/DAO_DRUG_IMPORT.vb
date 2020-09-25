@@ -52,6 +52,12 @@
 
             Next
         End Sub
+        Public Sub GetDataby_TR_ID(ByVal TR_ID As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_2s Where p.TR_ID = TR_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
 
     End Class
 
@@ -148,6 +154,29 @@
             For Each Me.fields In datas
 
             Next
+        End Sub
+    End Class
+    Public Class All_file_attrach
+        Inherits MAINCONTEXT
+        Public fields As New M_ATTACH_DOC
+
+        Public Sub insert()
+            db.M_ATTACH_DOCs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub delete()
+            db.M_ATTACH_DOCs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+        'ขาด DL 
+        Public Sub getfile_type_dl(ByVal nym As Integer, ByVal dl As Integer)
+            '    datas = (From p In db.M_ATTACH_DOCs Where p.ATTACH_TYPE = nym And p.DL = dl Select p)
+            '    For Each Me.fields In datas
+
+            '    Next
         End Sub
     End Class
 
