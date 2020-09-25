@@ -52,7 +52,7 @@
 
             Next
         End Sub
-        Public Sub getdata_dl(ByVal DL As Integer)
+        Public Sub getdata_dl(ByVal DL As String)
             datas = (From p In db.FDA_DRUG_IMPORT_NYM_2s Where p.DL = DL Select p)
             For Each Me.fields In datas
 
