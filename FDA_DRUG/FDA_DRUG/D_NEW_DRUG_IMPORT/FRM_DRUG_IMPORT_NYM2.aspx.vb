@@ -9,6 +9,8 @@ Public Class FRM_DRUG_IMPORT_MAIN
     Private _type As String
     Private _process As String = ""
     Private _DL As String = ""
+    Private _IDA As String = ""
+    Private _TR_ID As String = ""
 
     Sub RunSession()
 
@@ -17,6 +19,8 @@ Public Class FRM_DRUG_IMPORT_MAIN
             ''นำค่า Session ใส่ ในตัวแปร _CLS
             _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
             _DL = Request.QueryString("DL")
+            _IDA = Request.QueryString("IDA")
+            _TR_ID = Request.QueryString("TR_ID")
             '_lct_ida = Request.QueryString("lct_ida")
             '_type = Request.QueryString("type")
             '_process_for = Request.QueryString("process_for")
