@@ -64,7 +64,6 @@ Public Class FRM_DRUG_IMPORT_MAIN
     Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand    'กดปุ่มใน grid ให้ทำอะไร จากหหน้
         If TypeOf e.Item Is GridDataItem Then
             Dim bao As New BAO.ClsDBSqlcommand
-            Dim bao_infor As New BAO.information
             Dim item As GridDataItem = e.Item
 
             Dim NYM As String = ""
