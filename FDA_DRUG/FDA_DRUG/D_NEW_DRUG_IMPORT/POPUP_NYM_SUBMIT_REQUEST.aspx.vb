@@ -199,7 +199,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         '-------------------เก่า------------------
         dao_PHR.GetDataby_FK_IDA_AddDetails(_IDA)    ' เพิ่ม IDA เข้า base 
         '------------------------------------
-        dao_DALCN_DETAIL_LOCATION_KEEP.'GetData_by_LCN_IDA(_IDA)   หา IDA จาก base
+        dao_DALCN_DETAIL_LOCATION_KEEP.GetData_by_LCN_IDA(_IDA)   ' หา IDA จาก base
 
         Dim lcnno_text As String = ""
         Dim lcnno_auto As String = ""
