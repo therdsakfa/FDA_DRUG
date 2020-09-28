@@ -68,7 +68,7 @@ Namespace BAO
         End Function
         Public Function XML_SEARCH_PRODUCT_GROUP(ByVal IDENTITY As String) As DataTable
 
-            Dim sql As String = "exec XML_SEARCH_PRODUCT_GROUP @IDENTITY= '" & IDENTITY & "'"
+            Dim sql As String = "exec dbo.XML_SEARCH_PRODUCT_GROUP @identify= '" & IDENTITY & "'"
             Dim dta As New DataTable
             dta = Queryd_124_2(sql)
             Return dta

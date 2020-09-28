@@ -18,5 +18,12 @@ Public Class XML_DRUG_RGT
 
         Return dt
     End Function
+    <WebMethod()>
+    Public Function XML_SEARCH_PRODUCT_GROUPV2(ByVal identify As String) As DataTable
+        Dim dt As New DataTable
+        Dim bao As New BAO.ClsDBSqlcommand
+        dt = bao.XML_SEARCH_PRODUCT_GROUP(identify)
 
+        Return dt
+    End Function
 End Class
