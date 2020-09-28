@@ -69,7 +69,6 @@ Public Class FRM_DRUG_IMPORT_MAIN
             Dim NYM2_ida As String = item("NYM2_IDA").Text
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
 
-            _process = "1027"
 
             'If e.CommandName = "sel" Then
             '    dao.GetDataby_IDA(NYM2_ida)
@@ -80,7 +79,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
 
             'End Try
 
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups  ('" & "POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM2_ida & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process & "');", True)
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups  ('" & "POPUP_NYM_SUBMIT_REQUEST.aspx?&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process & "');", True)
             'End If
         End If
     End Sub
