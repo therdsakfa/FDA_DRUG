@@ -180,7 +180,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim bao As New BAO.AppSettings
 
         Dim dao_up As New DAO_DRUG_IMPORT.ClsDBTRANSACTION_UPLOAD
-        dao_up.GetDataby_IDA(_TR_ID)
+        dao_up.GetDataby_IDA(_TR_ID)    ' อาจไม่จำเป็น 
         Dim dao As New DAO_DRUG.ClsDBdalcn
         Dim dao_PHR As New DAO_DRUG.ClsDBDALCN_PHR
         Dim dao_PHR2 As New DAO_DRUG.ClsDBDALCN_PHR
@@ -197,9 +197,9 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         '-------------------เก่า------------------
         ' dao_PHR.GetDataby_FK_IDA(_IDA)
         '-------------------เก่า------------------
-        dao_PHR.GetDataby_FK_IDA_AddDetails(_IDA)
+        dao_PHR.GetDataby_FK_IDA_AddDetails(_IDA)    ' เพิ่ม IDA เข้า base 
         '------------------------------------
-        dao_DALCN_DETAIL_LOCATION_KEEP.GetData_by_LCN_IDA(_IDA)
+        dao_DALCN_DETAIL_LOCATION_KEEP.'GetData_by_LCN_IDA(_IDA)   หา IDA จาก base
 
         Dim lcnno_text As String = ""
         Dim lcnno_auto As String = ""
@@ -214,9 +214,9 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Catch ex As Exception
 
         End Try
-        Dim CHK_SELL_TYPE As String = ""
+        Dim NYM_TYPE As String = ""
         Try
-            CHK_SELL_TYPE = dao.fields.CHK_SELL_TYPE
+            NYM_TYPE = dao.fields.CHK_SELL_TYPE
         Catch ex As Exception
 
         End Try
@@ -239,7 +239,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
         End Try
 
-        Dim cls_dalcn As New CLASS_GEN_XML.DALCN(_CLS.CITIZEN_ID, lcnsid_da, lcntpcd_da, pvncd_da, CHK_SELL_TYPE:=CHK_SELL_TYPE)
+        Dim cls_dalcn As New CLASS_GEN_XML.DALCN(_CLS.CITIZEN_ID, lcnsid_da, lcntpcd_da, pvncd_da, CHK_SELL_TYPE:=NYM_TYPE)
 
 
         Dim class_xml As New CLASS_DALCN
@@ -275,7 +275,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         End Try
         Try
             class_xml.dalcns.WRITE_DATE = NumEng2Thai(CDate(dao.fields.WRITE_DATE).ToLongDateString())
-        Catch ex As Exception
+        Catch ex As Exception         'วันที่เขียนเท่ากับเท่าไร แปลงข้อมูลใน base เป็
 
         End Try
         'p_lcn = class_xml
