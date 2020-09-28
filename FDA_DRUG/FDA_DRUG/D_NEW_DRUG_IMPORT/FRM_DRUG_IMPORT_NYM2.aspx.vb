@@ -69,6 +69,8 @@ Public Class FRM_DRUG_IMPORT_MAIN
             Dim NYM2_ida As String = item("NYM2_IDA").Text
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
 
+            _process = "1027"
+
             'If e.CommandName = "sel" Then
             '    dao.GetDataby_IDA(NYM2_ida)
             'Dim tr_id As Integer = 0
