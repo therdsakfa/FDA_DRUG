@@ -2383,4 +2383,33 @@ Public Class FRM_XML
         x.Serialize(objStreamWriter, cls_xml)
         objStreamWriter.Close()
     End Sub
+
+    Protected Sub NYM3_Click(sender As Object, e As EventArgs) Handles NYM3.Click     '''' เอาข้อมูลมาโชวววววววนะ โดยการ get ออกมา 
+        Dim filename As String = "NORYORMOR3"
+        Dim bao_show As New BAO_SHOW
+        Dim cls As New CLASS_GEN_XML.NYM3_IMPORT_SUB() 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
+        Dim cls_xml As New CLASS_NYM_3_SM                                                                     ' ประกาศตัวแปรจาก CLASS_DALCN 
+        Dim dao_nym3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+        dao_nym3.getdata_ida(47)
+        cls_xml.NYM_3s = dao_nym3.fields
+        ' cls_xml = cls.gen_xml()                                                                               'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
+        Dim lct_ida As Integer = 101680
+        Try
+            'If dao.fields.BSN_NATIONALITY_CD = 1 Then
+            'cls_xml.dalcns.NATION = "ไทย"
+            'End If
+        Catch ex As Exception
+
+        End Try
+
+        Dim bao_app As New BAO.AppSettings
+        Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
+        path = path & filename.ToString() & ".xml"
+        Dim objStreamWriter As New StreamWriter(path)                                                         'ประกาศตัวแปร
+        Dim x As New XmlSerializer(cls_xml.GetType)                                                           'ประกาศ
+        x.Serialize(objStreamWriter, cls_xml)
+        objStreamWriter.Close()
+
+
+    End Sub
 End Class
