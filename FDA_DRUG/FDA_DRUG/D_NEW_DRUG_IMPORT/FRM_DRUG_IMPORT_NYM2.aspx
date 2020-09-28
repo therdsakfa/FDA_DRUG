@@ -14,17 +14,11 @@
     <div>
         <div class="panel-heading panel-title" style="padding-left: 5%;">
             <%--     <h2>ทะเบียนยานำเข้า</h2>--%>
-
-
             <br />
-
             <table>
             </table>
-
             <br />
         </div>
-
-
     </div>
 
     <div class="panel-info" style="text-align: right; width: 100%">
