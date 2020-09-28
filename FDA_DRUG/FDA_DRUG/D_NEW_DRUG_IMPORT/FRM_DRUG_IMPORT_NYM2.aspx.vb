@@ -65,21 +65,21 @@ Public Class FRM_DRUG_IMPORT_MAIN
         If TypeOf e.Item Is GridDataItem Then
             Dim item As GridDataItem = e.Item
 
-            Dim NYM As String = ""
+            Dim NYM As String = "2"
             Dim NYM2_ida As String = item("NYM2_IDA").Text
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
 
-            If e.CommandName = "sel" Then
-                dao.GetDataby_IDA(NYM2_ida)
-                Dim tr_id As Integer = 0
-                Try
-                    tr_id = dao.fields.TR_ID
-                Catch ex As Exception
+            'If e.CommandName = "sel" Then
+            '    dao.GetDataby_IDA(NYM2_ida)
+            'Dim tr_id As Integer = 0
+            'Try
+            '    tr_id = dao.fields.TR_ID
+            'Catch ex As Exception
 
-                End Try
+            'End Try
 
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups  ('" & "POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM2_ida & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process & "');", True)
-            End If
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups  ('" & "POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM2_ida & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process & "');", True)
+            'End If
         End If
     End Sub
 
