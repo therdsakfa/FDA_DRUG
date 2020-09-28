@@ -87,7 +87,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
                 End Select
 
                 If e.CommandName = "sel" Then
-                    dao.getdata_ida(IDA)
+                    dao.GetDataby_IDA(IDA)
                     Dim tr_id As Integer = 0
                     Try
                         tr_id = dao.fields.TR_ID

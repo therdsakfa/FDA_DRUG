@@ -46,12 +46,12 @@
         Public Sub update()
             db.SubmitChanges()
         End Sub
-        Public Sub getdata_ida(ByVal ida As Integer)
-            datas = (From p In db.FDA_DRUG_IMPORT_NYM_2s Where p.NYM2_IDA = ida Select p)
-            For Each Me.fields In datas
+        'Public Sub getdata_ida(ByVal ida As Integer)
+        '    datas = (From p In db.FDA_DRUG_IMPORT_NYM_2s Where p.NYM2_IDA = ida Select p)
+        '    For Each Me.fields In datas
 
-            Next
-        End Sub
+        '    Next
+        'End Sub
         Public Sub getdata_dl(ByVal DL As String)
             datas = (From p In db.FDA_DRUG_IMPORT_NYM_2s Where p.DL = DL Select p)
             For Each Me.fields In datas
