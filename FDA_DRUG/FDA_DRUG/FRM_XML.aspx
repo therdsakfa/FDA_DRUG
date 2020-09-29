@@ -39,7 +39,6 @@
         <asp:Button ID="btn_DR" runat="server" Text="DR" />&nbsp;<asp:Button ID="btn_DR_UPLOAD" runat="server" Text="DR_UPLOAD" /><br />
         <asp:Button ID="btn_CER" runat="server" Text="CER" />
          &nbsp;<asp:Button ID="btn_CER_UPLOAD" runat="server" Text="CER_UPLOAD" />
-         <asp:Button ID="NYM3" runat="server" Text="NYM3" />
          <br />
         <asp:Button ID="btn_EDIT" runat="server" Text="EDIT" />
          &nbsp;<asp:Button ID="btn_EDIT_UPLOAD" runat="server" Text="EDIT_UPLOAD" />
@@ -95,6 +94,7 @@
          <asp:Button ID="Button7" runat="server" Text="dalcn_sub" />
          <br />
          <asp:Button ID="NYM2" runat="server" Text="NYM2" />
+         <asp:Button ID="NYM3" runat="server" Text="NYM3" />
         </div>
     </form>
 </body>

@@ -3549,8 +3549,9 @@ Namespace CLASS_GEN_XML
             ' class_xml.DT_MASTER.DT1 = bao_master.SP_MASTER_daphrcd()
             Return class_xml
         End Function
+    End Class
 
-        Public Class NYM3_IMPORT_SUB                  'เริ่มทำตรงนี้////////////////////////////////////////////////////////////////////////////////////
+    Public Class NYM3_IMPORT_SUB                  'เริ่มทำตรงนี้////////////////////////////////////////////////////////////////////////////////////
             Inherits Center
 
             Private _citicen As String
