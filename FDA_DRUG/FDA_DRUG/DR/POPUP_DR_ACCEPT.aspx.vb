@@ -29,7 +29,7 @@
         If CheckBox1.Checked = True Then
             Dim dao As New DAO_DRUG.ClsDBdrrqt
             dao.GetDataby_IDA(_IDA)
-            dao.fields.STATUS_ID = 2
+            dao.fields.STATUS_ID = 3
             dao.fields.ndrgtp = "1"
             dao.update()
 
