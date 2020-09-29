@@ -162,5 +162,12 @@
                           <div class="h5" style="padding-left:87%;">  
                       <asp:HyperLink ID="hl_pay" runat="server"  target="_blank"> ชำระเงินคลิกที่นี้</asp:HyperLink>
                         </div>
-
+    <div class=" modal fade" id="myModal">              
+               <div class="panel panel-info" style="width:100%;">
+                   <div class="panel-heading  text-center"><h1>ผลิตภัณฑ์ยาเพื่อโครงการวิจัย</h1></div>
+                   <button type="button" class="btn btn-default pull-right" data-dismiss="modal">ปิดหน้านี้</button>
+                   <div class="panel-body">
+                             <iframe id="f1"  style="width:100%; height:550px;" ></iframe>
+                   </div>
+                   <div class="panel-footer"></div>
 </asp:Content>
