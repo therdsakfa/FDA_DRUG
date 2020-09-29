@@ -2384,23 +2384,17 @@ Public Class FRM_XML
         objStreamWriter.Close()
     End Sub
 
-    Protected Sub NYM3_Click(sender As Object, e As EventArgs) Handles NYM3.Click     '''' เอาข้อมูลมาโชวววววววนะ โดยการ get ออกมา 
-        Dim filename As String = "NORYORMOR3"
+    Protected Sub NYM2_Click(sender As Object, e As EventArgs) Handles NYM2.Click
+        Dim filename As String = "NORYORMOR2"
         Dim bao_show As New BAO_SHOW
-        Dim cls As New CLASS_GEN_XML.NYM3_IMPORT_SUB() 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
-        Dim cls_xml As New CLASS_NYM_3_SM                                                                     ' ประกาศตัวแปรจาก CLASS_DALCN 
-        Dim dao_nym3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
-        dao_nym3.getdata_ida(47)
-        cls_xml.NYM_3s = dao_nym3.fields
-        ' cls_xml = cls.gen_xml()                                                                               'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
+        Dim cls As New CLASS_GEN_XML.NYM2_IMPORT("0000000000000", 252565, "1", "10") 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
+        Dim cls_xml As New CLASS_NORYORMOR2_IMPORT                                                                    ' ประกาศตัวแปรจาก CLASS_DALCN 
+        'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
         Dim lct_ida As Integer = 101680
-        Try
-            'If dao.fields.BSN_NATIONALITY_CD = 1 Then
-            'cls_xml.dalcns.NATION = "ไทย"
-            'End If
-        Catch ex As Exception
-
-        End Try
+        Dim dao_NYM2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        dao_NYM2.GetDataby_IDA(59)
+        cls_xml.NYM2_IMPORTs = dao_NYM2.fields
+        'cls_xml = cls.gen_xml()
 
         Dim bao_app As New BAO.AppSettings
         Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
@@ -2409,7 +2403,5 @@ Public Class FRM_XML
         Dim x As New XmlSerializer(cls_xml.GetType)                                                           'ประกาศ
         x.Serialize(objStreamWriter, cls_xml)
         objStreamWriter.Close()
-
-
     End Sub
 End Class

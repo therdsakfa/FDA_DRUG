@@ -203,15 +203,6 @@ Partial Public Class FRM_XML
     Protected WithEvents btn_CER_UPLOAD As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''NYM3 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents NYM3 As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''btn_EDIT control.
     '''</summary>
     '''<remarks>
@@ -570,4 +561,13 @@ Partial Public Class FRM_XML
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button7 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''NYM2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents NYM2 As Global.System.Web.UI.WebControls.Button
 End Class

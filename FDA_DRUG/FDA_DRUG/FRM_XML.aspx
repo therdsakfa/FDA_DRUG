@@ -93,6 +93,8 @@
          <asp:Button ID="Button5" runat="server" Text="วจ Temp" />
          <asp:Button ID="Button6" runat="server" Text="dalcn edit rqt" />
          <asp:Button ID="Button7" runat="server" Text="dalcn_sub" />
+         <br />
+         <asp:Button ID="NYM2" runat="server" Text="NYM2" />
         </div>
     </form>
 </body>

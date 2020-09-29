@@ -54,10 +54,13 @@
 
             End Try
 
-            If Request.QueryString("tt") <> "" Then
-                txt_DRUG_NAME_THAI.Enabled = False
-                txt_DRUG_NAME_OTHER.Enabled = False
-            End If
+            'If Request.QueryString("tt") <> "" Then
+            If Request.QueryString("tt") = "2" Then
+                    txt_DRUG_NAME_THAI.Enabled = False
+                    txt_DRUG_NAME_OTHER.Enabled = False
+                End If
+
+            'End If
         End If
     End Sub
 
