@@ -535,9 +535,44 @@ Public Class POPUP_EDIT_LCN_STAFF_CONFIRM
         Cls_XML.DT_SHOW.DT16 = bao_cpn.SP_BSN_LOCATION_ADDRESS_BY_IDEN_V2(dao_main.fields.CITIZEN_ID_AUTHORIZE)
         Cls_XML.DT_SHOW.DT16.TableName = "SP_BSN_LOCATION_ADDRESS_BY_IDEN_BSN_ADDR"
 
+        Try
+            Cls_XML.DT_SHOW.DT17 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.NEW_LO_IDA)
+        Catch ex As Exception
+
+        End Try
+
+
+        Try
+            Cls_XML.DT_SHOW.DT18 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.NEW_KEEP_IDA)
+        Catch ex As Exception
+
+        End Try
+
         Dim bao_master As New BAO_MASTER
         Cls_XML.DT_SHOW.DT10 = bao_master.SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_BY_IDA(dao_main.fields.IDA)
+        Cls_XML.DT_MASTER.DT31 = bao_master.SP_DALCN_PHR_BY_FK_IDA_2(dao_main.fields.IDA)
 
+        Dim DT31 As New DataTable
+
+        DT31 = Cls_XML.DT_MASTER.DT31
+        For Each drr As DataRow In DT31.Rows
+            Try
+                drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
+            Catch ex As Exception
+
+            End Try
+            Try
+                drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
+            Catch ex As Exception
+
+            End Try
+            Try
+                drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
+            Catch ex As Exception
+
+            End Try
+
+        Next
         Dim _lcn_ida As Integer
         ' If Integer.TryParse(_lcn_ida) = True Then
         Cls_XML.DT_MASTER.DT30 = bao_master.SP_MASTER_DALCN_by_IDA(dao_main.fields.IDA)
