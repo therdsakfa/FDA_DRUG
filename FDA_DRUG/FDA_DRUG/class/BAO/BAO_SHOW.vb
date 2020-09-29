@@ -7,6 +7,11 @@ Public Class BAO_SHOW
     Public conn As String = System.Configuration.ConfigurationManager.ConnectionStrings("LGTCPNConnectionString").ConnectionString
     Public conn_DRUG As String = System.Configuration.ConfigurationManager.ConnectionStrings("LGT_DRUGConnectionString").ConnectionString
     Public conn_book As String = System.Configuration.ConfigurationManager.ConnectionStrings("FDA_BOOKINGConnectionString").ConnectionString
+
+    ''' <summary>
+    ''' ทำตรงนี้เพิ่มไปโดยมินเอง
+    ''' </summary>
+    Public conn_DRUG_IMPORT As String = System.Configuration.ConfigurationManager.ConnectionStrings("FDA_DRUG_IMPORTConnectionString").ConnectionString
     ''' <summary>
     ''' ใส่ค่าว่างใน DT
     ''' </summary>
@@ -1619,6 +1624,25 @@ Public Class BAO_SHOW
             dt = AddDatatable(dt)
         End If
         dt.TableName = "SP_DRUG_SCHEDULE_by_REF_C_NUMBER"
+        Return dt
+    End Function
+    Public Function SP_LOCATION_ADDRESS_BY_DL_CITICENID(ByVal ida As String) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_LOCATION_ADDRESS_BY_DL_CITICENID @IDA='" & ida & "'"
+        Dim dt As New DataTable
+        dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
+        dt.TableName = "SP_LOCATION_ADDRESS_BY_DL_CITICENID"
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
         Return dt
     End Function
 End Class

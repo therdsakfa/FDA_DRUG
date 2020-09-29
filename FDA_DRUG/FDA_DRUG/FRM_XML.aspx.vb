@@ -2410,14 +2410,13 @@ Public Class FRM_XML
         Dim bao_show As New BAO_SHOW
         Dim cls As New CLASS_GEN_XML.NYM3_IMPORT_SUB("0000000000000", 252565, "1", "10") 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
         Dim cls_xml As New CLASS_NYM_3_SM                                                        ' ประกาศตัวแปรจาก CLASS_DALCN 
-        'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
-        Dim lct_ida As Integer = 101680
-        Dim dao_NYM3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
-        dao_NYM3.GetDataby_IDA(47)
-        cls_xml.NYM_3s = dao_NYM3.fields
-        'cls_xml = cls.gen_xml()
+        Dim lct_ida As Integer = 101680              ' THIS LINE
+        'Dim dao_NYM3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+        'dao_NYM3.GetDataby_IDA(47)
+        'cls_xml.NYM_3s = dao_NYM3.fields
+        cls_xml.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_DL_CITICENID(47)
 
-        Dim bao_app As New BAO.AppSettings
+        Dim bao_app As New BAO.AppSettings              'THIS LINE
         Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
         path = path & filename.ToString() & ".xml"
         Dim objStreamWriter As New StreamWriter(path)                                                         'ประกาศตัวแปร

@@ -272,4 +272,13 @@
             _DT24 = value
         End Set
     End Property
+    Private _DT25 As DataTable
+    Public Property DT25() As DataTable
+        Get
+            Return _DT25
+        End Get
+        Set(ByVal value As DataTable)
+            _DT25 = value
+        End Set
+    End Property
 End Class
