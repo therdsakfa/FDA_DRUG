@@ -94,6 +94,7 @@
          <asp:Button ID="Button7" runat="server" Text="dalcn_sub" />
          <br />
          <asp:Button ID="NYM2" runat="server" Text="NYM2" />
+         <asp:Button ID="NYM3" runat="server" Text="NYM3" />
         </div>
     </form>
 </body>
