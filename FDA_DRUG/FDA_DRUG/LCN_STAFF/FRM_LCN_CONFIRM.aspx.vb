@@ -628,6 +628,7 @@ Public Class WebForm35
         class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA(_IDA)
         class_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_MUTI_LOCATION(dao.fields.FK_IDA) ' 'ข้อมูลสถานที่จำลอง
         'class_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.FK_IDA)
+        'class_xml.DT_SHOW.DT9.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA"
         class_xml.DT_SHOW.DT19 = bao_show.SP_DRUG_GROUP_LCN(_IDA)
         Dim dt9 As New DataTable
 
