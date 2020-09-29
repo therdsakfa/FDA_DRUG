@@ -2392,7 +2392,7 @@ Public Class FRM_XML
         'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
         Dim lct_ida As Integer = 101680
         Dim dao_NYM2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-        dao_NYM2.GetDataby_IDA(59)
+        dao_NYM2.GetDataby_IDA(58)
         cls_xml.NYM2_IMPORTs = dao_NYM2.fields
         'cls_xml = cls.gen_xml()
 
