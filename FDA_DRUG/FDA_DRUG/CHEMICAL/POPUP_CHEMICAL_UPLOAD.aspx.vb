@@ -42,7 +42,7 @@ Public Class POPUP_CHEMICAL_UPLOAD
             Dim bao_tran As New BAO_TRANSECTION
             bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
             bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-            TR_ID = bao_tran.insert_transection(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
+            TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
 
             Dim PDF_TRADER As String = bao._PATH_PDF_TRADER & NAME_UPLOAD_PDF("DA", _ProcessID, Date.Now.Year, TR_ID)
             'PDF_TRADER คือ Folder จัดเก็บ PDF ที่ ผปก Upload เข้ามา

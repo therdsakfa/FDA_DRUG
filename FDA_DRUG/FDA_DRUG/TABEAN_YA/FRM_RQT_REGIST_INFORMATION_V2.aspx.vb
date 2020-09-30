@@ -755,7 +755,7 @@ Public Class FRM_RQT_REGIST_INFORMATION_V2
 
         End Try
         If _ProcessID <> "" Then
-            TR_ID = bao_tran.insert_transection(_ProcessID)
+            TR_ID = bao_tran.insert_transection_new(_ProcessID)
             dao.fields.TR_ID = TR_ID
             dao.fields.PROCESS_ID = _ProcessID
             dao.update()

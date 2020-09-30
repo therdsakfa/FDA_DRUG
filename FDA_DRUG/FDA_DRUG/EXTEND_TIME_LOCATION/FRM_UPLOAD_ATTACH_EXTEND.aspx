@@ -135,6 +135,16 @@
                      <br />
                      แนบเอกสาร 3 รูป</td>
              </tr>
+             <tr>
+                 <td style="width: 15%;">
+                     <asp:Label ID="Label9" runat="server" Text="อื่นๆ"></asp:Label>
+                 </td>
+                 <td>
+                     <asp:FileUpload ID="FileUpload9" runat="server" />
+                 &nbsp;โปรดระบุ
+                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                 </td>
+             </tr>
              <tr><td colspan="2"> <asp:Button ID="btn_Upload" runat="server" Text="อัพโหลด"   CssClass=" btn-lg" />
          </table>
 
