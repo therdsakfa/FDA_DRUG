@@ -2388,7 +2388,7 @@ Public Class FRM_XML
         Dim filename As String = "NORYORMOR2"
         Dim bao_show As New BAO_SHOW
         Dim cls As New CLASS_GEN_XML.NYM2_IMPORT("0000000000000", 252565, "1", "10") 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
-        Dim cls_xml As New CLASS_NORYORMOR2_IMPORT                                                                    ' ประกาศตัวแปรจาก CLASS_DALCN 
+        Dim cls_xml As New CLASS_NYM_2                                                                    ' ประกาศตัวแปรจาก CLASS_DALCN 
         'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
         Dim lct_ida As Integer = 101680
         Dim dao_NYM2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2

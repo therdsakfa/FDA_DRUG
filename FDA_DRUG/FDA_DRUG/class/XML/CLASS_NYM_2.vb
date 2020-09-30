@@ -1,4 +1,4 @@
-﻿Public Class CLASS_NORYORMOR2_IMPORT
+﻿Public Class CLASS_NYM_2
     Inherits CLASS_CENTER
     Public NYM2_IMPORTs As New FDA_DRUG_IMPORT_NYM_2
 
