@@ -41,7 +41,7 @@ Public Class WS_DRUG_XML
             Dim bao_tran As New BAO_TRANSECTION
             bao_tran.CITIZEN_ID = CITIZEN_ID_UPLOAD
             bao_tran.CITIZEN_ID_AUTHORIZE = CITIZEN_ID_AUTHORIZE
-            TR_ID = bao_tran.insert_transection(Process_id)
+            TR_ID = bao_tran.insert_transection_new(Process_id)
             Dim check As Boolean = True
             If Process_id = 101 Or Process_id = 102 Or Process_id = 103 _
             Or Process_id = 104 Or Process_id = 105 Or Process_id = 106 _
@@ -2424,7 +2424,7 @@ Public Class WS_DRUG_XML
                 Dim bao_tran As New BAO_TRANSECTION
                 bao_tran.CITIZEN_ID = CITIZEN_ID
                 bao_tran.CITIZEN_ID_AUTHORIZE = dao_dal.fields.CITIZEN_ID_AUTHORIZE
-                TR_ID = bao_tran.insert_transection(Process_ID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
+                TR_ID = bao_tran.insert_transection_new(Process_ID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
 
                 Dim PDF_TRADER As String
                 Dim XML_TRADER As String

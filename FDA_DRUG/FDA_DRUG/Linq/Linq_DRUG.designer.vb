@@ -277,12 +277,6 @@ Partial Public Class Linq_DRUGDataContext
     End Sub
   Partial Private Sub DeleteTRANSACTION_DOWNLOAD(instance As TRANSACTION_DOWNLOAD)
     End Sub
-  Partial Private Sub InsertTRANSACTION_UPLOAD(instance As TRANSACTION_UPLOAD)
-    End Sub
-  Partial Private Sub UpdateTRANSACTION_UPLOAD(instance As TRANSACTION_UPLOAD)
-    End Sub
-  Partial Private Sub DeleteTRANSACTION_UPLOAD(instance As TRANSACTION_UPLOAD)
-    End Sub
   Partial Private Sub InsertPROCESS_NAME(instance As PROCESS_NAME)
     End Sub
   Partial Private Sub UpdatePROCESS_NAME(instance As PROCESS_NAME)
@@ -2071,6 +2065,12 @@ Partial Public Class Linq_DRUGDataContext
     End Sub
   Partial Private Sub DeleteDALCN_NCT_SUBSTITUTE(instance As DALCN_NCT_SUBSTITUTE)
     End Sub
+  Partial Private Sub InsertTRANSACTION_UPLOAD(instance As TRANSACTION_UPLOAD)
+    End Sub
+  Partial Private Sub UpdateTRANSACTION_UPLOAD(instance As TRANSACTION_UPLOAD)
+    End Sub
+  Partial Private Sub DeleteTRANSACTION_UPLOAD(instance As TRANSACTION_UPLOAD)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -2341,12 +2341,6 @@ Partial Public Class Linq_DRUGDataContext
 	Public ReadOnly Property TRANSACTION_DOWNLOADs() As System.Data.Linq.Table(Of TRANSACTION_DOWNLOAD)
 		Get
 			Return Me.GetTable(Of TRANSACTION_DOWNLOAD)
-		End Get
-	End Property
-	
-	Public ReadOnly Property TRANSACTION_UPLOADs() As System.Data.Linq.Table(Of TRANSACTION_UPLOAD)
-		Get
-			Return Me.GetTable(Of TRANSACTION_UPLOAD)
 		End Get
 	End Property
 	
@@ -4171,6 +4165,12 @@ Partial Public Class Linq_DRUGDataContext
 	Public ReadOnly Property DALCN_NCT_SUBSTITUTEs() As System.Data.Linq.Table(Of DALCN_NCT_SUBSTITUTE)
 		Get
 			Return Me.GetTable(Of DALCN_NCT_SUBSTITUTE)
+		End Get
+	End Property
+	
+	Public ReadOnly Property TRANSACTION_UPLOADs() As System.Data.Linq.Table(Of TRANSACTION_UPLOAD)
+		Get
+			Return Me.GetTable(Of TRANSACTION_UPLOAD)
 		End Get
 	End Property
 End Class
@@ -14655,288 +14655,6 @@ Partial Public Class TRANSACTION_DOWNLOAD
 				Me._PROCESS_ID = value
 				Me.SendPropertyChanged("PROCESS_ID")
 				Me.OnPROCESS_IDChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.TRANSACTION_UPLOAD")>  _
-Partial Public Class TRANSACTION_UPLOAD
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _ID As Integer
-	
-	Private _CITIEZEN_ID As String
-	
-	Private _CITIEZEN_ID_AUTHORIZE As String
-	
-	Private _EMAIL As String
-	
-	Private _UPLOAD_DATE As System.Nullable(Of Date)
-	
-	Private _STATUS As String
-	
-	Private _DESCRIPTION As String
-	
-	Private _PROCESS_ID As System.Nullable(Of Integer)
-	
-	Private _REF_NO As String
-	
-	Private _DOWNLOAD_ID As System.Nullable(Of Integer)
-	
-	Private _YEAR As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnIDChanged()
-    End Sub
-    Partial Private Sub OnCITIEZEN_IDChanging(value As String)
-    End Sub
-    Partial Private Sub OnCITIEZEN_IDChanged()
-    End Sub
-    Partial Private Sub OnCITIEZEN_ID_AUTHORIZEChanging(value As String)
-    End Sub
-    Partial Private Sub OnCITIEZEN_ID_AUTHORIZEChanged()
-    End Sub
-    Partial Private Sub OnEMAILChanging(value As String)
-    End Sub
-    Partial Private Sub OnEMAILChanged()
-    End Sub
-    Partial Private Sub OnUPLOAD_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnUPLOAD_DATEChanged()
-    End Sub
-    Partial Private Sub OnSTATUSChanging(value As String)
-    End Sub
-    Partial Private Sub OnSTATUSChanged()
-    End Sub
-    Partial Private Sub OnDESCRIPTIONChanging(value As String)
-    End Sub
-    Partial Private Sub OnDESCRIPTIONChanged()
-    End Sub
-    Partial Private Sub OnPROCESS_IDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnPROCESS_IDChanged()
-    End Sub
-    Partial Private Sub OnREF_NOChanging(value As String)
-    End Sub
-    Partial Private Sub OnREF_NOChanged()
-    End Sub
-    Partial Private Sub OnDOWNLOAD_IDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDOWNLOAD_IDChanged()
-    End Sub
-    Partial Private Sub OnYEARChanging(value As String)
-    End Sub
-    Partial Private Sub OnYEARChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property ID() As Integer
-		Get
-			Return Me._ID
-		End Get
-		Set
-			If ((Me._ID = value)  _
-						= false) Then
-				Me.OnIDChanging(value)
-				Me.SendPropertyChanging
-				Me._ID = value
-				Me.SendPropertyChanged("ID")
-				Me.OnIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITIEZEN_ID", DbType:="NVarChar(50)")>  _
-	Public Property CITIEZEN_ID() As String
-		Get
-			Return Me._CITIEZEN_ID
-		End Get
-		Set
-			If (String.Equals(Me._CITIEZEN_ID, value) = false) Then
-				Me.OnCITIEZEN_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._CITIEZEN_ID = value
-				Me.SendPropertyChanged("CITIEZEN_ID")
-				Me.OnCITIEZEN_IDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITIEZEN_ID_AUTHORIZE", DbType:="NVarChar(50)")>  _
-	Public Property CITIEZEN_ID_AUTHORIZE() As String
-		Get
-			Return Me._CITIEZEN_ID_AUTHORIZE
-		End Get
-		Set
-			If (String.Equals(Me._CITIEZEN_ID_AUTHORIZE, value) = false) Then
-				Me.OnCITIEZEN_ID_AUTHORIZEChanging(value)
-				Me.SendPropertyChanging
-				Me._CITIEZEN_ID_AUTHORIZE = value
-				Me.SendPropertyChanged("CITIEZEN_ID_AUTHORIZE")
-				Me.OnCITIEZEN_ID_AUTHORIZEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EMAIL", DbType:="NVarChar(MAX)")>  _
-	Public Property EMAIL() As String
-		Get
-			Return Me._EMAIL
-		End Get
-		Set
-			If (String.Equals(Me._EMAIL, value) = false) Then
-				Me.OnEMAILChanging(value)
-				Me.SendPropertyChanging
-				Me._EMAIL = value
-				Me.SendPropertyChanged("EMAIL")
-				Me.OnEMAILChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UPLOAD_DATE", DbType:="DateTime")>  _
-	Public Property UPLOAD_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._UPLOAD_DATE
-		End Get
-		Set
-			If (Me._UPLOAD_DATE.Equals(value) = false) Then
-				Me.OnUPLOAD_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._UPLOAD_DATE = value
-				Me.SendPropertyChanged("UPLOAD_DATE")
-				Me.OnUPLOAD_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STATUS", DbType:="NVarChar(50)")>  _
-	Public Property STATUS() As String
-		Get
-			Return Me._STATUS
-		End Get
-		Set
-			If (String.Equals(Me._STATUS, value) = false) Then
-				Me.OnSTATUSChanging(value)
-				Me.SendPropertyChanging
-				Me._STATUS = value
-				Me.SendPropertyChanged("STATUS")
-				Me.OnSTATUSChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DESCRIPTION", DbType:="NVarChar(MAX)")>  _
-	Public Property DESCRIPTION() As String
-		Get
-			Return Me._DESCRIPTION
-		End Get
-		Set
-			If (String.Equals(Me._DESCRIPTION, value) = false) Then
-				Me.OnDESCRIPTIONChanging(value)
-				Me.SendPropertyChanging
-				Me._DESCRIPTION = value
-				Me.SendPropertyChanged("DESCRIPTION")
-				Me.OnDESCRIPTIONChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROCESS_ID", DbType:="Int")>  _
-	Public Property PROCESS_ID() As System.Nullable(Of Integer)
-		Get
-			Return Me._PROCESS_ID
-		End Get
-		Set
-			If (Me._PROCESS_ID.Equals(value) = false) Then
-				Me.OnPROCESS_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._PROCESS_ID = value
-				Me.SendPropertyChanged("PROCESS_ID")
-				Me.OnPROCESS_IDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REF_NO", DbType:="NVarChar(MAX)")>  _
-	Public Property REF_NO() As String
-		Get
-			Return Me._REF_NO
-		End Get
-		Set
-			If (String.Equals(Me._REF_NO, value) = false) Then
-				Me.OnREF_NOChanging(value)
-				Me.SendPropertyChanging
-				Me._REF_NO = value
-				Me.SendPropertyChanged("REF_NO")
-				Me.OnREF_NOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOWNLOAD_ID", DbType:="Int")>  _
-	Public Property DOWNLOAD_ID() As System.Nullable(Of Integer)
-		Get
-			Return Me._DOWNLOAD_ID
-		End Get
-		Set
-			If (Me._DOWNLOAD_ID.Equals(value) = false) Then
-				Me.OnDOWNLOAD_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._DOWNLOAD_ID = value
-				Me.SendPropertyChanged("DOWNLOAD_ID")
-				Me.OnDOWNLOAD_IDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_YEAR", DbType:="NVarChar(10)")>  _
-	Public Property YEAR() As String
-		Get
-			Return Me._YEAR
-		End Get
-		Set
-			If (String.Equals(Me._YEAR, value) = false) Then
-				Me.OnYEARChanging(value)
-				Me.SendPropertyChanging
-				Me._YEAR = value
-				Me.SendPropertyChanged("YEAR")
-				Me.OnYEARChanged
 			End If
 		End Set
 	End Property
@@ -134745,6 +134463,332 @@ Partial Public Class DALCN_NCT_SUBSTITUTE
 				Me._FK_STAFF_OFFER_IDA = value
 				Me.SendPropertyChanged("FK_STAFF_OFFER_IDA")
 				Me.OnFK_STAFF_OFFER_IDAChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.TRANSACTION_UPLOAD")>  _
+Partial Public Class TRANSACTION_UPLOAD
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ID As Integer
+	
+	Private _CITIEZEN_ID As String
+	
+	Private _CITIEZEN_ID_AUTHORIZE As String
+	
+	Private _EMAIL As String
+	
+	Private _UPLOAD_DATE As System.Nullable(Of Date)
+	
+	Private _STATUS As String
+	
+	Private _DESCRIPTION As String
+	
+	Private _PROCESS_ID As System.Nullable(Of Integer)
+	
+	Private _REF_NO As String
+	
+	Private _DOWNLOAD_ID As System.Nullable(Of Integer)
+	
+	Private _YEAR As String
+	
+	Private _GEN_NO As System.Nullable(Of Integer)
+	
+	Private _PROCESS_ID_STR As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDChanged()
+    End Sub
+    Partial Private Sub OnCITIEZEN_IDChanging(value As String)
+    End Sub
+    Partial Private Sub OnCITIEZEN_IDChanged()
+    End Sub
+    Partial Private Sub OnCITIEZEN_ID_AUTHORIZEChanging(value As String)
+    End Sub
+    Partial Private Sub OnCITIEZEN_ID_AUTHORIZEChanged()
+    End Sub
+    Partial Private Sub OnEMAILChanging(value As String)
+    End Sub
+    Partial Private Sub OnEMAILChanged()
+    End Sub
+    Partial Private Sub OnUPLOAD_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnUPLOAD_DATEChanged()
+    End Sub
+    Partial Private Sub OnSTATUSChanging(value As String)
+    End Sub
+    Partial Private Sub OnSTATUSChanged()
+    End Sub
+    Partial Private Sub OnDESCRIPTIONChanging(value As String)
+    End Sub
+    Partial Private Sub OnDESCRIPTIONChanged()
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanged()
+    End Sub
+    Partial Private Sub OnREF_NOChanging(value As String)
+    End Sub
+    Partial Private Sub OnREF_NOChanged()
+    End Sub
+    Partial Private Sub OnDOWNLOAD_IDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDOWNLOAD_IDChanged()
+    End Sub
+    Partial Private Sub OnYEARChanging(value As String)
+    End Sub
+    Partial Private Sub OnYEARChanged()
+    End Sub
+    Partial Private Sub OnGEN_NOChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnGEN_NOChanged()
+    End Sub
+    Partial Private Sub OnPROCESS_ID_STRChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROCESS_ID_STRChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property ID() As Integer
+		Get
+			Return Me._ID
+		End Get
+		Set
+			If ((Me._ID = value)  _
+						= false) Then
+				Me.OnIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ID = value
+				Me.SendPropertyChanged("ID")
+				Me.OnIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITIEZEN_ID", DbType:="NVarChar(50)")>  _
+	Public Property CITIEZEN_ID() As String
+		Get
+			Return Me._CITIEZEN_ID
+		End Get
+		Set
+			If (String.Equals(Me._CITIEZEN_ID, value) = false) Then
+				Me.OnCITIEZEN_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._CITIEZEN_ID = value
+				Me.SendPropertyChanged("CITIEZEN_ID")
+				Me.OnCITIEZEN_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITIEZEN_ID_AUTHORIZE", DbType:="NVarChar(50)")>  _
+	Public Property CITIEZEN_ID_AUTHORIZE() As String
+		Get
+			Return Me._CITIEZEN_ID_AUTHORIZE
+		End Get
+		Set
+			If (String.Equals(Me._CITIEZEN_ID_AUTHORIZE, value) = false) Then
+				Me.OnCITIEZEN_ID_AUTHORIZEChanging(value)
+				Me.SendPropertyChanging
+				Me._CITIEZEN_ID_AUTHORIZE = value
+				Me.SendPropertyChanged("CITIEZEN_ID_AUTHORIZE")
+				Me.OnCITIEZEN_ID_AUTHORIZEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EMAIL", DbType:="NVarChar(MAX)")>  _
+	Public Property EMAIL() As String
+		Get
+			Return Me._EMAIL
+		End Get
+		Set
+			If (String.Equals(Me._EMAIL, value) = false) Then
+				Me.OnEMAILChanging(value)
+				Me.SendPropertyChanging
+				Me._EMAIL = value
+				Me.SendPropertyChanged("EMAIL")
+				Me.OnEMAILChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UPLOAD_DATE", DbType:="DateTime")>  _
+	Public Property UPLOAD_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._UPLOAD_DATE
+		End Get
+		Set
+			If (Me._UPLOAD_DATE.Equals(value) = false) Then
+				Me.OnUPLOAD_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._UPLOAD_DATE = value
+				Me.SendPropertyChanged("UPLOAD_DATE")
+				Me.OnUPLOAD_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STATUS", DbType:="NVarChar(50)")>  _
+	Public Property STATUS() As String
+		Get
+			Return Me._STATUS
+		End Get
+		Set
+			If (String.Equals(Me._STATUS, value) = false) Then
+				Me.OnSTATUSChanging(value)
+				Me.SendPropertyChanging
+				Me._STATUS = value
+				Me.SendPropertyChanged("STATUS")
+				Me.OnSTATUSChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DESCRIPTION", DbType:="NVarChar(MAX)")>  _
+	Public Property DESCRIPTION() As String
+		Get
+			Return Me._DESCRIPTION
+		End Get
+		Set
+			If (String.Equals(Me._DESCRIPTION, value) = false) Then
+				Me.OnDESCRIPTIONChanging(value)
+				Me.SendPropertyChanging
+				Me._DESCRIPTION = value
+				Me.SendPropertyChanged("DESCRIPTION")
+				Me.OnDESCRIPTIONChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROCESS_ID", DbType:="Int")>  _
+	Public Property PROCESS_ID() As System.Nullable(Of Integer)
+		Get
+			Return Me._PROCESS_ID
+		End Get
+		Set
+			If (Me._PROCESS_ID.Equals(value) = false) Then
+				Me.OnPROCESS_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._PROCESS_ID = value
+				Me.SendPropertyChanged("PROCESS_ID")
+				Me.OnPROCESS_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REF_NO", DbType:="NVarChar(MAX)")>  _
+	Public Property REF_NO() As String
+		Get
+			Return Me._REF_NO
+		End Get
+		Set
+			If (String.Equals(Me._REF_NO, value) = false) Then
+				Me.OnREF_NOChanging(value)
+				Me.SendPropertyChanging
+				Me._REF_NO = value
+				Me.SendPropertyChanged("REF_NO")
+				Me.OnREF_NOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOWNLOAD_ID", DbType:="Int")>  _
+	Public Property DOWNLOAD_ID() As System.Nullable(Of Integer)
+		Get
+			Return Me._DOWNLOAD_ID
+		End Get
+		Set
+			If (Me._DOWNLOAD_ID.Equals(value) = false) Then
+				Me.OnDOWNLOAD_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._DOWNLOAD_ID = value
+				Me.SendPropertyChanged("DOWNLOAD_ID")
+				Me.OnDOWNLOAD_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_YEAR", DbType:="NVarChar(10)")>  _
+	Public Property YEAR() As String
+		Get
+			Return Me._YEAR
+		End Get
+		Set
+			If (String.Equals(Me._YEAR, value) = false) Then
+				Me.OnYEARChanging(value)
+				Me.SendPropertyChanging
+				Me._YEAR = value
+				Me.SendPropertyChanged("YEAR")
+				Me.OnYEARChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_GEN_NO", DbType:="Int")>  _
+	Public Property GEN_NO() As System.Nullable(Of Integer)
+		Get
+			Return Me._GEN_NO
+		End Get
+		Set
+			If (Me._GEN_NO.Equals(value) = false) Then
+				Me.OnGEN_NOChanging(value)
+				Me.SendPropertyChanging
+				Me._GEN_NO = value
+				Me.SendPropertyChanged("GEN_NO")
+				Me.OnGEN_NOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROCESS_ID_STR", DbType:="NVarChar(MAX)")>  _
+	Public Property PROCESS_ID_STR() As String
+		Get
+			Return Me._PROCESS_ID_STR
+		End Get
+		Set
+			If (String.Equals(Me._PROCESS_ID_STR, value) = false) Then
+				Me.OnPROCESS_ID_STRChanging(value)
+				Me.SendPropertyChanging
+				Me._PROCESS_ID_STR = value
+				Me.SendPropertyChanged("PROCESS_ID_STR")
+				Me.OnPROCESS_ID_STRChanged
 			End If
 		End Set
 	End Property

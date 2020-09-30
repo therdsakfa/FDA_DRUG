@@ -155,7 +155,7 @@
                 dao_dd.Getdata_by_ID(ddl_lcntpcd.SelectedValue)
                 .PROCESS_ID = dao_dd.fields.PROCESS_ID
                 .LCNTPCD = dao_dd.fields.PROCESS_NAME
-                TR_ID = bao_tran.insert_transection(dao_dd.fields.PROCESS_ID)
+                TR_ID = bao_tran.insert_transection_new(dao_dd.fields.PROCESS_ID)
                 .TR_ID = TR_ID
             Catch ex As Exception
 

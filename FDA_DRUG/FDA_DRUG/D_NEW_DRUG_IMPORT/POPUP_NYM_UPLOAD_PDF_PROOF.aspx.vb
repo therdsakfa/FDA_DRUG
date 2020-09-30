@@ -57,7 +57,7 @@
 '            'Dim bao_tran As New BAO_TRANSECTION
 '            'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
 '            'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-'            '' TR_ID = bao_tran.insert_transection(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION      งงงงงงงงงงงงงงงงงงงงงไม่ใช้
+'            '' TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION      งงงงงงงงงงงงงงงงงงงงงไม่ใช้
 
 '            Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
 '            dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0)

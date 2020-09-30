@@ -2396,7 +2396,7 @@ Public Class WebForm36
         Dim bao_tran As New BAO_TRANSECTION
         bao_tran.CITIZEN_ID = "1710500118665"
         bao_tran.CITIZEN_ID_AUTHORIZE = "0105519002915"
-        TR_ID = bao_tran.insert_transection("1400001") 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
+        TR_ID = bao_tran.insert_transection_new("1400001") 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
     End Sub
 
     Protected Sub btn_update_stat_Click(sender As Object, e As EventArgs) Handles btn_update_stat.Click
@@ -2835,6 +2835,27 @@ Public Class WebForm36
             dao_dal.GetDataby_pvnabbr_lcnno(item("pvnabbr").Text, item("lcnno").Text)
 
         Next
+    End Sub
+
+    Protected Sub btn_tran_Click(sender As Object, e As EventArgs) Handles btn_tran.Click
+
+        'Dim TR_ID As String = ""
+        'Dim bao_tran As New BAO_TRANSECTION
+        'bao_tran.CITIZEN_ID = "0000000000000"
+        'bao_tran.CITIZEN_ID_AUTHORIZE = "0000000000000"
+
+        'TR_ID = bao_tran.insert_transection_new("22222222222")
+
+        Dim byearMax As Integer = con_year(Date.Now.Year) 'Year(System.DateTime.Now)
+        If byearMax < 2500 Then
+            byearMax = byearMax + 543
+        End If
+        Dim aa As Date = CDate("1/10/" & Year(System.DateTime.Now))
+        If CDate(System.DateTime.Now) >= CDate("1/10/" & Year(System.DateTime.Now)) Then
+
+            byearMax = byearMax + 1
+        End If
+        Dim curent_year As Integer = byearMax
     End Sub
 End Class
 

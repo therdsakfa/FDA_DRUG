@@ -292,7 +292,7 @@ Public Class FRM_CER_EXP_INSERT_AND_UPDATE
         bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
         bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
 
-        TR_ID = bao_tran.insert_transection(_process) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
+        TR_ID = bao_tran.insert_transection_new(_process) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
 
         Dim dao As New DAO_DRUG.TB_CER_EXTEND
         dao.fields.CERTIFICATION_NUMBER_ALL = txt_Cernumber.Text

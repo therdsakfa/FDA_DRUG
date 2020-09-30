@@ -149,7 +149,7 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF
 
                 End Try
 
-                TR_ID1 = bao_tran.insert_transection("130099")
+                TR_ID1 = bao_tran.insert_transection_new("130099")
                 dao_rge.fields.TR_ID = TR_ID1
                 dao_rge.update()
 

@@ -215,7 +215,7 @@ Public Class POPUP_DS_UPLOAD_NORYORMOR
             Dim bao_tran As New BAO_TRANSECTION
             bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
             bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-            TR_ID = bao_tran.insert_transection(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
+            TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
 
             'ตรวจสอบไฟล์แนบ
             insert_file(TR_ID, FileUpload2)

@@ -94,7 +94,7 @@ Public Class FRM_REGIST_SEARCH
 
                 End Try
 
-                TR_ID1 = bao_tran.insert_transection("1400001")
+                TR_ID1 = bao_tran.insert_transection_new("1400001")
                 dao_rg.fields.TR_ID = TR_ID1
                 dao_rg.update()
 

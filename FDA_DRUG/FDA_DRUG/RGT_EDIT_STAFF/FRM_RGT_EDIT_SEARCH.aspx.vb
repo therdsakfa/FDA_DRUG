@@ -116,7 +116,7 @@ Public Class FRM_RGT_EDIT_SEARCH
 
                 End Try
 
-                TR_ID = bao_tran.insert_transection(_ProcessID)
+                TR_ID = bao_tran.insert_transection_new(_ProcessID)
                 dao.fields.TR_ID = TR_ID
                 dao.update()
                 RadGrid1.Rebind()

@@ -1408,7 +1408,20 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
-
+        Public Sub GetDataby_GEN(ByVal YEAR As String, ByVal Process_id As String)
+            'datas = (From p In db.GEN_NO_01s Where p.IDA = YEAR Order By p.IDA Descending Select p)
+            datas = (From p In db.TRANSACTION_UPLOADs Where p.YEAR = YEAR And p.PROCESS_ID_STR = Process_id Order By CInt(p.GEN_NO) Descending Select p).Take(1)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Function Count_GEN_NO(ByVal _YEAR As String, ByVal Process_id As String, ByVal gen_no As Integer) As Integer
+            Dim i As Integer = 0
+            datas = (From p In db.TRANSACTION_UPLOADs Where p.YEAR = _YEAR And p.PROCESS_ID_STR = Process_id And p.GEN_NO = gen_no Select p)
+            For Each Me.fields In datas
+                i += 1
+            Next
+            Return i
+        End Function
         Public Sub GetDataby_IDA(ByVal IDA As Integer)
 
             datas = (From p In db.TRANSACTION_UPLOADs Where p.ID = IDA Select p)
