@@ -25,8 +25,8 @@
 
 
         Public Sub getdata_ida(ByVal ida As Integer)
-            datas = (From p In db.FDA_DRUG_IMPORT_NYM_1s Where p.NYM1_IDA = ida Select p)
-            For Each Me.fields In datas
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_1s Where p.NYM1_IDA = ida Select p)  ''selcet p คือเอาทั้งหมด 
+            For Each Me.fields In datas  'เอาdata มาลงที่ field 
 
             Next
         End Sub
@@ -427,7 +427,40 @@
         End Sub
     End Class
 
+    Public Class TB_FDA_DRUG_IMPORT_NYM_DETAIL
+        Inherits MAINCONTEXT
 
+        Public fields As New FDA_DRUG_IMPORT_NYM_DETAIL
+
+
+        Public Sub insert()
+            db.FDA_DRUG_IMPORT_NYM_DETAILs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.FDA_DRUG_IMPORT_NYM_DETAILs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.FDA_DRUG_IMPORT_UPLOADs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal IDA As String)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_DETAILs Where p.NYM_DETAIL_IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
 
 
 End Class

@@ -645,6 +645,7 @@
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM3.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx" />
+    <Content Include="D_NEW_DRUG_IMPORT\ดูโค๊ด ลบได้.aspx" />
     <Content Include="XML_DRUG_RGT.asmx" />
     <None Include="DESIGN\Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="DESIGN\Scripts\jquery-1.8.2.js" />
@@ -2292,8 +2293,9 @@
     <Compile Include="class\XML\CLASS_LCNREQUEST.vb" />
     <Compile Include="class\XML\CLASS_NORYORMOR5.vb" />
     <Compile Include="class\XML\CLASS_NYM24.vb" />
-    <Compile Include="class\XML\CLASS_NORYORMOR2_IMPORT.vb" />
+    <Compile Include="class\XML\CLASS_NYM_2.vb" />
     <Compile Include="class\XML\CLASS_NYM_3.vb" />
+    <Compile Include="class\XML\CLASS_NYM_4.vb" />
     <Compile Include="class\XML\CLASS_OTHER_XML.vb" />
     <Compile Include="class\XML\CLASS_PHARMACIST_CANCEL.vb" />
     <Compile Include="class\XML\CLASS_PROJECT_NYM1.vb" />
@@ -3026,6 +3028,12 @@
     <Compile Include="D_NEW_DRUG_IMPORT\POPUP_NYM_UPLOAD_PDF_PROOF.aspx.vb">
       <DependentUpon>POPUP_NYM_UPLOAD_PDF_PROOF.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\ดูโค๊ด ลบได้.aspx.designer.vb">
+      <DependentUpon>ดูโค๊ด ลบได้.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\ดูโค๊ด ลบได้.aspx.vb">
+      <DependentUpon>ดูโค๊ด ลบได้.aspx</DependentUpon>
     </Compile>
     <Compile Include="EDIT_LCN\FRM_EDIT_LCN_CONFIRM.aspx.designer.vb">
       <DependentUpon>FRM_EDIT_LCN_CONFIRM.aspx</DependentUpon>

@@ -1,7 +1,7 @@
-﻿Public Class CLASS_NORYORMOR2_IMPORT
+﻿
+Public Class CLASS_NYM_4_SM
     Inherits CLASS_CENTER
-    Public NYM2_IMPORTs As New FDA_DRUG_IMPORT_NYM_2
-
+    Public NYM_3s As New FDA_DRUG_IMPORT_NYM_4
 #Region "SHOW"
     Private _DT_SHOW As New CLS_SHOW
     Public Property DT_SHOW() As CLS_SHOW
@@ -25,10 +25,4 @@
         End Set
     End Property
 #End Region
-
-#Region "additional"
-
-
-#End Region
-
 End Class
