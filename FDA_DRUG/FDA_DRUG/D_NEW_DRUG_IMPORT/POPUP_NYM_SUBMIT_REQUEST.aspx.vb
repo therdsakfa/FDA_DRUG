@@ -41,9 +41,9 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         End If
     End Sub
     Function load_STATUS()
-        Dim dao As New DAO_DRUG.ClsDBdalcn
+        Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         dao.GetDataby_IDA(_IDA)
-        Return dao.fields.cnccscd.ToString()
+        Return dao.fields.STATUS_ID.ToString()
     End Function
     Sub show_btn(ByVal ID As String)
         Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
@@ -133,7 +133,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Private Sub load_xml(ByVal FileName As String)
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
-        Dim objStreamReader As New StreamReader(bao._PATH_XML_TRADER & FileName & ".xml") '"C:\path\XML_TRADER\"
+        Dim objStreamReader As New StreamReader(bao._PATH_PDF_IMPORT & FileName & ".xml") '"C:\path\PDF_IMPORT\"
         Dim p2 As New CLASS_NYM_2
         Dim x As New XmlSerializer(p2.GetType)
         p2 = x.Deserialize(objStreamReader)
@@ -143,7 +143,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Function get_p2(ByVal FileName As String) As CLASS_NYM_2
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
-        Dim objStreamReader As New StreamReader(bao._PATH_XML_TRADER & FileName & ".xml") '"C:\path\XML_TRADER\"
+        Dim objStreamReader As New StreamReader(bao._PATH_PDF_IMPORT & FileName & ".xml") '"C:\path\PDF_IMPORT\"
         Dim p2 As New CLASS_NYM_2
         Dim x As New XmlSerializer(p2.GetType)
         p2 = x.Deserialize(objStreamReader)
@@ -173,7 +173,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim bao As New BAO.AppSettings
 
         Dim dao_up As New DAO_DRUG_IMPORT.ClsDBTRANSACTION_UPLOAD
-        dao_up.GetDataby_IDA(_TR_ID)    ' อาจไม่จำเป็น 
+        'dao_up.GetDataby_IDA(_TR_ID)    ' อาจไม่จำเป็น 
         Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao_PHR As New DAO_DRUG.ClsDBDALCN_PHR
         Dim dao_PHR2 As New DAO_DRUG.ClsDBDALCN_PHR
@@ -1250,10 +1250,10 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         '        'hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
 
 
-        '        ' HiddenField1.Value = filename
-        '        ' _CLS.FILENAME_PDF = NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
-        '        ' _CLS.PDFNAME = filename
-        '        '    show_btn() 'ตรวจสอบปุ่ม
+        ' HiddenField1.Value = filename
+        ' _CLS.FILENAME_PDF = NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
+        ' _CLS.PDFNAME = filename
+        '    show_btn() 'ตรวจสอบปุ่ม
     End Sub
     Private Sub load_pdf(ByVal FilePath As String)
 
