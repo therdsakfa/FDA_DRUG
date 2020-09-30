@@ -427,7 +427,7 @@
         End Sub
     End Class
 
-    Public Class ClsDBTRANSACTION_DETAIL
+    Public Class TB_FDA_DRUG_IMPORT_NYM_DETAIL
         Inherits MAINCONTEXT
 
         Public fields As New FDA_DRUG_IMPORT_NYM_DETAIL

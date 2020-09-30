@@ -177,7 +177,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao_PHR As New DAO_DRUG.ClsDBDALCN_PHR
         Dim dao_PHR2 As New DAO_DRUG.ClsDBDALCN_PHR
-        Dim dao_DALCN_DETAIL_LOCATION_KEEP As New DAO_DRUG_IMPORT.ClsDBTRANSACTION_DETAIL
+        Dim dao_DRUG_IMPORT_NYM_DETAIL As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_DETAIL
         Dim bao_import As New BAO.ClsDBSqlcommand
 
         dao.GetDataby_IDA(_IDA)
@@ -187,12 +187,12 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Catch ex As Exception
 
         End Try
-        '        '-------------------เก่า------------------
-        '        ' dao_PHR.GetDataby_FK_IDA(_IDA)
-        '        '-------------------เก่า------------------
-        '        dao_PHR.GetDataby_FK_IDA_AddDetails(_IDA)    ' เพิ่ม IDA เข้า base 
-        '        '------------------------------------
-        '        dao_DALCN_DETAIL_LOCATION_KEEP.GetData_by_LCN_IDA(_IDA)   ' หา IDA จาก base
+        '-------------------เก่า------------------
+        ' dao_PHR.GetDataby_FK_IDA(_IDA)
+        '-------------------เก่า------------------
+        'dao_PHR.GetDataby_FK_IDA_AddDetails(_IDA)    ' เพิ่ม IDA เข้า base 
+        '------------------------------------
+        dao_DRUG_IMPORT_NYM_DETAIL.GetDataby_IDA(_IDA)   ' หา IDA จาก base
 
         '        Dim lcnno_text As String = ""
         '        Dim lcnno_auto As String = ""
