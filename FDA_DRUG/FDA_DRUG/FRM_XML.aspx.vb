@@ -2388,15 +2388,11 @@ Public Class FRM_XML
         Dim filename As String = "NORYORMOR2"
         Dim bao_show As New BAO_SHOW
         Dim cls As New CLASS_GEN_XML.NYM2_IMPORT("0000000000000", 252565, "1", "10") 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
-        Dim cls_xml As New CLASS_NYM_2                                                                    ' ประกาศตัวแปรจาก CLASS_DALCN 
-        'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
+        Dim cls_xml As New CLASS_NORYORMOR2_IMPORT                                                                    ' ประกาศตัวแปรจาก CLASS_DALCN 
         Dim lct_ida As Integer = 101680
-        Dim dao_NYM2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-        dao_NYM2.GetDataby_IDA(58)
-        cls_xml.NYM2_IMPORTs = dao_NYM2.fields
-        'cls_xml = cls.gen_xml()
 
-        Dim bao_app As New BAO.AppSettings
+        cls_xml.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(66)
+        Dim bao_app As New BAO.AppSettings              'THIS LINE
         Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
         path = path & filename.ToString() & ".xml"
         Dim objStreamWriter As New StreamWriter(path)                                                         'ประกาศตัวแปร
@@ -2411,11 +2407,8 @@ Public Class FRM_XML
         Dim cls As New CLASS_GEN_XML.NYM3_IMPORT_SUB("0000000000000", 252565, "1", "10") 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
         Dim cls_xml As New CLASS_NYM_3_SM                                                        ' ประกาศตัวแปรจาก CLASS_DALCN 
         Dim lct_ida As Integer = 101680              ' THIS LINE
-        'Dim dao_NYM3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
-        'dao_NYM3.GetDataby_IDA(47)
-        'cls_xml.NYM_3s = dao_NYM3.fields
-        cls_xml.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_DL_CITICENID(47)
 
+        cls_xml.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(51)
         Dim bao_app As New BAO.AppSettings              'THIS LINE
         Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
         path = path & filename.ToString() & ".xml"
@@ -2425,5 +2418,20 @@ Public Class FRM_XML
         objStreamWriter.Close()
     End Sub
 
+    Protected Sub NYM4_Click(sender As Object, e As EventArgs) Handles NYM4.Click
+        Dim filename As String = "NORYORMOR4"
+        Dim bao_show As New BAO_SHOW
+        Dim cls As New CLASS_GEN_XML.NYM4_IMPORT_SUB("0000000000000", 252565, "1", "10") 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
+        Dim cls_xml As New CLASS_NYM_4_SM                                                        ' ประกาศตัวแปรจาก CLASS_DALCN 
+        Dim lct_ida As Integer = 101680              ' THIS LINE
 
+        cls_xml.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(8)
+        Dim bao_app As New BAO.AppSettings              'THIS LINE
+        Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
+        path = path & filename.ToString() & ".xml"
+        Dim objStreamWriter As New StreamWriter(path)                                                         'ประกาศตัวแปร
+        Dim x As New XmlSerializer(cls_xml.GetType)                                                           'ประกาศ
+        x.Serialize(objStreamWriter, cls_xml)
+        objStreamWriter.Close()
+    End Sub
 End Class

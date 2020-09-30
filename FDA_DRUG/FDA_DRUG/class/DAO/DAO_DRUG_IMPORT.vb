@@ -25,8 +25,8 @@
 
 
         Public Sub getdata_ida(ByVal ida As Integer)
-            datas = (From p In db.FDA_DRUG_IMPORT_NYM_1s Where p.NYM1_IDA = ida Select p)
-            For Each Me.fields In datas
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_1s Where p.NYM1_IDA = ida Select p)  ''selcet p คือเอาทั้งหมด 
+            For Each Me.fields In datas  'เอาdata มาลงที่ field 
 
             Next
         End Sub

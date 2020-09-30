@@ -3552,79 +3552,156 @@ Namespace CLASS_GEN_XML
     End Class
 
     Public Class NYM3_IMPORT_SUB                  'เริ่มทำตรงนี้////////////////////////////////////////////////////////////////////////////////////
-            Inherits Center
+        Inherits Center
 
-            Private _citicen As String
-            Private _nym3_ida As String
-            Private _process_id As String
-            Private _nym3_date_write As String
-            Private _nym3_type As String
-            Private _dl_nym3 As String
-            Private _nym3_wish_med As String
-            Private _nym3_no As String
-            Private _nym3_status_id As String
-            Public Sub New()
+        Private _citicen As String
+        Private _nym3_ida As String
+        Private _process_id As String
+        Private _nym3_date_write As String
+        Private _nym3_type As String
+        Private _dl_nym3 As String
+        Private _nym3_wish_med As String
+        Private _nym3_no As String
+        Private _nym3_status_id As String
+        Public Sub New()
 
-                _citicen = ""
-                _nym3_ida = ""
-                _process_id = ""
-                _nym3_date_write = ""
-                _nym3_type = ""
-                _dl_nym3 = ""
-                _nym3_wish_med = ""
-                _nym3_no = ""
-                _nym3_status_id = ""
-            End Sub
+            _citicen = ""
+            _nym3_ida = ""
+            _process_id = ""
+            _nym3_date_write = ""
+            _nym3_type = ""
+            _dl_nym3 = ""
+            _nym3_wish_med = ""
+            _nym3_no = ""
+            _nym3_status_id = ""
+        End Sub
 
-            Public Sub New(Optional citizen_id As String = "", Optional idanym3 As String = "",
+        Public Sub New(Optional citizen_id As String = "", Optional idanym3 As String = "",
                            Optional processid As String = "", Optional nym3type As String = "", Optional dlnym3 As String = "",
                            Optional nym3wishmed As String = "", Optional nym3no As String = "", Optional opentime As String = "",
                            Optional nym3statusid As String = "")
 
-                _citicen = citizen_id
-                _nym3_ida = idanym3
-                _process_id = processid
-                _nym3_date_write = opentime
-                _nym3_type = nym3type
-                _dl_nym3 = dlnym3
-                _nym3_wish_med = nym3wishmed
-                _nym3_no = nym3no
-                _nym3_status_id = nym3statusid
-            End Sub
+            _citicen = citizen_id
+            _nym3_ida = idanym3
+            _process_id = processid
+            _nym3_date_write = opentime
+            _nym3_type = nym3type
+            _dl_nym3 = dlnym3
+            _nym3_wish_med = nym3wishmed
+            _nym3_no = nym3no
+            _nym3_status_id = nym3statusid
+        End Sub
 
-            ''' <summary>
-            ''' ใบอนุญาต
-            ''' </summary>
-            ''' <param name="rows"></param>
-            ''' <returns></returns>
-            ''' <remarks></remarks>
-            Public Function gen_xml(Optional rows As Integer = 0) As CLASS_NYM_3_SM
-                Dim class_xml As New CLASS_NYM_3_SM
-                Dim dao_dalcn_edit As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
-                class_xml.NYM_3s = AddValue(class_xml.NYM_3s)
-                class_xml.NYM_3s.DL = 0
-                '_______________SHOW___________________
-                Dim bao_show As New BAO_SHOW
-                'class_xml.DT_SHOW.DT1 = bao_show.SP_SP_SYSCHNGWT
-                'class_xml.DT_SHOW.DT2 = bao_show.SP_SP_SYSAMPHR
-                'class_xml.DT_SHOW.DT3 = bao_show.SP_SP_SYSTHMBL
-                'class_xml.DT_SHOW.DT4 = bao_show.SP_MAINPERSON_CTZNO(_CITIEZEN_ID)
-                'class_xml.DT_SHOW.DT10 = bao_show.SP_SYSPREFIX
+        ''' <summary>
+        ''' ใบอนุญาต
+        ''' </summary>
+        ''' <param name="rows"></param>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Function gen_xml(Optional rows As Integer = 0) As CLASS_NYM_3_SM
+            Dim class_xml As New CLASS_NYM_3_SM
+            Dim dao_dalcn_edit As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+            class_xml.NYM_3s = AddValue(class_xml.NYM_3s)
+            class_xml.NYM_3s.DL = 0
+            '_______________SHOW___________________
+            Dim bao_show As New BAO_SHOW
+            'class_xml.DT_SHOW.DT1 = bao_show.SP_SP_SYSCHNGWT
+            'class_xml.DT_SHOW.DT2 = bao_show.SP_SP_SYSAMPHR
+            'class_xml.DT_SHOW.DT3 = bao_show.SP_SP_SYSTHMBL
+            'class_xml.DT_SHOW.DT4 = bao_show.SP_MAINPERSON_CTZNO(_CITIEZEN_ID)
+            'class_xml.DT_SHOW.DT10 = bao_show.SP_SYSPREFIX
 
-                '_______________MASTER_________________
-                Dim bao_master As New BAO_MASTER
+            '_______________MASTER_________________
+            Dim bao_master As New BAO_MASTER
 
-                'class_xml.EXP_YEAR = ""
-                'class_xml.LCNNO_SHOW = ""
-                class_xml.RCVDAY = ""
-                class_xml.RCVMONTH = ""
-                class_xml.RCVYEAR = ""
-                class_xml.SHOW_LCNNO = ""
-                'class_xml.phr_medical_type = ""
-                Return class_xml
+            'class_xml.EXP_YEAR = ""
+            'class_xml.LCNNO_SHOW = ""
+            class_xml.RCVDAY = ""
+            class_xml.RCVMONTH = ""
+            class_xml.RCVYEAR = ""
+            class_xml.SHOW_LCNNO = ""
+            'class_xml.phr_medical_type = ""
+            Return class_xml
 
 
-            End Function
+        End Function
 
-        End Class
+    End Class
+
+    Public Class NYM4_IMPORT_SUB                  'เริ่มทำตรงนี้////////////////////////////////////////////////////////////////////////////////////
+        Inherits Center
+
+        Private _citicen As String
+        Private _nym4_ida As String
+        Private _process_id As String
+        Private _nym4_date_write As String
+        Private _nym4_type As String
+        Private _dl_nym4 As String
+        Private _nym4_wish_med As String
+        Private _nym4_no As String
+        Private _nym4_status_id As String
+        Public Sub New()
+
+            _citicen = ""
+            _nym4_ida = ""
+            _process_id = ""
+            _nym4_date_write = ""
+            _nym4_type = ""
+            _dl_nym4 = ""
+            _nym4_wish_med = ""
+            _nym4_no = ""
+            _nym4_status_id = ""
+        End Sub
+
+        Public Sub New(Optional citizen_id As String = "", Optional idanym4 As String = "",
+                       Optional processid As String = "", Optional nym4type As String = "", Optional dlnym4 As String = "",
+                       Optional nym4wishmed As String = "", Optional nym4no As String = "", Optional opentime As String = "",
+                       Optional nym4statusid As String = "")
+
+            _citicen = citizen_id
+            _nym4_ida = idanym4
+            _process_id = processid
+            _nym4_date_write = opentime
+            _nym4_type = nym4type
+            _dl_nym4 = dlnym4
+            _nym4_wish_med = nym4wishmed
+            _nym4_no = nym4no
+            _nym4_status_id = nym4statusid
+        End Sub
+
+        ''' <summary>
+        ''' ใบอนุญาต
+        ''' </summary>
+        ''' <param name="rows"></param>
+        ''' <returns></returns>
+        ''' <remarks></remarks>
+        Public Function gen_xml(Optional rows As Integer = 0) As CLASS_NYM_3_SM
+            Dim class_xml As New CLASS_NYM_3_SM
+            Dim dao_dalcn_edit As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+            class_xml.NYM_3s = AddValue(class_xml.NYM_3s)
+            class_xml.NYM_3s.DL = 0
+            '_______________SHOW___________________
+            Dim bao_show As New BAO_SHOW
+            'class_xml.DT_SHOW.DT1 = bao_show.SP_SP_SYSCHNGWT
+            'class_xml.DT_SHOW.DT2 = bao_show.SP_SP_SYSAMPHR
+            'class_xml.DT_SHOW.DT3 = bao_show.SP_SP_SYSTHMBL
+            'class_xml.DT_SHOW.DT4 = bao_show.SP_MAINPERSON_CTZNO(_CITIEZEN_ID)
+            'class_xml.DT_SHOW.DT10 = bao_show.SP_SYSPREFIX
+
+            '_______________MASTER_________________
+            Dim bao_master As New BAO_MASTER
+
+            'class_xml.EXP_YEAR = ""
+            'class_xml.LCNNO_SHOW = ""
+            class_xml.RCVDAY = ""
+            class_xml.RCVMONTH = ""
+            class_xml.RCVYEAR = ""
+            class_xml.SHOW_LCNNO = ""
+            'class_xml.phr_medical_type = ""
+            Return class_xml
+
+
+        End Function
+
+    End Class
 End Namespace
