@@ -3531,8 +3531,8 @@ Namespace CLASS_GEN_XML
 
 
             'Intial Default Value
-            class_xml.NYM2_IMPORTs = AddValue(class_xml.NYM2_IMPORTs)
-            class_xml.NYM2_IMPORTs.TR_ID = 0
+            class_xml.NYM_2s = AddValue(class_xml.NYM_2s)
+            class_xml.NYM_2s.TR_ID = 0
 
             '_______________SHOW___________________
             Dim bao_show As New BAO_SHOW
