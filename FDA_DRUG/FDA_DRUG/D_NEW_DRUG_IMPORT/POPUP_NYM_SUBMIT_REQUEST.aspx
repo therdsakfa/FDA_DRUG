@@ -99,9 +99,9 @@
              </td>
         </tr>
         <tr>
-            <%-- <td style="width:30%;height:50%;padding-left:10%">
+           <%-- <td style="width:30%;height:50%;padding-left:10%">
 
-                 <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" />    กลับมาแก้ code ตรงนี้ --%>
+                 <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" />   <%-- กลับมาแก้ code ตรงนี้ --%>
            
                  <br />
                  <%--<uc2:UC_GRID_PHARMACIST ID="UC_GRID_PHARMACIST" runat="server" />--%>

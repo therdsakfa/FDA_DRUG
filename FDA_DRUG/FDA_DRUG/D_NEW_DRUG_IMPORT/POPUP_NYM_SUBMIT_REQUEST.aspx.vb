@@ -133,7 +133,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Private Sub load_xml(ByVal FileName As String)
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
-        Dim objStreamReader As New StreamReader(bao._PATH_PDF_IMPORT & FileName & ".xml") '"C:\path\PDF_IMPORT\"
+        Dim objStreamReader As New StreamReader(bao._PATH_XML_IMPORT & FileName & ".xml") '"C:\path\XML_IMPORT\"
         Dim p2 As New CLASS_NYM_2
         Dim x As New XmlSerializer(p2.GetType)
         p2 = x.Deserialize(objStreamReader)
@@ -143,7 +143,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Function get_p2(ByVal FileName As String) As CLASS_NYM_2
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
-        Dim objStreamReader As New StreamReader(bao._PATH_PDF_IMPORT & FileName & ".xml") '"C:\path\PDF_IMPORT\"
+        Dim objStreamReader As New StreamReader(bao._PATH_XML_IMPORT & FileName & ".xml") '"C:\path\XML_IMPORT\"
         Dim p2 As New CLASS_NYM_2
         Dim x As New XmlSerializer(p2.GetType)
         p2 = x.Deserialize(objStreamReader)
@@ -175,8 +175,8 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao_up As New DAO_DRUG_IMPORT.ClsDBTRANSACTION_UPLOAD
         'dao_up.GetDataby_IDA(_TR_ID)    ' อาจไม่จำเป็น 
         Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-        Dim dao_PHR As New DAO_DRUG.ClsDBDALCN_PHR
-        Dim dao_PHR2 As New DAO_DRUG.ClsDBDALCN_PHR
+        'Dim dao_PHR As New DAO_DRUG.ClsDBDALCN_PHR
+        'Dim dao_PHR2 As New DAO_DRUG.ClsDBDALCN_PHR
         Dim dao_DRUG_IMPORT_NYM_DETAIL As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_DETAIL
         Dim bao_import As New BAO.ClsDBSqlcommand
 
