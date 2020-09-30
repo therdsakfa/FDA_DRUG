@@ -65,7 +65,7 @@ Public Class POPUP_RESEARCH_SUM_UL
                 Dim bao_tran As New BAO_TRANSECTION
                 bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-                TR_ID = bao_tran.insert_transection(_Process) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
+                TR_ID = bao_tran.insert_transection_new(_Process) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
 
                 If Upload_Attach(TR_ID) Then
                     Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS

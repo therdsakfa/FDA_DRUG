@@ -28,7 +28,8 @@
         ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload7, Label7.Text)
         _type = _type + 1
         ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload8, Label8.Text)
-
+        _type = _type + 1
+        ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload9, Label9.Text)
         alert("อัพโหลดไฟล์เรียบร้อยแล้ว")
     End Sub
 
@@ -47,6 +48,9 @@
             NAME_FAKE = "DA-" & PROCESS_ID & "-" & year & "-" & transection & "-" & type & "." & System.IO.Path.GetExtension(FileUpload1.FileName) 'Array_NAME_REAL(Last_Length).ToString() 'สร้างชื่อไฟล์ใหม่โดยใช้นามสกุลไฟล์เดิม
             FileUpload1.SaveAs(bao._PATH_DEFAULT & "upload\" & NAME_FAKE) 'บันทึกไฟล์ลงserverโดยใช้ชื่อที่สรางขึ้นใหม่
 
+            If _des = "อื่นๆ" Then
+                _des = TextBox1.Text
+            End If
 
             Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH
             dao.fields.NAME_FAKE = NAME_FAKE 'เก็บชื่อไฟล์ที่สร้างขึ้นใหม่เพื่อเรียกใช้
