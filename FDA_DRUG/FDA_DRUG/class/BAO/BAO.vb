@@ -5851,7 +5851,7 @@ Namespace BAO
         Public _PATH_EDIT As String = System.Configuration.ConfigurationManager.AppSettings("PATH_EDIT")              'ที่อยู่ Path
         Public _PATH_SUBS As String = System.Configuration.ConfigurationManager.AppSettings("PATH_EDIT")
         Public _RDLC As String = System.Configuration.ConfigurationManager.AppSettings("RDLC")
-        Public _PATH_PDF_IMPORT As String = System.Configuration.ConfigurationManager.AppSettings("PATH_FILE")        'มินทำต้องทำต่อ 5555555555555555555
+        Public _PATH_PDF_IMPORT As String = System.Configuration.ConfigurationManager.AppSettings("PATH_PDF_IMPORT")        'มินทำต้องทำต่อ 5555555555555555555
         Sub RunAppSettings()
             _PATH_PDF_TEMPLATE = System.Configuration.ConfigurationManager.AppSettings("PATH_PDF_TEMPLATE")                 'ที่อยู่ Path
             _PATH_XML_CLASS = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_CLASS")                       'ที่อยู่ Path
@@ -5860,6 +5860,7 @@ Namespace BAO
             _PATH_XML_TRADER = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_TRADER")                     'ที่อยู่ Path
             _PATH_EDIT = System.Configuration.ConfigurationManager.AppSettings("PATH_EDIT")              'ที่อยู่ Path
             _RDLC = System.Configuration.ConfigurationManager.AppSettings("RDLC")
+            _PATH_PDF_IMPORT = System.Configuration.ConfigurationManager.AppSettings("PATH_PDF_IMPORT")
         End Sub
     End Class
 

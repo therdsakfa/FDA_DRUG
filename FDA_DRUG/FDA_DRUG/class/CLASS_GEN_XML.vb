@@ -3524,8 +3524,8 @@ Namespace CLASS_GEN_XML
         ''' <param name="rows"></param>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Public Function gen_xml(Optional rows As Integer = 0) As CLASS_NORYORMOR2_IMPORT
-            Dim class_xml As New CLASS_NORYORMOR2_IMPORT
+        Public Function gen_xml(Optional rows As Integer = 0) As CLASS_NYM_2
+            Dim class_xml As New CLASS_NYM_2
             Dim dao_edt As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             'dao_dalcn.GetDataby_lcnsid_lcnno(_lcnsid_customer, _lcnno)
 

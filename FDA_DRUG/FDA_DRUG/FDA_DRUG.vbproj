@@ -2293,7 +2293,7 @@
     <Compile Include="class\XML\CLASS_LCNREQUEST.vb" />
     <Compile Include="class\XML\CLASS_NORYORMOR5.vb" />
     <Compile Include="class\XML\CLASS_NYM24.vb" />
-    <Compile Include="class\XML\CLASS_NORYORMOR2_IMPORT.vb" />
+    <Compile Include="class\XML\CLASS_NYM_2.vb" />
     <Compile Include="class\XML\CLASS_NYM_3.vb" />
     <Compile Include="class\XML\CLASS_NYM_4.vb" />
     <Compile Include="class\XML\CLASS_OTHER_XML.vb" />

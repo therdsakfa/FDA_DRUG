@@ -56,44 +56,26 @@ Public Class FRM_DRUG_IMPORT_NYM3
         'End If
     End Sub
     Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand    'กดปุ่มใน grid ให้ทำอะไร จากหหน้
-        'If TypeOf e.Item Is GridDataItem Then
-        '    Dim item As GridDataItem = e.Item
+        If TypeOf e.Item Is GridDataItem Then
+            Dim item As GridDataItem = e.Item
 
-        '    'drsamp IDA
-        '    Dim NYM As String = ""
-        '    Dim IDA As Integer = 0
-        '    Try
-        '        IDA = item("IDA").Text
-        '    Catch ex As Exception
+            Dim NYM As String = "3"
+            Dim NYM2_ida As String = item("NYM3_IDA").Text
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
 
-        '    End Try
-        '    If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
-        '        Select Case _process
-        '            Case "1027"
-        '                NYM = "2"
-        '            Case "1028"
-        '                NYM = "3"
-        '            Case "1029"
-        '                NYM = "4"
-        '            Case "1030"
-        '                NYM = "5"
-        '        End Select
 
-        '        If e.CommandName = "sel" Then
-        '            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
-        '            dao.getdata_ida(IDA)
-        '            Dim tr_id As Integer = 0
-        '            Try
-        '                tr_id = dao.fields.TR_ID
-        '            Catch ex As Exception
+            If e.CommandName = "sel" Then
+                '    dao.GetDataby_IDA(NYM2_ida)
+                'Dim tr_id As Integer = 0
+                'Try
+                '    tr_id = dao.fields.TR_ID
+                'Catch ex As Exception
 
-        '            End Try
+                'End Try
 
-        '            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups  ('" & "POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&NYM=" & NYM & "&process=" & _process & "');", True)
-        '        End If
-        '    End If
-
-        'End If
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx');", True)
+            End If
+        End If
     End Sub
 
     Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound   'ในแต่ละแถวให้ทำอะไร ซ่อนปุ่ม โชว์ปุ่ม ปิดปุ่ม
