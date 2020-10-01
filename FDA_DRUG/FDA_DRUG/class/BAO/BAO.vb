@@ -4869,9 +4869,9 @@ Namespace BAO
 
             Return dt
         End Function
-        Public Function SP_DATA_NYM2_USER(ByVal IDA As String) As DataTable
+        Public Function SP_DATA_NYM2_USER(ByVal DL As String) As DataTable
             Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM2_USER @ida" & IDA
+            Dim sql As String = "exec SP_DATA_NYM2_USER @DL" & DL
             Dim dt As New DataTable
             Try
                 dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
