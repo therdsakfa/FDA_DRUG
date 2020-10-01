@@ -392,7 +392,7 @@
             '    Next
         End Sub
     End Class
-    Public Class ClsDBTRANSACTION_UPLOAD
+    Public Class ClsDBDRUG_IMPORT_UPLOAD
         Inherits MAINCONTEXT
 
         Public fields As New FDA_DRUG_IMPORT_UPLOAD

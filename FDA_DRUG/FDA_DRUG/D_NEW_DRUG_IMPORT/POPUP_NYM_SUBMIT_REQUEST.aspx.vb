@@ -174,8 +174,8 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Private Sub BindData_PDF()
         Dim bao As New BAO.AppSettings
 
-        Dim dao_up As New DAO_DRUG_IMPORT.ClsDBTRANSACTION_UPLOAD
-        dao_up.GetDataby_IDA(_TR_ID)
+        Dim dao_up As New DAO_DRUG_IMPORT.ClsDBDRUG_IMPORT_UPLOAD
+        dao_up.GetDataby_IDA(_IDA)
         ' Dim dao As New DAO_DRUG_IMPORT
         Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
