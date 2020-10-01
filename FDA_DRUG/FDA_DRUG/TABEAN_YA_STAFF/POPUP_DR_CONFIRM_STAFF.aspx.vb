@@ -310,12 +310,20 @@ Public Class POPUP_DR_CONFIRM_STAFF
         If Request.QueryString("STATUS_ID") = "8" Then
             Dim dao As New DAO_DRUG.ClsDBdrrgt
             dao.GetDataby_IDA(_IDA)
-            dao_up.GetDataby_IDA(dao.fields.TR_ID)
+            If Len(_TR_ID) >= 9 Then
+                dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+            Else
+                dao_up.GetDataby_IDA(_TR_ID)
+            End If
             PROCESS_ID = dao_up.fields.PROCESS_ID
         Else
             Dim dao As New DAO_DRUG.ClsDBdrrqt
             dao.GetDataby_IDA(_IDA)
-            dao_up.GetDataby_IDA(dao.fields.TR_ID)
+            If Len(_TR_ID) >= 9 Then
+                dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+            Else
+                dao_up.GetDataby_IDA(_TR_ID)
+            End If
             PROCESS_ID = dao_up.fields.PROCESS_ID
         End If
 

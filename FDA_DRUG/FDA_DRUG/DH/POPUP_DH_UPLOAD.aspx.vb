@@ -535,16 +535,16 @@ Public Class POPUP_DH_UPLOAD
                 dao_dh15.fields.FOREIGN_PRODUCT = dao_cer_manu.fields.NAME_ADDRESS
                 dao_dh15.update()
             End If
-            
-            Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-            dao_up.fields.CITIEZEN_ID = _CLS.CITIZEN_ID
-            dao_up.fields.CITIEZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-            dao_up.fields.DOWNLOAD_ID = p2.DOWNLOAD_ID
-            dao_up.fields.PROCESS_ID = _ProcessID
-            dao_up.fields.UPLOAD_DATE = Date.Now
-            dao_up.fields.YEAR = Date.Now.Year
-            dao_up.fields.REF_NO = dao.fields.IDA
-            dao_up.insert()
+
+            'Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+            'dao_up.fields.CITIEZEN_ID = _CLS.CITIZEN_ID
+            'dao_up.fields.CITIEZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+            'dao_up.fields.DOWNLOAD_ID = p2.DOWNLOAD_ID
+            'dao_up.fields.PROCESS_ID = _ProcessID
+            'dao_up.fields.UPLOAD_DATE = Date.Now
+            'dao_up.fields.YEAR = Date.Now.Year
+            'dao_up.fields.REF_NO = dao.fields.IDA
+            'dao_up.insert()
         Catch ex As Exception
             check = False
         End Try

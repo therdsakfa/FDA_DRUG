@@ -138,7 +138,11 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM2
         Dim dao_down As New DAO_DRUG.ClsDBTRANSACTION_DOWNLOAD
         Dim dao As New DAO_DRUG.TB_lcnrequest
         Dim bao As New BAO.ClsDBSqlcommand
-        dao_up.GetDataby_IDA(_CLS.IDA)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _process)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         REF_NO = dao_up.fields.REF_NO
         dao.GetDataby_IDA(_CLS.IDA)
         'pvncd = dao.fields.pvncd.ToString()
@@ -199,8 +203,12 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM2
         Dim RCVNO As Integer
 
         dao.GetDataby_IDA(_IDA)
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
-
+        'dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _process)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
 
         Dim dao_date As New DAO_DRUG.ClsDBSTATUS_DATE

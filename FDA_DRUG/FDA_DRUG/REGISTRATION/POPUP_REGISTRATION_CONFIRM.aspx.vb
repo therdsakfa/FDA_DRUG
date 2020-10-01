@@ -57,7 +57,7 @@ Public Class POPUP_REGISTRATION_CONFIRM
 
             End Try
             show_btn(_IDA)
-            UC_GRID_ATTACH.load_gv(_IDA)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
             If Request.QueryString("identify") <> "" Then
                 If Request.QueryString("identify") <> _CLS.CITIZEN_ID_AUTHORIZE Then
                     AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("identify"), 0, HttpContext.Current.Request.Url.AbsoluteUri)

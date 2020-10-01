@@ -42,13 +42,15 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
             show_btn(_IDA)
             'UC_GRID_PHARMACIST.load_gv(_IDA)
             Open_or_Close()
+            '
+
 
             Dim check As New DAO_DRUG.TB_LCN_EXTEND_LITE
             check.GetDataby_IDA(_IDA)
             If check.fields.STATUS_ID = 5 Then
-                UC_GRID_ATTACH.load_gv_V3(_TR_ID, 11)
-                UC_GRID_ATTACH.load_gv_V3(_TR_ID, 22)
-                UC_GRID_ATTACH.load_gv_V3(_TR_ID, 33)
+                UC_GRID_ATTACH.load_gv_V4(_TR_ID, 11, _process)
+                UC_GRID_ATTACH.load_gv_V4(_TR_ID, 22, _process)
+                UC_GRID_ATTACH.load_gv_V4(_TR_ID, 33, _process)
             Else
                 UC_GRID_ATTACH.load_gv(_TR_ID)
             End If
@@ -187,9 +189,14 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
             'Dim RCVNO As Integer
             dao_lcn.GetDataby_IDA(_lcn_ida)
             dao.GetDataby_IDA(_IDA)
-            dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        'dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _process)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
 
-            Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+        Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
             Dim dao_date As New DAO_DRUG.ClsDBSTATUS_DATE
             dao_date.fields.FK_IDA = _IDA
             Try

@@ -36,6 +36,15 @@
         End If
 
     End Sub
+    Public Sub load_gv_V4(ByVal TR_ID As String, ByVal type As Integer, ByVal process As String)
+        If TR_ID <> "" And TR_ID <> "0" Then
+            Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH 'เรียกใช้classตารางไฟล์แนบ
+            dao.GetDataby_TR_ID_type(TR_ID, type) 'ดึงข้อมูลโดยการ where TR_ID
+            gv2.DataSource = dao.datas 'ใส่ข้อมูลลงตาราง
+            gv2.DataBind() 'รันข้อมูลทุกrowของตาราง
+        End If
+
+    End Sub
     ''' <summary>
     ''' ระบุURL ของแต่ละ row เพื่อเรียก PDF
     ''' </summary>
