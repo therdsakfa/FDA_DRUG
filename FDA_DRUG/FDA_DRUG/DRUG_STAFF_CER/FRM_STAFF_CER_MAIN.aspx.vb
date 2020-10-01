@@ -104,16 +104,22 @@ Public Class FRM_STAFF_CER_MAIN
 
             End Try
             Dim dao As New DAO_DRUG.TB_CER
+            Dim process_id As String
             If e.CommandName = "sel" Then
                 dao.GetDataby_IDA2(IDA)
-                Dim tr_id As String= 0
+                Dim tr_id As String = 0
+                Try
+                    process_id = dao.fields.PROCESS_ID
+                Catch ex As Exception
+
+                End Try
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception
 
                 End Try
 
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_STAFF_CER_CONFIRM2.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_STAFF_CER_CONFIRM2.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & process_id & "');", True)
             End If
 
         End If

@@ -268,7 +268,7 @@ Public Class POPUP_DI_UPLOAD
                 dao.fields.FK_IDA = Integer.Parse(_lcn_ida)
                 dao.fields.STATUS_ID = 1
                 dao.fields.CREATE_DATE = Date.Now
-
+                dao.fields.PROCESS_ID = _Process
                 ' dao.fields.CITIZEN_ID = _CLS.CITIZEN_ID
                 'dao.fields.CITIZEN_ID_UPLOAD = _CLS.CITIZEN_ID
                 'dao.fields.regntfno = run_regntfno()'ปรับไปรันตอน ยืนยัน
@@ -323,15 +323,15 @@ Public Class POPUP_DI_UPLOAD
                 Next
 
 
-                Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-                dao_up.fields.CITIEZEN_ID = _CLS.CITIZEN_ID
-                dao_up.fields.CITIEZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-                dao_up.fields.DOWNLOAD_ID = p2.DOWNLOAD_ID
-                dao_up.fields.PROCESS_ID = _Process
-                dao_up.fields.UPLOAD_DATE = Date.Now
-                dao_up.fields.YEAR = Date.Now.Year
-                dao_up.fields.REF_NO = dao.fields.IDA
-                dao_up.insert()
+                'Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+                'dao_up.fields.CITIEZEN_ID = _CLS.CITIZEN_ID
+                'dao_up.fields.CITIEZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+                'dao_up.fields.DOWNLOAD_ID = p2.DOWNLOAD_ID
+                'dao_up.fields.PROCESS_ID = _Process
+                'dao_up.fields.UPLOAD_DATE = Date.Now
+                'dao_up.fields.YEAR = Date.Now.Year
+                'dao_up.fields.REF_NO = dao.fields.IDA
+                'dao_up.insert()
                 'Catch ex As Exception
                 '    check = False
                 'End Try
