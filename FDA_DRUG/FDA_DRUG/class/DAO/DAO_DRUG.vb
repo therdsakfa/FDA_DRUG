@@ -2826,6 +2826,13 @@ Namespace DAO_DRUG
 
             Next
         End Sub
+        Public Sub GetDataby_TEMPLAETE9(ByVal P_ID As Integer, ByVal lcntype As String, ByVal STATUS As Integer, ByVal PREVIEW As Integer)      ''มินทำ เอา status 9 มาใช้กับนยม
+            datas = (From p In db.MAS_TEMPLATE_PROCESSes Where p.PROCESS_ID = P_ID And p.LCNTYPECD = lcntype And p.STATUS_ID = STATUS _
+              And p.PREVIEW = PREVIEW Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
     End Class
 
     Public Class clsDBGEN_NO_01
