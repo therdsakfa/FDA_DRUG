@@ -881,7 +881,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
         Dim rcvno_auto As String = ""
         Dim PACK_SIZE As String = ""
         Dim DRUG_STRENGTH As String = ""
-        Dim tr_id As Integer = 0
+        Dim tr_id As String= 0
         Dim IDA_regist As Integer = 0
         Dim lcnsid As Integer = 0
         Dim lcntpcd As String = ""
@@ -1967,7 +1967,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
         Dim rcvno_auto As String = ""
         Dim PACK_SIZE As String = ""
         Dim DRUG_STRENGTH As String = ""
-        Dim tr_id As Integer = 0
+        Dim tr_id As String= 0
         Dim IDA_regist As Integer = 0
         Dim lcnsid As Integer = 0
         Dim lcntpcd As String = ""

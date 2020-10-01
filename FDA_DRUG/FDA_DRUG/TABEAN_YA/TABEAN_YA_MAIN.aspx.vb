@@ -489,7 +489,7 @@ Public Class TABEAN_YA_MAIN
 
         End Try
 
-        Dim tr_id As Integer = 0
+        Dim tr_id As String= 0
         Try
             tr_id = dao.fields.TR_ID
         Catch ex As Exception
@@ -564,7 +564,7 @@ Public Class TABEAN_YA_MAIN
 
         If e.CommandName = "sel" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -707,7 +707,7 @@ Public Class TABEAN_YA_MAIN
 
         End Try
 
-        Dim tr_id As Integer = 0
+        Dim tr_id As String= 0
         Try
             tr_id = dao.fields.TR_ID
         Catch ex As Exception
@@ -769,7 +769,7 @@ Public Class TABEAN_YA_MAIN
             Dim dao As New DAO_DRUG.ClsDBdrrgt
             dao.GetDataby_IDA(IDA)
             Dim fk_ida As String = ""
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -841,7 +841,7 @@ Public Class TABEAN_YA_MAIN
             End Try
             Dim dao As New DAO_DRUG.ClsDBdrrqt
             dao.GetDataby_IDA(IDA)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception

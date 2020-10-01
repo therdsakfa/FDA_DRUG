@@ -49,7 +49,7 @@ Public Class FRM_STAFF_CHANGE_BSN
                 Dim dao As New DAO_DRUG.ClsDBdalcn
                 dao.GetDataby_IDA(IDA)
                 Dim process As Integer = 0
-                Dim tr_id As Integer = 0
+                Dim tr_id As String= 0
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception

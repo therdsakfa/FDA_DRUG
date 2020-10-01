@@ -1,6 +1,6 @@
 ﻿Public Class CLASS_NYM_2
     Inherits CLASS_CENTER
-    Public NYM2_IMPORTs As New FDA_DRUG_IMPORT_NYM_2
+    Public NYM_2s As New FDA_DRUG_IMPORT_NYM_2
 
 #Region "SHOW"
     Private _DT_SHOW As New CLS_SHOW

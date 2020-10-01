@@ -169,7 +169,7 @@ Public Class POPUP_SELECT_LISENSE
             End Try
         ElseIf e.CommandName = "leaves" Then
             'dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception

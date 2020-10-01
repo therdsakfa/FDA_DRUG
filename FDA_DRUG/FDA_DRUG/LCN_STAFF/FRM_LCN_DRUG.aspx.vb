@@ -102,7 +102,7 @@ Public Class FRM_LCN_DRUG1
 
     '    If e.CommandName = "sel" Then
     '        dao.GetDataby_IDA(str_ID)
-    '        Dim tr_id As Integer = 0
+    '        Dim tr_id As String= 0
     '        Try
     '            tr_id = dao.fields.TR_ID
     '        Catch ex As Exception
@@ -143,7 +143,7 @@ Public Class FRM_LCN_DRUG1
             If e.CommandName = "sel" Then
                 Dim dao As New DAO_DRUG.ClsDBdalcn
                 dao.GetDataby_IDA(IDA)
-                Dim tr_id As Integer = 0
+                Dim tr_id As String= 0
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception

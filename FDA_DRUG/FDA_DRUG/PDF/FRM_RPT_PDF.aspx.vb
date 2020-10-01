@@ -49,7 +49,7 @@ Public Class FRM_RPT_PDF
         Dim util As New cls_utility.Report_Utility
         util.report = ReportViewer1
         util.configWidthHeight(width:=1000)
-        Dim tr_id As Integer = 0
+        Dim tr_id As String= 0
         Dim newcode As String = Request.QueryString("NEWCODE")
         Dim IDA As Integer = 0
         Try
