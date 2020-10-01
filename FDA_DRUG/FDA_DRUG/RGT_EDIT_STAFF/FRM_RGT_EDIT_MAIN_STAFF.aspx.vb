@@ -82,7 +82,13 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF
 
             End Try
 
-            Dim tr_id As String= 0
+            Dim tr_id As String = 0
+            Dim tr_id_rg As String = 0
+            Try
+                tr_id_rg = dao_rg.fields.TR_ID
+            Catch ex As Exception
+
+            End Try
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -108,13 +114,13 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF
                 Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
                 dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
                 'lbl_titlename.Text = "พิจารณาคำขอขึ้นทะเบียนตำรับ"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../RGT_EDIT_STAFF/FRM_RGT_EDIT_CONFIRM_STAFF.aspx?IDA=" & IDA & "&TR_ID=" & item("TR_ID").Text & "&Process=" & _process_id & "&Newcode=" & item("Newcode").Text & "&citizen_authen=" & iden & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../RGT_EDIT_STAFF/FRM_RGT_EDIT_CONFIRM_STAFF.aspx?IDA=" & IDA & "&TR_ID=" & item("TR_ID").Text & "&Process=" & dao.fields.PROCESS_ID & "&Newcode=" & item("Newcode").Text & "&citizen_authen=" & iden & "');", True)
             ElseIf e.CommandName = "edt" Then
                 'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_EDIT.aspx?IDA=" & R_IDA & "&TR_ID=" & dao_rg.fields.TR_ID & "&STATUS_ID=" & stat & "&e=1'); ", True)
                 'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_EDIT.aspx?IDA=" & R_IDA & "&TR_ID=" & dao_rg.fields.TR_ID & "&STATUS_ID=" & 8 & "&ida_e=" & IDA & "&e=1'); ", True)
 
                 '
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_EDIT_V2.aspx?IDA=" & R_IDA & "&TR_ID=" & dao_rg.fields.TR_ID & "&STATUS_ID=" & 8 & "&ida_e=" & IDA & "&Newcode=" & item("Newcode").Text & "&e=1'); ", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_EDIT_V2.aspx?IDA=" & R_IDA & "&TR_ID=" & tr_id_rg & "&STATUS_ID=" & 8 & "&ida_e=" & IDA & "&Newcode=" & item("Newcode").Text & "&e=1'); ", True)
 
 
                 'ElseIf e.CommandName = "add" Then
