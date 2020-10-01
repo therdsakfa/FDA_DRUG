@@ -194,9 +194,6 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         class_xml3.NYM_3s = dao3.fields
         class_xml4.NYM_4s = dao4.fields
 
-        If _Process = "1027" Then
-
-        End If
 
         Dim bao_show As New BAO_SHOW
         class_xml2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA)
