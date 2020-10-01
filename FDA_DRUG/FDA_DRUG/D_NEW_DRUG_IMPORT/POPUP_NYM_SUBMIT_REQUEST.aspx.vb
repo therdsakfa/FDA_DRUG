@@ -57,17 +57,17 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             btn_cancel.CssClass = "btn-danger btn-lg"
         End If
     End Sub
-    '    Private Function chk_pha() As Boolean
-    '        Dim chk As Boolean = True
-    '        Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
-    '        dao.GetDataby_FK_IDA(_IDA)
-    '        For Each row In dao.datas
-    '            If row.PHR_STATUS_UPLOAD = "1" Then
-    '                chk = False
-    '            End If
-    '        Next
-    '        Return chk
-    '    End Function
+    Private Function chk_pha() As Boolean
+        Dim chk As Boolean = True
+        Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
+        dao.GetDataby_FK_IDA(_IDA)
+        For Each row In dao.datas
+            If row.PHR_STATUS_UPLOAD = "1" Then
+                chk = False
+            End If
+        Next
+        Return chk
+    End Function
     Function run_rcvno() As Integer
         Dim rcvno As Integer
         Dim bao As New BAO.ClsDBSqlcommand
