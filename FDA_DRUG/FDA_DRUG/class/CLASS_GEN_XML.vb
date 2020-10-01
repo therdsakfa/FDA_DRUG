@@ -3675,11 +3675,11 @@ Namespace CLASS_GEN_XML
         ''' <param name="rows"></param>
         ''' <returns></returns>
         ''' <remarks></remarks>
-        Public Function gen_xml(Optional rows As Integer = 0) As CLASS_NYM_3_SM
-            Dim class_xml As New CLASS_NYM_3_SM
-            Dim dao_dalcn_edit As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
-            class_xml.NYM_3s = AddValue(class_xml.NYM_3s)
-            class_xml.NYM_3s.DL = 0
+        Public Function gen_xml(Optional rows As Integer = 0) As CLASS_NYM_4_SM
+            Dim class_xml As New CLASS_NYM_4_SM
+            Dim dao_dalcn_edit As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+            class_xml.NYM_4s = AddValue(class_xml.NYM_4s)
+            class_xml.NYM_4s.DL = 0
             '_______________SHOW___________________
             Dim bao_show As New BAO_SHOW
             'class_xml.DT_SHOW.DT1 = bao_show.SP_SP_SYSCHNGWT
