@@ -43,7 +43,7 @@ Public Class WebForm35
             load_fdpdtno()
             UC_GRID_PHARMACIST.load_gv(_IDA)
             If _TR_ID <> "" Then
-                UC_GRID_ATTACH.load_gv(_TR_ID)
+                UC_GRID_ATTACH.load_gv_V2(_TR_ID, Request.QueryString("process"))
             End If
 
             set_hide(_IDA)
@@ -55,9 +55,14 @@ Public Class WebForm35
 
             End Try
             Try
-               
+
                 Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-                dao_up.GetDataby_IDA(dao.fields.TR_ID)
+                If Len(_TR_ID) >= 9 Then
+                    dao_up.GetDataby_TR_ID_Process(dao.fields.TR_ID, Request.QueryString("process"))
+                Else
+                    dao_up.GetDataby_IDA(dao.fields.TR_ID)
+                End If
+
                 If dao_up.fields.PROCESS_ID = "106" Then
                     btn_drug_group.Style.Add("display", "block")
                 End If
@@ -166,7 +171,12 @@ Public Class WebForm35
         Dim dao_down As New DAO_DRUG.ClsDBTRANSACTION_DOWNLOAD
         Dim dao As New DAO_DRUG.ClsDBdalcn
         Dim bao As New BAO.ClsDBSqlcommand
-        dao_up.GetDataby_IDA(_CLS.IDA)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, Request.QueryString("process"))
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
+
         REF_NO = dao_up.fields.REF_NO
         dao.GetDataby_IDA(_CLS.IDA)
         pvncd = dao.fields.pvncd.ToString()
@@ -230,7 +240,12 @@ Public Class WebForm35
         Dim RCVNO As Integer
 
         dao.GetDataby_IDA(_IDA)
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, Request.QueryString("process"))
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
 
         Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
 
@@ -566,7 +581,11 @@ Public Class WebForm35
         Dim dao As New DAO_DRUG.ClsDBdalcn
         dao.GetDataby_IDA(_IDA)
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, Request.QueryString("process"))
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         Dim PROCESS_ID As String = ""
         Dim lcnno_text As String = ""
         Dim lcnno_auto As String = ""

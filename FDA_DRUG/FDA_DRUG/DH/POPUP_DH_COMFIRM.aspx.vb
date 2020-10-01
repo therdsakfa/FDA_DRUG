@@ -41,7 +41,7 @@ Public Class POPUP_DH_COMFIRM
             End Try
 
             show_btn(_IDA)
-            UC_GRID_ATTACH.load_gv(_IDA)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _process)
         End If
     End Sub
     Function load_STATUS()

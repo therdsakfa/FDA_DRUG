@@ -29,7 +29,7 @@ Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
         If Not IsPostBack Then
             BindData_PDF()
             show_btn(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
             If Request.QueryString("identify") <> "" Then
                 If Request.QueryString("identify") <> _CLS.CITIZEN_ID_AUTHORIZE Then
                     AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("identify"), 0, HttpContext.Current.Request.Url.AbsoluteUri)
@@ -69,8 +69,8 @@ Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
         '    b64 = Session("b64")
         'End If
         Dim years As String = ""
-        Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+        'Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+        'dao_tr.GetDataby_IDA(dao.fields.TR_ID)
         alert("ยื่นเรื่องเรียบร้อยแล้ว")
 
     End Sub
@@ -138,7 +138,12 @@ Public Class POPUP_SUBSTITUTE_NCT_CONFIRM
         Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
         dao.Getdata_by_ID(_IDA)
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        'dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         Dim cls_dalcn_edt As New CLASS_GEN_XML.DALCN_NCT_SUB(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID, "1", "10")
         Dim lct_ida As Integer = 0 '101680
 

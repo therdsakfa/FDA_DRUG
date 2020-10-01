@@ -1353,31 +1353,37 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
-        Public Sub GetDataby_TR_ID(ByVal TR_ID As Integer)
+        Public Sub GetDataby_TR_ID(ByVal TR_ID As String)
 
             datas = (From p In db.FILE_ATTACHes Where p.TRANSACTION_ID = TR_ID Select p)
             For Each Me.fields In datas
             Next
         End Sub
-        Public Sub GetDataby_TR_ID_type(ByVal TR_ID As Integer, ByVal type As Integer)
+        Public Sub GetDataby_TR_ID_type(ByVal TR_ID As String, ByVal type As Integer)
 
             datas = (From p In db.FILE_ATTACHes Where p.TRANSACTION_ID = TR_ID And p.TYPE = type And p.NAME_REAL <> "" Select p)
             For Each Me.fields In datas
             Next
         End Sub
-        Public Sub GetDataby_TR_ID_And_Process(ByVal TR_ID As Integer, ByVal process As String)
+        Public Sub GetDataby_TR_ID_type_process(ByVal TR_ID As String, ByVal type As Integer, ByVal process_id As String)
+
+            datas = (From p In db.FILE_ATTACHes Where p.TRANSACTION_ID = TR_ID And p.TYPE = type And p.PROCESS_ID = process_id And p.NAME_REAL <> "" Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_TR_ID_And_Process(ByVal TR_ID As String, ByVal process As String)
 
             datas = (From p In db.FILE_ATTACHes Where p.TRANSACTION_ID = TR_ID And p.PROCESS_ID = process Select p)
             For Each Me.fields In datas
             Next
         End Sub
-        Public Sub GetDataby_TR_ID_And_Process_And_Type(ByVal TR_ID As Integer, ByVal process As String, ByVal _type As String)
+        Public Sub GetDataby_TR_ID_And_Process_And_Type(ByVal TR_ID As String, ByVal process As String, ByVal _type As String)
 
             datas = (From p In db.FILE_ATTACHes Where p.TRANSACTION_ID = TR_ID And p.PROCESS_ID = process And p.TYPE = _type Select p)
             For Each Me.fields In datas
             Next
         End Sub
-        Public Sub GetMAXby_TR_ID_And_Process(ByVal TR_ID As Integer, ByVal process As String)
+        Public Sub GetMAXby_TR_ID_And_Process(ByVal TR_ID As String, ByVal process As String)
             datas = (From p In db.FILE_ATTACHes Where p.TRANSACTION_ID = TR_ID And p.PROCESS_ID = process Order By CInt(p.TYPE) Descending Select p).Take(1)
             For Each Me.fields In datas
             Next
@@ -1425,6 +1431,12 @@ Namespace DAO_DRUG
         Public Sub GetDataby_IDA(ByVal IDA As Integer)
 
             datas = (From p In db.TRANSACTION_UPLOADs Where p.ID = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_TR_ID_Process(ByVal tr_id As String, ByVal process_id As String)
+
+            datas = (From p In db.TRANSACTION_UPLOADs Where p.DESCRIPTION = tr_id And p.PROCESS_ID_STR = process_id Select p)
             For Each Me.fields In datas
             Next
         End Sub

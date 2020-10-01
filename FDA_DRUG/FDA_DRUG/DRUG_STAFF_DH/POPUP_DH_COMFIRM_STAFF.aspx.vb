@@ -26,7 +26,7 @@ Public Class POPUP_DH_COMFIRM_STAFF
         If Not IsPostBack Then
             BindData_PDF()
             Bind_ddl_Status_staff()
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
             bind_lbl()
             show_btn(_IDA)
         End If

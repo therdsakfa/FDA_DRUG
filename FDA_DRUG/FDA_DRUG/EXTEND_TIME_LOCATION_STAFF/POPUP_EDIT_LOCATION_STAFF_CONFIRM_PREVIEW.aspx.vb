@@ -36,7 +36,7 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
             Bind_ddl_Status_staff()
             load_fdpdtno()
             'UC_GRID_PHARMACIST.load_gv(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _process)
             set_hide(_IDA)
             set_lbl()
             show_btn(_IDA)
@@ -241,7 +241,11 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
         Dim dao_down As New DAO_DRUG.ClsDBTRANSACTION_DOWNLOAD
         Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
         Dim bao As New BAO.ClsDBSqlcommand
-        dao_up.GetDataby_IDA(_CLS.IDA)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _process)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         REF_NO = dao_up.fields.REF_NO
         dao.GetDataby_IDA(_CLS.IDA)
         'pvncd = dao.fields.pvncd.ToString()
@@ -305,7 +309,12 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
         Dim RCVNO As Integer
 
         dao.GetDataby_IDA(_IDA)
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        'dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _process)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         dao_process.GetDataby_Process_ID(_process)
         Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
 
@@ -651,7 +660,12 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
         dao_lcnre.GetDataby_IDA(_IDA)
         dao_lcn.GetDataby_IDA(dao_lcnre.fields.FK_IDA)
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_up.GetDataby_IDA(dao_lcnre.fields.TR_ID)
+        'dao_up.GetDataby_IDA(dao_lcnre.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _process)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         Dim PROCESS_ID As String = ""
         Dim lcnno_text As String = ""
         Dim lcnno_auto As String = ""
@@ -1143,7 +1157,12 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
         Dim dao As New DAO_DRUG.ClsDBdalcn
         dao.GetDataby_IDA(LCN_IDA)
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        'dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _process)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         Dim PROCESS_ID As String = ""
         Dim lcnno_text As String = ""
         Dim lcnno_auto As String = ""
