@@ -506,7 +506,7 @@ Namespace BAO
                 End With
                 dao_each_rgt.insert()
             Next
-            '
+
             Dim dao_keep As New DAO_DRUG.TB_DRRQT_KEEP_DRUG
             dao_keep.GetDataby_FKIDA(FK_IDA)
             For Each dao_keep.fields In dao_keep.datas
