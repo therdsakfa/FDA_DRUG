@@ -56,26 +56,26 @@ Public Class FRM_DRUG_IMPORT_NYM3
         'End If
     End Sub
     Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand    'กดปุ่มใน grid ให้ทำอะไร จากหหน้
-        'If TypeOf e.Item Is GridDataItem Then
-        '    Dim item As GridDataItem = e.Item
+        If TypeOf e.Item Is GridDataItem Then
+            Dim item As GridDataItem = e.Item
 
-        '    Dim NYM As String = "3"
-        '    Dim NYM2_ida As String = item("NYM3_IDA").Text
-        '    Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+            Dim NYM As String = "3"
+            Dim NYM3_ida As String = item("NYM3_IDA").Text
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
 
 
-        '    If e.CommandName = "sel" Then
-        '        '    dao.GetDataby_IDA(NYM2_ida)
-        '        'Dim tr_id As Integer = 0
-        '        'Try
-        '        '    tr_id = dao.fields.TR_ID
-        '        'Catch ex As Exception
+            If e.CommandName = "sel" Then
+                '    dao.GetDataby_IDA(NYM3_ida)
+                'Dim tr_id As Integer = 0
+                'Try
+                '    tr_id = dao.fields.TR_ID
+                'Catch ex As Exception
 
-        '        'End Try
+                'End Try
 
-        '        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx');", True)
-        '    End If
-        'End If
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx');", True)
+            End If
+        End If
     End Sub
 
     Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound   'ในแต่ละแถวให้ทำอะไร ซ่อนปุ่ม โชว์ปุ่ม ปิดปุ่ม
