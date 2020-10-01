@@ -112,7 +112,7 @@ Public Class FRM_LCN_CONFIRM_DRUG
         End Try
         Dim tr_id As String = ""
         tr_id = "DA-" & _ProcessID & "-" & years & "-" & _TR_ID
-        
+
         Dim cls_sop As New CLS_SOP
         cls_sop.BLOCK_SOP(_CLS.CITIZEN_ID, _ProcessID, "2", "ยื่นคำขอ", tr_id, b64)
         cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "USER", _ProcessID, _CLS.PVCODE, 2, "ส่งเรื่องและรอพิจารณา", "SOP-DRUG-10-" & _ProcessID & "-1", "รับคำขอ", "รอเจ้าหน้าที่รับคำขอ", "STAFF", tr_id, SOP_STATUS:="ยื่นคำขอ")
