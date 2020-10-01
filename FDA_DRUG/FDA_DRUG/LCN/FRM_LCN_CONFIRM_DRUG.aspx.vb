@@ -103,7 +103,7 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Else
             dao_tr.GetDataby_IDA(dao.fields.TR_ID)
         End If
-        dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+        'dao_tr.GetDataby_IDA(dao.fields.TR_ID)
         Try
             years = dao_tr.fields.YEAR
 

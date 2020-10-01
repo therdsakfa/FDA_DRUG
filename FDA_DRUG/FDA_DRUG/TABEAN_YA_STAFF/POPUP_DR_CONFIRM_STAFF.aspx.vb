@@ -933,7 +933,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
             lcnno = dao.fields.lcnno
             IDA_regist = dao.fields.FK_IDA
-            tr_id = dao.fields.TR_ID
+            tr_id = _TR_ID
             lcnsid = dao.fields.lcnsid
             DRUG_STRENGTH = dao.fields.DRUG_STRENGTH
             pvncd = dao.fields.pvncd
@@ -2164,11 +2164,15 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
         End Try
         Dim cls As New CLASS_GEN_XML.DR(_CLS.CITIZEN_ID, lcnsid, dao_lcn.fields.lcnno, pvncd, dao_lcn.fields.IDA)
-        Dim _process As Integer = 0
+        ' Dim _process As String = 0
         Try
             Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-            dao_tr.GetDataby_IDA(tr_id)
-            _process = dao_tr.fields.PROCESS_ID
+            If Len(_TR_ID) >= 9 Then
+                dao_tr.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+            Else
+                dao_tr.GetDataby_IDA(_TR_ID)
+            End If
+            '_process = dao_tr.fields.PROCESS_ID
         Catch ex As Exception
 
         End Try
@@ -2559,8 +2563,8 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
 
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & NAME_TEMPLATE 'dao_pdftemplate.fields.PDF_TEMPLATE
-        Dim filename As String = paths & PDF_OUTPUT & "\" & NAME_PDF("DA", _process, _YEARS, _TR_ID) ' dao_pdftemplate.fields.PDF_OUTPUT
-        Dim Path_XML As String = paths & XML_PATH & "\" & NAME_XML("DA", _process, _YEARS, _TR_ID) 'dao_pdftemplate.fields.XML_PATH
+        Dim filename As String = paths & PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID) ' dao_pdftemplate.fields.PDF_OUTPUT
+        Dim Path_XML As String = paths & XML_PATH & "\" & NAME_XML("DA", _ProcessID, _YEARS, _TR_ID) 'dao_pdftemplate.fields.XML_PATH
         Try
             Dim url As String = ""
             ' If Request.QueryString("status") = 8 Or Request.QueryString("status") = 14 Then
@@ -2575,7 +2579,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
         End Try
         p_dr = class_xml
-        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
 
 
         lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
