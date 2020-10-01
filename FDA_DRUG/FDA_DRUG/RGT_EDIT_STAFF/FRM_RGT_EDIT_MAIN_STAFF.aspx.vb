@@ -93,8 +93,14 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF
 
                 Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
                 Try
-                    dao_tr.GetDataby_IDA(tr_id)
-                    _process_id = dao_tr.fields.PROCESS_ID
+                    If Len(tr_id) >= 9 Then
+                        dao_tr.GetDataby_TR_ID_Process(tr_id, _process)
+                        _process_id = _process
+                    Else
+                        dao_tr.GetDataby_IDA(tr_id)
+                        _process_id = dao_tr.fields.PROCESS_ID
+                    End If
+
                 Catch ex As Exception
 
                 End Try
