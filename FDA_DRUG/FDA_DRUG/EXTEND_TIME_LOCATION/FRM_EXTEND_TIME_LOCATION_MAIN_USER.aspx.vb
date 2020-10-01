@@ -409,7 +409,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
         'dao.GetDataby_IDA(str_ID)
         If e.CommandName = "sel" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -424,7 +424,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
             'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2("~\EDIT_LOCATION_STAFF\POPUP_STAFF_EDIT_LOCATION_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & " ")
         ElseIf e.CommandName = "leaves" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -447,7 +447,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
 
         ElseIf e.CommandName = "_attach" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -457,7 +457,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
             Response.Write("<script>window.open ('../EXTEND_TIME_LOCATION/FRM_EXTEND_LCN_ATTACH_PAGE.aspx?TR_ID=" & tr_id & "&process=" & dao.fields.PROCESS_ID & "','_blank');</script>")
         ElseIf e.CommandName = "drug_group" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -466,7 +466,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('" & "POPUP_LCN_PRODUCTION_DRUG_GROUP_HEAD.aspx?ida=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
         ElseIf e.CommandName = "sell" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -475,7 +475,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups4('" & "POPUP_LCN_SELL_TYPE.aspx?ida=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
         ElseIf e.CommandName = "_edit" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception

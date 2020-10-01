@@ -64,7 +64,7 @@ Public Class FRM_STAFF_PD
             Catch ex As Exception
 
             End Try
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = item("TR_ID").Text
             Catch ex As Exception

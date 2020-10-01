@@ -100,7 +100,7 @@ Public Class TABEAN_YA_MAIN_STAFF
 
     '    If e.CommandName = "sel" Then
     '        dao.GetDataby_IDA(str_ID)
-    '        Dim tr_id As Integer = 0
+    '        Dim tr_id As String= 0
     '        Try
     '            tr_id = dao.fields.TR_ID
     '        Catch ex As Exception
@@ -110,7 +110,7 @@ Public Class TABEAN_YA_MAIN_STAFF
     '        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../TABEAN_YA_STAFF/POPUP_DR_CONFIRM_STAFF.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
     '    ElseIf e.CommandName = "_edit" Then
     '        dao.GetDataby_IDA(str_ID)
-    '        Dim tr_id As Integer = 0
+    '        Dim tr_id As String= 0
     '        Try
     '            tr_id = dao.fields.TR_ID
     '        Catch ex As Exception
@@ -136,7 +136,7 @@ Public Class TABEAN_YA_MAIN_STAFF
 
         If e.CommandName = "sel" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -222,7 +222,7 @@ Public Class TABEAN_YA_MAIN_STAFF
             Catch ex As Exception
 
             End Try
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             If item("STATUS_ID").Text <> "8" Then
                 Dim dao As New DAO_DRUG.ClsDBdrrqt
                 dao.GetDataby_IDA(IDA)
@@ -289,7 +289,7 @@ Public Class TABEAN_YA_MAIN_STAFF
             Dim btn_report As LinkButton = DirectCast(item("btn_report2").Controls(0), LinkButton)
 
             Dim dao As New DAO_DRUG.ClsDBdrrqt
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             dao.GetDataby_IDA(IDA)
 
             Try

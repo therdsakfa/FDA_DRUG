@@ -61,11 +61,11 @@
         Dim i As Integer = 0
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
         i = dao_up.Count_GEN_NO(_year, processid, gen_no)
-
+        Dim str_no As String = gen_no.ToString()
         If i > 0 Then
             gen_no = Get_NO(processid)
 
-            Dim str_no As String = gen_no.ToString()
+
             str_no = String.Format("{0:0000000}", gen_no.ToString("0000000"))
             str_no = _year.ToString.Substring(2, 2) & str_no
 
@@ -81,7 +81,7 @@
             dao_up.insert() 'ปรับเป็น
         Else
 
-            Dim str_no As String = gen_no.ToString()
+            'Dim str_no As String = gen_no.ToString()
             str_no = String.Format("{0:0000000}", gen_no.ToString("0000000"))
             str_no = _year.ToString.Substring(2, 2) & str_no
 
@@ -97,7 +97,7 @@
             dao_up.insert() 'ปรับเป็น
         End If
 
-        Return gen_no
+        Return str_no
 
     End Function
     Public Function Get_NO(ByVal _process_id) As Integer

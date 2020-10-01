@@ -148,7 +148,7 @@ Public Class FRM_NORYORMOR_2_to_5_MAIN
 
         If e.CommandName = "sel" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception

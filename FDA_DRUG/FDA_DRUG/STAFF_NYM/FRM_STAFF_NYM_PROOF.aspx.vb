@@ -102,7 +102,7 @@ Public Class FRM_STAFF_NYM_PROOF
 
     '    If e.CommandName = "sel" Then
     '        dao.GetDataby_IDA(str_ID)
-    '        Dim tr_id As Integer = 0
+    '        Dim tr_id As String= 0
     '        Try
     '            tr_id = dao.fields.TR_ID
     '        Catch ex As Exception
@@ -134,7 +134,7 @@ Public Class FRM_STAFF_NYM_PROOF
             Dim item As GridDataItem = e.Item
 
             'drsamp IDA
-            Dim TR_ID As Integer = 0
+            Dim tr_id As String= 0
             Try
                 TR_ID = item("TR_ID").Text
             Catch ex As Exception

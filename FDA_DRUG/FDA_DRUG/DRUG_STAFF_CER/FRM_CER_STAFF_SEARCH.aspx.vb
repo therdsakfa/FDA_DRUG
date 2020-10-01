@@ -34,7 +34,7 @@ Public Class FRM_CER_STAFF_SEARCH
             Dim dao As New DAO_DRUG.TB_CER
             If e.CommandName = "sel" Then
                 dao.GetDataby_IDA2(str_ID)
-                Dim tr_id As Integer = 0
+                Dim tr_id As String= 0
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception

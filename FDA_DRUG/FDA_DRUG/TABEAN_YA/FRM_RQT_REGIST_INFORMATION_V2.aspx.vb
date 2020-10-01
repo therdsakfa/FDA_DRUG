@@ -692,7 +692,7 @@ Public Class FRM_RQT_REGIST_INFORMATION_V2
 
     Protected Sub btn_preview_Click(sender As Object, e As EventArgs) Handles btn_preview.Click
         Dim dao As New DAO_DRUG.ClsDBdrrgt
-        Dim tr_id As Integer = 0
+        Dim tr_id As String= 0
         Try
             dao.GetDataby_IDA(_IDA)
             tr_id = dao.fields.TR_ID

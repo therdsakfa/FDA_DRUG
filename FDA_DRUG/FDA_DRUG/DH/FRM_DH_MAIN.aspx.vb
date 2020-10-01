@@ -251,7 +251,7 @@ Public Class FRM_DH_MAIN
 
         If e.CommandName = "sel" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -269,7 +269,7 @@ Public Class FRM_DH_MAIN
             load_GV_data()
         ElseIf e.CommandName = "_print" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -358,7 +358,7 @@ Public Class FRM_DH_MAIN
             Dim dao_da As New DAO_DRUG.ClsDBdalcn
             If e.CommandName = "sel" Then
                 dao.GetDataby_IDA(str_ID)
-                Dim tr_id As Integer = 0
+                Dim tr_id As String= 0
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception
@@ -377,7 +377,7 @@ Public Class FRM_DH_MAIN
                 load_GV_data()
             ElseIf e.CommandName = "_print" Then
                 dao.GetDataby_IDA(str_ID)
-                Dim tr_id As Integer = 0
+                Dim tr_id As String= 0
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception

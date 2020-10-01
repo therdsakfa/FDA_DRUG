@@ -295,7 +295,7 @@ Public Class FRM_LCN_DRUG
 
         If e.CommandName = "sel" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String = 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -305,7 +305,7 @@ Public Class FRM_LCN_DRUG
 
         ElseIf e.CommandName = "leaves" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String = 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -327,7 +327,7 @@ Public Class FRM_LCN_DRUG
             Response.Redirect("../MAIN/FRM_NEWS.aspx?lcnno=" & dao.fields.lcnno.ToString() & "&lcnsid=" & dao.fields.lcnsid.ToString() & "&lcn_ida=" & str_ID & "&lct_ida=" & _lct_ida)
         ElseIf e.CommandName = "drug_group" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String = 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -336,7 +336,7 @@ Public Class FRM_LCN_DRUG
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('" & "POPUP_LCN_PRODUCTION_DRUG_GROUP_HEAD.aspx?ida=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
         ElseIf e.CommandName = "sell" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String = 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception

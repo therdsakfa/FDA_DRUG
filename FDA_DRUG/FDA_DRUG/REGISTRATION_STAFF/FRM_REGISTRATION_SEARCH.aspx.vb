@@ -23,7 +23,7 @@ Public Class FRM_REGISTRATION_SEARCH
             Dim iden As String = ""
             If e.CommandName = "sel" Then
                 dao.GetDataby_IDA(item("IDA").Text)
-                Dim tr_id As Integer = 0
+                Dim tr_id As String= 0
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception
@@ -269,7 +269,7 @@ Public Class FRM_REGISTRATION_SEARCH
             Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
             dao.GetDataby_IDA(IDA)
             btn_trid.Style.Add("display", "none")
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception

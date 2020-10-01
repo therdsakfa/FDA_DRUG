@@ -49,7 +49,7 @@ Public Class FRM_REPORT_RDLC
         Dim util As New cls_utility.Report_Utility
         util.report = ReportViewer1
         util.configWidthHeight(width:=1000)
-        Dim tr_id As Integer = 0
+        Dim tr_id As String= 0
         
         If Request.QueryString("STATUS_ID") = "8" Then
             Try
@@ -184,7 +184,7 @@ Public Class FRM_REPORT_RDLC
         Dim util As New cls_utility.Report_Utility
         util.report = ReportViewer1
         util.configWidthHeight(width:=1000)
-        Dim tr_id As Integer = 0
+        Dim tr_id As String= 0
         Try
             Dim dao_rgt As New DAO_DRUG.ClsDBDRUG_REGISTRATION
             dao_rgt.GetDataby_IDA(Request.QueryString("IDA"))

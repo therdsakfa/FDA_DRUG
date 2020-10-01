@@ -65,7 +65,7 @@ Public Class FRM_RGT_EDIT_SEARCH
 
             End Try
 
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -216,7 +216,7 @@ Public Class FRM_RGT_EDIT_SEARCH
             Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
             dao.GetDatabyIDA(IDA)
             btn_trid.Style.Add("display", "none")
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
