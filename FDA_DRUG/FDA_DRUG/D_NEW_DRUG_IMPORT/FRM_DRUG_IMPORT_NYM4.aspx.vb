@@ -60,12 +60,12 @@ Public Class FRM_DRUG_IMPORT_NYM4
         '    Dim item As GridDataItem = e.Item
 
         '    Dim NYM As String = "4"
-        '    Dim NYM2_ida As String = item("NYM4_IDA").Text
+        '    Dim NYM4_ida As String = item("NYM4_IDA").Text
         '    Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
 
 
         '    If e.CommandName = "sel" Then
-        '        '    dao.GetDataby_IDA(NYM2_ida)
+        '        '    dao.GetDataby_IDA(NYM4_ida)
         '        'Dim tr_id As Integer = 0
         '        'Try
         '        '    tr_id = dao.fields.TR_ID
