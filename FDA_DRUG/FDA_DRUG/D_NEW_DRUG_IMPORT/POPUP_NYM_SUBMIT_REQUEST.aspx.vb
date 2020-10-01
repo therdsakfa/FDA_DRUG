@@ -177,7 +177,68 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim bao As New BAO.AppSettings
 
 
-        Dim cls_dalcn As New CLASS_GEN_XML.T_NCT_DALCN_TEMP(_CLS.CITIZEN_ID)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Dim cls_import As New CLASS_GEN_XML.NYM2_IMPORT(_CLS.CITIZEN_ID)
 
         Dim class_xml As New CLASS_NYM_2
         'class_xml = cls_dalcn.gen_xml()
