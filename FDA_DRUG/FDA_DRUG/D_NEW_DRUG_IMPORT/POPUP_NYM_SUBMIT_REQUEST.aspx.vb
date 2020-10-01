@@ -204,8 +204,8 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim paths As String = bao._PATH_XML_IMPORT
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
 
-        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _Process, "2564", _TR_ID)
-        Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _Process, "2564", _TR_ID)
+        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _Process, Date.Now.Year, _TR_ID)
+        Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _Process, Date.Now.Year, _TR_ID)
         'load_PDF(filename)
         LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _Process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
 
@@ -215,7 +215,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
 
         HiddenField1.Value = filename
-        _CLS.FILENAME_PDF = NAME_PDF("DA", _Process, "2564", _TR_ID)
+        _CLS.FILENAME_PDF = NAME_PDF("DA", _Process, Date.Now.Year, _TR_ID)
         _CLS.PDFNAME = filename
         '    show_btn() 'ตรวจสอบปุ่ม
 
