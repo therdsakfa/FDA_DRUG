@@ -82,9 +82,9 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim bao As New BAO.ClsDBSqlcommand
         dao.GetDataby_IDA(Integer.Parse(_IDA))
         If Request.QueryString("staff") <> "" Then
-            dao.fields.STATUS_ID = 11
+            dao.fields.STATUS_ID = 1                                    'ต้องแก้ ให้ status update แล้วนำไปโชวใน grid view
         Else
-            dao.fields.STATUS_ID = 2
+            dao.fields.STATUS_ID = 0
         End If
         dao.update()
 
