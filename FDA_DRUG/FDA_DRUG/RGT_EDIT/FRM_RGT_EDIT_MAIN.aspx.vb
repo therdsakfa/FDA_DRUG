@@ -399,16 +399,16 @@ Public Class FRM_RGT_EDIT_MAIN
 
             End Try
             If e.CommandName = "sel" Then
-                Dim _process_id As Integer = 0
+                Dim _process_id As String = 0
 
                 Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
                 Try
                     If Len(tr_id) >= 9 Then
                         dao_tr.GetDataby_TR_ID_Process(tr_id, _process)
-                        _process_id = _process
+                        _process_id = dao.fields.PROCESS_ID
                     Else
                         dao_tr.GetDataby_IDA(tr_id)
-                        _process_id = dao_tr.fields.PROCESS_ID
+                        _process_id = dao.fields.PROCESS_ID
                     End If
 
                 Catch ex As Exception
