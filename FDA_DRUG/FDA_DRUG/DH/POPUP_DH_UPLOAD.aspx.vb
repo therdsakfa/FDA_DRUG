@@ -368,7 +368,7 @@ Public Class POPUP_DH_UPLOAD
             Catch ex As Exception
 
             End Try
-
+            dao.fields.PROCESS_ID = _ProcessID
             dao.fields.FK_IDA = _FK_IDA
             dao.fields.IDENTIFY = _CLS.CITIZEN_ID
             dao.fields.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE

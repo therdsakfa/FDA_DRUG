@@ -1810,36 +1810,36 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Return class_xml
     End Function
 
-    Sub GEN_TR_ID(ByVal ida As Integer, ByVal CITIZEN_ID_AUTHORIZE As String)
-        Dim TR_ID As String = ""
-        Dim _ProcessID As String = ""
-        Dim bao_tran As New BAO_TRANSECTION
-        Dim dao As New DAO_DRUG.ClsDBdrrgt
-        Try
-            dao.GetDataby_IDA(ida)
-        Catch ex As Exception
+    'Sub GEN_TR_ID(ByVal ida As Integer, ByVal CITIZEN_ID_AUTHORIZE As String)
+    '    Dim TR_ID As String = ""
+    '    Dim _ProcessID As String = ""
+    '    Dim bao_tran As New BAO_TRANSECTION
+    '    Dim dao As New DAO_DRUG.ClsDBdrrgt
+    '    Try
+    '        dao.GetDataby_IDA(ida)
+    '    Catch ex As Exception
 
-        End Try
-        Try
-            bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
-        Catch ex As Exception
-            bao_tran.CITIZEN_ID = ""
-        End Try
-        Try
-            bao_tran.CITIZEN_ID_AUTHORIZE = CITIZEN_ID_AUTHORIZE
-        Catch ex As Exception
-            bao_tran.CITIZEN_ID_AUTHORIZE = ""
-        End Try
-        Try
-            _ProcessID = dao.fields.PROCESS_ID
-        Catch ex As Exception
+    '    End Try
+    '    Try
+    '        bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+    '    Catch ex As Exception
+    '        bao_tran.CITIZEN_ID = ""
+    '    End Try
+    '    Try
+    '        bao_tran.CITIZEN_ID_AUTHORIZE = CITIZEN_ID_AUTHORIZE
+    '    Catch ex As Exception
+    '        bao_tran.CITIZEN_ID_AUTHORIZE = ""
+    '    End Try
+    '    Try
+    '        _ProcessID = dao.fields.PROCESS_ID
+    '    Catch ex As Exception
 
-        End Try
+    '    End Try
 
-        TR_ID = bao_tran.insert_transection_new(_ProcessID)
-        dao.fields.TR_ID = TR_ID
-        dao.update()
-    End Sub
+    '    TR_ID = bao_tran.insert_transection_new(_ProcessID)
+    '    dao.fields.TR_ID = TR_ID
+    '    dao.update()
+    'End Sub
 
     Private Sub btn_send_edit_Click(sender As Object, e As EventArgs) Handles btn_send_edit.Click
         Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST

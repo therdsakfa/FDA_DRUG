@@ -137,17 +137,17 @@ Public Class POPUP_DI_CONFIRM
     Protected Sub btn_load_Click(sender As Object, e As EventArgs) Handles btn_load.Click
         Dim dao As New DAO_DRUG.TB_CER
         dao.GetDataby_IDA2(Integer.Parse(_IDA))
-        Dim dao_TR As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        'dao_TR.GetDataby_IDA(Integer.Parse(dao.fields.TR_ID))
-        If Len(_TR_ID) >= 9 Then
-            Try
-                dao_TR.GetDataby_IDA(_TR_ID)
-            Catch ex As Exception
+        'Dim dao_TR As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+        ''dao_TR.GetDataby_IDA(Integer.Parse(dao.fields.TR_ID))
+        'If Len(_TR_ID) >= 9 Then
+        '    Try
+        '        dao_TR.GetDataby_IDA(_TR_ID)
+        '    Catch ex As Exception
 
-            End Try
-        Else
-            dao_TR.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
-        End If
+        '    End Try
+        'Else
+        '    dao_TR.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+        'End If
         'If dao.fields.lcnscd = 11 Then
         '    fusion_XML_To_PDF("DA-41-2558-" & _IDA.ToString())
         'Else
@@ -280,9 +280,11 @@ Public Class POPUP_DI_CONFIRM
         Dim CITIEZEN_ID_AUTHORIZE As String = ""
 
 
-        Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID.ToString()
+        'Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID.ToString()
+
+
         Dim Year As String = dao_up.fields.YEAR.ToString()
-        Dim TR_ID As String = dao_up.fields.ID.ToString()
+        ' Dim TR_ID As String = dao_up.fields.ID.ToString()
         Dim CITIZEN_ID As String = dao_up.fields.CITIEZEN_ID
 
 
