@@ -106,16 +106,16 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
             End Try
             Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
             If Len(_TR_ID) >= 9 Then
-                dao_tr.GetDataby_TR_ID_Process(dao.fields.TR_ID, _ProcessID)
+                dao_tr.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
             Else
-                dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+                dao_tr.GetDataby_IDA(_TR_ID)
             End If
 
             Dim bao As New BAO.AppSettings
                 bao.RunAppSettings()
                 Dim paths As String = bao._PATH_DEFAULT
-                Dim Path_XML As String = paths & "XML_TRADER_UPLOAD" & "\" & NAME_XML("DA", dao_tr.fields.PROCESS_ID, dao_tr.fields.YEAR, dao.fields.TR_ID)
-                Dim cls_xml As New CLASS_GEN_XML.EDIT_DRRGT
+            Dim Path_XML As String = paths & "XML_TRADER_UPLOAD" & "\" & NAME_XML("DA", _ProcessID, dao_tr.fields.YEAR, _TR_ID)
+            Dim cls_xml As New CLASS_GEN_XML.EDIT_DRRGT
                 ', p_rgt_edt
 
                 'COMPARE_OBJECT(GEN_XML_EDT_DRRGT_R(Path_XML), GET_OLD_DATA(dao.fields.FK_IDA), _IDA)
