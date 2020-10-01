@@ -50,7 +50,7 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
         runQuery()
-        UC_GRID_ATTACH.load_gv(_TR_ID)
+        UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
         If Not IsPostBack Then
             'lr_preview.Text = "<iframe id='iframe1'  style='height:500px;width:100%;' src='../PDF/PDF_PERVIEW.aspx?ID=" & _CLS.IDA & "&ID_transection=" & _CLS.TR_ID & "&PROCESS_ID=5" & "&STATUS=" & load_STATUS() & "' ></iframe>"
             Bind_ddl_Status_staff()
@@ -105,17 +105,22 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
 
             End Try
             Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-            dao_tr.GetDataby_IDA(dao.fields.TR_ID)
-            Dim bao As New BAO.AppSettings
-            bao.RunAppSettings()
-            Dim paths As String = bao._PATH_DEFAULT
-            Dim Path_XML As String = paths & "XML_TRADER_UPLOAD" & "\" & NAME_XML("DA", dao_tr.fields.PROCESS_ID, dao_tr.fields.YEAR, dao.fields.TR_ID)
-            Dim cls_xml As New CLASS_GEN_XML.EDIT_DRRGT
-            ', p_rgt_edt
+            If Len(_TR_ID) >= 9 Then
+                dao_tr.GetDataby_TR_ID_Process(dao.fields.TR_ID, _ProcessID)
+            Else
+                dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+            End If
 
-            'COMPARE_OBJECT(GEN_XML_EDT_DRRGT_R(Path_XML), GET_OLD_DATA(dao.fields.FK_IDA), _IDA)
-            set_lbl()
-        End If
+            Dim bao As New BAO.AppSettings
+                bao.RunAppSettings()
+                Dim paths As String = bao._PATH_DEFAULT
+                Dim Path_XML As String = paths & "XML_TRADER_UPLOAD" & "\" & NAME_XML("DA", dao_tr.fields.PROCESS_ID, dao_tr.fields.YEAR, dao.fields.TR_ID)
+                Dim cls_xml As New CLASS_GEN_XML.EDIT_DRRGT
+                ', p_rgt_edt
+
+                'COMPARE_OBJECT(GEN_XML_EDT_DRRGT_R(Path_XML), GET_OLD_DATA(dao.fields.FK_IDA), _IDA)
+                set_lbl()
+            End If
     End Sub
     Sub set_lbl()
         
@@ -901,7 +906,12 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         dao_lcn.GetDataby_IDA(dao.fields.LCN_IDA)
         dao_drrgt.GetDataby_IDA(dao.fields.FK_IDA)
         Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(dao.fields.TR_ID) >= 9 Then
+            dao_tr.GetDataby_TR_ID_Process(dao.fields.TR_ID, _ProcessID)
+        Else
+            dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+        End If
+
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
         Dim paths As String = bao._PATH_DEFAULT
@@ -1572,7 +1582,11 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Dim _process As Integer = 0
         Try
             Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-            dao_tr.GetDataby_IDA(tr_id)
+            If Len(_TR_ID) >= 9 Then
+                dao_tr.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+            Else
+                dao_tr.GetDataby_IDA(_TR_ID)
+            End If
             _process = dao_tr.fields.PROCESS_ID
         Catch ex As Exception
 

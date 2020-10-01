@@ -60,7 +60,7 @@ Public Class POPUP_DR_CONFIRM
             End Try
             bind_ddl_rqt()
             show_btn(_IDA)
-            UC_GRID_ATTACH.load_gv(_IDA)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _process)
             Try
 
                 Dim dao As New DAO_DRUG.ClsDBdrrqt
@@ -219,7 +219,11 @@ Public Class POPUP_DR_CONFIRM
                 End If
                 Dim years As String = ""
                 Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-                dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+                If Len(_TR_ID) >= 9 Then
+                    dao_tr.GetDataby_TR_ID_Process(_TR_ID, _process)
+                Else
+                    dao_tr.GetDataby_IDA(_TR_ID)
+                End If
                 Try
                     years = dao_tr.fields.YEAR
 

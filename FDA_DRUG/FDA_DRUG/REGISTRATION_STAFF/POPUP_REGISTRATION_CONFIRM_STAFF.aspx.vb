@@ -24,7 +24,7 @@ Public Class POPUP_REGISTRATION_CONFIRM_STAFF
         RunSession()
         If Not IsPostBack Then
             Bind_ddl_Status_staff()
-            UC_GRID_ATTACH.load_gv(_IDA)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
             BindData_PDF()
             txt_app_date.Text = Date.Now.ToShortDateString()
         End If
@@ -133,7 +133,11 @@ Public Class POPUP_REGISTRATION_CONFIRM_STAFF
        Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
         Dim dao_TR As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
         dao.GetDataby_IDA(Integer.Parse(_IDA))
-        dao_TR.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_TR.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+        Else
+            dao_TR.GetDataby_IDA(_TR_ID)
+        End If
 
         load_PDF(_CLS.PDFNAME, _CLS.FILENAME_PDF)
     End Sub

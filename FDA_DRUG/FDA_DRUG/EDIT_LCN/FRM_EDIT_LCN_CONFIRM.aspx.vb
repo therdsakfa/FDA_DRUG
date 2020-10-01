@@ -30,7 +30,7 @@ Public Class FRM_EDIT_LCN_CONFIRM
             BindData_PDF()
             show_btn(_IDA)
             UC_GRID_PHARMACIST.load_gv(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
             If Request.QueryString("identify") <> "" Then
                 If Request.QueryString("identify") <> _CLS.CITIZEN_ID_AUTHORIZE Then
                     AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("identify"), 0, HttpContext.Current.Request.Url.AbsoluteUri)
@@ -71,7 +71,11 @@ Public Class FRM_EDIT_LCN_CONFIRM
         'End If
         Dim years As String = ""
         Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_tr.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+        Else
+            dao_tr.GetDataby_IDA(_TR_ID)
+        End If
         'Try
         '    years = dao_tr.fields.YEAR
 
@@ -155,7 +159,11 @@ Public Class FRM_EDIT_LCN_CONFIRM
         Dim dao As New DAO_DRUG.TB_DALCN_EDIT_REQUEST
         dao.GetDataby_IDA(_IDA)
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         Dim cls_dalcn_edt As New CLASS_GEN_XML.DALCN_EDIT_REQUEST(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID, "1", "10")
         Dim lct_ida As Integer = 0 '101680
 

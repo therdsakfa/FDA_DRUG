@@ -8,11 +8,11 @@ Public Class WebForm7
     Private _CLS As New CLS_SESSION
     Private _TR_ID As Integer
     Private _IDA As Integer
-
+    Dim _ProcessID As String
     Sub runQuery()
         _TR_ID = Request.QueryString("TR_ID")
         _IDA = Request.QueryString("IDA")
-        ' _ProcessID = Request.QueryString("process")
+        _ProcessID = Request.QueryString("process")
     End Sub
     Sub RunSession()
         Try
@@ -37,11 +37,11 @@ Public Class WebForm7
 
         End Try
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        Try
-            dao_up.GetDataby_IDA(dao.fields.TR_ID)
-        Catch ex As Exception
-
-        End Try
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         Try
             lbl_mobile.Text = dao.fields.MOBILE
         Catch ex As Exception
@@ -110,7 +110,12 @@ Public Class WebForm7
         Next
 
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_up.GetDataby_IDA(dao_cer.fields.TR_ID)
+        'dao_up.GetDataby_IDA(dao_cer.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
 
         Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID.ToString()
         Dim Year As String = dao_up.fields.YEAR.ToString()

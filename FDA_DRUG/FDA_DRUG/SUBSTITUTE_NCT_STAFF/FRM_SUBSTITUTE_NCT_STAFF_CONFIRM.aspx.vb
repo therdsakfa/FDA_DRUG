@@ -29,7 +29,7 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
             BindData_PDF()
             Bind_ddl_Status_staff()
             show_btn(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
             Try
                 txt_appdate.Text = Date.Now.ToShortDateString()
             Catch ex As Exception
@@ -146,7 +146,11 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
         Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
         dao.Getdata_by_ID(_IDA)
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         Dim cls_dalcn_edt As New CLASS_GEN_XML.DALCN_NCT_SUB(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID, "1", "10")
         Dim lct_ida As Integer = 0 '101680
 
@@ -388,7 +392,11 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_CONFIRM
         Dim PROCESS_ID As Integer
         Dim dao As New DAO_DRUG.TB_DALCN_NCT_SUBSTITUTE
         dao.Getdata_by_ID(_IDA)
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         PROCESS_ID = dao_up.fields.PROCESS_ID
 
         Dim dao_date As New DAO_DRUG.ClsDBSTATUS_DATE

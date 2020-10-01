@@ -6,11 +6,11 @@ Public Class FRM_STAFF_CER_CONFIRM2
     Private _CLS As New CLS_SESSION
     Private _TR_ID As Integer
     Private _IDA As Integer
-
+    Dim _ProcessID As String
     Sub runQuery()
         _TR_ID = Request.QueryString("TR_ID")
         _IDA = Request.QueryString("IDA")
-        ' _ProcessID = Request.QueryString("process")
+        _ProcessID = Request.QueryString("process")
     End Sub
     Sub RunSession()
         Try
@@ -35,11 +35,11 @@ Public Class FRM_STAFF_CER_CONFIRM2
 
         End Try
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        Try
-            dao_up.GetDataby_IDA(dao.fields.TR_ID)
-        Catch ex As Exception
-
-        End Try
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
         Try
             lbl_mobile.Text = dao.fields.MOBILE
         Catch ex As Exception
@@ -77,7 +77,7 @@ Public Class FRM_STAFF_CER_CONFIRM2
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
         runQuery()
-        UC_GRID_ATTACH1.load_gv(_TR_ID)
+        UC_GRID_ATTACH1.load_gv_V2(_TR_ID, _ProcessID)
         If Not IsPostBack Then
             'lr_preview.Text = "<iframe id='iframe1'  style='height:500px;width:100%;' src='../PDF/PDF_PERVIEW.aspx?ID=" & _CLS.IDA & "&ID_transection=" & _CLS.TR_ID & "&PROCESS_ID=5" & "&STATUS=" & load_STATUS() & "' ></iframe>"
             Bind_ddl_Status_staff()
@@ -92,7 +92,11 @@ Public Class FRM_STAFF_CER_CONFIRM2
             End Try
             Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
             Try
-                dao_up.GetDataby_IDA(dao.fields.TR_ID)
+                If Len(_TR_ID) >= 9 Then
+                    dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+                Else
+                    dao_up.GetDataby_IDA(_TR_ID)
+                End If
 
                 If dao_up.fields.PROCESS_ID = "31" Then
                     lbl_head_type.Text = "CERTIFICATE OF GMP"
@@ -141,7 +145,11 @@ Public Class FRM_STAFF_CER_CONFIRM2
             dao.update()
 
             Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-            dao_tr.GetDataby_IDA(_TR_ID)
+            If Len(_TR_ID) >= 9 Then
+                dao_tr.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+            Else
+                dao_tr.GetDataby_IDA(_TR_ID)
+            End If
             Try
                 Dim ws As New AUTHEN_LOG.Authentication
                 ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", _TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "จนท. พิจารณาคำขอ Cert", dao_tr.fields.PROCESS_ID)
@@ -186,7 +194,11 @@ Public Class FRM_STAFF_CER_CONFIRM2
         Next
 
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_up.GetDataby_IDA(dao_cer.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
 
         Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID.ToString()
         Dim Year As String = dao_up.fields.YEAR.ToString()

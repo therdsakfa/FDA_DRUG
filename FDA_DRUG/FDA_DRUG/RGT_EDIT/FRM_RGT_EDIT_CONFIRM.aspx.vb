@@ -14,8 +14,8 @@ Public Class FRM_RGT_EDIT_CONFIRM
     Sub RunQuery()
         _YEARS = con_year(Date.Now.Year)
         Try
-            _ProcessID = Request.QueryString("Process")
-            
+            _ProcessID = Request.QueryString("process")
+
         Catch ex As Exception
 
         End Try
@@ -48,7 +48,7 @@ Public Class FRM_RGT_EDIT_CONFIRM
 
             bind_ddl_rqt()
             show_btn(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
             If Request.QueryString("staff") <> "" Then
                 If Request.QueryString("staff") <> _CLS.CITIZEN_ID_AUTHORIZE Then
                     AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("staff"), 0, HttpContext.Current.Request.Url.AbsoluteUri)
@@ -122,7 +122,11 @@ Public Class FRM_RGT_EDIT_CONFIRM
         End If
         Dim years As String = ""
         Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_tr.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+        Else
+            dao_tr.GetDataby_IDA(_TR_ID)
+        End If
         Try
             years = dao_tr.fields.YEAR
 
