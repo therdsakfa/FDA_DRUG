@@ -300,7 +300,7 @@ Public Class FRM_SUBSTITUTE_MAIN
             End Try
             Dim dao As New DAO_DRUG.TB_DRRGT_SUBSTITUTE
             dao.GetDatabyIDA(IDA)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception

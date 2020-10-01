@@ -41,7 +41,7 @@ Public Class POPUP_LCN_LCT_KEEP_UPLOAD
     End Sub
 
     Protected Sub btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
-        Dim TR_ID As Integer = 0
+        Dim tr_id As String= 0
         Dim bao_tran As New BAO_TRANSECTION
         bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
         bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE

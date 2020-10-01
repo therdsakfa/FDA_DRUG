@@ -50,7 +50,7 @@ Public Class FRM_EXTEND_TIME
             Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
             dao_lcn.GetDataby_IDA(dao.fields.FK_IDA)
 
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao_lcn.fields.TR_ID
             Catch ex As Exception

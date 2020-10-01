@@ -37,7 +37,7 @@ Public Class POPUP_DP_UPLOAD
         '    bao.RunAppSettings()
 
         '    Dim cls_tr As New BAO_TRANSECTION
-        '    Dim tr_id As Integer = 0
+        '    Dim tr_id As String= 0
 
         '    cls_tr.CITIZEN_ID = _CLS.CITIZEN_ID
         '    cls_tr.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE

@@ -83,7 +83,7 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF_V2
 
             End Try
 
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -178,7 +178,7 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF_V2
             Dim btn_report As LinkButton = DirectCast(item("btn_report2").Controls(0), LinkButton)
             Dim btn_trid As LinkButton = DirectCast(item("btn_trid").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             dao.GetDatabyIDA(IDA)
 
             Try

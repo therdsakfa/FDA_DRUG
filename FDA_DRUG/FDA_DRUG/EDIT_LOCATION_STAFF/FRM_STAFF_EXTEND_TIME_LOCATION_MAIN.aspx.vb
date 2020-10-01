@@ -39,7 +39,7 @@ Public Class FRM_STAFF_EXTEND_TIME_LOCATION_MAIN
     '    'Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
     '    If e.CommandName = "sel" Then
     '        'dao.GetDataby_IDA(str_ID)
-    '        Dim tr_id As Integer = 0
+    '        Dim tr_id As String= 0
     '        Try
     '            ' tr_id = dao.fields.TR_ID
     '        Catch ex As Exception
@@ -59,7 +59,7 @@ Public Class FRM_STAFF_EXTEND_TIME_LOCATION_MAIN
     '        Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
     '        dao_lcn.GetDataby_IDA(dao.fields.FK_IDA)
 
-    '        Dim tr_id As Integer = 0
+    '        Dim tr_id As String= 0
     '        Try
     '            tr_id = dao_lcn.fields.TR_ID
     '        Catch ex As Exception
@@ -126,7 +126,7 @@ Public Class FRM_STAFF_EXTEND_TIME_LOCATION_MAIN
             'Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
 
             If e.CommandName = "sel" Then
-                Dim tr_id As Integer = 0
+                Dim tr_id As String= 0
                 Try
                     ' tr_id = dao.fields.TR_ID
                 Catch ex As Exception
@@ -146,7 +146,7 @@ Public Class FRM_STAFF_EXTEND_TIME_LOCATION_MAIN
                 Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
                 dao_lcn.GetDataby_IDA(dao.fields.FK_IDA)
 
-                Dim tr_id As Integer = 0
+                Dim tr_id As String= 0
                 Try
                     tr_id = dao_lcn.fields.TR_ID
                 Catch ex As Exception

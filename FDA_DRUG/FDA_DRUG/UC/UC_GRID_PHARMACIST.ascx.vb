@@ -20,7 +20,7 @@
 
         'If e.CommandName = "sel" Then
         '    dao.GetDataby_IDA(str_ID)
-        '    Dim tr_id As Integer = 0
+        '    Dim tr_id As String= 0
         '    Try
         '        tr_id = dao.fields.TRANSECTION_ID_UPLOAD
         '    Catch ex As Exception
@@ -39,7 +39,7 @@
             Dim str_ID As String = gv.DataKeys.Item(index).Value.ToString()
             Dim dao2 As New DAO_DRUG.ClsDBDALCN_PHR
             dao2.GetDataby_IDA(str_ID)
-            Dim tr_id As Integer = 0
+            Dim tr_id As String= 0
             Try
                 tr_id = dao2.fields.TRANSECTION_ID_UPLOAD
             Catch ex As Exception

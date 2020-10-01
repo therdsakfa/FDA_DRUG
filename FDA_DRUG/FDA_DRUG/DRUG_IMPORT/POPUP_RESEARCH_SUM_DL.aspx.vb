@@ -593,7 +593,7 @@ Public Class POPUP_RESEARCH_SUM_DL
         End Try
 
         If HiddenField1.Value = "bypassupload" Then
-            Dim TR_ID As Integer = 0
+            Dim tr_id As String= 0
             Dim bao_tran As New BAO_TRANSECTION
             bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
             bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
