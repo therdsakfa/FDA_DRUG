@@ -59,14 +59,14 @@ Public Class FRM_SEARCH_DL
     '    rcb_search.Items.Insert(0, item)
     'End Sub
     Private Sub load_DLONLY()
-        Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
-        dao.GetDataby_DLONLY(_CLS.CITIZEN_ID_AUTHORIZE)
+        Dim bao As New BAO.ClsDBSqlcommand
+        bao.SP_DL_DATA_NOW_TO_START(_CLS.CITIZEN_ID_AUTHORIZE)
         '-------------------------
         ' Dim item As New ListItem("---กรุณาเลือก---", "0")
         'Dim dao As New BAO.ClsDBSqlcommand
         'Dim dt As New DataTable
         ' dao.SP_REGIS_NO()
-        rcb_search.DataSource = dao.datas 'dao.datas
+        rcb_search.DataSource = bao.SP_DL_DATA_NOW_TO_START(_CLS.CITIZEN_ID_AUTHORIZE) 'dao.datas
         rcb_search.DataTextField = "REGIS_NO"    'น่าจะแก้ไขตรงนี้ได้
         rcb_search.DataValueField = "IDA"        'น่าจะแก้ไขตรงนี้ได้
         rcb_search.DataBind()

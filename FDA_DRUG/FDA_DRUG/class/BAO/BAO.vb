@@ -4237,6 +4237,21 @@ Namespace BAO
 
             Return dt
         End Function
+
+        Public Function SP_DL_DATA_NOW_TO_START(ByVal cid As String) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DL_DATA_NOW_TO_START @"
+            Dim dt As New DataTable
+            Try
+                dt = Queryds(sql)
+            Catch ex As Exception
+
+            End Try
+
+
+            Return dt
+        End Function
+
         '
         Public Function SP_drrqt_Etracking(ByVal tr_id As Integer) As DataTable
             Dim dt As New DataTable
@@ -7655,7 +7670,7 @@ Namespace BAO
             End If
             Return no_return
         End Function
-        Public Function WS_INSERT_R_NO(ByVal process_no As String, ByVal CITIZEN_AUTHIRIZE As String, ByVal CITIZEN_ID As String, ByVal nameplace As String, _
+        Public Function WS_INSERT_R_NO(ByVal process_no As String, ByVal CITIZEN_AUTHIRIZE As String, ByVal CITIZEN_ID As String, ByVal nameplace As String,
                         ByVal addr As String, ByVal pvncd As Integer, ByVal ref_no As String) As String
             'Dim bool As Boolean = chk_r_exist(r_no)
             Dim no_return As String = ""
@@ -7720,7 +7735,7 @@ Namespace BAO
             End If
             Return result
         End Function
-        Public Sub set_data(ByRef dao As DAO_DRUG.TB_DRUG_REQUEST_CENTER, ByVal CITIZEN_AUTHIRIZE As String, ByVal CITIZEN_ID As String, ByVal nameplace As String, _
+        Public Sub set_data(ByRef dao As DAO_DRUG.TB_DRUG_REQUEST_CENTER, ByVal CITIZEN_AUTHIRIZE As String, ByVal CITIZEN_ID As String, ByVal nameplace As String,
                             ByVal addr As String, ByVal pvncd As Integer)
             dao.fields.CITIZEN_AUTHIRIZE = CITIZEN_AUTHIRIZE
             dao.fields.CITIZEN_ID = CITIZEN_ID
@@ -7830,5 +7845,16 @@ Namespace BAO
 
             Return fullname
         End Function
+
+        ''Queryds
+
     End Class
+    'Public Function SP_DL_DATA_NOW_TO_START() As DataTable
+    '    Dim clsds As New ClassDataset
+    '    Dim sql As String = "exec SP_DL_DATA_NOW_TO_START"
+    '    Dim dt As New DataTable
+    '    dt = clsds.dsQueryselect(sql, conn)
+    '    Return dt
+    'End Function
+
 End Namespace

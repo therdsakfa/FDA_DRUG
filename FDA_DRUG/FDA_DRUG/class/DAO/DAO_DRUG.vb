@@ -2533,6 +2533,7 @@ Namespace DAO_DRUG
     End Class
 
 
+
     Public Class clsDBlgt_impcer
         Inherits MAINCONTEXT
         Public fields As New lgt_impcer
