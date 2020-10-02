@@ -81,36 +81,35 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim bao As New BAO.ClsDBSqlcommand
         dao.GetDataby_IDA(Integer.Parse(_IDA))
-        If Request.QueryString("staff") <> "" Then
-            dao.fields.STATUS_ID = 1                                    'ต้องแก้ ให้ status update แล้วนำไปโชวใน grid view
-        Else
-            dao.fields.STATUS_ID = 0
-        End If
-        dao.update()
+        'If Request.QueryString("staff") <> "" Then
+        '    dao.fields.STATUS_ID = 1                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+        'Else
+        '    dao.fields.STATUS_ID = 0                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+        'End If
+        'dao.update()
 
-        'If b64 = Nothing Then
+        'If b64 = Nothing Then                                   'b64 มีไว้ทำไร
         '    b64 = Session("b64")
         'End If
         'Dim years As String = ""
-        'Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        'dao_tr.GetDataby_IDA(dao.fields.TR_ID)
-        'Try
-        '    years = dao_tr.fields.YEAR
+        '' Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+        ''dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+        ''Try
+        ''years = dao_tr.fields.YEAR
+        ''Catch ex As Exception
+        ''End Try
 
-        'Catch ex As Exception
-
-        'End Try
         'Dim tr_id As String = ""
-        'tr_id = "DA-" & _ProcessID & "-" & years & "-" & _TR_ID
+        'tr_id = "DA-" & _Process & "-" & years & "-" & _TR_ID
 
         'Dim cls_sop As New CLS_SOP
-        'cls_sop.BLOCK_SOP(_CLS.CITIZEN_ID, _ProcessID, "2", "ยื่นคำขอ", tr_id, b64)
-        'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "USER", _ProcessID, _CLS.PVCODE, 2, "ส่งเรื่องและรอพิจารณา", "SOP-DRUG-10-" & _ProcessID & "-1", "รับคำขอ", "รอเจ้าหน้าที่รับคำขอ", "STAFF", tr_id, SOP_STATUS:="ยื่นคำขอ")
+        'cls_sop.BLOCK_SOP(_CLS.CITIZEN_ID, _Process, "2", "ยื่นคำขอ", tr_id, b64)
+        'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "USER", _Process, _CLS.PVCODE, 2, "ส่งเรื่องและรอพิจารณา", "SOP-DRUG-10-" & _Process & "-1", "รับคำขอ", "รอเจ้าหน้าที่รับคำขอ", "STAFF", tr_id, SOP_STATUS:="ยื่นคำขอ")
 
-        'AddLogStatus(2, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+        'AddLogStatus(2, _Process, _CLS.CITIZEN_ID, _IDA)
 
         'Session("b64") = Nothing
-        alert("ยื่นเรื่องเรียบร้อยแล้ว")
+        'alert("ยื่นเรื่องเรียบร้อยแล้ว")
 
     End Sub
     Sub alert(ByVal text As String)
