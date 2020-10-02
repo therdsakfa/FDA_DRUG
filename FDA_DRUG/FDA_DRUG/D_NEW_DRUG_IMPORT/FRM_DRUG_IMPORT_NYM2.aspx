@@ -133,8 +133,8 @@
                     <telerik:GridBoundColumn DataField="NYM2_NO" FilterControlAltText="Filter NYM2_NO column"
                         HeaderText="เลขดำเนินการ" SortExpression="NYM2_NO" UniqueName="NYM2_NO">   
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="STATUS_ID" FilterControlAltText="Filter STATUS_ID column"
-                        HeaderText="สถานะ" SortExpression="STATUS_ID" UniqueName="STATUS_ID">
+                    <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
+                        HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
                     </telerik:GridBoundColumn>
                     <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
                         CommandName="sel" Text="ดูข้อมูล">
