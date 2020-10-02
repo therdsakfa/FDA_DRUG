@@ -9,6 +9,7 @@ Public Class FRM_SEARCH_DL
     Private _lcn_ida As String = ""
     Private _lct_ida As String = ""
     Private _type As String
+    Private _IDA As String
     Private _process_for As String
 
     ''' <summary>
@@ -20,8 +21,9 @@ Public Class FRM_SEARCH_DL
         Try
             _CLS = Session("CLS")
             ''นำค่า Session ใส่ ในตัวแปร _CLS
+            _IDA = Request.QueryString("IDA")
             _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
-            '_lct_ida = Request.QueryString("lct_ida")
+            _lct_ida = Request.QueryString("lct_ida")
             '_type = Request.QueryString("type")
             '_process_for = Request.QueryString("process_for")
         Catch ex As Exception
@@ -124,7 +126,7 @@ Public Class FRM_SEARCH_DL
                 Select Case _process
                     Case "1027"
                         NYM = "2"
-                        url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM2.aspx?DL=" & rcb_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
+                        url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM2.aspx?DL=" & rcb_search.SelectedValue & "IDA=" & _IDA & "&NYM=" & NYM & "&process=" & _process
 
                     Case "1028"
                         NYM = "3"
