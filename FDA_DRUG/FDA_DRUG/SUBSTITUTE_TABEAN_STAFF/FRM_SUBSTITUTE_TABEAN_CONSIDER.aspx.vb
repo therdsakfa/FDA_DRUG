@@ -33,7 +33,7 @@
         'dao.GetDataby_IDA(_IDA)
         'dao_up.GetDataby_IDA(dao.fields.TR_ID)
 
-        'Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+        'Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
         'Dim GROUP_TYPE As String = dao.fields.GROUP_TYPE
         'If PROCESS_ID = 14200053 And GROUP_TYPE = "2" Then
         '    Txt_Remark.Text = ""
@@ -67,11 +67,15 @@
             Dim bao As New BAO.GenNumber
 
             dao.GetDatabyIDA(_IDA)
-            dao_up.GetDataby_IDA(dao.fields.TR_ID)
+            If Len(_TR_ID) >= 9 Then
+                dao_up.GetDataby_TR_ID_Process(_TR_ID, dao.fields.PROCESS_ID)
+            Else
+                dao_up.GetDataby_IDA(_TR_ID)
+            End If
 
             'AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
 
-            Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+            Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
 
             'Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
             'dao_p.GetDataby_PROCESS_ID(PROCESS_ID)

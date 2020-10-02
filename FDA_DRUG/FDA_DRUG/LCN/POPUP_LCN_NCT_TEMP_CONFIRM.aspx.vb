@@ -164,7 +164,7 @@
         dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(_ProcessID, dao_vj.fields.LCNTPCD, dao_vj.fields.STATUS_ID, 0, _group:=99)
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
         dao_up.GetDataby_IDA(_TR_ID)
-        Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID
+       Dim PROCESS_ID As String = _ProcessID
         Dim YEAR As String = dao_up.fields.YEAR
 
         Dim paths As String = bao._PATH_DEFAULT

@@ -35,7 +35,7 @@
         dao.GetDataby_IDA(dao_extend.fields.FK_IDA)
         dao_up.GetDataby_IDA(dao_extend.fields.TR_ID)
 
-        Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+        Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
         Dim GROUP_TYPE As String = dao.fields.GROUP_TYPE
         If PROCESS_ID = 14200053 And GROUP_TYPE = "2" Then
             Txt_Remark.Text = ""
@@ -63,7 +63,7 @@
 
             AddLogStatus(9, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
 
-            'Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+            'Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
 
             'Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
             'dao_p.GetDataby_Process_ID(dao_up.fields.PROCESS_ID)

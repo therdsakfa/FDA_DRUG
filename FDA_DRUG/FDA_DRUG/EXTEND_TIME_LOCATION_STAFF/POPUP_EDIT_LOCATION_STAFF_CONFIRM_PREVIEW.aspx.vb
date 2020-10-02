@@ -316,7 +316,7 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
             dao_up.GetDataby_IDA(_TR_ID)
         End If
         dao_process.GetDataby_Process_ID(_process)
-        Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+        ' Dim PROCESS_ID As String = dao.fields.PROCESS_ID
 
         Dim dao_date As New DAO_DRUG.ClsDBSTATUS_DATE
         dao_date.fields.FK_IDA = dao.fields.FK_IDA
@@ -329,7 +329,7 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
         dao_date.fields.STATUS_GROUP = 9 'ใบอนุญาต ขย ต่างๆ
         dao_date.fields.STATUS_ID = ddl_cnsdcd.SelectedValue
         dao_date.fields.DATE_NOW = Date.Now
-        dao_date.fields.PROCESS_ID = dao.fields.PROCESS_ID
+        dao_date.fields.PROCESS_ID = _process 'dao.fields.PROCESS_ID
         dao_date.insert()
 
 
@@ -390,14 +390,14 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
         ElseIf STATUS_ID = 9 Then
             Response.Redirect("POPUP_EXTEND_TIME_LOCATION_STAFF_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
             Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
-            dao_p.GetDataby_Process_ID(PROCESS_ID)
+            dao_p.GetDataby_Process_ID(_process)
             Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
             Dim bao2 As New BAO.GenNumber
             Dim LCNNO As Integer
             'Dim sao As New DAO_DRUG.TB_LCN_EXTEND_LITE
             'sao.GetDataby_IDA(_IDA)
 
-            LCNNO = bao2.GEN_NO_01(con_year(Date.Now.Year), _CLS.PVCODE, GROUP_NUMBER, PROCESS_ID, 0, 0, _IDA, "")
+            LCNNO = bao2.GEN_NO_01(con_year(Date.Now.Year), _CLS.PVCODE, GROUP_NUMBER, _process, 0, 0, _IDA, "")
             'dao.fields.lcnno = LCNNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year), LCNNO)
             dao.fields.STATUS_ID = STATUS_ID
             Dim dao_citi As New DAO_CPN.clsDBsyslcnsnm
@@ -449,7 +449,7 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
             dao.fields.STATUS_ID = 10
             dao.fields.RCV_CITIZEN = _CLS.CITIZEN_ID
             dao.fields.RCV_NAME = set_name_company(_CLS.CITIZEN_ID)
-            RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
+            RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, _process, _IDA)
             dao.fields.rcvno = RCVNO
             bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)
 
@@ -1714,7 +1714,7 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
 
         Dim statusId As Integer = dao.fields.STATUS_ID
         Dim lcntype As String = dao.fields.lcntpcd
-        Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID
+        Dim PROCESS_ID As String = _process
         Dim YEAR As String = dao_up.fields.YEAR
 
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS

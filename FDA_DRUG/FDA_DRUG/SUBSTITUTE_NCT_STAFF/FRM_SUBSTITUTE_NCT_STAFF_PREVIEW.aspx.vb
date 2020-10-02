@@ -1061,7 +1061,7 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_PREVIEW
 
         Dim statusId As Integer = dao.fields.STATUS_ID
         Dim lcntype As String = dao.fields.lcntpcd
-        Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID
+       Dim PROCESS_ID As String = _ProcessID
         Dim YEAR As String = dao_up.fields.YEAR
 
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS

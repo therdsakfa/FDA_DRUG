@@ -81,7 +81,7 @@ Public Class FRM_LCN_LCT_CONFIRM
         Dim LCNSID As String = dao_la.fields.lcnsid
         ' Dim CITIZEN_ID_AUTHORIZE As String = _XML_CITIZEN_ID_AUTHORIZE
         Dim CITIZEN_ID As String = dao_up.fields.CITIEZEN_ID
-        Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+        Dim PROCESS_ID As Integer '= dao_la.fields.PROCESS_ID
         statusID = dao_la.fields.STATUS_ID
         ProcessID = dao_up.fields.PROCESS_ID
 

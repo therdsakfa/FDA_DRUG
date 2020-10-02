@@ -149,7 +149,7 @@ Public Class POPUP_DR_CONFIRM
                 'dao_up.GetDataby_IDA(dao.fields.TR_ID)
                 'Dim RCVNO As Integer
                 'Dim rgtno As Integer
-                'Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+                'Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
                 'Dim bao As New BAO.GenNumber
                 'RCVNO = bao.GEN_RCVNO_NO_50k(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
                 'rgtno = bao.GEN_RGTNO50K(con_year(Date.Now.Year()), _CLS.PVCODE, "G", _IDA, PROCESS_ID)

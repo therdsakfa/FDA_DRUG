@@ -46,11 +46,15 @@
             If _process = 1026 Then
                 Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
                 dao.GetDataby_IDA(_IDA)
-                dao_up.GetDataby_IDA(dao.fields.TR_ID)
+                If Len(_TR_ID) >= 9 Then
+                    dao_up.GetDataby_TR_ID_Process(_TR_ID, _process)
+                Else
+                    dao_up.GetDataby_IDA(_TR_ID)
+                End If
                 AddLogStatus(6, _process, _CLS.CITIZEN_ID, _IDA)
                 'AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
 
-                'Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+                'Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
                 Dim PROCESS_ID As Integer = _process
 
                 dao_p.GetDataby_Process_ID(_process)
@@ -78,7 +82,7 @@
 
                 AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
 
-                Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+                Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
 
 
                 dao_p.GetDataby_Process_ID(PROCESS_ID)
