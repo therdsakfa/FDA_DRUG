@@ -197,7 +197,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         dao.GetDataby_IDA(_IDA)
         dao_up.GetDataby_IDA(dao.fields.TR_ID)
 
-        Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+        Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
 
         Dim dao_date As New DAO_DRUG.ClsDBSTATUS_DATE
         dao_date.fields.FK_IDA = _IDA

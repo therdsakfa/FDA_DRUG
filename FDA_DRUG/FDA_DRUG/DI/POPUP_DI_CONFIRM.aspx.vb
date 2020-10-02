@@ -283,9 +283,17 @@ Public Class POPUP_DI_CONFIRM
         'Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID.ToString()
 
 
-        Dim Year As String = dao_up.fields.YEAR.ToString()
+        Dim Year As String = ""
+        Try
+            Year = dao_up.fields.YEAR.ToString()
+        Catch ex As Exception
+
+        End Try
+
+
+
         ' Dim TR_ID As String = dao_up.fields.ID.ToString()
-        Dim CITIZEN_ID As String = dao_up.fields.CITIEZEN_ID
+        ' Dim CITIZEN_ID As String = dao.fields.
 
 
         Dim cls_cer As New CLASS_GEN_XML.Cer(_CLS.CITIZEN_ID, LCNSID, 1, lcn_IDA)

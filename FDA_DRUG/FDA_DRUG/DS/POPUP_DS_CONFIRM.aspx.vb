@@ -147,7 +147,7 @@ Public Class POPUP_DS_CONFIRM
         If i > 0 Then
             dao.fields.STATUS_ID = 8
             Dim RCVNO As Integer
-            Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+            Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
             RCVNO = bao.GEN_RCVNO_NO_50k(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
             dao.fields.rcvno = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)
             dao.fields.RCVNO_DISPLAY = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)

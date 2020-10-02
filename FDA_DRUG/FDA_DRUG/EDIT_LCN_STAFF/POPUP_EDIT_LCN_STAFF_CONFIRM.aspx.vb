@@ -173,7 +173,7 @@ Public Class POPUP_EDIT_LCN_STAFF_CONFIRM
             dao_up.GetDataby_IDA(_TR_ID)
         End If
 
-        Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+        Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
 
         Dim dao_date As New DAO_DRUG.ClsDBSTATUS_DATE
         dao_date.fields.FK_IDA = _IDA

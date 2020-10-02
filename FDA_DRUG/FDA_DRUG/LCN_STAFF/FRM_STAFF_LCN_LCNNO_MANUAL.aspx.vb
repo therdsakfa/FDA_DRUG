@@ -34,7 +34,7 @@
             dao_up.GetDataby_IDA(dao.fields.TR_ID)
 
             AddLogStatus(8, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
-            Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+            Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
 
             Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
             dao_p.GetDataby_PROCESS_ID(PROCESS_ID)

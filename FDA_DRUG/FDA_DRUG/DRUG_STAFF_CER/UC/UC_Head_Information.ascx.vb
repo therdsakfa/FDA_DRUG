@@ -35,13 +35,17 @@
         dao_dalcntype.GetDataby_lcntpcd(dao_lcn.fields.lcntpcd)
 
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, dao.fields.PROCESS_ID)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
 
-        Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID.ToString()
+        Dim PROCESS_ID As String = dao.fields.PROCESS_ID
         Dim Year As String = dao_up.fields.YEAR.ToString()
-        Dim TR_ID As String = dao_up.fields.ID.ToString()
+        Dim TR_ID As String = _TR_ID 'dao_up.fields.ID.ToString()
         Dim CITIZEN_ID As String = dao_up.fields.CITIEZEN_ID
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        'dao_up.GetDataby_IDA(dao.fields.TR_ID)
 
         Dim lcnno_auto As Integer
         lcnno_auto = dao_lcn.fields.lcnno

@@ -200,7 +200,7 @@ Public Class FRM_STAFF_CER_CONFIRM2
             dao_up.GetDataby_IDA(_TR_ID)
         End If
 
-        Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID.ToString()
+        Dim PROCESS_ID As String = _ProcessID.ToString()
         Dim Year As String = dao_up.fields.YEAR.ToString()
         Dim TR_ID As String = dao_up.fields.ID.ToString()
         Dim CITIZEN_ID As String = dao_up.fields.CITIEZEN_ID

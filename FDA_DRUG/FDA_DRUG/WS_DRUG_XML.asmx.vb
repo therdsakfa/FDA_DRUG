@@ -1232,7 +1232,7 @@ Public Class WS_DRUG_XML
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
         dao_up.GetDataby_IDA(dao.fields.TR_ID)
 
-        Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID.ToString()
+       Dim PROCESS_ID As String = _ProcessID.ToString()
         Dim Year As String = dao_up.fields.YEAR.ToString()
         Dim TR_ID As String = dao_up.fields.ID.ToString()
         'Dim CITIZEN_ID As String = dao_up.fields.CITIEZEN_ID

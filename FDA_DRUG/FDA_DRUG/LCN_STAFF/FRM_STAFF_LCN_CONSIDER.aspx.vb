@@ -33,9 +33,13 @@
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
 
         dao.GetDataby_IDA(_IDA)
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        If Len(_TR_ID) >= 9 Then
+            dao_up.GetDataby_TR_ID_Process(_TR_ID, dao.fields.PROCESS_ID)
+        Else
+            dao_up.GetDataby_IDA(_TR_ID)
+        End If
 
-        Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+        Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
         Dim GROUP_TYPE As String = dao.fields.GROUP_TYPE
         If PROCESS_ID = 14200053 And GROUP_TYPE = "2" Then
             Txt_Remark.Text = ""
@@ -59,15 +63,19 @@
             Dim bao As New BAO.GenNumber
 
             dao.GetDataby_IDA(_IDA)
-            dao_up.GetDataby_IDA(dao.fields.TR_ID)
+            If Len(_TR_ID) >= 9 Then
+                dao_up.GetDataby_TR_ID_Process(_TR_ID, dao.fields.PROCESS_ID)
+            Else
+                dao_up.GetDataby_IDA(_TR_ID)
+            End If
 
-            AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
+            AddLogStatus(6, dao.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
 
-            Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
+            Dim PROCESS_ID As String = dao.fields.PROCESS_ID
 
-            Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
-            dao_p.GetDataby_PROCESS_ID(PROCESS_ID)
-            Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
+            'Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
+            'dao_p.GetDataby_PROCESS_ID(PROCESS_ID)
+            Dim GROUP_NUMBER As String = dao.fields.PROCESS_ID
 
             Dim CONSIDER_DATE As Date = CDate(TextBox1.Text)
 
@@ -132,6 +140,7 @@
             alert("บันทึกข้อมูลเรียบร้อย")
         Catch ex As Exception
             Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")
+
         End Try
 
     End Sub

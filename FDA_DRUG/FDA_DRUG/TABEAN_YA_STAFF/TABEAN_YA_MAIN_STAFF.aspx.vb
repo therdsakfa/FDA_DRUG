@@ -222,12 +222,14 @@ Public Class TABEAN_YA_MAIN_STAFF
             Catch ex As Exception
 
             End Try
+            Dim _process_id As String = 0
             Dim tr_id As String= 0
             If item("STATUS_ID").Text <> "8" Then
                 Dim dao As New DAO_DRUG.ClsDBdrrqt
                 dao.GetDataby_IDA(IDA)
                 Try
                     tr_id = dao.fields.TR_ID
+                    _process_id = dao.fields.PROCESS_ID
                 Catch ex As Exception
 
                 End Try
@@ -236,6 +238,7 @@ Public Class TABEAN_YA_MAIN_STAFF
                 dao.GetDataby_IDA(IDA)
                 Try
                     tr_id = dao.fields.TR_ID
+                    _process_id = dao.fields.PROCESS_ID
                 Catch ex As Exception
 
                 End Try
@@ -244,12 +247,12 @@ Public Class TABEAN_YA_MAIN_STAFF
 
             
             If e.CommandName = "sel" Then
-                Dim _process_id As Integer = 0
-               
+
+
                 Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
                 Try
                     dao_tr.GetDataby_IDA(tr_id)
-                    _process_id = dao_tr.fields.PROCESS_ID
+                    '_process_id = dao_tr.fields.PROCESS_ID
                 Catch ex As Exception
 
                 End Try
@@ -325,7 +328,7 @@ Public Class TABEAN_YA_MAIN_STAFF
             Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
             Try
                 dao_tr.GetDataby_IDA(tr_id)
-                _process_id = dao_tr.fields.PROCESS_ID
+                '_process_id = dao_tr.fields.PROCESS_ID
             Catch ex As Exception
 
             End Try
