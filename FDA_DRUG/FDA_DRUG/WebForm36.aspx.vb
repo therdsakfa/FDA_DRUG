@@ -2477,12 +2477,12 @@ Public Class WebForm36
 
         If txt_dh_ida.Text <> "" Then
             ws_update.DRUG_INSERT_DR15(txt_dh_ida.Text, "1710500118665")
-        Else
-            Dim dt As New DataTable
-            dt = bao.SELECT_TEMP_DH()
-            For Each dr As DataRow In dt.Rows
-                ws_update.DRUG_INSERT_DR15(dr("IDA"), "1710500118665")
-            Next
+            'Else
+            '    Dim dt As New DataTable
+            '    dt = bao.SELECT_TEMP_DH()
+            '    For Each dr As DataRow In dt.Rows
+            '        ws_update.DRUG_INSERT_DR15(dr("IDA"), "1710500118665")
+            '    Next
         End If
 
 
