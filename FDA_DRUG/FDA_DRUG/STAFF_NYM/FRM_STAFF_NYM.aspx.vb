@@ -172,7 +172,7 @@ Public Class FRM_STAFF_NYM
             End Try
 
             If e.CommandName = "sel" Then
-                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+                Dim dao As New DAO_DRUG.ClsDBdrsamp
                 dao.GetDataby_IDA(IDA)
                 Dim tr_id As String= 0
                 Try
@@ -219,7 +219,19 @@ Public Class FRM_STAFF_NYM
         '    dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
         'End If
 
-        dt = bao.SP_DATA_NYM2_STAFF()
+        If _process = 1027 Then
+            dt = bao.SP_DATA_NYM2_STAFF()
+        ElseIf _process = 1028 Then
+            dt = bao.SP_DATA_NYM3_USER()
+        ElseIf _process = 1029 Then
+            dt = bao.SP_DATA_NYM4_USER()
+        ElseIf _process = 1030 Then
+            dt = bao.SP_DATA_NYM5_USER()
+        ElseIf _process = 1031 Then
+            dt = bao.SP_DATA_NYM6_USER()
+        End If
+
+        'dt = bao.SP_DATA_NYM2_STAFF()
         RadGrid1.DataSource = dt
         'Dim IDGroup As Integer = 0
         'Try
