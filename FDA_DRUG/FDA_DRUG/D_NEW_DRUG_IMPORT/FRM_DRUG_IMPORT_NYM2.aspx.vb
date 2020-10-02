@@ -140,7 +140,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
         'ElseIf _process = 1031 Then
         '    dt = bao.SP_DATA_NYM6_USER()
         'End If
-        dt = bao.SP_DATA_NYM2_with_status_from_massstatus(_DL)
+        dt = bao.SP_DATA_NYM2_with_status_from_massstatus(_IDA)
         RadGrid1.DataSource = dt
         '  Dim IDGroup As Integer = 0   เอาคืนนน
         ' Try                           เอาคืนนน
