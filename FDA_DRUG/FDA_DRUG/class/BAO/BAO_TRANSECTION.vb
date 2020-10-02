@@ -73,6 +73,11 @@
             dao_up.fields.CITIEZEN_ID = _CITIZEN_ID
             dao_up.fields.CITIEZEN_ID_AUTHORIZE = _CITIZEN_ID_AUTHORIZE
             dao_up.fields.PROCESS_ID_STR = processid
+            Try
+                dao_up.fields.PROCESS_ID = processid
+            Catch ex As Exception
+
+            End Try
             dao_up.fields.GEN_NO = gen_no
             dao_up.fields.DESCRIPTION = str_no
             dao_up.fields.STATUS = 1
@@ -89,6 +94,11 @@
             dao_up.fields.CITIEZEN_ID = _CITIZEN_ID
             dao_up.fields.CITIEZEN_ID_AUTHORIZE = _CITIZEN_ID_AUTHORIZE
             dao_up.fields.PROCESS_ID_STR = processid
+            Try
+                dao_up.fields.PROCESS_ID = processid
+            Catch ex As Exception
+
+            End Try
             dao_up.fields.DESCRIPTION = str_no
             dao_up.fields.STATUS = 1
             dao_up.fields.GEN_NO = gen_no

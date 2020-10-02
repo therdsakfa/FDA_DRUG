@@ -315,7 +315,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
             Else
                 dao_up.GetDataby_IDA(_TR_ID)
             End If
-            PROCESS_ID = dao_up.fields.PROCESS_ID
+            PROCESS_ID = _ProcessID
         Else
             Dim dao As New DAO_DRUG.ClsDBdrrqt
             dao.GetDataby_IDA(_IDA)
@@ -324,7 +324,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
             Else
                 dao_up.GetDataby_IDA(_TR_ID)
             End If
-            PROCESS_ID = dao_up.fields.PROCESS_ID
+            PROCESS_ID = _ProcessID
         End If
 
         Dim dao_date As New DAO_DRUG.ClsDBSTATUS_DATE
