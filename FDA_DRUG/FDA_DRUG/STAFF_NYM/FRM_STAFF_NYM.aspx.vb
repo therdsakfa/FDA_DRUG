@@ -219,41 +219,42 @@ Public Class FRM_STAFF_NYM
         '    dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
         'End If
 
-        dt = bao.SP_STAFF_NYM()
-        Dim IDGroup As Integer = 0
-        Try
-            IDGroup = _CLS.GROUPS
-            If _process = "" Then
-                Exit Sub
-            End If
-        Catch ex As Exception
+        dt = bao.SP_DATA_NYM2_STAFF()
+        RadGrid1.DataSource = dt
+        'Dim IDGroup As Integer = 0
+        'Try
+        '    IDGroup = _CLS.GROUPS
+        '    If _process = "" Then
+        '        Exit Sub
+        '    End If
+        'Catch ex As Exception
 
-        End Try
-        If IDGroup = 21020 Then
-            If _type = "" Then
-                RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process)
-            Else
-                RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process & " and donate_type = " & _type)
-            End If
-        ElseIf IDGroup = 63346 Then
-            If _type = "" Then
-                RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process)
-            Else
-                RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process & " and donate_type = " & _type)
-            End If
-        ElseIf IDGroup = 63347 Then
-            If _type = "" Then
-                RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process)
-            Else
-                RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process & " and donate_type = " & _type)
-            End If
-        ElseIf IDGroup = 63348 Then
-            If _type = "" Then
-                RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process)
-            Else
-                RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process & " and donate_type = " & _type)
-            End If
-        End If
+        'End Try
+        'If IDGroup = 21020 Then
+        '    If _type = "" Then
+        '        RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process)
+        '    Else
+        '        RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process & " and donate_type = " & _type)
+        '    End If
+        'ElseIf IDGroup = 63346 Then
+        '    If _type = "" Then
+        '        RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process)
+        '    Else
+        '        RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process & " and donate_type = " & _type)
+        '    End If
+        'ElseIf IDGroup = 63347 Then
+        '    If _type = "" Then
+        '        RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process)
+        '    Else
+        '        RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process & " and donate_type = " & _type)
+        '    End If
+        'ElseIf IDGroup = 63348 Then
+        '    If _type = "" Then
+        '        RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process)
+        '    Else
+        '        RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process & " and donate_type = " & _type)
+        '    End If
+        'End If
     End Sub
 
     Protected Sub btn_proof_Click(sender As Object, e As EventArgs) Handles btn_proof.Click

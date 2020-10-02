@@ -5,11 +5,11 @@
 '    Private _CLS As New CLS_SESSION
 '    Private _ProcessID As String
 '    Private _IDA As String
-'    Private _rgt_ida As String
+'    ' Private _rgt_ida As String
 '    Sub runQuery()
 '        _ProcessID = Request.QueryString("process")
 '        _IDA = Request.QueryString("IDA")
-'        _rgt_ida = Request.QueryString("rgt_ida")
+'        '_rgt_ida = Request.QueryString("rgt_ida")
 '    End Sub
 '    Sub RunSession()
 '        Try
@@ -18,7 +18,7 @@
 '            Else
 '                _CLS = Session("CLS")
 '            End If
-'            ' _ProcessID = Request.QueryString("type")
+'            _ProcessID = Request.QueryString("type")
 '        Catch ex As Exception
 '            Response.Redirect("http://privus.fda.moph.go.th/")
 '        End Try
@@ -28,25 +28,25 @@
 
 '        RunSession()
 '        runQuery()
-'        ' set_txt_label()
+'        set_txt_label()
 '        If _ProcessID = "15" Then
 '            Panel101.Style.Add("display", "block")
 '        End If
-'        ' UC_ATTACH1.SETTING_INFORMATION("เอกสาร CER", 1)
+'        UC_ATTACH1.SETTING_INFORMATION("เอกสาร CER", 1)
 '    End Sub
-'    'Public Sub SET_ATTACH(ByVal TR_ID As String, ByVal PROCESS_ID As String, ByVal YEAR As String)
+'    Public Sub SET_ATTACH(ByVal TR_ID As String, ByVal PROCESS_ID As String, ByVal YEAR As String)
 
-'    '    uc102_1.ATTACH1(TR_ID, PROCESS_ID, YEAR, "1")
-'    '    uc102_2.ATTACH1(TR_ID, PROCESS_ID, YEAR, "2")
-'    '    uc102_3.ATTACH1(TR_ID, PROCESS_ID, YEAR, "3")
+'        uc102_1.ATTACH1(TR_ID, PROCESS_ID, YEAR, "1")
+'        uc102_2.ATTACH1(TR_ID, PROCESS_ID, YEAR, "2")
+'        uc102_3.ATTACH1(TR_ID, PROCESS_ID, YEAR, "3")
 
-'    'End Sub
-'    'Public Sub set_txt_label()
-'    '    uc102_1.get_label("1.สำเนาใบรับแจ้งความ")
-'    '    uc102_2.get_label("2.ใบสำคัญการขึ้นทะเบียนตำรับยาที่ถูกทำลาย")
-'    '    uc102_3.get_label("3.สำเนาใบอนุญาตผลิต หรือนำหรือสั่งยาเข้ามาในราชอาณาจักร")
+'    End Sub
+'    Public Sub set_txt_label()
+'        uc102_1.get_label("1.สำเนาใบรับแจ้งความ")
+'        uc102_2.get_label("2.ใบสำคัญการขึ้นทะเบียนตำรับยาที่ถูกทำลาย")
+'        uc102_3.get_label("3.สำเนาใบอนุญาตผลิต หรือนำหรือสั่งยาเข้ามาในราชอาณาจักร")
 
-'    'End Sub
+'    End Sub
 '    Protected Sub btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
 
 '        If FileUpload1.HasFile Then
@@ -54,10 +54,10 @@
 '            bao.RunAppSettings()
 
 '            Dim TR_ID As String = ""
-'            'Dim bao_tran As New BAO_TRANSECTION
-'            'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
-'            'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-'            '' TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION      งงงงงงงงงงงงงงงงงงงงงไม่ใช้
+'            Dim bao_tran As New BAO_TRANSECTION
+'            bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+'            bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+'            ' TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION      งงงงงงงงงงงงงงงงงงงงงไม่ใช้
 
 '            Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
 '            dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0)
@@ -98,7 +98,7 @@
 '            Dim dao As New DAO_DRUG.TB_DRRGT_SUBSTITUTE
 '            Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
 '            dao_rg.GetDataby_IDA(_rgt_ida)
-'            ' Dim bao As New BAO.GenNumber
+'            Dim bao As New BAO.GenNumber
 
 '            Dim chw As String = ""
 '            Dim dao_cpn As New DAO_CPN.clsDBsyschngwt
@@ -110,8 +110,8 @@
 '            End Try
 
 '            dao.fields = p2.DRRGT_SUBSTITUTEs
-'            'dao.fields.EDIT_DESCRIPTION = p2.DRRGT_EDIT_REQUESTs.EDIT_DESCRIPTION
-'            'dao.fields.CREATE_DATE = Date.Now
+'            dao.fields.EDIT_DESCRIPTION = p2.DRRGT_EDIT_REQUESTs.EDIT_DESCRIPTION
+'            dao.fields.CREATE_DATE = Date.Now
 '            dao.fields.STATUS_ID = 1
 '            dao.fields.TR_ID = TR_ID
 '            Try
