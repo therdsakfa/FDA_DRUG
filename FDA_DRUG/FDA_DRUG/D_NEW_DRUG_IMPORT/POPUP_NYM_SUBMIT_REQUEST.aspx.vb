@@ -78,38 +78,58 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Return rcvno
     End Function
     Protected Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click        ' ปรับสภาณะ
-        Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+        Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
         Dim bao As New BAO.ClsDBSqlcommand
-        dao.GetDataby_IDA(Integer.Parse(_IDA))
-        'If Request.QueryString("staff") <> "" Then
-        '    dao.fields.STATUS_ID = 1                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
-        'Else
-        '    dao.fields.STATUS_ID = 0                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
-        'End If
-        'dao.update()
+        If _Process = "1024" Then                                   'เช็ค Status เป็น nym อะไร และการกดปุ่มในแต่ละอันจะอัพเดท ststus_id ใน base TB_FDA_DRUG_IMPORT_NYM_ ของ NYM นั้นๆ
+            dao2.GetDataby_IDA(Integer.Parse(_IDA))
+            If Request.QueryString("staff") <> "" Then
+                dao2.fields.STATUS_ID = 1                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+            Else
+                dao2.fields.STATUS_ID = 0                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+            End If
+            dao2.update()
+        ElseIf _Process = "1025" Then
+            dao3.GetDataby_IDA(Integer.Parse(_IDA))
+            If Request.QueryString("staff") <> "" Then
+                dao3.fields.STATUS_ID = 1                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+            Else
+                dao3.fields.STATUS_ID = 0                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+            End If
+            dao3.update()
+        ElseIf _Process = "1026" Then
+            dao4.GetDataby_IDA(Integer.Parse(_IDA))
+            If Request.QueryString("staff") <> "" Then
+                dao4.fields.STATUS_ID = 1                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+            Else
+                dao4.fields.STATUS_ID = 0                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+            End If
+            dao4.update()
+        End If
 
-        'If b64 = Nothing Then                                   'b64 มีไว้ทำไร
-        '    b64 = Session("b64")
-        'End If
-        'Dim years As String = ""
-        '' Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        ''dao_tr.GetDataby_IDA(dao.fields.TR_ID)
-        ''Try
-        ''years = dao_tr.fields.YEAR
-        ''Catch ex As Exception
-        ''End Try
+        If b64 = Nothing Then                                   'b64 มีไว้ทำไร
+            b64 = Session("b64")
+        End If
+        Dim years As String = ""
+        ' Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+        'dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+        'Try
+        'years = dao_tr.fields.YEAR
+        'Catch ex As Exception
+        'End Try
 
-        'Dim tr_id As String = ""
-        'tr_id = "DA-" & _Process & "-" & years & "-" & _TR_ID
+        '  Dim tr_id As String = ""
+        ' tr_id = "DA-" & _Process & "-" & years & "-" & _TR_ID
 
-        'Dim cls_sop As New CLS_SOP
-        'cls_sop.BLOCK_SOP(_CLS.CITIZEN_ID, _Process, "2", "ยื่นคำขอ", tr_id, b64)
-        'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "USER", _Process, _CLS.PVCODE, 2, "ส่งเรื่องและรอพิจารณา", "SOP-DRUG-10-" & _Process & "-1", "รับคำขอ", "รอเจ้าหน้าที่รับคำขอ", "STAFF", tr_id, SOP_STATUS:="ยื่นคำขอ")
+        ' Dim cls_sop As New CLS_SOP
+        ' cls_sop.BLOCK_SOP(_CLS.CITIZEN_ID, _Process, "2", "ยื่นคำขอ", tr_id, b64)
+        'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "USER", _Process, _CLS.PVCODE, 2, "ส่งเรื่องและรอพิจารณา", "SOP-DRUG-10-" & _Process & "+1", "รับคำขอ", "รอเจ้าหน้าที่รับคำขอ", "STAFF", tr_id, SOP_STATUS:="ยื่นคำขอ")
 
-        'AddLogStatus(2, _Process, _CLS.CITIZEN_ID, _IDA)
+        AddLogStatus(2, _Process, _CLS.CITIZEN_ID, _IDA)            'LOG STATUS เก็บการ log ไว้ แล้วอัพเข้า base นี้ 
 
-        'Session("b64") = Nothing
-        'alert("ยื่นเรื่องเรียบร้อยแล้ว")
+        Session("b64") = Nothing
+        alert("ยื่นเรื่องเรียบร้อยแล้ว")
 
     End Sub
     Sub alert(ByVal text As String)
