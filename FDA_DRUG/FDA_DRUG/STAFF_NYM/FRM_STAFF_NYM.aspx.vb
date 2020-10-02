@@ -172,7 +172,7 @@ Public Class FRM_STAFF_NYM
             End Try
 
             If e.CommandName = "sel" Then
-                Dim dao As New DAO_DRUG.ClsDBdrsamp
+                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
                 dao.GetDataby_IDA(IDA)
                 Dim tr_id As String= 0
                 Try
