@@ -4,7 +4,7 @@ Public Class FRM_STAFF_CER_CONFIRM2
     Inherits System.Web.UI.Page
 
     Private _CLS As New CLS_SESSION
-    Private _TR_ID As Integer
+    Private _TR_ID As String
     Private _IDA As Integer
     Dim _ProcessID As String
     Sub runQuery()
