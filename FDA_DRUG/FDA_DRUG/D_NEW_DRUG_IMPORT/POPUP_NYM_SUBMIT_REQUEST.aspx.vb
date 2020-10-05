@@ -82,26 +82,26 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
         Dim bao As New BAO.ClsDBSqlcommand
-        If _Process = "1024" Then                                   'เช็ค Status เป็น nym อะไร และการกดปุ่มในแต่ละอันจะอัพเดท ststus_id ใน base TB_FDA_DRUG_IMPORT_NYM_ ของ NYM นั้นๆ
+        If _process = "1027" Then                                   'เช็ค Status เป็น nym อะไร และการกดปุ่มในแต่ละอันจะอัพเดท ststus_id ใน base TB_FDA_DRUG_IMPORT_NYM_ ของ NYM นั้นๆ
             dao2.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
-                dao2.fields.STATUS_ID = 1                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                dao2.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
             Else
                 dao2.fields.STATUS_ID = 0                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
             End If
             dao2.update()
-        ElseIf _Process = "1025" Then
+        ElseIf _process = "1028" Then
             dao3.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
-                dao3.fields.STATUS_ID = 1                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                dao3.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
             Else
                 dao3.fields.STATUS_ID = 0                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
             End If
             dao3.update()
-        ElseIf _Process = "1026" Then
+        ElseIf _process = "1029" Then
             dao4.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
-                dao4.fields.STATUS_ID = 1                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                dao4.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
             Else
                 dao4.fields.STATUS_ID = 0                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
             End If
