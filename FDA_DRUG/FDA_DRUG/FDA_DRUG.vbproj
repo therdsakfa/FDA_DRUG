@@ -642,6 +642,20 @@
     <Content Include="DESIGN\Scripts\jquery-1.4.2.min.js" />
     <Content Include="DESIGN\Scripts\jquery-1.7.2.js" />
     <Content Include="assets\Charts\DataJson.json" />
+    <Content Include="DRUG_STAFF_IMPORT_DRUG\FRM_STAFF_IMPORT_DRUG_MAIN.aspx" />
+    <Content Include="DRUG_STAFF_IMPORT_DRUG\WebForm90.aspx" />
+    <Content Include="DRUG_STAFF_NORYORMOR2\FRM_STAFF_PORYORBOR2_MAIN.aspx" />
+    <Content Include="DRUG_STAFF_NORYORMOR2\WebForm76.aspx" />
+    <Content Include="DRUG_STAFF_PORYORBOR3\FRM_STAFF_PORYORBOR3_MAIN.aspx" />
+    <Content Include="DRUG_STAFF_PORYORBOR3\WebForm78.aspx" />
+    <Content Include="DRUG_STAFF_PORYORBOR3\WebForm79.aspx" />
+    <Content Include="DRUG_STAFF_PORYORBOR4\FRM_STAFF_PORYORBOR4_MAIN.aspx" />
+    <Content Include="DRUG_STAFF_PORYORBOR4\WebForm81.aspx" />
+    <Content Include="DRUG_STAFF_PORYORBOR4\WebForm82.aspx" />
+    <Content Include="DRUG_STAFF_PORYORBOR5\FRM_STAFF_PORYORBOR5_MAIN.aspx" />
+    <Content Include="DRUG_STAFF_PORYORBOR5\WebForm84.aspx" />
+    <Content Include="DRUG_STAFF_PRODUCER_ABROAD\FRM_STAFF_PRODUCER_ABROAD_MAIN.aspx" />
+    <Content Include="DRUG_STAFF_PRODUCER_ABROAD\WebForm88.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM3.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx" />
@@ -2846,12 +2860,40 @@
       <DependentUpon>POPUP_DH_COMFIRM_STAFF.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="DRUG_STAFF_IMPORT_DRUG\FRM_STAFF_IMPORT_DRUG_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_IMPORT_DRUG_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_IMPORT_DRUG\FRM_STAFF_IMPORT_DRUG_MAIN.aspx.vb">
+      <DependentUpon>FRM_STAFF_IMPORT_DRUG_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_IMPORT_DRUG\WebForm90.aspx.designer.vb">
+      <DependentUpon>WebForm90.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_IMPORT_DRUG\WebForm90.aspx.vb">
+      <DependentUpon>WebForm90.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="DRUG_STAFF_NORYORMOR1\POPUP_NORYORMOR1_CONFIRM_STAFF.aspx.designer.vb">
       <DependentUpon>POPUP_NORYORMOR1_CONFIRM_STAFF.aspx</DependentUpon>
     </Compile>
     <Compile Include="DRUG_STAFF_NORYORMOR1\POPUP_NORYORMOR1_CONFIRM_STAFF.aspx.vb">
       <DependentUpon>POPUP_NORYORMOR1_CONFIRM_STAFF.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_NORYORMOR2\FRM_STAFF_PORYORBOR2_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_PORYORBOR2_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_NORYORMOR2\FRM_STAFF_PORYORBOR2_MAIN.aspx.vb">
+      <DependentUpon>FRM_STAFF_PORYORBOR2_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_NORYORMOR2\WebForm76.aspx.designer.vb">
+      <DependentUpon>WebForm76.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_NORYORMOR2\WebForm76.aspx.vb">
+      <DependentUpon>WebForm76.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DRUG_STAFF_NORYORMOR_2_to_5\DRUG_STAFF_NYM_MAIN_NEW.aspx.designer.vb">
       <DependentUpon>DRUG_STAFF_NYM_MAIN_NEW.aspx</DependentUpon>
@@ -2879,6 +2921,76 @@
     </Compile>
     <Compile Include="DRUG_STAFF_NORYORMOR1\FRM_STAFF_NORYORMOR1_MAIN.aspx.vb">
       <DependentUpon>FRM_STAFF_NORYORMOR1_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR3\FRM_STAFF_PORYORBOR3_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_PORYORBOR3_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR3\FRM_STAFF_PORYORBOR3_MAIN.aspx.vb">
+      <DependentUpon>FRM_STAFF_PORYORBOR3_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR3\WebForm78.aspx.designer.vb">
+      <DependentUpon>WebForm78.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR3\WebForm78.aspx.vb">
+      <DependentUpon>WebForm78.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR3\WebForm79.aspx.designer.vb">
+      <DependentUpon>WebForm79.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR3\WebForm79.aspx.vb">
+      <DependentUpon>WebForm79.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR4\FRM_STAFF_PORYORBOR4_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_PORYORBOR4_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR4\FRM_STAFF_PORYORBOR4_MAIN.aspx.vb">
+      <DependentUpon>FRM_STAFF_PORYORBOR4_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR4\WebForm81.aspx.designer.vb">
+      <DependentUpon>WebForm81.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR4\WebForm81.aspx.vb">
+      <DependentUpon>WebForm81.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR4\WebForm82.aspx.designer.vb">
+      <DependentUpon>WebForm82.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR4\WebForm82.aspx.vb">
+      <DependentUpon>WebForm82.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR5\FRM_STAFF_PORYORBOR5_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_PORYORBOR5_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR5\FRM_STAFF_PORYORBOR5_MAIN.aspx.vb">
+      <DependentUpon>FRM_STAFF_PORYORBOR5_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR5\WebForm84.aspx.designer.vb">
+      <DependentUpon>WebForm84.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PORYORBOR5\WebForm84.aspx.vb">
+      <DependentUpon>WebForm84.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PRODUCER_ABROAD\FRM_STAFF_PRODUCER_ABROAD_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_PRODUCER_ABROAD_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PRODUCER_ABROAD\FRM_STAFF_PRODUCER_ABROAD_MAIN.aspx.vb">
+      <DependentUpon>FRM_STAFF_PRODUCER_ABROAD_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PRODUCER_ABROAD\WebForm88.aspx.designer.vb">
+      <DependentUpon>WebForm88.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DRUG_STAFF_PRODUCER_ABROAD\WebForm88.aspx.vb">
+      <DependentUpon>WebForm88.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DRUG_STAFF_TABARN\FRM_DRUG_EX_CONFIRM_STAFF.aspx.designer.vb">

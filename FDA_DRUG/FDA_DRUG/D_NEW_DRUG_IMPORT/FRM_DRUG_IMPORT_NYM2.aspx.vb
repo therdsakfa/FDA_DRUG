@@ -123,6 +123,8 @@ Public Class FRM_DRUG_IMPORT_MAIN
     Protected Sub RadGrid1_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource  'หาข้อมูลมาใส่ 
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
+
+
         'SP_STAFF_DALCN_BY_PVNCD
         'If _pvncd = 10 Then
         '    dt = bao.SP_STAFF_DALCN()
@@ -140,7 +142,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
         'ElseIf _process = 1031 Then
         '    dt = bao.SP_DATA_NYM6_USER()
         'End If
-        dt = bao.SP_DATA_NYM2_with_status_from_massstatus(_IDA)
+        dt = getdatafillinradgrid(_IDA)
         RadGrid1.DataSource = dt
         '  Dim IDGroup As Integer = 0   เอาคืนนน
         ' Try                           เอาคืนนน
@@ -150,5 +152,10 @@ Public Class FRM_DRUG_IMPORT_MAIN
         'End If                         เอาคืนนน
         'Catch ex As Exception          เอาคืนนน
     End Sub
-
+    Public Function getdatafillinradgrid(ByVal ida As String)
+        Dim dt As New DataTable
+        Dim bao As New BAO.ClsDBSqlcommand
+        dt = bao.SP_DATA_NYM2_ALL_DATA(ida)
+        Return dt
+    End Function
 End Class

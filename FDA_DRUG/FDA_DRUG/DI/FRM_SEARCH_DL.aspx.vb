@@ -144,7 +144,7 @@ Public Class FRM_SEARCH_DL
                 Select Case _process
                     Case "1027"
                         NYM = "2"
-                        url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM2.aspx?DL=" & rcb_search.SelectedValue & "IDA=" & _IDA & "&NYM=" & NYM & "&process=" & _process
+                        url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM2.aspx?DL=" & rcb_search.SelectedValue & "&IDA=" & _IDA & "&NYM=" & NYM & "&process=" & _process
 
                     Case "1028"
                         NYM = "3"

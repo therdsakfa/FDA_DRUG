@@ -4988,9 +4988,9 @@ Namespace BAO
 
             Return dt
         End Function
-        Public Function SP_DATA_NYM2_ALL_DATA() As DataTable   'ดึงข้อมูล นยม 2 ทั้งหมด เข้ามา ตารางซ้ำกันอยู่
+        Public Function SP_DATA_NYM2_ALL_DATA(ByVal ida As String) As DataTable   'ดึงข้อมูล นยม 2 ทั้งหมด เข้ามา ตารางซ้ำกันอยู่
             Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM2_ALL_DATA"
+            Dim sql As String = "exec SP_DATA_NYM2_ALL_DATA @ida=" & ida
             Dim dt As New DataTable
             Try
                 dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
