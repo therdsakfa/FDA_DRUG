@@ -315,7 +315,7 @@ Public Class UC_SUB_DRUG_ANIMAL
                 str = txt_STOP_VALUE1.Text & " " & ddl_STOP_UNIT1.SelectedItem.Text
                 If STATUS_ID = 8 Then
                     Dim dao_m As New DAO_DRUG.ClsDBdramldrg
-                    dao_m.GetData_by_IDA(_IDA)
+                    dao_m.GetData_by_IDA(IDA)
                     Dim dao_r As New DAO_DRUG.ClsDBdrrgt
                     Try
                         dao_r.GetDataby_IDA(_IDA)
@@ -343,13 +343,13 @@ Public Class UC_SUB_DRUG_ANIMAL
 
                 Else
                     Dim dao_m As New DAO_DRUG.ClsDBdrramldrg
-                    dao_m.GetData_by_IDA(_IDA)
-                    Dim dao_r As New DAO_DRUG.ClsDBdrrqt
-                    Try
-                        dao_r.GetDataby_IDA(_IDA)
-                    Catch ex As Exception
+                    dao_m.GetData_by_IDA(IDA)
+                    'Dim dao_r As New DAO_DRUG.ClsDBdrrqt
+                    'Try
+                    '    dao_r.GetDataby_IDA(_IDA)
+                    'Catch ex As Exception
 
-                    End Try
+                    'End Try
 
                     Dim dao As New DAO_DRUG.ClsDBdrramluse
                     Try
