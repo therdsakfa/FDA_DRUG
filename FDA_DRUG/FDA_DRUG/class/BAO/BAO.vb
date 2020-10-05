@@ -1937,7 +1937,28 @@ Namespace BAO
             dta = clsds.dsQueryselect(sql, conn_CPN.ConnectionString).Tables(0)
             Return dta
         End Function
-        '
+        'Public Function SP_SYSCHNGWT() As DataTable
+        '    Dim clsds As New ClassDataset
+        '    Dim sql As String = "exec SP_SYSCHNGWT"
+        '    Dim dta As New DataTable
+        '    dta = clsds.dsQueryselect(sql, conn_CPN.ConnectionString).Tables(0)
+        '    Return dta
+        'End Function
+        Public Function SP_DATA_NYM2_ALL_DATA(ByVal dl As String) As DataTable   'ดึงข้อมูล นยม 2 มาทั้งหมดที่จำเป็น 
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DATA_NYM2_ALL_DATA @DL= '" & dl & "' "
+            Dim dt As New DataTable
+            dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+            Return dt
+        End Function
+        Public Function SP_DATA_NYM2_USER(ByVal dl As String) As DataTable   'ดึงข้อมูล นยม 2 มาทั้งหมดที่จำเป็น 
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DATA_NYM2_USER @DL= '" & dl & "' "
+            Dim dt As New DataTable
+            dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+            Return dt
+        End Function
+
         Public Function SP_MEMBER_THANM_THANM_by_IDENTIFY(ByVal IDENTIFY As String) As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_MEMBER_THANM_THANM_by_IDENTIFY @IDENTIFY = '" & IDENTIFY & "' "
@@ -4884,19 +4905,7 @@ Namespace BAO
 
             Return dt
         End Function
-        Public Function SP_DATA_NYM2_USER(ByVal IDA As String) As DataTable
-            Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM2_USER @IDA" & IDA
-            Dim dt As New DataTable
-            Try
-                dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
-            Catch ex As Exception
 
-            End Try
-
-
-            Return dt
-        End Function
         Public Function SP_DATA_NYM2_STAFF() As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_DATA_NYM2_STAFF"
@@ -4988,19 +4997,7 @@ Namespace BAO
 
             Return dt
         End Function
-        Public Function SP_DATA_NYM2_ALL_DATA(ByVal dl As String) As DataTable   'ดึงข้อมูล นยม 2 ทั้งหมด เข้ามา ตารางซ้ำกันอยู่
-            Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM2_ALL_DATA @DL=" & dl
-            Dim dt As New DataTable
-            Try
-                dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
-            Catch ex As Exception
 
-            End Try
-
-
-            Return dt
-        End Function
         Public Function SP_STAFF_LCNREQUEST() As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_STAFF_LCNREQUEST "

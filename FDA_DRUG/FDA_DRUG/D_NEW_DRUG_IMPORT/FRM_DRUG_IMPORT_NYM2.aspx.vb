@@ -20,7 +20,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
             _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
             _DL = Request.QueryString("DL")
             _IDA = Request.QueryString("IDA")
-            _TR_ID = Request.QueryString("TR_ID")
+            '_TR_ID = Request.QueryString("TR_ID")
             '_lct_ida = Request.QueryString("lct_ida")
             '_type = Request.QueryString("type")
             '_process_for = Request.QueryString("process_for")
@@ -79,7 +79,8 @@ Public Class FRM_DRUG_IMPORT_MAIN
 
                 'End Try
 
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?Process = " & _process & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?Process= " & _process & "&DL=" & _DL & "');", True)
+                '    "Popups2('" & "POPUP_LCN_UPLOAD_NCT.aspx?type_id=" & _process & "&process=" & _process & "&IDA=" & _CLS.IDA & "&lcn_ida=" & _lcn_ida & "&lct_ida=" & _lct_ida & "');", True)
             End If
         End If
     End Sub
@@ -142,7 +143,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
         'ElseIf _process = 1031 Then
         '    dt = bao.SP_DATA_NYM6_USER()
         'End If
-        dt = bao.SP_DATA_NYM2_ALL_DATA(_DL)
+        dt = bao.SP_DATA_NYM2_USER(_DL)
         RadGrid1.DataSource = dt
         '  Dim IDGroup As Integer = 0   เอาคืนนน
         ' Try                           เอาคืนนน
