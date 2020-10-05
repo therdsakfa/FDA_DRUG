@@ -104,7 +104,7 @@ Public Class FRM_STAFF_CER_MAIN
 
             End Try
             Dim dao As New DAO_DRUG.TB_CER
-            Dim process_id As String
+            Dim process_id As String = ""
             If e.CommandName = "sel" Then
                 dao.GetDataby_IDA2(IDA)
                 Dim tr_id As String = 0
