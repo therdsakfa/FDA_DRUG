@@ -447,7 +447,7 @@ Module BAO_COMMON
                     Dim cls_xml As New CLASS_GEN_XML.T_NCT_DALCN_TEMP
                     cls_xml.GEN_TEMP_NCT_DALCN(PATH_XML, p_temp_nct)
                 ElseIf PROSESS_ID = 1027 Or PROSESS_ID = 1028 Or PROSESS_ID = 1029 Then
-                    Dim cls_xml As New CLASS_GEN_XML.drsamp
+                    Dim cls_xml As New CLASS_GEN_XML.drsamp                                                                                 ''''''''''1027 นยมมมมมมมมมม
                     cls_xml.GEN_XML_DRSAMP(PATH_XML, p_drsamp)
                 ElseIf PROSESS_ID = 1026 Then
                     Dim cls_xml As New CLASS_GEN_XML.NYM1
