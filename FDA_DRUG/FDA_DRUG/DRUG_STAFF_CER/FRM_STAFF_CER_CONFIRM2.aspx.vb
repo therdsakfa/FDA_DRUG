@@ -200,10 +200,28 @@ Public Class FRM_STAFF_CER_CONFIRM2
             dao_up.GetDataby_IDA(_TR_ID)
         End If
 
-        Dim PROCESS_ID As String = _ProcessID.ToString()
-        Dim Year As String = dao_up.fields.YEAR.ToString()
-        Dim TR_ID As String = dao_up.fields.ID.ToString()
-        Dim CITIZEN_ID As String = dao_up.fields.CITIEZEN_ID
+        Dim PROCESS_ID As String = ""
+        Try
+            PROCESS_ID = _ProcessID.ToString()
+        Catch ex As Exception
+
+        End Try
+
+        Dim Year As String
+        Try
+            Year = dao_up.fields.YEAR.ToString()
+        Catch ex As Exception
+
+        End Try
+
+        'Dim TR_ID As String = dao_up.fields.ID.ToString()
+        Dim CITIZEN_ID As String
+        Try
+            CITIZEN_ID = dao_up.fields.CITIEZEN_ID
+        Catch ex As Exception
+
+        End Try
+
 
         Dim dao_CER_DETAIL_CASCHEMICAL As New DAO_DRUG.TB_CER_DETAIL_CASCHEMICAL
         dao_CER_DETAIL_CASCHEMICAL.GetDataby_FK_IDA_DET(dao_cer.fields.IDA)
