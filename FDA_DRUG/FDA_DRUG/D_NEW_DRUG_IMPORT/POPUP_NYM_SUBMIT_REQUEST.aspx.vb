@@ -9,13 +9,13 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Private _IDA As String
     Private _TR_ID As String
     Private _CLS As New CLS_SESSION
-    Private _Process As String
+    Private _process As String
     Private _DL As String
     Private _YEARS As String
     Private b64 As String
     Sub RunQuery()
         Try
-            _Process = Request.QueryString("Process")
+            _process = Request.QueryString("process")
             _IDA = Request.QueryString("IDA")
             _TR_ID = Request.QueryString("TR_ID")
             _DL = Request.QueryString("DL")
@@ -221,14 +221,14 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao_nym As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         dao_nym.getdata_dl(_DL)
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
-        Dim paths As String = bao._PATH_XML_IMPORT
+        Dim paths As String = bao._PATH_PDF_TEMPLATE
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-
+        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_process, 0, 0)
         Dim year As String = Date.Now.Year
-        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _Process, year, dao_nym.fields.TR_ID)
+        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym.fields.TR_ID)
         Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _Process, year, dao_nym.fields.TR_ID)
         'load_PDF(filename)
-        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _Process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
 
 
         lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
@@ -236,7 +236,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
 
         HiddenField1.Value = filename
-        _CLS.FILENAME_PDF = NAME_PDF("DA", _Process, year, dao_nym.fields.TR_ID)
+        _CLS.FILENAME_PDF = NAME_PDF("DA", _process, year, dao_nym.fields.TR_ID)
         _CLS.PDFNAME = filename
         '    show_btn() 'ตรวจสอบปุ่ม
 
