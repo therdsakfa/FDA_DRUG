@@ -108,8 +108,8 @@
                    <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
                        HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
                    </telerik:GridBoundColumn>
-                   <telerik:GridBoundColumn DataField="TR_ID" FilterControlAltText="Filter TR_ID column"
-                       HeaderText="รหัสการดำเนินการ" SortExpression="TR_ID" UniqueName="TR_ID">
+                   <telerik:GridBoundColumn DataField="transcode" FilterControlAltText="Filter transcode column"
+                       HeaderText="รหัสการดำเนินการ" SortExpression="transcode" UniqueName="transcode">
                    </telerik:GridBoundColumn>
                    <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
                        CommandName="sel" Text="ดูข้อมูล">
