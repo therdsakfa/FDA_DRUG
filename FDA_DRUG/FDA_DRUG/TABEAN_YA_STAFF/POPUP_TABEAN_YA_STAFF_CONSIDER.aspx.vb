@@ -70,10 +70,11 @@
                 Dim dao As New DAO_DRUG.ClsDBdrrqt
                 Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
                 Dim bao As New BAO.GenNumber
-
+                Dim PROCESS_ID As String = ""
                 dao.GetDataby_IDA(_IDA)
                 If Len(_TR_ID) >= 9 Then
                     dao_up.GetDataby_TR_ID_Process(_TR_ID, dao.fields.PROCESS_ID)
+
                 Else
                     dao_up.GetDataby_IDA(_TR_ID)
                 End If
@@ -92,13 +93,13 @@
                     dao.fields.STATUS_ID = 14
                     dao.fields.rgtno = RGTNO
                     dao.fields.CONSIDER_DATE = CONSIDER_DATE
-                    AddLogStatus(14, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
+                    AddLogStatus(14, dao.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
                     dao.update()
                     alert("บันทึกข้อมูลเรียบร้อย")
 
 
                     Dim cls_sop As New CLS_SOP
-                    cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", dao_up.fields.PROCESS_ID, _CLS.PVCODE, 14, "เสนอผลการประเมิน", "SOP-DRUG-10-" & dao_up.fields.PROCESS_ID & "-12", "ชำระเงินค่าใบสำคัญฯ", "รอชำระเงินค่าใบสำคัญฯ", "STAFF", _TR_ID, SOP_STATUS:="เสนอผลการประเมิน")
+                    cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", dao.fields.PROCESS_ID, _CLS.PVCODE, 14, "เสนอผลการประเมิน", "SOP-DRUG-10-" & dao.fields.PROCESS_ID & "-12", "ชำระเงินค่าใบสำคัญฯ", "รอชำระเงินค่าใบสำคัญฯ", "STAFF", _TR_ID, SOP_STATUS:="เสนอผลการประเมิน")
 
                 Else
                     alert_only("เลขทะเบียนซ้ำ")

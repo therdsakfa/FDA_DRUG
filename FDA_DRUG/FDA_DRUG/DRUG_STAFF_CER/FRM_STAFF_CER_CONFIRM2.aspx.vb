@@ -184,7 +184,7 @@ Public Class FRM_STAFF_CER_CONFIRM2
         Dim dao_dalcntype As New DAO_DRUG.ClsDBdalcntype
         dao_dalcntype.GetDataby_lcntpcd(dao_lcn.fields.lcntpcd)
 
-        Dim LCNSID As Integer = dao_cer.fields.lcnsid
+        Dim LCNSID As Integer '= dao_cer.fields.lcnsid
         Dim lcn_IDA As Integer
         Dim STATUS As Integer
         For Each dao_cer.fields In dao_cer.datas
@@ -192,32 +192,34 @@ Public Class FRM_STAFF_CER_CONFIRM2
             LCNSID = dao_cer.fields.LCNSID
             STATUS = dao_cer.fields.STATUS_ID
         Next
-
+        Dim Year As String = ""
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
         If Len(_TR_ID) >= 9 Then
             dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+            Year = dao_up.fields.YEAR
         Else
             dao_up.GetDataby_IDA(_TR_ID)
+            Year = dao_up.fields.YEAR
         End If
 
         Dim PROCESS_ID As String = ""
         Try
-            PROCESS_ID = _ProcessID.ToString()
+            PROCESS_ID = _ProcessID
         Catch ex As Exception
 
         End Try
 
-        Dim Year As String
+
         Try
-            Year = dao_up.fields.YEAR.ToString()
+
         Catch ex As Exception
 
         End Try
 
         'Dim TR_ID As String = dao_up.fields.ID.ToString()
-        Dim CITIZEN_ID As String
+        Dim CITIZEN_ID As String = ""
         Try
-            CITIZEN_ID = dao_up.fields.CITIEZEN_ID
+            CITIZEN_ID = _CLS.CITIZEN_ID
         Catch ex As Exception
 
         End Try
