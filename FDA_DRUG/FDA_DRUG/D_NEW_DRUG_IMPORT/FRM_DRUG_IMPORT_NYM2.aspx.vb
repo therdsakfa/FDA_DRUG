@@ -79,7 +79,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
 
                 'End Try
 
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?Process= " & _process & "&DL=" & _DL & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM2_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
                 '    "Popups2('" & "POPUP_LCN_UPLOAD_NCT.aspx?type_id=" & _process & "&process=" & _process & "&IDA=" & _CLS.IDA & "&lcn_ida=" & _lcn_ida & "&lct_ida=" & _lct_ida & "');", True)
             End If
         End If
