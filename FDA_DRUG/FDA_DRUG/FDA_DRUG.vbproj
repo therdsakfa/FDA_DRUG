@@ -659,6 +659,7 @@
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM3.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx" />
+    <Content Include="STAFF_NYM\FRM_STAFF_NYM3.aspx" />
     <Content Include="XML_DRUG_RGT.asmx" />
     <None Include="DESIGN\Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="DESIGN\Scripts\jquery-1.8.2.js" />
@@ -3665,6 +3666,13 @@
     </Compile>
     <Compile Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_STAFF_RECEIVE.aspx.vb">
       <DependentUpon>FRM_RGT_EDIT_STAFF_RECEIVE.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="STAFF_NYM\FRM_STAFF_NYM3.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STAFF_NYM\FRM_STAFF_NYM3.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM3.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="SUBSTITUTE_NCT\FRM_SUBSTITUTE_NCT_MAIN.aspx.designer.vb">

@@ -219,6 +219,33 @@ Module BAO_COMMON
             _p_dalcn = value
         End Set
     End Property
+    Private _p_noryormor2 As New CLASS_NYM_2
+    Public Property p_noryormor2() As CLASS_NYM_2
+        Get
+            Return _p_noryormor2
+        End Get
+        Set(ByVal value As CLASS_NYM_2)
+            _p_noryormor2 = value
+        End Set
+    End Property
+    Private _p_noryormor3 As New CLASS_NYM_3_SM
+    Public Property p_noryormor3() As CLASS_NYM_3_SM
+        Get
+            Return _p_noryormor3
+        End Get
+        Set(ByVal value As CLASS_NYM_3_SM)
+            _p_noryormor3 = value
+        End Set
+    End Property
+    Private _p_noryormor4 As New CLASS_NYM_4_SM
+    Public Property p_noryormor4() As CLASS_NYM_4_SM
+        Get
+            Return _p_noryormor4
+        End Get
+        Set(ByVal value As CLASS_NYM_4_SM)
+            _p_noryormor4 = value
+        End Set
+    End Property
     Private _p_dalcn_sub As New XML_CENTER.CLASS_DALCN_NCT_SUBSTITUTE
     Public Property p_dalcn_sub() As XML_CENTER.CLASS_DALCN_NCT_SUBSTITUTE
         Get

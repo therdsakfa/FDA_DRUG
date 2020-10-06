@@ -213,6 +213,10 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         class_xml3.NYM_3s = dao3.fields
         class_xml4.NYM_4s = dao4.fields
 
+        p_noryormor2 = class_xml2
+        Dim p_nym2 As New CLASS_NYM_2
+        p_nym2 = p_noryormor2
+        'p_dalcn2.DT_MASTER = Nothing
 
         Dim bao_show As New BAO_SHOW
         class_xml2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA)

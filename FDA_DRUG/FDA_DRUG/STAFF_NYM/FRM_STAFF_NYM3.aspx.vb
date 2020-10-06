@@ -1,6 +1,6 @@
 ﻿Imports Telerik.Web.UI
 
-Public Class FRM_STAFF_NYM
+Public Class FRM_STAFF_NYM3
     Inherits System.Web.UI.Page
     Private _CLS As New CLS_SESSION         'public class
     Private _process As String
@@ -174,7 +174,7 @@ Public Class FRM_STAFF_NYM
             If e.CommandName = "sel" Then
                 Dim dao As New DAO_DRUG.ClsDBdrsamp
                 dao.GetDataby_IDA(IDA)
-                Dim tr_id As String= 0
+                Dim tr_id As String = 0
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception
@@ -212,12 +212,7 @@ Public Class FRM_STAFF_NYM
     Private Sub RadGrid1_NeedDataSource(sender As Object, e As Telerik.Web.UI.GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
-        'SP_STAFF_DALCN_BY_PVNCD
-        'If _pvncd = 10 Then
-        '    dt = bao.SP_STAFF_DALCN()
-        'Else
-        '    dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
-        'End If
+
 
         If _process = 1027 Then
             dt = bao.SP_DATA_NYM2_STAFF()
@@ -233,40 +228,7 @@ Public Class FRM_STAFF_NYM
 
         'dt = bao.SP_DATA_NYM2_STAFF()
         RadGrid1.DataSource = dt
-        'Dim IDGroup As Integer = 0
-        'Try
-        '    IDGroup = _CLS.GROUPS
-        '    If _process = "" Then
-        '        Exit Sub
-        '    End If
-        'Catch ex As Exception
 
-        'End Try
-        'If IDGroup = 21020 Then
-        '    If _type = "" Then
-        '        RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process)
-        '    Else
-        '        RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process & " and donate_type = " & _type)
-        '    End If
-        'ElseIf IDGroup = 63346 Then
-        '    If _type = "" Then
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process)
-        '    Else
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process & " and donate_type = " & _type)
-        '    End If
-        'ElseIf IDGroup = 63347 Then
-        '    If _type = "" Then
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process)
-        '    Else
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process & " and donate_type = " & _type)
-        '    End If
-        'ElseIf IDGroup = 63348 Then
-        '    If _type = "" Then
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process)
-        '    Else
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process & " and donate_type = " & _type)
-        '    End If
-        'End If
     End Sub
 
     Protected Sub btn_proof_Click(sender As Object, e As EventArgs) Handles btn_proof.Click
