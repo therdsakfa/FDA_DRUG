@@ -213,9 +213,9 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         class_xml3.NYM_3s = dao3.fields
         class_xml4.NYM_4s = dao4.fields
 
-        p_nym2 = class_xml2
-        Dim p_noryormor2 As New CLASS_NYM_2
-        p_noryormor2 = p_nym2
+
+        'Dim p_noryormor2 As New CLASS_NYM_2
+        'p_noryormor2 = p_nym2
         'p_dalcn2.DT_MASTER = Nothing
 
         'Dim cls_sop1 As New CLS_SOP
@@ -226,11 +226,13 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         class_xml2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA)
         class_xml3.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(_IDA)
         class_xml4.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)
+
+        p_nym2 = class_xml2
         Dim dao_nym As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         dao_nym.getdata_dl(_DL)
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         Dim paths As String = bao._PATH_DEFAULT
-        Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+        Dim PDF_TEMPLATE As String = paths & dao_pdftemplate.fields.PDF_TEMPLATE
         dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_process, 1, 0)
         Dim year As String = Date.Now.Year
         Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym.fields.TR_ID)
