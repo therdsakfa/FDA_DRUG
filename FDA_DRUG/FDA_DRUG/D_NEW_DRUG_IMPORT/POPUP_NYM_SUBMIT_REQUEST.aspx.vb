@@ -213,9 +213,9 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         class_xml3.NYM_3s = dao3.fields
         class_xml4.NYM_4s = dao4.fields
 
-        p_noryormor2 = class_xml2
-        Dim p_nym2 As New CLASS_NYM_2
-        p_nym2 = p_noryormor2
+        p_nym2 = class_xml2
+        Dim p_noryormor2 As New CLASS_NYM_2
+        p_noryormor2 = p_nym2
         'p_dalcn2.DT_MASTER = Nothing
 
         'Dim cls_sop1 As New CLS_SOP
