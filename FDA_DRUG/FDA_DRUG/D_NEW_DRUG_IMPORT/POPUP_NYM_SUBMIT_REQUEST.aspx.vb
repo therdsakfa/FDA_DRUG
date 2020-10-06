@@ -218,6 +218,10 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         p_nym2 = p_noryormor2
         'p_dalcn2.DT_MASTER = Nothing
 
+        Dim cls_sop1 As New CLS_SOP
+        Session("b64") = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
+        b64 = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
+
         Dim bao_show As New BAO_SHOW
         class_xml2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA)
         class_xml3.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(_IDA)
