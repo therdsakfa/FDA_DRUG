@@ -189,24 +189,24 @@ Public Class FRM_STAFF_NYM
     End Sub
 
     Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound
-        'If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
-        '    Dim item As GridDataItem
-        '    item = e.Item
-        '    Dim IDA As String = item("IDA").Text
-        '    Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
-        '    Dim dao As New DAO_DRUG.ClsDBdalcn
-        '    dao.GetDataby_IDA(IDA)
-        '    btn_edit.Style.Add("display", "none")
-        '    Try
-        '        If dao.fields.STATUS_ID = 6 Then
-        '            btn_edit.Style.Add("display", "block")
-        '        End If
-        '    Catch ex As Exception
+        If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
+            Dim item As GridDataItem
+            item = e.Item
+            Dim IDA As String = item("NYM2_IDA").Text
+            Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+            dao.GetDataby_IDA(IDA)
+            btn_edit.Style.Add("display", "none")
+            Try
+                If dao.fields.STATUS_ID = 6 Then
+                    btn_edit.Style.Add("display", "block")
+                End If
+            Catch ex As Exception
 
-        '    End Try
-        '    Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
-        '    btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
-        'End If
+            End Try
+            Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
+            btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
+        End If
     End Sub
 
     Private Sub RadGrid1_NeedDataSource(sender As Object, e As Telerik.Web.UI.GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
@@ -222,11 +222,11 @@ Public Class FRM_STAFF_NYM
         If _process = 1027 Then
             dt = bao.SP_DATA_NYM2_STAFF()
         ElseIf _process = 1028 Then
-            dt = bao.SP_DATA_NYM3_USER()
+            dt = bao.SP_DATA_NYM3_STAFF()
         ElseIf _process = 1029 Then
-            dt = bao.SP_DATA_NYM4_USER()
+            dt = bao.SP_DATA_NYM4_STAFF()
         ElseIf _process = 1030 Then
-            dt = bao.SP_DATA_NYM5_USER()
+            dt = bao.SP_DATA_NYM5_STAFF()
         ElseIf _process = 1031 Then
             dt = bao.SP_DATA_NYM6_USER()
         End If

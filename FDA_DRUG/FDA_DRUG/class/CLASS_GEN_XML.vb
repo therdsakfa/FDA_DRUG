@@ -237,6 +237,14 @@ Namespace CLASS_GEN_XML
             objStreamWriter.Close()
 
         End Sub
+        Public Sub GEN_XML_NORYORMOR2(ByVal PATH As String, ByVal p2 As CLASS_NYM_2)
+
+            Dim objStreamWriter As New StreamWriter(PATH)
+            Dim x As New XmlSerializer(p2.GetType)
+            x.Serialize(objStreamWriter, p2)
+            objStreamWriter.Close()
+
+        End Sub
         Public Sub GEN_DRRGT_SUBSTITUTE(ByVal PATH As String, ByVal p2 As CLASS_DRRGT_SUB)
 
             Dim objStreamWriter As New StreamWriter(PATH)

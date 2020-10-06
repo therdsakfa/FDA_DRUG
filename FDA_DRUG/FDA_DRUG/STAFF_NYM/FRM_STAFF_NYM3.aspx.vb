@@ -217,11 +217,11 @@ Public Class FRM_STAFF_NYM3
         If _process = 1027 Then
             dt = bao.SP_DATA_NYM2_STAFF()
         ElseIf _process = 1028 Then
-            dt = bao.SP_DATA_NYM3_USER()
+            dt = bao.SP_DATA_NYM3_STAFF()
         ElseIf _process = 1029 Then
-            dt = bao.SP_DATA_NYM4_USER()
+            dt = bao.SP_DATA_NYM4_STAFF()
         ElseIf _process = 1030 Then
-            dt = bao.SP_DATA_NYM5_USER()
+            dt = bao.SP_DATA_NYM5_STAFF()
         ElseIf _process = 1031 Then
             dt = bao.SP_DATA_NYM6_USER()
         End If

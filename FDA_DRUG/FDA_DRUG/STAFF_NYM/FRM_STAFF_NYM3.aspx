@@ -143,7 +143,7 @@
                        <telerik:GridBoundColumn DataField="NYM3_WISH_MED" FilterControlAltText="Filter NYM3_WISH_MED column"
                            HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM3_WISH_MED" UniqueName="NYM3_WISH_MED">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM2_NO" FilterControlAltText="Filter NYM3_NO column"
+                       <telerik:GridBoundColumn DataField="NYM3_NO" FilterControlAltText="Filter NYM3_NO column"
                            HeaderText="เลขดำเนินการ" SortExpression="NYM3_NO" UniqueName="NYM3_NO">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"

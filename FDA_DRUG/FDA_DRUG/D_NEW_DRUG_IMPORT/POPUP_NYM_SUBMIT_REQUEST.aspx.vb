@@ -128,7 +128,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
         AddLogStatus(2, _Process, _CLS.CITIZEN_ID, _IDA)            'LOG STATUS เก็บการ log ไว้ แล้วอัพเข้า base นี้ 
 
-        Session("b64") = Nothing
+        'Session("b64") = Nothing
         alert("ยื่นเรื่องเรียบร้อยแล้ว")
 
     End Sub
