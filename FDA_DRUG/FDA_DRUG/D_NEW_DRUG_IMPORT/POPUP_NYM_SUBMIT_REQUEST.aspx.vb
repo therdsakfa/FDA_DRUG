@@ -108,9 +108,9 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             dao4.update()
         End If
 
-        If b64 = Nothing Then                                   'b64 มีไว้ทำไร
-            b64 = Session("b64")
-        End If
+        'If b64 = Nothing Then                                   'b64 มีไว้ทำไร
+        '    b64 = Session("b64")
+        'End If
         Dim years As String = ""
         ' Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
         'dao_tr.GetDataby_IDA(dao.fields.TR_ID)
@@ -218,9 +218,9 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         p_nym2 = p_noryormor2
         'p_dalcn2.DT_MASTER = Nothing
 
-        Dim cls_sop1 As New CLS_SOP
-        Session("b64") = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
-        b64 = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
+        'Dim cls_sop1 As New CLS_SOP
+        'Session("b64") = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
+        'b64 = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
 
         Dim bao_show As New BAO_SHOW
         class_xml2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA)
