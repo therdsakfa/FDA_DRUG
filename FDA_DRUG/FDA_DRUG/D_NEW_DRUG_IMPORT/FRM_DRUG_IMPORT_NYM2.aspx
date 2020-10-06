@@ -112,7 +112,7 @@
         <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="20" style="margin-left: 3px; margin-bottom: 10px;" Width="100%">
             <MasterTableView AutoGenerateColumns="False">
                 <Columns>
-                    <telerik:GridBoundColumn DataField="NYM2_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM2_IDA column" HeaderText="IDA"
+                    <telerik:GridBoundColumn DataField="NYM2_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM2_IDA column" HeaderText="NYM2_IDA"
                         SortExpression="NYM2_IDA" UniqueName="NYM2_IDA" Display="false">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="PROCESS_ID"  FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"

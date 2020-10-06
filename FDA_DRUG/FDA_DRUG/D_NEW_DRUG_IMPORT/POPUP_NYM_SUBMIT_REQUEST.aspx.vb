@@ -15,8 +15,13 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Private b64 As String
     Sub RunQuery()
         Try
-            _process = Request.QueryString("process")
             _IDA = Request.QueryString("IDA")
+        Catch ex As Exception
+
+        End Try
+        Try
+            _process = Request.QueryString("process")
+
             '_TR_ID = Request.QueryString("TR_ID")
             _DL = Request.QueryString("DL")
             _CLS = Session("CLS")
