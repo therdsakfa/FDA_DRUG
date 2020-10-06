@@ -164,7 +164,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Function get_p2(ByVal FileName As String) As CLASS_NYM_2
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
-        Dim objStreamReader As New StreamReader(bao._PATH_XML_IMPORT & FileName & ".xml") '"C:\path\XML_IMPORT\"
+        Dim objStreamReader As New StreamReader(bao._PATH_XML_TRADER & FileName & ".xml") '"C:\path\XML_TRADER\"
         Dim p2 As New CLASS_NYM_2
         Dim x As New XmlSerializer(p2.GetType)
         p2 = x.Deserialize(objStreamReader)
