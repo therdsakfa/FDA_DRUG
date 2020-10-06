@@ -273,6 +273,37 @@ Public Class FRM_STAFF_NYM
         Response.Redirect("FRM_STAFF_NYM_PROOF.aspx")
     End Sub
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
+        'Dim DL As String
+        'DL = ddl_search.SelectedValue
+        'If ddl_search.SelectedValue <> "0" Then
+        '    Dim url As String = ""
+        '    Dim NYM As String = ""
+        '    If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
+        '        Select Case _process
+        '            Case "1027"
+        '                NYM = "2"
+        '                url = "../STAFF_NYM/FRM_STAFF_NYM.aspx?DL=" & ddl_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
+
+        '            Case "1028"
+        '                NYM = "3"
+        '                url = "../STAFF_NYM/FRM_STAFF_NYM3.aspx?DL=" & ddl_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
+
+        '            Case "1029"
+        '                NYM = "4"
+        '                url = "../STAFF_NYM/FRM_STAFF_NYM4.aspx?DL=" & ddl_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
+
+        '            Case "1030"
+        '                NYM = "5"
+        '                url = "../STAFF_NYM/FRM_STAFF_NYM.aspx?DL=" & ddl_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
+
+        '        End Select
+        '        'url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_MAIN.aspx?DL=" & rcb_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
+        '        Response.Redirect(url)
+        '        RadGrid1.Rebind() 'ให้รันฟังก์ชั่นลำดับที่ 3
+        '    End If
+        'Else
+        '    alert("กรุณาเลือกประเภท")
+        'End If
         If ddl_search.SelectedIndex <> 0 Then
             Dim dt As New DataTable
             Dim bao As New BAO.ClsDBSqlcommand
