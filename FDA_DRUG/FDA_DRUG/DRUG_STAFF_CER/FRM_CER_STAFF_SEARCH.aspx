@@ -119,7 +119,7 @@
                                             HeaderText="IDA" SortExpression="IDA" UniqueName="IDA" Display="false">
                                         </telerik:GridBoundColumn>
                                         <telerik:GridBoundColumn DataField="TR_ID" FilterControlAltText="Filter TR_ID column"
-                                            HeaderText="TR_ID" SortExpression="TR_ID" UniqueName="TR_ID" Display="false">
+                                            HeaderText="เลขดำเนินการ" SortExpression="TR_ID" UniqueName="TR_ID">
                                         </telerik:GridBoundColumn>
                                          <telerik:GridBoundColumn DataField="thacntnm" FilterControlAltText="Filter thacntnm column"
                                             HeaderText="ประเทศ" SortExpression="thacntnm" UniqueName="thacntnm">

@@ -219,6 +219,7 @@ Module BAO_COMMON
             _p_dalcn = value
         End Set
     End Property
+
     Private _p_dalcn_sub As New XML_CENTER.CLASS_DALCN_NCT_SUBSTITUTE
     Public Property p_dalcn_sub() As XML_CENTER.CLASS_DALCN_NCT_SUBSTITUTE
         Get
@@ -281,6 +282,33 @@ Module BAO_COMMON
         End Get
         Set(ByVal value As CLASS_PROJECT_SUM)
             _p_nym1 = value
+        End Set
+    End Property
+    Private _p_nym2 As New CLASS_NYM_2
+    Public Property p_nym2() As CLASS_NYM_2
+        Get
+            Return _p_nym2
+        End Get
+        Set(ByVal value As CLASS_NYM_2)
+            _p_nym2 = value
+        End Set
+    End Property
+    Private _p_nym3 As New CLASS_NYM_3_SM
+    Public Property p_nym3() As CLASS_NYM_3_SM
+        Get
+            Return _p_nym3
+        End Get
+        Set(ByVal value As CLASS_NYM_3_SM)
+            _p_nym3 = value
+        End Set
+    End Property
+    Private _p_nym4 As New CLASS_NYM_4_SM
+    Public Property p_nym4() As CLASS_NYM_4_SM
+        Get
+            Return _p_nym4
+        End Get
+        Set(ByVal value As CLASS_NYM_4_SM)
+            _p_nym4 = value
         End Set
     End Property
     Private _extend As New CLASS_EXTEND
@@ -446,12 +474,16 @@ Module BAO_COMMON
                     Or PROSESS_ID = 131 Or PROSESS_ID = 132 Or PROSESS_ID = 133 Or PROSESS_ID = 134) And temps <> "" Then
                     Dim cls_xml As New CLASS_GEN_XML.T_NCT_DALCN_TEMP
                     cls_xml.GEN_TEMP_NCT_DALCN(PATH_XML, p_temp_nct)
-                ElseIf PROSESS_ID = 1027 Or PROSESS_ID = 1028 Or PROSESS_ID = 1029 Then
-                    Dim cls_xml As New CLASS_GEN_XML.drsamp                                                                                 ''''''''''1027 นยมมมมมมมมมม
-                    cls_xml.GEN_XML_DRSAMP(PATH_XML, p_drsamp)
+                    'ElseIf PROSESS_ID = 1027 Or PROSESS_ID = 1028 Or PROSESS_ID = 1029 Then
+                    '    Dim cls_xml As New CLASS_GEN_XML.drsamp
+                    '    cls_xml.GEN_XML_DRSAMP(PATH_XML, p_drsamp)
                 ElseIf PROSESS_ID = 1026 Then
                     Dim cls_xml As New CLASS_GEN_XML.NYM1
                     cls_xml.GEN_XML_NORYORMOR1(PATH_XML, p_nym1)
+                ElseIf PROSESS_ID = 1027 Then
+                    Dim cls_xml As New CLASS_GEN_XML.NYM2_IMPORT
+                    cls_xml.GEN_XML_NORYORMOR2(PATH_XML, p_nym2)
+
                 ElseIf PROSESS_ID = 1701 Or PROSESS_ID = 1702 Or PROSESS_ID = 1703 Or PROSESS_ID = 1704 Or PROSESS_ID = 1705 Or PROSESS_ID = 1706 Or PROSESS_ID = 1707 Then 'ตระกูล 8
                     Dim cls_xml As New CLASS_GEN_XML.drsamp2
                     cls_xml.GEN_XML_DRSAMP(PATH_XML, p_drsamp)
@@ -523,6 +555,9 @@ Module BAO_COMMON
                     'Or PROSESS_ID = 131 Or PROSESS_ID = 132 Or PROSESS_ID = 133 Or PROSESS_ID = 134) Then
                     '      Dim cls_xml As New CLASS_GEN_XML.T_NCT_DALCN_TEMP
                     '      cls_xml.GEN_TEMP_NCT_DALCN(PATH_XML, p_temp_nct)
+                ElseIf PROSESS_ID = 1027 Then
+                    Dim cls_xml As New CLASS_GEN_XML.NYM2_IMPORT
+                    cls_xml.GEN_XML_NORYORMOR2(PATH_XML, p_nym2)
                 End If
             End If
             'ตรวจสอบว่ามี PDF มั้ย
@@ -557,6 +592,16 @@ Module BAO_COMMON
                 Dim cls_xml As New CLASS_GEN_XML.DALCN
                 cls_xml.GEN_XML_DALCN(PATH_XML, p_dalcn)
 
+                Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\
+                    Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"
+                        Using stamper = New iTextSharp.text.pdf.PdfStamper(pdfReader__1, outputStream, ControlChars.NullChar, True)
+                            stamper.AcroFields.Xfa.FillXfaForm(PATH_XML)
+                        End Using
+                    End Using
+                End Using
+            ElseIf PROSESS_ID = 1027 Then
+                Dim cls_xml As New CLASS_GEN_XML.NYM2_IMPORT
+                cls_xml.GEN_XML_NORYORMOR2(PATH_XML, p_nym2)
                 Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\
                     Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"
                         Using stamper = New iTextSharp.text.pdf.PdfStamper(pdfReader__1, outputStream, ControlChars.NullChar, True)

@@ -15,9 +15,14 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Private b64 As String
     Sub RunQuery()
         Try
-            _process = Request.QueryString("process")
             _IDA = Request.QueryString("IDA")
-            _TR_ID = Request.QueryString("TR_ID")
+        Catch ex As Exception
+
+        End Try
+        Try
+            _process = Request.QueryString("process")
+
+            '_TR_ID = Request.QueryString("TR_ID")
             _DL = Request.QueryString("DL")
             _CLS = Session("CLS")
         Catch ex As Exception
@@ -108,9 +113,9 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             dao4.update()
         End If
 
-        If b64 = Nothing Then                                   'b64 มีไว้ทำไร
-            b64 = Session("b64")
-        End If
+        'If b64 = Nothing Then                                   'b64 มีไว้ทำไร
+        '    b64 = Session("b64")
+        'End If
         Dim years As String = ""
         ' Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
         'dao_tr.GetDataby_IDA(dao.fields.TR_ID)
@@ -128,7 +133,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
         AddLogStatus(2, _Process, _CLS.CITIZEN_ID, _IDA)            'LOG STATUS เก็บการ log ไว้ แล้วอัพเข้า base นี้ 
 
-        Session("b64") = Nothing
+        'Session("b64") = Nothing
         alert("ยื่นเรื่องเรียบร้อยแล้ว")
 
     End Sub
@@ -154,7 +159,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Private Sub load_xml(ByVal FileName As String)
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
-        Dim objStreamReader As New StreamReader(bao._PATH_XML_IMPORT & FileName & ".xml") '"C:\path\XML_IMPORT\"
+        Dim objStreamReader As New StreamReader(bao._PATH_XML_TRADER & FileName & ".xml") '"C:\path\XML_TRADER\"
         Dim p2 As New CLASS_NYM_2
         Dim x As New XmlSerializer(p2.GetType)
         p2 = x.Deserialize(objStreamReader)
@@ -164,7 +169,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Function get_p2(ByVal FileName As String) As CLASS_NYM_2
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
-        Dim objStreamReader As New StreamReader(bao._PATH_XML_IMPORT & FileName & ".xml") '"C:\path\XML_IMPORT\"
+        Dim objStreamReader As New StreamReader(bao._PATH_XML_TRADER & FileName & ".xml") '"C:\path\XML_TRADER\"
         Dim p2 As New CLASS_NYM_2
         Dim x As New XmlSerializer(p2.GetType)
         p2 = x.Deserialize(objStreamReader)
@@ -214,16 +219,27 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         class_xml4.NYM_4s = dao4.fields
 
 
+        'Dim p_noryormor2 As New CLASS_NYM_2
+        'p_noryormor2 = p_nym2
+        'p_dalcn2.DT_MASTER = Nothing
+
+        'Dim cls_sop1 As New CLS_SOP
+        'Session("b64") = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
+        'b64 = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
+
         Dim bao_show As New BAO_SHOW
         class_xml2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA)
         class_xml3.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(_IDA)
         class_xml4.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)
+
+        p_nym2 = class_xml2
         Dim dao_nym As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         dao_nym.getdata_dl(_DL)
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
-        Dim paths As String = bao._PATH_PDF_TEMPLATE
-        Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+        Dim paths As String = bao._PATH_DEFAULT
+
         dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_process, 1, 0)
+        Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim year As String = Date.Now.Year
         Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym.fields.TR_ID)
         Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _Process, year, dao_nym.fields.TR_ID)
