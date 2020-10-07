@@ -300,4 +300,31 @@
             _DT27 = value
         End Set
     End Property
+    Private _DT28 As DataTable
+    Public Property DT28() As DataTable             'ของ NYM2
+        Get
+            Return _DT28
+        End Get
+        Set(ByVal value As DataTable)
+            _DT28 = value
+        End Set
+    End Property
+    Private _DT29 As DataTable
+    Public Property DT29() As DataTable                 'ของNYM3
+        Get
+            Return _DT29
+        End Get
+        Set(ByVal value As DataTable)
+            _DT29 = value
+        End Set
+    End Property
+    Private _DT30 As DataTable
+    Public Property DT30() As DataTable                 'ของNYM4
+        Get
+            Return _DT30
+        End Get
+        Set(ByVal value As DataTable)
+            _DT30 = value
+        End Set
+    End Property
 End Class

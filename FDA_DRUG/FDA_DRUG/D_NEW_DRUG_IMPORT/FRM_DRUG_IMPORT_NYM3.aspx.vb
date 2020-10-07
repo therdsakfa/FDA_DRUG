@@ -136,7 +136,7 @@ Public Class FRM_DRUG_IMPORT_NYM3
         'ElseIf _process = 1031 Then
         '    dt = bao.SP_DATA_NYM6_USER()
         'End If
-        dt = bao.SP_DATA_NYM3_USER()      '_DL          'BAO แถวที่ 4987
+        dt = bao.SP_DATA_NYM3_USER(_DL)      '_DL          'BAO แถวที่ 5000
         RadGrid1.DataSource = dt
         '  Dim IDGroup As Integer = 0   เอาคืนนน
         ' Try                           เอาคืนนน

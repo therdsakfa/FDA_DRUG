@@ -1645,6 +1645,25 @@ Public Class BAO_SHOW
         End If
         Return dt
     End Function
+    Public Function SP_LOCATION_ADDRESS_BY_IDA_NYM3_TOPROW(ByVal ida As String) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_LOCATION_ADDRESS_BY_IDA_NYM3_TOPROW @IDA='" & ida & "'"
+        Dim dt As New DataTable
+        dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
+        dt.TableName = "SP_LOCATION_ADDRESS_BY_IDA_NYM3_TOPROW"
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        Return dt
+    End Function
     Public Function SP_LOCATION_ADDRESS_BY_IDA_NYM2(ByVal ida As String) As DataTable
         Dim clsds As New ClassDataset
         Dim sql As String = "exec SP_LOCATION_ADDRESS_BY_IDA_NYM2 @IDA='" & ida & "'"
@@ -1664,12 +1683,50 @@ Public Class BAO_SHOW
         End If
         Return dt
     End Function
+    Public Function SP_LOCATION_ADDRESS_BY_IDA_NYM2_TOPROW(ByVal ida As String) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_LOCATION_ADDRESS_BY_IDA_NYM2_TOPROW @IDA='" & ida & "'"
+        Dim dt As New DataTable
+        dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
+        dt.TableName = "SP_LOCATION_ADDRESS_BY_IDA_NYM2_TOPROW"
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        Return dt
+    End Function
     Public Function SP_LOCATION_ADDRESS_BY_IDA_NYM4(ByVal ida As String) As DataTable
         Dim clsds As New ClassDataset
         Dim sql As String = "exec SP_LOCATION_ADDRESS_BY_IDA_NYM4 @IDA='" & ida & "'"
         Dim dt As New DataTable
         dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
         dt.TableName = "SP_LOCATION_ADDRESS_BY_IDA_NYM4"
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        Return dt
+    End Function
+    Public Function SP_LOCATION_ADDRESS_BY_IDA_NYM4_TOPROW(ByVal ida As String) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_LOCATION_ADDRESS_BY_IDA_NYM4_TOPROW @IDA='" & ida & "'"
+        Dim dt As New DataTable
+        dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
+        dt.TableName = "SP_LOCATION_ADDRESS_BY_IDA_NYM4_TOPROW"
         Try
             dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
             If dt.Rows.Count() = 0 Then

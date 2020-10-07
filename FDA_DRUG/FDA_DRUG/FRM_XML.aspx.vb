@@ -2392,6 +2392,7 @@ Public Class FRM_XML
         Dim lct_ida As Integer = 101680
 
         cls_xml.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(66)
+        cls_xml.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2_TOPROW(66)
         Dim bao_app As New BAO.AppSettings              'THIS LINE
         Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
         path = path & filename.ToString() & ".xml"
@@ -2409,6 +2410,7 @@ Public Class FRM_XML
         Dim lct_ida As Integer = 101680              ' THIS LINE
 
         cls_xml.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(51)
+        cls_xml.DT_SHOW.DT29 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3_TOPROW(66)
         Dim bao_app As New BAO.AppSettings              'THIS LINE
         Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
         path = path & filename.ToString() & ".xml"
@@ -2426,6 +2428,7 @@ Public Class FRM_XML
         Dim lct_ida As Integer = 101680              ' THIS LINE
 
         cls_xml.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(8)
+        cls_xml.DT_SHOW.DT30 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4_TOPROW(8)
         Dim bao_app As New BAO.AppSettings              'THIS LINE
         Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
         path = path & filename.ToString() & ".xml"
