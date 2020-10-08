@@ -236,9 +236,10 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao_nym As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         dao_nym.getdata_dl(_DL)
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
-        Dim paths As String = bao._PATH_DEFAULT                                         ' PART ต้องเป็น defult ก่อน 
-
         dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_process, 1, 0)
+
+
+        Dim paths As String = bao._PATH_DEFAULT                                         ' PART ต้องเป็น defult ก่อน 
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim year As String = Date.Now.Year
         Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym.fields.TR_ID)

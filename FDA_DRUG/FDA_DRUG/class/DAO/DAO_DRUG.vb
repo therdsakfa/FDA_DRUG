@@ -13897,6 +13897,37 @@ Namespace DAO_DRUG
             Next
         End Sub
     End Class
+    Public Class clsDBMAS_NYMSTAFF_PROCESS
+        Inherits MAINCONTEXT
+        Public fields As New MAS_NYMSTAFF_PROCESS
+        Public Sub insert()
+            db.MAS_NYMSTAFF_PROCESSes.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+        Public Sub delete()
+            db.MAS_NYMSTAFF_PROCESSes.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+            datas = (From p In db.MAS_NYMSTAFF_PROCESSes Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+            datas = (From p In db.MAS_NYMSTAFF_PROCESSes Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_PROCESS(ByVal PROCESS_ID As String)
+            datas = (From p In db.MAS_NYMSTAFF_PROCESSes Where p.PROCESS_ID = PROCESS_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
 End Namespace
 
 

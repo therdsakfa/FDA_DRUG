@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 35.25, 48.5" name="Linq_DRUG">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 35.25, 49.375" name="Linq_DRUG">
   <DataContextMoniker Name="/Linq_DRUGDataContext" />
   <nestedChildShapes>
     <classShape Id="0b494793-e85b-4a24-baec-80057e8c45de" isExpanded="false" absoluteBounds="4.875, 20, 2, 0.45">
@@ -2076,6 +2076,12 @@
       <DataClassMoniker Name="/Linq_DRUGDataContext/CER" />
       <nestedChildShapes>
         <elementListCompartment Id="bba1d699-e6b5-4111-8199-92f9ba70ca21" absoluteBounds="7.5150000000000006, 27.585, 1.9700000000000002, 11.979777018229166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1153470-2faf-420f-b6ef-b1099da3c109" isExpanded="false" absoluteBounds="0.5, 48.625, 2, 0.45">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/MAS_NYMSTAFF_PROCESS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f315e01d-b646-4cbe-8cd5-fd17885a01f7" absoluteBounds="0.51499999999999968, 49.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

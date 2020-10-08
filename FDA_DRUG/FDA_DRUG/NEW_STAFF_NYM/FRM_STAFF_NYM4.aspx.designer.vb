@@ -11,77 +11,68 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_STAFF_NYM_SUBMIT_REQUEST
+Partial Public Class FRM_STAFF_NYM4
 
     '''<summary>
-    '''hl_reader control.
+    '''lbl_name control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents lbl_name As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''HiddenField1 control.
+    '''ddl_search control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents ddl_search As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''lr_preview control.
+    '''btn_search control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents btn_search As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''btn_confirm control.
+    '''lbl_remark control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents lbl_remark As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''btn_cancel control.
+    '''btn_proof control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_proof As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''btn_load control.
+    '''RadGrid1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
 
     '''<summary>
-    '''btn_load0 control.
+    '''btn_reload control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''UC_GRID_ATTACH control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents UC_GRID_ATTACH As Global.FDA_DRUG.UC_GRID_ATTACH
+    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
 End Class

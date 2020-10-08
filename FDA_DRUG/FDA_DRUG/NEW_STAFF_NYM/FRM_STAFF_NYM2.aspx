@@ -1,23 +1,5 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MAIN_STAFF.Master" CodeBehind="FRM_STAFF_NYM.aspx.vb" Inherits="FDA_DRUG.FRM_STAFF_NYM" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     
-     <div class="panel" style="text-align:left ;width:100%">
-         <div class="panel-heading panel-title" style="height:70px" > 
-            
-             <div  class="auto-style1"><h4> ยายกเว้นทะเบียน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                          <asp:DropDownList ID="ddl_search" runat="server" CssClass="btn-lg" Width="27%" Height="100%"></asp:DropDownList>
-                                      &nbsp;
-                                           <asp:Button ID="btn_search" runat="server" Text="ค้นหา" CssClass="btn-lg" Height="44px" Width="80px" />
-                                      </h4> </div>
-
-         </div>
-    
-    </div>
-
-</asp:Content>
- <%-- <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MAIN_STAFF.Master" CodeBehind="FRM_STAFF_NYM2.aspx.vb" Inherits="FDA_DRUG.FRM_STAFF_NYM2" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../css/css_radgrid.css" rel="stylesheet" />
     <style type="text/css">
@@ -30,8 +12,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
       <script type="text/javascript" >
-
-
 
           $(document).ready(function () {
               //$(window).load(function () {
@@ -65,12 +45,6 @@
                   var i = $('#f1'); // ID ของ iframe   
                   i.attr("src", url); //  url ของ form ที่จะเปิด
               }
-
-
-            
-
-
-
           });
 
           function Popups2(url) { // สำหรับทำ Div Popup
@@ -101,12 +75,12 @@
               $('#myModal2').modal('hide');
               $('#ContentPlaceHolder1_btn_reload').click(); // ตัวอย่างให้คำสั่งปุ่มที่ซ่อนอยู่ Click
           }
-        </script> 
+      </script> 
     
  <%--  <div style="text-align:center;" >  เลขที่ใบอนุญาตสถานที่&nbsp;&nbsp;&nbsp;&nbsp;  <asp:DropDownList ID="ddl_lcnno" runat="server" CssClass="input-lg"  Width="20%"></asp:DropDownList> &nbsp;
        <asp:Button ID="Btn_ok" runat="server" Text="ยืนยัน" CssClass="btn-info" Width="67px"/>
        <br />
-    </div>
+    </div>--%>
       <div id="spinner" style=" background-color:transparent; display:none; " >
   <img src="../imgs/spinner.gif" alt="Loading" style="position: absolute; top: 120px; left: 293px; height: 185px; width: 207px;" />
 </div>
@@ -126,8 +100,6 @@
          </div>
     
     </div>
-
-               
 
        <div class="panel panel-body"  style="width:100%;padding-left:5%;">
            <table style="width:100%;">
@@ -178,56 +150,7 @@
                    </Columns>
                </MasterTableView>
            </telerik:RadGrid>
-
-          <%-- <asp:GridView ID="GV_lcnno" runat="server" Width="100%" DataKeyNames="IDA" CellPadding="4" CssClass="table"
-               ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="20" Font-Size="10pt">
-               <AlternatingRowStyle BackColor="White" />
-               <Columns>
-                   <asp:BoundField DataField="LCNNO_MANUAL" HeaderText="เลขที่ใบอนุญาต" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Left" />
-                   <asp:BoundField DataField="lcntpcd" HeaderText="ประเภท" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Left" />
-
-                   <asp:BoundField DataField="fulladdr" HeaderText="ที่อยู่" ItemStyle-Width="30%" />
-                   <asp:BoundField DataField="lcnsid" HeaderText="รหัสผู้ประกอบการ" ItemStyle-Width="10%" Visible="false" />
-                   <asp:BoundField DataField="house_no" HeaderText="เลขสถานที่" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Left" />
-                   <asp:BoundField DataField="STATUS_NAME" HeaderText="สถานะ" ItemStyle-Width="10%" />
-                   <asp:BoundField DataField="TRANSACTION_UPLOAD" HeaderText="เลขดำเนินการ" ItemStyle-Width="10%" />
-                   <asp:CheckBoxField DataField="pay_stat_chk" HeaderText="การชำระเงิน" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" />
-                   <asp:TemplateField ItemStyle-Width="10%">
-                       <ItemTemplate>
-                           <asp:Button ID="btn_Select" runat="server" Text="ดูข้อมูล" CommandName="sel" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
-                       </ItemTemplate>
-                   </asp:TemplateField>
-                   <asp:TemplateField ItemStyle-Width="20%">
-                       <ItemTemplate>
-                           <asp:Button ID="btn_edit" runat="server" Text="แก้ไขการเสนอลงนาม" CommandName="_edit" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
-                       </ItemTemplate>
-                   </asp:TemplateField>
-                   <asp:TemplateField ItemStyle-Width="20%">
-                       <ItemTemplate>
-                       </ItemTemplate>
-                   </asp:TemplateField>
-               </Columns>
-               <EmptyDataTemplate>
-                   <center>ไม่พบข้อมูล</center>
-               </EmptyDataTemplate>
-               <EditRowStyle BackColor="#2461BF" />
-               <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-               <HeaderStyle BackColor="#8CB340 " Font-Bold="True" ForeColor="White" CssClass="row" />
-               <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-               <RowStyle BackColor="#EFF3FB" CssClass="row" />
-               <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-               <SortedAscendingCellStyle BackColor="#F5F7FB" />
-               <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-               <SortedDescendingCellStyle BackColor="#E9EBEF" />
-               <SortedDescendingHeaderStyle BackColor="#4870BE" />
-           </asp:GridView>
-
-
     </div>
-   
-
-
-
     <div class="modal fade " id="myModal">
         <div class="panel panel-info" style="width: 100%">
             <div class="panel-heading">
@@ -260,4 +183,4 @@
      <asp:Button ID="btn_reload" runat="server" Text="" style="display:none;"  />
 
     &nbsp;
-</asp:Content>  --%> 
+</asp:Content>

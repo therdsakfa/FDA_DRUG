@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MAIN_STAFF.Master" CodeBehind="FRM_STAFF_NYM3.aspx.vb" Inherits="FDA_DRUG.FRM_STAFF_NYM3" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MAIN_STAFF.Master" CodeBehind="FRM_STAFF_NYM5.aspx.vb" Inherits="FDA_DRUG.FRM_STAFF_NYM5" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../css/css_radgrid.css" rel="stylesheet" />
@@ -47,11 +47,6 @@
                   var i = $('#f1'); // ID ของ iframe   
                   i.attr("src", url); //  url ของ form ที่จะเปิด
               }
-
-
-            
-
-
 
           });
 
@@ -125,14 +120,14 @@
            <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="15" AllowFilteringByColumn="True">
                <MasterTableView AutoGenerateColumns="False">
                    <Columns>
-                       <telerik:GridBoundColumn DataField="NYM3_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM3_IDA column" HeaderText="IDA"
-                           SortExpression="NYM3_IDA" UniqueName="NYM3_IDA" Display="false">
+                       <telerik:GridBoundColumn DataField="NYM5_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM5_IDA column" HeaderText="IDA"
+                           SortExpression="NYM5_IDA" UniqueName="NYM5_IDA" Display="false">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="PROCESS_ID" DataType="System.Int32" FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                            SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM3_DATE_TOP" FilterControlAltText="Filter NYM3_DATE_TOP column"
-                           HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="NYM3_DATE_TOP" UniqueName="NYM3_DATE_TOP">
+                       <telerik:GridBoundColumn DataField="NYM5_DATE_TOP" FilterControlAltText="Filter NYM5_DATE_TOP column"
+                           HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="NYM5_DATE_TOP" UniqueName="NYM5_DATE_TOP">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
                            HeaderText="ประเภท" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
@@ -140,11 +135,11 @@
                        <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
                            HeaderText="รหัสบัญชีรายการยา" SortExpression="DL" UniqueName="DL">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM3_WISH_MED" FilterControlAltText="Filter NYM3_WISH_MED column"
+                       <%--<telerik:GridBoundColumn DataField="NYM3_WISH_MED" FilterControlAltText="Filter NYM3_WISH_MED column"
                            HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM3_WISH_MED" UniqueName="NYM3_WISH_MED">
-                       </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM3_NO" FilterControlAltText="Filter NYM3_NO column"
-                           HeaderText="เลขดำเนินการ" SortExpression="NYM3_NO" UniqueName="NYM3_NO">
+                       </telerik:GridBoundColumn>--%>
+                       <telerik:GridBoundColumn DataField="NYM5_NO" FilterControlAltText="Filter NYM5_NO column"
+                           HeaderText="เลขดำเนินการ" SortExpression="NYM5_NO" UniqueName="NYM5_NO">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
                            HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
@@ -161,10 +156,6 @@
                </MasterTableView>
            </telerik:RadGrid>
     </div>
-   
-
-
-
     <div class="modal fade " id="myModal">
         <div class="panel panel-info" style="width: 100%">
             <div class="panel-heading">
