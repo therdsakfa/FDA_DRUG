@@ -143,13 +143,13 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     Protected Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         dao.GetDataby_IDA(Integer.Parse(_IDA))
-        dao.fields.STATUS_ID = 7
+        dao.fields.STATUS_ID = 7                                                                            'status ยกเลิกคำขอ ยังไม่มี
         dao.update()
-        AddLogStatus(7, _Process, _CLS.CITIZEN_ID, _IDA)
+        AddLogStatus(7, _process, _CLS.CITIZEN_ID, _IDA)                                                    'น่าจะเอาไว้เก็บการอัพเดท สเตตัส
     End Sub
 
     Protected Sub btn_load_Click(sender As Object, e As EventArgs) Handles btn_load.Click
-        load_PDF(_CLS.PDFNAME, _CLS.FILENAME_PDF)
+        load_PDF(_CLS.PDFNAME, _CLS.FILENAME_PDF)                                                            'คำสั่งโหลด OFD ดขาเครื่งอ
     End Sub
 
     '    ''' <summary>
