@@ -327,4 +327,31 @@
             _DT30 = value
         End Set
     End Property
+    Private _DT31 As DataTable
+    Public Property DT31() As DataTable                 'ของNYM2 มีข้อมูลชุดเดียว
+        Get
+            Return _DT31
+        End Get
+        Set(ByVal value As DataTable)
+            _DT31 = value
+        End Set
+    End Property
+    Private _DT32 As DataTable
+    Public Property DT32() As DataTable                 'ของNYM3 มีข้อมูลชุดเดียว
+        Get
+            Return _DT32
+        End Get
+        Set(ByVal value As DataTable)
+            _DT32 = value
+        End Set
+    End Property
+    Private _DT33 As DataTable
+    Public Property DT33() As DataTable                 'ของNYM4 มีข้อมูลชุดเดียว
+        Get
+            Return _DT33
+        End Get
+        Set(ByVal value As DataTable)
+            _DT33 = value
+        End Set
+    End Property
 End Class
