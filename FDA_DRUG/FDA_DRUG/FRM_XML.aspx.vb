@@ -2390,8 +2390,14 @@ Public Class FRM_XML
         Dim cls As New CLASS_GEN_XML.NYM2_IMPORT("0000000000000", 252565, "1", "10") 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
         Dim cls_xml As New CLASS_NYM_2                                                                   ' ประกาศตัวแปรจาก CLASS_DALCN 
         Dim lct_ida As Integer = 101680
+        Dim dt1 As New DataTable
+        ' Dim countrownym2 As Integer
+        'countrownym2 = bao_show.check_nym2_onlyoneroworenot(66)
+        ' cls_xml.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(76)
+        'cls_xml.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2_ONLY1(76) '76 66
+        cls_xml.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2_ONLY1(77)
+        cls_xml.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(77) '76 66
 
-        cls_xml.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(66)
         Dim bao_app As New BAO.AppSettings              'THIS LINE
         Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
         path = path & filename.ToString() & ".xml"
@@ -2408,7 +2414,10 @@ Public Class FRM_XML
         Dim cls_xml As New CLASS_NYM_3_SM                                                        ' ประกาศตัวแปรจาก CLASS_DALCN 
         Dim lct_ida As Integer = 101680              ' THIS LINE
 
-        cls_xml.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(51)
+        '  cls_xml.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(52)
+        ' cls_xml.DT_SHOW.DT29 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3_ONLY1(52)  '52 51
+        cls_xml.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3_ONLY1(51)
+        cls_xml.DT_SHOW.DT29 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(51)  '52 51
         Dim bao_app As New BAO.AppSettings              'THIS LINE
         Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
         path = path & filename.ToString() & ".xml"
@@ -2425,7 +2434,10 @@ Public Class FRM_XML
         Dim cls_xml As New CLASS_NYM_4_SM                                                        ' ประกาศตัวแปรจาก CLASS_DALCN 
         Dim lct_ida As Integer = 101680              ' THIS LINE
 
-        cls_xml.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(8)
+        'cls_xml.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(8)
+        'cls_xml.DT_SHOW.DT30 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4_ONLY1(8)
+        cls_xml.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4_ONLY1(3)  ' 8 3 
+        cls_xml.DT_SHOW.DT30 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(3)
         Dim bao_app As New BAO.AppSettings              'THIS LINE
         Dim path As String = bao_app._PATH_XML_CLASS '"C:\path\XML_CLASS\"
         path = path & filename.ToString() & ".xml"
