@@ -61,11 +61,12 @@ Public Class FRM_NYM_CONFIRM
         show_btn(_IDA)
     End Sub
 
-    Sub show_btn(ByVal ID As String)
+    Sub show_btn(ByVal ID As String)        'ปุ่ม preview ใบอนุญาต
         Dim dao As New DAO_DRUG.ClsDBdrsamp
         dao.GetDataby_IDA(ID)
 
         If dao.fields.STATUS_ID <> 6 Then
+            'ไม่มั่นใจว่า status 6 คือ status อะไร เดี๋ยวเช็คอีกที 
             btn_preview.Enabled = False
             ' btn_cancel.Enabled = False
             btn_preview.CssClass = "btn-danger btn-lg"
@@ -80,7 +81,7 @@ Public Class FRM_NYM_CONFIRM
     ''' </summary>
     ''' <param name="IDA"></param>
     Public Sub set_hide(ByVal IDA As String)
-        If _ProcessID = 1026 Then
+        If _ProcessID = 1026 Then       'ถ้าเป็น นยม 1 
             Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
             dao.GetDataby_IDA(IDA)
             If dao.fields.STATUS_ID = 8 Then
@@ -93,17 +94,17 @@ Public Class FRM_NYM_CONFIRM
             ElseIf dao.fields.STATUS_ID = 6 Then
                 remark_box.Style.Add("display", "block")
             End If
-        Else
+        Else        'ถ้าเป็น นยม อื่น เข้าอันนี้ 
             Dim dao As New DAO_DRUG.ClsDBdrsamp
             dao.GetDataby_IDA(IDA)
-            If dao.fields.STATUS_ID = 8 Then
+            If dao.fields.STATUS_ID = 8 Then        'status 8 คืออนุมัติแล้ว
                 btn_confirm.Enabled = False
                 btn_cancel.Enabled = False
-                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_confirm.CssClass = "btn-danger btn-lg"  'ปิดปุ่มให้เป็นสีแดง
                 btn_cancel.CssClass = "btn-danger btn-lg"
 
                 ddl_cnsdcd.Style.Add("display", "none")
-            ElseIf dao.fields.STATUS_ID = 6 Then
+            ElseIf dao.fields.STATUS_ID = 6 Then        'status 6 คือ แก้ไขคำขอ
                 remark_box.Style.Add("display", "block")
             End If
         End If
@@ -130,12 +131,12 @@ Public Class FRM_NYM_CONFIRM
     Sub set_lbl()
 
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        Dim dao_s As New DAO_DRUG.TB_MAS_STAFF_OFFER
+        Dim dao_s As New DAO_DRUG.TB_MAS_STAFF_OFFER    'base เก็บชื่อเจ้าหน้าที่ลงนาม
         Dim dao_stat As New DAO_DRUG.ClsDBMAS_STATUS
         If _ProcessID = 1026 Then
-            Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
+            Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM   'basee เก็บข้อมูล NYM1
             dao.GetDataby_IDA(_IDA)
-
+            
             dao_up.GetDataby_IDA(dao.fields.TR_ID)
             Try    'ชื่อผู้ลงนาม
                 dao_s.GetDataby_IDA(dao.fields.FK_STAFF_OFFER_IDA)
@@ -163,7 +164,7 @@ Public Class FRM_NYM_CONFIRM
 
             End Try
         Else
-            Dim dao As New DAO_DRUG.ClsDBdrsamp
+            Dim dao As New DAO_DRUG.ClsDBdrsamp 'base นี้เก็บพวก ผย นย ผยบ ผยบ8 นย8
             dao.GetDataby_IDA(_IDA)
 
             dao_up.GetDataby_IDA(dao.fields.TR_ID)
@@ -207,8 +208,8 @@ Public Class FRM_NYM_CONFIRM
         Dim lcnno_num As String = String.Empty
         Dim tpye As String = String.Empty
         Dim REF_NO As String = String.Empty
-        Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        Dim dao_down As New DAO_DRUG.ClsDBTRANSACTION_DOWNLOAD
+        Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD 'เลขดำเนินการ 
+        Dim dao_down As New DAO_DRUG.ClsDBTRANSACTION_DOWNLOAD  'เอาไว้track ตอน ดาวโหลด
         Dim dao As New DAO_DRUG.ClsDBdalcn
         Dim bao As New BAO.ClsDBSqlcommand
         dao_up.GetDataby_IDA(_CLS.IDA)
@@ -333,7 +334,7 @@ Public Class FRM_NYM_CONFIRM
         Else
             Dim dao As New DAO_DRUG.ClsDBdrsamp
             dao.GetDataby_IDA(_IDA)
-            dao_up.GetDataby_IDA(dao.fields.TR_ID)
+            dao_up.GetDataby_IDA(dao.fields.TR_ID)      'FK จะมาจากตัวแม่ มาเก็บไว้ เพื่อเป็น ref
             dao_prf.GetDataby_FK(dao.fields.IDA)
 
             Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID

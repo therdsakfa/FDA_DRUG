@@ -5045,6 +5045,16 @@ Namespace BAO
 
             Return dt
         End Function
+        Public Function SP_NYMSTAFF_ALLPROCESS() As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_NYMSTAFF_ALLPROCESS "
+            Dim dt As New DataTable
+            Try
+                dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+            Catch ex As Exception
+            End Try
+            Return dt
+        End Function
 
         Public Function SP_STAFF_LCNREQUEST() As DataTable
             Dim clsds As New ClassDataset
