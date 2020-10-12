@@ -1,4 +1,6 @@
-﻿Public Class FRM_EXTEND_LCN_ATTACH_PAGE
+﻿Imports Telerik.Web.UI
+
+Public Class FRM_EXTEND_LCN_ATTACH_PAGE
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -141,10 +143,27 @@
             Dim file_ex As String = ""
             file_ex = file_extension_nm(FileUpload1.FileName)
             If file_ex = "jpg" Or file_ex = "png" Then
+                Dim IDA_dalcn As Integer = 0
                 Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
-                dao.GetDataby_IDA(Request.QueryString("IDA"))
+                'dao.GetDataby_IDA(Request.QueryString("IDA"))
+                dao.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+                Try
+                    IDA_dalcn = dao.fields.FK_IDA
+                Catch ex As Exception
+
+                End Try
                 dao.fields.IMAGE_BSN = Convert.ToBase64String(FileUpload1.FileBytes)
                 dao.update()
+
+                Try
+                    Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+                    dao_dal.GetDataby_IDA(IDA_dalcn)
+                    dao_dal.fields.IMAGE_BSN = Convert.ToBase64String(FileUpload1.FileBytes)
+                    dao_dal.update()
+                Catch ex As Exception
+
+                End Try
+
                 RadBinaryImage1.DataBind()
 
             Else
@@ -153,5 +172,17 @@
         Else
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาแนบไฟล์');", True)
         End If
+    End Sub
+
+    Private Sub FRM_EXTEND_LCN_ATTACH_PAGE_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
+        Try
+            Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+            dao_dal.GetDataby_IDA(Request.QueryString("IDA"))
+
+            RadBinaryImage1.DataValue = Convert.FromBase64String(dao_dal.fields.IMAGE_BSN)
+            RadBinaryImage1.ResizeMode = BinaryImageResizeMode.Fit
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

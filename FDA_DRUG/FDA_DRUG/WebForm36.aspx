@@ -35,7 +35,7 @@
         <asp:DropDownList ID="ddl_status" runat="server" Height="16px" Width="80%">
         </asp:DropDownList>
         <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
-        <asp:Button ID="btn_gen_dh" runat="server" Text="GEN_DH" style="height: 26px" />
+        <asp:Button ID="btn_gen_dh" runat="server" Text="GEN_DH" />
     <h2>
         บันทึกข้อมูลวันที่ขอตรวจ
         <telerik:RadScriptManager ID="RadScriptManager1" Runat="server">
