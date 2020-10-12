@@ -659,6 +659,7 @@
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM3.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_CONFIRM.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM2.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM3.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM4.aspx" />
@@ -3460,6 +3461,12 @@
     <Compile Include="MasterPage\MAIN_STAFF_MAIN.Master.vb">
       <DependentUpon>MAIN_STAFF_MAIN.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFFNYM_CONFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_STAFFNYM_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFFNYM_CONFIRM.aspx.vb">
+      <DependentUpon>FRM_STAFFNYM_CONFIRM.aspx</DependentUpon>
     </Compile>
     <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM2.aspx.designer.vb">
       <DependentUpon>FRM_STAFF_NYM2.aspx</DependentUpon>
