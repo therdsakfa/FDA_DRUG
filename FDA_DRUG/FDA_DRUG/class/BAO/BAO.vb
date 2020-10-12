@@ -1937,13 +1937,6 @@ Namespace BAO
             dta = clsds.dsQueryselect(sql, conn_CPN.ConnectionString).Tables(0)
             Return dta
         End Function
-        Public Function SP_NYMSTAFF_ALLPROCESS() As DataTable
-            Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_NYMSTAFF_ALLPROCESS"
-            Dim dta As New DataTable
-            dta = clsds.dsQueryselect(sql, condrugimport).Tables(0)
-            Return dta
-        End Function
         'Public Function SP_SYSCHNGWT() As DataTable
         '    Dim clsds As New ClassDataset
         '    Dim sql As String = "exec SP_SYSCHNGWT"
