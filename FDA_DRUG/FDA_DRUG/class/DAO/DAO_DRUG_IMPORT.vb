@@ -462,5 +462,23 @@
         End Sub
     End Class
 
+    Public Class TB_LOG_STATUS_IMPORT
+        Inherits MAINCONTEXT 'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
 
+        Public fields As New LOG_STATUS_IMPORT
+        Public Sub insert()
+            db.LOG_STATUS_IMPORTs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.LOG_STATUS_IMPORTs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+    End Class
 End Class

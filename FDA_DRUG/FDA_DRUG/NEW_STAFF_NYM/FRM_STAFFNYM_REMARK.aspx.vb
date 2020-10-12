@@ -1,4 +1,4 @@
-﻿Public Class FRM_STAFF_NYM_NEW
+﻿Public Class FRM_STAFFNYM_REMARK
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

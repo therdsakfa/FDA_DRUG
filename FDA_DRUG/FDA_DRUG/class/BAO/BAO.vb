@@ -4934,7 +4934,7 @@ Namespace BAO
         End Function
         Public Function SP_DATA_NYM3_STAFF() As DataTable
             Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM2_STAFF"
+            Dim sql As String = "exec SP_DATA_NYM3_STAFF"
             Dim dt As New DataTable
             Try
                 dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
@@ -4947,7 +4947,7 @@ Namespace BAO
         End Function
         Public Function SP_DATA_NYM4_STAFF() As DataTable
             Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM2_STAFF"
+            Dim sql As String = "exec SP_DATA_NYM4_STAFF"
             Dim dt As New DataTable
             Try
                 dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
@@ -4960,7 +4960,7 @@ Namespace BAO
         End Function
         Public Function SP_DATA_NYM5_STAFF() As DataTable
             Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM2_STAFF"
+            Dim sql As String = "exec SP_DATA_NYM5_STAFF"
             Dim dt As New DataTable
             Try
                 dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
@@ -5043,6 +5043,16 @@ Namespace BAO
             End Try
 
 
+            Return dt
+        End Function
+        Public Function SP_NYMSTAFF_ALLPROCESS() As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_NYMSTAFF_ALLPROCESS "
+            Dim dt As New DataTable
+            Try
+                dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+            Catch ex As Exception
+            End Try
             Return dt
         End Function
 

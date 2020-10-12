@@ -253,18 +253,9 @@ Public Class FRM_NYM_CONFIRM
         If _ProcessID = 1026 Then
             Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
             dao.GetDataby_IDA(_IDA)
-            If Len(_TR_ID) >= 9 Then
-                dao_up.GetDataby_TR_ID_Process(_TR_ID, dao_prf.fields.PROCESS_ID)
-            Else
-                dao_up.GetDataby_IDA(_TR_ID)
-            End If
+            dao_up.GetDataby_IDA(dao.fields.TR_ID)
             dao_prf.GetDataby_FK(dao.fields.IDA)
-            Dim PROCESS_ID As Integer
-            Try
-                PROCESS_ID = dao_up.fields.PROCESS_ID
-            Catch ex As Exception
-
-            End Try
+            Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
 
             dao_date.fields.FK_IDA = _IDA
             Try
@@ -336,7 +327,7 @@ Public Class FRM_NYM_CONFIRM
             dao_up.GetDataby_IDA(dao.fields.TR_ID)
             dao_prf.GetDataby_FK(dao.fields.IDA)
 
-            Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
+            Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
             dao_date.fields.FK_IDA = _IDA
             Try
                 dao_date.fields.STATUS_DATE = Date.Now 'CDate(txt_app_date.Text)

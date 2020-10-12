@@ -2,7 +2,7 @@
 
 Public Class FRM_STAFF_NYM
     Inherits System.Web.UI.Page
-    Private _CLS As New CLS_SESSION         'public class
+    Private _CLS As New CLS_SESSION
     Private _process As String
     Private _type As String
     Private _pvncd As Integer
@@ -43,7 +43,8 @@ Public Class FRM_STAFF_NYM
         Dim dt As New DataTable
         Dim bao As New BAO.ClsDBSqlcommand
 
-        dt = bao.SP_MAS_NYMSTAFF_PROCESS
+        'dt = bao.SP_MAS_NYMSTAFF_PROCESS
+        dt = bao.SP_NYMSTAFF_ALLPROCESS
 
         ddl_search.DataSource = dt 'dao.datas
         ddl_search.DataTextField = "PROCESS_NAME"
@@ -125,7 +126,7 @@ Public Class FRM_STAFF_NYM
 
     '    If e.CommandName = "sel" Then
     '        dao.GetDataby_IDA(str_ID)
-    '        Dim tr_id As String= 0
+    '        Dim tr_id As Integer = 0
     '        Try
     '            tr_id = dao.fields.TR_ID
     '        Catch ex As Exception
@@ -174,7 +175,7 @@ Public Class FRM_STAFF_NYM
             If e.CommandName = "sel" Then
                 Dim dao As New DAO_DRUG.ClsDBdrsamp
                 dao.GetDataby_IDA(IDA)
-                Dim tr_id As String= 0
+                Dim tr_id As Integer = 0
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception
@@ -192,9 +193,9 @@ Public Class FRM_STAFF_NYM
         If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
             Dim item As GridDataItem
             item = e.Item
-            Dim IDA As String = item("NYM2_IDA").Text
+            Dim IDA As String = item("IDA").Text
             Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
-            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+            Dim dao As New DAO_DRUG.ClsDBdalcn
             dao.GetDataby_IDA(IDA)
             btn_edit.Style.Add("display", "none")
             Try
@@ -219,91 +220,47 @@ Public Class FRM_STAFF_NYM
         '    dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
         'End If
 
-        If _process = 1027 Then
-            dt = bao.SP_DATA_NYM2_STAFF()
-        ElseIf _process = 1028 Then
-            dt = bao.SP_DATA_NYM3_STAFF()
-        ElseIf _process = 1029 Then
-            dt = bao.SP_DATA_NYM4_STAFF()
-        ElseIf _process = 1030 Then
-            dt = bao.SP_DATA_NYM5_STAFF()
-        ElseIf _process = 1031 Then
-            dt = bao.SP_DATA_NYM6_USER()
+        dt = bao.SP_STAFF_NYM()
+        Dim IDGroup As Integer = 0
+        Try
+            IDGroup = _CLS.GROUPS
+            If _process = "" Then
+                Exit Sub
+            End If
+        Catch ex As Exception
+
+        End Try
+        If IDGroup = 21020 Then
+            If _type = "" Then
+                RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process)
+            Else
+                RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process & " and donate_type = " & _type)
+            End If
+        ElseIf IDGroup = 63346 Then
+            If _type = "" Then
+                RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process)
+            Else
+                RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process & " and donate_type = " & _type)
+            End If
+        ElseIf IDGroup = 63347 Then
+            If _type = "" Then
+                RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process)
+            Else
+                RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process & " and donate_type = " & _type)
+            End If
+        ElseIf IDGroup = 63348 Then
+            If _type = "" Then
+                RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process)
+            Else
+                RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process & " and donate_type = " & _type)
+            End If
         End If
-
-        'dt = bao.SP_DATA_NYM2_STAFF()
-        RadGrid1.DataSource = dt
-        'Dim IDGroup As Integer = 0
-        'Try
-        '    IDGroup = _CLS.GROUPS
-        '    If _process = "" Then
-        '        Exit Sub
-        '    End If
-        'Catch ex As Exception
-
-        'End Try
-        'If IDGroup = 21020 Then
-        '    If _type = "" Then
-        '        RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process)
-        '    Else
-        '        RadGrid1.DataSource = dt.Select("PROCESS_ID = " & _process & " and donate_type = " & _type)
-        '    End If
-        'ElseIf IDGroup = 63346 Then
-        '    If _type = "" Then
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process)
-        '    Else
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID = 2 and PROCESS_ID = " & _process & " and donate_type = " & _type)
-        '    End If
-        'ElseIf IDGroup = 63347 Then
-        '    If _type = "" Then
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process)
-        '    Else
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID >= 2 and STATUS_ID <= 6 and PROCESS_ID = " & _process & " and donate_type = " & _type)
-        '    End If
-        'ElseIf IDGroup = 63348 Then
-        '    If _type = "" Then
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process)
-        '    Else
-        '        RadGrid1.DataSource = dt.Select("STATUS_ID > 6  and PROCESS_ID = " & _process & " and donate_type = " & _type)
-        '    End If
-        'End If
     End Sub
 
     Protected Sub btn_proof_Click(sender As Object, e As EventArgs) Handles btn_proof.Click
         Response.Redirect("FRM_STAFF_NYM_PROOF.aspx")
     End Sub
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
-        'Dim DL As String
-        'DL = ddl_search.SelectedValue
-        'If ddl_search.SelectedValue <> "0" Then
-        '    Dim url As String = ""
-        '    Dim NYM As String = ""
-        '    If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
-        '        Select Case _process
-        '            Case "1027"
-        '                NYM = "2"
-        '                url = "../STAFF_NYM/FRM_STAFF_NYM.aspx?DL=" & ddl_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
-
-        '            Case "1028"
-        '                NYM = "3"
-        '                url = "../STAFF_NYM/FRM_STAFF_NYM3.aspx?DL=" & ddl_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
-
-        '            Case "1029"
-        '                NYM = "4"
-        '                url = "../STAFF_NYM/FRM_STAFF_NYM4.aspx?DL=" & ddl_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
-
-        '            Case "1030"
-        '                NYM = "5"
-        '                url = "../STAFF_NYM/FRM_STAFF_NYM.aspx?DL=" & ddl_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
-
-        '        End Select
-        '        'url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_MAIN.aspx?DL=" & rcb_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
-        '        Response.Redirect(url)
-        '        RadGrid1.Rebind() 'ให้รันฟังก์ชั่นลำดับที่ 3
-        '    End If
-        'Else
-        '    alert("กรุณาเลือกประเภท")
-        'End If
         If ddl_search.SelectedIndex <> 0 Then
             Dim dt As New DataTable
             Dim bao As New BAO.ClsDBSqlcommand

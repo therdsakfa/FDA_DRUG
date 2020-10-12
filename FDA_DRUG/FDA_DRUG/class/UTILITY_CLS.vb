@@ -320,10 +320,26 @@ Public Module UTILITY_CLS
 
         Return province_id
     End Function
-    <System.Runtime.CompilerServices.Extension> _
+    <System.Runtime.CompilerServices.Extension>
     Public Sub AddLogStatus(ByVal status_id As Integer, ByVal process_id As String, ByVal iden As String, Optional FK_IDA As Integer = 0)
         Try
             Dim dao As New DAO_DRUG.TB_LOG_STATUS
+            dao.fields.IDENTIFY = iden
+            dao.fields.PROCESS_ID = process_id
+            dao.fields.STATUS_DATE = Date.Now
+            dao.fields.STATUS_ID = status_id
+            dao.fields.FK_IDA = FK_IDA
+            dao.insert()
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    <System.Runtime.CompilerServices.Extension>
+    Public Sub AddLogStatusnymimport(ByVal status_id As Integer, ByVal process_id As String, ByVal iden As String, Optional FK_IDA As Integer = 0)
+        Try
+            Dim dao As New DAO_DRUG_IMPORT.TB_LOG_STATUS_IMPORT
             dao.fields.IDENTIFY = iden
             dao.fields.PROCESS_ID = process_id
             dao.fields.STATUS_DATE = Date.Now

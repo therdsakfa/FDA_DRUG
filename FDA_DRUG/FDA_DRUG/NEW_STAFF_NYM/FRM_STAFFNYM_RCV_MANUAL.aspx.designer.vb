@@ -11,68 +11,77 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_STAFF_NYM
+Partial Public Class FRM_STAFFNYM_RCV_MANUAL
 
     '''<summary>
-    '''lbl_name control.
+    '''Txt_rcvno_temp control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_name As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Txt_rcvno_temp As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ddl_search control.
+    '''Txt_rcvno control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddl_search As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents Txt_rcvno As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btn_search control.
+    '''txt_rcvdate control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_search As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txt_rcvdate As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''lbl_remark control.
+    '''ddl_receiver control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_remark As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ddl_receiver As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''btn_proof control.
+    '''Label1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_proof As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''RadGrid1 control.
+    '''ddl_template control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
+    Protected WithEvents ddl_template As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''btn_reload control.
+    '''Button1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Button2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
 End Class

@@ -1,10 +1,9 @@
 ﻿Imports Telerik.Web.UI
 
-Public Class FRM_STAFF_NYM3
+Public Class FRM_STAFF_NYM_PROOF_NEW
     Inherits System.Web.UI.Page
-    Private _CLS As New CLS_SESSION         'public class
+    Private _CLS As New CLS_SESSION
     Private _process As String
-    Private _type As String
     Private _pvncd As Integer
     Sub RunSession()
         Try
@@ -12,19 +11,12 @@ Public Class FRM_STAFF_NYM3
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
-        '_process = Request("process").ToString()
-        Try
-            _type = Request("type").ToString()
-        Catch ex As Exception
-
-        End Try
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
         get_pvncd()
         If Not IsPostBack Then
-            load_ddl()
             'load_GV_lcnno()
         End If
     End Sub
@@ -38,21 +30,6 @@ Public Class FRM_STAFF_NYM3
         Catch ex As Exception
             _pvncd = 10
         End Try
-    End Sub
-    Private Sub load_ddl()
-        Dim dt As New DataTable
-        Dim bao As New BAO.ClsDBSqlcommand
-
-        dt = bao.SP_MAS_NYMSTAFF_PROCESS
-
-        ddl_search.DataSource = dt 'dao.datas
-        ddl_search.DataTextField = "PROCESS_NAME"
-        ddl_search.DataValueField = "PROCESS_ID"
-        ddl_search.DataBind()
-        Dim item As New ListItem
-        item.Text = "กรุณาเลือกประเภท"
-        item.Value = "0"
-        ddl_search.Items.Insert(0, item)
     End Sub
     'Protected Sub btn_download_Click(sender As Object, e As EventArgs) Handles btn_download.Click
 
@@ -157,103 +134,58 @@ Public Class FRM_STAFF_NYM3
             Dim item As GridDataItem = e.Item
 
             'drsamp IDA
-            Dim IDA As Integer = 0
+            Dim tr_id As String = 0
             Try
-                IDA = item("IDA").Text
+                tr_id = item("TR_ID").Text
             Catch ex As Exception
 
             End Try
 
-            Dim PROCESS_ID As Integer = 0
+            Dim PROCESS As Integer = 0
             Try
-                PROCESS_ID = item("PROCESS_ID").Text
+                PROCESS = item("PROCESS_ID").Text
             Catch ex As Exception
 
             End Try
 
             If e.CommandName = "sel" Then
-                Dim dao As New DAO_DRUG.ClsDBdrsamp
-                dao.GetDataby_IDA(IDA)
-                Dim tr_id As String = 0
-                Try
-                    tr_id = dao.fields.TR_ID
-                Catch ex As Exception
-
-                End Try
-
-
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_NYM_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & PROCESS_ID & "');", True)
+                Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH
+                dao.GetDataby_TR_ID_And_Process_And_Type(tr_id, PROCESS, "P")
+                If IsNothing(dao.fields.NAME_FAKE) Then
+                Else
+                    Response.Redirect("~\PDF\FRM_ATTACH_PREVIEW.aspx\" & dao.fields.NAME_FAKE & "")
+                End If
             End If
 
         End If
     End Sub
 
     Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound
-        'If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
-        '    Dim item As GridDataItem
-        '    item = e.Item
-        '    Dim IDA As String = item("IDA").Text
-        '    Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
-        '    Dim dao As New DAO_DRUG.ClsDBdalcn
-        '    dao.GetDataby_IDA(IDA)
-        '    btn_edit.Style.Add("display", "none")
-        '    Try
-        '        If dao.fields.STATUS_ID = 6 Then
-        '            btn_edit.Style.Add("display", "block")
-        '        End If
-        '    Catch ex As Exception
+        If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
+            Dim item As GridDataItem
+            item = e.Item
+            Dim TR_ID As String = item("TR_ID").Text
+            Dim PROCESS As String = item("PROCESS_ID").Text
 
-        '    End Try
-        '    Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
-        '    btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
-        'End If
+            Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH 'เรียกใช้classตารางไฟล์แนบ
+            dao.GetDataby_TR_ID_And_Process_And_Type(TR_ID, PROCESS, "P") 'ดึงข้อมูลโดยการ where IDA ที่ใช้เป็น DataKeys ของแต่ละ row 
+
+            item("EXCEED_TIME_LIMIT").ForeColor = System.Drawing.Color.Red
+
+            If IsNothing(dao.fields.NAME_FAKE) Then
+            Else
+                Dim btn_Select As LinkButton = DirectCast(item("btn_Select").Controls(0), LinkButton)
+                Dim url As String = "~\PDF\FRM_ATTACH_PREVIEW.aspx\" & dao.fields.NAME_FAKE
+                btn_Select.Attributes.Add("OnClick", url)
+            End If
+
+        End If
     End Sub
 
     Private Sub RadGrid1_NeedDataSource(sender As Object, e As Telerik.Web.UI.GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
-
-
-        If _process = 1027 Then
-            dt = bao.SP_DATA_NYM2_STAFF()
-        ElseIf _process = 1028 Then
-            dt = bao.SP_DATA_NYM3_STAFF()
-        ElseIf _process = 1029 Then
-            dt = bao.SP_DATA_NYM4_STAFF()
-        ElseIf _process = 1030 Then
-            dt = bao.SP_DATA_NYM5_STAFF()
-        ElseIf _process = 1031 Then
-            dt = bao.SP_DATA_NYM6_USER()
-        End If
-
-        'dt = bao.SP_DATA_NYM2_STAFF()
+        dt = bao.SP_STAFF_NYM_PROOF()
         RadGrid1.DataSource = dt
-
-    End Sub
-
-    Protected Sub btn_proof_Click(sender As Object, e As EventArgs) Handles btn_proof.Click
-        Response.Redirect("FRM_STAFF_NYM_PROOF.aspx")
-    End Sub
-    Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
-        If ddl_search.SelectedIndex <> 0 Then
-            Dim dt As New DataTable
-            Dim bao As New BAO.ClsDBSqlcommand
-
-            dt = bao.SP_MAS_NYMSTAFF_PROCESS
-            _process = Left(ddl_search.SelectedValue, 4)
-            btn_proof.Visible = True
-            If ddl_search.SelectedValue = 10291 Then
-                _type = Right(ddl_search.SelectedValue, 1) 'นยม4 ภาครัฐ
-            ElseIf ddl_search.SelectedValue = 10292 Then
-                _type = Right(ddl_search.SelectedValue, 1) 'นยม4 ภาคเอกชน
-            End If
-
-            RadGrid1.Rebind() 'ให้รันฟังก์ชั่นลำดับที่ 3
-        Else
-            alert("กรุณาเลือกประเภท")
-        End If
-    End Sub
-    Sub alert(ByVal text As String)
-        Response.Write("<script type='text/javascript'>alert('" + text + "');</script> ") 'จาวาคำสั่ง Alert
     End Sub
 End Class

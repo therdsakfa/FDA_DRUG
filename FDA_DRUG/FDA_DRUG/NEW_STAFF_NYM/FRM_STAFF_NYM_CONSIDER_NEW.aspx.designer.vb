@@ -11,68 +11,59 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_STAFF_NYM
+Partial Public Class FRM_STAFF_NYM_CONSIDER_NEW
 
     '''<summary>
-    '''lbl_name control.
+    '''Txt_Remark control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_name As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Txt_Remark As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ddl_search control.
+    '''ddl_staff_offer control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddl_search As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddl_staff_offer As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''btn_search control.
+    '''TextBox1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_search As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''lbl_remark control.
+    '''txt_app_date control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_remark As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txt_app_date As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btn_proof control.
+    '''Button1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_proof As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''RadGrid1 control.
+    '''Button2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
-
-    '''<summary>
-    '''btn_reload control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
 End Class

@@ -92,7 +92,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             If Request.QueryString("staff") <> "" Then
                 dao2.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
             Else
-                dao2.fields.STATUS_ID = 0                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                dao2.fields.STATUS_ID = 1                       'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
             End If
             dao2.update()
         ElseIf _process = "1028" Then
@@ -100,7 +100,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             If Request.QueryString("staff") <> "" Then
                 dao3.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
             Else
-                dao3.fields.STATUS_ID = 0                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                dao3.fields.STATUS_ID = 1                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
             End If
             dao3.update()
         ElseIf _process = "1029" Then
@@ -108,7 +108,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             If Request.QueryString("staff") <> "" Then
                 dao4.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
             Else
-                dao4.fields.STATUS_ID = 0                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                dao4.fields.STATUS_ID = 1                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
             End If
             dao4.update()
         End If
@@ -127,11 +127,8 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         '  Dim tr_id As String = ""
         ' tr_id = "DA-" & _Process & "-" & years & "-" & _TR_ID
 
-        ' Dim cls_sop As New CLS_SOP
-        ' cls_sop.BLOCK_SOP(_CLS.CITIZEN_ID, _Process, "2", "ยื่นคำขอ", tr_id, b64)
-        'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "USER", _Process, _CLS.PVCODE, 2, "ส่งเรื่องและรอพิจารณา", "SOP-DRUG-10-" & _Process & "+1", "รับคำขอ", "รอเจ้าหน้าที่รับคำขอ", "STAFF", tr_id, SOP_STATUS:="ยื่นคำขอ")
-
-        AddLogStatus(2, _Process, _CLS.CITIZEN_ID, _IDA)            'LOG STATUS เก็บการ log ไว้ แล้วอัพเข้า base นี้ 
+        
+        AddLogStatusnymimport(2, _process, _CLS.CITIZEN_ID, _IDA)            'LOG STATUS เก็บการ log ไว้ แล้วอัพเข้า base นี้ 
 
         'Session("b64") = Nothing
         alert("ยื่นเรื่องเรียบร้อยแล้ว")
@@ -141,15 +138,29 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');parent.close_modal();</script> ")
     End Sub
     Protected Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
-        Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-        dao.GetDataby_IDA(Integer.Parse(_IDA))
-        dao.fields.STATUS_ID = 7
-        dao.update()
-        AddLogStatus(7, _Process, _CLS.CITIZEN_ID, _IDA)
+        Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+        Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        If _process = "1027" Then
+            dao2.GetDataby_IDA(Integer.Parse(_IDA))
+            dao2.fields.STATUS_ID = 14                                                                            'status ยกเลิกคำขอ ยังไม่มี
+            dao2.update()
+            AddLogStatusnymimport(14, _process, _CLS.CITIZEN_ID, _IDA)                              'น่าจะเอาไว้เก็บการอัพเดท สเตตัส
+        ElseIf _process = "1028" Then
+            dao3.GetDataby_IDA(Integer.Parse(_IDA))
+            dao3.fields.STATUS_ID = 14                                                                            'status ยกเลิกคำขอ ยังไม่มี
+            dao3.update()
+            AddLogStatusnymimport(14, _process, _CLS.CITIZEN_ID, _IDA)
+        ElseIf _process = "1029" Then
+            dao4.GetDataby_IDA(Integer.Parse(_IDA))
+            dao4.fields.STATUS_ID = 14                                                                            'status ยกเลิกคำขอ ยังไม่มี
+            dao4.update()
+            AddLogStatusnymimport(14, _process, _CLS.CITIZEN_ID, _IDA)
+        End If
     End Sub
 
     Protected Sub btn_load_Click(sender As Object, e As EventArgs) Handles btn_load.Click
-        load_PDF(_CLS.PDFNAME, _CLS.FILENAME_PDF)
+        load_PDF(_CLS.PDFNAME, _CLS.FILENAME_PDF)                                                            'คำสั่งโหลด OFD ดขาเครื่งอ
     End Sub
 
     '    ''' <summary>
@@ -238,11 +249,18 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         Dim paths As String = bao._PATH_DEFAULT                                         ' PART ต้องเป็น defult ก่อน 
 
+
+
+
+        ''''''''' แก้ตรงนี้ PDF ไม่ขึ้นนะเพื่อน เรื่องมันเศร้า ขอข้ามไปทำอย่างอื่นก่อน
+
+
+
         dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_process, 1, 0)                     'DAO บรรทัด 2809
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim year As String = Date.Now.Year
-        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym.fields.TR_ID)
-        Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _Process, year, dao_nym.fields.TR_ID)
+        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+        Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym.fields.DL)
         'load_PDF(filename)
         LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
 

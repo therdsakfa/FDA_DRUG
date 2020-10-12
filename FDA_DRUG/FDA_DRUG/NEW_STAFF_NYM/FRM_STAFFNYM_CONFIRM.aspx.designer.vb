@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_NYM_CONFIRM
+Partial Public Class FRM_STAFFNYM_CONFIRM
 
     '''<summary>
     '''hl_reader control.

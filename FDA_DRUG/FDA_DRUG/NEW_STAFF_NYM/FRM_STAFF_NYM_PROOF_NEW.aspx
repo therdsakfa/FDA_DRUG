@@ -1,13 +1,7 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MAIN_STAFF.Master" CodeBehind="FRM_STAFF_NYM3.aspx.vb" Inherits="FDA_DRUG.FRM_STAFF_NYM3" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MAIN_STAFF.Master" CodeBehind="FRM_STAFF_NYM_PROOF_NEW.aspx.vb" Inherits="FDA_DRUG.FRM_STAFF_NYM_PROOF_NEW" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../css/css_radgrid.css" rel="stylesheet" />
-    <style type="text/css">
-        .auto-style1 {
-            left: 0px;
-            top: 0px;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
@@ -99,11 +93,7 @@
      <div class="panel" style="text-align:left ;width:100%">
          <div class="panel-heading panel-title" style="height:70px" > 
             
-             <div  class="auto-style1"><h4> ยายกเว้นทะเบียน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                          <asp:DropDownList ID="ddl_search" runat="server" CssClass="btn-lg" Width="27%" Height="100%"></asp:DropDownList>
-                                      &nbsp;
-                                           <asp:Button ID="btn_search" runat="server" Text="ค้นหา" CssClass="btn-lg" Height="44px" Width="80px" />
-                                      </h4> </div>
+             <div  class="col-lg-4 col-md-4"><h4> หลักฐาน ยายกเว้นทะเบียน</h4> </div>
 
          </div>
     
@@ -115,51 +105,91 @@
            <table style="width:100%;">
                <tr>
                    <td align="right">
-                       <asp:Label ID="lbl_remark" runat="server" Text="*หมายเหตุ เมื่ออัพโหลดคำขออนุญาตผลิตยาแผนปัจจุบันแล้ว ให้ทำการเพิ่มหมวดยาจึงจะสามารถส่งคำขอได้" style="display:none;"></asp:Label>
-                       
-                       <asp:Button ID="btn_proof"  CssClass="btn-link" runat="server" Text="หลักฐาน" Visible="false" />
-                       
+                       <asp:Label ID="lbl_remark" runat="server" Text="*หมายเหตุ เมื่ออัพโหลดคำขออนุญาตผลิตยาแผนปัจจุบันแล้ว ให้ทำการเพิ่มหมวดยาจึงจะสามารถส่งคำขอได้" style="display:none;"></asp:Label>                
                    </td>
                </tr>
            </table>
-           <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="15" AllowFilteringByColumn="True">
+           <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="15">
                <MasterTableView AutoGenerateColumns="False">
                    <Columns>
-                       <telerik:GridBoundColumn DataField="NYM3_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM3_IDA column" HeaderText="IDA"
-                           SortExpression="NYM3_IDA" UniqueName="NYM3_IDA" Display="false">
-                       </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="PROCESS_ID" DataType="System.Int32" FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                            SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM3_DATE_TOP" FilterControlAltText="Filter NYM3_DATE_TOP column"
-                           HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="NYM3_DATE_TOP" UniqueName="NYM3_DATE_TOP">
+                       <telerik:GridBoundColumn DataField="TR_ID" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="เลขดำเนินการ"
+                           SortExpression="TR_ID" UniqueName="TR_ID">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
-                           HeaderText="ประเภท" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
+                       <telerik:GridBoundColumn DataField="rcv_date" DataType="System.Int32" FilterControlAltText="Filter rcv_date column" HeaderText="วันเวลาที่อนุมัต"
+                           SortExpression="rcv_date" UniqueName="rcv_date">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
-                           HeaderText="รหัสบัญชีรายการยา" SortExpression="DL" UniqueName="DL">
+                       <telerik:GridBoundColumn DataField="lcntpcd" FilterControlAltText="Filter lcntpcd column"
+                           HeaderText="ประเภทคำขอ" SortExpression="lcntpcd" UniqueName="lcntpcd">
+                           <HeaderStyle Width="100px" />
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM3_WISH_MED" FilterControlAltText="Filter NYM3_WISH_MED column"
-                           HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM3_WISH_MED" UniqueName="NYM3_WISH_MED">
+                       <telerik:GridBoundColumn DataField="drnm" FilterControlAltText="Filter drnm column"
+                           HeaderText="ชื่อยา (Th/Eng)" SortExpression="drnm" UniqueName="drnm">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM3_NO" FilterControlAltText="Filter NYM3_NO column"
-                           HeaderText="เลขดำเนินการ" SortExpression="NYM3_NO" UniqueName="NYM3_NO">
+                       <telerik:GridBoundColumn DataField="RCV_PROOF" FilterControlAltText="Filter RCV_PROOF column"
+                           HeaderText="สถาณะ" SortExpression="RCV_PROOF" UniqueName="RCV_PROOF">
+                           <HeaderStyle Width="70px" />
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
-                           HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
+                       <telerik:GridBoundColumn DataField="RCV_PROOF_DATE" FilterControlAltText="Filter RCV_PROOF_DATE column"
+                           HeaderText="วันที่ยื่นเอกสาร" SortExpression="RCV_PROOF_DATE" UniqueName="RCV_PROOF_DATE">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="EXCEED_TIME_LIMIT" FilterControlAltText="Filter EXCEED_TIME_LIMIT column"
+                           HeaderText="" SortExpression="EXCEED_TIME_LIMIT" UniqueName="EXCEED_TIME_LIMIT">
                        </telerik:GridBoundColumn>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
                            CommandName="sel" Text="ดูข้อมูล">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
-                       <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
-                           CommandName="_edit" Text="แก้ไขการเสนอลงนาม">
-                           <HeaderStyle Width="70px" />
-                       </telerik:GridButtonColumn>
                    </Columns>
                </MasterTableView>
            </telerik:RadGrid>
+
+           <%--<asp:GridView ID="GV_lcnno" runat="server" Width="100%" DataKeyNames="IDA" CellPadding="4" CssClass="table"
+               ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="20" Font-Size="10pt">
+               <AlternatingRowStyle BackColor="White" />
+               <Columns>
+                   <asp:BoundField DataField="LCNNO_MANUAL" HeaderText="เลขที่ใบอนุญาต" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Left" />
+                   <asp:BoundField DataField="lcntpcd" HeaderText="ประเภท" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Left" />
+
+                   <asp:BoundField DataField="fulladdr" HeaderText="ที่อยู่" ItemStyle-Width="30%" />
+                   <asp:BoundField DataField="lcnsid" HeaderText="รหัสผู้ประกอบการ" ItemStyle-Width="10%" Visible="false" />
+                   <asp:BoundField DataField="house_no" HeaderText="เลขสถานที่" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Left" />
+                   <asp:BoundField DataField="STATUS_NAME" HeaderText="สถานะ" ItemStyle-Width="10%" />
+                   <asp:BoundField DataField="TRANSACTION_UPLOAD" HeaderText="เลขดำเนินการ" ItemStyle-Width="10%" />
+                   <asp:CheckBoxField DataField="pay_stat_chk" HeaderText="การชำระเงิน" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" />
+                   <asp:TemplateField ItemStyle-Width="10%">
+                       <ItemTemplate>
+                           <asp:Button ID="btn_Select" runat="server" Text="ดูข้อมูล" CommandName="sel" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
+                       </ItemTemplate>
+                   </asp:TemplateField>
+                   <asp:TemplateField ItemStyle-Width="20%">
+                       <ItemTemplate>
+                           <asp:Button ID="btn_edit" runat="server" Text="แก้ไขการเสนอลงนาม" CommandName="_edit" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
+                       </ItemTemplate>
+                   </asp:TemplateField>
+                   <asp:TemplateField ItemStyle-Width="20%">
+                       <ItemTemplate>
+                       </ItemTemplate>
+                   </asp:TemplateField>
+               </Columns>
+               <EmptyDataTemplate>
+                   <center>ไม่พบข้อมูล</center>
+               </EmptyDataTemplate>
+               <EditRowStyle BackColor="#2461BF" />
+               <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+               <HeaderStyle BackColor="#8CB340 " Font-Bold="True" ForeColor="White" CssClass="row" />
+               <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+               <RowStyle BackColor="#EFF3FB" CssClass="row" />
+               <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+               <SortedAscendingCellStyle BackColor="#F5F7FB" />
+               <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+               <SortedDescendingCellStyle BackColor="#E9EBEF" />
+               <SortedDescendingHeaderStyle BackColor="#4870BE" />
+           </asp:GridView>--%>
+
+
     </div>
    
 
@@ -169,7 +199,7 @@
         <div class="panel panel-info" style="width: 100%">
             <div class="panel-heading">
                 <div class="modal-title text-center h1 ">
-                    ยายกเว้นทะเบียน<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                    รายละเอียด ใบอนุญาต<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
                 </div>
                 <div class="panel-body panel-info" style="width: 100%">
 

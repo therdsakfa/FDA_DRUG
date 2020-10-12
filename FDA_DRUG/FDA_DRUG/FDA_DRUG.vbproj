@@ -659,7 +659,17 @@
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM3.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx" />
-    <Content Include="STAFF_NYM\FRM_STAFF_NYM3.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_CONFIRM.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_RCV_MANUAL.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_REMARK.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM2.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM3.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM4.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM5.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_SEARCH_NYM.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_PROOF_NEW.aspx" />
+    <Content Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx" />
     <Content Include="XML_DRUG_RGT.asmx" />
     <None Include="DESIGN\Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="DESIGN\Scripts\jquery-1.8.2.js" />
@@ -832,7 +842,6 @@
     <Content Include="MAIN_STAFF\FRM_REPLACEMENT_LICENSE_LOCATION_MENU2.aspx" />
     <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx" />
     <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx" />
-    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_NEW.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_SUBMIT_REQUEST.aspx" />
     <Content Include="PDF\FRM_PDF_VIEW.aspx" />
     <Content Include="PDF\FRM_REPORT_RDLC.aspx" />
@@ -1350,7 +1359,6 @@
     <Content Include="STAFF_LOCATION\FRM_STAFF_LOCATION_REMARK.aspx" />
     <Content Include="STAFF_LOCATION_TO\FRM_LOCATION_STAFF_TO.aspx" />
     <Content Include="STAFF_LOCATION_TO\FRM_STAFF_LOCATION_TO_CONFIRM.aspx" />
-    <Content Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx" />
     <Content Include="STAFF_NYM\FRM_STAFF_NYM.aspx" />
     <Content Include="STAFF_NYM\FRM_STAFF_NYM_CONSIDER.aspx" />
     <Content Include="STAFF_NYM\FRM_STAFF_NYM_PROOF.aspx" />
@@ -3357,6 +3365,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LINQ_FDA_DRUG_IMPORT.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Linq\LINQ_FDA_DRUG_IMPORT.vb">
+      <DependentUpon>LINQ_FDA_DRUG_IMPORT.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Linq\LINQ_FDA_XML_DRUG_ESUB.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3451,11 +3462,52 @@
       <DependentUpon>MAIN_STAFF_MAIN.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_NEW.aspx.designer.vb">
-      <DependentUpon>FRM_STAFF_NYM_NEW.aspx</DependentUpon>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFFNYM_CONFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_STAFFNYM_CONFIRM.aspx</DependentUpon>
     </Compile>
-    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_NEW.aspx.vb">
-      <DependentUpon>FRM_STAFF_NYM_NEW.aspx</DependentUpon>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFFNYM_CONFIRM.aspx.vb">
+      <DependentUpon>FRM_STAFFNYM_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFFNYM_RCV_MANUAL.aspx.designer.vb">
+      <DependentUpon>FRM_STAFFNYM_RCV_MANUAL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFFNYM_RCV_MANUAL.aspx.vb">
+      <DependentUpon>FRM_STAFFNYM_RCV_MANUAL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFFNYM_REMARK.aspx.designer.vb">
+      <DependentUpon>FRM_STAFFNYM_REMARK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFFNYM_REMARK.aspx.vb">
+      <DependentUpon>FRM_STAFFNYM_REMARK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM2.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM2.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM3.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM3.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM4.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM4.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM4.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM5.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM5.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM5.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_SUBMIT_REQUEST.aspx.designer.vb">
@@ -3464,6 +3516,27 @@
     <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_SUBMIT_REQUEST.aspx.vb">
       <DependentUpon>FRM_STAFF_NYM_SUBMIT_REQUEST.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_SEARCH_NYM.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_SEARCH_NYM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_SEARCH_NYM.aspx.vb">
+      <DependentUpon>FRM_STAFF_SEARCH_NYM.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM_CONSIDER_NEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM_CONSIDER_NEW.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_PROOF_NEW.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM_PROOF_NEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_PROOF_NEW.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM_PROOF_NEW.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="PDF\FRM_PDF_VIEW.aspx.designer.vb">
       <DependentUpon>FRM_PDF_VIEW.aspx</DependentUpon>
@@ -3668,11 +3741,11 @@
       <DependentUpon>FRM_RGT_EDIT_STAFF_RECEIVE.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="STAFF_NYM\FRM_STAFF_NYM3.aspx.designer.vb">
-      <DependentUpon>FRM_STAFF_NYM3.aspx</DependentUpon>
+    <Compile Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_NYM_CONFIRM.aspx</DependentUpon>
     </Compile>
-    <Compile Include="STAFF_NYM\FRM_STAFF_NYM3.aspx.vb">
-      <DependentUpon>FRM_STAFF_NYM3.aspx</DependentUpon>
+    <Compile Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx.vb">
+      <DependentUpon>FRM_NYM_CONFIRM.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="SUBSTITUTE_NCT\FRM_SUBSTITUTE_NCT_MAIN.aspx.designer.vb">
@@ -6401,13 +6474,6 @@
     <Compile Include="STAFF_LOCATION_TO\FRM_STAFF_LOCATION_TO_CONFIRM.aspx.vb">
       <DependentUpon>FRM_STAFF_LOCATION_TO_CONFIRM.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx.designer.vb">
-      <DependentUpon>FRM_NYM_CONFIRM.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx.vb">
-      <DependentUpon>FRM_NYM_CONFIRM.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="STAFF_NYM\FRM_STAFF_NYM.aspx.designer.vb">
       <DependentUpon>FRM_STAFF_NYM.aspx</DependentUpon>
