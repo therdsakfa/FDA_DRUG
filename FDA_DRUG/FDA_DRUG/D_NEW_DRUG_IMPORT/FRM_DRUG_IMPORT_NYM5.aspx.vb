@@ -123,7 +123,7 @@ Public Class FRM_DRUG_IMPORT_NYM5
         'Else
         '    dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
         'End If
-        dt = bao.SP_DATA_NYM5_USER()
+        dt = bao.SP_DATA_NYM5_USER(_DL)
         RadGrid1.DataSource = dt
         '  Dim IDGroup As Integer = 0   เอาคืนนน
         ' Try                           เอาคืนนน

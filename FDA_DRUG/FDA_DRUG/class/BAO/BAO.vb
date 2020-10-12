@@ -1949,6 +1949,19 @@ Namespace BAO
             Dim sql As String = "exec SP_DATA_NYM2_ALL_DATA @DL= '" & dl & "' "
             Dim dt As New DataTable
             dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+            Try
+                dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+                If dt.Rows.Count() > 1 Then
+                    '  dt = AddDatatable(dt)
+                    dt.Clear()
+                End If
+            Catch ex As Exception
+
+            End Try
+            If dt.Rows.Count() > 1 Then
+                'dt = AddDatatable(dt)
+                dt.Clear()
+            End If
             Return dt
         End Function
         Public Function SP_DATA_NYM2_USER(ByVal dl As String) As DataTable   'ดึงข้อมูล นยม 2 มาทั้งหมดที่จำเป็น 
@@ -4984,51 +4997,39 @@ Namespace BAO
 
         '    Return dt
         'End Function
-        Public Function SP_DATA_NYM3_USER() As DataTable                            ' อย่า ลืมเปลี่ยน 
-            Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM3_USER"
-            Dim dt As New DataTable
-            Try
-                dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
-            Catch ex As Exception
-
-            End Try
-
-
-            Return dt
-        End Function
-        'Public Function SP_DATA_NYM2_USER(ByVal dl As String) As DataTable   'ดึงข้อมูล นยม 2 มาทั้งหมดที่จำเป็น 
+        'Public Function SP_DATA_NYM3_USER() As DataTable                            ' อย่า ลืมเปลี่ยน 
         '    Dim clsds As New ClassDataset
-        '    Dim sql As String = "exec SP_DATA_NYM2_USER @DL= '" & dl & "' "
+        '    Dim sql As String = "exec SP_DATA_NYM3_USER"
         '    Dim dt As New DataTable
-        '    dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+        '    Try
+        '        dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+        '    Catch ex As Exception
+
+        '    End Try
+
+
         '    Return dt
         'End Function
-
-        Public Function SP_DATA_NYM4_USER() As DataTable                            ' อย่า ลืมเปลี่ยน
+        Public Function SP_DATA_NYM3_USER(ByVal dl As String) As DataTable   'ดึงข้อมูล นยม 2 มาทั้งหมดที่จำเป็น 
             Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM4_USER"
+            Dim sql As String = "exec SP_DATA_NYM3_USER @DL= '" & dl & "' "
             Dim dt As New DataTable
-            Try
-                dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
-            Catch ex As Exception
-
-            End Try
-
-
+            dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
             Return dt
         End Function
-        Public Function SP_DATA_NYM5_USER() As DataTable
+
+        Public Function SP_DATA_NYM4_USER(ByVal dl As String) As DataTable   'ดึงข้อมูล นยม 2 มาทั้งหมดที่จำเป็น 
             Dim clsds As New ClassDataset
-            Dim sql As String = "exec SP_DATA_NYM5_USER"
+            Dim sql As String = "exec SP_DATA_NYM4_USER @DL= '" & dl & "' "
             Dim dt As New DataTable
-            Try
-                dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
-            Catch ex As Exception
-
-            End Try
-
-
+            dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+            Return dt
+        End Function
+        Public Function SP_DATA_NYM5_USER(ByVal dl As String) As DataTable   'ดึงข้อมูล นยม 2 มาทั้งหมดที่จำเป็น 
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DATA_NYM5_USER @DL= '" & dl & "' "
+            Dim dt As New DataTable
+            dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
             Return dt
         End Function
         Public Function SP_DATA_NYM6_USER() As DataTable
