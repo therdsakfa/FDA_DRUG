@@ -1,230 +1,191 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MAIN_STAFF.Master" CodeBehind="FRM_STAFF_NYM_PROOF.aspx.vb" Inherits="FDA_DRUG.FRM_STAFF_NYM_PROOF" %>
-<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
-<asp:Content ID = "Content1" ContentPlaceHolderID="head" runat="server">
-    <link href = "../css/css_radgrid.css" rel="stylesheet" />
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+﻿Imports Telerik.Web.UI
 
-    <script type="text/javascript">
+Public Class FRM_STAFF_NYM_PROOF_NEW
+    Inherits System.Web.UI.Page
+    Private _CLS As New CLS_SESSION
+    Private _process As String
+    Private _pvncd As Integer
+    Sub RunSession()
+        Try
+            _CLS = Session("CLS")
+        Catch ex As Exception
+            Response.Redirect("http://privus.fda.moph.go.th/")
+        End Try
+    End Sub
 
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        RunSession()
+        get_pvncd()
+        If Not IsPostBack Then
+            'load_GV_lcnno()
+        End If
+    End Sub
+    Sub get_pvncd()
+        '  _pvncd = Personal_Province(_CLS.CITIZEN_ID, _CLS.Groups)
+        Try
+            _pvncd = Personal_Province_NEW(_CLS.CITIZEN_ID, _CLS.CITIZEN_ID_AUTHORIZE, _CLS.GROUPS)
+            If _pvncd = 0 Then
+                _pvncd = _CLS.PVCODE
+            End If
+        Catch ex As Exception
+            _pvncd = 10
+        End Try
+    End Sub
+    'Protected Sub btn_download_Click(sender As Object, e As EventArgs) Handles btn_download.Click
 
+    '    OpenPopupName("POPUP_LCN_DOWNLOAD.aspx")
+    'End Sub
 
-          $(document).ready(function () {
-              //$(window).load(function () {
-              //    $.ajax({
-              //        type: 'POST',
-              //        data: { submit: true },
-              //        success: function (result) {
-              //            $('#spinner').fadeOut(1);
+    'Protected Sub btn_upload_Click(sender As Object, e As EventArgs) Handles btn_upload.Click
+    '    OpenPopupName("POPUP_LCN_UPLOAD.aspx")
+    'End Sub
+    Sub OpenPopupName(ByVal url As String)
+        Dim strPopup As String = " window.open('" + url + "', 'popup', 'width=600,height=330,left=250,top=140,toolbar=1,status=1');"
+        Page.ClientScript.RegisterStartupScript(Page.GetType(), "clientScript", strPopup, True)
+    End Sub
+    'Sub load_GV_lcnno()
+    '    Dim bao As New BAO.ClsDBSqlcommand
+    '    Dim dt As New DataTable
+    '    'SP_STAFF_DALCN_BY_PVNCD
+    '    If _pvncd = 10 Then
+    '        dt = bao.SP_STAFF_DALCN()
+    '    Else
+    '        dt = bao.SP_STAFF_DALCN_BY_PVNCD(_pvncd)
+    '    End If
+    '    Dim IDGroup As Integer = 0
+    '    Try
+    '        IDGroup = _CLS.GROUPS
+    '    Catch ex As Exception
 
-              //        }
-              //    });
-              //});
-
-              function CloseSpin() {
-                  $('#spinner').toggle('slow');
-              }
-
-              $('#ContentPlaceHolder1_btn_upload').click(function () {
-                  Popups('POPUP_LCN_UPLOAD_ATTACH_SELECT.aspx');
-                  return false;
-              });
-
-              $('#ContentPlaceHolder1_btn_download').click(function () {
-                  Popups('POPUP_LCN_DOWNLOAD_DRUG.aspx');
-                  return false;
-              });
-
-              function Popups(url) { // สำหรับทำ Div Popup
-
-                  $('#myModal').modal('toggle'); // เป็นคำสั่งเปิดปิด
-                  var i = $('#f1'); // ID ของ iframe   
-                  i.attr("src", url); //  url ของ form ที่จะเปิด
-              }
-
-
-            
-
-
-
-          });
-
-          function Popups2(url) { // สำหรับทำ Div Popup
-
-              $('#myModal').modal('toggle'); // เป็นคำสั่งเปิดปิด
-              var i = $('#f1'); // ID ของ iframe   
-              i.attr("src", url); //  url ของ form ที่จะเปิด
-          }
-          function Popups3(url) { // สำหรับทำ Div Popup
-
-              $('#myModal2').modal('toggle'); // เป็นคำสั่งเปิดปิด
-              var i = $('#f2'); // ID ของ iframe   
-              i.attr("src", url); //  url ของ form ที่จะเปิด
-          }
-          function spin_space() { // คำสั่งสั่งปิด PopUp
-              //    alert('123456');
-              $('#spinner').toggle('slow');
-              //$('#myModal').modal('hide');
-              //$('#ContentPlaceHolder1_Button2').click(); // ตัวอย่างให้คำสั่งปุ่มที่ซ่อนอยู่ Click
-
-          }
-          function close_modal() { // คำสั่งสั่งปิด PopUp
-              $('#myModal').modal('hide');
-              $('#ContentPlaceHolder1_btn_reload').click(); // ตัวอย่างให้คำสั่งปุ่มที่ซ่อนอยู่ Click
-          }
-
-          function close_modal2() { // คำสั่งสั่งปิด PopUp
-              $('#myModal2').modal('hide');
-              $('#ContentPlaceHolder1_btn_reload').click(); // ตัวอย่างให้คำสั่งปุ่มที่ซ่อนอยู่ Click
-          }
-        </script>
-
-    <%--  <div style="text-align:center;">  เลขที่ใบอนุญาตสถานที่&nbsp;&nbsp;&nbsp;&nbsp;  <asp:DropDownList ID="ddl_lcnno" runat="server" CssClass="input-lg" Width="20%"></asp:DropDownList> &nbsp;
-       <asp:Button ID="Btn_ok" runat="server" Text="ยืนยัน" CssClass="btn-info" Width="67px"/>
-        <br/>
-        </div>--%>
-      <div id="spinner" style=" background-color:transparent; display:none; ">
-            <img src="../imgs/spinner.gif" alt="Loading" style="position: absolute; top: 120px; left: 293px; height: 185px; width: 207px;"/>
-        </div>
+    '    End Try
+    '    If IDGroup = 21020 Then
+    '        GV_lcnno.DataSource = dt
+    '    ElseIf IDGroup = 63346 Then
+    '        GV_lcnno.DataSource = dt.Select("STATUS_ID <= 2")
+    '    ElseIf IDGroup = 63347 Then
+    '        GV_lcnno.DataSource = dt.Select("STATUS_ID > 2 and STATUS_ID <= 6")
+    '    ElseIf IDGroup = 63348 Then
+    '        GV_lcnno.DataSource = dt.Select("STATUS_ID > 6")
+    '    End If
+    '    GV_lcnno.DataBind()
+    'End Sub
 
 
-        <div class="h3" style="padding-left:5%;"><asp:Label ID="lbl_name" runat="server" Visible="false" Text=""></asp:Label></div>
+#Region "GRIDVIEW"
+    'Protected Sub GV_lcnno_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles GV_lcnno.RowDataBound
+    '    If e.Row.RowType = DataControlRowType.DataRow Then
 
-        <div class="panel" style="text-align:left ;width:100%">
-            <div class="panel-heading panel-title" style="height:70px">
+    '        Dim btn_edit As Button = DirectCast(e.Row.FindControl("btn_edit"), Button)
+    '        Dim index As Integer = e.Row.RowIndex
+    '        'Dim str_ID As String = GV_lcnno.DataKeys.Item(index).Value.ToString()
+    '        Dim str_ID As String = GV_lcnno.DataKeys.Item(index)("IDA").ToString()
+    '        Dim dao As New DAO_DRUG.ClsDBdalcn
+    '        dao.GetDataby_IDA(Integer.Parse(str_ID))
+    '        btn_edit.Style.Add("display", "none")
+    '        Try
+    '            If dao.fields.STATUS_ID = 6 Then
+    '                btn_edit.Style.Add("display", "block")
+    '            End If
+    '        Catch ex As Exception
 
-                <div class="col-lg-4 col-md-4"><h4> หลักฐาน ยายกเว้นทะเบียน</h4></div>
+    '        End Try
+    '        Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & str_ID
+    '        btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
 
-            </div>
+    '    End If
+    'End Sub
 
-        </div>
+    'Protected Sub GV_lcnno_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles GV_lcnno.RowCommand
+    '    Dim int_index As Integer = Convert.ToInt32(e.CommandArgument)
+    '    Dim str_ID As String = GV_lcnno.DataKeys.Item(int_index)("IDA").ToString()
+    '    Dim dao As New DAO_DRUG.ClsDBdalcn
 
+    '    If e.CommandName = "sel" Then
+    '        dao.GetDataby_IDA(str_ID)
+    '        Dim tr_id As String= 0
+    '        Try
+    '            tr_id = dao.fields.TR_ID
+    '        Catch ex As Exception
 
+    '        End Try
 
-        <div class="panel panel-body" style="width:100%;padding-left:5%;">
-            <table style="width:100%;">
-                <tr>
-                    <td align="right">
-                        <asp:Label ID="lbl_remark" runat="server" Text="*หมายเหตุ เมื่ออัพโหลดคำขออนุญาตผลิตยาแผนปัจจุบันแล้ว ให้ทำการเพิ่มหมวดยาจึงจะสามารถส่งคำขอได้" style="display:none;"></asp:Label>
-                    </td>
-                </tr>
-            </table>
-            <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="15">
-                <MasterTableView AutoGenerateColumns="False">
-                    <Columns>
-                        <telerik:GridBoundColumn DataField="PROCESS_ID" DataType="System.Int32" FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
-                            SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
-                        </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn DataField="TR_ID" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="เลขดำเนินการ"
-                            SortExpression="TR_ID" UniqueName="TR_ID">
-                        </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn DataField="rcv_date" DataType="System.Int32" FilterControlAltText="Filter rcv_date column" HeaderText="วันเวลาที่อนุมัต"
-                            SortExpression="rcv_date" UniqueName="rcv_date">
-                        </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn DataField="lcntpcd" FilterControlAltText="Filter lcntpcd column"
-                            HeaderText="ประเภทคำขอ" SortExpression="lcntpcd" UniqueName="lcntpcd">
-                            <HeaderStyle Width="100px"/>
-                        </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn DataField="drnm" FilterControlAltText="Filter drnm column"
-                            HeaderText="ชื่อยา (Th/Eng)" SortExpression="drnm" UniqueName="drnm">
-                        </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn DataField="RCV_PROOF" FilterControlAltText="Filter RCV_PROOF column"
-                            HeaderText="สถาณะ" SortExpression="RCV_PROOF" UniqueName="RCV_PROOF">
-                            <HeaderStyle Width="70px"/>
-                        </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn DataField="RCV_PROOF_DATE" FilterControlAltText="Filter RCV_PROOF_DATE column"
-                            HeaderText="วันที่ยื่นเอกสาร" SortExpression="RCV_PROOF_DATE" UniqueName="RCV_PROOF_DATE">
-                        </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn DataField="EXCEED_TIME_LIMIT" FilterControlAltText="Filter EXCEED_TIME_LIMIT column"
-                            HeaderText="" SortExpression="EXCEED_TIME_LIMIT" UniqueName="EXCEED_TIME_LIMIT">
-                        </telerik:GridBoundColumn>
-                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
-                            CommandName="sel" Text="ดูข้อมูล">
-                            <HeaderStyle Width="70px"/>
-                        </telerik:GridButtonColumn>
-                    </Columns>
-                </MasterTableView>
-            </telerik:RadGrid>
+    '        Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
+    '        dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
+    '        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_LCN_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & dao_pro.fields.PROCESS_ID & "');", True)
 
-            <%--<asp:GridView ID="GV_lcnno" runat="server" Width="100%" DataKeyNames="IDA" CellPadding="4" CssClass="table"
-                    ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="20" Font-Size="10pt">
-                <AlternatingRowStyle BackColor="White"/>
-                <Columns>
-                    <asp:BoundField DataField="LCNNO_MANUAL" HeaderText="เลขที่ใบอนุญาต" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Left"/>
-                    <asp:BoundField DataField="lcntpcd" HeaderText="ประเภท" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Left"/>
+    '    End If
 
-                    <asp:BoundField DataField="fulladdr" HeaderText="ที่อยู่" ItemStyle-Width="30%"/>
-                    <asp:BoundField DataField="lcnsid" HeaderText="รหัสผู้ประกอบการ" ItemStyle-Width="10%" Visible="false"/>
-                    <asp:BoundField DataField="house_no" HeaderText="เลขสถานที่" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Left"/>
-                    <asp:BoundField DataField="STATUS_NAME" HeaderText="สถานะ" ItemStyle-Width="10%"/>
-                    <asp:BoundField DataField="TRANSACTION_UPLOAD" HeaderText="เลขดำเนินการ" ItemStyle-Width="10%"/>
-                    <asp:CheckBoxField DataField="pay_stat_chk" HeaderText="การชำระเงิน" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center"/>
-                    <asp:TemplateField ItemStyle-Width="10%">
-                        <ItemTemplate>
-                            <asp:Button ID="btn_Select" runat="server" Text="ดูข้อมูล" CommandName="sel" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
-                       </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField ItemStyle-Width="20%">
-                        <ItemTemplate>
-                            <asp:Button ID="btn_edit" runat="server" Text="แก้ไขการเสนอลงนาม" CommandName="_edit" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
-                       </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField ItemStyle-Width="20%">
-                        <ItemTemplate>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
-                <EmptyDataTemplate>
-                    <center>ไม่พบข้อมูล</center>
-                </EmptyDataTemplate>
-                <EditRowStyle BackColor="#2461BF"/>
-                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White"/>
-                <HeaderStyle BackColor="#8CB340 " Font-Bold="True" ForeColor="White" CssClass="row"/>
-                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center"/>
-                <RowStyle BackColor="#EFF3FB" CssClass="row"/>
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333"/>
-                <SortedAscendingCellStyle BackColor="#F5F7FB"/>
-                <SortedAscendingHeaderStyle BackColor="#6D95E1"/>
-                <SortedDescendingCellStyle BackColor="#E9EBEF"/>
-                <SortedDescendingHeaderStyle BackColor="#4870BE"/>
-                </asp:GridView>--%>
+    'End Sub
 
 
-    </div>
+    'Protected Sub GV_lcnno_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles GV_lcnno.PageIndexChanging
+    '    GV_lcnno.PageIndex = e.NewPageIndex
+    '    load_GV_lcnno()
+    'End Sub
 
+    Protected Sub btn_reload_Click(sender As Object, e As EventArgs) Handles btn_reload.Click
+        RadGrid1.Rebind()
+        'load_GV_lcnno()
+    End Sub
+#End Region
 
+    Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand
+        If TypeOf e.Item Is GridDataItem Then
+            Dim item As GridDataItem = e.Item
 
+            'drsamp IDA
+            Dim tr_id As String = 0
+            Try
+                tr_id = item("TR_ID").Text
+            Catch ex As Exception
 
-        <div class="modal fade " id="myModal">
-            <div class="panel panel-info" style="width: 100%">
-                <div class="panel-heading">
-                    <div class="modal-title text-center h1 ">
-                    รายละเอียด ใบอนุญาต<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
-                    </div>
-                    <div class="panel-body panel-info" style="width: 100%">
+            End Try
 
-                        <iframe id="f1" style="width: 100%; height: 600px;"></iframe>
+            Dim PROCESS As Integer = 0
+            Try
+                PROCESS = item("PROCESS_ID").Text
+            Catch ex As Exception
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade " id="myModal2">
-            <div class="panel panel-info" style="width: 100%">
-                <div class="panel-heading">
-                    <div class="modal-title text-center h1 ">
-                    เสนอลงนาม
-                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
-                    </div>
-                    <div class="panel-body panel-info" style="width: 100%">
+            End Try
 
-                        <iframe id="f2" style="width: 100%; height: 600px;"></iframe>
+            If e.CommandName = "sel" Then
+                Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH
+                dao.GetDataby_TR_ID_And_Process_And_Type(tr_id, PROCESS, "P")
+                If IsNothing(dao.fields.NAME_FAKE) Then
+                Else
+                    Response.Redirect("~\PDF\FRM_ATTACH_PREVIEW.aspx\" & dao.fields.NAME_FAKE & "")
+                End If
+            End If
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <asp:Button ID="btn_reload" runat="server" Text="" style="display:none;"/>
+        End If
+    End Sub
 
-    &nbsp;
-</asp:Content>
+    Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound
+        If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
+            Dim item As GridDataItem
+            item = e.Item
+            Dim TR_ID As String = item("TR_ID").Text
+            Dim PROCESS As String = item("PROCESS_ID").Text
+
+            Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH 'เรียกใช้classตารางไฟล์แนบ
+            dao.GetDataby_TR_ID_And_Process_And_Type(TR_ID, PROCESS, "P") 'ดึงข้อมูลโดยการ where IDA ที่ใช้เป็น DataKeys ของแต่ละ row 
+
+            item("EXCEED_TIME_LIMIT").ForeColor = System.Drawing.Color.Red
+
+            If IsNothing(dao.fields.NAME_FAKE) Then
+            Else
+                Dim btn_Select As LinkButton = DirectCast(item("btn_Select").Controls(0), LinkButton)
+                Dim url As String = "~\PDF\FRM_ATTACH_PREVIEW.aspx\" & dao.fields.NAME_FAKE
+                btn_Select.Attributes.Add("OnClick", url)
+            End If
+
+        End If
+    End Sub
+
+    Private Sub RadGrid1_NeedDataSource(sender As Object, e As Telerik.Web.UI.GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
+        Dim bao As New BAO.ClsDBSqlcommand
+        Dim dt As New DataTable
+        dt = bao.SP_STAFF_NYM_PROOF()
+        RadGrid1.DataSource = dt
+    End Sub
+End Class

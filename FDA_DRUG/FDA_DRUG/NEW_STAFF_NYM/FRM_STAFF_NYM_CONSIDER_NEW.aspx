@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="FRM_STAFF_NYM_CONSIDER.aspx.vb" Inherits="FDA_DRUG.FRM_STAFF_NYM_CONSIDER" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="FRM_STAFF_NYM_CONSIDER_NEW.aspx.vb" Inherits="FDA_DRUG.FRM_STAFF_NYM_CONSIDER_NEW" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  

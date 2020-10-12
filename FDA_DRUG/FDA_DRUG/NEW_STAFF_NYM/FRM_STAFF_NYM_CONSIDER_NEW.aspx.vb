@@ -1,4 +1,4 @@
-﻿Public Class FRM_STAFF_NYM_CONSIDER
+﻿Public Class FRM_STAFF_NYM_CONSIDER_NEW
     Inherits System.Web.UI.Page
 
     Private _TR_ID As Integer

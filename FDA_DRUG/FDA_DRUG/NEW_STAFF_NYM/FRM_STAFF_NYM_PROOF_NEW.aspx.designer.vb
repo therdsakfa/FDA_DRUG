@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_STAFF_NYM_PROOF
+Partial Public Class FRM_STAFF_NYM_PROOF_NEW
 
     '''<summary>
     '''lbl_name control.

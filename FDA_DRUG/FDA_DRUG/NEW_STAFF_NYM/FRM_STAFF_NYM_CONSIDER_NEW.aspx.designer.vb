@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_STAFF_NYM_CONSIDER
+Partial Public Class FRM_STAFF_NYM_CONSIDER_NEW
 
     '''<summary>
     '''Txt_Remark control.
