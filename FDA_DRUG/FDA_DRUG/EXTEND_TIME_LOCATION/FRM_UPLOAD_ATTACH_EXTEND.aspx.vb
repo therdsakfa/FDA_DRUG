@@ -14,39 +14,56 @@
         Catch ex As Exception
 
         End Try
-        _type = _type + 1
-        ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload1, Label1.Text)
-        _type = _type + 1
-        ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload2, Label2.Text)
-        _type = _type + 1
-        ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload3, Label3.Text)
-        _type = _type + 1
-        ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload4, Label4.Text)
-        _type = _type + 1
-        ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload6, Label6.Text)
-        _type = _type + 1
-        ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload7, Label7.Text)
-        _type = _type + 1
-        ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload8, Label8.Text)
-        _type = _type + 1
-        ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload9, Label9.Text)
+        If FileUpload1.HasFile Then
+            _type = _type + 1
+            ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload1, Label1.Text)
+        End If
+        If FileUpload2.HasFile Then
+            _type = _type + 1
+            ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload2, Label2.Text)
+        End If
+        If FileUpload3.HasFile Then
+            _type = _type + 1
+            ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload3, Label3.Text)
+        End If
+        If FileUpload4.HasFile Then
+            _type = _type + 1
+            ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload4, Label4.Text)
+        End If
+        If FileUpload6.HasFile Then
+            _type = _type + 1
+            ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload6, Label6.Text)
+        End If
+        If FileUpload7.HasFile Then
+            _type = _type + 1
+            ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload7, Label7.Text)
+        End If
+        If FileUpload8.HasFile Then
+            _type = _type + 1
+            ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload8, Label8.Text)
+        End If
+        If FileUpload9.HasFile Then
+            _type = _type + 1
+            ATTACH(Request.QueryString("TR_ID"), Request.QueryString("process"), con_year(Date.Now.Year), _type, FileUpload9, Label9.Text)
+        End If
+
         alert("อัพโหลดไฟล์เรียบร้อยแล้ว")
     End Sub
 
     Private Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>alert('" + text + "');parent.close_modal();</script> ")
     End Sub
-    Sub ATTACH(ByVal transection As String, ByVal PROCESS_ID As String, ByVal year As String, ByVal type As String, ByRef file_upload As FileUpload, ByVal _des As String) 'ปรับ เพิ่มtype
+    Sub ATTACH(ByVal transection As String, ByVal PROCESS_ID As String, ByVal year As String, ByVal type As String, ByVal file_upload As FileUpload, ByVal _des As String) 'ปรับ เพิ่มtype
 
         If file_upload.HasFile Then 'เช็คว่ามีการเบราไฟล์แล้ว
             Dim bao As New BAO.AppSettings
             Dim NAME_FAKE As String 'ตัวแปรเก็บชื่อไฟล์ที่เบรา
             Dim NAME_REAL As String 'ตัวแปรเก็บชื่อไฟล์ที่แปลงเพื่อให้สัมพันธ์กับระบบ
-            NAME_REAL = FileUpload1.FileName 'NAME_REALเก็บชื่อไฟล์ที่เบรา
+            NAME_REAL = file_upload.FileName 'NAME_REALเก็บชื่อไฟล์ที่เบรา
             Dim Array_NAME_REAL() As String = Split(NAME_REAL, ".")
             Dim Last_Length As Integer = Array_NAME_REAL.Length - 1 'ดึงนามสกุลไฟล์ที่เบรามาใช้กับ NAME_FAKE 
-            NAME_FAKE = "DA-" & PROCESS_ID & "-" & year & "-" & transection & "-" & type & "." & System.IO.Path.GetExtension(FileUpload1.FileName) 'Array_NAME_REAL(Last_Length).ToString() 'สร้างชื่อไฟล์ใหม่โดยใช้นามสกุลไฟล์เดิม
-            FileUpload1.SaveAs(bao._PATH_DEFAULT & "upload\" & NAME_FAKE) 'บันทึกไฟล์ลงserverโดยใช้ชื่อที่สรางขึ้นใหม่
+            NAME_FAKE = "DA-" & PROCESS_ID & "-" & year & "-" & transection & "-" & type & "." & System.IO.Path.GetExtension(file_upload.FileName) 'Array_NAME_REAL(Last_Length).ToString() 'สร้างชื่อไฟล์ใหม่โดยใช้นามสกุลไฟล์เดิม
+            file_upload.SaveAs(bao._PATH_DEFAULT & "upload\" & NAME_FAKE) 'บันทึกไฟล์ลงserverโดยใช้ชื่อที่สรางขึ้นใหม่
 
             If _des = "อื่นๆ" Then
                 _des = TextBox1.Text

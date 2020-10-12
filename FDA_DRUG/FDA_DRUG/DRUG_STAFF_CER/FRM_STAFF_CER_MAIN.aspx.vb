@@ -107,7 +107,7 @@ Public Class FRM_STAFF_CER_MAIN
             Dim process_id As String = ""
             If e.CommandName = "sel" Then
                 dao.GetDataby_IDA2(IDA)
-                Dim tr_id As String = 0
+                Dim tr_id As String = ""
                 Try
                     process_id = dao.fields.PROCESS_ID
                 Catch ex As Exception
