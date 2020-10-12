@@ -1350,7 +1350,9 @@
     <Content Include="STAFF_LOCATION\FRM_STAFF_LOCATION_REMARK.aspx" />
     <Content Include="STAFF_LOCATION_TO\FRM_LOCATION_STAFF_TO.aspx" />
     <Content Include="STAFF_LOCATION_TO\FRM_STAFF_LOCATION_TO_CONFIRM.aspx" />
-    <Content Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx" />
+    <Content Include="..\..\..\back up\FRM_NYM_CONFIRM.aspx">
+      <Link>STAFF_NYM\FRM_NYM_CONFIRM.aspx</Link>
+    </Content>
     <Content Include="STAFF_NYM\FRM_STAFF_NYM.aspx" />
     <Content Include="STAFF_NYM\FRM_STAFF_NYM_CONSIDER.aspx" />
     <Content Include="STAFF_NYM\FRM_STAFF_NYM_PROOF.aspx" />
@@ -6405,12 +6407,14 @@
       <DependentUpon>FRM_STAFF_LOCATION_TO_CONFIRM.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx.designer.vb">
+    <Compile Include="..\..\..\back up\FRM_NYM_CONFIRM.aspx.designer.vb">
       <DependentUpon>FRM_NYM_CONFIRM.aspx</DependentUpon>
+      <Link>STAFF_NYM\FRM_NYM_CONFIRM.aspx.designer.vb</Link>
     </Compile>
-    <Compile Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx.vb">
+    <Compile Include="..\..\..\back up\FRM_NYM_CONFIRM.aspx.vb">
       <DependentUpon>FRM_NYM_CONFIRM.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+      <Link>STAFF_NYM\FRM_NYM_CONFIRM.aspx.vb</Link>
     </Compile>
     <Compile Include="STAFF_NYM\FRM_STAFF_NYM.aspx.designer.vb">
       <DependentUpon>FRM_STAFF_NYM.aspx</DependentUpon>
