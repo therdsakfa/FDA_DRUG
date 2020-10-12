@@ -714,6 +714,87 @@
       <Column Name="STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.FDA_DRUG_IMPORT_NYM_1" Member="FDA_DRUG_IMPORT_NYM_1s">
+    <Type Name="FDA_DRUG_IMPORT_NYM_1">
+      <Column Name="NYM1_IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CITIZEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TOKEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NYM1_DATE_TOP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NYM1_NAME_RECEIVE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_ALLOW_PLAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM1_WRITE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_WRITE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NYM1_TITLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM1_FULLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_POSITION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_ALLOW_NAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM1_ALLOW_NAME_DETAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_ALLOW_NAME_LICENSE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_LICENSE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_ADDRESS_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NYM1_ADDRESS_SOI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_ADDRESS_STREET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_ADDRESS_MOO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_ADDRESS_DISTRICT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_ADDRESS_AMPHUR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_ADDRESS_PROVINCE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_ADDRESS_PHONE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_ADDRESS_FAX" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_RESERCH_NAME_TH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_RESERCH_NAME_EN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_RESERCH_CODE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_RESERCH_ADDRESS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_MED_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_MED_FORMAT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_MED_NUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM1_MED_DETAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_NUMBER_PAGE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM1_FINGERPRINT_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_RCVNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM1_DL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACTIVEFACT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UPDATE_BY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM1_IDENTIFY_STAFF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CONSIDER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STAFF_RECEIVE_IDEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOG_STATUS_IMPORT" Member="LOG_STATUS_IMPORTs">
+    <Type Name="LOG_STATUS_IMPORT">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STATUS_ALL_IMPORT" Member="STATUS_ALL_IMPORTs">
+    <Type Name="STATUS_ALL_IMPORT">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="STATUS_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_GROUP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="READ_ONLY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CAL_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GROUP_DDL_SHOW" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SEQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_NAME_STAFF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SOP_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.FDA_DRUG_IMPORT_NYM_2" Member="FDA_DRUG_IMPORT_NYM_2s">
     <Type Name="FDA_DRUG_IMPORT_NYM_2">
       <Column Name="NYM2_IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -794,87 +875,7 @@
       <Column Name="CONSIDER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="STAFF_RECEIVE_IDEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.FDA_DRUG_IMPORT_NYM_1" Member="FDA_DRUG_IMPORT_NYM_1s">
-    <Type Name="FDA_DRUG_IMPORT_NYM_1">
-      <Column Name="NYM1_IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CITIZEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TOKEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NYM1_DATE_TOP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NYM1_NAME_RECEIVE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_ALLOW_PLAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM1_WRITE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_WRITE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NYM1_TITLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM1_FULLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_POSITION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_ALLOW_NAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM1_ALLOW_NAME_DETAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_ALLOW_NAME_LICENSE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_LICENSE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_ADDRESS_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NYM1_ADDRESS_SOI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_ADDRESS_STREET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_ADDRESS_MOO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_ADDRESS_DISTRICT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_ADDRESS_AMPHUR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_ADDRESS_PROVINCE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_ADDRESS_PHONE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_ADDRESS_FAX" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_RESERCH_NAME_TH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_RESERCH_NAME_EN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_RESERCH_CODE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_RESERCH_ADDRESS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_MED_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_MED_FORMAT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_MED_NUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM1_MED_DETAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_NUMBER_PAGE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM1_FINGERPRINT_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_RCVNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM1_DL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ACTIVEFACT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="CREATE_BY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="UPDATE_BY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM1_IDENTIFY_STAFF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CONSIDER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="STAFF_RECEIVE_IDEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.LOG_STATUS_IMPORT" Member="LOG_STATUS_IMPORTs">
-    <Type Name="LOG_STATUS_IMPORT">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="STATUS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.STATUS_ALL_IMPORT" Member="STATUS_ALL_IMPORTs">
-    <Type Name="STATUS_ALL_IMPORT">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="STATUS_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="STATUS_GROUP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="READ_ONLY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CAL_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PROCESS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GROUP_DDL_SHOW" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SEQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="STATUS_NAME_STAFF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="SOP_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
