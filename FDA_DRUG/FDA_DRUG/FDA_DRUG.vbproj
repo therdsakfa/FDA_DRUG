@@ -664,6 +664,8 @@
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM4.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM5.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_SEARCH_NYM.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_PROOF_NEW.aspx" />
     <Content Include="XML_DRUG_RGT.asmx" />
     <None Include="DESIGN\Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="DESIGN\Scripts\jquery-1.8.2.js" />
@@ -3499,6 +3501,20 @@
     </Compile>
     <Compile Include="NEW_STAFF_NYM\FRM_STAFF_SEARCH_NYM.aspx.vb">
       <DependentUpon>FRM_STAFF_SEARCH_NYM.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM_CONSIDER_NEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM_CONSIDER_NEW.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_PROOF_NEW.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM_PROOF_NEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_PROOF_NEW.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM_PROOF_NEW.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="PDF\FRM_PDF_VIEW.aspx.designer.vb">
