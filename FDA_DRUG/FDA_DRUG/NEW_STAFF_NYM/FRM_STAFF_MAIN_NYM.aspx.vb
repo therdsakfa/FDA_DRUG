@@ -57,7 +57,6 @@
         Dim process_id As String
         Dim url As String = ""
         Dim NYM As String = ""
-        Dim dao As New DAO_DRUG.clsDBMAS_NYMSTAFF_PROCESS
         process_id = ddl_search.SelectedValue
         If ddl_search.SelectedValue <> "0" Then
             If process_id = "1026" Or process_id = "1027" Or process_id = "1028" Or process_id = "1029" Or process_id = "1030" Then

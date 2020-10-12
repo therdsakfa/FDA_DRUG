@@ -666,7 +666,7 @@
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM3.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM4.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM5.aspx" />
-    <Content Include="NEW_STAFF_NYM\FRM_STAFF_SEARCH_NYM.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_MAIN_NYM.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_PROOF_NEW.aspx" />
     <Content Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx" />
@@ -3517,11 +3517,11 @@
       <DependentUpon>FRM_STAFF_NYM_SUBMIT_REQUEST.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_SEARCH_NYM.aspx.designer.vb">
-      <DependentUpon>FRM_STAFF_SEARCH_NYM.aspx</DependentUpon>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_MAIN_NYM.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_MAIN_NYM.aspx</DependentUpon>
     </Compile>
-    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_SEARCH_NYM.aspx.vb">
-      <DependentUpon>FRM_STAFF_SEARCH_NYM.aspx</DependentUpon>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_MAIN_NYM.aspx.vb">
+      <DependentUpon>FRM_STAFF_MAIN_NYM.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx.designer.vb">
