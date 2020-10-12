@@ -3741,6 +3741,13 @@
       <DependentUpon>FRM_RGT_EDIT_STAFF_RECEIVE.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_NYM_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx.vb">
+      <DependentUpon>FRM_NYM_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="SUBSTITUTE_NCT\FRM_SUBSTITUTE_NCT_MAIN.aspx.designer.vb">
       <DependentUpon>FRM_SUBSTITUTE_NCT_MAIN.aspx</DependentUpon>
     </Compile>
