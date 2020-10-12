@@ -91,8 +91,8 @@ Public Class FRM_STAFF_CER_CONFIRM2
 
             End Try
             Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-            Try
-                If Len(_TR_ID) >= 9 Then
+            'Try
+            If Len(_TR_ID) >= 9 Then
                     dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
                 Else
                     dao_up.GetDataby_IDA(_TR_ID)
@@ -114,9 +114,9 @@ Public Class FRM_STAFF_CER_CONFIRM2
                     lbl_head_type.Text = "เอกสารอื่นๆที่ อย. เห็นชอบ"
                     Panel5.Style.Add("display", "block")
                 End If
-            Catch ex As Exception
+            'Catch ex As Exception
 
-            End Try
+            'End Try
         End If
     End Sub
 

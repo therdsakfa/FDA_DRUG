@@ -80,7 +80,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
                 'End Try
 
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM2_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
-                '    "Popups2('" & "POPUP_LCN_UPLOAD_NCT.aspx?type_id=" & _process & "&process=" & _process & "&IDA=" & _CLS.IDA & "&lcn_ida=" & _lcn_ida & "&lct_ida=" & _lct_ida & "');", True)
+                ' "Popups2('" & "POPUP_LCN_UPLOAD_NCT.aspx?type_id=" & _process & "&process=" & _process & "&IDA=" & _CLS.IDA & "&lcn_ida=" & _lcn_ida & "&lct_ida=" & _lct_ida & "');", True)
             End If
         End If
     End Sub
@@ -108,15 +108,15 @@ Public Class FRM_DRUG_IMPORT_MAIN
                         NYM = "5"
                 End Select
             End If
-            ' Try
-            'If dao.fields.STATUS_ID = 6 Then
-            'btn_upload.Style.Add("display", "block")
-            'End If
-            '   Catch ex As Exception
-            '  End Try
+            'Try
+            '    If dao.fields.STATUS_ID = 4 Then
+            '        btn_upload.Style.Add("display", "block")
+            '    End If
+            'Catch ex As Exception
+            'End Try
             'DL = 96703&NYM=2&process=1027
             'Dim url As String = "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?DL=" & _DL & "&NYM=" & NYM & "&process=" & _process & ""     'แก้ไขบรรทัดนี้
-            ' Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
+            '' Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & _IDA
             'btn_Select.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")                                                           'แก้ไขบรรทัดนี้
         End If
     End Sub

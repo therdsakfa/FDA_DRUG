@@ -3360,6 +3360,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LINQ_FDA_DRUG_IMPORT.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Linq\LINQ_FDA_DRUG_IMPORT.vb">
+      <DependentUpon>LINQ_FDA_DRUG_IMPORT.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Linq\LINQ_FDA_XML_DRUG_ESUB.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
