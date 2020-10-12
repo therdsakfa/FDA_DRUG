@@ -1,23 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MAIN_STAFF.Master" CodeBehind="FRM_STAFF_NYM.aspx.vb" Inherits="FDA_DRUG.FRM_STAFF_NYM" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     
-     <div class="panel" style="text-align:left ;width:100%">
-         <div class="panel-heading panel-title" style="height:70px" > 
-            
-             <div  class="auto-style1"><h4> ยายกเว้นทะเบียน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                          <asp:DropDownList ID="ddl_search" runat="server" CssClass="btn-lg" Width="27%" Height="100%"></asp:DropDownList>
-                                      &nbsp;
-                                           <asp:Button ID="btn_search" runat="server" Text="ค้นหา" CssClass="btn-lg" Height="44px" Width="80px" />
-                                      </h4> </div>
-
-         </div>
-    
-    </div>
-
-</asp:Content>
- <%-- <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../css/css_radgrid.css" rel="stylesheet" />
     <style type="text/css">
@@ -67,7 +49,7 @@
               }
 
 
-            
+
 
 
 
@@ -106,7 +88,7 @@
  <%--  <div style="text-align:center;" >  เลขที่ใบอนุญาตสถานที่&nbsp;&nbsp;&nbsp;&nbsp;  <asp:DropDownList ID="ddl_lcnno" runat="server" CssClass="input-lg"  Width="20%"></asp:DropDownList> &nbsp;
        <asp:Button ID="Btn_ok" runat="server" Text="ยืนยัน" CssClass="btn-info" Width="67px"/>
        <br />
-    </div>
+    </div>--%>
       <div id="spinner" style=" background-color:transparent; display:none; " >
   <img src="../imgs/spinner.gif" alt="Loading" style="position: absolute; top: 120px; left: 293px; height: 185px; width: 207px;" />
 </div>
@@ -143,26 +125,26 @@
            <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="15" AllowFilteringByColumn="True">
                <MasterTableView AutoGenerateColumns="False">
                    <Columns>
-                       <telerik:GridBoundColumn DataField="NYM2_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM2_IDA column" HeaderText="IDA"
-                           SortExpression="NYM2_IDA" UniqueName="NYM2_IDA" Display="false">
+                       <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
+                           SortExpression="IDA" UniqueName="IDA" Display="false">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="PROCESS_ID" DataType="System.Int32" FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                            SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM2_DATE_TOP" FilterControlAltText="Filter NYM2_DATE_TOP column"
-                           HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="NYM2_DATE_TOP" UniqueName="NYM2_DATE_TOP">
+                       <telerik:GridBoundColumn DataField="UPLOAD_DATE" FilterControlAltText="Filter UPLOAD_DATE column"
+                           HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="UPLOAD_DATE" UniqueName="UPLOAD_DATE">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
-                           HeaderText="ประเภท" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
+                       <telerik:GridBoundColumn DataField="lcntpcd" FilterControlAltText="Filter lcntpcd column"
+                           HeaderText="ประเภท" SortExpression="lcntpcd" UniqueName="lcntpcd">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
-                           HeaderText="รหัสบัญชีรายการยา" SortExpression="DL" UniqueName="DL">
+                       <telerik:GridBoundColumn DataField="LCNNO_DISPLAY" FilterControlAltText="Filter LCNNO_DISPLAY column"
+                           HeaderText="รหัสบัญชีรายการยา" SortExpression="LCNNO_DISPLAY" UniqueName="LCNNO_DISPLAY">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM2_WISH_MED" FilterControlAltText="Filter NYM2_WISH_MED column"
-                           HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM2_WISH_MED" UniqueName="NYM2_WISH_MED">
+                       <telerik:GridBoundColumn DataField="drug_name" FilterControlAltText="Filter drug_name column"
+                           HeaderText="ชื่อยา (Th/Eng)" SortExpression="drug_name" UniqueName="drug_name">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM2_NO" FilterControlAltText="Filter NYM2_NO column"
-                           HeaderText="เลขดำเนินการ" SortExpression="NYM2_NO" UniqueName="NYM2_NO">
+                       <telerik:GridBoundColumn DataField="ID" FilterControlAltText="Filter ID column"
+                           HeaderText="เลขดำเนินการ" SortExpression="ID" UniqueName="ID">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
                            HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
@@ -179,7 +161,7 @@
                </MasterTableView>
            </telerik:RadGrid>
 
-          <%-- <asp:GridView ID="GV_lcnno" runat="server" Width="100%" DataKeyNames="IDA" CellPadding="4" CssClass="table"
+           <%--<asp:GridView ID="GV_lcnno" runat="server" Width="100%" DataKeyNames="IDA" CellPadding="4" CssClass="table"
                ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="20" Font-Size="10pt">
                <AlternatingRowStyle BackColor="White" />
                <Columns>
@@ -220,7 +202,7 @@
                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                <SortedDescendingCellStyle BackColor="#E9EBEF" />
                <SortedDescendingHeaderStyle BackColor="#4870BE" />
-           </asp:GridView>
+           </asp:GridView>--%>
 
 
     </div>
@@ -260,4 +242,4 @@
      <asp:Button ID="btn_reload" runat="server" Text="" style="display:none;"  />
 
     &nbsp;
-</asp:Content>  --%> 
+</asp:Content>

@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class FRM_STAFF_NYM
 
     '''<summary>
+    '''lbl_name control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_name As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''ddl_search control.
     '''</summary>
     '''<remarks>
@@ -30,4 +39,40 @@ Partial Public Class FRM_STAFF_NYM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_search As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''lbl_remark control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_remark As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''btn_proof control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_proof As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''RadGrid1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
+
+    '''<summary>
+    '''btn_reload control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
 End Class
