@@ -2071,6 +2071,12 @@ Partial Public Class Linq_DRUGDataContext
     End Sub
   Partial Private Sub DeleteCER(instance As CER)
     End Sub
+  Partial Private Sub InsertMAS_NYMSTAFF_PROCESS(instance As MAS_NYMSTAFF_PROCESS)
+    End Sub
+  Partial Private Sub UpdateMAS_NYMSTAFF_PROCESS(instance As MAS_NYMSTAFF_PROCESS)
+    End Sub
+  Partial Private Sub DeleteMAS_NYMSTAFF_PROCESS(instance As MAS_NYMSTAFF_PROCESS)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -4171,6 +4177,12 @@ Partial Public Class Linq_DRUGDataContext
 	Public ReadOnly Property CERs() As System.Data.Linq.Table(Of CER)
 		Get
 			Return Me.GetTable(Of CER)
+		End Get
+	End Property
+	
+	Public ReadOnly Property MAS_NYMSTAFF_PROCESSes() As System.Data.Linq.Table(Of MAS_NYMSTAFF_PROCESS)
+		Get
+			Return Me.GetTable(Of MAS_NYMSTAFF_PROCESS)
 		End Get
 	End Property
 End Class
@@ -134844,6 +134856,112 @@ Partial Public Class CER
 	End Property
 	
 	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROCESS_ID", DbType:="NVarChar(MAX)")>  _
+	Public Property PROCESS_ID() As String
+		Get
+			Return Me._PROCESS_ID
+		End Get
+		Set
+			If (String.Equals(Me._PROCESS_ID, value) = false) Then
+				Me.OnPROCESS_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._PROCESS_ID = value
+				Me.SendPropertyChanged("PROCESS_ID")
+				Me.OnPROCESS_IDChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.MAS_NYMSTAFF_PROCESS")>  _
+Partial Public Class MAS_NYMSTAFF_PROCESS
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _PROCESS_NAME As String
+	
+	Private _PROCESS_ID As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OnPROCESS_NAMEChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROCESS_NAMEChanged()
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROCESS_NAME", DbType:="NVarChar(50)")>  _
+	Public Property PROCESS_NAME() As String
+		Get
+			Return Me._PROCESS_NAME
+		End Get
+		Set
+			If (String.Equals(Me._PROCESS_NAME, value) = false) Then
+				Me.OnPROCESS_NAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._PROCESS_NAME = value
+				Me.SendPropertyChanged("PROCESS_NAME")
+				Me.OnPROCESS_NAMEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROCESS_ID", DbType:="NVarChar(50)")>  _
 	Public Property PROCESS_ID() As String
 		Get
 			Return Me._PROCESS_ID

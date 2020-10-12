@@ -59,6 +59,15 @@ Partial Public Class FRM_STAFF_NYM_SUBMIT_REQUEST
     Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''btn_load control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''btn_load0 control.
     '''</summary>
     '''<remarks>

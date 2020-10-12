@@ -388,4 +388,7 @@ Public Class FRM_STAFF_NYM_SUBMIT_REQUEST
         HiddenField1.Value = filename
         '    show_btn() 'ตรวจสอบปุ่ม
     End Sub
+    Protected Sub btn_load0_Click(sender As Object, e As EventArgs) Handles btn_load0.Click
+        Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")
+    End Sub
 End Class
