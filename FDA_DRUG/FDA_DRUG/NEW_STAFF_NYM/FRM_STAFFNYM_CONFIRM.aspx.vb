@@ -40,8 +40,8 @@ Public Class FRM_STAFFNYM_CONFIRM
             '    'Else
             '    '    BindData_PDF()
             'End If
-            Bind_ddl_Status_staff()
-            load_fdpdtno()
+            'Bind_ddl_Status_staff()
+            'load_fdpdtno()
             'UC_GRID_PHARMACIST.load_gv(_IDA)
             UC_GRID_ATTACH.load_gv(_TR_ID)
             set_hide(_IDA)
@@ -498,11 +498,11 @@ Public Class FRM_STAFFNYM_CONFIRM
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
         Dim objStreamReader As New StreamReader(bao._PATH_XML_TRADER & FileName & ".xml") '"C:\path\XML_TRADER\"
-        Dim p2 As New CLASS_DALCN
+        Dim p2 As New CLASS_NYM_2
         Dim x As New XmlSerializer(p2.GetType)
         p2 = x.Deserialize(objStreamReader)
         objStreamReader.Close()
-        Dim dao As New DAO_DRUG.ClsDBdalcn
+        Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
     End Sub
     'Private Sub Binddata_NYM()
     '    Dim bao As New BAO.AppSettings
