@@ -38,7 +38,7 @@
         End If
     End Sub
     Sub bind_ddl_receiver()
-        Dim dao As New DAO_DRUG.TB_MAS_DOCUMENT_RECEIVER
+        Dim dao As New DAO_DRUG.TB_MAS_DOCUMENT_RECEIVER  'dropdown ชื่อ ผู้รับคำขอ'
         dao.GetDataALL()
         ddl_receiver.DataSource = dao.datas
         ddl_receiver.DataTextField = "THANM"
@@ -104,7 +104,7 @@
     End Sub
     Sub alert_reload(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');</script> ")
-        Response.Redirect("FRM_NYM_CONFIRM.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _process)
+        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _process)
 
     End Sub
 
@@ -116,6 +116,6 @@
         dao.fields.STATUS_ID = 2
         dao.update()
 
-        Response.Redirect("FRM_NYM_CONFIRM.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _process)
+        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _process)
     End Sub
 End Class
