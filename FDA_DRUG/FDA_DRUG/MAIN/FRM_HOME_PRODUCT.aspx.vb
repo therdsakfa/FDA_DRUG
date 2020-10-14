@@ -9,7 +9,7 @@
 
     Private Sub RunQuery()
         '_TOKEN = Request("Token").ToString()
-        _TOKEN = "BXM1qS11yE09P/6Sgs/9ngUU" 'test                อย่าลืมแก้กลับ
+        _TOKEN = "HDuU0SE7AJq0wr64FD5vtwUU" 'test                อย่าลืมแก้กลับ
         '_TOKEN = "K1JtRwgdZD5oslzpr5dLKgUU" 'AOF
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

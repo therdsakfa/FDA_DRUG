@@ -599,13 +599,13 @@ Module BAO_COMMON
                         End Using
                     End Using
                 End Using
-            ElseIf PROSESS_ID = 1027 Then
+            ElseIf PROSESS_ID = 1027 Then   'GENXML
                 Dim cls_xml As New CLASS_GEN_XML.NYM2_IMPORT
-                cls_xml.GEN_XML_NORYORMOR2(PATH_XML, p_nym2)
-                Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\
-                    Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"
+                cls_xml.GEN_XML_NORYORMOR2(PATH_XML, p_nym2)    'วิ่งไปสร้าง XML
+                Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\        ดึง  template
+                    Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"  สร้างและเขียน
                         Using stamper = New iTextSharp.text.pdf.PdfStamper(pdfReader__1, outputStream, ControlChars.NullChar, True)
-                            stamper.AcroFields.Xfa.FillXfaForm(PATH_XML)
+                            stamper.AcroFields.Xfa.FillXfaForm(PATH_XML)        'xml fill ใส่ PDF
                         End Using
                     End Using
                 End Using
