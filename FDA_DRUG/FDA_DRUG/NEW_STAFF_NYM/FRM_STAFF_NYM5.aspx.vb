@@ -86,21 +86,21 @@ Public Class FRM_STAFF_NYM5
         Dim NYM As String = ""
         process_id = ddl_search.SelectedValue
         If ddl_search.SelectedValue <> "0" Then
-            If process_id = "10260" Or process_id = "10270" Or process_id = "10280" Or process_id = "10291" Or process_id = "10300" Then
+            If process_id = "1026" Or process_id = "1027" Or process_id = "1028" Or process_id = "1029" Or process_id = "1030" Then
                 Select Case process_id
-                    Case "10270"
+                    Case "1027"
                         NYM = "2"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM2.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
-                    Case "10280"
+                    Case "1028"
                         NYM = "3"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM3.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
-                    Case "10291"
+                    Case "1029"
                         NYM = "4"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM4.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
-                    Case "10300"
+                    Case "1030"
                         NYM = "5"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM5.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
