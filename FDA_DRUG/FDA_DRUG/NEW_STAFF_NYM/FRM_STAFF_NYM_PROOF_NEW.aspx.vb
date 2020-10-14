@@ -5,9 +5,14 @@ Public Class FRM_STAFF_NYM_PROOF_NEW
     Private _CLS As New CLS_SESSION
     Private _process As String
     Private _pvncd As Integer
+    Private _DL As String = ""
+    Private _IDA As String = ""
     Sub RunSession()
         Try
             _CLS = Session("CLS")
+            _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
+            _DL = Request.QueryString("DL")
+            _IDA = Request.QueryString("IDA")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
@@ -129,7 +134,7 @@ Public Class FRM_STAFF_NYM_PROOF_NEW
     End Sub
 #End Region
 
-    Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand
+    Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand           'ใน radgrid ให้ทำ function อะไรบ้าง
         If TypeOf e.Item Is GridDataItem Then
             Dim item As GridDataItem = e.Item
 
@@ -149,18 +154,18 @@ Public Class FRM_STAFF_NYM_PROOF_NEW
             End Try
 
             If e.CommandName = "sel" Then
-                Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH
-                dao.GetDataby_TR_ID_And_Process_And_Type(tr_id, PROCESS, "P")
+                Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH                                                        'BASE daodrug table file attrach มี ชื่อปลอม ชื่อไฟล์จริง  transaction Process_ID
+                dao.GetDataby_TR_ID_And_Process_And_Type(tr_id, PROCESS, "P")                                   'เขียน Stor ใหม่ เอาตามพี่ไอซ์ where ออกมาแค่เอกสารที่ Upload 
                 If IsNothing(dao.fields.NAME_FAKE) Then
                 Else
-                    Response.Redirect("~\PDF\FRM_ATTACH_PREVIEW.aspx\" & dao.fields.NAME_FAKE & "")
+                    Response.Redirect("~\PDF\FRM_ATTACH_PREVIEW.aspx\" & dao.fields.NAME_FAKE & "")             'กดปุ่มดูข้อมูลเอาอะไรไปหาบ้าง 
                 End If
             End If
 
         End If
     End Sub
 
-    Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound
+    Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound             'ซ่อนปุ่มโชวปุ่ม
         If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
             Dim item As GridDataItem
             item = e.Item
@@ -182,7 +187,7 @@ Public Class FRM_STAFF_NYM_PROOF_NEW
         End If
     End Sub
 
-    Private Sub RadGrid1_NeedDataSource(sender As Object, e As Telerik.Web.UI.GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
+    Private Sub RadGrid1_NeedDataSource(sender As Object, e As Telerik.Web.UI.GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource      'เอาข้อมูลอะไรมาใส่ใน radgrid
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
         dt = bao.SP_STAFF_NYM_PROOF()

@@ -29,6 +29,18 @@ Public Class FRM_STAFFNYM_CONFIRM
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunQuery()
+        Dim type As Integer
+        If _ProcessID = "1026" Then
+            type = 1
+        ElseIf _ProcessID = "1027" Then
+            type = 2
+        ElseIf _ProcessID = "1028" Then
+            type = 3
+        ElseIf _ProcessID = "1029" Then
+            type = 4
+        End If
+
+
         If Not IsPostBack Then
             'txt_app_date.Text = Date.Now.ToShortDateString()
             'HiddenField2.Value = 0
@@ -41,26 +53,26 @@ Public Class FRM_STAFFNYM_CONFIRM
             '    '    BindData_PDF()
             'End If
             Bind_ddl_Status_staff()
-            load_fdpdtno()
+                load_fdpdtno()
             'UC_GRID_PHARMACIST.load_gv(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.loadatteachfromdrugimportupload(_IDA, type)
             set_hide(_IDA)
 
-            'Try
-            '    Dim dao As New DAO_DRUG.ClsDBdrsamp
-            '    dao.GetDataby_IDA(_IDA)
-            '    Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-            '    dao_up.GetDataby_IDA(dao.fields.TR_ID)
-            '    If dao_up.fields.PROCESS_ID = "1027" Or dao_up.fields.PROCESS_ID = "1028" Or dao_up.fields.PROCESS_ID = "1029" Then
-            '        btn_drug_group.Style.Add("display", "block")
-            '    End If
-            'Catch ex As Exception
+                'Try
+                '    Dim dao As New DAO_DRUG.ClsDBdrsamp
+                '    dao.GetDataby_IDA(_IDA)
+                '    Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+                '    dao_up.GetDataby_IDA(dao.fields.TR_ID)
+                '    If dao_up.fields.PROCESS_ID = "1027" Or dao_up.fields.PROCESS_ID = "1028" Or dao_up.fields.PROCESS_ID = "1029" Then
+                '        btn_drug_group.Style.Add("display", "block")
+                '    End If
+                'Catch ex As Exception
 
-            'End Try
+                'End Try
 
 
-        End If
-        set_lbl()
+            End If
+            set_lbl()
         show_btn(_IDA)
     End Sub
 
