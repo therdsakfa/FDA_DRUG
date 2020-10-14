@@ -42,7 +42,7 @@ Public Class FRM_STAFF_NYM31
         Dim dt As New DataTable
         Dim bao As New BAO.ClsDBSqlcommand
 
-        dt = bao.SP_MAS_NYMSTAFF_PROCESS
+        dt = bao.SP_NYMSTAFF_ALLPROCESS
 
         ddl_search.DataSource = dt 'dao.datas
         ddl_search.DataTextField = "PROCESS_NAME"
