@@ -41,7 +41,7 @@ Public Class FRM_STAFF_NYM5
         Dim dt As New DataTable
         Dim bao As New BAO.ClsDBSqlcommand
 
-        dt = bao.SP_MAS_NYMSTAFF_PROCESS
+        dt = bao.SP_NYMSTAFF_ALLPROCESS
 
         ddl_search.DataSource = dt 'dao.datas
         ddl_search.DataTextField = "PROCESS_NAME"
@@ -84,7 +84,6 @@ Public Class FRM_STAFF_NYM5
         Dim process_id As String
         Dim url As String = ""
         Dim NYM As String = ""
-        Dim dao As New DAO_DRUG.clsDBMAS_NYMSTAFF_PROCESS
         process_id = ddl_search.SelectedValue
         If ddl_search.SelectedValue <> "0" Then
             If process_id = "10260" Or process_id = "10270" Or process_id = "10280" Or process_id = "10291" Or process_id = "10300" Then
@@ -106,7 +105,6 @@ Public Class FRM_STAFF_NYM5
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM5.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
                 End Select
-                'url = "../NEW_STAFF_NYM/FRM_STAFF_NYM2.aspx?process=" & ddl_search.SelectedValue
                 Response.Redirect(url)
             End If
         Else
