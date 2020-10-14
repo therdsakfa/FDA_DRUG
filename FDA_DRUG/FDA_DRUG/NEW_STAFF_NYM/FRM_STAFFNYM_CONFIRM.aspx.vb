@@ -11,6 +11,7 @@ Public Class FRM_STAFFNYM_CONFIRM
     Private _ProcessID As String
     Private _YEARS As String
     Private _TR_ID As String
+    Private _DL As String
     Private Sub RunQuery()
         '_ProcessID = 101
         Try
@@ -22,25 +23,39 @@ Public Class FRM_STAFFNYM_CONFIRM
         _IDA = Request.QueryString("IDA")
         _ProcessID = Request.QueryString("process")
         _TR_ID = Request.QueryString("TR_ID")
+        _DL = Request.QueryString("DL")
         '_YEARS = con_year(Date.Now.Year)
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunQuery()
+        Dim type As Integer
+        If _ProcessID = "1026" Then
+            type = 1
+        ElseIf _ProcessID = "1027" Then
+            type = 2
+        ElseIf _ProcessID = "1028" Then
+            type = 3
+        ElseIf _ProcessID = "1029" Then
+            type = 4
+        End If
+
+
         If Not IsPostBack Then
             'txt_app_date.Text = Date.Now.ToShortDateString()
-            HiddenField2.Value = 0
-            If _ProcessID = "1026" Then
-                BindData_PDF2()
-            Else    'If _ProcessID = "1030" Then
-                Binddata_NYM()
-                'Else
-                '    BindData_PDF()
-            End If
+            'HiddenField2.Value = 0
+            BindData_PDF()
+            'If _ProcessID = "1026" Then
+            '    BindData_PDF2()
+            'Else    'If _ProcessID = "1030" Then
+            '    Binddata_NYM()
+            '    'Else
+            '    '    BindData_PDF()
+            'End If
             Bind_ddl_Status_staff()
             load_fdpdtno()
             'UC_GRID_PHARMACIST.load_gv(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.loadatteachfromdrugimportupload(_IDA, type)
             set_hide(_IDA)
 
             'Try
@@ -501,241 +516,185 @@ Public Class FRM_STAFFNYM_CONFIRM
         objStreamReader.Close()
         Dim dao As New DAO_DRUG.ClsDBdalcn
     End Sub
-    Private Sub Binddata_NYM()
+    'Private Sub Binddata_NYM()
+    '    Dim bao As New BAO.AppSettings
+    '    bao.RunAppSettings()
+    '    Dim dao As New DAO_DRUG.ClsDBdrsamp
+    '    dao.GetDataby_IDA(_IDA)
+    '    Dim dao_xml As New DAO_DRUG.clsDBXML_NAME
+    '    dao_xml.GetDataby_TR_PROCESS(_TR_ID, _ProcessID)
+    '    path_XML = dao_xml.fields.PATH + dao_xml.fields.XML_NAME
+    '    Dim statusId As Integer = dao.fields.STATUS_ID
+    '    Dim lcntype As String = dao.fields.lcntpcd
+    '    Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+    '    dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+    '    Dim _YEARS As String = dao_tr.fields.YEAR
+    '    Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
+    '    dao_pdftemplate.GetDataby_TEMPLAETE(_ProcessID, lcntype, statusId, 0)
+
+    '    Dim paths As String = bao._PATH_DEFAULT
+
+    '    Dim PDF_TEMPLATE As String = ""
+    '    Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
+
+    '    'If _ProcessID = "1027" Then
+    '    '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+    '    'ElseIf _ProcessID = "1028" Then
+    '    '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+    '    'ElseIf _ProcessID = "1029" Then
+    '    '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+    '    'ElseIf _ProcessID = "1030" Then
+    '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+    '    'End If
+    '    LOAD_XML_PDF1(path_XML, PDF_TEMPLATE, _ProcessID, filename)
+    '    lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+    '    hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+    '    HiddenField1.Value = filename
+    '    _CLS.FILENAME_PDF = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
+    '    _CLS.PDFNAME = NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
+    'End Sub
+    Private Sub BindData_PDF()
         Dim bao As New BAO.AppSettings
-        bao.RunAppSettings()
-        Dim dao As New DAO_DRUG.ClsDBdrsamp
-        dao.GetDataby_IDA(_IDA)
-        Dim dao_xml As New DAO_DRUG.clsDBXML_NAME
-        dao_xml.GetDataby_TR_PROCESS(_TR_ID, _ProcessID)
-        path_XML = dao_xml.fields.PATH + dao_xml.fields.XML_NAME
-        Dim statusId As Integer = dao.fields.STATUS_ID
-        Dim lcntype As String = dao.fields.lcntpcd
-        Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_tr.GetDataby_IDA(dao.fields.TR_ID)
-        Dim _YEARS As String = dao_tr.fields.YEAR
+
+        Dim dao_up As New DAO_DRUG_IMPORT.ClsDBDRUG_IMPORT_UPLOAD
+        dao_up.GetDataby_IDA(_IDA)                                      ' 
+        ' Dim dao As New DAO_DRUG_IMPORT
+        Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+        Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+
+        dao2.getdata_dl(_IDA)
+        dao3.getdata_dl(_IDA)
+        dao4.getdata_dl(_IDA)
+        Dim class_xml2 As New CLASS_NYM_2
+        Dim class_xml3 As New CLASS_NYM_3_SM
+        Dim class_xml4 As New CLASS_NYM_4_SM
+
+
+        ' class_xml = cls_dalcn.gen_xml()
+        class_xml2.NYM_2s = dao2.fields
+        class_xml3.NYM_3s = dao3.fields
+        class_xml4.NYM_4s = dao4.fields
+
+
+        'Dim p_noryormor2 As New CLASS_NYM_2
+        'p_noryormor2 = p_nym2
+        'p_dalcn2.DT_MASTER = Nothing
+
+        'Dim cls_sop1 As New CLS_SOP
+        'Session("b64") = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
+        'b64 = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
+
+        Dim bao_show As New BAO_SHOW
+        class_xml2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA)
+        class_xml3.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(_IDA)
+        class_xml4.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)
+
+        p_nym2 = class_xml2
+        Dim dao_nym As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        dao_nym.getdata_dl(_DL)
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
-        dao_pdftemplate.GetDataby_TEMPLAETE(_ProcessID, lcntype, statusId, 0)
-
-        Dim paths As String = bao._PATH_DEFAULT
-
-        Dim PDF_TEMPLATE As String = ""
-        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
-
-        'If _ProcessID = "1027" Then
-        '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-        'ElseIf _ProcessID = "1028" Then
-        '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-        'ElseIf _ProcessID = "1029" Then
-        '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-        'ElseIf _ProcessID = "1030" Then
-        PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-        'End If
-        LOAD_XML_PDF1(path_XML, PDF_TEMPLATE, _ProcessID, filename)
-        lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
-        hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
-        HiddenField1.Value = filename
-        _CLS.FILENAME_PDF = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
-        _CLS.PDFNAME = NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
-    End Sub
-    Private Sub BindData_PDF(Optional _group As Integer = 0)
-
-        Dim bao As New BAO.AppSettings
-        bao.RunAppSettings()
-
-        Dim dao As New DAO_DRUG.ClsDBdrsamp
-        dao.GetDataby_IDA(_IDA)
-        Dim dao_pid As New DAO_DRUG.ClsDBDRUG_REGISTRATION
-        dao_pid.GetDataby_IDA(dao.fields.PRODUCT_ID_IDA)
-        Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
-        dao_lcn.GetDataby_IDA(dao.fields.lcnno)
-        Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_tr.GetDataby_IDA(dao.fields.TR_ID)
-
-        Dim con_iden As String = ""
-        Dim dao_staff_con As New DAO_DRUG.TB_MAS_STAFF_OFFER
-        Try
-            dao_staff_con.GetDataby_IDA(dao.fields.FK_STAFF_OFFER_IDA)
-        Catch ex As Exception
-
-        End Try
-
-        Dim rcvr_id As String
-        Try
-            rcvr_id = dao.fields.rcvr_id
-        Catch ex As Exception
-            rcvr_id = ""
-        End Try
-        Dim FK_STAFF_OFFER_IDA As Integer
-        Try
-            FK_STAFF_OFFER_IDA = dao.fields.FK_STAFF_OFFER_IDA
-        Catch ex As Exception
-            FK_STAFF_OFFER_IDA = 0
-        End Try
+        Dim paths As String = bao._PATH_DEFAULT                                         ' PART ต้องเป็น defult ก่อน 
 
 
-        Dim _YEARS As String = dao_tr.fields.YEAR
-
-        Dim cls_regis As New CLASS_GEN_XML.drsamp(_CLS.CITIZEN_ID, dao_lcn.fields.lcnsid, dao_lcn.fields.lcnno, dao_lcn.fields.lcntpcd, dao_lcn.fields.pvncd, dao_lcn.fields.IDA, dao_pid.fields.IDA, dao_pid.fields.FK_IDA, dao_pid.fields.FK_IDA, dao.fields.TR_ID, dao.fields.CITIZEN_SUBMIT, rcvr_id, FK_STAFF_OFFER_IDA)
-        Dim class_xml As New CLASS_DRSAMP
-        class_xml = cls_regis.gen_xml()
-        class_xml.APP_STAFF = dao_staff_con.fields.STAFF_OFFER_NAME
-        Try
-            Dim rcvdate As Date = dao.fields.rcvdate
-            Dim write_date As Date = dao.fields.WRITE_DATE
-            Dim app_date As Date = dao.fields.appdate
-            dao.fields.rcvdate = DateAdd(DateInterval.Year, 543, rcvdate)
-            dao.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
-            dao.fields.appdate = DateAdd(DateInterval.Year, 543, app_date)
-            class_xml.drsamp = dao.fields
-        Catch ex As Exception
-
-        End Try
 
 
-        '-----------------จำนวนกับรายละเอียดขนาดบรรจุ---------------------
-        Dim dao_pac As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
-        'Dim dao_pac As New DAO_DRUG.TB_DRSAMP_PACKAGE_DETAIL
-        dao_pac.GetDataby_FK_IDA(dao_pid.fields.IDA)
-        Dim sum As String = ""
-
-        For Each dao_pac.fields In dao_pac.datas
-            If dao_pac.fields.CHECK_PACKAGE = True Then
-                If sum <> "" Then
-                    sum = sum & ", "
-                    sum = sum & dao_pac.fields.IM_DETAIL
-                Else
-                    sum = dao_pac.fields.IM_DETAIL
-                End If
-            End If
-        Next
-
-        'Dim dao_package As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
-        'dao_package.GetDataby_FK_IDA(dao_pid.fields.IDA)
-
-        Dim unit_physic As New DAO_DRUG.TB_DRUG_UNIT
-        unit_physic.GetDataby_sunitcd(CInt(dao_pac.fields.SMALL_UNIT))
-
-        class_xml.IMPORT_AMOUNTS = dao.fields.QUANTITY & " " & unit_physic.fields.unit_name
-        '-------------------------------------------------------------
-
-        p_drsamp = class_xml
-
-        Dim statusId As Integer = dao.fields.STATUS_ID
-        Dim lcntype As String = dao.fields.lcntpcd
+        ''''''''' แก้ตรงนี้ PDF ไม่ขึ้นนะเพื่อน เรื่องมันเศร้า ขอข้ามไปทำอย่างอื่นก่อน
 
 
-        Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
-        'dao_pdftemplate.GetDataby_TEMPLAETE(dao_tr.fields.PROCESS_ID, dao_tr.fields.PROCESS_ID, statusId, 0)
-        dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(dao_tr.fields.PROCESS_ID, lcntype, statusId, HiddenField2.Value, _group:=0)
 
-        Dim paths As String = bao._PATH_DEFAULT
+        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0)                     'DAO บรรทัด 2809
+        Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+        Dim year As String = Date.Now.Year
+        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+        Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, year, dao_nym.fields.DL)
+        'load_PDF(filename)
+        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
 
-        Dim PDF_TEMPLATE As String = ""
-
-        'If dao_tr.fields.PROCESS_ID = "1027" Then
-        '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE & "PDF_NORYORMOR2.pdf"
-        'ElseIf dao_tr.fields.PROCESS_ID = "1028" Then
-        '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE & "PDF_NORYORMOR3.pdf"
-        'ElseIf dao_tr.fields.PROCESS_ID = "1029" Then
-        '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE & "PDF_NORYORMOR4.pdf"
-        'End If
-        If dao_tr.fields.PROCESS_ID = "1027" Then
-            PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-        ElseIf dao_tr.fields.PROCESS_ID = "1028" Then
-            PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-        ElseIf dao_tr.fields.PROCESS_ID = "1029" Then
-            PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-        End If
-
-        'Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
-        'Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, _YEARS, _TR_ID)
-        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)        'code เปิดใช้ตอนอัพ
-        'Dim filename As String = paths & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)        'code เปิดใช้ตอนอัพ
-        Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)
-
-        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, dao_tr.fields.PROCESS_ID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
 
         lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
-        hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+        hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+
+
         HiddenField1.Value = filename
-        HiddenField3.Value = NAME_PDF("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)
+        _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym.fields.TR_ID)
+        _CLS.PDFNAME = filename
         '    show_btn() 'ตรวจสอบปุ่ม
 
     End Sub
 
-    Private Sub BindData_PDF2(Optional _group As Integer = 0)
-        Dim bao As New BAO.AppSettings
-        bao.RunAppSettings()
-        Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
-        dao.GetDataby_IDA(_IDA)
-        Dim dao_xml As New DAO_DRUG.clsDBXML_NAME
-        dao_xml.GetDataby_TR_PROCESS(_TR_ID, _ProcessID)
-        path_XML = dao_xml.fields.PATH + dao_xml.fields.XML_NAME
-        Dim statusId As Integer = dao.fields.STATUS_ID
-        Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_tr.GetDataby_IDA(dao.fields.TR_ID)
-        Dim _YEARS As String = dao_tr.fields.YEAR
-        Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
-        dao_pdftemplate.GetDataby_TEMPLAETE(_ProcessID, 0, statusId, 0)
+    'Private Sub BindData_PDF2(Optional _group As Integer = 0)
+    '    Dim bao As New BAO.AppSettings
+    '    bao.RunAppSettings()
+    '    Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
+    '    dao.GetDataby_IDA(_IDA)
+    '    Dim dao_xml As New DAO_DRUG.clsDBXML_NAME
+    '    dao_xml.GetDataby_TR_PROCESS(_TR_ID, _ProcessID)
+    '    path_XML = dao_xml.fields.PATH + dao_xml.fields.XML_NAME
+    '    Dim statusId As Integer = dao.fields.STATUS_ID
+    '    Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+    '    dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+    '    Dim _YEARS As String = dao_tr.fields.YEAR
+    '    Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
+    '    dao_pdftemplate.GetDataby_TEMPLAETE(_ProcessID, 0, statusId, 0)
 
-        Dim paths As String = bao._PATH_DEFAULT
+    '    Dim paths As String = bao._PATH_DEFAULT
 
-        Dim PDF_TEMPLATE As String = ""
-        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
+    '    Dim PDF_TEMPLATE As String = ""
+    '    Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
 
-        'If _ProcessID = "1027" Then
-        '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-        'ElseIf _ProcessID = "1028" Then
-        '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-        'ElseIf _ProcessID = "1029" Then
-        '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-        'ElseIf _ProcessID = "1030" Then
-        PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-        'End If
-        LOAD_XML_PDF1(path_XML, PDF_TEMPLATE, _ProcessID, filename)
-        lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
-        hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
-        HiddenField1.Value = filename
-        _CLS.FILENAME_PDF = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
-        _CLS.PDFNAME = NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
-        'Dim bao As New BAO.AppSettings
-        'bao.RunAppSettings()
+    '    'If _ProcessID = "1027" Then
+    '    '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+    '    'ElseIf _ProcessID = "1028" Then
+    '    '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+    '    'ElseIf _ProcessID = "1029" Then
+    '    '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+    '    'ElseIf _ProcessID = "1030" Then
+    '    PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+    '    'End If
+    '    LOAD_XML_PDF1(path_XML, PDF_TEMPLATE, _ProcessID, filename)
+    '    lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+    '    hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+    '    HiddenField1.Value = filename
+    '    _CLS.FILENAME_PDF = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
+    '    _CLS.PDFNAME = NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)
+    '    'Dim bao As New BAO.AppSettings
+    '    'bao.RunAppSettings()
 
-        ''Dim dao As New DAO_DRUG.ClsDBdrsamp
-        'Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
-        'dao.GetDataby_IDA(_IDA)
-        'Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        'dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+    '    ''Dim dao As New DAO_DRUG.ClsDBdrsamp
+    '    'Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
+    '    'dao.GetDataby_IDA(_IDA)
+    '    'Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+    '    'dao_tr.GetDataby_IDA(dao.fields.TR_ID)
 
-        'Dim _YEARS As String = dao_tr.fields.YEAR
+    '    'Dim _YEARS As String = dao_tr.fields.YEAR
 
-        ''Dim cls_regis As New CLASS_GEN_XML.NYM1(_IDA, dao.fields.lcnno, dao.fields.PJSUM_IDA, dao_tr.fields.CITIEZEN_ID, dao_tr.fields.CITIEZEN_ID_AUTHORIZE)
-        'Dim cls_regis As New CLASS_GEN_XML.NYM1(_IDA, 0, dao.fields.IDA, dao_tr.fields.CITIEZEN_ID, dao_tr.fields.CITIEZEN_ID_AUTHORIZE)
-        'Dim class_xml As New CLASS_PROJECT_SUM
-        'class_xml = cls_regis.gen_xml_NYM1()
-        'p_nym1 = class_xml
+    '    ''Dim cls_regis As New CLASS_GEN_XML.NYM1(_IDA, dao.fields.lcnno, dao.fields.PJSUM_IDA, dao_tr.fields.CITIEZEN_ID, dao_tr.fields.CITIEZEN_ID_AUTHORIZE)
+    '    'Dim cls_regis As New CLASS_GEN_XML.NYM1(_IDA, 0, dao.fields.IDA, dao_tr.fields.CITIEZEN_ID, dao_tr.fields.CITIEZEN_ID_AUTHORIZE)
+    '    'Dim class_xml As New CLASS_PROJECT_SUM
+    '    'class_xml = cls_regis.gen_xml_NYM1()
+    '    'p_nym1 = class_xml
 
-        'Dim statusId As Integer = dao.fields.STATUS_ID
-        ''Dim lcntype As String = dao.fields.lcntpcd
-        'Dim lcntype As String = 0
-        'Dim paths As String = bao._PATH_DEFAULT
-        'Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
-        'dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(_ProcessID, lcntype, statusId, 0)
+    '    'Dim statusId As Integer = dao.fields.STATUS_ID
+    '    ''Dim lcntype As String = dao.fields.lcntpcd
+    '    'Dim lcntype As String = 0
+    '    'Dim paths As String = bao._PATH_DEFAULT
+    '    'Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
+    '    'dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(_ProcessID, lcntype, statusId, 0)
 
-        'Dim filetemplate As String = bao._PATH_PDF_TEMPLATE & dao_pdftemplate.fields.PDF_TEMPLATE
-        'Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)        'code เปิดใช้ตอนอัพ
-        'Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)
+    '    'Dim filetemplate As String = bao._PATH_PDF_TEMPLATE & dao_pdftemplate.fields.PDF_TEMPLATE
+    '    'Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)        'code เปิดใช้ตอนอัพ
+    '    'Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)
 
-        'LOAD_XML_PDF1(Path_XML, filetemplate, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+    '    'LOAD_XML_PDF1(Path_XML, filetemplate, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
 
-        'lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
-        'hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
-        'HiddenField1.Value = filename
-        'HiddenField3.Value = NAME_PDF("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)
-        '    show_btn() 'ตรวจสอบปุ่ม
+    '    'lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+    '    'hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+    '    'HiddenField1.Value = filename
+    '    'HiddenField3.Value = NAME_PDF("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)
+    '    '    show_btn() 'ตรวจสอบปุ่ม
 
-    End Sub
+    'End Sub
 
     Protected Sub btn_load0_Click(sender As Object, e As EventArgs) Handles btn_load0.Click
         Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")
@@ -764,7 +723,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         'End If
 
         '_group:=_group
-        BindData_PDF(_group:=_group)
+        'BindData_PDF(_group:=_group)
 
     End Sub
 

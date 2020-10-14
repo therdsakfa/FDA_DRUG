@@ -38,7 +38,7 @@
         End If
     End Sub
     Sub bind_ddl_receiver()
-        Dim dao As New DAO_DRUG.TB_MAS_DOCUMENT_RECEIVER  'dropdow ชื่อ ผู้รับคำขอ'
+        Dim dao As New DAO_DRUG.TB_MAS_DOCUMENT_RECEIVER  'dropdown ชื่อ ผู้รับคำขอ'
         dao.GetDataALL()
         ddl_receiver.DataSource = dao.datas
         ddl_receiver.DataTextField = "THANM"
