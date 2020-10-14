@@ -176,8 +176,13 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
 
     Private Sub FRM_EXTEND_LCN_ATTACH_PAGE_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
         Try
+            Dim IDA_dalcn As Integer = 0
+            Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
+            'dao.GetDataby_IDA(Request.QueryString("IDA"))
+            dao.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+
             Dim dao_dal As New DAO_DRUG.ClsDBdalcn
-            dao_dal.GetDataby_IDA(Request.QueryString("IDA"))
+            dao_dal.GetDataby_IDA(dao.fields.FK_IDA)
 
             RadBinaryImage1.DataValue = Convert.FromBase64String(dao_dal.fields.IMAGE_BSN)
             RadBinaryImage1.ResizeMode = BinaryImageResizeMode.Fit
