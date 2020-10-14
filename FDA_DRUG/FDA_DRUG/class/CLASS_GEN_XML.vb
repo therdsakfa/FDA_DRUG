@@ -241,7 +241,7 @@ Namespace CLASS_GEN_XML
 
             Dim objStreamWriter As New StreamWriter(PATH)
             Dim x As New XmlSerializer(p2.GetType)
-            x.Serialize(objStreamWriter, p2)
+            x.Serialize(objStreamWriter, p2)                            'gen file xml
             objStreamWriter.Close()
 
         End Sub

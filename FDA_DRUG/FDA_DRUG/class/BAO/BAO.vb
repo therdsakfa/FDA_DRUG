@@ -4126,7 +4126,7 @@ Namespace BAO
         End Sub
 
         '
-        Public Sub SP_STAFF_OFFER_DDL()
+        Public Sub  ()
 
             strSQL = "SP_STAFF_OFFER_DDL"
             SqlCmd = New SqlCommand(strSQL, conn)
