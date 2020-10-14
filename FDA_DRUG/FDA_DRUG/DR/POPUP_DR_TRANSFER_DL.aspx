@@ -33,6 +33,7 @@
                                     <asp:ListItem Value="1">Referred</asp:ListItem>
                                     <asp:ListItem Value="2">Transferred</asp:ListItem>
                                     <asp:ListItem Value="3">Copy</asp:ListItem>
+                                    <asp:ListItem Value="4">ปลด SMP</asp:ListItem>
                                 </asp:RadioButtonList>
                 </td>
             </tr>
