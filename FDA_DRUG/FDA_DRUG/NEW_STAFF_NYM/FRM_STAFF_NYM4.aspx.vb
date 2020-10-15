@@ -101,7 +101,7 @@ Public Class FRM_STAFF_NYM4
                         NYM = "4"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM4.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
-                    Case "10300"
+                    Case "1030"
                         NYM = "5"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM5.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
