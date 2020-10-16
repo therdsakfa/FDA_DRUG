@@ -49,7 +49,7 @@ Public Class FRM_STAFF_NYM2
         ddl_search.DataValueField = "PROCESS_ID"
         ddl_search.DataBind()
         Dim item As New ListItem
-        item.Text = "กรุณาเลือกประเภท"
+        item.Text = "นยม2"
         item.Value = "0"
         ddl_search.Items.Insert(0, item)
     End Sub

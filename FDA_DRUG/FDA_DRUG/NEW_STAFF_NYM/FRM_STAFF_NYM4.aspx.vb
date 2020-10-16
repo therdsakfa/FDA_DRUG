@@ -23,7 +23,7 @@ Public Class FRM_STAFF_NYM4
         RunSession()
         get_pvncd()
         If Not IsPostBack Then
-            'load_ddl()
+            load_ddl()
             'load_GV_lcnno()
         End If
     End Sub
@@ -49,7 +49,7 @@ Public Class FRM_STAFF_NYM4
         ddl_search.DataValueField = "PROCESS_ID"
         ddl_search.DataBind()
         Dim item As New ListItem
-        item.Text = "กรุณาเลือกประเภท"
+        item.Text = "นยม4"
         item.Value = "0"
         ddl_search.Items.Insert(0, item)
     End Sub
@@ -81,6 +81,21 @@ Public Class FRM_STAFF_NYM4
             btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
         End If
     End Sub
+    Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand    'กดปุ่มใน grid ให้ทำอะไร จากหหน้
+        If TypeOf e.Item Is GridDataItem Then
+            Dim item As GridDataItem = e.Item
+
+            Dim NYM As String = "4"
+            Dim NYM4_ida As String = item("NYM4_IDA").Text
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+
+
+            If e.CommandName = "sel" Then
+
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM4_ida & "&Process= " & _process & "');", True)
+            End If
+        End If
+    End Sub
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
         Dim process_id As String
         Dim url As String = ""
@@ -101,7 +116,7 @@ Public Class FRM_STAFF_NYM4
                         NYM = "4"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM4.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
-                    Case "10300"
+                    Case "1030"
                         NYM = "5"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM5.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 

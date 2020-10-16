@@ -49,7 +49,7 @@ Public Class FRM_STAFF_NYM31
         ddl_search.DataValueField = "PROCESS_ID"
         ddl_search.DataBind()
         Dim item As New ListItem
-        item.Text = "กรุณาเลือกประเภท"
+        item.Text = "นยม3"
         item.Value = "0"
         ddl_search.Items.Insert(0, item)
     End Sub
@@ -60,6 +60,21 @@ Public Class FRM_STAFF_NYM31
         dt = bao.SP_DATA_NYM3_STAFF()
         RadGrid1.DataSource = dt
 
+    End Sub
+    Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand    'กดปุ่มใน grid ให้ทำอะไร จากหหน้
+        If TypeOf e.Item Is GridDataItem Then
+            Dim item As GridDataItem = e.Item
+
+            Dim NYM As String = "3"
+            Dim NYM3_ida As String = item("NYM3_IDA").Text
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+
+
+            If e.CommandName = "sel" Then
+
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "');", True)
+            End If
+        End If
     End Sub
     Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound
         If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
