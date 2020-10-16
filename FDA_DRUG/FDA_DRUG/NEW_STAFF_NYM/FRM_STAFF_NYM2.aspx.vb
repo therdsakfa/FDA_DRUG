@@ -9,6 +9,8 @@ Public Class FRM_STAFF_NYM2
     Sub RunSession()
         Try
             _CLS = Session("CLS")
+
+            _process = Request.QueryString("process")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
@@ -72,15 +74,8 @@ Public Class FRM_STAFF_NYM2
 
 
             If e.CommandName = "sel" Then
-                '    dao.GetDataby_IDA(NYM2_ida)
-                'Dim tr_id As Integer = 0
-                'Try
-                '    tr_id = dao.fields.TR_ID
-                'Catch ex As Exception
 
-                'End Try
-
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM2_ida & "&Process= " & _process & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM2_ida & "&process= " & _process & "');", True)
             End If
         End If
     End Sub
