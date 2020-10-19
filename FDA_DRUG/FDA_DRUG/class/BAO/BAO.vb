@@ -6701,8 +6701,8 @@ Namespace BAO
         ' gen rcvno ชื่อสาร
         Public Function GEN_RCVNO_NO(ByVal YEAR As String, ByVal PVNCD As String, ByVal PROCESS_ID As String, ByVal FK_IDA As Integer) As String
             Dim int_no As Integer
-            Dim dao As New DAO_DRUG.ClsDBGEN_RCVNO
-            dao.GetDataby_Year_PVNCD_PROCESS_ID_MAX(PVNCD, YEAR, PROCESS_ID)
+            Dim dao As New DAO_DRUG.ClsDBGEN_RCVNO                                      '
+            dao.GetDataby_Year_PVNCD_PROCESS_ID_MAX(PVNCD, YEAR, PROCESS_ID)            'สร้างเลขล่าสุด
             If IsNothing(dao.fields.GEN_RCV) = True Then
                 int_no = 0
             Else
