@@ -847,7 +847,7 @@ Public Class UC_DS_PORYOR8
             dao_package.update()
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
             RadGrid5_NeedDataSource(dao_package.fields.FK_IDA)
-            setsum(dao_package.fields.IDA)
+            'setsum(dao_package.fields.IDA)
             'If dao_package.fields.SUM = 0 And dao_package.fields.IM_DETAIL.Count > 1 Then
             '    all_sum.Text = "จำนวนผลิตทั้งหมด:"
             '    all_sum.Visible = True
@@ -1017,6 +1017,35 @@ Public Class UC_DS_PORYOR8
             End Try
         End Try
     End Sub
+
+
+    Protected Sub RadioButtonList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RadioButtonList1.SelectedIndexChanged
+        Dim dao_package As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
+        dao_package.GetDataby_IDA(ddl_package_unit.SelectedValue)
+
+        If RadioButtonList1.SelectedValue = 1 Then
+            ddl_package_unit.Visible = True
+            txt_qty.Visible = True
+            imp_unit.Visible = True
+            lbl_import_sum.Visible = True
+            Button3.Visible = True
+            all_sum.Visible = False
+            txt_summ.Visible = False
+            ddl_package_sum.Visible = False
+            Button4.Visible = False
+        Else
+            setsum(dao_package.fields.IDA)
+            ddl_package_unit.Visible = False
+            txt_qty.Visible = False
+            imp_unit.Visible = False
+            lbl_import_sum.Visible = False
+            Button3.Visible = False
+        End If
+
+
+    End Sub
+
+
     'Protected Sub RadGrid2_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid2.NeedDataSource
     '    Dim bao As New BAO.ClsDBSqlcommand
     '    Dim dt As New DataTable

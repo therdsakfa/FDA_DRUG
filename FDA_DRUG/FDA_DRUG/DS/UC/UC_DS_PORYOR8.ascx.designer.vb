@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class UC_DS_PORYOR8
-    
+
     '''<summary>
     '''txt_WRITE_AT control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_WRITE_AT As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_WRITE_DATE control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_WRITE_DATE As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''lbl_date control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_date As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''pid control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pid As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcnsnm control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcnsnm As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcnno control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcnno As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcnno2 control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcnno2 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_place_name control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_place_name As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_bsn_name control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_bsn_name As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_number control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_number As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lane control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lane As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_road control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_road As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_village_no control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_village_no As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_sub_district control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_sub_district As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_district control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_district As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_province control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_province As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_tel control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_tel As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''ddl_phesaj control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_phesaj As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''lbl_drugthanm control.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_drugthanm As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_drugengnm control.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_drugengnm As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_nature control.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_nature As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''RadGrid1 control.
     '''</summary>
@@ -210,7 +210,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
-    
+
     '''<summary>
     '''lbl_unit control.
     '''</summary>
@@ -219,7 +219,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_unit As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Stext_unit control.
     '''</summary>
@@ -228,7 +228,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Stext_unit As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_sunit_ida control.
     '''</summary>
@@ -237,7 +237,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_sunit_ida As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''HiddenField1 control.
     '''</summary>
@@ -246,7 +246,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
-    
+
     '''<summary>
     '''ddl_snunit control.
     '''</summary>
@@ -255,7 +255,16 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_snunit As Global.System.Web.UI.WebControls.DropDownList
-    
+
+    '''<summary>
+    '''RadioButtonList1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RadioButtonList1 As Global.System.Web.UI.WebControls.RadioButtonList
+
     '''<summary>
     '''ddl_package_unit control.
     '''</summary>
@@ -264,7 +273,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_package_unit As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''txt_qty control.
     '''</summary>
@@ -273,7 +282,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_qty As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''imp_unit control.
     '''</summary>
@@ -282,7 +291,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents imp_unit As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_import_sum control.
     '''</summary>
@@ -291,7 +300,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_import_sum As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Button3 control.
     '''</summary>
@@ -300,7 +309,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button3 As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''all_sum control.
     '''</summary>
@@ -309,7 +318,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents all_sum As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''txt_summ control.
     '''</summary>
@@ -318,7 +327,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_summ As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ddl_package_sum control.
     '''</summary>
@@ -327,7 +336,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_package_sum As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''Button4 control.
     '''</summary>
@@ -336,7 +345,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button4 As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''sum_finally control.
     '''</summary>
@@ -345,7 +354,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents sum_finally As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''unit_finally control.
     '''</summary>
@@ -354,7 +363,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents unit_finally As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''RadGrid5 control.
     '''</summary>
@@ -363,7 +372,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadGrid5 As Global.Telerik.Web.UI.RadGrid
-    
+
     '''<summary>
     '''btn_package control.
     '''</summary>
@@ -372,7 +381,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_package As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''chk_forhuman control.
     '''</summary>
@@ -381,7 +390,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents chk_forhuman As Global.System.Web.UI.WebControls.RadioButton
-    
+
     '''<summary>
     '''chk_forother control.
     '''</summary>
@@ -390,7 +399,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents chk_forother As Global.System.Web.UI.WebControls.RadioButton
-    
+
     '''<summary>
     '''txt_forother control.
     '''</summary>
@@ -399,7 +408,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_forother As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''btn_save control.
     '''</summary>
@@ -408,7 +417,7 @@ Partial Public Class UC_DS_PORYOR8
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btn_back control.
     '''</summary>
