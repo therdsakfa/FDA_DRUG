@@ -108,10 +108,10 @@ Public Class FRM_STAFFNYM_CONFIRM
             ElseIf dao.fields.STATUS_ID = 6 Then
                 remark_box.Style.Add("display", "block")
             End If
-        Else
-            Dim dao As New DAO_DRUG.ClsDBdrsamp
+        Else                                                                            'ทำให้เป็น else if แยกนาม นยม         ตอนนี้ทำเป็นแค่ else เข้า 2 ทุกกรณีก่อน
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             dao.GetDataby_IDA(IDA)
-            If dao.fields.STATUS_ID = 8 Then
+            If dao.fields.STATUS_ID = 8 Then                                            'status 8 approve disable every bottom 
                 btn_confirm.Enabled = False
                 btn_cancel.Enabled = False
                 btn_confirm.CssClass = "btn-danger btn-lg"
@@ -182,7 +182,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             dao.GetDataby_IDA(_IDA)
 
             dao_up.GetDataby_IDA(dao.fields.TR_ID)
-            Try    'ชื่อผู้ลงนาม
+            Try    'ชื่อผู้ลงนาม                                                                'หาชื่อผู้ลงนาม
                 dao_s.GetDataby_IDA(dao.fields.FK_STAFF_OFFER_IDA)
                 lbl_staff_consider.Text = dao_s.fields.STAFF_OFFER_NAME
             Catch ex As Exception
@@ -449,16 +449,16 @@ Public Class FRM_STAFFNYM_CONFIRM
             ElseIf dao.fields.STATUS_ID >= 6 Then
                 int_group_ddl = 3
             End If
-        Else
-            Dim dao As New DAO_DRUG.ClsDBdrsamp
+        Else                                                                                'กระบวนการอื่นๆ
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2                                     'เชื่อม base 
             dao.GetDataby_IDA(_IDA)
-            dao_up.GetDataby_IDA(dao.fields.TR_ID)
-            If dao.fields.STATUS_ID <= 2 Then
-                int_group_ddl = 1
-            ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
-                int_group_ddl = 2
-            ElseIf dao.fields.STATUS_ID >= 6 Then
-                int_group_ddl = 3
+            ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
+            If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
+                int_group_ddl = 11
+            ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then               'ถ้า starus2 to 6 
+                int_group_ddl = 22
+            ElseIf dao.fields.STATUS_ID >= 6 Then                                           'ถ้า starus มากกว่า 6
+                int_group_ddl = 33
             End If
         End If
         bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(5, int_group_ddl)
@@ -800,4 +800,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         End If
     End Sub
 
+    Protected Sub ddl_cnsdcd_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
