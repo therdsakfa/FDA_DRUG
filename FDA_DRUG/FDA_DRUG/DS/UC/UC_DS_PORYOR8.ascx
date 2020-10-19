@@ -35,10 +35,10 @@
     }
     .auto-style17 {
         height: 24px;
-        width: 616px;
+        width: 644px;
     }
     .auto-style18 {
-        width: 616px;
+        width: 644px;
     }
     </style>
 <link href="../css/css_radgrid.css" rel="stylesheet" />
@@ -243,17 +243,23 @@
         <td align="right" class="auto-style18">
                 ปริมาณที่จะผลิต/นำสั่ง :</td>
              <td class="auto-style7">
-                <asp:DropDownList ID="ddl_package_unit" runat="server" AutoPostBack="True">
+                 <br />
+                 <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal" AutoPostBack ="True" Height="30px" Width="224px">
+                     <asp:ListItem Value="1">แบบแพ็กเกจ</asp:ListItem>
+                     <asp:ListItem Value="2">แบบปริมาณ</asp:ListItem>
+                 </asp:RadioButtonList>
+                 <br />
+                <asp:DropDownList ID="ddl_package_unit" runat="server" Visible="false" AutoPostBack="True">
                 </asp:DropDownList>
                 &nbsp;&nbsp;
-                <asp:TextBox ID="txt_qty" runat="server" AutoPostBack="True"></asp:TextBox>
+                <asp:TextBox ID="txt_qty" runat="server" Visible="false" AutoPostBack="True"></asp:TextBox>
                 &nbsp;
-                <asp:Label ID="imp_unit" runat="server"></asp:Label>
+                <asp:Label ID="imp_unit" runat="server" Visible="false"></asp:Label>
  
                 &nbsp;
-                <asp:Label ID="lbl_import_sum" runat="server"></asp:Label>
+                <asp:Label ID="lbl_import_sum" runat="server" Visible="false"></asp:Label>
             &nbsp;&nbsp;
-                <asp:Button ID="Button3" runat="server" Text="บันทึก" CssClass="auto-style11" Height="53px" Width="100px" />
+                <asp:Button ID="Button3" runat="server" Visible="false" Text="บันทึก" CssClass="auto-style11" Height="53px" Width="100px" />
                 <br />
                  
                 <%--<asp:Label ID="txt_imp" runat="server"></asp:Label>--%>
@@ -265,6 +271,11 @@
                 <asp:Label ID="sum_finally" runat="server"></asp:Label>
  
                 <asp:Label ID="unit_finally" runat="server"></asp:Label>
+ 
+                 <br />
+                 <br />
+ 
+                 <br />
  
             </td>
 
