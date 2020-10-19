@@ -72,8 +72,8 @@ Public Class FRM_STAFFNYM_CONFIRM
 
 
         End If
-        set_lbl()
-        show_btn(_IDA)
+        'set_lbl()
+        'show_btn(_IDA)
     End Sub
 
     Sub show_btn(ByVal ID As String)
@@ -617,7 +617,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
 
         HiddenField1.Value = filename
-        _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym.fields.TR_ID)
+        _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym.fields.DL)
         _CLS.PDFNAME = filename
         '    show_btn() 'ตรวจสอบปุ่ม
 

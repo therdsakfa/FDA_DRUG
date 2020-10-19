@@ -70,12 +70,20 @@ Public Class FRM_STAFF_NYM2
 
             Dim NYM As String = "2"
             Dim NYM2_ida As String = item("NYM2_IDA").Text
+            'Dim _DL As String = item("DL").Text
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
 
 
             If e.CommandName = "sel" Then
+                dao.GetDataby_IDA(NYM2_ida)
+                Dim _DL As String = 0
+                Try
+                    _DL = dao.fields.DL
+                Catch ex As Exception
 
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM2_ida & "&process= " & _process & "');", True)
+                End Try
+
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM2_ida & "&process= " & _process & "&DL=" & _DL & "');", True)
             End If
         End If
     End Sub
