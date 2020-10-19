@@ -962,56 +962,56 @@ Namespace DAO_DRUG
         'End Sub
     End Class
 
-    'Public Class ClsDB_nym_proof
-    '    Inherits MAINCONTEXT
+    Public Class ClsDB_nym_proof
+        Inherits MAINCONTEXT
 
-    '    Public fields As New DRUG_NORYORMOR_PROOF
-    '    Public Sub GetDataby_IDA(ByVal IDA As Integer)
+        Public fields As New DRUG_NORYORMOR_PROOF
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
 
-    '        datas = (From p In db.DRUG_NORYORMOR_PROOFs Where p.IDA = IDA Select p)
-    '        For Each Me.fields In datas
-    '        Next
-    '    End Sub
-    '    Public Sub GetDataby_FK(ByVal FK_DRSAMP As Integer)
+            datas = (From p In db.DRUG_NORYORMOR_PROOFs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_FK(ByVal FK_DRSAMP As Integer)
 
-    '        datas = (From p In db.DRUG_NORYORMOR_PROOFs Where p.FK_DRSAMP = FK_DRSAMP Select p)
-    '        For Each Me.fields In datas
-    '        Next
-    '    End Sub
-    '    Public Sub GetDataby_Process(ByVal PROCESS_ID As Integer)
+            datas = (From p In db.DRUG_NORYORMOR_PROOFs Where p.FK_DRSAMP = FK_DRSAMP Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_Process(ByVal PROCESS_ID As Integer)
 
-    '        datas = (From p In db.DRUG_NORYORMOR_PROOFs Where p.PROCESS_ID = PROCESS_ID Select p)
-    '        For Each Me.fields In datas
-    '        Next
-    '    End Sub
+            datas = (From p In db.DRUG_NORYORMOR_PROOFs Where p.PROCESS_ID = PROCESS_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
 
-    '    Public Sub insert()
-    '        db.DRUG_NORYORMOR_PROOFs.InsertOnSubmit(fields)
-    '        db.SubmitChanges()
-    '    End Sub
-    '    Public Sub update()
-    '        db.SubmitChanges()
-    '    End Sub
+        Public Sub insert()
+            db.DRUG_NORYORMOR_PROOFs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
 
-    '    Public Sub delete()
-    '        db.DRUG_NORYORMOR_PROOFs.DeleteOnSubmit(fields)
-    '        db.SubmitChanges()
-    '    End Sub
+        Public Sub delete()
+            db.DRUG_NORYORMOR_PROOFs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
 
-    '    Public Sub GetDataAll()
+        Public Sub GetDataAll()
 
-    '        datas = (From p In db.DRUG_NORYORMOR_PROOFs Select p)
-    '        For Each Me.fields In datas
-    '        Next
-    '    End Sub
+            datas = (From p In db.DRUG_NORYORMOR_PROOFs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
 
-    '    Public Sub GetDataAll2()
+        Public Sub GetDataAll2()
 
-    '        datas = (From p In db.DRUG_NORYORMOR_PROOFs Select p)
+            datas = (From p In db.DRUG_NORYORMOR_PROOFs Select p)
 
-    '    End Sub
+        End Sub
 
-    'End Class
+    End Class
 
     Public Class ClsDB_nym4_donate_detail
         Inherits MAINCONTEXT
