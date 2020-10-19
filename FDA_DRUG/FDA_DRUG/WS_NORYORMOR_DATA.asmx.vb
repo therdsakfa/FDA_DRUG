@@ -187,4 +187,36 @@ Public Class WS_NORYORMOR_DATA
 
         Return dt
     End Function
+
+    <WebMethod()>
+    Public Function Get_Login_Name(ByVal Citizen_id As String) As String
+
+        Dim str_name As String = ""
+        Dim dao_syslcnsnm As New DAO_CPN.clsDBsyslcnsnm
+        dao_syslcnsnm.GetDataby_identify(Citizen_id)
+        Dim dao_pre As New DAO_CPN.TB_sysprefix
+
+        If String.IsNullOrEmpty(dao_syslcnsnm.fields.thalnm) = True Or dao_syslcnsnm.fields.thalnm = Nothing Then
+            Try
+                dao_pre.Getdata_byid(dao_syslcnsnm.fields.prefixcd)
+                str_name = dao_pre.fields.thanm & " " & dao_syslcnsnm.fields.thanm
+            Catch ex As Exception
+                str_name = dao_syslcnsnm.fields.thanm
+            End Try
+
+
+        Else
+            Try
+                dao_pre.Getdata_byid(dao_syslcnsnm.fields.prefixcd)
+                str_name = dao_pre.fields.thanm & " " & dao_syslcnsnm.fields.thanm + " " + dao_syslcnsnm.fields.thalnm
+            Catch ex As Exception
+                str_name = dao_syslcnsnm.fields.thanm + " " + dao_syslcnsnm.fields.thalnm
+            End Try
+
+        End If
+
+
+
+        Return str_name
+    End Function
 End Class

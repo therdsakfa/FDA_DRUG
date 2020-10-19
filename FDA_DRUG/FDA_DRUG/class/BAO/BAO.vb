@@ -6007,7 +6007,12 @@ Namespace BAO
 
             dao_syslcnsid.GetDataby_identify(_CLS.CITIZEN_ID)
             dao_syslcnsnm.GetDataby_identify(_CLS.CITIZEN_ID)
-            _CLS.LCNSID = dao_syslcnsid.fields.lcnsid
+            Try
+
+            Catch ex As Exception
+                _CLS.LCNSID = dao_syslcnsid.fields.lcnsid
+            End Try
+
 
             If String.IsNullOrEmpty(dao_syslcnsnm.fields.thalnm) = True Or dao_syslcnsnm.fields.thalnm = Nothing Then
                 _CLS.THANM = dao_syslcnsnm.fields.thanm
@@ -6027,11 +6032,13 @@ Namespace BAO
             dao_syslcnsid.GetDataby_identify(CITIZEN_ID_AUTHORIZE)
 
             Dim dao_sysnmperson As New DAO_CPN.clsDBsyslcnsnm
-            dao_sysnmperson.GetDataby_lcnsid(dao_syslcnsid.fields.lcnsid)
+            Try
+                dao_sysnmperson.GetDataby_lcnsid(dao_syslcnsid.fields.lcnsid)
 
-            _CLS.LCNSID_CUSTOMER = dao_syslcnsid.fields.lcnsid
+                _CLS.LCNSID_CUSTOMER = dao_syslcnsid.fields.lcnsid
+            Catch ex As Exception
 
-
+            End Try
 
             Dim ws2 As New WS_Taxno_TaxnoAuthorize.WebService1
             Try

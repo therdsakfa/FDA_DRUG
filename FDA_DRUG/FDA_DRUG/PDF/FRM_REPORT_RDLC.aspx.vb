@@ -85,6 +85,7 @@ Public Class FRM_REPORT_RDLC
             dt_tp_stock = bao_show.SP_DRRGT_KEEP_DRUG_BY_newcode(Request.QueryString("NEWCODE")) '
             dt_edit_history = bao_show.SP_DRRGT_EDIT_REQUEST_HISTORY(Request.QueryString("IDA"))
             ' dt_export = bao_master_2.SP_DRRGT_NAME_DRUG_EXPORT_BY_NEWCODE(Request.QueryString("NEWCODE"))
+
         Else
             Try
                 Dim dao_rgt As New DAO_DRUG.ClsDBdrrqt

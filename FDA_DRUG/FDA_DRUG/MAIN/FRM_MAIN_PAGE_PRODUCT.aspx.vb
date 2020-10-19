@@ -25,7 +25,7 @@
                 Dim dao As New DAO_DRUG.TB_MAS_NOTICE
                 dao.GetDataby_SYSTEM_ID(3)
                 str_notice = dao.fields.NOTICE
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('" & str_notice & "');", True)
+                ' System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('" & str_notice & "');", True)
             Catch ex As Exception
 
             End Try

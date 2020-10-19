@@ -8,8 +8,8 @@
     Private _TOKEN As String
 
     Private Sub RunQuery()
-        '_TOKEN = Request("Token").ToString()
-        _TOKEN = "HDuU0SE7AJq0wr64FD5vtwUU" 'test                อย่าลืมแก้กลับ
+        _TOKEN = Request("Token").ToString()
+        '_TOKEN = "HDuU0SE7AJq0wr64FD5vtwUU" 'test                อย่าลืมแก้กลับ
         '_TOKEN = "K1JtRwgdZD5oslzpr5dLKgUU" 'AOF
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -96,7 +96,12 @@
 
         Dim bao_a As New BAO.ClsDBSqlcommand
         Dim i As Integer = 0
-        i = bao_a.Count_Permission_Menu(clsxml.Get_Value_XML("System_ID"), clsxml.Get_Value_XML("Groups"), "8734002", clsxml.Get_Value_XML("CITIEZEN_ID_AUTHORIZE"))
+        Try
+            i = bao_a.Count_Permission_Menu(clsxml.Get_Value_XML("System_ID"), clsxml.Get_Value_XML("Groups"), "8734002", clsxml.Get_Value_XML("CITIEZEN_ID_AUTHORIZE"))
+        Catch ex As Exception
+
+        End Try
+
         If i > 0 Then
             _CLS.ID_MENU = 8734002
             'Session("CLS") = _CLS
