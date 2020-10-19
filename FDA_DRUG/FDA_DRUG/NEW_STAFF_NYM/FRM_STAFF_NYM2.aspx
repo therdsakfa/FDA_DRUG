@@ -118,6 +118,9 @@
                        <telerik:GridBoundColumn DataField="NYM2_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM2_IDA column" HeaderText="IDA"
                            SortExpression="NYM2_IDA" UniqueName="NYM2_IDA" Display="false">
                        </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
+                        HeaderText="เลขIDAของDL" SortExpression="DL" UniqueName="DL" Display="false">
+                    </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="PROCESS_ID" DataType="System.Int32" FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                            SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
                        </telerik:GridBoundColumn>
@@ -126,9 +129,10 @@
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
                            HeaderText="ประเภท" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
+                            <HeaderStyle Width="70px" />
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
-                           HeaderText="รหัสบัญชีรายการยา" SortExpression="DL" UniqueName="DL">
+                       <telerik:GridBoundColumn DataField="RCVNO_DISPLAY" FilterControlAltText="Filter RCVNO_DISPLAY column"
+                           HeaderText="รหัสบัญชีรายการยา" SortExpression="RCVNO_DISPLAY" UniqueName="RCVNO_DISPLAY">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="NYM2_WISH_MED" FilterControlAltText="Filter NYM2_WISH_MED column"
                            HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM2_WISH_MED" UniqueName="NYM2_WISH_MED">

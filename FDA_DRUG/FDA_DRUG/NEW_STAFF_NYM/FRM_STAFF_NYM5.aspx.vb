@@ -48,7 +48,7 @@ Public Class FRM_STAFF_NYM5
         ddl_search.DataValueField = "PROCESS_ID"
         ddl_search.DataBind()
         Dim item As New ListItem
-        item.Text = "กรุณาเลือกประเภท"
+        item.Text = "นยม5"
         item.Value = "0"
         ddl_search.Items.Insert(0, item)
     End Sub
@@ -78,6 +78,28 @@ Public Class FRM_STAFF_NYM5
             End Try
             Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
             btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
+        End If
+    End Sub
+    Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand    'กดปุ่มใน grid ให้ทำอะไร จากหหน้
+        If TypeOf e.Item Is GridDataItem Then
+            Dim item As GridDataItem = e.Item
+
+            Dim NYM As String = "5"
+            Dim NYM5_ida As String = item("NYM5_IDA").Text
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_5
+
+
+            If e.CommandName = "sel" Then
+                '    dao.GetDataby_IDA(NYM2_ida)
+                'Dim tr_id As Integer = 0
+                'Try
+                '    tr_id = dao.fields.TR_ID
+                'Catch ex As Exception
+
+                'End Try
+
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM5_ida & "&Process= " & _process & "');", True)
+            End If
         End If
     End Sub
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click

@@ -82,6 +82,10 @@ Public Class FRM_REPORT_REGIST
         dao.GetDataby_IDA(_IDA)
         dao.fields.STATUS_ID = statusID
 
+        Dim dao_pc As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
+        dao_pc.GetDataby_FK_IDA(_IDA)
+
+
         If statusID = "7" Then
             dao.fields.STATUS_ID = statusID
             Try
@@ -97,6 +101,7 @@ Public Class FRM_REPORT_REGIST
                 Dim i As Integer = 0
                 Dim dao_tt As New DAO_DRUG.TB_DRUG_REGISTRATION_DETAIL_CA
                 i = dao_tt.Count_IOWA_NULL_Databy_FK_IDA(_IDA)
+
 
                 If i > 0 Then
                     Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ เนื่องจากบันทึกข้อมูลไม่ครบถ้วน');</script> ")
@@ -123,16 +128,28 @@ Public Class FRM_REPORT_REGIST
                 Dim rcvno As String = bao.GEN_NO_06(con_year(Date.Now.Year()), _CLS.PVCODE, "130001", _CLS.LCNNO, "", "", _IDA, "")
                 Dim rcv_format As String = bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), rcvno)
 
-                Try
-                    dao.fields.RCVDATE = Date.Now 'CDate(txt_app_date.Text)
-                Catch ex As Exception
+                If dao_pc.fields.FK_IDA Is Nothing Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกขนาดบรรจุ');</script> ")
+                ElseIf dao.fields.UNIT_NORMAL = "" Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหน่วยนับตามรูปของแบบยา');</script> ")
+                ElseIf dao.fields.DRUG_GROUP = "" Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหมวดยา');</script> ")
+                ElseIf dao.fields.GROUP_TYPE = "" Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกประเภทของยา');</script> ")
+                ElseIf dao.fields.FK_DOSAGE_FORM = "" Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกรูปแบบของยา');</script> ")
+                Else
+                    Try
+                        dao.fields.RCVDATE = Date.Now 'CDate(txt_app_date.Text)
+                    Catch ex As Exception
 
-                End Try
-                dao.fields.RCVNO = rcvno
-                dao.fields.RCVNO_DISPLAY = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
-                dao.fields.REGIS_NO = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
-                dao.update()
-                alert("ยืนยันข้อมูลแล้ว คุณได้เลขรับที่ " & "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5))
+                    End Try
+                    dao.fields.RCVNO = rcvno
+                    dao.fields.RCVNO_DISPLAY = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
+                    dao.fields.REGIS_NO = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
+                    dao.update()
+                    alert("ยืนยันข้อมูลแล้ว คุณได้เลขรับที่ " & "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5))
+                End If
             End If
         End If
     End Sub

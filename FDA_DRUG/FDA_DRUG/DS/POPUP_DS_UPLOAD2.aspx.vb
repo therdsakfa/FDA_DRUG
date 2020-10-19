@@ -248,7 +248,7 @@ Public Class POPUP_DS_UPLOAD2
             dao.update()
 
             Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-            dao_up.GetDataby_IDA(Integer.Parse(TR_ID))
+            dao_up.GetDataby_TR_ID_Process(dao.fields.TR_ID, dao.fields.process_id)
             dao_up.fields.REF_NO = dao.fields.IDA
             dao_up.update()
 
