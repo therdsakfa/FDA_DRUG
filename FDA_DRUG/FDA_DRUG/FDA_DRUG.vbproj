@@ -732,7 +732,6 @@
     <Content Include="DRUG_IMPORT\POPUP_RESEARCH_SUM_CONFIRM.aspx" />
     <Content Include="DRUG_IMPORT\POPUP_RESEARCH_SUM_DL.aspx" />
     <Content Include="DRUG_IMPORT\POPUP_RESEARCH_SUM_UL.aspx" />
-    <Content Include="DRUG_IMPORT\UC_NYM_PROOF_UPLOAD.aspx" />
     <Content Include="DRUG_REQUEST_CENTER\DRUG_REQUEST_BY_CUSTOMER_MAIN.aspx" />
     <Content Include="DRUG_REQUEST_CENTER\DRUG_REQUEST_CENTER_C_INSERT.aspx" />
     <Content Include="DRUG_REQUEST_CENTER\DRUG_REQUEST_CENTER_C_INSERT_MANUAL.aspx" />
@@ -942,7 +941,6 @@
     <Content Include="DS\POPUP_DS_NORYOR.aspx" />
     <Content Include="DS\POPUP_DS_UPLOAD.aspx" />
     <Content Include="DS\POPUP_DS_UPLOAD2.aspx" />
-    <Content Include="DS\POPUP_DS_UPLOAD_NORYORMOR.aspx" />
     <Content Include="DS\POPUP_NYM_CONFIRM.aspx" />
     <Content Include="DS\UC\UC_DS_CHECAL_DETAIL.ascx" />
     <Content Include="DS\UC\UC_DS_DOWNLOAD.ascx" />
@@ -2539,13 +2537,6 @@
       <DependentUpon>POPUP_RESEARCH_SUM_UL.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DRUG_IMPORT\UC_NYM_PROOF_UPLOAD.aspx.designer.vb">
-      <DependentUpon>UC_NYM_PROOF_UPLOAD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DRUG_IMPORT\UC_NYM_PROOF_UPLOAD.aspx.vb">
-      <DependentUpon>UC_NYM_PROOF_UPLOAD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="DRUG_REQUEST_CENTER\DRUG_REQUEST_BY_CUSTOMER_MAIN.aspx.designer.vb">
       <DependentUpon>DRUG_REQUEST_BY_CUSTOMER_MAIN.aspx</DependentUpon>
     </Compile>
@@ -3468,6 +3459,7 @@
     </Compile>
     <Compile Include="NEW_STAFF_NYM\FRM_STAFFNYM_CONFIRM.aspx.vb">
       <DependentUpon>FRM_STAFFNYM_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="NEW_STAFF_NYM\FRM_STAFFNYM_RCV_MANUAL.aspx.designer.vb">
       <DependentUpon>FRM_STAFFNYM_RCV_MANUAL.aspx</DependentUpon>
@@ -4223,13 +4215,6 @@
     </Compile>
     <Compile Include="DS\POPUP_DS_UPLOAD2.aspx.vb">
       <DependentUpon>POPUP_DS_UPLOAD2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DS\POPUP_DS_UPLOAD_NORYORMOR.aspx.designer.vb">
-      <DependentUpon>POPUP_DS_UPLOAD_NORYORMOR.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DS\POPUP_DS_UPLOAD_NORYORMOR.aspx.vb">
-      <DependentUpon>POPUP_DS_UPLOAD_NORYORMOR.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DS\POPUP_NYM_CONFIRM.aspx.designer.vb">

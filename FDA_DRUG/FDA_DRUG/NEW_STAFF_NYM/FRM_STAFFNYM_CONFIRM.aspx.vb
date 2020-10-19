@@ -413,7 +413,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
 
     End Sub
-    Sub alert_reload(ByVal text As String                                                                                                   'reload page 
+    Sub alert_reload(ByVal text As String)                                                                                                  'reload page 
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');</script> ")
 
         Dim dao_n As New DAO_DRUG.ClsDBdalcn
