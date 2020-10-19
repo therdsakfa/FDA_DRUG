@@ -87,12 +87,12 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
         Dim bao As New BAO.ClsDBSqlcommand
-        If _process = "1027" Then                                   'เช็ค Status เป็น nym อะไร และการกดปุ่มในแต่ละอันจะอัพเดท ststus_id ใน base TB_FDA_DRUG_IMPORT_NYM_ ของ NYM นั้นๆ
+        If _process = 1027 Then                                   'เช็ค Status เป็น nym อะไร และการกดปุ่มในแต่ละอันจะอัพเดท ststus_id ใน base TB_FDA_DRUG_IMPORT_NYM_ ของ NYM นั้นๆ
             dao2.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
                 dao2.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
             Else
-                dao2.fields.STATUS_ID = 1                       'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                dao2.fields.STATUS_ID = 2                       'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง      ตรงนี้ตามจริงต้องเป็น 2 เหมือนกันไหม
             End If
             dao2.update()
         ElseIf _process = "1028" Then
@@ -100,7 +100,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             If Request.QueryString("staff") <> "" Then
                 dao3.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
             Else
-                dao3.fields.STATUS_ID = 1                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                dao3.fields.STATUS_ID = 2                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
             End If
             dao3.update()
         ElseIf _process = "1029" Then
@@ -108,7 +108,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             If Request.QueryString("staff") <> "" Then
                 dao4.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
             Else
-                dao4.fields.STATUS_ID = 1                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                dao4.fields.STATUS_ID = 2                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
             End If
             dao4.update()
         End If
@@ -167,7 +167,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
     '    '''  ดึงค่า XML มาแสดง
     '    ''' </summary>
     '    ''' <remarks></remarks>
-    Private Sub load_xml(ByVal FileName As String)
+    Private Sub load_xml(ByVal FileName As String)                                                                       'ไม่จำเป็นต้องใช้ไหมอะอันนี้ 
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
         Dim objStreamReader As New StreamReader(bao._PATH_XML_TRADER & FileName & ".xml") '"C:\path\XML_TRADER\"
@@ -216,19 +216,19 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
 
-        dao2.getdata_dl(_IDA)
-        dao3.getdata_dl(_IDA)
-        dao4.getdata_dl(_IDA)
-        Dim class_xml2 As New CLASS_NYM_2
+        dao2.GetDataby_IDA(_IDA)
+        dao3.getdata_ida(_IDA)
+        dao4.getdata_ida(_IDA)
+        Dim class_xml21 As New CLASS_NYM_2
+        'Dim class_xml22 As New CLASS_NYM_2
         Dim class_xml3 As New CLASS_NYM_3_SM
         Dim class_xml4 As New CLASS_NYM_4_SM
 
-
         ' class_xml = cls_dalcn.gen_xml()
-        class_xml2.NYM_2s = dao2.fields
-        class_xml3.NYM_3s = dao3.fields
-        class_xml4.NYM_4s = dao4.fields
-
+        'class_xml21.NYM_2s = dao2.fields
+        'class_xml22.NYM_2s = dao2.fields
+        'class_xml3.NYM_3s = dao3.fields
+        'class_xml4.NYM_4s = dao4.fields
 
         'Dim p_noryormor2 As New CLASS_NYM_2
         'p_noryormor2 = p_nym2
@@ -239,13 +239,17 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         'b64 = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
 
         Dim bao_show As New BAO_SHOW
-        class_xml2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA)
+        'class_xml2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA)
+        class_xml21.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2_ONLY1(_IDA)
+        class_xml21.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA) '76 66
         class_xml3.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(_IDA)
         class_xml4.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)
 
-        p_nym2 = class_xml2
-        Dim dao_nym As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-        dao_nym.getdata_dl(_DL)
+        p_nym2 = class_xml21
+
+
+        Dim dao_nym As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2                     'เรียกใช้ ฟังชั่นของ base NYM2
+        dao_nym.GetDataby_IDA(_IDA)                                                     'ดึงข่้อมูลจาก IDA
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         Dim paths As String = bao._PATH_DEFAULT                                         ' PART ต้องเป็น defult ก่อน 
 
@@ -265,8 +269,8 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
 
 
-        lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
-        hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+        lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>" 'แสดงไฟล์บนหน้าเว็บ
+        hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่ ACOBAT
 
 
         HiddenField1.Value = filename

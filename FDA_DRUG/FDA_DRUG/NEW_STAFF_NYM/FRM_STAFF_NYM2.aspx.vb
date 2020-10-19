@@ -9,6 +9,8 @@ Public Class FRM_STAFF_NYM2
     Sub RunSession()
         Try
             _CLS = Session("CLS")
+
+            _process = Request.QueryString("process")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
@@ -42,14 +44,14 @@ Public Class FRM_STAFF_NYM2
         Dim dt As New DataTable
         Dim bao As New BAO.ClsDBSqlcommand
 
-        dt = bao.SP_MAS_NYMSTAFF_PROCESS
+        dt = bao.SP_NYMSTAFF_ALLPROCESS
 
         ddl_search.DataSource = dt 'dao.datas
         ddl_search.DataTextField = "PROCESS_NAME"
         ddl_search.DataValueField = "PROCESS_ID"
         ddl_search.DataBind()
         Dim item As New ListItem
-        item.Text = "กรุณาเลือกประเภท"
+        item.Text = "นยม2"
         item.Value = "0"
         ddl_search.Items.Insert(0, item)
     End Sub
@@ -72,15 +74,8 @@ Public Class FRM_STAFF_NYM2
 
 
             If e.CommandName = "sel" Then
-                '    dao.GetDataby_IDA(NYM2_ida)
-                'Dim tr_id As Integer = 0
-                'Try
-                '    tr_id = dao.fields.TR_ID
-                'Catch ex As Exception
 
-                'End Try
-
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../STAFF_NYM/FRM_NYM_CONFIRM.aspx?IDA=" & NYM2_ida & "&Process= " & _process & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM2_ida & "&process= " & _process & "');", True)
             End If
         End If
     End Sub
@@ -108,24 +103,23 @@ Public Class FRM_STAFF_NYM2
         Dim process_id As String
         Dim url As String = ""
         Dim NYM As String = ""
-        Dim dao As New DAO_DRUG.clsDBMAS_NYMSTAFF_PROCESS
         process_id = ddl_search.SelectedValue
         If ddl_search.SelectedValue <> "0" Then
-            If process_id = "10260" Or process_id = "10270" Or process_id = "10280" Or process_id = "10291" Or process_id = "10300" Then
+            If process_id = "1026" Or process_id = "1027" Or process_id = "1028" Or process_id = "1029" Or process_id = "1030" Then
                 Select Case process_id
-                    Case "10270"
+                    Case "1027"
                         NYM = "2"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM2.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
-                    Case "10280"
+                    Case "1028"
                         NYM = "3"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM3.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
-                    Case "10291"
+                    Case "1029"
                         NYM = "4"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM4.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
-                    Case "10300"
+                    Case "1030"
                         NYM = "5"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM5.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 

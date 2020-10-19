@@ -41,14 +41,14 @@ Public Class FRM_STAFF_NYM5
         Dim dt As New DataTable
         Dim bao As New BAO.ClsDBSqlcommand
 
-        dt = bao.SP_MAS_NYMSTAFF_PROCESS
+        dt = bao.SP_NYMSTAFF_ALLPROCESS
 
         ddl_search.DataSource = dt 'dao.datas
         ddl_search.DataTextField = "PROCESS_NAME"
         ddl_search.DataValueField = "PROCESS_ID"
         ddl_search.DataBind()
         Dim item As New ListItem
-        item.Text = "กรุณาเลือกประเภท"
+        item.Text = "นยม5"
         item.Value = "0"
         ddl_search.Items.Insert(0, item)
     End Sub
@@ -80,33 +80,53 @@ Public Class FRM_STAFF_NYM5
             btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
         End If
     End Sub
+    Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand    'กดปุ่มใน grid ให้ทำอะไร จากหหน้
+        If TypeOf e.Item Is GridDataItem Then
+            Dim item As GridDataItem = e.Item
+
+            Dim NYM As String = "5"
+            Dim NYM5_ida As String = item("NYM5_IDA").Text
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_5
+
+
+            If e.CommandName = "sel" Then
+                '    dao.GetDataby_IDA(NYM2_ida)
+                'Dim tr_id As Integer = 0
+                'Try
+                '    tr_id = dao.fields.TR_ID
+                'Catch ex As Exception
+
+                'End Try
+
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM5_ida & "&Process= " & _process & "');", True)
+            End If
+        End If
+    End Sub
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
         Dim process_id As String
         Dim url As String = ""
         Dim NYM As String = ""
-        Dim dao As New DAO_DRUG.clsDBMAS_NYMSTAFF_PROCESS
         process_id = ddl_search.SelectedValue
         If ddl_search.SelectedValue <> "0" Then
-            If process_id = "10260" Or process_id = "10270" Or process_id = "10280" Or process_id = "10291" Or process_id = "10300" Then
+            If process_id = "1026" Or process_id = "1027" Or process_id = "1028" Or process_id = "1029" Or process_id = "1030" Then
                 Select Case process_id
-                    Case "10270"
+                    Case "1027"
                         NYM = "2"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM2.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
-                    Case "10280"
+                    Case "1028"
                         NYM = "3"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM3.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
-                    Case "10291"
+                    Case "1029"
                         NYM = "4"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM4.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
-                    Case "10300"
+                    Case "1030"
                         NYM = "5"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM5.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
 
                 End Select
-                'url = "../NEW_STAFF_NYM/FRM_STAFF_NYM2.aspx?process=" & ddl_search.SelectedValue
                 Response.Redirect(url)
             End If
         Else

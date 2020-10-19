@@ -425,7 +425,14 @@
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_IDAandtype(ByVal IDA As String, ByVal type As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_UPLOADs Where p.FK_DRUG_IMPORT = IDA And p.TYPE_DRUG_IMPORT = type Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
     End Class
+
 
     Public Class TB_FDA_DRUG_IMPORT_NYM_DETAIL
         Inherits MAINCONTEXT

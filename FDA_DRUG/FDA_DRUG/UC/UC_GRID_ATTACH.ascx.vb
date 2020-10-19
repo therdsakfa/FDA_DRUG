@@ -18,6 +18,15 @@
         End If
 
     End Sub
+    Public Sub loadatteachfromdrugimportupload(ByVal ida As String, ByVal type As Integer)               'MINทำนะ
+        If ida <> "" And ida <> "0" Then
+            Dim dao As New DAO_DRUG_IMPORT.ClsDBDRUG_IMPORT_UPLOAD 'เรียกใช้classตารางไฟล์แนบ
+            dao.GetDataby_IDAandtype(ida, type) 'ดึงข้อมูลโดยการ where ida ,type
+            gv2.DataSource = dao.datas 'ใส่ข้อมูลลงตาราง
+            gv2.DataBind() 'รันข้อมูลทุกrowของตาราง
+        End If
+
+    End Sub
     Public Sub load_gv_V2(ByVal TR_ID As String, ByVal process As String)
         If TR_ID <> "" And TR_ID <> 0 Then
             Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH 'เรียกใช้classตารางไฟล์แนบ

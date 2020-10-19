@@ -156,6 +156,7 @@ Namespace BAO
                 .drgbiost = dao.fields.drgbiost
                 .drgexpst = dao.fields.drgexpst
                 .drgnewst = dao.fields.drgnewst
+                .PACKAGE_DETAIL = dao.fields.PACKAGE_DETAIL
                 Try
                     .rcptpayst = dao.fields.dvcd
                 Catch ex As Exception
