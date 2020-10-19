@@ -24,7 +24,6 @@ Public Class FRM_STAFF_NYM31
         get_pvncd()
         If Not IsPostBack Then
             load_ddl()
-            'load_GV_lcnno()
         End If
     End Sub
     Sub get_pvncd()
