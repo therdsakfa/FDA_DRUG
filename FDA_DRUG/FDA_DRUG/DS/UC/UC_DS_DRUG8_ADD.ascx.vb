@@ -476,4 +476,5 @@ Public Class UC_DS_DRUG8_ADD
         set_label()
 
     End Sub
+
 End Class
