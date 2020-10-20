@@ -462,7 +462,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 int_group_ddl = 33
             End If
         End If
-        bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(5, int_group_ddl)
+        bao.SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL(9, int_group_ddl)
         dt = bao.dt
 
         ddl_cnsdcd.DataSource = dt

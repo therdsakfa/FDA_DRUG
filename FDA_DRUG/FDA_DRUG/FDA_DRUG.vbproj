@@ -48,7 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Words">
-      <HintPath>..\..\..\bin\Aspose.Words.dll</HintPath>
+      <HintPath>..\..\..\X\FDA_DRUG_HERB-master\FDA_DRUG_HERB\bin\Aspose.Words.dll</HintPath>
     </Reference>
     <Reference Include="ClosedXML, Version=0.95.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ClosedXML.0.95.3\lib\net40\ClosedXML.dll</HintPath>
@@ -61,7 +61,7 @@
     </Reference>
     <Reference Include="itextsharp, Version=5.5.7.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\bin\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\X\FDA_DRUG_HERB-master\FDA_DRUG_HERB\bin\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -86,7 +86,7 @@
     </Reference>
     <Reference Include="QRCoder, Version=1.2.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\bin\QRCoder.dll</HintPath>
+      <HintPath>..\..\..\X\FDA_DRUG_HERB-master\FDA_DRUG_HERB\bin\QRCoder.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -120,11 +120,11 @@
     <Reference Include="WindowsBase" />
     <Reference Include="zxing, Version=0.15.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\bin\zxing.dll</HintPath>
+      <HintPath>..\..\..\X\FDA_DRUG_HERB-master\FDA_DRUG_HERB\bin\zxing.dll</HintPath>
     </Reference>
     <Reference Include="zxing.presentation, Version=0.15.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\bin\zxing.presentation.dll</HintPath>
+      <HintPath>..\..\..\X\FDA_DRUG_HERB-master\FDA_DRUG_HERB\bin\zxing.presentation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
