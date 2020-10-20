@@ -670,6 +670,7 @@
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_MAIN_NYM.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_PROOF_NEW.aspx" />
+    <Content Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_CONSIDER.aspx" />
     <Content Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx" />
     <Content Include="XML_DRUG_RGT.asmx" />
     <None Include="DESIGN\Scripts\jquery-1.8.2.intellisense.js" />
@@ -1518,6 +1519,14 @@
       <LastGenOutput>LINQ_FDA_DRUG_IMPORT.designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Linq\LINQ_DRUG_DEMO.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LINQ_DRUG_DEMO.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Linq\LINQ_DRUG_DEMO.dbml.layout">
+      <DependentUpon>LINQ_DRUG_DEMO.dbml</DependentUpon>
+    </None>
     <None Include="Linq\LINQ_FDA_DRUG_IMPORT.dbml.layout">
       <DependentUpon>LINQ_FDA_DRUG_IMPORT.dbml</DependentUpon>
     </None>
@@ -2260,6 +2269,7 @@
     <Compile Include="class\CLS_SOP.vb" />
     <Compile Include="class\cls_utility.vb" />
     <Compile Include="class\DAO\DAO_BOOKING.vb" />
+    <Compile Include="class\DAO\DAO_DRUG_DEMO.vb" />
     <Compile Include="class\DAO\DAO_DRUG_IMPORT.vb" />
     <Compile Include="class\DAO\DAO_FDA_XML_DRUG.vb" />
     <Compile Include="class\DAO\DAO_FEE.vb" />
@@ -3360,6 +3370,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LINQ_BOOKING.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Linq\LINQ_DRUG_DEMO.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LINQ_DRUG_DEMO.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Linq\LINQ_FDA_DRUG_IMPORT.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3705,6 +3720,13 @@
     </Compile>
     <Compile Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_CONFIRM_STAFF.aspx.vb">
       <DependentUpon>FRM_RGT_EDIT_CONFIRM_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_CONSIDER.aspx.designer.vb">
+      <DependentUpon>FRM_RGT_EDIT_CONSIDER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_CONSIDER.aspx.vb">
+      <DependentUpon>FRM_RGT_EDIT_CONSIDER.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_MAIN_STAFF.aspx.designer.vb">

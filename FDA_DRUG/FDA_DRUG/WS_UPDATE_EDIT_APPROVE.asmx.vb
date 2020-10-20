@@ -10,20 +10,23 @@ Imports System.ComponentModel
 Public Class WS_UPDATE_EDIT_APPROVE
     Inherits System.Web.Services.WebService
 
-    <WebMethod()> _
-    Public Sub Update_STATUS_EDIT(ByVal TR_ID As Integer)
+    <WebMethod()>
+    Public Sub Update_STATUS_EDIT(ByVal TR_ID As Integer, ByVal appdate As Date)
         Dim Result As String = ""
         Dim dao_edt As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
+
+        dao_edt.GetDatabyTRID(TR_ID)
+        dao_edt.fields.STATUS_ID = 8
+        dao_edt.fields.cnccd = 1
         Try
-            dao_edt.GetDatabyTRID(TR_ID)
-            dao_edt.fields.STATUS_ID = 8
-            dao_edt.fields.cnccd = 1
-            dao_edt.update()
-            'Dim dao_log As New DAO_DRUG.TB_LOG_STATUS
-            'dao_log.fields.FK_IDA
+
         Catch ex As Exception
-           
+
         End Try
+        dao_edt.fields.cncdate = appdate
+        dao_edt.update()
+        'Dim dao_log As New DAO_DRUG.TB_LOG_STATUS
+        'dao_log.fields.FK_IDA
 
     End Sub
 
