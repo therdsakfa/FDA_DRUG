@@ -42,6 +42,7 @@ Namespace BAO
         Dim rdr As SqlDataReader
 
         Dim conn As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("LGT_DRUGConnectionString").ConnectionString)
+        Dim conndrugimport As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("FDA_DRUG_IMPORTConnectionString").ConnectionString)
         Public condrugimport As String = System.Configuration.ConfigurationManager.ConnectionStrings("FDA_DRUG_IMPORTConnectionString").ConnectionString
         Public con_str As String = System.Configuration.ConfigurationManager.ConnectionStrings("LGT_DRUGConnectionString").ConnectionString
         Dim conn_CPN As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("LGTCPNConnectionString1").ConnectionString)
@@ -5046,6 +5047,23 @@ Namespace BAO
 
             Return dt
         End Function
+        Public Sub SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL(ByVal _stat_group As Integer, ByVal _group As Integer)
+
+            strSQL = "SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL"
+            SqlCmd = New SqlCommand(strSQL, conndrugimport)
+            If (conn.State = ConnectionState.Open) Then
+                conn.Close()
+            End If
+            conn.Open()
+            SqlCmd.CommandType = CommandType.StoredProcedure
+            SqlCmd.Parameters.Add("@stat_group", SqlDbType.Int).Value = _stat_group
+            SqlCmd.Parameters.Add("@group", SqlDbType.Int).Value = _group
+
+            dtAdapter = New SqlDataAdapter(SqlCmd)
+            dtAdapter.Fill(dt)
+            conn.Close()
+
+        End Sub
         Public Function SP_NYMSTAFF_ALLPROCESS() As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_NYMSTAFF_ALLPROCESS "
