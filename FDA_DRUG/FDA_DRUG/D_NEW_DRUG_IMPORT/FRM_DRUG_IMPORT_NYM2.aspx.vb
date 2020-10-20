@@ -19,7 +19,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
             ''นำค่า Session ใส่ ในตัวแปร _CLS
             _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
             _DL = Request.QueryString("DL")
-            _IDA = Request.QueryString("IDA")
+            '_IDA = Request.QueryString("IDA")
             '_TR_ID = Request.QueryString("TR_ID")
             '_lct_ida = Request.QueryString("lct_ida")
             '_type = Request.QueryString("type")
@@ -43,6 +43,10 @@ Public Class FRM_DRUG_IMPORT_MAIN
         'Dim DL As String
         'DL = rcb_search.SelectedValue
         'If rcb_search.SelectedValue <> "0" Then
+        'Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        'dao.GetDataby_IDA(_DL)
+        'Dim _IDA As String = 0
+        '_IDA = dao.fields.NYM2_IDA
         Dim url As String = ""
         Dim NYM As String = ""
         If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
@@ -56,7 +60,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
                 Case "1030"
                     NYM = "5"
             End Select
-            url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process
+            url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process ' & " & NYM2_ida" & _IDA
             Response.Redirect(url)
         End If
         'End If
