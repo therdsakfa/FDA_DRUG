@@ -16970,7 +16970,7 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_2
 	
 	Private _NYM2_WISH_MED As String
 	
-	Private _NYM2_COUNT_MED As String
+	Private _NYM2_COUNT_MED As System.Nullable(Of Integer)
 	
 	Private _NYM2_DEPARTMAENT_ID As System.Nullable(Of Integer)
 	
@@ -17077,6 +17077,8 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_2
 	Private _STAFF_NAME As String
 	
 	Private _REMARK As String
+	
+	Private _APPROVE_DATE As System.Nullable(Of Date)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -17185,7 +17187,7 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_2
     End Sub
     Partial Private Sub OnNYM2_WISH_MEDChanged()
     End Sub
-    Partial Private Sub OnNYM2_COUNT_MEDChanging(value As String)
+    Partial Private Sub OnNYM2_COUNT_MEDChanging(value As System.Nullable(Of Integer))
     End Sub
     Partial Private Sub OnNYM2_COUNT_MEDChanged()
     End Sub
@@ -17400,6 +17402,10 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_2
     Partial Private Sub OnREMARKChanging(value As String)
     End Sub
     Partial Private Sub OnREMARKChanged()
+    End Sub
+    Partial Private Sub OnAPPROVE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnAPPROVE_DATEChanged()
     End Sub
     #End Region
 	
@@ -17809,13 +17815,13 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_2
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM2_COUNT_MED", DbType:="NVarChar(50)")>  _
-	Public Property NYM2_COUNT_MED() As String
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM2_COUNT_MED", DbType:="Int")>  _
+	Public Property NYM2_COUNT_MED() As System.Nullable(Of Integer)
 		Get
 			Return Me._NYM2_COUNT_MED
 		End Get
 		Set
-			If (String.Equals(Me._NYM2_COUNT_MED, value) = false) Then
+			If (Me._NYM2_COUNT_MED.Equals(value) = false) Then
 				Me.OnNYM2_COUNT_MEDChanging(value)
 				Me.SendPropertyChanging
 				Me._NYM2_COUNT_MED = value
@@ -18669,6 +18675,22 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_2
 				Me._REMARK = value
 				Me.SendPropertyChanged("REMARK")
 				Me.OnREMARKChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_APPROVE_DATE", DbType:="DateTime")>  _
+	Public Property APPROVE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._APPROVE_DATE
+		End Get
+		Set
+			If (Me._APPROVE_DATE.Equals(value) = false) Then
+				Me.OnAPPROVE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._APPROVE_DATE = value
+				Me.SendPropertyChanged("APPROVE_DATE")
+				Me.OnAPPROVE_DATEChanged
 			End If
 		End Set
 	End Property

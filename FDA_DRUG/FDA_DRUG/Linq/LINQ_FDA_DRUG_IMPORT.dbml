@@ -822,7 +822,7 @@
       <Column Name="NYM2_ADDRESS_PHONE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="NYM2_ADDRESS_FAX" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="NYM2_WISH_MED" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_COUNT_MED" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NYM2_COUNT_MED" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NYM2_DEPARTMAENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NYM2_DEPARTMAENT_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="NYM2_NAME_ASK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -876,6 +876,7 @@
       <Column Name="STAFF_RECEIVE_IDEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
