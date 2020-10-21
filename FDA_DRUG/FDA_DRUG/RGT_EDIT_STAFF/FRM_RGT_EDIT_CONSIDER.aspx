@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="FRM_RGT_EDIT_CONSIDER.aspx.vb" Inherits="FDA_DRUG.FRM_RGT_EDIT_CONSIDER" %>
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
     <link href="../css/smoothness/jquery2.custom.css" rel="stylesheet" />
@@ -22,13 +23,17 @@
             <div class="panel-body">
 
                 <table class="table">
-                    <tr ><td>หมายเหตุ</td><td>
+                    <tr ><td>หมายเหตุ<asp:ScriptManager ID="ScriptManager1" runat="server">
+                        </asp:ScriptManager>
+                        </td><td>
                         <asp:TextBox ID="Txt_Remark" runat="server" CssClass="input-lg"></asp:TextBox>
                         </td></tr>
 
                     <tr ><td>ชื่อผู้ลงนาม </td><td>
-                        <asp:DropDownList ID="ddl_staff_offer" runat="server" DataTextField="STAFF_OFFER_NAME" DataValueField="IDA" CssClass="input-lg" Width="200px">
-                        </asp:DropDownList>
+                        <%--<asp:DropDownList ID="ddl_staff_offer" runat="server" DataTextField="STAFF_OFFER_NAME" DataValueField="IDA" CssClass="input-lg" Width="200px">
+                        </asp:DropDownList>--%>
+                        <telerik:RadComboBox ID="rcb_staff_offer" DataTextField="STAFF_OFFER_NAME" DataValueField="IDA" Runat="server" Filter="Contains">
+                        </telerik:RadComboBox>
                         </td></tr>
 
                     <tr ><td>วันที่เสนอลงนาม</td><td>

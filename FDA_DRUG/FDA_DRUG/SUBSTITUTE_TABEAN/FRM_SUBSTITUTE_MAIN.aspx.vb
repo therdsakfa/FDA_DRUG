@@ -320,7 +320,7 @@ Public Class FRM_SUBSTITUTE_MAIN
                 Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
                 dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
                 'lbl_titlename.Text = "พิจารณาคำขอขึ้นทะเบียนตำรับ"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_TABEAN/FRM_SUBSTITUTE_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&Process=" & _process_id & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_TABEAN/FRM_SUBSTITUTE_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&Process=" & dao.fields.PROCESS_ID & "');", True)
 
             End If
 

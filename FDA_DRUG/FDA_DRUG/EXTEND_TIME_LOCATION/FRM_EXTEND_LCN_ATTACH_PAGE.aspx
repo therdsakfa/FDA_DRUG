@@ -109,8 +109,26 @@
             </tr>
         </table>
     
+    <br />
+    <hr />
+    
+    <asp:Panel ID="Panel_Edit" runat="server">
+        <table>
+            <tr>
+                <td>
+                    เหตุผลการคืนให้แก้ไขคำขอระบบต่ออายุ
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lbl_reason" runat="server" Text=""></asp:Label>
+                </td>
+            </tr>
+        </table>
 
-    <br /><hr />
+    </asp:Panel>
+    <br />
+    <hr />
     <asp:Panel ID="Panel4" runat="server">
          <h2>
        ขั้นตอนการจัดส่งเอกสาร
