@@ -660,6 +660,7 @@
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM3.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx" />
+    <Content Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_CONFIRM.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_RCV_MANUAL.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_REMARK.aspx" />
@@ -3284,6 +3285,13 @@
     <Compile Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EDIT_LOCATION_STAFF_CONFIRM_PREVIEW.aspx.vb">
       <DependentUpon>POPUP_EDIT_LOCATION_STAFF_CONFIRM_PREVIEW.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx.designer.vb">
+      <DependentUpon>POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx.vb">
+      <DependentUpon>POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="EXTEND_TIME_LOCATION_STAFF\POPUP_IMPORT_GPP.aspx.designer.vb">
       <DependentUpon>POPUP_IMPORT_GPP.aspx</DependentUpon>

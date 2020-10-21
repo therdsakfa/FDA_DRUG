@@ -438,12 +438,13 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
             'dao.update()
             'alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
         ElseIf STATUS_ID = 5 Then
-            dao.GetDataby_IDA(_IDA)
-            dao.fields.STATUS_ID = 5
-            dao.update()
-            AddLogStatusEtracking(5, 0, _CLS.CITIZEN_ID, "คืนให้แก้ไขคำขอระบบต่ออายุ " & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, dao.fields.FK_IDA, dao.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
-            ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", dao.fields.TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "คืนให้แก้ไขคำขอระบบต่ออายุ", _process)
-            Response.Write("<script type='text/javascript'>parent.close_modal(); </script> ")
+            'dao.GetDataby_IDA(_IDA)
+            'dao.fields.STATUS_ID = 5
+            Response.Redirect("POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
+            'dao.update()
+            'AddLogStatusEtracking(5, 0, _CLS.CITIZEN_ID, "คืนให้แก้ไขคำขอระบบต่ออายุ " & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, dao.fields.FK_IDA, dao.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
+            ''ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", dao.fields.TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "คืนให้แก้ไขคำขอระบบต่ออายุ", _process)
+            'Response.Write("<script type='text/javascript'>parent.close_modal(); </script> ")
         ElseIf STATUS_ID = 10 Then
             dao.GetDataby_IDA(_IDA)
             dao.fields.STATUS_ID = 10
@@ -1774,6 +1775,8 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
                     dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 0, _group:=9)
                 ElseIf template_id = 3 Then
                     dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 11, _group:=0)
+                ElseIf template_id = 4 Then
+                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 12, _group:=0)
                 Else
                     'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
                     dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW_AND_GROUP(dao.fields.PROCESS_ID, statusId, 0, 0)
@@ -1798,6 +1801,8 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
                     End If
                 ElseIf template_id = 3 Then
                     dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 11, _group:=0)
+                ElseIf template_id = 4 Then
+                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 12, _group:=0)
                 Else
                     dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(dao.fields.PROCESS_ID, lcntype, statusId, 0, _group:=0)
                     'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
@@ -1824,6 +1829,8 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
                 'End If
             ElseIf template_id = 3 Then
                 dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 11, _group:=0)
+            ElseIf template_id = 4 Then
+                dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(dao.fields.PROCESS_ID, lcntype, statusId, 12, _group:=0)
             Else
                 dao_pdftemplate.GetDataby_TEMPLAETE(dao.fields.PROCESS_ID, lcntype, statusId, 0)
             End If

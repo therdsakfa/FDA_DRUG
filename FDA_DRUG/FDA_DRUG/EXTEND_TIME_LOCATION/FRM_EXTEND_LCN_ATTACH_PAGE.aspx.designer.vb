@@ -50,6 +50,24 @@ Partial Public Class FRM_EXTEND_LCN_ATTACH_PAGE
     Protected WithEvents btn_save_lalong As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''Panel_Edit control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel_Edit As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''lbl_reason control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_reason As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Panel4 control.
     '''</summary>
     '''<remarks>

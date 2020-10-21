@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class FRM_RGT_EDIT_CONSIDER
     
     '''<summary>
+    '''ScriptManager1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+    
+    '''<summary>
     '''Txt_Remark control.
     '''</summary>
     '''<remarks>
@@ -23,13 +32,13 @@ Partial Public Class FRM_RGT_EDIT_CONSIDER
     Protected WithEvents Txt_Remark As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''ddl_staff_offer control.
+    '''rcb_staff_offer control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddl_staff_offer As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents rcb_staff_offer As Global.Telerik.Web.UI.RadComboBox
     
     '''<summary>
     '''TextBox1 control.

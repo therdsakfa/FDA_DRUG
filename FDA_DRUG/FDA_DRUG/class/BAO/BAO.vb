@@ -4143,6 +4143,23 @@ Namespace BAO
             conn.Close()
 
         End Sub
+        '
+        Public Sub SP_STAFF_OFFER_DDL_BY_PVNCD(ByVal pvncd As Integer)
+
+            strSQL = "SP_STAFF_OFFER_DDL_BY_PVNCD"
+            SqlCmd = New SqlCommand(strSQL, conn)
+            If (conn.State = ConnectionState.Open) Then
+                conn.Close()
+            End If
+            conn.Open()
+            SqlCmd.CommandType = CommandType.StoredProcedure
+            SqlCmd.Parameters.Add("@pvncd", SqlDbType.Int).Value = pvncd
+
+            dtAdapter = New SqlDataAdapter(SqlCmd)
+            dtAdapter.Fill(dt)
+            conn.Close()
+
+        End Sub
         Public Sub SP_STAFF_OFFER_DDL_ex()
 
             strSQL = "SP_STAFF_OFFER_DDL_ex"

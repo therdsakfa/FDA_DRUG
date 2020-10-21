@@ -386,7 +386,8 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
             '    btn_lcn.Style.Add("display", "block")
             'End If
             If dao.fields.STATUS_ID = 5 Then
-                btn_edit.Style.Add("display", "block")
+                'btn_edit.Style.Add("display", "block")
+                btn_attach.Style.Add("display", "block")
             End If
             If dao.fields.STATUS_ID >= 4 And dao.fields.STATUS_ID <> 7 Then
                 btn_attach.Style.Add("display", "block")
