@@ -526,11 +526,12 @@ Public Class FRM_STAFFNYM_CONFIRM
             End If
             'Dim dao As New DAO_DRUG.ClsDBdrsamp
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+            'Dim log As New DAO_DRUG_IMPORT.TB_LOG_STATUS_IMPORT
             dao.GetDataby_IDA(_IDA)
             dao_up.GetDataby_IDAandtype(_IDA, whatnym)
             ' dao_prf.GetDataby_FK(dao.fields.IDA)                                            'เปลี่ยนอันนี้ 
 
-            Dim PROCESS_ID As Integer = _ProcessID                       '
+            Dim PROCESS_ID As Integer = _ProcessID                    '
             dao_date.fields.FK_IDA = _IDA
             Try
                 dao_date.fields.STATUS_DATE = Date.Now 'CDate(txt_app_date.Text)
@@ -547,7 +548,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             AddLogStatustodrugimport(9, _ProcessID, _CLS.CITIZEN_ID, _IDA)
 
 
-            If STATUS_ID = 3 Then                                                                       'สถานะรอการชำระเงิน       น่าจะต้องเปลี่ยนเป็น 4 ชำระเงินรอการตรวจสอบ          CODE เจน เลขรับ 
+            If STATUS_ID = 4 Then                                                                       'สถานะรอการชำระเงิน       น่าจะต้องเปลี่ยนเป็น 4 ชำระเงินรอการตรวจสอบ          CODE เจน เลขรับ 
                 dao.fields.STATUS_ID = STATUS_ID
                 RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
                 dao.fields.NYM2_NO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
@@ -568,7 +569,12 @@ Public Class FRM_STAFFNYM_CONFIRM
                 'Response.Redirect("FRM_STAFF_NYM_RCV_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
                 '--------------------------------
                 alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.NYM2_NO)
-            ElseIf STATUS_ID = 6 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
+            ElseIf STATUS_ID = 5 Then
+                AddLogStatustodrugimport(9, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+                dao_prf.GetDataby_IDA(_IDA)
+                dao_prf.fields.STATUS_ID = STATUS_ID
+                dao_prf.update()
+            ElseIf STATUS_ID = 9 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
                 Response.Redirect("FRM_STAFF_NYM_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID) 'น่าจะต้องแก้ trid
             ElseIf STATUS_ID = 8 Then
                 'แก้ dao_prf
@@ -595,10 +601,16 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '_IDA = Request.QueryString("IDA")
                 'dao.update()
                 'alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+            ElseIf STATUS_ID = 10 Then
+                AddLogStatustodrugimport(9, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+                dao_prf.GetDataby_IDA(_IDA)
+                dao_prf.fields.STATUS_ID = STATUS_ID
+                dao_prf.update()
             End If
         End If
 
 
+        'ขาด status 9 และ update log status
 
 
     End Sub
@@ -645,19 +657,25 @@ Public Class FRM_STAFFNYM_CONFIRM
             ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
             If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
                 int_group_ddl = 11
-            ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then               'ถ้า starus2 to 6 
-                int_group_ddl = 22
-            ElseIf dao.fields.STATUS_ID >= 6 Then                                           'ถ้า starus มากกว่า 6
+            ElseIf dao.fields.STATUS_ID = 4 Then                                           'ถ้า starus มากกว่า 6
+                int_group_ddl = 44
+            ElseIf dao.fields.STATUS_ID >= 5 And dao.fields.STATUS_ID <= 9 Then               'ถ้า starus2 to 6 
+                int_group_ddl = 33
+            ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 33
             End If
         End If
-        bao.SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL(9, int_group_ddl)
-        dt = bao.dt
+
+        dt = bao.SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL(9, int_group_ddl)
 
         ddl_cnsdcd.DataSource = dt
         ddl_cnsdcd.DataValueField = "STATUS_ID"
         ddl_cnsdcd.DataTextField = "STATUS_NAME"
         ddl_cnsdcd.DataBind()
+        Dim item As New ListItem
+        item.Text = "กรุณาเลือกสถานะ"
+        item.Value = "0"
+        ddl_cnsdcd.Items.Insert(0, item)
     End Sub
 
     Private Sub alert(ByVal text As String)
