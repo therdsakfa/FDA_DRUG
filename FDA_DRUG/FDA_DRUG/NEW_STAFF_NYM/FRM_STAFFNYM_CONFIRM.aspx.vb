@@ -582,13 +582,13 @@ Public Class FRM_STAFFNYM_CONFIRM
                 dao.fields.STATUS_ID = STATUS_ID
                 dao.fields.APPROVE_DATE = Date.Now.ToShortDateString()                                                                           'app date มีไว้ทำไร
                 dao.fields.REMARK = txt_REMARK.Text
-                dao_prf.fields.UPDATE_DATE = Date.Now
+                dao.fields.UPDATE_DATE = Date.Now
                 'If _ProcessID = "1028" Then
                 'dao_prf.fields.NYM2_WRITE_DATE = dao.fields.event_end                                                     'น่าจะเก็บ log วันว่าวันไหน 
                 'Else
                 '    dao_prf.fields.SENT_DATE = Date.Now 'นยม4ต้องรับวันที่นำเข้ามาจาก LPI
                 'End If
-                dao_prf.update()
+                'dao_prf.update() ปิดไว้ก่อน
 
                 package()
                 AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
@@ -658,9 +658,9 @@ Public Class FRM_STAFFNYM_CONFIRM
             ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
             If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
                 int_group_ddl = 11
-            ElseIf dao.fields.STATUS_ID = 4 Then                                           'ถ้า starus มากกว่า 6
+            ElseIf dao.fields.STATUS_ID = 4 Or dao.fields.STATUS_ID = 5 Then                                           'ถ้า starus มากกว่า 6
                 int_group_ddl = 44
-            ElseIf dao.fields.STATUS_ID >= 5 And dao.fields.STATUS_ID <= 9 Then               'ถ้า starus2 to 6 
+            ElseIf dao.fields.STATUS_ID > 5 And dao.fields.STATUS_ID <= 9 Then               'ถ้า starus2 to 6 
                 int_group_ddl = 33
             ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 33
