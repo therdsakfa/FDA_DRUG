@@ -1187,17 +1187,6 @@
       <Column Name="DATE_NOW" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.MAS_STAFF_OFFER" Member="MAS_STAFF_OFFERs">
-    <Type Name="MAS_STAFF_OFFER">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="STAFF_OFFER_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="IS_USE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="INSERT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="INSERT_CITIZEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="UPDATE_CITIZEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.DH15_DETAIL_MANUFACTURE" Member="DH15_DETAIL_MANUFACTUREs">
     <Type Name="DH15_DETAIL_MANUFACTURE">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6737,6 +6726,23 @@
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="PROCESS_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_STAFF_OFFER" Member="MAS_STAFF_OFFERs">
+    <Type Name="MAS_STAFF_OFFER">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STAFF_OFFER_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IS_USE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="INSERT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="INSERT_CITIZEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UPDATE_CITIZEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="POSITION_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENG_POSITION_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENG_STAFF_OFFER_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENG_OTHER_POSITION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PVNCD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SYSTEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

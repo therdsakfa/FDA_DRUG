@@ -40,6 +40,12 @@
         dao.fields.INSERT_CITIZEN = _CLS.CITIZEN_ID
         dao.fields.INSERT_DATE = Date.Now
         dao.fields.IS_USE = True
+        dao.fields.POSITION_NAME = Txt_POSITION.Text
+        Try
+            dao.fields.PVNCD = _CLS.PVCODE
+        Catch ex As Exception
+
+        End Try
         dao.insert()
         alert("บันทึกข้อมูลเรียบร้อย")
     End Sub

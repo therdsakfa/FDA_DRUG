@@ -50,6 +50,15 @@ Partial Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
     Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''btn_confirm2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_confirm2 As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''btn_cancel control.
     '''</summary>
     '''<remarks>
