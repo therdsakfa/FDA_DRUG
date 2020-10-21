@@ -529,6 +529,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             'Dim log As New DAO_DRUG_IMPORT.TB_LOG_STATUS_IMPORT
             dao.GetDataby_IDA(_IDA)
             dao_up.GetDataby_IDAandtype(_IDA, whatnym)
+            dao_prf.GetDataby_IDA(_IDA)                                 'หาข้อมูลใน base
             ' dao_prf.GetDataby_FK(dao.fields.IDA)                                            'เปลี่ยนอันนี้ 
 
             Dim PROCESS_ID As Integer = _ProcessID                    '
@@ -570,46 +571,46 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '--------------------------------
                 alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.NYM2_NO)
             ElseIf STATUS_ID = 5 Then
-                AddLogStatustodrugimport(9, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+                'AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 dao_prf.GetDataby_IDA(_IDA)
                 dao_prf.fields.STATUS_ID = STATUS_ID
                 dao_prf.update()
             ElseIf STATUS_ID = 9 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
-                Response.Redirect("FRM_STAFF_NYM_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID) 'น่าจะต้องแก้ trid
+                Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID) 'น่าจะต้องแก้ trid
             ElseIf STATUS_ID = 8 Then
                 'แก้ dao_prf
                 dao.fields.STATUS_ID = STATUS_ID
                 dao.fields.APPROVE_DATE = Date.Now.ToShortDateString()                                                                           'app date มีไว้ทำไร
                 dao.fields.REMARK = txt_REMARK.Text
                 dao_prf.fields.UPDATE_DATE = Date.Now
-                If _ProcessID = "1028" Then
-                    'dao_prf.fields.NYM2_WRITE_DATE = dao.fields.event_end                                                     'น่าจะเก็บ log วันว่าวันไหน 
-                    'Else
-                    '    dao_prf.fields.SENT_DATE = Date.Now 'นยม4ต้องรับวันที่นำเข้ามาจาก LPI
-                End If
+                'If _ProcessID = "1028" Then
+                'dao_prf.fields.NYM2_WRITE_DATE = dao.fields.event_end                                                     'น่าจะเก็บ log วันว่าวันไหน 
+                'Else
+                '    dao_prf.fields.SENT_DATE = Date.Now 'นยม4ต้องรับวันที่นำเข้ามาจาก LPI
+                'End If
                 dao_prf.update()
 
                 package()
-
+                AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 dao.update()
                 alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
 
             ElseIf STATUS_ID = 7 Then                                                                                   'คืนคำขอ ถึงต้องมี remark  หน้า remark เด้งขึ้นมา 
-                Response.Redirect("FRM_STAFF_NYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
-                AddLogStatus(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+                Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
+                'AddLogStatus(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
                 '_TR_ID = Request.QueryString("TR_ID")
                 '_IDA = Request.QueryString("IDA")
                 'dao.update()
                 'alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
             ElseIf STATUS_ID = 10 Then
-                AddLogStatustodrugimport(9, _ProcessID, _CLS.CITIZEN_ID, _IDA)
-                dao_prf.GetDataby_IDA(_IDA)
+                'AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+                'dao_prf.GetDataby_IDA(_IDA)
                 dao_prf.fields.STATUS_ID = STATUS_ID
                 dao_prf.update()
             End If
         End If
-
-
+        AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+        Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")            'กลับไปหน้าตาราง
         'ขาด status 9 และ update log status
 
 
