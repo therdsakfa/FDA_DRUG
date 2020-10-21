@@ -582,7 +582,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 dao.fields.STATUS_ID = STATUS_ID
                 dao.fields.APPROVE_DATE = Date.Now.ToShortDateString()                                                                           'app date มีไว้ทำไร
                 dao.fields.REMARK = txt_REMARK.Text
-                dao_prf.fields.UPDATE_DATE = Date.Now
+                dao_prf.fields.APPROVE_DATE = Date.Now
                 'If _ProcessID = "1028" Then
                 'dao_prf.fields.NYM2_WRITE_DATE = dao.fields.event_end                                                     'น่าจะเก็บ log วันว่าวันไหน 
                 'Else
