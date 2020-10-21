@@ -515,7 +515,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 'dao.update()
                 'alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
             End If
-        Else                                                                                 'ถ้ากรณีอื่นๆ มีเยอะ  เลขรับคือ NYM2_NO
+        Else                                                                                  'พรุ่งนี้แก้ไข ตรงนี้ ให้เสร็จ 
             Dim whatnym As New Integer
             If _ProcessID = 1027 Then
                 whatnym = 2
@@ -527,7 +527,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             'Dim dao As New DAO_DRUG.ClsDBdrsamp
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             dao.GetDataby_IDA(_IDA)
-            dao_up.GetDataby_IDAandtype(dao.fields.TR_ID, whatnym)
+            dao_up.GetDataby_IDAandtype(_IDA, whatnym)
             ' dao_prf.GetDataby_FK(dao.fields.IDA)                                            'เปลี่ยนอันนี้ 
 
             Dim PROCESS_ID As Integer = _ProcessID                       '
@@ -538,11 +538,13 @@ Public Class FRM_STAFFNYM_CONFIRM
 
             End Try
 
-            dao_date.fields.STATUS_GROUP = 2 'ใบอนุญาต ขย ต่างๆ                               'ต้องปรับ base 
+            dao_date.fields.STATUS_GROUP = 2 'ใบอนุญาต ขย ต่างๆ                               'เหมือนตัวเก็บ log ต่างๆ
             dao_date.fields.STATUS_ID = ddl_cnsdcd.SelectedValue
             dao_date.fields.DATE_NOW = Date.Now
-            dao_date.fields.PROCESS_ID = 0
+            dao_date.fields.PROCESS_ID = _ProcessID
             dao_date.insert()
+
+            AddLogStatustodrugimport(9, _ProcessID, _CLS.CITIZEN_ID, _IDA)
 
 
             If STATUS_ID = 3 Then                                                                       'สถานะรอการชำระเงิน       น่าจะต้องเปลี่ยนเป็น 4 ชำระเงินรอการตรวจสอบ          CODE เจน เลขรับ 
