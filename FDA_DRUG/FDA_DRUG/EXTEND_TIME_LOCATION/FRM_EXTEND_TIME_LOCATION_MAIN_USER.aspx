@@ -270,7 +270,7 @@
                        <ItemTemplate>
 
                            
-                           <asp:Button ID="btn_edit" runat="server" Text="แก้ไขข้อมูล" CommandName="_edit" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
+                           <asp:Button ID="btn_edit" runat="server" Text="แก้ไขข้อมูล" CommandName="_edit" Visible="false" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
                              
                        </ItemTemplate>
 

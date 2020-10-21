@@ -58,19 +58,19 @@ Public Class FRM_SUBSTITUTE_TABEAN_STAFF_MAIN
 
             Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
             Try
-                dao_tr.GetDataby_IDA(tr_id)
-                _process_id = dao_tr.fields.PROCESS_ID
+                ' dao_tr.GetDataby_IDA(tr_id)
+                _process_id = dao.fields.PROCESS_ID
             Catch ex As Exception
 
             End Try
             If e.CommandName = "sel" Then
                 'lbl_titlename.Text = "พิจารณาคำขอขึ้นทะเบียนตำรับ"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_TABEAN_STAFF/FRM_SUBSTITUTE_TABEAN_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&Process=" & _process_id & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_TABEAN_STAFF/FRM_SUBSTITUTE_TABEAN_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & dao.fields.TR_ID & "&Process=" & dao.fields.PROCESS_ID & "');", True)
             ElseIf e.CommandName = "print" Then
                 Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
                 dao_rg.GetDataby_IDA(dao.fields.FK_IDA)
                 _process_id = "1400001"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_TABEAN_STAFF/FRM_SUBSTITUTE_TABEAN_PREVIEW.aspx?IDA=" & IDA & "&TR_ID=" & dao_rg.fields.TR_ID & "&Process=" & _process_id & "&rgt_ida=" & tebean_ida & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_TABEAN_STAFF/FRM_SUBSTITUTE_TABEAN_PREVIEW.aspx?IDA=" & IDA & "&TR_ID=" & dao.fields.TR_ID & "&Process=" & dao.fields.PROCESS_ID & "&rgt_ida=" & tebean_ida & "');", True)
             End If
 
         End If
