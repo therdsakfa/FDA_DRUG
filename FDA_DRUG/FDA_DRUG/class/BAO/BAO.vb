@@ -5047,23 +5047,31 @@ Namespace BAO
 
             Return dt
         End Function
-        Public Sub SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL(ByVal _stat_group As Integer, ByVal _group As Integer)
+        'Public Sub SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL(ByVal _stat_group As Integer, ByVal _group As Integer)
 
-            strSQL = "SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL"
-            SqlCmd = New SqlCommand(strSQL, conndrugimport)
-            If (conn.State = ConnectionState.Open) Then
-                conn.Close()
-            End If
-            conn.Open()
-            SqlCmd.CommandType = CommandType.StoredProcedure
-            SqlCmd.Parameters.Add("@stat_group", SqlDbType.Int).Value = _stat_group
-            SqlCmd.Parameters.Add("@group", SqlDbType.Int).Value = _group
+        '    strSQL = "SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL"
+        '    SqlCmd = New SqlCommand(strSQL, conndrugimport)
+        '    If (conn.State = ConnectionState.Open) Then
+        '        conn.Close()
+        '    End If
+        '    conn.Open()
+        '    SqlCmd.CommandType = CommandType.StoredProcedure
+        '    SqlCmd.Parameters.Add("@stat_group", SqlDbType.Int).Value = _stat_group
+        '    SqlCmd.Parameters.Add("@group", SqlDbType.Int).Value = _group
 
-            dtAdapter = New SqlDataAdapter(SqlCmd)
-            dtAdapter.Fill(dt)
-            conn.Close()
+        '    dtAdapter = New SqlDataAdapter(SqlCmd)
+        '    dtAdapter.Fill(dt)
+        '    conn.Close()
 
-        End Sub
+        'End Sub
+        Public Function SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL(ByVal _stat_group As Integer, ByVal _group As Integer) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL @stat_group = " & _stat_group & ",@group=" & _group
+            Dim dt As New DataTable
+            dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+
+            Return dt
+        End Function
         Public Function SP_NYMSTAFF_ALLPROCESS() As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_NYMSTAFF_ALLPROCESS "
