@@ -658,9 +658,9 @@ Public Class FRM_STAFFNYM_CONFIRM
             ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
             If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
                 int_group_ddl = 11
-            ElseIf dao.fields.STATUS_ID = 4 Then                                           'ถ้า starus มากกว่า 6
+            ElseIf dao.fields.STATUS_ID = 4 Or dao.fields.STATUS_ID = 5 Then                                           'ถ้า starus มากกว่า 6
                 int_group_ddl = 44
-            ElseIf dao.fields.STATUS_ID >= 5 And dao.fields.STATUS_ID <= 9 Then               'ถ้า starus2 to 6 
+            ElseIf dao.fields.STATUS_ID > 5 And dao.fields.STATUS_ID <= 9 Then               'ถ้า starus2 to 6 
                 int_group_ddl = 33
             ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 33
