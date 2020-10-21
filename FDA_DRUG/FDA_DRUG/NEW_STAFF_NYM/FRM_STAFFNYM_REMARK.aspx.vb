@@ -51,7 +51,7 @@
     '    End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim dao As New DAO_DRUG.ClsDBdrsamp
+        Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         dao.GetDataby_IDA(_IDA)
 
         dao.fields.REMARK = TextBox1.Text
