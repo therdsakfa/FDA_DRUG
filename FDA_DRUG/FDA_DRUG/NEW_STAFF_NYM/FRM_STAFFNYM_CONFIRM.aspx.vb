@@ -582,13 +582,13 @@ Public Class FRM_STAFFNYM_CONFIRM
                 dao.fields.STATUS_ID = STATUS_ID
                 dao.fields.APPROVE_DATE = Date.Now.ToShortDateString()                                                                           'app date มีไว้ทำไร
                 dao.fields.REMARK = txt_REMARK.Text
-                dao_prf.fields.UPDATE_DATE = Date.Now
+                dao.fields.UPDATE_DATE = Date.Now
                 'If _ProcessID = "1028" Then
                 'dao_prf.fields.NYM2_WRITE_DATE = dao.fields.event_end                                                     'น่าจะเก็บ log วันว่าวันไหน 
                 'Else
                 '    dao_prf.fields.SENT_DATE = Date.Now 'นยม4ต้องรับวันที่นำเข้ามาจาก LPI
                 'End If
-                dao_prf.update()
+                'dao_prf.update() ปิดไว้ก่อน
 
                 package()
                 AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
