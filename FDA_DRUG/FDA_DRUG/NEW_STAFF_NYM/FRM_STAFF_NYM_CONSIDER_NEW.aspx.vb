@@ -12,7 +12,7 @@
         If Session("CLS") Is Nothing Then
             Response.Redirect("http://privus.fda.moph.go.th/")
         Else
-            _TR_ID = Request.QueryString("TR_ID")
+            '_TR_ID = Request.QueryString("TR_ID")
             _IDA = Request.QueryString("IDA")
             _process = Request.QueryString("process")
             _CLS = Session("CLS")
@@ -47,11 +47,11 @@
             If _process = 1026 Then                                 'ถ้าเป็น NYM 1 
                 Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
                 dao.GetDataby_IDA(_IDA)
-                If Len(_TR_ID) >= 9 Then
-                    dao_up.GetDataby_TR_ID_Process(_TR_ID, _process)
-                Else
-                    dao_up.GetDataby_IDA(_TR_ID)
-                End If
+                'If Len(_TR_ID) >= 9 Then
+                '    dao_up.GetDataby_TR_ID_Process(_TR_ID, _process)
+                'Else
+                '    dao_up.GetDataby_IDA(_TR_ID)
+                'End If
                 AddLogStatus(6, _process, _CLS.CITIZEN_ID, _IDA)
                 'AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
 
@@ -121,11 +121,11 @@
     End Sub
     Sub alert_reload(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');</script> ")
-        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _process)
+        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&process=" & _process)
 
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _process)
+        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&process=" & _process)
     End Sub
 End Class

@@ -10,7 +10,7 @@
         If Session("CLS") Is Nothing Then
             Response.Redirect("http://privus.fda.moph.go.th/")
         Else
-            _TR_ID = Request.QueryString("TR_ID")
+            '_TR_ID = Request.QueryString("TR_ID")
             _IDA = Request.QueryString("IDA")
             _CLS = Session("CLS")
             _process = Request.QueryString("process")
@@ -63,6 +63,6 @@
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _process)
+        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&process=" & _process)
     End Sub
 End Class
