@@ -43,7 +43,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
         If Not IsPostBack Then
             'txt_app_date.Text = Date.Now.ToShortDateString()
-            'HiddenField2.Value = 0
+            HiddenField2.Value = 0
             BindData_PDF()
             'If _ProcessID = "1026" Then
             '    BindData_PDF2()
@@ -72,7 +72,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
 
         End If
-        'set_lbl()
+        set_lbl()
         'show_btn(_IDA)
     End Sub
 
@@ -146,7 +146,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
         Dim dao_s As New DAO_DRUG.TB_MAS_STAFF_OFFER
-        Dim dao_stat As New DAO_DRUG.ClsDBMAS_STATUS
+        Dim dao_stat As New DAO_DRUG_IMPORT.TB_FDA_DRUG_STATUS_IMPORT_ALL
         If _ProcessID = 1026 Then
             Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
             dao.GetDataby_IDA(_IDA)
@@ -178,19 +178,19 @@ Public Class FRM_STAFFNYM_CONFIRM
 
             End Try
         Else
-            Dim dao As New DAO_DRUG.ClsDBdrsamp
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             dao.GetDataby_IDA(_IDA)
 
-            dao_up.GetDataby_IDA(dao.fields.TR_ID)
+            Dim dao_app As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
             Try    'ชื่อผู้ลงนาม                                                                'หาชื่อผู้ลงนาม
-                dao_s.GetDataby_IDA(dao.fields.FK_STAFF_OFFER_IDA)
+                dao_s.GetDataby_IDA(dao.fields.NYM2_IDENTIFY_STAFF)
                 lbl_staff_consider.Text = dao_s.fields.STAFF_OFFER_NAME
             Catch ex As Exception
                 lbl_staff_consider.Text = "-"
             End Try
 
             Try
-                lbl_app_date.Text = CDate(dao.fields.appdate).ToShortDateString()
+                lbl_app_date.Text = CDate(dao_app.fields.appdate).ToShortDateString()
             Catch ex As Exception
                 lbl_app_date.Text = "-"
             End Try
@@ -202,7 +202,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             End Try
 
             Try
-                dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 5)
+                dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 9)
                 lbl_Status.Text = dao_stat.fields.STATUS_NAME
             Catch ex As Exception
 
@@ -549,15 +549,15 @@ Public Class FRM_STAFFNYM_CONFIRM
             AddLogStatustodrugimport(9, _ProcessID, _CLS.CITIZEN_ID, _IDA)
 
 
-            If STATUS_ID = 4 Then                                                                       'สถานะรอการชำระเงิน       น่าจะต้องเปลี่ยนเป็น 4 ชำระเงินรอการตรวจสอบ          CODE เจน เลขรับ 
+            If STATUS_ID = 4 Then          'ไม่ได้ใช้นะ                                                              'สถานะรอการชำระเงิน       น่าจะต้องเปลี่ยนเป็น 4 ชำระเงินรอการตรวจสอบ          CODE เจน เลขรับ 
                 dao.fields.STATUS_ID = STATUS_ID
                 RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
                 dao.fields.NYM2_NO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
-                dao.fields.TR_ID = _CLS.CITIZEN_ID
+                '   dao.fields.TR_ID = _CLS.CITIZEN_ID
 
-                dao.fields.FK_IDA = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
+                dao.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
                 Try
-                    dao.fields.STAFF_RECEIVE_IDEN = Date.Now 'CDate(txt_app_date.Text)
+                    dao.fields.NYM2_IDENTIFY_STAFF = Date.Now 'CDate(txt_app_date.Text)
                 Catch ex As Exception
 
                 End Try
@@ -576,7 +576,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 dao_prf.fields.STATUS_ID = STATUS_ID
                 dao_prf.update()
             ElseIf STATUS_ID = 9 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
-                Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID) 'น่าจะต้องแก้ trid
+                Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
             ElseIf STATUS_ID = 8 Then
                 'แก้ dao_prf
                 dao.fields.STATUS_ID = STATUS_ID
@@ -596,7 +596,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
 
             ElseIf STATUS_ID = 7 Then                                                                                   'คืนคำขอ ถึงต้องมี remark  หน้า remark เด้งขึ้นมา 
-                Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
+                Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID)
                 'AddLogStatus(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
                 '_TR_ID = Request.QueryString("TR_ID")
                 '_IDA = Request.QueryString("IDA")
@@ -605,8 +605,29 @@ Public Class FRM_STAFFNYM_CONFIRM
             ElseIf STATUS_ID = 10 Then
                 'AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 'dao_prf.GetDataby_IDA(_IDA)
-                dao_prf.fields.STATUS_ID = STATUS_ID
-                dao_prf.update()
+                dao.fields.STATUS_ID = STATUS_ID
+                RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
+                dao.fields.NYM2_NO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
+                '   dao.fields.TR_ID = _CLS.CITIZEN_ID
+
+                dao.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
+                Try
+                    dao.fields.NYM2_DATE_TOP = Date.Now 'CDate(txt_app_date.Text)
+                Catch ex As Exception
+
+                End Try
+                'dao.fields.FK_IDA = Date.Now.ToShortDateString()
+                dao.update()
+                'dao.fields.STATUS_ID = STATUS_ID
+                'dao_prf.update()
+                'dao.fields.NYM2_RCVNO = RCVNO
+                'dao.update()
+                '-----------------ลิ้งไปหน้าคีย์มือ----------
+                'Response.Redirect("FRM_STAFF_NYM_RCV_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
+                '--------------------------------
+                alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.NYM2_NO)
+                'dao_prf.fields.STATUS_ID = STATUS_ID
+                'dao_prf.update()
             End If
         End If
         AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
@@ -812,7 +833,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
 
 
-        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0)                     'DAO บรรทัด 2809
+        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0) 'DAO บรรทัด 2809 _process เป็นค่า string  แต่ฟังชั่นนี้เป็น integer
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim year As String = Date.Now.Year
         Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
