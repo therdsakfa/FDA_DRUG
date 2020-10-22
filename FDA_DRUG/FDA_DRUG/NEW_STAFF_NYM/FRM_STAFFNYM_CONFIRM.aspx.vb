@@ -190,7 +190,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             End Try
 
             Try
-                lbl_app_date.Text = CDate(dao_app.fields.appdate).ToShortDateString()
+                lbl_app_date.Text = CDate(dao.fields.ESTIMATE_CONSIDER_DATE).ToShortDateString()
             Catch ex As Exception
                 lbl_app_date.Text = "-"
             End Try
