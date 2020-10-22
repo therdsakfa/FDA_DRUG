@@ -576,7 +576,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 dao_prf.fields.STATUS_ID = STATUS_ID
                 dao_prf.update()
             ElseIf STATUS_ID = 9 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
-                Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID) 'น่าจะต้องแก้ trid
+                Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
             ElseIf STATUS_ID = 8 Then
                 'แก้ dao_prf
                 dao.fields.STATUS_ID = STATUS_ID
@@ -596,7 +596,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
 
             ElseIf STATUS_ID = 7 Then                                                                                   'คืนคำขอ ถึงต้องมี remark  หน้า remark เด้งขึ้นมา 
-                Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
+                Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID)
                 'AddLogStatus(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
                 '_TR_ID = Request.QueryString("TR_ID")
                 '_IDA = Request.QueryString("IDA")
@@ -812,7 +812,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
 
 
-        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0)                     'DAO บรรทัด 2809
+        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0) 'DAO บรรทัด 2809 _process เป็นค่า string  แต่ฟังชั่นนี้เป็น integer
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim year As String = Date.Now.Year
         Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
