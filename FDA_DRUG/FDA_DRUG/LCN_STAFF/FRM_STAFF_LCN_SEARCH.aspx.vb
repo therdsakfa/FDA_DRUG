@@ -200,6 +200,15 @@ Public Class FRM_STAFF_LCN_SEARCH
                 dao.fields.TR_ID = TR_ID
                 dao.update()
                 RadGrid1.Rebind()
+            ElseIf e.CommandName = "drug_group" Then
+                Dim dao As New DAO_DRUG.ClsDBdalcn
+                Try
+                    dao.GetDataby_IDA(item("IDA").Text)
+                Catch ex As Exception
+
+                End Try
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../LCN/POPUP_LCN_PRODUCTION_DRUG_GROUP_HEAD.aspx?ida=" & item("IDA").Text & "&TR_ID=" & dao.fields.TR_ID & "&process=" & dao.fields.PROCESS_ID & "');", True)
+
             End If
         End If
 
