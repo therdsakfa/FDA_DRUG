@@ -78,22 +78,22 @@
                 alert("บันทึกข้อมูลเรียบร้อย")
             Else                                                    'ถ้าเป็น NYM อื่น
                 'Dim dao As New DAO_DRUG.ClsDBdrsamp                     'ใช้ base drsamp คืออะไร งง มาก
-                If _process = "1027" Then
+                If _process = " 1027" Then
                     Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
                     dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA
-                    dao_up.GetDataby_IDA(dao.fields.TR_ID)                          'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
+                    'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
 
-                    AddLogStatustodrugimport(9, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)        'เปลี่ยน function สีเหลืองให้อยู่ใน drug import 
+                    AddLogStatustodrugimport(9, _process, _CLS.CITIZEN_ID, _IDA)        'เปลี่ยน function สีเหลืองให้อยู่ใน drug import 
 
                     Dim PROCESS_ID As Integer = dao.fields.NYM_TYPE
 
 
-                    dao_p.GetDataby_Process_ID(PROCESS_ID)                          'ไปเอาชื่อกระบวนการมา จาก base PROCESS_NAME ไม่น่าต้องแก้ไข
-                    Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
+                    'dao_p.GetDataby_Process_ID(PROCESS_ID)                          'ไปเอาชื่อกระบวนการมา จาก base PROCESS_NAME ไม่น่าต้องแก้ไข
+                    'Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
 
-                    Dim CONSIDER_DATE As Date = CDate(TextBox1.Text)
+                    Dim CONSIDER_DATE As Date = Date.Now
                     dao.fields.REMARK = Txt_Remark.Text
-                    dao.fields.STATUS_ID = 6
+                    dao.fields.STATUS_ID = 9
                     dao.fields.CONSIDER_DATE = CONSIDER_DATE
 
                     dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
