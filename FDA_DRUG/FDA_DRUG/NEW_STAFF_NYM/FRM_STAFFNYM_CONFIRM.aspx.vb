@@ -181,7 +181,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             dao.GetDataby_IDA(_IDA)
 
-            dao_up.GetDataby_IDA(dao.fields.DL)
+
             Try    'ชื่อผู้ลงนาม                                                                'หาชื่อผู้ลงนาม
                 dao_s.GetDataby_IDA(dao.fields.CREATE_USER)
                 lbl_staff_consider.Text = dao_s.fields.STAFF_OFFER_NAME
@@ -190,19 +190,19 @@ Public Class FRM_STAFFNYM_CONFIRM
             End Try
 
             Try
-                lbl_app_date.Text = CDate(dao.fields.UPDATE_DATE).ToShortDateString()
+                lbl_app_date.Text = CDate(dao.fields.NYM2_DATE_TOP).ToShortDateString()
             Catch ex As Exception
                 lbl_app_date.Text = "-"
             End Try
 
             Try    ' วันที่เสนอลงนาม
-                lbl_consider_date.Text = CDate(dao.fields.CONSIDER_DATE).ToShortDateString()
+                lbl_consider_date.Text = CDate(dao.fields.NYM2_WRITE_DATE_AFTER).ToShortDateString()
             Catch ex As Exception
                 lbl_consider_date.Text = "-"
             End Try
 
             Try
-                dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 5)
+                dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 9)
                 lbl_Status.Text = dao_stat.fields.STATUS_NAME
             Catch ex As Exception
 
