@@ -72,7 +72,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
 
         End If
-        'set_lbl()
+        set_lbl()
         'show_btn(_IDA)
     End Sub
 
@@ -146,7 +146,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
         Dim dao_s As New DAO_DRUG.TB_MAS_STAFF_OFFER
-        Dim dao_stat As New DAO_DRUG.ClsDBMAS_STATUS
+        Dim dao_stat As New DAO_DRUG_IMPORT.TB_FDA_DRUG_STATUS_IMPORT_ALL
         If _ProcessID = 1026 Then
             Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
             dao.GetDataby_IDA(_IDA)
@@ -178,19 +178,19 @@ Public Class FRM_STAFFNYM_CONFIRM
 
             End Try
         Else
-            Dim dao As New DAO_DRUG.ClsDBdrsamp
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             dao.GetDataby_IDA(_IDA)
 
-            dao_up.GetDataby_IDA(dao.fields.TR_ID)
+            dao_up.GetDataby_IDA(dao.fields.DL)
             Try    'ชื่อผู้ลงนาม                                                                'หาชื่อผู้ลงนาม
-                dao_s.GetDataby_IDA(dao.fields.FK_STAFF_OFFER_IDA)
+                dao_s.GetDataby_IDA(dao.fields.CREATE_USER)
                 lbl_staff_consider.Text = dao_s.fields.STAFF_OFFER_NAME
             Catch ex As Exception
                 lbl_staff_consider.Text = "-"
             End Try
 
             Try
-                lbl_app_date.Text = CDate(dao.fields.appdate).ToShortDateString()
+                lbl_app_date.Text = CDate(dao.fields.UPDATE_DATE).ToShortDateString()
             Catch ex As Exception
                 lbl_app_date.Text = "-"
             End Try
