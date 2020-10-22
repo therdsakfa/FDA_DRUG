@@ -331,9 +331,18 @@ Public Class FRM_STAFF_LCN_SEARCH
             item = e.Item
             Dim IDA As String = item("IDA").Text
             Dim btn_trid As LinkButton = DirectCast(item("btn_trid").Controls(0), LinkButton)
+            Dim btn_drug_group As LinkButton = DirectCast(item("btn_drug_group").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG.ClsDBdalcn
             dao.GetDataby_IDA(IDA)
             btn_trid.Style.Add("display", "none")
+            btn_drug_group.Style.Add("display", "none")
+            Try
+                If dao.fields.lcntpcd = "ผย1" Then
+                    btn_drug_group.Style.Add("display", "block")
+                End If
+            Catch ex As Exception
+
+            End Try
             Dim tr_id As String= 0
             Try
                 tr_id = dao.fields.TR_ID
