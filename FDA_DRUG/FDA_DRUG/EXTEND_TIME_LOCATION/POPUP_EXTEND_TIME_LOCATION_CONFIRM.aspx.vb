@@ -48,14 +48,19 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
             Dim check As New DAO_DRUG.TB_LCN_EXTEND_LITE
             check.GetDataby_IDA(_IDA)
             If check.fields.STATUS_ID = 5 Then
-                btn_confirm.Style.Add("display", "none")
+
+                'btn_confirm.Style.Add("display", "none")
                 btn_confirm2.Style.Add("display", "block")
+                btn_confirm.Visible = False
+                btn_confirm2.Visible = True
                 UC_GRID_ATTACH.load_gv_V4(_TR_ID, 11, _process)
                 UC_GRID_ATTACH.load_gv_V4(_TR_ID, 22, _process)
                 UC_GRID_ATTACH.load_gv_V4(_TR_ID, 33, _process)
             Else
-                btn_confirm.Style.Add("display", "block")
-                btn_confirm2.Style.Add("display", "none")
+                'btn_confirm.Style.Add("display", "block")
+                'btn_confirm2.Style.Add("display", "none")
+                btn_confirm.Visible = True
+                btn_confirm2.Visible = False
                 UC_GRID_ATTACH.load_gv(_TR_ID)
             End If
             'If check.fields.STATUS_ID <> 0 Then
