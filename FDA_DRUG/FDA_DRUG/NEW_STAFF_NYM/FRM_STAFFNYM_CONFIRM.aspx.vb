@@ -43,7 +43,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
         If Not IsPostBack Then
             'txt_app_date.Text = Date.Now.ToShortDateString()
-            'HiddenField2.Value = 0
+            HiddenField2.Value = 0
             BindData_PDF()
             'If _ProcessID = "1026" Then
             '    BindData_PDF2()
@@ -181,22 +181,22 @@ Public Class FRM_STAFFNYM_CONFIRM
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             dao.GetDataby_IDA(_IDA)
 
-
+            Dim dao_app As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
             Try    'ชื่อผู้ลงนาม                                                                'หาชื่อผู้ลงนาม
-                dao_s.GetDataby_IDA(dao.fields.CREATE_USER)
+                dao_s.GetDataby_IDA(dao.fields.NYM2_IDENTIFY_STAFF)
                 lbl_staff_consider.Text = dao_s.fields.STAFF_OFFER_NAME
             Catch ex As Exception
                 lbl_staff_consider.Text = "-"
             End Try
 
             Try
-                lbl_app_date.Text = CDate(dao.fields.NYM2_DATE_TOP).ToShortDateString()
+                lbl_app_date.Text = CDate(dao_app.fields.appdate).ToShortDateString()
             Catch ex As Exception
                 lbl_app_date.Text = "-"
             End Try
 
             Try    ' วันที่เสนอลงนาม
-                lbl_consider_date.Text = CDate(dao.fields.NYM2_WRITE_DATE_AFTER).ToShortDateString()
+                lbl_consider_date.Text = CDate(dao.fields.CONSIDER_DATE).ToShortDateString()
             Catch ex As Exception
                 lbl_consider_date.Text = "-"
             End Try
