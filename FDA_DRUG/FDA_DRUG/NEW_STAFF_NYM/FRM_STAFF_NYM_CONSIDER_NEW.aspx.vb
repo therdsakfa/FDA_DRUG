@@ -98,7 +98,7 @@
 
                     dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
                     Try
-                        dao.fields.CONSIDER_DATE = CDate(txt_app_date.Text)
+                        dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
                     Catch ex As Exception
 
                     End Try

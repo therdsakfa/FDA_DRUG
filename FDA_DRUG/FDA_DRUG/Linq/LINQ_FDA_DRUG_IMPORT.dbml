@@ -785,6 +785,16 @@
       <Column Name="SOP_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.LOG_STATUS_IMPORT" Member="LOG_STATUS_IMPORTs">
+    <Type Name="LOG_STATUS_IMPORT">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.FDA_DRUG_IMPORT_NYM_2" Member="FDA_DRUG_IMPORT_NYM_2s">
     <Type Name="FDA_DRUG_IMPORT_NYM_2">
       <Column Name="NYM2_IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -867,16 +877,7 @@
       <Column Name="STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="APPROVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.LOG_STATUS_IMPORT" Member="LOG_STATUS_IMPORTs">
-    <Type Name="LOG_STATUS_IMPORT">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="STATUS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ESTIMATE_CONSIDER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
