@@ -37,6 +37,10 @@ Public Class POPUP_LCN_PRODUCTION_DRUG_GROUP2
                 If dao.fields.STATUS_ID > 1 Then
                     btn_save.Style.Add("display", "none")
                 End If
+
+                If Request.QueryString("edit") <> "" Then
+                    btn_save.Style.Add("display", "block")
+                End If
             End If
         Catch ex As Exception
 
@@ -162,6 +166,11 @@ Public Class POPUP_LCN_PRODUCTION_DRUG_GROUP2
     End Sub
 
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
-        Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP2.aspx?ida=" & Request.QueryString("ida"))
+        If Request.QueryString("edit") <> "" Then
+            Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP_HEAD.aspx?ida=" & Request.QueryString("ida") & "&edit=1")
+        Else
+            Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP_HEAD.aspx?ida=" & Request.QueryString("ida"))
+        End If
+
     End Sub
 End Class
