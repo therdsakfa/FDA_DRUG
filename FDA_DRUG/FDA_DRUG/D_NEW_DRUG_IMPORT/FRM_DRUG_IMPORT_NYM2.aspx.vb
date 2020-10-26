@@ -88,7 +88,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
 
             ElseIf e.CommandName = "edit" Then
                 dao.GetDataby_IDA_STATUS(NYM2_ida)
-                'Dim DL As Integer = 0
+                'Dim DL As Integer = 0  
                 'Try
                 '    DL = dao.fields.DL
                 'Catch ex As Exception

@@ -19,7 +19,21 @@
                         <asp:DropDownList ID="ddl_staff_offer" runat="server" DataTextField="STAFF_OFFER_NAME" DataValueField="IDA" CssClass="input-lg" Width="200px">
                         </asp:DropDownList>
                         </td></tr>
-
+                      <tr ><td>ตำแหน่งแถวที่ 1</td><td>
+                        <asp:TextBox ID="positionline1" runat="server" CssClass="input-lg" Width="397px"></asp:TextBox>
+                        </td></tr>
+                    <tr ><td>ตำแหน่งแถวที่ 2</td><td>
+                        <asp:TextBox ID="TextBox2" runat="server" CssClass="input-lg" Width="398px"></asp:TextBox>
+                        </td></tr>
+                    <tr ><td>ตำแหน่งแถวที่ 3</td><td>
+                        <asp:TextBox ID="TextBox3" runat="server" CssClass="input-lg" Width="395px"></asp:TextBox>
+                        </td></tr>
+                    <tr ><td>ตำแหน่งแถวที่ 4</td><td>
+                        <asp:TextBox ID="TextBox4" runat="server" CssClass="input-lg" Width="392px"></asp:TextBox>
+                        </td></tr>
+                    <tr ><td>ตำแหน่งแถวที่ 5</td><td>
+                        <asp:TextBox ID="TextBox5" runat="server" CssClass="input-lg" Width="389px"></asp:TextBox>
+                        </td></tr>
                     <tr ><td>วันที่เสนอลงนาม</td><td>
                         <asp:TextBox ID="TextBox1" runat="server" class="input-lg"></asp:TextBox></td></tr>
 
