@@ -822,6 +822,13 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+
+        Public Sub GetDataby_TR_ID_AND_PROCESS_ID(ByVal tr_id As String)
+
+            datas = (From p In db.drrqts Where p.TR_ID = tr_id And p.PROCESS_ID = "1400001" Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub GET_MAX_RCVNO(ByVal years As Integer, ByVal rgttpcd As String, ByVal drgtpcd As String)
             datas = (From p In db.drrqts Where Left(p.rcvno, 2) = years And p.rgttpcd = rgttpcd And p.drgtpcd = drgtpcd Order By CInt(p.rcvno) Descending Select p).Take(1)
             For Each Me.fields In datas
@@ -11440,6 +11447,12 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_TR_ID_AND_PROCESS_ID(ByVal tr_id As String)
+
+            datas = (From p In db.DRRGT_EDIT_REQUESTs Where p.TR_ID = tr_id And p.PROCESS_ID = "130099" Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Function GetDatabyrcvno(ByVal rcvno As Integer) As Integer
             Dim i As Integer = 0
             datas = (From p In db.DRRGT_EDIT_REQUESTs Where p.rcvno = rcvno Select p)
@@ -13924,6 +13937,43 @@ Namespace DAO_DRUG
         End Sub
         Public Sub GetDataby_PROCESS(ByVal PROCESS_ID As String)
             datas = (From p In db.MAS_NYMSTAFF_PROCESSes Where p.PROCESS_ID = PROCESS_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+    '
+    Public Class TB_LOG_CHANGE_STATUS_MN
+        Inherits MAINCONTEXT
+
+        Public fields As New LOG_CHANGE_STATUS_MN
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.LOG_CHANGE_STATUS_MNs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub insert()
+            db.LOG_CHANGE_STATUS_MNs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.LOG_CHANGE_STATUS_MNs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.LOG_CHANGE_STATUS_MNs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetData_By_IDA(ByVal IDA As Integer)
+            datas = (From p In db.LOG_CHANGE_STATUS_MNs Where p.IDA = IDA Select p)
             For Each Me.fields In datas
             Next
         End Sub

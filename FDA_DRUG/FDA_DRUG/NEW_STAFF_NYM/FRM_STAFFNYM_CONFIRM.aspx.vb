@@ -673,8 +673,34 @@ Public Class FRM_STAFFNYM_CONFIRM
             ElseIf dao.fields.STATUS_ID >= 6 Then
                 int_group_ddl = 3
             End If
-        Else                                                                                'กระบวนการอื่นๆ
+        ElseIf _ProcessID = 1027 Then                                                                              'กระบวนการอื่นๆ
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2                                     'เชื่อม base 
+            dao.GetDataby_IDA(_IDA)
+            ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
+            If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
+                int_group_ddl = 11
+            ElseIf dao.fields.STATUS_ID = 4 Or dao.fields.STATUS_ID = 5 Then                                           'ถ้า starus มากกว่า 6
+                int_group_ddl = 44
+            ElseIf dao.fields.STATUS_ID > 5 And dao.fields.STATUS_ID <= 9 Then               'ถ้า starus2 to 6 
+                int_group_ddl = 33
+            ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
+                int_group_ddl = 33
+            End If
+        ElseIf _ProcessID = 1028 Then                                                                              'กระบวนการอื่นๆ
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3                                     'เชื่อม base 
+            dao.GetDataby_IDA(_IDA)
+            ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
+            If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
+                int_group_ddl = 11
+            ElseIf dao.fields.STATUS_ID = 4 Or dao.fields.STATUS_ID = 5 Then                                           'ถ้า starus มากกว่า 6
+                int_group_ddl = 44
+            ElseIf dao.fields.STATUS_ID > 5 And dao.fields.STATUS_ID <= 9 Then               'ถ้า starus2 to 6 
+                int_group_ddl = 33
+            ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
+                int_group_ddl = 33
+            End If
+        ElseIf _ProcessID = 1029 Then                                                                              'กระบวนการอื่นๆ
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4                                     'เชื่อม base 
             dao.GetDataby_IDA(_IDA)
             ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
             If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
@@ -821,8 +847,12 @@ Public Class FRM_STAFFNYM_CONFIRM
         class_xml4.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)
 
         p_nym2 = class_xml2
-        Dim dao_nym As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-        dao_nym.getdata_dl(_DL)
+        Dim dao_nym2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        Dim dao_nym3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+        Dim dao_nym4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        dao_nym2.getdata_dl(_DL)
+        dao_nym3.getdata_dl(_DL)
+        dao_nym4.getdata_dl(_DL)
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         Dim paths As String = bao._PATH_DEFAULT                                         ' PART ต้องเป็น defult ก่อน 
 
@@ -836,20 +866,55 @@ Public Class FRM_STAFFNYM_CONFIRM
         dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0) 'DAO บรรทัด 2809 _process เป็นค่า string  แต่ฟังชั่นนี้เป็น integer
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim year As String = Date.Now.Year
-        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
-        Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, year, dao_nym.fields.DL)
-        'load_PDF(filename)
-        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
+        If _ProcessID = 1027 Then
+            Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym2.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, year, dao_nym2.fields.DL)
+            'load_PDF(filename)
+            LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
 
 
-        lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
-        hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+            lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+            hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
 
 
-        HiddenField1.Value = filename
-        _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym.fields.DL)
-        _CLS.PDFNAME = filename
-        '    show_btn() 'ตรวจสอบปุ่ม
+            HiddenField1.Value = filename
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym2.fields.DL)
+            _CLS.PDFNAME = filename
+            '    show_btn() 'ตรวจสอบปุ่
+        End If
+        If _ProcessID = 1028 Then
+            Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym3.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, year, dao_nym3.fields.DL)
+            'load_PDF(filename)
+            LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
+
+
+            lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+            hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+
+
+            HiddenField1.Value = filename
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym3.fields.DL)
+            _CLS.PDFNAME = filename
+            '    show_btn() 'ตรวจสอบปุ่
+        End If
+        If _ProcessID = 1029 Then
+            Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym4.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, year, dao_nym4.fields.DL)
+            'load_PDF(filename)
+            LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
+
+
+            lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+            hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+
+
+            HiddenField1.Value = filename
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym4.fields.DL)
+            _CLS.PDFNAME = filename
+            '    show_btn() 'ตรวจสอบปุ่
+        End If
+
 
     End Sub
 

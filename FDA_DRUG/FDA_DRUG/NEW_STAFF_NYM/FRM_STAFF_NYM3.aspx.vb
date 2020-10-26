@@ -9,6 +9,7 @@ Public Class FRM_STAFF_NYM31
     Sub RunSession()
         Try
             _CLS = Session("CLS")
+            _process = Request.QueryString("process")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
@@ -65,21 +66,26 @@ Public Class FRM_STAFF_NYM31
             Dim item As GridDataItem = e.Item
 
             Dim NYM As String = "3"
-            Dim NYM3_ida As String = item("NYM3_IDA").Text
+            Dim NYM3_ida As Integer = item("NYM3_IDA").Text
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
 
 
             If e.CommandName = "sel" Then
+                dao.GetDataby_IDA(NYM3_ida)
+                Dim _DL As String = 0
+                Try
+                    _DL = dao.fields.DL
+                Catch ex As Exception
 
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "');", True)
+                End Try
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
             End If
         End If
     End Sub
     Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound
         If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
-            Dim item As GridDataItem
-            item = e.Item
-            Dim IDA As String = item("NYM3_IDA").Text
+            Dim item As GridDataItem = e.Item
+            Dim IDA As Integer = item("NYM3_IDA").Text
             Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
             dao.GetDataby_IDA(IDA)
