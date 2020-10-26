@@ -97,7 +97,7 @@
                     dao.fields.REMARK = Txt_Remark.Text
                     dao.fields.STATUS_ID = 9
                     dao.fields.CONSIDER_DATE = CONSIDER_DATE
-
+                    'ต้องใส่ชื่อ staff และ iden staff เพิ่ม
                     dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
                     Try
                         dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
@@ -129,5 +129,9 @@
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&process=" & _process & "&DL=" & _DL)
+    End Sub
+
+    Protected Sub Txt_Remark_TextChanged(sender As Object, e As EventArgs) Handles Txt_Remark.TextChanged
+
     End Sub
 End Class

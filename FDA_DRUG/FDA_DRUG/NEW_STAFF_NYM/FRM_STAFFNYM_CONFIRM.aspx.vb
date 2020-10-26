@@ -177,7 +177,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             Catch ex As Exception
 
             End Try
-        Else
+        Else            'ดูCODE ตรงนี้ของ leaam ว่ามีการเก็บเอาไว้ไหม
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             dao.GetDataby_IDA(_IDA)
 
