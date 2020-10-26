@@ -576,7 +576,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 dao_prf.fields.STATUS_ID = STATUS_ID
                 dao_prf.update()
             ElseIf STATUS_ID = 9 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
-                Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
+                Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&DL=" & _DL & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
             ElseIf STATUS_ID = 8 Then
                 'แก้ dao_prf
                 dao.fields.STATUS_ID = STATUS_ID
