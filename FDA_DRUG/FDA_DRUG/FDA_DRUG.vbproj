@@ -48,7 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Words">
-      <HintPath>..\..\..\bin\Aspose.Words.dll</HintPath>
+      <HintPath>..\..\..\X\FDA_DRUG_HERB-master\FDA_DRUG_HERB\bin\Aspose.Words.dll</HintPath>
     </Reference>
     <Reference Include="ClosedXML, Version=0.95.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ClosedXML.0.95.3\lib\net40\ClosedXML.dll</HintPath>
@@ -61,7 +61,7 @@
     </Reference>
     <Reference Include="itextsharp, Version=5.5.7.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\bin\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\X\FDA_DRUG_HERB-master\FDA_DRUG_HERB\bin\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -86,7 +86,7 @@
     </Reference>
     <Reference Include="QRCoder, Version=1.2.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\bin\QRCoder.dll</HintPath>
+      <HintPath>..\..\..\X\FDA_DRUG_HERB-master\FDA_DRUG_HERB\bin\QRCoder.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -120,11 +120,11 @@
     <Reference Include="WindowsBase" />
     <Reference Include="zxing, Version=0.15.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\bin\zxing.dll</HintPath>
+      <HintPath>..\..\..\X\FDA_DRUG_HERB-master\FDA_DRUG_HERB\bin\zxing.dll</HintPath>
     </Reference>
     <Reference Include="zxing.presentation, Version=0.15.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\bin\zxing.presentation.dll</HintPath>
+      <HintPath>..\..\..\X\FDA_DRUG_HERB-master\FDA_DRUG_HERB\bin\zxing.presentation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -656,9 +656,11 @@
     <Content Include="DRUG_STAFF_PORYORBOR5\WebForm84.aspx" />
     <Content Include="DRUG_STAFF_PRODUCER_ABROAD\FRM_STAFF_PRODUCER_ABROAD_MAIN.aspx" />
     <Content Include="DRUG_STAFF_PRODUCER_ABROAD\WebForm88.aspx" />
+    <Content Include="DS\POPUP_DS_UPLOAD_NORYORMOR.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM3.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx" />
+    <Content Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_CONFIRM.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_RCV_MANUAL.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_REMARK.aspx" />
@@ -669,6 +671,7 @@
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_MAIN_NYM.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_PROOF_NEW.aspx" />
+    <Content Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_CONSIDER.aspx" />
     <Content Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx" />
     <Content Include="XML_DRUG_RGT.asmx" />
     <None Include="DESIGN\Scripts\jquery-1.8.2.intellisense.js" />
@@ -732,7 +735,6 @@
     <Content Include="DRUG_IMPORT\POPUP_RESEARCH_SUM_CONFIRM.aspx" />
     <Content Include="DRUG_IMPORT\POPUP_RESEARCH_SUM_DL.aspx" />
     <Content Include="DRUG_IMPORT\POPUP_RESEARCH_SUM_UL.aspx" />
-    <Content Include="DRUG_IMPORT\UC_NYM_PROOF_UPLOAD.aspx" />
     <Content Include="DRUG_REQUEST_CENTER\DRUG_REQUEST_BY_CUSTOMER_MAIN.aspx" />
     <Content Include="DRUG_REQUEST_CENTER\DRUG_REQUEST_CENTER_C_INSERT.aspx" />
     <Content Include="DRUG_REQUEST_CENTER\DRUG_REQUEST_CENTER_C_INSERT_MANUAL.aspx" />
@@ -942,7 +944,6 @@
     <Content Include="DS\POPUP_DS_NORYOR.aspx" />
     <Content Include="DS\POPUP_DS_UPLOAD.aspx" />
     <Content Include="DS\POPUP_DS_UPLOAD2.aspx" />
-    <Content Include="DS\POPUP_DS_UPLOAD_NORYORMOR.aspx" />
     <Content Include="DS\POPUP_NYM_CONFIRM.aspx" />
     <Content Include="DS\UC\UC_DS_CHECAL_DETAIL.ascx" />
     <Content Include="DS\UC\UC_DS_DOWNLOAD.ascx" />
@@ -1519,6 +1520,14 @@
       <LastGenOutput>LINQ_FDA_DRUG_IMPORT.designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Linq\LINQ_DRUG_DEMO.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LINQ_DRUG_DEMO.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Linq\LINQ_DRUG_DEMO.dbml.layout">
+      <DependentUpon>LINQ_DRUG_DEMO.dbml</DependentUpon>
+    </None>
     <None Include="Linq\LINQ_FDA_DRUG_IMPORT.dbml.layout">
       <DependentUpon>LINQ_FDA_DRUG_IMPORT.dbml</DependentUpon>
     </None>
@@ -2261,6 +2270,7 @@
     <Compile Include="class\CLS_SOP.vb" />
     <Compile Include="class\cls_utility.vb" />
     <Compile Include="class\DAO\DAO_BOOKING.vb" />
+    <Compile Include="class\DAO\DAO_DRUG_DEMO.vb" />
     <Compile Include="class\DAO\DAO_DRUG_IMPORT.vb" />
     <Compile Include="class\DAO\DAO_FDA_XML_DRUG.vb" />
     <Compile Include="class\DAO\DAO_FEE.vb" />
@@ -2537,13 +2547,6 @@
     </Compile>
     <Compile Include="DRUG_IMPORT\POPUP_RESEARCH_SUM_UL.aspx.vb">
       <DependentUpon>POPUP_RESEARCH_SUM_UL.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DRUG_IMPORT\UC_NYM_PROOF_UPLOAD.aspx.designer.vb">
-      <DependentUpon>UC_NYM_PROOF_UPLOAD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DRUG_IMPORT\UC_NYM_PROOF_UPLOAD.aspx.vb">
-      <DependentUpon>UC_NYM_PROOF_UPLOAD.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DRUG_REQUEST_CENTER\DRUG_REQUEST_BY_CUSTOMER_MAIN.aspx.designer.vb">
@@ -3093,6 +3096,13 @@
       <DependentUpon>FRM_DS_DRUG8_ADD.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="DS\POPUP_DS_UPLOAD_NORYORMOR.aspx.designer.vb">
+      <DependentUpon>POPUP_DS_UPLOAD_NORYORMOR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DS\POPUP_DS_UPLOAD_NORYORMOR.aspx.vb">
+      <DependentUpon>POPUP_DS_UPLOAD_NORYORMOR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="DS\UC\UC_DS_DRUG8_ADD.ascx.designer.vb">
       <DependentUpon>UC_DS_DRUG8_ADD.ascx</DependentUpon>
     </Compile>
@@ -3275,6 +3285,13 @@
       <DependentUpon>POPUP_EDIT_LOCATION_STAFF_CONFIRM_PREVIEW.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx.designer.vb">
+      <DependentUpon>POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx.vb">
+      <DependentUpon>POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="EXTEND_TIME_LOCATION_STAFF\POPUP_IMPORT_GPP.aspx.designer.vb">
       <DependentUpon>POPUP_IMPORT_GPP.aspx</DependentUpon>
     </Compile>
@@ -3359,6 +3376,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LINQ_BOOKING.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\LINQ_DRUG_DEMO.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LINQ_DRUG_DEMO.dbml</DependentUpon>
     </Compile>
     <Compile Include="Linq\LINQ_FDA_DRUG_IMPORT.designer.vb">
       <AutoGen>True</AutoGen>
@@ -3705,6 +3727,13 @@
     </Compile>
     <Compile Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_CONFIRM_STAFF.aspx.vb">
       <DependentUpon>FRM_RGT_EDIT_CONFIRM_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_CONSIDER.aspx.designer.vb">
+      <DependentUpon>FRM_RGT_EDIT_CONSIDER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_CONSIDER.aspx.vb">
+      <DependentUpon>FRM_RGT_EDIT_CONSIDER.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_MAIN_STAFF.aspx.designer.vb">
@@ -4223,13 +4252,6 @@
     </Compile>
     <Compile Include="DS\POPUP_DS_UPLOAD2.aspx.vb">
       <DependentUpon>POPUP_DS_UPLOAD2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DS\POPUP_DS_UPLOAD_NORYORMOR.aspx.designer.vb">
-      <DependentUpon>POPUP_DS_UPLOAD_NORYORMOR.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DS\POPUP_DS_UPLOAD_NORYORMOR.aspx.vb">
-      <DependentUpon>POPUP_DS_UPLOAD_NORYORMOR.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DS\POPUP_NYM_CONFIRM.aspx.designer.vb">

@@ -26,7 +26,6 @@ Public Class FRM_STAFF_NYM2
         get_pvncd()
         If Not IsPostBack Then
             load_ddl()
-            'load_GV_lcnno()
         End If
     End Sub
     Sub get_pvncd()
@@ -70,12 +69,20 @@ Public Class FRM_STAFF_NYM2
 
             Dim NYM As String = "2"
             Dim NYM2_ida As String = item("NYM2_IDA").Text
+            'Dim _DL As String = item("DL").Text
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
 
 
             If e.CommandName = "sel" Then
+                dao.GetDataby_IDA(NYM2_ida)
+                Dim _DL As String = 0
+                Try
+                    _DL = dao.fields.DL
+                Catch ex As Exception
 
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM2_ida & "&process= " & _process & "');", True)
+                End Try
+
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM2_ida & "&process= " & _process & "&DL=" & _DL & "');", True)
             End If
         End If
     End Sub
@@ -95,7 +102,7 @@ Public Class FRM_STAFF_NYM2
             Catch ex As Exception
 
             End Try
-            Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
+            Dim url As String = "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & IDA
             btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
         End If
     End Sub
@@ -132,5 +139,10 @@ Public Class FRM_STAFF_NYM2
     End Sub
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>alert('" + text + "');</script> ") 'จาวาคำสั่ง Alert
+    End Sub
+    Protected Sub btn_reload_Click(sender As Object, e As EventArgs) Handles btn_reload.Click
+
+        RadGrid1.Rebind()
+
     End Sub
 End Class

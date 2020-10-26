@@ -274,7 +274,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
 
         HiddenField1.Value = filename
-        _CLS.FILENAME_PDF = NAME_PDF("DA", _process, year, dao_nym.fields.TR_ID)
+        _CLS.FILENAME_PDF = NAME_PDF("DA", _process, year, dao_nym.fields.DL)
         _CLS.PDFNAME = filename
         '    show_btn() 'ตรวจสอบปุ่ม
 

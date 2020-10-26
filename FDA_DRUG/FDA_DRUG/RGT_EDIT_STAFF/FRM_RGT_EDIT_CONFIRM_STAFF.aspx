@@ -109,12 +109,13 @@
                      <tr><td>
                         วันที่มีผลอนุมัติ
                                                   <%--(กรอกตอนสถานะเสนอลงนาม)--%>
-                                                  <asp:TextBox ID="txt_appdate" runat="server" Width="80%"></asp:TextBox>
+                                                  <asp:TextBox ID="txt_appdate" runat="server" Width="80%"></asp:TextBox><br />
+                         (ตัวอย่าง 10/12/2563)
                          
                          </td></tr>
                      <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยืนยัน" CssClass="btn-lg" OnClientClick="return confirm('คุณต้องการยืนยันข้อมูลหรือไม่?');"   Width="80%" /></td></tr>
                      <tr><td>
-                         <asp:Button ID="btn_send_edit" runat="server" CssClass="btn-lg" style="display:none;" Text="ระบบปรับปรุงข้อมูลทะเบียน" Width="80%" />
+                         <asp:Button ID="btn_send_edit" runat="server" CssClass="btn-lg"  Text="ระบบปรับปรุงข้อมูลทะเบียน" Width="80%" />
                          </td></tr>
                      <tr><td> <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก" CssClass="btn-lg"   Width="80%"/></td></tr>
                      <tr><td>  <asp:Button ID="btn_load" runat="server" Text="Download PDF" CssClass="btn-lg"   Width="80%" /></td></tr>

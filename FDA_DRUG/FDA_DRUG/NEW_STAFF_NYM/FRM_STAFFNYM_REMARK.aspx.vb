@@ -10,7 +10,7 @@
         If Session("CLS") Is Nothing Then
             Response.Redirect("http://privus.fda.moph.go.th/")
         Else
-            _TR_ID = Request.QueryString("TR_ID")
+            '_TR_ID = Request.QueryString("TR_ID")
             _IDA = Request.QueryString("IDA")
             _CLS = Session("CLS")
             _process = Request.QueryString("process")
@@ -51,7 +51,7 @@
     '    End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim dao As New DAO_DRUG.ClsDBdrsamp
+        Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         dao.GetDataby_IDA(_IDA)
 
         dao.fields.REMARK = TextBox1.Text
@@ -63,6 +63,6 @@
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _process)
+        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&process=" & _process)
     End Sub
 End Class

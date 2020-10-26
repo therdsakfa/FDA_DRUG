@@ -2,19 +2,22 @@
     Inherits System.Web.UI.Page
 
     Private _TR_ID As Integer
+
     Private _IDA As Integer
     Private _CLS As New CLS_SESSION
-    Public Property _process As String
+    Private _DL As String
+    Public Property _process As Integer
     ' Private _type As String
 
     Private Sub runQuery()
         If Session("CLS") Is Nothing Then
             Response.Redirect("http://privus.fda.moph.go.th/")
         Else
-            _TR_ID = Request.QueryString("TR_ID")
+            '_TR_ID = Request.QueryString("TR_ID")
             _IDA = Request.QueryString("IDA")
             _process = Request.QueryString("process")
             _CLS = Session("CLS")
+            _DL = Request.QueryString("DL")
             ' _type = "1"
         End If
 
@@ -46,11 +49,11 @@
             If _process = 1026 Then                                 'ถ้าเป็น NYM 1 
                 Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
                 dao.GetDataby_IDA(_IDA)
-                If Len(_TR_ID) >= 9 Then
-                    dao_up.GetDataby_TR_ID_Process(_TR_ID, _process)
-                Else
-                    dao_up.GetDataby_IDA(_TR_ID)
-                End If
+                'If Len(_TR_ID) >= 9 Then
+                '    dao_up.GetDataby_TR_ID_Process(_TR_ID, _process)
+                'Else
+                '    dao_up.GetDataby_IDA(_TR_ID)
+                'End If
                 AddLogStatus(6, _process, _CLS.CITIZEN_ID, _IDA)
                 'AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
 
@@ -77,27 +80,27 @@
                 alert("บันทึกข้อมูลเรียบร้อย")
             Else                                                    'ถ้าเป็น NYM อื่น
                 'Dim dao As New DAO_DRUG.ClsDBdrsamp                     'ใช้ base drsamp คืออะไร งง มาก
-                If _process = "1027" Then
+                If _process = 1027 Then
                     Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
                     dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA
-                    dao_up.GetDataby_IDA(dao.fields.TR_ID)                          'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
+                    'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
 
-                    AddLogStatustodrugimport(9, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)        'เปลี่ยน function สีเหลืองให้อยู่ใน drug import 
+                    AddLogStatustodrugimport(9, _process, _CLS.CITIZEN_ID, _IDA)        'เปลี่ยน function สีเหลืองให้อยู่ใน drug import 
 
                     Dim PROCESS_ID As Integer = dao.fields.NYM_TYPE
 
 
-                    dao_p.GetDataby_Process_ID(PROCESS_ID)                          'ไปเอาชื่อกระบวนการมา จาก base PROCESS_NAME ไม่น่าต้องแก้ไข
-                    Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
+                    'dao_p.GetDataby_Process_ID(PROCESS_ID)                          'ไปเอาชื่อกระบวนการมา จาก base PROCESS_NAME ไม่น่าต้องแก้ไข
+                    'Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
 
-                    Dim CONSIDER_DATE As Date = CDate(TextBox1.Text)
+                    Dim CONSIDER_DATE As Date = Date.Now
                     dao.fields.REMARK = Txt_Remark.Text
-                    dao.fields.STATUS_ID = 6
+                    dao.fields.STATUS_ID = 9
                     dao.fields.CONSIDER_DATE = CONSIDER_DATE
 
                     dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
                     Try
-                        dao.fields.CONSIDER_DATE = CDate(txt_app_date.Text)
+                        dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
                     Catch ex As Exception
 
                     End Try
@@ -120,11 +123,11 @@
     End Sub
     Sub alert_reload(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');</script> ")
-        Response.Redirect("FRM_NYM_CONFIRM.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _process)
+        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&process=" & _process)
 
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Response.Redirect("FRM_NYM_CONFIRM.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _process)
+        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&process=" & _process & "&DL=" & _DL)
     End Sub
 End Class

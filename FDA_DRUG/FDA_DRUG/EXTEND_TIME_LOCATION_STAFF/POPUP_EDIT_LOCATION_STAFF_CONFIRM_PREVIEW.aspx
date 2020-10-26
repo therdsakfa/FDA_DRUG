@@ -193,6 +193,7 @@
                                  <asp:ListItem Value="1">pdf แบบปกติ</asp:ListItem>
                                  <asp:ListItem Value="2">pdf แบบบ้านเลขที่ยาว</asp:ListItem>
                                   <asp:ListItem Value="3">pdf แบบ QR</asp:ListItem>
+                                 <asp:ListItem Value="4">pdf แบบ QR เว้นเซ็น</asp:ListItem>
                              </asp:DropDownList>
 
                          </td>

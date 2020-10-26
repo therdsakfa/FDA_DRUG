@@ -11,86 +11,68 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
+Partial Public Class FRM_RGT_EDIT_CONSIDER
     
     '''<summary>
-    '''hl_reader control.
+    '''ScriptManager1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
     
     '''<summary>
-    '''HiddenField1 control.
+    '''Txt_Remark control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents Txt_Remark As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''lr_preview control.
+    '''rcb_staff_offer control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents rcb_staff_offer As Global.Telerik.Web.UI.RadComboBox
     
     '''<summary>
-    '''btn_confirm control.
+    '''TextBox1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''btn_confirm2 control.
+    '''txt_app_date control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_confirm2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txt_app_date As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''btn_cancel control.
+    '''Button1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''btn_load control.
+    '''Button2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''btn_load0 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''UC_GRID_ATTACH control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents UC_GRID_ATTACH As Global.FDA_DRUG.UC_GRID_ATTACH
+    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
 End Class

@@ -48,10 +48,19 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
             Dim check As New DAO_DRUG.TB_LCN_EXTEND_LITE
             check.GetDataby_IDA(_IDA)
             If check.fields.STATUS_ID = 5 Then
+
+                'btn_confirm.Style.Add("display", "none")
+                btn_confirm2.Style.Add("display", "block")
+                btn_confirm.Visible = False
+                btn_confirm2.Visible = True
                 UC_GRID_ATTACH.load_gv_V4(_TR_ID, 11, _process)
                 UC_GRID_ATTACH.load_gv_V4(_TR_ID, 22, _process)
                 UC_GRID_ATTACH.load_gv_V4(_TR_ID, 33, _process)
             Else
+                'btn_confirm.Style.Add("display", "block")
+                'btn_confirm2.Style.Add("display", "none")
+                btn_confirm.Visible = True
+                btn_confirm2.Visible = False
                 UC_GRID_ATTACH.load_gv(_TR_ID)
             End If
             'If check.fields.STATUS_ID <> 0 Then
@@ -1012,5 +1021,19 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
 
     Protected Sub btn_load0_Click(sender As Object, e As EventArgs) Handles btn_load0.Click
         Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")
+    End Sub
+
+    Private Sub btn_confirm2_Click(sender As Object, e As EventArgs) Handles btn_confirm2.Click
+        Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
+        Dim dao_process As New DAO_DRUG.ClsDBPROCESS_NAME
+        dao_process.GetDataby_Process_ID(_process)
+        dao.GetDataby_IDA(_IDA)
+
+        dao.fields.STATUS_ID = 6
+
+        dao.update()
+        AddLogStatus(6, _process, _CLS.CITIZEN_ID, _IDA)
+        AddLogStatusEtracking(1, 0, _CLS.CITIZEN_ID, "ยื่นแก้ไข" & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, dao.fields.FK_IDA, dao.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
+        alert("ยื่นเรื่องเรียบร้อยแล้ว")
     End Sub
 End Class

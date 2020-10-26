@@ -14,6 +14,10 @@
                         <asp:TextBox ID="Txt_Name" runat="server" CssClass="input-lg" Width="300px"></asp:TextBox>
                         </td></tr>
 
+                    <tr ><td>ตำแหน่ง</td><td>
+                        <asp:TextBox ID="Txt_POSITION" runat="server" CssClass="input-lg" Width="300px"></asp:TextBox>
+                        </td></tr>
+
                     </table>
             </div>
               <div class="panel-footer " style="text-align:center;">

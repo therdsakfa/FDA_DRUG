@@ -138,13 +138,7 @@ Public Class FRM_DRUG_IMPORT_NYM3
         'End If
         dt = bao.SP_DATA_NYM3_USER(_DL)      '_DL          'BAO แถวที่ 5000
         RadGrid1.DataSource = dt
-        '  Dim IDGroup As Integer = 0   เอาคืนนน
-        ' Try                           เอาคืนนน
-        'IDGroup = _CLS.GROUPS          เอาคืนนน
-        'If _process = "" Then          เอาคืนนน
-        '
-        'End If                         เอาคืนนน
-        'Catch ex As Exception          เอาคืนนน
+
     End Sub
 
 End Class

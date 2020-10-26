@@ -42,6 +42,7 @@ Namespace BAO
         Dim rdr As SqlDataReader
 
         Dim conn As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("LGT_DRUGConnectionString").ConnectionString)
+        Dim conndrugimport As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("FDA_DRUG_IMPORTConnectionString").ConnectionString)
         Public condrugimport As String = System.Configuration.ConfigurationManager.ConnectionStrings("FDA_DRUG_IMPORTConnectionString").ConnectionString
         Public con_str As String = System.Configuration.ConfigurationManager.ConnectionStrings("LGT_DRUGConnectionString").ConnectionString
         Dim conn_CPN As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("LGTCPNConnectionString1").ConnectionString)
@@ -4142,6 +4143,23 @@ Namespace BAO
             conn.Close()
 
         End Sub
+        '
+        Public Sub SP_STAFF_OFFER_DDL_BY_PVNCD(ByVal pvncd As Integer)
+
+            strSQL = "SP_STAFF_OFFER_DDL_BY_PVNCD"
+            SqlCmd = New SqlCommand(strSQL, conn)
+            If (conn.State = ConnectionState.Open) Then
+                conn.Close()
+            End If
+            conn.Open()
+            SqlCmd.CommandType = CommandType.StoredProcedure
+            SqlCmd.Parameters.Add("@pvncd", SqlDbType.Int).Value = pvncd
+
+            dtAdapter = New SqlDataAdapter(SqlCmd)
+            dtAdapter.Fill(dt)
+            conn.Close()
+
+        End Sub
         Public Sub SP_STAFF_OFFER_DDL_ex()
 
             strSQL = "SP_STAFF_OFFER_DDL_ex"
@@ -5043,6 +5061,31 @@ Namespace BAO
 
             End Try
 
+
+            Return dt
+        End Function
+        'Public Sub SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL(ByVal _stat_group As Integer, ByVal _group As Integer)
+
+        '    strSQL = "SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL"
+        '    SqlCmd = New SqlCommand(strSQL, conndrugimport)
+        '    If (conn.State = ConnectionState.Open) Then
+        '        conn.Close()
+        '    End If
+        '    conn.Open()
+        '    SqlCmd.CommandType = CommandType.StoredProcedure
+        '    SqlCmd.Parameters.Add("@stat_group", SqlDbType.Int).Value = _stat_group
+        '    SqlCmd.Parameters.Add("@group", SqlDbType.Int).Value = _group
+
+        '    dtAdapter = New SqlDataAdapter(SqlCmd)
+        '    dtAdapter.Fill(dt)
+        '    conn.Close()
+
+        'End Sub
+        Public Function SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL(ByVal _stat_group As Integer, ByVal _group As Integer) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_STATUS_IMPORT_STAFF_BY_GROUP_DDL @stat_group = " & _stat_group & ",@group=" & _group
+            Dim dt As New DataTable
+            dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
 
             Return dt
         End Function
@@ -6007,7 +6050,12 @@ Namespace BAO
 
             dao_syslcnsid.GetDataby_identify(_CLS.CITIZEN_ID)
             dao_syslcnsnm.GetDataby_identify(_CLS.CITIZEN_ID)
-            _CLS.LCNSID = dao_syslcnsid.fields.lcnsid
+            Try
+
+            Catch ex As Exception
+                _CLS.LCNSID = dao_syslcnsid.fields.lcnsid
+            End Try
+
 
             If String.IsNullOrEmpty(dao_syslcnsnm.fields.thalnm) = True Or dao_syslcnsnm.fields.thalnm = Nothing Then
                 _CLS.THANM = dao_syslcnsnm.fields.thanm
@@ -6027,11 +6075,13 @@ Namespace BAO
             dao_syslcnsid.GetDataby_identify(CITIZEN_ID_AUTHORIZE)
 
             Dim dao_sysnmperson As New DAO_CPN.clsDBsyslcnsnm
-            dao_sysnmperson.GetDataby_lcnsid(dao_syslcnsid.fields.lcnsid)
+            Try
+                dao_sysnmperson.GetDataby_lcnsid(dao_syslcnsid.fields.lcnsid)
 
-            _CLS.LCNSID_CUSTOMER = dao_syslcnsid.fields.lcnsid
+                _CLS.LCNSID_CUSTOMER = dao_syslcnsid.fields.lcnsid
+            Catch ex As Exception
 
-
+            End Try
 
             Dim ws2 As New WS_Taxno_TaxnoAuthorize.WebService1
             Try
@@ -6694,8 +6744,8 @@ Namespace BAO
         ' gen rcvno ชื่อสาร
         Public Function GEN_RCVNO_NO(ByVal YEAR As String, ByVal PVNCD As String, ByVal PROCESS_ID As String, ByVal FK_IDA As Integer) As String
             Dim int_no As Integer
-            Dim dao As New DAO_DRUG.ClsDBGEN_RCVNO
-            dao.GetDataby_Year_PVNCD_PROCESS_ID_MAX(PVNCD, YEAR, PROCESS_ID)
+            Dim dao As New DAO_DRUG.ClsDBGEN_RCVNO                                      '
+            dao.GetDataby_Year_PVNCD_PROCESS_ID_MAX(PVNCD, YEAR, PROCESS_ID)            'สร้างเลขล่าสุด
             If IsNothing(dao.fields.GEN_RCV) = True Then
                 int_no = 0
             Else

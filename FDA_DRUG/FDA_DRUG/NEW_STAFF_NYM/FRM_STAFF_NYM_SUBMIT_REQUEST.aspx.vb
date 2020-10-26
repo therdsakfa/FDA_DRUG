@@ -163,7 +163,7 @@ Public Class FRM_STAFF_NYM_SUBMIT_REQUEST
     Protected Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
         dao.GetDataby_IDA(Integer.Parse(_IDA))
-        dao.fields.STATUS_ID = 9
+        dao.fields.STATUS_ID = 14
         dao.update()
 
         alert("ยกเลิกข้อมุลเรียบร้อยแล้ว")

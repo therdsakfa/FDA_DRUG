@@ -118,7 +118,8 @@
                      <tr><td>
                          <br />
                          <br />
-                         <asp:Button ID="btn_confirm" runat="server" Text="ยื่นคำขอ" CssClass="btn-lg"   Width="80%" OnClientClick="return confirm('คุณต้องการบันทึกข้อมูลหรือไม่');"  /></td></tr>
+                         <asp:Button ID="btn_confirm" runat="server" Text="ยื่นคำขอ" CssClass="btn-lg"   Width="80%" OnClientClick="return confirm('คุณต้องการบันทึกข้อมูลหรือไม่');"  />
+                         <asp:Button ID="btn_confirm2" runat="server" Text="ยื่นแก้ไข" CssClass="btn-lg"  style="display:none;"  Width="80%" OnClientClick="return confirm('คุณต้องการบันทึกข้อมูลหรือไม่');"  /></td></tr>
                      <tr><td> <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิกคำขอ" CssClass="btn-lg"   Width="80%" OnClientClick="return confirm('คุณต้องการยกเลิกหรือไม่');"  /></td></tr>
                      <tr><td>  <asp:Button ID="btn_load" runat="server" Text="Download PDF" CssClass="btn-lg"   Width="80%" /></td></tr>
                      <tr><td>  <asp:Button ID="btn_load0" runat="server" Text="กลับหน้ารายการ" CssClass="btn-lg"   Width="80%" />

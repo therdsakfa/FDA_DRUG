@@ -488,4 +488,76 @@
         End Sub
 
     End Class
+    Public Class TB_FDA_DRUG_IMPORT_UPLOAD
+        Inherits MAINCONTEXT
+
+        Public fields As New FDA_DRUG_IMPORT_UPLOAD
+
+
+        Public Sub insert()
+            db.FDA_DRUG_IMPORT_UPLOADs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.FDA_DRUG_IMPORT_UPLOADs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.FDA_DRUG_IMPORT_UPLOADs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal IDA As String)                                   'หาข้อมูล แต่หาจากตัวแม่คือ FK IDA
+            datas = (From p In db.FDA_DRUG_IMPORT_UPLOADs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+    Public Class TB_FDA_DRUG_STATUS_IMPORT_ALL
+        Inherits MAINCONTEXT
+
+        Public fields As New STATUS_ALL_IMPORT
+
+
+        Public Sub insert()
+            db.STATUS_ALL_IMPORTs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.STATUS_ALL_IMPORTs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.STATUS_ALL_IMPORTs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal IDA As String)                                   'หาข้อมูล แต่หาจากตัวแม่คือ FK IDA
+            datas = (From p In db.STATUS_ALL_IMPORTs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA_Group(ByVal stat As Integer, ByVal _group As Integer)
+
+            datas = (From p In db.STATUS_ALL_IMPORTs Where p.STATUS_ID = stat And p.STATUS_GROUP = _group Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
 End Class
