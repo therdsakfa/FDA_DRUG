@@ -5,7 +5,8 @@
 
     Private _IDA As Integer
     Private _CLS As New CLS_SESSION
-    Public Property _process As String
+    Private _DL As String
+    Public Property _process As Integer
     ' Private _type As String
 
     Private Sub runQuery()
@@ -16,6 +17,7 @@
             _IDA = Request.QueryString("IDA")
             _process = Request.QueryString("process")
             _CLS = Session("CLS")
+            _DL = Request.QueryString("DL")
             ' _type = "1"
         End If
 
@@ -78,7 +80,7 @@
                 alert("บันทึกข้อมูลเรียบร้อย")
             Else                                                    'ถ้าเป็น NYM อื่น
                 'Dim dao As New DAO_DRUG.ClsDBdrsamp                     'ใช้ base drsamp คืออะไร งง มาก
-                If _process = " 1027" Then
+                If _process = 1027 Then
                     Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
                     dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA
                     'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
@@ -126,6 +128,6 @@
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&process=" & _process)
+        Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&process=" & _process & "&DL=" & _DL)
     End Sub
 End Class

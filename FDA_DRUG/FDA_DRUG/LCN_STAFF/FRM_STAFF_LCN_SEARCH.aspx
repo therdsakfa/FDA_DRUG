@@ -227,7 +227,10 @@
                        CommandName="sel" Text="เลือกข้อมูล">
                        <HeaderStyle Width="70px" />
                    </telerik:GridButtonColumn>
-
+        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_drug_group"
+                       CommandName="drug_group" Text="หมวดยา">
+                       <HeaderStyle Width="70px" />
+                   </telerik:GridButtonColumn>
         <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_trid"
                        CommandName="_trid" Text="ขอเลขดำเนินการ" ConfirmText="คุณต้องการทำต่อหรือไม่?">
                        <HeaderStyle Width="70px" />
