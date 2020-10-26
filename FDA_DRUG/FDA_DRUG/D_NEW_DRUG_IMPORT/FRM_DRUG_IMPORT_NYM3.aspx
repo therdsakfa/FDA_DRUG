@@ -121,6 +121,9 @@
                     <telerik:GridBoundColumn DataField="NYM3_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM3_IDA column" HeaderText="IDA"
                         SortExpression="NYM3_IDA" UniqueName="NYM3_IDA" Display="false">
                     </telerik:GridBoundColumn>
+                     <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
+                        HeaderText="เลขIDAของDL" SortExpression="DL" UniqueName="DL" Display="false">
+                    </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="PROCESS_ID"  FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                         SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
                     </telerik:GridBoundColumn>
@@ -130,8 +133,8 @@
                     <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
                         HeaderText="ประเภท" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
-                        HeaderText="รหัสบัญชีรายการยา" SortExpression="DL" UniqueName="DL">
+                    <telerik:GridBoundColumn DataField="RCVNO_DISPLAY" FilterControlAltText="Filter RCVNO_DISPLAY column"
+                        HeaderText="รหัสบัญชีรายการยา" SortExpression="RCVNO_DISPLAY" UniqueName="RCVNO_DISPLAY">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="NYM3_WISH_MED" FilterControlAltText="Filter NYM3_WISH_MED column"
                         HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM3_WISH_MED" UniqueName="NYM3_WISH_MED">
@@ -139,11 +142,15 @@
                     <telerik:GridBoundColumn DataField="NYM3_NO" FilterControlAltText="Filter NYM3_NO column"
                         HeaderText="เลขดำเนินการ" SortExpression="NYM3_NO" UniqueName="NYM3_NO">   
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="STATUS_ID" FilterControlAltText="Filter STATUS_ID column"
-                        HeaderText="สถานะ" SortExpression="STATUS_ID" UniqueName="STATUS_ID">
+                    <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
+                        HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
                     </telerik:GridBoundColumn>
                     <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
                         CommandName="sel" Text="ดูข้อมูล">
+                        <HeaderStyle Width="70px" />
+                    </telerik:GridButtonColumn>
+                    <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
+                        CommandName="edit" Text="แก้ไข">
                         <HeaderStyle Width="70px" />
                     </telerik:GridButtonColumn>
                     <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_upload"

@@ -591,7 +591,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 'dao_prf.update() ปิดไว้ก่อน
 
                 package()
-                AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+                'AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 dao.update()
                 alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
 

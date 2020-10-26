@@ -102,7 +102,7 @@ Public Class FRM_STAFF_NYM2
             Catch ex As Exception
 
             End Try
-            Dim url As String = "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & IDA
+            Dim url As String = "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & IDA & "&process= " & _process
             btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
         End If
     End Sub
