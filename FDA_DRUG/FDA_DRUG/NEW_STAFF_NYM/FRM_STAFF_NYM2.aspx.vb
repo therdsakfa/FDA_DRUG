@@ -96,7 +96,7 @@ Public Class FRM_STAFF_NYM2
             dao.GetDataby_IDA(IDA)
             btn_edit.Style.Add("display", "none")
             Try
-                If dao.fields.STATUS_ID = 6 Then
+                If dao.fields.STATUS_ID = 9 Then
                     btn_edit.Style.Add("display", "block")
                 End If
             Catch ex As Exception
