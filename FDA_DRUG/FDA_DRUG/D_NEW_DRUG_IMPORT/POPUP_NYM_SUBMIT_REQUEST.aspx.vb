@@ -37,6 +37,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         If Not IsPostBack Then
             BindData_PDF()
             show_btn(_IDA)
+            set_hide(_IDA)
             ' UC_GRID_PHARMACIST.load_gv(_IDA)
             'UC_GRID_ATTACH.load_gv(_TR_ID)
             If Request.QueryString("identify") <> "" Then
@@ -61,6 +62,30 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             btn_confirm.CssClass = "btn-danger btn-lg"
             btn_cancel.CssClass = "btn-danger btn-lg"
         End If
+        If dao.fields.STATUS_ID = 5 Then
+            btn_confirm.Enabled = False
+            btn_cancel.Enabled = False
+            btn_confirm.CssClass = "btn-danger btn-lg"
+            btn_cancel.CssClass = "btn-danger btn-lg"
+
+            _edit.Style.Add("display", "block")
+            remark_edit.Style.Add("display", "block")
+            remark_edit.Text = dao.fields.REMARK_EDIT
+            'Try
+            '    If dao.fields.STATUS_ID = 5 Then
+            '        remark_edit.Style.Add("display", "block")
+            '    End If
+            'Catch ex As Exception
+            'End Try
+        Else
+            _edit.Style.Add("display", "none")
+            remark_edit.Style.Add("display", "none")
+        End If
+    End Sub
+    Public Sub set_hide(ByVal IDA As String)
+        Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        dao.GetDataby_IDA(IDA)
+
     End Sub
     Private Function chk_pha() As Boolean
         Dim chk As Boolean = True
