@@ -391,11 +391,10 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '--------------------------------
                 alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.NYM2_NO)
             ElseIf STATUS_ID = 5 Then
-
-
                 dao_prf.GetDataby_IDA(_IDA)
                 dao_prf.fields.STATUS_ID = STATUS_ID
                 dao_prf.update()
+                AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 'RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
                 'dao.fields.NYM2_NO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
                 ''   dao.fields.TR_ID = _CLS.CITIZEN_ID
@@ -454,7 +453,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         End If
 
         Try
-            If STATUS_ID <> 9 And STATUS_ID <> 5 Then
+            If STATUS_ID <> 9 Then
                 AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")            'กลับไปหน้าตาราง
                 'ขาด status 9 และ update log status
