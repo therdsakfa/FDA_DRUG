@@ -62,6 +62,10 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             btn_confirm.CssClass = "btn-danger btn-lg"
             btn_cancel.CssClass = "btn-danger btn-lg"
         End If
+    End Sub
+    Public Sub set_hide(ByVal IDA As String)
+        Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        dao.GetDataby_IDA(IDA)
         If dao.fields.STATUS_ID = 5 Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
@@ -81,11 +85,6 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             _edit.Style.Add("display", "none")
             remark_edit.Style.Add("display", "none")
         End If
-    End Sub
-    Public Sub set_hide(ByVal IDA As String)
-        Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-        dao.GetDataby_IDA(IDA)
-
     End Sub
     Private Function chk_pha() As Boolean
         Dim chk As Boolean = True

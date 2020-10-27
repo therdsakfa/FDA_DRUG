@@ -392,6 +392,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.NYM2_NO)
             ElseIf STATUS_ID = 5 Then
 
+
                 dao_prf.GetDataby_IDA(_IDA)
                 dao_prf.fields.STATUS_ID = STATUS_ID
                 dao_prf.update()
@@ -407,7 +408,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 'End Try
                 'dao.fields.FK_IDA = Date.Now.ToShortDateString()
                 'dao.update()
-
+                Response.Redirect("FRM_STAFF_NYM_REMARK_EDIT.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID)
             ElseIf STATUS_ID = 9 Then  ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
                 dao.GetDataby_IDA(_IDA)
                 Dim statusid As Integer
@@ -460,7 +461,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             Else
             End If
         Catch ex As Exception
-        end try
+        End Try
 
     End Sub
     Sub alert_reload(ByVal text As String)                                   'reload page 
@@ -494,7 +495,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             dao.GetDataby_IDA(_IDA)
             dao_up.GetDataby_IDA(dao.fields.TR_ID)
             If dao.fields.STATUS_ID <= 2 Then
-                int_group_ddl= 1
+                int_group_ddl = 1
             ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
                 int_group_ddl = 2
             ElseIf dao.fields.STATUS_ID >= 6 Then
