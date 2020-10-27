@@ -177,7 +177,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             Catch ex As Exception
 
             End Try
-        Else
+        Else            'ดูCODE ตรงนี้ของ leaam ว่ามีการเก็บเอาไว้ไหม
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             dao.GetDataby_IDA(_IDA)
 
@@ -255,184 +255,6 @@ Public Class FRM_STAFFNYM_CONFIRM
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     'Protected Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
-
-
-    '    'Dim dao_up As New DAO_DRUG_IMPORT.ClsDBDRUG_IMPORT_UPLOAD          'ดึง เปลี่ยน linq 
-    '    'Dim bao As New BAO.GenNumber
-    '    'Dim dao_prf As New DAO_DRUG.ClsDB_nym_proof                         'เอาไว้ทำอะไร ยังไม่รู็ต้องแก้ 
-    '    'Dim STATUS_ID As Integer = ddl_cnsdcd.SelectedItem.Value            '
-    '    'Dim RCVNO As Integer
-
-
-    '    'Dim dao_date As New DAO_DRUG.ClsDBSTATUS_DATE
-    '    'If _ProcessID = 1026 Then
-    '    '    Dim dao As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
-    '    '    dao.GetDataby_IDA(_IDA)
-    '    '    dao_up.GetDataby_IDA(dao.fields.TR_ID)
-    '    '    dao_prf.GetDataby_FK(dao.fields.IDA)
-    '    '    Dim PROCESS_ID As Integer = dao_up.fields.FK_DRUG_IMPORT
-
-    '    '    dao_date.fields.FK_IDA = _IDA
-    '    '    Try
-    '    '        dao_date.fields.STATUS_DATE = Date.Now 'CDate(txt_app_date.Text)
-    '    '    Catch ex As Exception
-
-    '    '    End Try
-
-    '    '    dao_date.fields.STATUS_GROUP = 2 'ใบอนุญาต ขย ต่างๆ
-    '    '    dao_date.fields.STATUS_ID = ddl_cnsdcd.SelectedValue
-    '    '    dao_date.fields.DATE_NOW = Date.Now
-    '    '    dao_date.fields.PROCESS_ID = 0
-    '    '    dao_date.insert()
-
-
-    '    '    If STATUS_ID = 3 Then
-    '    '        dao.fields.STATUS_ID = STATUS_ID
-    '    '        RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
-    '    '        dao.fields.rcvno = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)
-    '    '        ' dao.fields.rcvr_id = _CLS.CITIZEN_ID
-
-    '    '        dao.fields.RCVNO_DISPLAY = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
-    '    '        Try
-    '    '            dao.fields.DATE_RCV = Date.Now 'CDate(txt_app_date.Text)
-    '    '        Catch ex As Exception
-
-    '    '        End Try
-    '    '        dao.fields.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
-    '    '        dao.fields.DATE_RCV = Date.Now.ToShortDateString()
-    '    '        dao.update()
-
-    '    '        dao_prf.fields.RCV_NO = RCVNO
-    '    '        dao_prf.update()
-    '    '        '-----------------ลิ้งไปหน้าคีย์มือ----------
-    '    '        'Response.Redirect("FRM_STAFF_NYM_RCV_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
-    '    '        '--------------------------------
-    '    '        alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.rcvno)
-    '    '    ElseIf STATUS_ID = 6 Then
-    '    '        Response.Redirect("FRM_STAFF_NYM_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID)
-    '    '    ElseIf STATUS_ID = 8 Then
-
-    '    '        dao.fields.STATUS_ID = STATUS_ID
-    '    '        dao.fields.appdate = Date.Now.ToShortDateString()
-    '    '        dao.fields.REMARK = txt_REMARK.Text
-    '    '        dao_prf.fields.RCV_DATE = Date.Now
-    '    '        If _ProcessID = "1028" Then
-    '    '            dao_prf.fields.SENT_DATE = dao.fields.CONSIDER_DATE
-    '    '            'Else
-    '    '            '    dao_prf.fields.SENT_DATE = Date.Now 'นยม4ต้องรับวันที่นำเข้ามาจาก LPI
-    '    '        End If
-    '    '        dao_prf.update()
-
-    '    '        package()
-
-    '    '        dao.update()
-    '    '        alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
-
-    '    '    ElseIf STATUS_ID = 7 Then
-    '    '        Response.Redirect("FRM_STAFF_NYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
-    '    '        AddLogStatus(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
-    '    '        '_TR_ID = Request.QueryString("TR_ID")
-    '    '        '_IDA = Request.QueryString("IDA")
-    '    '        'dao.update()
-    '    '        'alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
-    '    '    End If
-    '    'Else                                                                                'ถ้ากรณีอื่นๆ มีเยอะ 
-    '    '    'Dim dao As New DAO_DRUG.ClsDBdrsamp
-    '    '    Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-    '    '    dao.GetDataby_IDA(_IDA)
-    '    '    dao_up.GetDataby_IDA(dao.fields.TR_ID)
-    '    '    dao_prf.GetDataby_FK(dao.fields.IDA)                                            'เปลี่ยนอันนี้ 
-
-    '    '    Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID                            '
-    '    '    dao_date.fields.FK_IDA = _IDA
-    '    '    Try
-    '    '        dao_date.fields.STATUS_DATE = Date.Now 'CDate(txt_app_date.Text)
-    '    '    Catch ex As Exception
-
-    '    '    End Try
-
-    '    '    dao_date.fields.STATUS_GROUP = 2 'ใบอนุญาต ขย ต่างๆ                               'ต้องปรับ base 
-    '    '    dao_date.fields.STATUS_ID = ddl_cnsdcd.SelectedValue
-    '    '    dao_date.fields.DATE_NOW = Date.Now
-    '    '    dao_date.fields.PROCESS_ID = 0
-    '    '    dao_date.insert()
-
-
-    '    '    If STATUS_ID = 3 Then                                                                       'สถานะรอการชำระเงิน       น่าจะต้องเปลี่ยนเป็น 4 ชำระเงินรอการตรวจสอบ          CODE เจน เลขรับ 
-    '    '        dao.fields.STATUS_ID = STATUS_ID
-    '    '        RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
-    '    '        dao.fields.rcvno = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
-    '    '        dao.fields.rcvr_id = _CLS.CITIZEN_ID
-
-    '    '        dao.fields.RCVNO_DISPLAY = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
-    '    '        Try
-    '    '            dao.fields.rcvdate = Date.Now 'CDate(txt_app_date.Text)
-    '    '        Catch ex As Exception
-
-    '    '        End Try
-    '    '        dao.fields.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
-    '    '        dao.update()
-
-    '    '        dao_prf.fields.RCV_NO = RCVNO
-    '    '        dao_prf.update()
-    '    '        '-----------------ลิ้งไปหน้าคีย์มือ----------
-    '    '        'Response.Redirect("FRM_STAFF_NYM_RCV_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
-    '    '        '--------------------------------
-    '    '        alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.rcvno)
-    '    '    ElseIf STATUS_ID = 6 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
-    '    '        Response.Redirect("FRM_STAFF_NYM_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
-    '    '    ElseIf STATUS_ID = 8 Then
-
-    '    '        dao.fields.STATUS_ID = STATUS_ID
-    '    '        dao.fields.appdate = Date.Now.ToShortDateString()                                                                           'app date มีไว้ทำไร
-    '    '        dao.fields.REMARK = txt_REMARK.Text
-    '    '        dao_prf.fields.RCV_DATE = Date.Now
-    '    '        If _ProcessID = "1028" Then
-    '    '            dao_prf.fields.SENT_DATE = dao.fields.event_end                                                     'น่าจะเก็บ log วันว่าวันไหน 
-    '    '            'Else
-    '    '            '    dao_prf.fields.SENT_DATE = Date.Now 'นยม4ต้องรับวันที่นำเข้ามาจาก LPI
-    '    '        End If
-    '    '        dao_prf.update()
-
-    '    '        package()
-
-    '    '        dao.update()
-    '    '        alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
-
-    '    '    ElseIf STATUS_ID = 7 Then                                                                                   'คืนคำขอ ถึงต้องมี remark  หน้า remark เด้งขึ้นมา 
-    '    '        Response.Redirect("FRM_STAFF_NYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
-    '    '        AddLogStatus(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
-    '    '        '_TR_ID = Request.QueryString("TR_ID")
-    '    '        '_IDA = Request.QueryString("IDA")
-    '    '        'dao.update()
-    '    '        'alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
-    '    '    End If
-    '    'End If
-
-
-
-
-    'End Sub
-    'Sub alert_reload(ByVal text As String                                                                                                   'reload page 
-    '    Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');</script> ")
-
-    '    Dim dao_n As New DAO_DRUG.ClsDBdalcn
-    '    dao_n.GetDataby_IDA(_IDA)
-    '    Try
-    '        If dao_n.fields.SEND_POST = 1 Then
-    '            '  Label2.Text = "รับด้วยตัวเอง"
-    '        ElseIf dao_n.fields.SEND_POST = 2 Then
-    '            '   Label2.Text = "ส่งไปรษณีย์"
-    '        Else
-    '            '   Label2.Text = "รับด้วยตัวเอง"
-    '        End If
-    '    Catch ex As Exception
-
-    '    End Try
-
-    '    Bind_ddl_Status_staff()
-    '    BindData_PDF()
-    'End Sub
     Protected Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
 
 
@@ -546,16 +368,14 @@ Public Class FRM_STAFFNYM_CONFIRM
             dao_date.fields.PROCESS_ID = _ProcessID
             dao_date.insert()
 
-            AddLogStatustodrugimport(9, _ProcessID, _CLS.CITIZEN_ID, _IDA)
-
 
             If STATUS_ID = 4 Then          'ไม่ได้ใช้นะ                                                              'สถานะรอการชำระเงิน       น่าจะต้องเปลี่ยนเป็น 4 ชำระเงินรอการตรวจสอบ          CODE เจน เลขรับ 
                 dao.fields.STATUS_ID = STATUS_ID
                 RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
-                dao.fields.NYM2_NO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
+                dao.fields.NYM2_RCVNO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
                 '   dao.fields.TR_ID = _CLS.CITIZEN_ID
 
-                dao.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
+                dao.fields.NYM2_NO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
                 Try
                     dao.fields.NYM2_IDENTIFY_STAFF = Date.Now 'CDate(txt_app_date.Text)
                 Catch ex As Exception
@@ -571,69 +391,77 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '--------------------------------
                 alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.NYM2_NO)
             ElseIf STATUS_ID = 5 Then
-                'AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 dao_prf.GetDataby_IDA(_IDA)
                 dao_prf.fields.STATUS_ID = STATUS_ID
                 dao_prf.update()
-            ElseIf STATUS_ID = 9 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
+                AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+                'RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
+                'dao.fields.NYM2_NO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
+                ''   dao.fields.TR_ID = _CLS.CITIZEN_ID
+
+                'dao.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
+                'Try
+                '    dao.fields.NYM2_DATE_TOP = Date.Now 'CDate(txt_app_date.Text)
+                'Catch ex As Exception
+
+                'End Try
+                'dao.fields.FK_IDA = Date.Now.ToShortDateString()
+                'dao.update()
+                Response.Redirect("FRM_STAFF_NYM_REMARK_EDIT.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID)
+            ElseIf STATUS_ID = 9 Then  ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
+                dao.GetDataby_IDA(_IDA)
+                Dim statusid As Integer
+                statusid = dao.fields.STATUS_ID
+                If statusid = 6 Then
+                    dao.fields.STATUS_ID = STATUS_ID
+                    RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)          'Code gen เลข รับ
+                    dao.fields.NYM2_RCVNO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
+                    dao.fields.NYM2_NO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)        'Code gen เลขดำเนินการ
+                    dao.update()
+                    AddLogStatustodrugimport(10, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+                Else
+
+                End If
                 Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&DL=" & _DL & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
+
             ElseIf STATUS_ID = 8 Then
-                'แก้ dao_prf
                 dao.fields.STATUS_ID = STATUS_ID
                 dao.fields.APPROVE_DATE = Date.Now.ToShortDateString()                                                                           'app date มีไว้ทำไร
                 dao.fields.REMARK = txt_REMARK.Text
                 dao.fields.UPDATE_DATE = Date.Now
-                'If _ProcessID = "1028" Then
-                'dao_prf.fields.NYM2_WRITE_DATE = dao.fields.event_end                                                     'น่าจะเก็บ log วันว่าวันไหน 
-                'Else
-                '    dao_prf.fields.SENT_DATE = Date.Now 'นยม4ต้องรับวันที่นำเข้ามาจาก LPI
-                'End If
-                'dao_prf.update() ปิดไว้ก่อน
-
                 package()
-                AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 dao.update()
                 alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
 
             ElseIf STATUS_ID = 7 Then                                                                                   'คืนคำขอ ถึงต้องมี remark  หน้า remark เด้งขึ้นมา 
+                AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID)
-                'AddLogStatus(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
-                '_TR_ID = Request.QueryString("TR_ID")
-                '_IDA = Request.QueryString("IDA")
-                'dao.update()
-                'alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+
             ElseIf STATUS_ID = 10 Then
                 'AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 'dao_prf.GetDataby_IDA(_IDA)
                 dao.fields.STATUS_ID = STATUS_ID
-                RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
-                dao.fields.NYM2_NO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
+                RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)          'Code gen เลข รับ
+                dao.fields.NYM2_RCVNO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
                 '   dao.fields.TR_ID = _CLS.CITIZEN_ID
-
-                dao.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
-                Try
-                    dao.fields.NYM2_DATE_TOP = Date.Now 'CDate(txt_app_date.Text)
-                Catch ex As Exception
-
-                End Try
-                'dao.fields.FK_IDA = Date.Now.ToShortDateString()
+                dao.fields.NYM2_NO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)        'Code gen เลขดำเนินการ
                 dao.update()
-                'dao.fields.STATUS_ID = STATUS_ID
-                'dao_prf.update()
-                'dao.fields.NYM2_RCVNO = RCVNO
-                'dao.update()
-                '-----------------ลิ้งไปหน้าคีย์มือ----------
-                'Response.Redirect("FRM_STAFF_NYM_RCV_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
-                '--------------------------------
+
                 alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.NYM2_NO)
                 'dao_prf.fields.STATUS_ID = STATUS_ID
                 'dao_prf.update()
             End If
         End If
-        AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
-        Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")            'กลับไปหน้าตาราง
-        'ขาด status 9 และ update log status
 
+        Try
+            If STATUS_ID <> 9 Then
+                AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+                Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")            'กลับไปหน้าตาราง
+                'ขาด status 9 และ update log status
+            Else
+            End If
+        Catch ex As Exception
+        End Try
 
     End Sub
     Sub alert_reload(ByVal text As String)                                   'reload page 
@@ -673,8 +501,34 @@ Public Class FRM_STAFFNYM_CONFIRM
             ElseIf dao.fields.STATUS_ID >= 6 Then
                 int_group_ddl = 3
             End If
-        Else                                                                                'กระบวนการอื่นๆ
+        ElseIf _ProcessID = 1027 Then                                                                              'กระบวนการอื่นๆ
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2                                     'เชื่อม base 
+            dao.GetDataby_IDA(_IDA)
+            ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
+            If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
+                int_group_ddl = 11
+            ElseIf dao.fields.STATUS_ID = 4 Or dao.fields.STATUS_ID = 5 Then                                           'ถ้า starus มากกว่า 6
+                int_group_ddl = 44
+            ElseIf dao.fields.STATUS_ID > 5 And dao.fields.STATUS_ID <= 9 Then               'ถ้า starus2 to 6 
+                int_group_ddl = 33
+            ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
+                int_group_ddl = 33
+            End If
+        ElseIf _ProcessID = 1028 Then                                                                              'กระบวนการอื่นๆ
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3                                     'เชื่อม base 
+            dao.GetDataby_IDA(_IDA)
+            ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
+            If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
+                int_group_ddl = 11
+            ElseIf dao.fields.STATUS_ID = 4 Or dao.fields.STATUS_ID = 5 Then                                           'ถ้า starus มากกว่า 6
+                int_group_ddl = 44
+            ElseIf dao.fields.STATUS_ID > 5 And dao.fields.STATUS_ID <= 9 Then               'ถ้า starus2 to 6 
+                int_group_ddl = 33
+            ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
+                int_group_ddl = 33
+            End If
+        ElseIf _ProcessID = 1029 Then                                                                              'กระบวนการอื่นๆ
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4                                     'เชื่อม base 
             dao.GetDataby_IDA(_IDA)
             ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
             If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
@@ -821,8 +675,12 @@ Public Class FRM_STAFFNYM_CONFIRM
         class_xml4.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)
 
         p_nym2 = class_xml2
-        Dim dao_nym As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-        dao_nym.getdata_dl(_DL)
+        Dim dao_nym2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        Dim dao_nym3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+        Dim dao_nym4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        dao_nym2.getdata_dl(_DL)
+        dao_nym3.getdata_dl(_DL)
+        dao_nym4.getdata_dl(_DL)
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         Dim paths As String = bao._PATH_DEFAULT                                         ' PART ต้องเป็น defult ก่อน 
 
@@ -836,20 +694,55 @@ Public Class FRM_STAFFNYM_CONFIRM
         dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0) 'DAO บรรทัด 2809 _process เป็นค่า string  แต่ฟังชั่นนี้เป็น integer
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim year As String = Date.Now.Year
-        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
-        Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, year, dao_nym.fields.DL)
-        'load_PDF(filename)
-        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
+        If _ProcessID = 1027 Then
+            Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym2.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, year, dao_nym2.fields.DL)
+            'load_PDF(filename)
+            LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
 
 
-        lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
-        hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+            lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+            hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
 
 
-        HiddenField1.Value = filename
-        _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym.fields.DL)
-        _CLS.PDFNAME = filename
-        '    show_btn() 'ตรวจสอบปุ่ม
+            HiddenField1.Value = filename
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym2.fields.DL)
+            _CLS.PDFNAME = filename
+            '    show_btn() 'ตรวจสอบปุ่
+        End If
+        If _ProcessID = 1028 Then
+            Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym3.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, year, dao_nym3.fields.DL)
+            'load_PDF(filename)
+            LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
+
+
+            lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+            hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+
+
+            HiddenField1.Value = filename
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym3.fields.DL)
+            _CLS.PDFNAME = filename
+            '    show_btn() 'ตรวจสอบปุ่
+        End If
+        If _ProcessID = 1029 Then
+            Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym4.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, year, dao_nym4.fields.DL)
+            'load_PDF(filename)
+            LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
+
+
+            lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+            hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+
+
+            HiddenField1.Value = filename
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym4.fields.DL)
+            _CLS.PDFNAME = filename
+            '    show_btn() 'ตรวจสอบปุ่
+        End If
+
 
     End Sub
 
@@ -1031,6 +924,10 @@ Public Class FRM_STAFFNYM_CONFIRM
     End Sub
 
     Protected Sub ddl_cnsdcd_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub txt_REMARK_TextChanged(sender As Object, e As EventArgs) Handles txt_REMARK.TextChanged
 
     End Sub
 End Class
