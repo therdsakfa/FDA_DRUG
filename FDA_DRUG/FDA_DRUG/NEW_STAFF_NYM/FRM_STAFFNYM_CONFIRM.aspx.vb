@@ -571,12 +571,39 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '--------------------------------
                 alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.NYM2_NO)
             ElseIf STATUS_ID = 5 Then
-                'AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+
                 dao_prf.GetDataby_IDA(_IDA)
                 dao_prf.fields.STATUS_ID = STATUS_ID
                 dao_prf.update()
+                'RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
+                'dao.fields.NYM2_NO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
+                ''   dao.fields.TR_ID = _CLS.CITIZEN_ID
+
+                'dao.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
+                'Try
+                '    dao.fields.NYM2_DATE_TOP = Date.Now 'CDate(txt_app_date.Text)
+                'Catch ex As Exception
+
+                'End Try
+                'dao.fields.FK_IDA = Date.Now.ToShortDateString()
+                'dao.update()
+
             ElseIf STATUS_ID = 9 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
+                dao.fields.STATUS_ID = STATUS_ID
+                RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)          'Code gen เลข รับ
+                dao.fields.NYM2_NO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
+                '   dao.fields.TR_ID = _CLS.CITIZEN_ID
+
+                dao.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)        'Code gen เลขดำเนินการ
+                Try
+                    dao.fields.NYM2_DATE_TOP = Date.Now 'CDate(txt_app_date.Text)
+                Catch ex As Exception
+
+                End Try
+                'dao.fields.FK_IDA = Date.Now.ToShortDateString()
+                dao.update()
                 Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&DL=" & _DL & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
+
             ElseIf STATUS_ID = 8 Then
                 'แก้ dao_prf
                 dao.fields.STATUS_ID = STATUS_ID
@@ -606,11 +633,11 @@ Public Class FRM_STAFFNYM_CONFIRM
                 'AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 'dao_prf.GetDataby_IDA(_IDA)
                 dao.fields.STATUS_ID = STATUS_ID
-                RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
+                RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)          'Code gen เลข รับ
                 dao.fields.NYM2_NO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
                 '   dao.fields.TR_ID = _CLS.CITIZEN_ID
 
-                dao.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
+                dao.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)        'Code gen เลขดำเนินการ
                 Try
                     dao.fields.NYM2_DATE_TOP = Date.Now 'CDate(txt_app_date.Text)
                 Catch ex As Exception

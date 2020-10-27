@@ -20,7 +20,7 @@
                         </asp:DropDownList>
                         </td></tr>
                       <tr ><td>ตำแหน่งแถวที่ 1</td><td>
-                        <asp:TextBox ID="positionline1" runat="server" CssClass="input-lg" Width="397px"></asp:TextBox>
+                        <asp:TextBox ID="TextBox6" runat="server" CssClass="input-lg" Width="397px"></asp:TextBox>
                         </td></tr>
                     <tr ><td>ตำแหน่งแถวที่ 2</td><td>
                         <asp:TextBox ID="TextBox2" runat="server" CssClass="input-lg" Width="398px"></asp:TextBox>
