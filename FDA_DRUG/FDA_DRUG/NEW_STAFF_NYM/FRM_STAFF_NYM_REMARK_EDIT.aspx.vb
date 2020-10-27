@@ -56,7 +56,7 @@
 
         dao.fields.REMARK_EDIT = TextBox1.Text
 
-        dao.fields.STATUS_ID = 6
+        dao.fields.STATUS_ID = 5
 
         dao.update()
         alert("ดำเนินการคืนแก้ไขคำขอเรียบร้อยแล้ว")
