@@ -87,51 +87,69 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
         Dim bao As New BAO.ClsDBSqlcommand
+        Dim TR_ID As String = ""
         If _process = 1027 Then                                   'เช็ค Status เป็น nym อะไร และการกดปุ่มในแต่ละอันจะอัพเดท ststus_id ใน base TB_FDA_DRUG_IMPORT_NYM_ ของ NYM นั้นๆ
             dao2.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
                 dao2.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                Dim bao_tran As New BAO_TRANSECTION
+                bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+                bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+                TR_ID = bao_tran.insert_transection_new(_process)
+                dao2.fields.FK_IDA = TR_ID
             Else
                 dao2.fields.STATUS_ID = 2                       'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง      ตรงนี้ตามจริงต้องเป็น 2 เหมือนกันไหม
+                Dim bao_tran As New BAO_TRANSECTION
+                bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+                bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+                TR_ID = bao_tran.insert_transection_new(_process)
+                dao2.fields.FK_IDA = TR_ID
             End If
             dao2.update()
         ElseIf _process = "1028" Then
             dao3.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
                 dao3.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                Dim bao_tran As New BAO_TRANSECTION
+                bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+                bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+                TR_ID = bao_tran.insert_transection_new(_process)
+                dao3.fields.FK_IDA = TR_ID
             Else
                 dao3.fields.STATUS_ID = 2                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                Dim bao_tran As New BAO_TRANSECTION
+                bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+                bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+                TR_ID = bao_tran.insert_transection_new(_process)
+                dao3.fields.FK_IDA = TR_ID
             End If
             dao3.update()
         ElseIf _process = "1029" Then
             dao4.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
                 dao4.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                Dim bao_tran As New BAO_TRANSECTION
+                bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+                bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+                TR_ID = bao_tran.insert_transection_new(_process)
+                dao4.fields.FK_IDA = TR_ID
             Else
                 dao4.fields.STATUS_ID = 2                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                Dim bao_tran As New BAO_TRANSECTION
+                bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+                bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+                TR_ID = bao_tran.insert_transection_new(_process)
+                dao4.fields.FK_IDA = TR_ID
             End If
             dao4.update()
         End If
-
-        'If b64 = Nothing Then                                   'b64 มีไว้ทำไร
-        '    b64 = Session("b64")
-        'End If
         Dim years As String = ""
-        ' Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        'dao_tr.GetDataby_IDA(dao.fields.TR_ID)
-        'Try
-        'years = dao_tr.fields.YEAR
-        'Catch ex As Exception
-        'End Try
 
-        '  Dim tr_id As String = ""
-        ' tr_id = "DA-" & _Process & "-" & years & "-" & _TR_ID
-
-        
         AddLogStatusnymimport(2, _process, _CLS.CITIZEN_ID, _IDA)            'LOG STATUS เก็บการ log ไว้ แล้วอัพเข้า base นี้ 
 
-        'Session("b64") = Nothing
-        alert("ยื่นเรื่องเรียบร้อยแล้ว")
+
+
+        alert("ยื่นเรื่องเรียบร้อยแล้วรหัสการดำเนินการ คือ DA-" & _process & "-" & con_year(Date.Now.Date().Year()) & "-" + TR_ID)
 
     End Sub
     Sub alert(ByVal text As String)

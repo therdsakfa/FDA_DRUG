@@ -96,10 +96,10 @@
                     Dim CONSIDER_DATE As Date = Date.Now
                     dao.fields.REMARK = Txt_Remark.Text
                     dao.fields.POSITION_CONSIDER_LINE1 = TextBox6.Text
-                    dao.fields.POSITION_CONSIDER_LINE1 = TextBox2.Text
-                    dao.fields.POSITION_CONSIDER_LINE1 = TextBox3.Text
-                    dao.fields.POSITION_CONSIDER_LINE1 = TextBox4.Text
-                    dao.fields.POSITION_CONSIDER_LINE1 = TextBox5.Text
+                    dao.fields.POSITION_CONSIDER_LINE2 = TextBox2.Text
+                    dao.fields.POSITION_CONSIDER_LINE3 = TextBox3.Text
+                    dao.fields.POSITION_CONSIDER_LINE4 = TextBox4.Text
+                    dao.fields.POSITION_CONSIDER_LINE5 = TextBox5.Text
                     dao.fields.STATUS_ID = 9
                     dao.fields.CONSIDER_DATE = CONSIDER_DATE
                     'ต้องใส่ชื่อ staff และ iden staff เพิ่ม
