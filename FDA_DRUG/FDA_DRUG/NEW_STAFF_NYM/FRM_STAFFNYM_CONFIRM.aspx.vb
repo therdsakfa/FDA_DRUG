@@ -372,10 +372,10 @@ Public Class FRM_STAFFNYM_CONFIRM
             If STATUS_ID = 4 Then          'ไม่ได้ใช้นะ                                                              'สถานะรอการชำระเงิน       น่าจะต้องเปลี่ยนเป็น 4 ชำระเงินรอการตรวจสอบ          CODE เจน เลขรับ 
                 dao.fields.STATUS_ID = STATUS_ID
                 RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
-                dao.fields.NYM2_NO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
+                dao.fields.NYM2_RCVNO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
                 '   dao.fields.TR_ID = _CLS.CITIZEN_ID
 
-                dao.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
+                dao.fields.NYM2_NO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
                 Try
                     dao.fields.NYM2_IDENTIFY_STAFF = Date.Now 'CDate(txt_app_date.Text)
                 Catch ex As Exception
@@ -415,8 +415,8 @@ Public Class FRM_STAFFNYM_CONFIRM
                 If statusid = 6 Then
                     dao.fields.STATUS_ID = STATUS_ID
                     RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)          'Code gen เลข รับ
-                    dao.fields.NYM2_NO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
-                    dao.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)        'Code gen เลขดำเนินการ
+                    dao.fields.NYM2_RCVNO = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)                                              'RCVNO คืออะไร 
+                    dao.fields.NYM2_NO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)        'Code gen เลขดำเนินการ
                     dao.update()
                     AddLogStatustodrugimport(10, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 Else
@@ -453,7 +453,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         End If
 
         Try
-            If STATUS_ID <> 9 Then
+            If STATUS_ID <> 9 And STATUS_ID <> 5 Then
                 AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
                 Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")            'กลับไปหน้าตาราง
                 'ขาด status 9 และ update log status
