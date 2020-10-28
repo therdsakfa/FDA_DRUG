@@ -86,6 +86,8 @@ Public Class FRM_DRUG_IMPORT_NYM3
                 Response.Redirect(url)
             ElseIf e.CommandName = "upload" Then
                 'หา Code ที่ทำให้อัพโหลดขึ้นเซิฟ                   น่าจะต้องเอามาจาก LCN_UPLOAD
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_UPLOAD_PDF_PROOF.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
+
 
             End If
         End If
