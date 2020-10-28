@@ -1909,13 +1909,6 @@
       <Column Name="TYPE_PART" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DALCN_IMPORT_DRUG_GROUP_DETAIL1" Member="DALCN_IMPORT_DRUG_GROUP_DETAIL1s">
-    <Type Name="DALCN_IMPORT_DRUG_GROUP_DETAIL1">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DRUG_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.MAS_DOCUMENT_RECEIVER" Member="MAS_DOCUMENT_RECEIVERs">
     <Type Name="MAS_DOCUMENT_RECEIVER">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6755,6 +6748,15 @@
       <Column Name="COL6" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="COL6_OTHER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="COL_ALLS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DALCN_IMPORT_DRUG_GROUP_DETAIL1" Member="DALCN_IMPORT_DRUG_GROUP_DETAIL1s">
+    <Type Name="DALCN_IMPORT_DRUG_GROUP_DETAIL1">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DRUG_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRUG_TYPE2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRUG_TYPE23" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

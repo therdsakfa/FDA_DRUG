@@ -27,8 +27,32 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
         Dim dao_ih As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
         dao_ih.GetDataby_FKIDA(Request.QueryString("ida"))
         Try
-            rdl_drug_type.DataBind()
-            rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+            'rdl_drug_type.DataBind()
+            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+            If dao_ih.fields.DRUG_TYPE IsNot Nothing Then
+                cb_drug_type1.Checked = True
+            End If
+
+        Catch ex As Exception
+
+        End Try
+        Try
+            'rdl_drug_type.DataBind()
+            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+            If dao_ih.fields.DRUG_TYPE2 IsNot Nothing Then
+                cb_drug_type2.Checked = True
+            End If
+
+        Catch ex As Exception
+
+        End Try
+        Try
+            'rdl_drug_type.DataBind()
+            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+            If dao_ih.fields.DRUG_TYPE23 IsNot Nothing Then
+                cb_drug_type3.Checked = True
+            End If
+
         Catch ex As Exception
 
         End Try
@@ -256,8 +280,32 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
         Dim dao_ih As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
         dao_ih.GetDataby_FKIDA(Request.QueryString("ida"))
         Try
-            rdl_drug_type.DataBind()
-            rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+            'rdl_drug_type.DataBind()
+            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+            If dao_ih.fields.DRUG_TYPE IsNot Nothing Then
+                cb_drug_type1.Checked = True
+            End If
+
+        Catch ex As Exception
+
+        End Try
+        Try
+            'rdl_drug_type.DataBind()
+            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+            If dao_ih.fields.DRUG_TYPE2 IsNot Nothing Then
+                cb_drug_type2.Checked = True
+            End If
+
+        Catch ex As Exception
+
+        End Try
+        Try
+            'rdl_drug_type.DataBind()
+            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+            If dao_ih.fields.DRUG_TYPE23 IsNot Nothing Then
+                cb_drug_type3.Checked = True
+            End If
+
         Catch ex As Exception
 
         End Try
@@ -757,11 +805,29 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
         dao_t = New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
         dao_t.fields.FK_IDA = Request.QueryString("ida")
         Try
-            dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
+            If cb_drug_type1.Checked Then
+                dao_t.fields.DRUG_TYPE = 1
+            End If
+            'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
         Catch ex As Exception
 
         End Try
+        Try
+            If cb_drug_type2.Checked Then
+                dao_t.fields.DRUG_TYPE2 = 1
+            End If
+            'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
+        Catch ex As Exception
 
+        End Try
+        Try
+            If cb_drug_type3.Checked Then
+                dao_t.fields.DRUG_TYPE23 = 1
+            End If
+            'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
+        Catch ex As Exception
+
+        End Try
         dao_t.insert()
 
 
