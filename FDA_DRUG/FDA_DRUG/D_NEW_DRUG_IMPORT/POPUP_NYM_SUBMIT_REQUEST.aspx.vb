@@ -359,7 +359,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym2.fields.DL) 'load_PDF(filename)
         ElseIf _process = 1028 Then
             filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym3.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
-            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym3.fields.DL) 'load_PDF(filename)
+            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym3.fields.DL) 'load_PDF(filename)                       BAO_COMMOND 627
         ElseIf _process = 1029 Then
             filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym4.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
             Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym4.fields.DL) 'load_PDF(filename)
