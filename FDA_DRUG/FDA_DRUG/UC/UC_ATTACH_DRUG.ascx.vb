@@ -24,7 +24,7 @@
             Dim Array_NAME_REAL() As String = Split(NAME_REAL, ".")
             Dim Last_Length As Integer = Array_NAME_REAL.Length - 1 'ดึงนามสกุลไฟล์ที่เบรามาใช้กับ NAME_FAKE 
             NAME_FAKE = "DA-" & PROCESS_ID & "-" & year & "-" & transection & "-" & type & System.IO.Path.GetExtension(FileUpload1.FileName) '"." & Array_NAME_REAL(Last_Length).ToString() 'สร้างชื่อไฟล์ใหม่โดยใช้นามสกุลไฟล์เดิม
-            FileUpload1.SaveAs(bao._PATH_DEFAULT & "upload\" & NAME_FAKE) 'บันทึกไฟล์ลงserverโดยใช้ชื่อที่สรางขึ้นใหม่
+            FileUpload1.SaveAs(bao._PATH_DEFAULT & "upload\" & NAME_FAKE) 'บันทึกไฟล์ลงserverโดยใช้ชื่อที่สรางขึ้นใหม่              'FileUpload    
 
 
             Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH
