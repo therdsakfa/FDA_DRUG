@@ -136,8 +136,8 @@
                        <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
                            HeaderText="ประเภท" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
-                           HeaderText="รหัสบัญชีรายการยา" SortExpression="DL" UniqueName="DL">
+                       <telerik:GridBoundColumn DataField="RCVNO_DISPLAY" FilterControlAltText="Filter RCVNO_DISPLAY column"
+                           HeaderText="รหัสบัญชีรายการยา" SortExpression="RCVNO_DISPLAY" UniqueName="RCVNO_DISPLAY">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="NYM4_WISH_MED" FilterControlAltText="Filter NYM4_WISH_MED column"
                            HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM4_WISH_MED" UniqueName="NYM4_WISH_MED">
