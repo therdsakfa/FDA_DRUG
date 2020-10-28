@@ -108,7 +108,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             ElseIf dao.fields.STATUS_ID = 6 Then
                 remark_box.Style.Add("display", "block")
             End If
-        Else                                                                            'ทำให้เป็น else if แยกนาม นยม         ตอนนี้ทำเป็นแค่ else เข้า 2 ทุกกรณีก่อน
+        ElseIf _ProcessID = 1027 Then                                                                          'ทำให้เป็น else if แยกนาม นยม         ตอนนี้ทำเป็นแค่ else เข้า 2 ทุกกรณีก่อน
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             dao.GetDataby_IDA(IDA)
             If dao.fields.STATUS_ID = 8 Then                                            'status 8 approve disable every bottom 
@@ -121,7 +121,35 @@ Public Class FRM_STAFFNYM_CONFIRM
             ElseIf dao.fields.STATUS_ID = 6 Then
                 remark_box.Style.Add("display", "block")
             End If
+        ElseIf _ProcessID = 1028 Then                                                                          'ทำให้เป็น else if แยกนาม นยม         ตอนนี้ทำเป็นแค่ else เข้า 2 ทุกกรณีก่อน
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+            dao.GetDataby_IDA(IDA)
+            If dao.fields.STATUS_ID = 8 Then                                            'status 8 approve disable every bottom 
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
+
+                ddl_cnsdcd.Style.Add("display", "none")
+            ElseIf dao.fields.STATUS_ID = 6 Then
+                remark_box.Style.Add("display", "block")
+            End If
+
+        ElseIf _ProcessID = 1029 Then                                                                          'ทำให้เป็น else if แยกนาม นยม         ตอนนี้ทำเป็นแค่ else เข้า 2 ทุกกรณีก่อน
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+            dao.GetDataby_IDA(IDA)
+            If dao.fields.STATUS_ID = 8 Then                                            'status 8 approve disable every bottom 
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
+
+                ddl_cnsdcd.Style.Add("display", "none")
+            ElseIf dao.fields.STATUS_ID = 6 Then
+                remark_box.Style.Add("display", "block")
+            End If
         End If
+
 
 
 
@@ -400,7 +428,8 @@ Public Class FRM_STAFFNYM_CONFIRM
                 'dao.update()
                 'alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
             End If
-        ElseIf _ProcessID = 1027 Then                                                                               'พรุ่งนี้แก้ไข ตรงนี้ ให้เสร็จ 
+        ElseIf _ProcessID = 1027 Then
+
             Dim whatnym As New Integer
             If _ProcessID = 1027 Then
                 whatnym = 2
@@ -514,7 +543,8 @@ Public Class FRM_STAFFNYM_CONFIRM
                 'dao_prf.fields.STATUS_ID = STATUS_ID
                 'dao_prf.update()
             End If
-        ElseIf _ProcessID = 1028 Then                                                                               'พรุ่งนี้แก้ไข ตรงนี้ ให้เสร็จ 
+        ElseIf _ProcessID = 1028 Then
+
             Dim whatnym As New Integer
             If _ProcessID = 1027 Then
                 whatnym = 2
