@@ -17,7 +17,7 @@ Public Class FRM_DRUG_IMPORT_NYM3
             ''นำค่า Session ใส่ ในตัวแปร _CLS
             _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
             _DL = Request.QueryString("DL")
-            '_IDA = Request.QueryString("IDA")
+            _IDA = Request.QueryString("IDA")
             '_lct_ida = Request.QueryString("lct_ida")
             '_type = Request.QueryString("type")
             '_process_for = Request.QueryString("process_for")

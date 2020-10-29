@@ -11,7 +11,7 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
     Private _ProcessID As Integer
     Private _pvncd As Integer
     Sub runQuery()
-        _type_id = Request.QueryString("type_id")
+        '_type_id = Request.QueryString("type_id")
         _ProcessID = Request.QueryString("process")
         _IDA = Request.QueryString("IDA")
         bao.RunAppSettings()
