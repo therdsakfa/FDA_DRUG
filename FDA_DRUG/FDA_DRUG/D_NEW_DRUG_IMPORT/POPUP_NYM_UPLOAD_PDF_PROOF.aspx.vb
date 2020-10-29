@@ -23,7 +23,7 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         runQuery()
         get_pvncd()
-
+        set_txt_label()
         show_panel()
         If Not IsPostBack Then
             If Request.QueryString("identify") <> "" Then
@@ -45,7 +45,17 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
         End If
     End Sub
 
-
+    Public Sub set_txt_label()
+        'ผยบ.
+        uc101_1.get_label("เอกสารแนบเพิ่มเติม")
+        uc101_2.get_label("รูปถ่ายของผู้รับอนุญาต (เจ้าของคนใหม่/ผู้ขออนุญาต) ขนาด 3*4 ซม.(3 รูป) ถ่ายไม่เกิน 6 เดือน")
+        'uc109_3.get_label("สำเนาทะเบียนบ้านรับรองจริง (เจ้าของคนใหม่)")
+        uc101_4.get_label("สำเนาหนังสือขออนุญาตทำงานที่ออกโดยกระทรวงแรงงานฯและหนังสือเดินทาง (กรีบุคคลต่างด้าว)")
+        'uc109_5.get_label("สำเนาบัตรประชาชนรับรองจริง (เจ้าของคนใหม่/ผู้ขออนุญาต)")
+        uc101_6.get_label("ใบรับรองแพทย์ของผู้ขออนุญาต (ต้องไม่เกิน 1-3 เดือนแล้วแต่กรณี)")
+        uc101_7.get_label("หลักทรัพย์(สำเนาสมุดบัญชีอัฟเดทล่าสุด) จำนวนเงินตั้งแต่ 10,000 บาทขึ้นไป")
+        uc101_8.get_label("สำเนาโฉนดที่ดินที่ไม่ติดภาระผูกพัน(ชื่อผู้รับอนุญาตเท่านั้น)")
+    End Sub
     Public Sub SET_ATTACH(ByVal TR_ID As String, ByVal PROCESS_ID As String, ByVal YEAR As String)
         If _ProcessID = 1028 Then
             'UC_ATTACH_DRUG บรรทีดที่ 18
