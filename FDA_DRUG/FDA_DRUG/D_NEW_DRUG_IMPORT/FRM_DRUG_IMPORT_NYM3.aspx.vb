@@ -157,9 +157,7 @@ Public Class FRM_DRUG_IMPORT_NYM3
 
     End Sub
     Protected Sub btn_reload_Click(sender As Object, e As EventArgs) Handles btn_reload.Click
-
         RadGrid1.Rebind()
-
     End Sub
 
 End Class
