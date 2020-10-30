@@ -36,7 +36,7 @@
 
     End Function
 
-    Public Function insert_transection_new(ByVal processid As String) As Integer
+    Public Function insert_transection_new(ByVal processid As String) As Integer            'สร้างเลขดำเนินการ
         Dim _year As Integer
         _year = con_year(Date.Now.Year)
 

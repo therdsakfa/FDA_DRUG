@@ -47,89 +47,72 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
 
     Public Sub set_txt_label()
         'ผยบ.
-        uc101_1.get_label("เอกสารแนบเพิ่มเติม")
-        uc101_2.get_label("รูปถ่ายของผู้รับอนุญาต (เจ้าของคนใหม่/ผู้ขออนุญาต) ขนาด 3*4 ซม.(3 รูป) ถ่ายไม่เกิน 6 เดือน")
-        'uc109_3.get_label("สำเนาทะเบียนบ้านรับรองจริง (เจ้าของคนใหม่)")
-        uc101_4.get_label("สำเนาหนังสือขออนุญาตทำงานที่ออกโดยกระทรวงแรงงานฯและหนังสือเดินทาง (กรีบุคคลต่างด้าว)")
-        'uc109_5.get_label("สำเนาบัตรประชาชนรับรองจริง (เจ้าของคนใหม่/ผู้ขออนุญาต)")
-        uc101_6.get_label("ใบรับรองแพทย์ของผู้ขออนุญาต (ต้องไม่เกิน 1-3 เดือนแล้วแต่กรณี)")
-        uc101_7.get_label("หลักทรัพย์(สำเนาสมุดบัญชีอัฟเดทล่าสุด) จำนวนเงินตั้งแต่ 10,000 บาทขึ้นไป")
-        uc101_8.get_label("สำเนาโฉนดที่ดินที่ไม่ติดภาระผูกพัน(ชื่อผู้รับอนุญาตเท่านั้น)")
+        UC_ATTACH_DRUG1.get_label("เอกสารยืนยันการส่งคืนขาที่นำเข้า")
+        UC_ATTACH_DRUG2.get_label("เอกสารการยืนยันการบริจาคยา1")
+        UC_ATTACH_DRUG3.get_label("เอกสารการยืนยันการบริจาคยา2")
+        UC_ATTACH_DRUG4.get_label("เอกสารการยืนยันการบริจาคยา3")
+        UC_ATTACH_DRUG5.get_label("เอกสารการยืนยันการบริจาคยา4")
+        UC_ATTACH_DRUG6.get_label("เอกสารการยืนยันการบริจาคยา4")
 
-        'ขย.2
-        uc102_1.get_label("แบบคำขออนุญาต (ตามประเภท) เจ้าของคนใหม่")
-        uc102_2.get_label("รูปถ่ายของผู้รับอนุญาต (เจ้าของคนใหม่/ผู้ขออนุญาต) ขนาด 3*4 ซม.(3 รูป) ถ่ายไม่เกิน 6 เดือน")
-        'uc102_3.get_label("สำเนาทะเบียนบ้านรับรองจริง (เจ้าของคนใหม่)")
-        uc102_4.get_label("สำเนาหนังสือขออนุญาตทำงานที่ออกโดยกระทรวงแรงงานฯและหนังสือเดินทาง (กรีบุคคลต่างด้าว)")
-        'uc102_5.get_label("สำเนาบัตรประชาชนรับรองจริง (เจ้าของคนใหม่/ผู้ขออนุญาต)")
-        uc102_6.get_label("ใบรับรองแพทย์ของผู้ขออนุญาต (ต้องไม่เกิน 1-3 เดือนแล้วแต่กรณี)")
-        uc102_7.get_label("หลักทรัพย์(สำเนาสมุดบัญชีอัฟเดทล่าสุด) จำนวนเงินตั้งแต่ 10,000 บาทขึ้นไป")
-        uc102_8.get_label("สำเนาโฉนดที่ดินที่ไม่ติดภาระผูกพัน(ชื่อผู้รับอนุญาตเท่านั้น)")
+
     End Sub
     Public Sub SET_ATTACH(ByVal TR_ID As String, ByVal PROCESS_ID As String, ByVal YEAR As String)
         If _ProcessID = 1028 Then
             'UC_ATTACH_DRUG บรรทีดที่ 18
             'ขย.1
-            uc101_1.ATTACH(TR_ID, PROCESS_ID, YEAR, "1")
-            uc101_2.ATTACH(TR_ID, PROCESS_ID, YEAR, "2")
-            'uc101_3.ATTACH(TR_ID, PROCESS_ID, YEAR, "3")
-            uc101_4.ATTACH(TR_ID, PROCESS_ID, YEAR, "4")
-            'uc101_5.ATTACH(TR_ID, PROCESS_ID, YEAR, "5")
-            uc101_6.ATTACH(TR_ID, PROCESS_ID, YEAR, "6")
-            uc101_7.ATTACH(TR_ID, PROCESS_ID, YEAR, "7")
-            uc101_8.ATTACH(TR_ID, PROCESS_ID, YEAR, "8")
+            UC_ATTACH_DRUG1.ATTACH(TR_ID, PROCESS_ID, YEAR, "1")
         ElseIf _ProcessID = 1029 Then
             'ขย.2
-            uc102_1.ATTACH(TR_ID, PROCESS_ID, YEAR, "1")
-            uc102_2.ATTACH(TR_ID, PROCESS_ID, YEAR, "2")
+            UC_ATTACH_DRUG2.ATTACH(TR_ID, PROCESS_ID, YEAR, "1")
+            UC_ATTACH_DRUG3.ATTACH(TR_ID, PROCESS_ID, YEAR, "2")
             'uc102_3.ATTACH(TR_ID, PROCESS_ID, YEAR, "3")
-            uc102_4.ATTACH(TR_ID, PROCESS_ID, YEAR, "4")
+            UC_ATTACH_DRUG4.ATTACH(TR_ID, PROCESS_ID, YEAR, "4")
             'uc102_5.ATTACH(TR_ID, PROCESS_ID, YEAR, "5")
-            uc102_6.ATTACH(TR_ID, PROCESS_ID, YEAR, "6")
-            uc102_7.ATTACH(TR_ID, PROCESS_ID, YEAR, "7")
-            uc102_8.ATTACH(TR_ID, PROCESS_ID, YEAR, "8")
+            UC_ATTACH_DRUG5.ATTACH(TR_ID, PROCESS_ID, YEAR, "6")
+            UC_ATTACH_DRUG6.ATTACH(TR_ID, PROCESS_ID, YEAR, "7")
+
         End If
     End Sub
     Sub upload_pdf()
-        If FileUpload1.HasFile Then
-            Dim file_ex As String = ""
-            file_ex = file_extension_nm(FileUpload1.FileName)
+        'If UC_ATTACH_DRUG1.HasFile Then
+        '    Dim file_ex As String = ""
+        '    file_ex = file_extension_nm(FileUpload1.FileName)
 
-            Dim bao As New BAO.AppSettings
-            bao.RunAppSettings()
-
-
-            Dim TR_ID As String = ""
-            Dim bao_tran As New BAO_TRANSECTION
-            bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
-            bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-
-            TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION เลขดำเนินการรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรร
+        '    Dim bao As New BAO.AppSettings
+        '    bao.RunAppSettings()
 
 
+        Dim TR_ID As String = ""
+        Dim bao_tran As New BAO_TRANSECTION
+        bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+        bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
 
-            'If UC_ATTACH1.ATTACH(TR_ID, _ProcessID, con_year(Date.Now.Year), "1") = False Then
-            '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('กรุณาแนบไฟล์');", True)
-            '    Exit Sub
-            'End If
-
-            Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
-            dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0)
-            'PDF_TRADER คือ Folder จัดเก็บ PDF ที่ ผปก Upload เข้ามา
-            Dim PDF_TRADER As String = bao._PATH_DEFAULT & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_UPLOAD_PDF("DA", _ProcessID, Date.Now.Year, TR_ID)
-            'PDF_XML_CLASS คือ Folder จัดเก็บ XML ที่แยกออกมาจาก PDF Upload เข้ามา
-            Dim XML_TRADER As String = bao._PATH_DEFAULT & dao_pdftemplate.fields.XML_PATH & "\" & NAME_UPLOAD_XML("DA", _ProcessID, Date.Now.Year, TR_ID)
+        TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION เลขดำเนินการรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรร
 
 
-            FileUpload1.SaveAs(PDF_TRADER) '"C:\path\PDF_TRADER\"
-            'ทำการแปลงส่ง PDF เข้าไปแล้วแปลงออกเป็น XML
-            convert_PDF_To_XML(PDF_TRADER, XML_TRADER)      'errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+
+        '    'If UC_ATTACH1.ATTACH(TR_ID, _ProcessID, con_year(Date.Now.Year), "1") = False Then
+        '    '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('กรุณาแนบไฟล์');", True)
+        '    Exit Sub
+        '    'End If
+
+        Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
+        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0)
+        '    'PDF_TRADER คือ Folder จัดเก็บ PDF ที่ ผปก Upload เข้ามา
+        '    Dim PDF_TRADER As String = bao._PATH_DEFAULT & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_UPLOAD_PDF("DA", _ProcessID, Date.Now.Year, TR_ID)
+        '    ' PDF_XML_CLASS คือ Folder จัดเก็บ XML ที่แยกออกมาจาก PDF Upload เข้ามา
+        Dim XML_TRADER As String = bao._PATH_DEFAULT & dao_pdftemplate.fields.XML_PATH & "\" & NAME_UPLOAD_XML("DA", _ProcessID, Date.Now.Year, TR_ID)
 
 
-            '    convert_PDF_To_XML(bao._PATH_PDF_TRADER & "FA-5-2558-" & TR_ID & ".pdf", TR_ID) '"C:\path\PDF_TRADER\"
-            Dim check As Boolean = True
-            ' Try
-            check = insrt_to_database(XML_TRADER, TR_ID) 'insert ใน database 
+        '    FileUpload1.SaveAs(PDF_TRADER) '"C:\path\PDF_TRADER\"
+        '    'ทำการแปลงส่ง PDF เข้าไปแล้วแปลงออกเป็น XML
+        '    convert_PDF_To_XML(PDF_TRADER, XML_TRADER)      'errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+
+
+        '    '    convert_PDF_To_XML(bao._PATH_PDF_TRADER & "FA-5-2558-" & TR_ID & ".pdf", TR_ID) '"C:\path\PDF_TRADER\"
+        Dim check As Boolean = True
+            Try
+                check = insrt_to_database(XML_TRADER, TR_ID) 'insert ใน database 
             If check = True Then
                 'SET_ATTACH(TR_ID, _ProcessID, con_year(Date.Now.Year))      'แนบไฟล์ ลงBASE             ไม่รู้ใช้ไหม
 
@@ -140,12 +123,12 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
 
 
 
-            'Catch ex As Exception
+            Catch ex As Exception
 
-            '    alert("เกิดข้อผิดพลาดรหัสการดำเนินการ คือ DA-" & _ProcessID & "-" & con_year(Date.Now.Date().Year()) & "-" + TR_ID)
-            'End Try
+                alert("เกิดข้อผิดพลาดรหัสการดำเนินการ คือ DA-" & _ProcessID & "-" & con_year(Date.Now.Date().Year()) & "-" + TR_ID)
+            End Try
 
-        End If
+        ' End If
     End Sub
     Sub addtodtb()
         If FileUpload1.HasFile Then
@@ -154,6 +137,10 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
     End Sub
     Protected Sub btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
         upload_pdf()
+        SET_ATTACH(_IDA, _ProcessID, Date.Now.Date().Year())
+        'AddLogStatustodrugimport(12, _ProcessID, _CLS.CITIZEN_ID, _IDA)         'อัพโหลด status ใหเเป็นส่งเอกสารแล้ว
+        Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")
+
     End Sub
     ''' <summary>
     ''' ดึง lcntpcd
