@@ -41,6 +41,699 @@ Partial Public Class POPUP_NYM_UPLOAD_PDF_PROOF
     Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
+    '''Panel1028 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel1028 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''UC_ATTACH_DRUG1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH_DRUG1 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''UC_ATTACH_DRUG2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH_DRUG2 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''UC_ATTACH_DRUG3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH_DRUG3 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''UC_ATTACH_DRUG4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH_DRUG4 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''UC_ATTACH_DRUG5 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH_DRUG5 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''UC_ATTACH_DRUG6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH_DRUG6 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''Panel1029 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel1029 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''UC_ATTACH_DRUG7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH_DRUG7 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''UC_ATTACH_DRUG8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH_DRUG8 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''UC_ATTACH_DRUG9 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH_DRUG9 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''UC_ATTACH_DRUG10 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH_DRUG10 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''UC_ATTACH_DRUG11 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH_DRUG11 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''UC_ATTACH_DRUG12 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH_DRUG12 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''Panel101 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel101 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''uc101_1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc101_1 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc101_2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc101_2 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc101_4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc101_4 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc101_6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc101_6 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc101_7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc101_7 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc101_8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc101_8 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''Panel102 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel102 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''uc102_1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc102_1 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc102_2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc102_2 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc102_4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc102_4 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc102_6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc102_6 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc102_7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc102_7 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc102_8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc102_8 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''Panel103 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel103 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''uc103_1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc103_1 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc103_2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc103_2 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc103_4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc103_4 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc103_6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc103_6 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc103_7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc103_7 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc103_8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc103_8 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''Panel104 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel104 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''uc104_1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc104_1 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc104_2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc104_2 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc104_4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc104_4 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc104_6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc104_6 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc104_7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc104_7 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc104_8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc104_8 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''Panel105 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel105 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''uc105_1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc105_1 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc105_2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc105_2 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc105_4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc105_4 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc105_6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc105_6 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc105_7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc105_7 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc105_8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc105_8 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''Panel106 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel106 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''uc106_1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc106_1 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc106_2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc106_2 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc106_4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc106_4 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc106_6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc106_6 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc106_7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc106_7 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc106_8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc106_8 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''Panel107 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel107 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''uc107_1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc107_1 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc107_2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc107_2 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc107_4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc107_4 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc107_6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc107_6 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc107_7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc107_7 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc107_8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc107_8 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''Panel108 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel108 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''uc108_1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc108_1 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc108_2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc108_2 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc108_4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc108_4 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc108_6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc108_6 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc108_7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc108_7 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc108_8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc108_8 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''Panel109 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel109 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''uc109_1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc109_1 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc109_2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc109_2 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc109_4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc109_4 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc109_6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc109_6 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc109_7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc109_7 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
+    '''uc109_8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc109_8 As Global.FDA_DRUG.UC_ATTACH_DRUG
+
+    '''<summary>
     '''btn_Upload control.
     '''</summary>
     '''<remarks>

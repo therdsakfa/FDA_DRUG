@@ -738,13 +738,13 @@ Module BAO_COMMON
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
         Dim outputStream As New System.IO.MemoryStream()
-        Dim reader As New PdfReader(PATH_PDF_TRADER)
+        Dim reader As New PdfReader(PATH_PDF_TRADER)                                                    'error ตรงนี้ จากหน้า upload
         Dim doc As New XmlDocument
 
         Dim ob As String
 
 
-        ob = reader.AcroFields.Xfa.DatasetsNode.FirstChild.InnerXml
+        ob = reader.AcroFields.Xfa.DatasetsNode.FirstChild.InnerXml                         'errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
         doc.LoadXml(ob)
         doc.Save(PATH_XML_TRADER) '"C:\path\XML_TRADER\"
 

@@ -51,15 +51,39 @@
     '    End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-        dao.GetDataby_IDA(_IDA)
+        If _process = 1027 Then
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+            dao.GetDataby_IDA(_IDA)
 
-        dao.fields.REMARK = TextBox1.Text
+            dao.fields.REMARK = TextBox1.Text
 
-        dao.fields.STATUS_ID = 7
+            dao.fields.STATUS_ID = 7
 
-        dao.update()
-        alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+            dao.update()
+            alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+        ElseIf _process = 1028 Then
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+            dao.GetDataby_IDA(_IDA)
+
+            dao.fields.REMARK = TextBox1.Text
+
+            dao.fields.STATUS_ID = 7
+
+            dao.update()
+            alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+
+        ElseIf _process = 1029 Then
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+            dao.GetDataby_IDA(_IDA)
+
+            dao.fields.REMARK = TextBox1.Text
+
+            dao.fields.STATUS_ID = 7
+
+            dao.update()
+            alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+        End If
+
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
