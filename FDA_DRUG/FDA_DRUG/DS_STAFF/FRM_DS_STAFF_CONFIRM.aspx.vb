@@ -642,6 +642,12 @@ Public Class FRM_DS_STAFF_CONFIRM
 
         class_xml = cls_regis.gen_xml()
 
+        If dao_lcn.fields.lcntpcd = "ผย1" Then
+            dao_pid.fields.DALCNTYPE_CD = 1
+        ElseIf dao_lcn.fields.lcntpcd = "นย1" Then
+            dao_pid.fields.DALCNTYPE_CD = 2
+        End If
+
         Try
             'cls_xml.DT_MASTER.DT18 = bao_master.SP_DALCN_PHR_BY_FK_IDA(dao_dalcn.fields.IDA) 'ผู้มีหน้าที่ปฏิบัติการ
             For Each dr As DataRow In bao_master.SP_DALCN_PHR_BY_FK_IDA(dao_lcn.fields.IDA).Rows
@@ -658,10 +664,11 @@ Public Class FRM_DS_STAFF_CONFIRM
             dao.fields.rcvdate = DateAdd(DateInterval.Year, 543, rcvdate)
             class_xml.RCVDATE = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
             Dim write_date As Date = dao.fields.WRITE_DATE
-            ''Dim app_date As Date = dao.fields.appdate
+            Dim app_date As Date = dao.fields.appdate
             dao.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
             class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, -543, write_date), "dd MMM yyyy")
-            ''dao.fields.appdate = DateAdd(DateInterval.Year, 543, app_date)
+            dao.fields.appdate = DateAdd(DateInterval.Year, 543, app_date)
+            class_xml.APPDATE = Format(DateAdd(DateInterval.Year, -543, app_date), "dd MMMM yyyy")
             class_xml.drsamp = dao.fields
             class_xml.regis = dao_pid.fields
         Catch ex As Exception
@@ -716,6 +723,14 @@ Public Class FRM_DS_STAFF_CONFIRM
         Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)
 
         LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, dao_tr.fields.PROCESS_ID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+        Try
+            Dim url As String = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
+            'Dim ws As New WS_QR_CODE.WS_QR_CODE
+            'class_xml.QR_CODE = ws.GetQRImgByte(url)
+            class_xml.QR_CODE = QR_CODE_IMG(url)
+        Catch ex As Exception
+
+        End Try
 
         lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
         hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่

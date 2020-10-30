@@ -49,8 +49,8 @@ Public Class FEM_REGISTRATION_MAIN
                 lbl_sel_tamrab.Style.Add("display", "block")
                 ddl_tamrab.Style.Add("display", "block")
 
-                btn_download.Visible = False
-                btn_upload.Visible = False
+                'btn_download.Visible = False
+                'btn_upload.Visible = False
             Else
                 lbl_sel_tamrab.Style.Add("display", "none")
                 ddl_tamrab.Style.Add("display", "none")
@@ -130,23 +130,23 @@ Public Class FEM_REGISTRATION_MAIN
         'GV_data.DataBind()
     End Sub
 
-    Protected Sub btn_download_Click(sender As Object, e As EventArgs) Handles btn_download.Click
-        If Request.QueryString("tt") = "" Then
-            Bind_PDF()
-        Else
-            If ddl_tamrab.SelectedValue <> "0" Then
-                Bind_PDF()
-            Else
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกชื่อตำรับยา');", True)
-            End If
-        End If
+    'Protected Sub btn_download_Click(sender As Object, e As EventArgs) Handles btn_download.Click
+    '    If Request.QueryString("tt") = "" Then
+    '        Bind_PDF()
+    '    Else
+    '        If ddl_tamrab.SelectedValue <> "0" Then
+    '            Bind_PDF()
+    '        Else
+    '            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกชื่อตำรับยา');", True)
+    '        End If
+    '    End If
 
-        'If _process = 9 Then
-        '    Bind_PDF("PDF_REGISTRATION.pdf")
-        'ElseIf _process = 19 Then
-        '    Bind_PDF("PDF_REGISTRATION_ANIMAL.pdf")
-        'End If
-    End Sub
+    '    'If _process = 9 Then
+    '    '    Bind_PDF("PDF_REGISTRATION.pdf")
+    '    'ElseIf _process = 19 Then
+    '    '    Bind_PDF("PDF_REGISTRATION_ANIMAL.pdf")
+    '    'End If
+    'End Sub
 
 
     Private Sub Bind_PDF()
