@@ -42,8 +42,9 @@ Public Class FRM_CER_STAFF_SEARCH
                 End Try
 
                 Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-                dao_tr.GetDataby_IDA(tr_id)
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../DI/POPUP_DI_CONFIRM.aspx?IDA=" & str_ID & "&FK_IDA=" & str_ID & "&TR_ID=" & tr_id & "&ProcessID=" & dao_tr.fields.PROCESS_ID & "&s=1');", True)
+                dao_tr.GetDataby_TR_ID_Process(dao.fields.TR_ID, dao.fields.PROCESS_ID)
+
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../DI/POPUP_DI_CONFIRM.aspx?IDA=" & str_ID & "&FK_IDA=" & str_ID & "&TR_ID=" & tr_id & "&ProcessID=" & dao.fields.PROCESS_ID & "&s=1');", True)
                 'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "POPUP_DH_COMFIRM_STAFF.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & " &process=" & dao_tr.fields.PROCESS_ID & "');", True)
             ElseIf e.CommandName = "remark" Then
                 dao.GetDataby_IDA2(str_ID)

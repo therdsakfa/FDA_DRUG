@@ -11467,6 +11467,12 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDatabyTRID_PROCESS(ByVal TRID As Integer, ByVal PROCESS_ID As String)
+
+            datas = (From p In db.DRRGT_EDIT_REQUESTs Where p.TR_ID = TRID And p.PROCESS_ID = PROCESS_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub GetDataby_FK_IDA(ByVal IDA As Integer)
 
             datas = (From p In db.DRRGT_EDIT_REQUESTs Where p.FK_IDA = IDA Select p)

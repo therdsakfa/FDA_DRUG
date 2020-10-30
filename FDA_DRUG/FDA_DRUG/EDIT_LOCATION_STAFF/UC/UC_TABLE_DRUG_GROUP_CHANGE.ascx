@@ -22,8 +22,8 @@
                     <asp:ListItem Value="2">ยาแผนปัจจุบันสำหรับสัตว์</asp:ListItem>
                 </asp:RadioButtonList>
                 <asp:CheckBox ID="cb_drug_type1" runat="server" Text="ยาแผนปัจจุบันสำหรับมนุษย์" /> &nbsp
-                <asp:CheckBox ID="cb_drug_type2" runat="server" Text="ยาแผนปัจจุบันสำหรับทำการวิจัยทางคลินิกในมนุษย์ ระยะที่ ๑,๒,๓" />&nbsp
-                <asp:CheckBox ID="cb_drug_type3" runat="server" Text="ยาแผนปัจจุบันสำหรับสัตว์" />
+                <asp:CheckBox ID="cb_drug_type2" runat="server" Text="ยาแผนปัจจุบันสำหรับสัตว์" />&nbsp
+                <asp:CheckBox ID="cb_drug_type3" runat="server" Text="ยาแผนปัจจุบันสำหรับทำการวิจัยทางคลินิกในมนุษย์ ระยะที่ ๑,๒,๓" />
             </td>
         </tr>
         <tr>

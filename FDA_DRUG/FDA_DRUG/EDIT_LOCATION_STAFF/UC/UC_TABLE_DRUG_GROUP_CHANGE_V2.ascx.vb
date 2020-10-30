@@ -9,8 +9,7 @@ Imports System.Data
 Imports iTextSharp.text
 Imports iTextSharp.text.html.simpleparser
 Imports iTextSharp.text.pdf
-
-Public Class UC_TABLE_DRUG_GROUP_CHANGE
+Public Class UC_TABLE_DRUG_GROUP_CHANGE_V2
     Inherits System.Web.UI.UserControl
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -24,38 +23,38 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
         bind_head()
         Dim dao As New DAO_DRUG.TB_MAS_DRUG_GROUP
         dao.GetDataALL()
-        Dim dao_ih As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
-        dao_ih.GetDataby_FKIDA(Request.QueryString("ida"))
-        Try
-            'rdl_drug_type.DataBind()
-            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
-            If dao_ih.fields.DRUG_TYPE = 1 Then
-                cb_drug_type1.Checked = True
-            End If
+        'Dim dao_ih As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
+        'dao_ih.GetDataby_FKIDA(Request.QueryString("ida"))
+        'Try
+        '    'rdl_drug_type.DataBind()
+        '    'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+        '    If dao_ih.fields.DRUG_TYPE = 1 Then
+        '        cb_drug_type1.Checked = True
+        '    End If
 
-        Catch ex As Exception
+        'Catch ex As Exception
 
-        End Try
-        Try
-            'rdl_drug_type.DataBind()
-            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
-            If dao_ih.fields.DRUG_TYPE2 = 1 Then
-                cb_drug_type2.Checked = True
-            End If
+        'End Try
+        'Try
+        '    'rdl_drug_type.DataBind()
+        '    'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+        '    If dao_ih.fields.DRUG_TYPE2 = 1 Then
+        '        cb_drug_type2.Checked = True
+        '    End If
 
-        Catch ex As Exception
+        'Catch ex As Exception
 
-        End Try
-        Try
-            'rdl_drug_type.DataBind()
-            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
-            If dao_ih.fields.DRUG_TYPE23 = 1 Then
-                cb_drug_type3.Checked = True
-            End If
+        'End Try
+        'Try
+        '    'rdl_drug_type.DataBind()
+        '    'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+        '    If dao_ih.fields.DRUG_TYPE23 = 1 Then
+        '        cb_drug_type3.Checked = True
+        '    End If
 
-        Catch ex As Exception
+        'Catch ex As Exception
 
-        End Try
+        'End Try
         For Each dao.fields In dao.datas
             If dao.fields.TYPE_SHOW = 1 Then
                 Dim dc1 As New TableCell
@@ -165,7 +164,7 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
                         txt_6.Value = dao_det.fields.COL6
                     End If
                 Catch ex As Exception
-                   
+
                 End Try
                 dc9.Text = dao.fields.IDA
                 dc10.Text = dao.fields.TYPE_SHOW
@@ -272,43 +271,43 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
             End If
         Next
     End Sub
-    
+
     Sub bind_table_export()
         bind_head()
         Dim dao As New DAO_DRUG.TB_MAS_DRUG_GROUP
         dao.GetDataALL()
         Dim dao_ih As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
         dao_ih.GetDataby_FKIDA(Request.QueryString("ida"))
-        Try
-            'rdl_drug_type.DataBind()
-            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
-            If dao_ih.fields.DRUG_TYPE IsNot Nothing Then
-                cb_drug_type1.Checked = True
-            End If
+        'Try
+        '    'rdl_drug_type.DataBind()
+        '    'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+        '    If dao_ih.fields.DRUG_TYPE IsNot Nothing Then
+        '        cb_drug_type1.Checked = True
+        '    End If
 
-        Catch ex As Exception
+        'Catch ex As Exception
 
-        End Try
-        Try
-            'rdl_drug_type.DataBind()
-            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
-            If dao_ih.fields.DRUG_TYPE2 IsNot Nothing Then
-                cb_drug_type2.Checked = True
-            End If
+        'End Try
+        'Try
+        '    'rdl_drug_type.DataBind()
+        '    'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+        '    If dao_ih.fields.DRUG_TYPE2 IsNot Nothing Then
+        '        cb_drug_type2.Checked = True
+        '    End If
 
-        Catch ex As Exception
+        'Catch ex As Exception
 
-        End Try
-        Try
-            'rdl_drug_type.DataBind()
-            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
-            If dao_ih.fields.DRUG_TYPE23 IsNot Nothing Then
-                cb_drug_type3.Checked = True
-            End If
+        'End Try
+        'Try
+        '    'rdl_drug_type.DataBind()
+        '    'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+        '    If dao_ih.fields.DRUG_TYPE23 IsNot Nothing Then
+        '        cb_drug_type3.Checked = True
+        '    End If
 
-        Catch ex As Exception
+        'Catch ex As Exception
 
-        End Try
+        'End Try
         For Each dao.fields In dao.datas
             If dao.fields.TYPE_SHOW = 1 Then
                 Dim dc1 As New TableCell
@@ -792,45 +791,45 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
 
     End Sub
     Sub save_data()
-        Dim dao_t As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
-        dao_t.GetDataby_FKIDA(Request.QueryString("ida"))
-        'For Each dao_t.fields In dao_t.datas
-        dao_t.delete()
-            'Next
+        'Dim dao_t As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
+        'dao_t.GetDataby_FKIDA(Request.QueryString("ida"))
+        ''For Each dao_t.fields In dao_t.datas
+        'dao_t.delete()
+        ''Next
 
-            dao_t = New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
-        dao_t.fields.FK_IDA = Request.QueryString("ida")
-        Try
-            If cb_drug_type1.Checked Then
-                dao_t.fields.DRUG_TYPE = 1
-            Else
-                dao_t.fields.DRUG_TYPE = Nothing
-            End If
-            'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
-        Catch ex As Exception
+        'dao_t = New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
+        'dao_t.fields.FK_IDA = Request.QueryString("ida")
+        'Try
+        '    If cb_drug_type1.Checked Then
+        '        dao_t.fields.DRUG_TYPE = 1
+        '    Else
+        '        dao_t.fields.DRUG_TYPE = Nothing
+        '    End If
+        '    'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
+        'Catch ex As Exception
 
-        End Try
-        Try
-            If cb_drug_type2.Checked Then
-                dao_t.fields.DRUG_TYPE2 = 1
-            Else
-                dao_t.fields.DRUG_TYPE2 = Nothing
-            End If
-            'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    If cb_drug_type2.Checked Then
+        '        dao_t.fields.DRUG_TYPE2 = 1
+        '    Else
+        '        dao_t.fields.DRUG_TYPE2 = Nothing
+        '    End If
+        '    'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
+        'Catch ex As Exception
 
-        End Try
-        Try
-            If cb_drug_type3.Checked Then
-                dao_t.fields.DRUG_TYPE23 = 1
-            Else
-                dao_t.fields.DRUG_TYPE23 = Nothing
-            End If
-            'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    If cb_drug_type3.Checked Then
+        '        dao_t.fields.DRUG_TYPE23 = 1
+        '    Else
+        '        dao_t.fields.DRUG_TYPE23 = Nothing
+        '    End If
+        '    'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
+        'Catch ex As Exception
 
-        End Try
-        dao_t.insert()
+        'End Try
+        'dao_t.insert()
 
 
         Dim dao_det As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL2
@@ -991,7 +990,7 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
 
         dao_t = New DAO_DRUG.TB_DALCN_PRODUCTION_DRUG_TYPE_DETAIL
         dao_t.fields.FK_IDA = Request.QueryString("ida")
-        dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
+        ' dao_t.fields.DRUG_TYPE = 'rdl_drug_type.SelectedValue
         dao_t.fields.FK_EDIT_COUNT = Request.QueryString("ida_c")
         dao_t.fields.EDIT_TYPE = 13
         dao_t.insert()

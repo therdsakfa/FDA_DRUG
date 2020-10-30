@@ -660,7 +660,9 @@
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM3.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx" />
+    <Content Include="EDIT_LOCATION_STAFF\UC\UC_TABLE_DRUG_GROUP_CHANGE_V2.ascx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx" />
+    <Content Include="LCN\POPUP_LCN_PRODUCTION_DRUG_GROUP3.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_CONFIRM.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_RCV_MANUAL.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_REMARK.aspx" />
@@ -3231,6 +3233,13 @@
       <DependentUpon>UC_PHR_CANCEL.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="EDIT_LOCATION_STAFF\UC\UC_TABLE_DRUG_GROUP_CHANGE_V2.ascx.designer.vb">
+      <DependentUpon>UC_TABLE_DRUG_GROUP_CHANGE_V2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EDIT_LOCATION_STAFF\UC\UC_TABLE_DRUG_GROUP_CHANGE_V2.ascx.vb">
+      <DependentUpon>UC_TABLE_DRUG_GROUP_CHANGE_V2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="EXTEND_TIME_LOCATION\FRM_EXTEND_LCN_ATTACH_PAGE.aspx.designer.vb">
       <DependentUpon>FRM_EXTEND_LCN_ATTACH_PAGE.aspx</DependentUpon>
     </Compile>
@@ -3351,6 +3360,13 @@
     </Compile>
     <Compile Include="LCN\POPUP_LCN_NCT_TEMP_INSERT.aspx.vb">
       <DependentUpon>POPUP_LCN_NCT_TEMP_INSERT.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="LCN\POPUP_LCN_PRODUCTION_DRUG_GROUP3.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_PRODUCTION_DRUG_GROUP3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\POPUP_LCN_PRODUCTION_DRUG_GROUP3.aspx.vb">
+      <DependentUpon>POPUP_LCN_PRODUCTION_DRUG_GROUP3.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="LCN_STAFF\FRM_STAFF_LCN_ADD_LOCATION.aspx.designer.vb">
