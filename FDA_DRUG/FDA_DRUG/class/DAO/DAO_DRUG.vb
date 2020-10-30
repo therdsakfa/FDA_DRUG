@@ -791,6 +791,12 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_TR_ID_PROCESS_ID(ByVal TR_ID As String, ByVal process_id As String)
+
+            datas = (From p In db.drrqts Where p.TR_ID = TR_ID And p.PROCESS_ID = process_id Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub insert()
             db.drrqts.InsertOnSubmit(fields)
             db.SubmitChanges()
@@ -11454,6 +11460,7 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        '
         Public Sub GetDatabyTRID_PROCESS(ByVal TRID As Integer, ByVal PROCESS_ID As String)
 
             datas = (From p In db.DRRGT_EDIT_REQUESTs Where p.TR_ID = TRID And p.PROCESS_ID = PROCESS_ID Select p)
