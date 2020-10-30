@@ -139,6 +139,7 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
         ' upload_pdf()
         SET_ATTACH(_IDA, _ProcessID, Date.Now.Date().Year())
         AddLogStatustodrugimport(12, _ProcessID, _CLS.CITIZEN_ID, _IDA)         'อัพโหลด status ใหเเป็นส่งเอกสารแล้ว
+        alert("อัพโหลดรีบร้อย")
         Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")
 
     End Sub

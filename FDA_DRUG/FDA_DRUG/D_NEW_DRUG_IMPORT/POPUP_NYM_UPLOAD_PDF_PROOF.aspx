@@ -77,6 +77,7 @@
                  </asp:Panel>
                    <!-- นยม.4 --> 
                  <asp:Panel ID="Panel1029" runat="server" style="display:none;">
+
                      <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG2" runat="server" />
                      <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG3" runat="server" />
                      <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG4" runat="server" />
@@ -85,7 +86,11 @@
                  </asp:Panel>
                  
                  </td></tr>
+        
              <tr><td colspan="2">&nbsp;</td></tr>
+         <br>
+         <br>
+         <br>
              <tr><td colspan="2"> <asp:Button ID="btn_Upload" runat="server" Text="อัพโหลด"   CssClass=" btn-lg" />
                  &nbsp;
                  <asp:Button ID="Button1" runat="server" Text="ปิด"  CssClass=" btn-lg" Width="150px"  />
