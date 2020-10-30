@@ -83,7 +83,7 @@
 
             Dim CONSIDER_DATE As Date = CDate(TextBox1.Text) 'วันที่เสนอลงนาม
             dao.fields.REMARK = Txt_Remark.Text 'หมายเหตุ
-            dao.fields.STATUS_ID = 6    'สถานะเสนอลงนาม
+            dao.fields.STATUS_ID = 9    'สถานะเสนอลงนาม
             dao.fields.CONSIDER_DATE = CONSIDER_DATE 'วันที่คาดว่าจะอนุมัติ
 
             dao.fields.FK_STAFF_OFFER_IDA = ddl_staff_offer.SelectedValue 'ชื่อผู้ลงนาม

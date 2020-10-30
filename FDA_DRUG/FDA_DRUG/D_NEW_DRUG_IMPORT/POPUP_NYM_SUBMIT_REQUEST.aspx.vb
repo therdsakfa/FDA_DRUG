@@ -115,7 +115,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
             _edit.Style.Add("display", "block")
             remark_edit.Style.Add("display", "block")
-            'remark_edit.Text = dao3.fields.REMARK_EDIT              'อย่าลืม เพิ่มตารางใน base 
+            remark_edit.Text = dao3.fields.REMARK_EDIT              'อย่าลืม เพิ่มตารางใน base 
         ElseIf dao4.fields.STATUS_ID = 5 Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
@@ -124,7 +124,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
             _edit.Style.Add("display", "block")
             remark_edit.Style.Add("display", "block")
-            ' remark_edit.Text = dao4.fields.REMARK_EDIT              'อย่าลืม เพิ่มตารางใน base 
+            remark_edit.Text = dao4.fields.REMARK_EDIT              'อย่าลืม เพิ่มตารางใน base 
         Else
             _edit.Style.Add("display", "none")
             remark_edit.Style.Add("display", "none")
@@ -159,14 +159,14 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         If _process = 1027 Then                                   'เช็ค Status เป็น nym อะไร และการกดปุ่มในแต่ละอันจะอัพเดท ststus_id ใน base TB_FDA_DRUG_IMPORT_NYM_ ของ NYM นั้นๆ
             dao2.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
-                dao2.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                dao2.fields.STATUS_ID = 1                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
                 Dim bao_tran As New BAO_TRANSECTION
                 bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
                 TR_ID = bao_tran.insert_transection_new(_process)
                 dao2.fields.FK_IDA = TR_ID
             Else
-                dao2.fields.STATUS_ID = 2                       'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง      ตรงนี้ตามจริงต้องเป็น 2 เหมือนกันไหม
+                dao2.fields.STATUS_ID = 1                       'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง      ตรงนี้ตามจริงต้องเป็น 2 เหมือนกันไหม
                 Dim bao_tran As New BAO_TRANSECTION
                 bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -174,17 +174,17 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 dao2.fields.FK_IDA = TR_ID
             End If
             dao2.update()
-        ElseIf _process = "1028" Then
+        ElseIf _process = 1028 Then
             dao3.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
-                dao3.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                dao3.fields.STATUS_ID = 1                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
                 Dim bao_tran As New BAO_TRANSECTION
                 bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
                 TR_ID = bao_tran.insert_transection_new(_process)
                 dao3.fields.FK_IDA = TR_ID
             Else
-                dao3.fields.STATUS_ID = 2                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                dao3.fields.STATUS_ID = 1                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
                 Dim bao_tran As New BAO_TRANSECTION
                 bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -192,17 +192,17 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 dao3.fields.FK_IDA = TR_ID
             End If
             dao3.update()
-        ElseIf _process = "1029" Then
+        ElseIf _process = 1029 Then
             dao4.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
-                dao4.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                dao4.fields.STATUS_ID = 1                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
                 Dim bao_tran As New BAO_TRANSECTION
                 bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
                 TR_ID = bao_tran.insert_transection_new(_process)
                 dao4.fields.FK_IDA = TR_ID
             Else
-                dao4.fields.STATUS_ID = 2                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                dao4.fields.STATUS_ID = 1                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
                 Dim bao_tran As New BAO_TRANSECTION
                 bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -351,7 +351,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_process, 1, 0)                     'DAO บรรทัด 2809
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim year As String = Date.Now.Year
-
+        'Path_XML มาจาก ข้างบน ถ้าเปลี่ยน ที่อยู่ path มีตัวแปล paths dao_nym3 dao_pdftemplate
         Dim filename As String
         Dim Path_XML As String
         If _process = 1027 Then

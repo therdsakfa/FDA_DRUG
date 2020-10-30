@@ -17,7 +17,7 @@ Public Class FRM_DRUG_IMPORT_NYM3
             ''นำค่า Session ใส่ ในตัวแปร _CLS
             _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
             _DL = Request.QueryString("DL")
-            '_IDA = Request.QueryString("IDA")
+            _IDA = Request.QueryString("IDA")
             '_lct_ida = Request.QueryString("lct_ida")
             '_type = Request.QueryString("type")
             '_process_for = Request.QueryString("process_for")
@@ -86,7 +86,7 @@ Public Class FRM_DRUG_IMPORT_NYM3
                 Response.Redirect(url)
             ElseIf e.CommandName = "upload" Then
                 'หา Code ที่ทำให้อัพโหลดขึ้นเซิฟ                   น่าจะต้องเอามาจาก LCN_UPLOAD
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_UPLOAD_PDF_PROOF.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_UPLOAD_PDF_PROOF.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
 
 
             End If
@@ -157,9 +157,7 @@ Public Class FRM_DRUG_IMPORT_NYM3
 
     End Sub
     Protected Sub btn_reload_Click(sender As Object, e As EventArgs) Handles btn_reload.Click
-
         RadGrid1.Rebind()
-
     End Sub
 
 End Class

@@ -40,7 +40,7 @@ Public Class FEM_REGISTRATION_MAIN
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('ระบบตรวจพบว่าท่านเปิดการใช้งานหลายหน้าจอ จะทำการออกจากระบบโดยอัตโนมัติ');window.location.href = 'https://privus.fda.moph.go.th';", True)
             End If
         End If
-       
+
         If Not IsPostBack() Then
             bind_ddl_product()
             bind_ddl()
@@ -60,7 +60,7 @@ Public Class FEM_REGISTRATION_MAIN
             Catch ex As Exception
 
             End Try
-            
+
         End If
 
     End Sub
@@ -198,7 +198,7 @@ Public Class FEM_REGISTRATION_MAIN
         End Try
         Dim cls As New CLASS_GEN_XML.DRUG_REGISTRATION(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID_CUSTOMER, dao_lcn.fields.lcnno, _r_process, dao_lcn.fields.IDA)
         Dim cls_xml As New CLASS_REGISTRATION
-        
+
 
 
         cls_xml = cls.gen_xml()
@@ -394,7 +394,7 @@ Public Class FEM_REGISTRATION_MAIN
 
             If e.CommandName = "_sel" Then
                 dao.GetDataby_IDA(str_ID)
-                Dim tr_id As String= 0
+                Dim tr_id As String = 0
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception
@@ -494,7 +494,7 @@ Public Class FEM_REGISTRATION_MAIN
 
             If count_chem > 0 And count_pro > 0 Then
                 btn_Select.Style.Add("display", "block")
-                
+
             End If
 
             If Request.QueryString("tt") <> "" Then
@@ -510,7 +510,7 @@ Public Class FEM_REGISTRATION_MAIN
             End If
             Try
                 'dao.GetDataby_IDA(IDA)
-               
+
             Catch ex As Exception
 
             End Try

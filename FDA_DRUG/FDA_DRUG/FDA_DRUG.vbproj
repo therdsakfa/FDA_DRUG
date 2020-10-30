@@ -673,10 +673,8 @@
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_MAIN_NYM.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_PROOF_NEW.aspx" />
-    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_REMARK_EDIT.aspx" />
     <Content Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_CONSIDER.aspx" />
     <Content Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx" />
-    <Content Include="TABEAN_YA_STAFF\FRM_TABEAN_YA_CHANGE_STATUS.aspx" />
     <Content Include="XML_DRUG_RGT.asmx" />
     <None Include="DESIGN\Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="DESIGN\Scripts\jquery-1.8.2.js" />
@@ -3579,13 +3577,6 @@
       <DependentUpon>FRM_STAFF_NYM_PROOF_NEW.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_REMARK_EDIT.aspx.designer.vb">
-      <DependentUpon>FRM_STAFF_NYM_REMARK_EDIT.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_REMARK_EDIT.aspx.vb">
-      <DependentUpon>FRM_STAFF_NYM_REMARK_EDIT.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="PDF\FRM_PDF_VIEW.aspx.designer.vb">
       <DependentUpon>FRM_PDF_VIEW.aspx</DependentUpon>
     </Compile>
@@ -4144,13 +4135,6 @@
     </Compile>
     <Compile Include="TABEAN_YA_STAFF\FRM_REPORT_TABEAN.aspx.vb">
       <DependentUpon>FRM_REPORT_TABEAN.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="TABEAN_YA_STAFF\FRM_TABEAN_YA_CHANGE_STATUS.aspx.designer.vb">
-      <DependentUpon>FRM_TABEAN_YA_CHANGE_STATUS.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="TABEAN_YA_STAFF\FRM_TABEAN_YA_CHANGE_STATUS.aspx.vb">
-      <DependentUpon>FRM_TABEAN_YA_CHANGE_STATUS.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="TABEAN_YA_STAFF\POPUP_DR_STAFF_CHECK_RQT.aspx.designer.vb">
