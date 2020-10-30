@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_FDA_DRUG_IMPORT">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18.625, 32.25" name="LINQ_FDA_DRUG_IMPORT">
   <DataContextMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext" />
   <nestedChildShapes>
     <classShape Id="bb357310-c4b8-4fcc-8f1b-2673d81ded17" isExpanded="false" absoluteBounds="0.5, 6.5, 2.5, 0.45">
@@ -56,12 +56,6 @@
         <elementListCompartment Id="aca9b5cd-2b9b-4f1b-a9a1-0392e5c35591" absoluteBounds="2.89, 3.46, 2.3449999999999998, 19.094930013020832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e44b7cc2-2e0f-4830-8417-b410c54bd9c7" isExpanded="false" absoluteBounds="0.5, 3, 2, 0.45">
-      <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/FDA_DRUG_IMPORT_NYM_6" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b5ef9ffb-3916-4c42-bd53-e7a895a9c8b1" absoluteBounds="0.51499999999999968, 3.46, 1.9700000000000002, 19.671834309895832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="2cafb5bc-a254-4d7b-b9cb-989f05634cce" isExpanded="false" absoluteBounds="2.875, 2.5, 2.375, 0.45">
       <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/FDA_DRUG_IMPORT_NYM_5_AFTER" />
       <nestedChildShapes>
@@ -72,12 +66,6 @@
       <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/FDA_DRUG_IMPORT_NYM_1_DETAIL" />
       <nestedChildShapes>
         <elementListCompartment Id="d4f451aa-cbd5-4c42-9bd7-888635dc2417" absoluteBounds="3.14, 0.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="9b408efe-5e78-456a-8ffc-4f6b1601405f" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
-      <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/FDA_DRUG_IMPORT_NYM_1" />
-      <nestedChildShapes>
-        <elementListCompartment Id="11be4d7d-53c9-43b3-a289-1c4bd37a4666" absoluteBounds="0.51500000000000057, 0.96000000000000085, 1.9700000000000002, 10.249064127604166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="3f19036e-5831-41bc-9878-7d745960aabd" isExpanded="false" absoluteBounds="4.375, 6.25, 2, 0.45">
@@ -92,28 +80,40 @@
         <elementListCompartment Id="45975616-762f-434b-9fa3-5eb352341aa6" absoluteBounds="4.265, 4.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9f564fa5-5cf0-4570-b408-a5aa47b49999" isExpanded="false" absoluteBounds="0.5, 2.5, 2, 0.45">
-      <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/FDA_DRUG_IMPORT_NYM_5" />
+    <classShape Id="018bf3f0-b1eb-4a10-b9ff-dace2bf50e11" absoluteBounds="7.375, 0.75, 2, 10.809064127604165">
+      <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/FDA_DRUG_IMPORT_NYM_1" />
       <nestedChildShapes>
-        <elementListCompartment Id="0f3b7608-c937-4eb1-b29e-1b846f87ae79" absoluteBounds="0.51500000000000012, 2.9600000000000009, 1.9700000000000002, 18.7103271484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a8331ae8-b04e-4362-83da-c9039196e399" absoluteBounds="7.39, 1.21, 1.9700000000000002, 10.249064127604166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f1fb7dfa-deb5-47e4-8594-8ed411feae86" isExpanded="false" absoluteBounds="0.5, 1, 2, 0.45">
+    <classShape Id="a1df21aa-6dd8-4046-a35c-a84bf517e59e" absoluteBounds="3.375, 7.75, 2, 17.731915690104167">
       <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/FDA_DRUG_IMPORT_NYM_2" />
       <nestedChildShapes>
-        <elementListCompartment Id="1a8f6e05-60c1-4149-a1ae-24b471a4ce3c" absoluteBounds="0.51499999999999968, 1.46, 1.9700000000000002, 17.171915690104164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b8863be4-1ba5-42c3-9d89-c3dfce1170a9" absoluteBounds="3.39, 8.21, 1.9700000000000002, 17.171915690104164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9f41b022-d41c-4dd6-9cd9-857169b50deb" isExpanded="false" absoluteBounds="0.5, 2, 2, 0.45">
-      <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/FDA_DRUG_IMPORT_NYM_4" />
-      <nestedChildShapes>
-        <elementListCompartment Id="8a97a523-2d04-48be-9a5d-443cae28096a" absoluteBounds="0.51499999999999968, 2.46, 1.9700000000000002, 17.5565185546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="0a1644b6-a46c-4119-83bf-497a9614336e" isExpanded="false" absoluteBounds="0.5, 1.5, 2, 0.45">
+    <classShape Id="1c3d53a6-e75a-467e-958e-679fc83d75ef" absoluteBounds="10.375, 0.75, 2, 17.731915690104167">
       <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/FDA_DRUG_IMPORT_NYM_3" />
       <nestedChildShapes>
-        <elementListCompartment Id="48ce3984-2ad0-499a-b08a-17adb3ca135d" absoluteBounds="0.51500000000000012, 1.9600000000000009, 1.9700000000000002, 17.171915690104164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="87536514-9185-4dcc-945d-10efcc11bee8" absoluteBounds="10.39, 1.21, 1.9700000000000002, 17.171915690104164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f77d8989-3534-45cb-ae05-eee95714bc5e" absoluteBounds="6.375, 12.75, 2, 19.270327148437502">
+      <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/FDA_DRUG_IMPORT_NYM_5" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ce0f8e4-c445-4626-a6ec-225862220f9d" absoluteBounds="6.39, 13.21, 1.9700000000000002, 18.7103271484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c5276a51-6ad2-4971-afb2-2fe2d55de8f2" absoluteBounds="13.375, 0.75, 2, 18.116518554687502">
+      <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/FDA_DRUG_IMPORT_NYM_4" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4edfd05-921a-4ad7-ab84-791ce37481f8" absoluteBounds="13.39, 1.21, 1.9700000000000002, 17.5565185546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="967f95c0-4872-4954-8a82-b72d73906e45" absoluteBounds="16.375, 0.75, 2, 20.231834309895834">
+      <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/FDA_DRUG_IMPORT_NYM_6" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90c4eca0-7221-46b0-be30-2fb91d57f381" absoluteBounds="16.39, 1.21, 1.9700000000000002, 19.671834309895832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
