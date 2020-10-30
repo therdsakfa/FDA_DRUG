@@ -149,6 +149,10 @@
                         CommandName="sel" Text="ดูข้อมูล">
                         <HeaderStyle Width="70px" />
                     </telerik:GridButtonColumn>
+                     <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
+                        CommandName="sel" Text="แก้ไข">
+                        <HeaderStyle Width="70px" />
+                    </telerik:GridButtonColumn>
                     <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_upload"
                         CommandName="upload" Text="อัพโหลดเอกสารยืนยัน">
                         <HeaderStyle Width="70px" />
