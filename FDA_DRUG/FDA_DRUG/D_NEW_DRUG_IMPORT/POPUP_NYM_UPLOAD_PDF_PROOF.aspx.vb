@@ -55,6 +55,16 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
         uc101_6.get_label("ใบรับรองแพทย์ของผู้ขออนุญาต (ต้องไม่เกิน 1-3 เดือนแล้วแต่กรณี)")
         uc101_7.get_label("หลักทรัพย์(สำเนาสมุดบัญชีอัฟเดทล่าสุด) จำนวนเงินตั้งแต่ 10,000 บาทขึ้นไป")
         uc101_8.get_label("สำเนาโฉนดที่ดินที่ไม่ติดภาระผูกพัน(ชื่อผู้รับอนุญาตเท่านั้น)")
+
+        'ขย.2
+        uc102_1.get_label("แบบคำขออนุญาต (ตามประเภท) เจ้าของคนใหม่")
+        uc102_2.get_label("รูปถ่ายของผู้รับอนุญาต (เจ้าของคนใหม่/ผู้ขออนุญาต) ขนาด 3*4 ซม.(3 รูป) ถ่ายไม่เกิน 6 เดือน")
+        'uc102_3.get_label("สำเนาทะเบียนบ้านรับรองจริง (เจ้าของคนใหม่)")
+        uc102_4.get_label("สำเนาหนังสือขออนุญาตทำงานที่ออกโดยกระทรวงแรงงานฯและหนังสือเดินทาง (กรีบุคคลต่างด้าว)")
+        'uc102_5.get_label("สำเนาบัตรประชาชนรับรองจริง (เจ้าของคนใหม่/ผู้ขออนุญาต)")
+        uc102_6.get_label("ใบรับรองแพทย์ของผู้ขออนุญาต (ต้องไม่เกิน 1-3 เดือนแล้วแต่กรณี)")
+        uc102_7.get_label("หลักทรัพย์(สำเนาสมุดบัญชีอัฟเดทล่าสุด) จำนวนเงินตั้งแต่ 10,000 บาทขึ้นไป")
+        uc102_8.get_label("สำเนาโฉนดที่ดินที่ไม่ติดภาระผูกพัน(ชื่อผู้รับอนุญาตเท่านั้น)")
     End Sub
     Public Sub SET_ATTACH(ByVal TR_ID As String, ByVal PROCESS_ID As String, ByVal YEAR As String)
         If _ProcessID = 1028 Then
@@ -94,7 +104,7 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
             bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
             bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
 
-            TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
+            TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION เลขดำเนินการรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรรร
 
 
 
@@ -113,15 +123,15 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
 
             FileUpload1.SaveAs(PDF_TRADER) '"C:\path\PDF_TRADER\"
             'ทำการแปลงส่ง PDF เข้าไปแล้วแปลงออกเป็น XML
-            convert_PDF_To_XML(PDF_TRADER, XML_TRADER)
+            convert_PDF_To_XML(PDF_TRADER, XML_TRADER)      'errorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 
 
             '    convert_PDF_To_XML(bao._PATH_PDF_TRADER & "FA-5-2558-" & TR_ID & ".pdf", TR_ID) '"C:\path\PDF_TRADER\"
             Dim check As Boolean = True
             ' Try
-            check = insrt_to_database(XML_TRADER, TR_ID)
+            check = insrt_to_database(XML_TRADER, TR_ID) 'insert ใน database 
             If check = True Then
-                SET_ATTACH(TR_ID, _ProcessID, con_year(Date.Now.Year))
+                'SET_ATTACH(TR_ID, _ProcessID, con_year(Date.Now.Year))      'แนบไฟล์ ลงBASE             ไม่รู้ใช้ไหม
 
                 alert("รหัสการดำเนินการ คือ DA-" & _ProcessID & "-" & con_year(Date.Now.Date().Year()) & "-" + TR_ID)
             Else
@@ -134,6 +144,11 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
 
             '    alert("เกิดข้อผิดพลาดรหัสการดำเนินการ คือ DA-" & _ProcessID & "-" & con_year(Date.Now.Date().Year()) & "-" + TR_ID)
             'End Try
+
+        End If
+    End Sub
+    Sub addtodtb()
+        If FileUpload1.HasFile Then
 
         End If
     End Sub
@@ -724,77 +739,7 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
             dao_bsn.insert()
         Next
 
-        'Dim dao_dakeplctnm As New DAO_DRUG.ClsDBdakeplctnm
-        'For Each dao_dakeplctnm.fields In p2.dakeplctnms
-        '    dao_dakeplctnm.fields.TR_ID = TR_ID
-        '    dao_dakeplctnm.fields.FK_IDA = dao.fields.IDA
-        '    dao_dakeplctnm.insert()
-        '    dao_dakeplctnm = New DAO_DRUG.ClsDBdakeplctnm
-        'Next
 
-        'Dim dao_dalcnctg As New DAO_DRUG.ClsDBdalcnctg
-        'For Each dao_dalcnctg.fields In p2.dalcnctgs
-        '    dao_dalcnctg.fields.TR_ID = TR_ID
-        '    dao_dalcnctg.fields.FK_IDA = dao.fields.IDA
-        '    dao_dalcnctg.insert()
-        '    dao_dalcnctg = New DAO_DRUG.ClsDBdalcnctg
-        'Next
-
-        'Dim dao_dacnphdtl As New DAO_DRUG.ClsDBdacnphdtl
-        'For Each dao_dacnphdtl.fields In p2.dacnphdtls
-        '    dao_dacnphdtl.fields.TR_ID = TR_ID
-        '    dao_dacnphdtl.fields.FK_IDA = dao.fields.IDA
-        '    dao_dacnphdtl.insert()
-        '    dao_dacnphdtl = New DAO_DRUG.ClsDBdacnphdtl
-        'Next
-
-        'Dim dao_dacncphr As New DAO_DRUG.ClsDBdacncphr
-        'For Each dao_dacncphr.fields In p2.dacncphrs
-        '    dao_dacncphr.fields.TR_ID = TR_ID
-        '    dao_dacncphr.fields.FK_IDA = dao.fields.IDA
-        '    dao_dacncphr.insert()
-        '    dao_dacncphr = New DAO_DRUG.ClsDBdacncphr
-        'Next
-
-        'Dim dao_dalcnkep As New DAO_DRUG.ClsDBdalcnkep
-        'For Each dao_dalcnkep.fields In p2.dalcnkeps
-        '    dao_dalcnkep.fields.TR_ID = TR_ID
-        '    dao_dalcnkep.fields.FK_IDA = dao.fields.IDA
-        '    dao_dalcnkep.insert()
-        '    dao_dalcnkep = New DAO_DRUG.ClsDBdalcnkep
-        'Next
-
-        'Dim dao_DALCN_WORKTIME As New DAO_DRUG.ClsDBDALCN_WORKTIME
-        'For Each dao_DALCN_WORKTIME.fields In p2.DALCN_WORKTIMEs
-        '    dao_DALCN_WORKTIME.fields.TR_ID = TR_ID
-        '    dao_DALCN_WORKTIME.fields.FR_IDA = dao.fields.IDA
-        '    dao_DALCN_WORKTIME.insert()
-        '    dao_DALCN_WORKTIME = New DAO_DRUG.ClsDBDALCN_WORKTIME
-        'Next
-
-        'Dim dao_DALCN_KEP As New DAO_DRUG.ClsDBDALCN_KEP
-        'For Each dao_DALCN_KEP.fields In p2.DALCN_KEPs
-        '    dao_DALCN_KEP.fields.TR_ID = TR_ID
-        '    dao_DALCN_KEP.fields.FK_IDA = dao.fields.IDA
-        '    dao_DALCN_KEP.insert()
-        '    dao_DALCN_KEP = New DAO_DRUG.ClsDBDALCN_KEP
-        'Next
-
-        'Dim dao_sysplace As New DAO_DRUG.ClsDBsysplace
-        'For Each dao_sysplace.fields In p2.sysplaces
-        '    dao_sysplace.fields.TR_ID = TR_ID
-        '    dao_sysplace.fields.FK_IDA = dao.fields.IDA
-        '    dao_sysplace.insert()
-        '    dao_sysplace = New DAO_DRUG.ClsDBsysplace
-        'Next
-
-        'Dim dao_dalcnaddr As New DAO_DRUG.ClsDBdalcnaddr
-        'For Each dao_dalcnaddr.fields In p2.dalcnaddrs
-        '    dao_dalcnaddr.fields.TR_ID = TR_ID
-        '    dao_dalcnaddr.fields.FK_IDA = dao.fields.IDA
-        '    dao_dalcnaddr.insert()
-        '    dao_dalcnaddr = New DAO_DRUG.ClsDBdalcnaddr
-        'Next
 
         Dim dao_DALCN_DETAIL_LOCATION_KEEP As New DAO_DRUG.TB_DALCN_DETAIL_LOCATION_KEEP
         For Each dao_DALCN_DETAIL_LOCATION_KEEP.fields In p2.DALCN_DETAIL_LOCATION_KEEPs
@@ -1059,30 +1004,7 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
         Next
 
 
-        'If dao.fields.lcntypecd = 12 Then 'จะบันทึกเพราะนำเข้าเท่านั้น
-        '    Dim dao_fregntffrgn As New DAO.clsDBfregntffrgn
-        '    For Each dao_fregntffrgn.fields In p2.fregntffrgn
-        '        dao_fregntffrgn.fields.FR_IDA = dao.fields.ID
-        '        dao_fregntffrgn.fields.TR_ID = TR_ID
-        '        dao_fregntffrgn.insert()
-        '        dao_fregntffrgn = New DAO.clsDBfregntffrgn
-        '    Next
-        'End If
 
-        'Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        'dao_up.fields.CITIEZEN_ID = _CLS.CITIZEN_ID
-        'dao_up.fields.CITIEZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-        'dao_up.fields.DOWNLOAD_ID = p2.DOWNLOAD_ID
-        'dao_up.fields.PROCESS_ID = _ProcessID
-        'dao_up.fields.UPLOAD_DATE = Date.Now
-        'dao_up.fields.YEAR = Date.Now.Year
-        'dao_up.fields.REF_NO = dao.fields.IDA
-
-        'dao_up.insert()
-        'End If
-        'Catch ex As Exception
-        '    check = False
-        'End Try
 
         Return check
     End Function

@@ -16,7 +16,7 @@
     ''' <param name="type">ลำดับ</param>
     ''' <remarks></remarks> 
     Sub ATTACH(ByVal transection As String, ByVal PROCESS_ID As String, ByVal year As String, ByVal type As String) 'ปรับ เพิ่มtype
-        If FileUpload1.HasFile Or type = 3 Or type = 33 Or _staff = 1 Then 'เช็คว่ามีการเบราไฟล์แล้ว
+        If FileUpload1.HasFile Or type = 3 Or type = 33 Or _staff = 1 Then 'เช็คว่ามีการเบราไฟล์แล้ว             'save ]ง เครื่อง server 
             Dim bao As New BAO.AppSettings
             Dim NAME_FAKE As String 'ตัวแปรเก็บชื่อไฟล์ที่เบรา
             Dim NAME_REAL As String 'ตัวแปรเก็บชื่อไฟล์ที่แปลงเพื่อให้สัมพันธ์กับระบบ
@@ -27,7 +27,7 @@
             FileUpload1.SaveAs(bao._PATH_DEFAULT & "upload\" & NAME_FAKE) 'บันทึกไฟล์ลงserverโดยใช้ชื่อที่สรางขึ้นใหม่              'FileUpload    
 
 
-            Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH
+            Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH                    'ชื่อbase
             dao.fields.NAME_FAKE = NAME_FAKE 'เก็บชื่อไฟล์ที่สร้างขึ้นใหม่เพื่อเรียกใช้
             dao.fields.NAME_REAL = NAME_REAL 'เก็บชื่อไฟล์ที่เบราไว้เก็บเผื่อไว้เฉยๆ
             Try
