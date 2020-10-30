@@ -16,14 +16,11 @@
         
         <tr>
             <td>
-                <asp:RadioButtonList ID="rdl_drug_type" runat="server" RepeatColumns="2" style="display:none;">
+                <asp:RadioButtonList ID="rdl_drug_type" runat="server" RepeatColumns="2">
                     <asp:ListItem Value="1">ยาแผนปัจจุบันสำหรับมนุษย์</asp:ListItem>
                     <asp:ListItem Value="3">ยาแผนปัจจุบันสำหรับทำการวิจัยทางคลินิกในมนุษย์ ระยะที่ ๑,๒,๓</asp:ListItem>
                     <asp:ListItem Value="2">ยาแผนปัจจุบันสำหรับสัตว์</asp:ListItem>
                 </asp:RadioButtonList>
-                <asp:CheckBox ID="cb_drug_type1" runat="server" Text="ยาแผนปัจจุบันสำหรับมนุษย์" /> &nbsp
-                <asp:CheckBox ID="cb_drug_type2" runat="server" Text="ยาแผนปัจจุบันสำหรับทำการวิจัยทางคลินิกในมนุษย์ ระยะที่ ๑,๒,๓" />&nbsp
-                <asp:CheckBox ID="cb_drug_type3" runat="server" Text="ยาแผนปัจจุบันสำหรับสัตว์" />
             </td>
         </tr>
         <tr>

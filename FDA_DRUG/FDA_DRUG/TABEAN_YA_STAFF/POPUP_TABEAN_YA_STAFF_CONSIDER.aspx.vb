@@ -120,11 +120,11 @@
         Dim bool As Boolean = False
         Try
             Dim i As Integer = 0
-            'Dim dao_rgt As New DAO_DRUG.ClsDBdrrgt
-            'i = dao_rgt.COUNT_REPEAT_RGTNO_PVNCD(rgtno, rgttpcd, drgtpcd, pvncd)
+            Dim dao_rgt As New DAO_DRUG.ClsDBdrrgt
+            i = dao_rgt.COUNT_REPEAT_RGTNO_PVNCD(rgtno, rgttpcd, drgtpcd, pvncd)
 
-            Dim dao_rqt As New DAO_DRUG.ClsDBdrrqt
-            i = dao_rqt.COUNT_REPEAT_RGTNO_PVNCD(rgtno, rgttpcd, drgtpcd, pvncd)
+            'Dim dao_rqt As New DAO_DRUG.ClsDBdrrqt
+            'i = dao_rqt.COUNT_REPEAT_RGTNO_PVNCD(rgtno, rgttpcd, drgtpcd, pvncd)
             'Dim max_rcvno As Integer = dao_rqt.fields.rgtno
             If i > 0 Then
                 bool = False

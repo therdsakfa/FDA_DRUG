@@ -2,13 +2,9 @@
 'Imports System.Xml.Serialization
 'Public Class POPUP_NYM_UPLOAD_PDF_PROOF
 '    Inherits System.Web.UI.Page
-'    Private _IDA As String
-'    Private _TR_ID As String
 '    Private _CLS As New CLS_SESSION
-'    Private _process As String
-
 '    Private _ProcessID As String
-
+'    Private _IDA As String
 '    ' Private _rgt_ida As String
 '    Sub runQuery()
 '        _ProcessID = Request.QueryString("process")

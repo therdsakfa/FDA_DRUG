@@ -276,7 +276,7 @@ Public Class UC_DS_MAIN
 
         If e.CommandName = "sel" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As String= 0
+            Dim tr_id As String = 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -313,6 +313,5 @@ Public Class UC_DS_MAIN
 
         End If
     End Sub
-
 
 End Class

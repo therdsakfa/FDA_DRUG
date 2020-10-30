@@ -9,7 +9,6 @@ Public Class FRM_STAFF_NYM4
     Sub RunSession()
         Try
             _CLS = Session("CLS")
-            _process = Request.QueryString("process")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
@@ -92,14 +91,8 @@ Public Class FRM_STAFF_NYM4
 
 
             If e.CommandName = "sel" Then
-                dao.GetDataby_IDA(NYM4_ida)
-                Dim _DL As String = 0
-                Try
-                    _DL = dao.fields.DL
-                Catch ex As Exception
 
-                End Try
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM4_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM4_ida & "&Process= " & _process & "');", True)
             End If
         End If
     End Sub
@@ -136,8 +129,5 @@ Public Class FRM_STAFF_NYM4
     End Sub
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>alert('" + text + "');</script> ") 'จาวาคำสั่ง Alert
-    End Sub
-    Protected Sub btn_reload_Click(sender As Object, e As EventArgs) Handles btn_reload.Click
-        RadGrid1.Rebind()
     End Sub
 End Class

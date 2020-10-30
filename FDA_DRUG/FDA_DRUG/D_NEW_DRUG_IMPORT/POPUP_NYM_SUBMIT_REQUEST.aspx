@@ -73,7 +73,6 @@
                  <input type="button" value="เปิดจาก acrobat reader"   class="btn-lg"   style="  Width:70%;" />
                        </asp:HyperLink>
          <asp:HiddenField ID="HiddenField1" runat="server" />
-    &nbsp;&nbsp;
     </div>
     <table style="width:100%;height:500px;">
         <tr>
@@ -84,16 +83,15 @@
                      <asp:Literal ID="lr_preview" runat="server" ></asp:Literal>
     </div>
             </td>
-             <td style="padding-left:10%;height:70%;">
+             <td style="padding-left:10%;height:50%;">
 
                  <table class="table" style="width:90%"> 
-                     <tr><td> <asp:Label ID="_edit" runat="server" Text="หมายเหตุแก้ไขคำขอ"></asp:Label>
-                              <asp:Label ID="remark_edit" runat="server" Text="ไม่ได้ระบุ" CssClass="btn-lg"   Width="90%" Height="90%" /></td></tr>
-                     <tr><td> <asp:Button ID="btn_confirm" runat="server" Text="ยื่นคำขอ" CssClass="btn-lg"   Width="80%" OnClientClick="return confirm('คุณต้องการบันทึกข้อมูลหรือไม่');"  /></td></tr>
+                     
+                     <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยื่นคำขอ" CssClass="btn-lg"   Width="80%" OnClientClick="return confirm('คุณต้องการบันทึกข้อมูลหรือไม่');"  /></td></tr>
                      <tr><td> <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก" CssClass="btn-lg"   Width="80%"/></td></tr>
-                     <tr><td> <asp:Button ID="btn_load" runat="server" Text="Download PDF" CssClass="btn-lg"   Width="80%" /></td></tr>
-                     <tr><td> <asp:Button ID="btn_load0" runat="server" Text="กลับหน้ารายการ" CssClass="btn-lg"   Width="80%" /></td></tr>
-                                        
+                     <tr><td>  <asp:Button ID="btn_load" runat="server" Text="Download PDF" CssClass="btn-lg"   Width="80%" /></td></tr>
+                     <tr><td>  <asp:Button ID="btn_load0" runat="server" Text="กลับหน้ารายการ" CssClass="btn-lg"   Width="80%" /></td></tr>
+
                  </table>
                  
 

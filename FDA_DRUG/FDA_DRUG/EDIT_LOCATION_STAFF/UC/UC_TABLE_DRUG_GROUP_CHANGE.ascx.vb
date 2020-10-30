@@ -27,32 +27,8 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
         Dim dao_ih As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
         dao_ih.GetDataby_FKIDA(Request.QueryString("ida"))
         Try
-            'rdl_drug_type.DataBind()
-            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
-            If dao_ih.fields.DRUG_TYPE IsNot Nothing Then
-                cb_drug_type1.Checked = True
-            End If
-
-        Catch ex As Exception
-
-        End Try
-        Try
-            'rdl_drug_type.DataBind()
-            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
-            If dao_ih.fields.DRUG_TYPE2 IsNot Nothing Then
-                cb_drug_type2.Checked = True
-            End If
-
-        Catch ex As Exception
-
-        End Try
-        Try
-            'rdl_drug_type.DataBind()
-            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
-            If dao_ih.fields.DRUG_TYPE23 IsNot Nothing Then
-                cb_drug_type3.Checked = True
-            End If
-
+            rdl_drug_type.DataBind()
+            rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
         Catch ex As Exception
 
         End Try
@@ -280,32 +256,8 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
         Dim dao_ih As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
         dao_ih.GetDataby_FKIDA(Request.QueryString("ida"))
         Try
-            'rdl_drug_type.DataBind()
-            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
-            If dao_ih.fields.DRUG_TYPE IsNot Nothing Then
-                cb_drug_type1.Checked = True
-            End If
-
-        Catch ex As Exception
-
-        End Try
-        Try
-            'rdl_drug_type.DataBind()
-            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
-            If dao_ih.fields.DRUG_TYPE2 IsNot Nothing Then
-                cb_drug_type2.Checked = True
-            End If
-
-        Catch ex As Exception
-
-        End Try
-        Try
-            'rdl_drug_type.DataBind()
-            'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
-            If dao_ih.fields.DRUG_TYPE23 IsNot Nothing Then
-                cb_drug_type3.Checked = True
-            End If
-
+            rdl_drug_type.DataBind()
+            rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
         Catch ex As Exception
 
         End Try
@@ -805,29 +757,11 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
         dao_t = New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
         dao_t.fields.FK_IDA = Request.QueryString("ida")
         Try
-            If cb_drug_type1.Checked Then
-                dao_t.fields.DRUG_TYPE = 1
-            End If
-            'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
+            dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
         Catch ex As Exception
 
         End Try
-        Try
-            If cb_drug_type2.Checked Then
-                dao_t.fields.DRUG_TYPE2 = 1
-            End If
-            'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
-        Catch ex As Exception
 
-        End Try
-        Try
-            If cb_drug_type3.Checked Then
-                dao_t.fields.DRUG_TYPE23 = 1
-            End If
-            'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
-        Catch ex As Exception
-
-        End Try
         dao_t.insert()
 
 
@@ -848,7 +782,6 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
                 dao.fields.FK_IDA = FK_IDA
 
                 If TYPE_SHOW = 1 Then
-                    Dim col_all As String = ""
                     Dim cb1 As New CheckBox
                     Dim cb2 As New CheckBox
                     Dim cb3 As New CheckBox
@@ -856,11 +789,6 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
                     Dim cb5 As New CheckBox
                     Dim cb6 As New CheckBox
                     Dim txt6 As New HtmlTextArea
-                    Try
-                        txt6 = tr.Cells(8).FindControl("txt6_" & FK_IDA)
-                    Catch ex As Exception
-
-                    End Try
                     cb1 = tr.Cells(2).FindControl("cb1_" & FK_IDA)
                     cb2 = tr.Cells(3).FindControl("cb2_" & FK_IDA)
                     cb3 = tr.Cells(4).FindControl("cb3_" & FK_IDA)
@@ -875,10 +803,6 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
                         If cb1.Checked Then
                             dao.fields.COL1 = 1
                             jj += 1
-                            If col_all = "" Then
-                                col_all = "ยาทั่วไป"
-
-                            End If
                         End If
                     Catch ex As Exception
 
@@ -887,12 +811,6 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
                         If cb2.Checked Then
                             dao.fields.COL2 = 1
                             jj += 1
-
-                            If col_all = "" Then
-                                col_all = "เพนนิซิลลิน"
-                            Else
-                                col_all &= ", เพนนิซิลลิน"
-                            End If
                         End If
                     Catch ex As Exception
 
@@ -901,12 +819,6 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
                         If cb3.Checked Then
                             dao.fields.COL3 = 1
                             jj += 1
-
-                            If col_all = "" Then
-                                col_all = "เซฟาโลสปอริน"
-                            Else
-                                col_all &= ", เซฟาโลสปอริน"
-                            End If
                         End If
                     Catch ex As Exception
 
@@ -915,12 +827,6 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
                         If cb4.Checked Then
                             dao.fields.COL4 = 1
                             jj += 1
-
-                            If col_all = "" Then
-                                col_all = "คาร์บาพิแนม"
-                            Else
-                                col_all &= ", คาร์บาพิแนม"
-                            End If
                         End If
                     Catch ex As Exception
 
@@ -928,12 +834,6 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
                     Try
                         If cb5.Checked Then
                             dao.fields.COL5 = 1
-
-                            If col_all = "" Then
-                                col_all = "ฮอร์โมนเพศ"
-                            Else
-                                col_all &= ", ฮอร์โมนเพศ"
-                            End If
                             jj += 1
                         End If
                     Catch ex As Exception
@@ -945,20 +845,13 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE
                         '    jj += 1
                         'End If
                         If txt6.Value <> "" Then
-                            dao.fields.COL6 = txt6.Value
+                            dao.fields.COL6 = 1
                             jj += 1
-
-                            If col_all = "" Then
-                                col_all = txt6.Value
-                            Else
-                                col_all &= ", " & txt6.Value
-                            End If
                         End If
                     Catch ex As Exception
 
                     End Try
                     If jj > 0 Then
-                        dao.fields.COL_ALLS = col_all
                         dao.insert()
                     End If
 

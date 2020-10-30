@@ -78,113 +78,40 @@
 
 
                 alert("บันทึกข้อมูลเรียบร้อย")
-                'ถ้าเป็น NYM อื่น
+            Else                                                    'ถ้าเป็น NYM อื่น
                 'Dim dao As New DAO_DRUG.ClsDBdrsamp                     'ใช้ base drsamp คืออะไร งง มาก
-            ElseIf _process = 1027 Then
-                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-                dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA
-                'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
+                If _process = 1027 Then
+                    Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+                    dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA
+                    'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
 
-                AddLogStatustodrugimport(9, _process, _CLS.CITIZEN_ID, _IDA)        'เปลี่ยน function สีเหลืองให้อยู่ใน drug import 
+                    AddLogStatustodrugimport(9, _process, _CLS.CITIZEN_ID, _IDA)        'เปลี่ยน function สีเหลืองให้อยู่ใน drug import 
 
-                Dim PROCESS_ID As Integer = dao.fields.NYM_TYPE
-
-
-                'dao_p.GetDataby_Process_ID(PROCESS_ID)                          'ไปเอาชื่อกระบวนการมา จาก base PROCESS_NAME ไม่น่าต้องแก้ไข
-                'Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
-
-                Dim CONSIDER_DATE As Date = Date.Now
-                dao.fields.REMARK = Txt_Remark.Text
-                dao.fields.POSITION_CONSIDER_LINE1 = TextBox6.Text
-                dao.fields.POSITION_CONSIDER_LINE2 = TextBox2.Text
-                dao.fields.POSITION_CONSIDER_LINE3 = TextBox3.Text
-                dao.fields.POSITION_CONSIDER_LINE4 = TextBox4.Text
-                dao.fields.POSITION_CONSIDER_LINE5 = TextBox5.Text
-                dao.fields.STATUS_ID = 9
-                dao.fields.CONSIDER_DATE = CONSIDER_DATE
-                'ต้องใส่ชื่อ staff และ iden staff เพิ่ม
-                dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
-                Try
-                    dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
-                Catch ex As Exception
-
-                End Try
-                dao.update()
+                    Dim PROCESS_ID As Integer = dao.fields.NYM_TYPE
 
 
-                alert("บันทึกข้อมูลเรียบร้อย")
+                    'dao_p.GetDataby_Process_ID(PROCESS_ID)                          'ไปเอาชื่อกระบวนการมา จาก base PROCESS_NAME ไม่น่าต้องแก้ไข
+                    'Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
 
-                'ถ้าเป็น NYM อื่น
-                'Dim dao As New DAO_DRUG.ClsDBdrsamp                     'ใช้ base drsamp คืออะไร งง มาก
-            ElseIf _process = 1028 Then
-                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
-                dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA
-                'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
+                    Dim CONSIDER_DATE As Date = Date.Now
+                    dao.fields.REMARK = Txt_Remark.Text
+                    dao.fields.STATUS_ID = 9
+                    dao.fields.CONSIDER_DATE = CONSIDER_DATE
 
-                AddLogStatustodrugimport(9, _process, _CLS.CITIZEN_ID, _IDA)        'เปลี่ยน function สีเหลืองให้อยู่ใน drug import 
+                    dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
+                    Try
+                        dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
+                    Catch ex As Exception
 
-                Dim PROCESS_ID As Integer = dao.fields.NYM_TYPE
-
-
-                'dao_p.GetDataby_Process_ID(PROCESS_ID)                          'ไปเอาชื่อกระบวนการมา จาก base PROCESS_NAME ไม่น่าต้องแก้ไข
-                'Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
-
-                Dim CONSIDER_DATE As Date = Date.Now
-                dao.fields.REMARK = Txt_Remark.Text
-                dao.fields.POSITION_CONSIDER_LINE1 = TextBox6.Text
-                dao.fields.POSITION_CONSIDER_LINE2 = TextBox2.Text
-                dao.fields.POSITION_CONSIDER_LINE3 = TextBox3.Text
-                dao.fields.POSITION_CONSIDER_LINE4 = TextBox4.Text
-                dao.fields.POSITION_CONSIDER_LINE5 = TextBox5.Text
-                dao.fields.STATUS_ID = 9
-                dao.fields.CONSIDER_DATE = CONSIDER_DATE
-                'ต้องใส่ชื่อ staff และ iden staff เพิ่ม
-                dao.fields.NYM3_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
-                Try
-                    dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
-                Catch ex As Exception
-
-                End Try
-                dao.update()
+                    End Try
+                    dao.update()
 
 
-                alert("บันทึกข้อมูลเรียบร้อย")
-                'ถ้าเป็น NYM อื่น
-                'Dim dao As New DAO_DRUG.ClsDBdrsamp                     'ใช้ base drsamp คืออะไร งง มาก
-            ElseIf _process = 1029 Then
-                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
-                dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA
-                'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
-
-                AddLogStatustodrugimport(9, _process, _CLS.CITIZEN_ID, _IDA)        'เปลี่ยน function สีเหลืองให้อยู่ใน drug import 
-
-                Dim PROCESS_ID As Integer = dao.fields.NYM_TYPE
-
-
-                'dao_p.GetDataby_Process_ID(PROCESS_ID)                          'ไปเอาชื่อกระบวนการมา จาก base PROCESS_NAME ไม่น่าต้องแก้ไข
-                'Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
-
-                Dim CONSIDER_DATE As Date = Date.Now
-                dao.fields.REMARK = Txt_Remark.Text
-                dao.fields.POSITION_CONSIDER_LINE1 = TextBox6.Text
-                dao.fields.POSITION_CONSIDER_LINE2 = TextBox2.Text
-                dao.fields.POSITION_CONSIDER_LINE3 = TextBox3.Text
-                dao.fields.POSITION_CONSIDER_LINE4 = TextBox4.Text
-                dao.fields.POSITION_CONSIDER_LINE5 = TextBox5.Text
-                dao.fields.STATUS_ID = 9
-                dao.fields.CONSIDER_DATE = CONSIDER_DATE
-                'ต้องใส่ชื่อ staff และ iden staff เพิ่ม
-                dao.fields.NYM4_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
-                Try
-                    dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
-                Catch ex As Exception
-
-                End Try
-                dao.update()
-
-
-                alert("บันทึกข้อมูลเรียบร้อย")
+                    alert("บันทึกข้อมูลเรียบร้อย")
+                End If
             End If
+
+
         Catch ex As Exception
             Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")
         End Try
@@ -202,9 +129,5 @@
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Response.Redirect("FRM_STAFFNYM_CONFIRM.aspx?IDA=" & _IDA & "&process=" & _process & "&DL=" & _DL)
-    End Sub
-
-    Protected Sub Txt_Remark_TextChanged(sender As Object, e As EventArgs) Handles Txt_Remark.TextChanged
-
     End Sub
 End Class
