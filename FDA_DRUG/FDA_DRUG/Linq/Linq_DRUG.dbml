@@ -6725,14 +6725,13 @@
       <Column Name="SYSTEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.LOG_CHANGE_STATUS_MN" Member="LOG_CHANGE_STATUS_MNs">
-    <Type Name="LOG_CHANGE_STATUS_MN">
+  <Table Name="dbo.DALCN_IMPORT_DRUG_GROUP_DETAIL1" Member="DALCN_IMPORT_DRUG_GROUP_DETAIL1s">
+    <Type Name="DALCN_IMPORT_DRUG_GROUP_DETAIL1">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="STATUS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DRUG_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRUG_TYPE2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRUG_TYPE23" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.DALCN_IMPORT_DRUG_GROUP_DETAIL2" Member="DALCN_IMPORT_DRUG_GROUP_DETAIL2s">
@@ -6748,15 +6747,6 @@
       <Column Name="COL6" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="COL6_OTHER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="COL_ALLS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DALCN_IMPORT_DRUG_GROUP_DETAIL1" Member="DALCN_IMPORT_DRUG_GROUP_DETAIL1s">
-    <Type Name="DALCN_IMPORT_DRUG_GROUP_DETAIL1">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DRUG_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DRUG_TYPE2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DRUG_TYPE23" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

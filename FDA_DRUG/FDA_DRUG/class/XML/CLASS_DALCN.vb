@@ -446,6 +446,45 @@
                 _First_Appdate = value
             End Set
         End Property
+
+        Private _Drug_Type_All As String
+        Public Property Drug_Type_All() As String
+            Get
+                Return _Drug_Type_All
+            End Get
+            Set(ByVal value As String)
+                _Drug_Type_All = value
+            End Set
+        End Property
+
+        Private _Drug_Type1 As String
+        Public Property Drug_Type1() As String
+            Get
+                Return _Drug_Type1
+            End Get
+            Set(ByVal value As String)
+                _Drug_Type1 = value
+            End Set
+        End Property
+        Private _Drug_Type2 As String
+        Public Property Drug_Type2() As String
+            Get
+                Return _Drug_Type2
+            End Get
+            Set(ByVal value As String)
+                _Drug_Type2 = value
+            End Set
+        End Property
+        Private _Drug_Type3 As String
+        Public Property Drug_Type3() As String
+            Get
+                Return _Drug_Type3
+            End Get
+            Set(ByVal value As String)
+                _Drug_Type3 = value
+            End Set
+        End Property
+
 #End Region
 
     End Class

@@ -56,9 +56,9 @@
 
             'If Request.QueryString("tt") <> "" Then
             If Request.QueryString("tt") = "2" Then
-                    txt_DRUG_NAME_THAI.Enabled = False
-                    txt_DRUG_NAME_OTHER.Enabled = False
-                End If
+                txt_DRUG_NAME_THAI.Enabled = False
+                txt_DRUG_NAME_OTHER.Enabled = False
+            End If
 
             'End If
         End If
@@ -89,6 +89,7 @@
             dao.fields.CITIZEN_ID_UPLOAD = _CLS.CITIZEN_ID
             dao.fields.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
             dao.fields.FK_IDA = _lcn_ida
+            dao.fields.DRUG_NEW = RadioButtonList1.SelectedValue
             dao.fields.STATUS_ID = 1
             Try
                 dao.fields.PVNCD = _CLS.PVCODE
@@ -310,7 +311,7 @@
         Else
             Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถบันทึกได้ กรุณากรอกคำบรรยายลักษณะของยา');</script> ")
         End If
-        
+
     End Sub
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');parent.close_modal();</script> ")
@@ -319,4 +320,5 @@
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
         Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")
     End Sub
+
 End Class

@@ -207,7 +207,7 @@ Public Class FRM_STAFF_LCN_SEARCH
                 Catch ex As Exception
 
                 End Try
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../LCN/POPUP_LCN_PRODUCTION_DRUG_GROUP_HEAD.aspx?ida=" & item("IDA").Text & "&TR_ID=" & dao.fields.TR_ID & "&process=" & dao.fields.PROCESS_ID & "&edit=1" & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../LCN/POPUP_LCN_PRODUCTION_DRUG_GROUP_HEAD.aspx?ida=" & item("IDA").Text & "&TR_ID=" & dao.fields.TR_ID & "&process=" & dao.fields.PROCESS_ID & "&edit=1&n=1" & "');", True)
 
             End If
         End If

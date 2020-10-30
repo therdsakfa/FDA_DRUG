@@ -11,17 +11,17 @@ Imports System.IO
 Imports System.util
 Imports System.Net
 Imports System.Xml
-Public Class POPUP_LCN_PRODUCTION_DRUG_GROUP2
+Public Class POPUP_LCN_PRODUCTION_DRUG_GROUP3
     Inherits System.Web.UI.Page
     Private StrHtmlGenerate As New StringBuilder()
     Private StrExport As New StringBuilder()
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Request.QueryString("ex") <> "" Then
-            UC_TABLE_DRUG_GROUP_CHANGE1.bind_table_export()
+            UC_TABLE_DRUG_GROUP_CHANGE_V2.bind_table_export()
             btn_save.Style.Add("display", "none")
             btn_goto.Style.Add("display", "none")
         Else
-            UC_TABLE_DRUG_GROUP_CHANGE1.bind_table()
+            UC_TABLE_DRUG_GROUP_CHANGE_V2.bind_table()
             btn_Export.Style.Add("display", "none")
         End If
         '
@@ -37,13 +37,85 @@ Public Class POPUP_LCN_PRODUCTION_DRUG_GROUP2
                 If dao.fields.STATUS_ID > 1 Then
                     btn_save.Style.Add("display", "none")
                 End If
+
+                If Request.QueryString("edit") <> "" Then
+                    btn_save.Style.Add("display", "block")
+                End If
             End If
         Catch ex As Exception
 
         End Try
+
+        If Not IsPostBack Then
+            Dim dao_ih As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
+            dao_ih.GetDataby_FKIDA(Request.QueryString("ida"))
+            Try
+                'rdl_drug_type.DataBind()
+                'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+                If dao_ih.fields.DRUG_TYPE = 1 Then
+                    cb_drug_type1.Checked = True
+                End If
+
+            Catch ex As Exception
+
+            End Try
+            Try
+                'rdl_drug_type.DataBind()
+                'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+                If dao_ih.fields.DRUG_TYPE2 = 1 Then
+                    cb_drug_type2.Checked = True
+                End If
+
+            Catch ex As Exception
+
+            End Try
+            Try
+                'rdl_drug_type.DataBind()
+                'rdl_drug_type.SelectedValue = dao_ih.fields.DRUG_TYPE
+                If dao_ih.fields.DRUG_TYPE23 = 1 Then
+                    cb_drug_type3.Checked = True
+                End If
+
+            Catch ex As Exception
+
+            End Try
+        End If
     End Sub
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
-        UC_TABLE_DRUG_GROUP_CHANGE1.save_data()
+        Dim dao_t As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
+        dao_t.GetDataby_FKIDA(Request.QueryString("ida"))
+        'For Each dao_t.fields In dao_t.datas
+        dao_t.delete()
+        'Next
+
+        dao_t = New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
+        dao_t.fields.FK_IDA = Request.QueryString("ida")
+
+        If cb_drug_type1.Checked Then
+            dao_t.fields.DRUG_TYPE = 1
+        Else
+            dao_t.fields.DRUG_TYPE = Nothing
+            End If
+        'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
+
+        If cb_drug_type2.Checked Then
+                dao_t.fields.DRUG_TYPE2 = 1
+            Else
+                dao_t.fields.DRUG_TYPE2 = Nothing
+            End If
+        'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
+
+        If cb_drug_type3.Checked Then
+                dao_t.fields.DRUG_TYPE23 = 1
+            Else
+                dao_t.fields.DRUG_TYPE23 = Nothing
+            End If
+        'dao_t.fields.DRUG_TYPE = rdl_drug_type.SelectedValue
+
+        dao_t.insert()
+
+
+        UC_TABLE_DRUG_GROUP_CHANGE_V2.save_data()
         'UC_TABLE_DRUG_GROUP_CHANGE.bind_table()
         Response.Write("<script type='text/javascript'>alert('บันทึกเรียบร้อย');parent.close_modal();</script> ")
     End Sub
@@ -105,7 +177,7 @@ Public Class POPUP_LCN_PRODUCTION_DRUG_GROUP2
         Dim sw As New StringWriter()
         Dim hw As New HtmlTextWriter(sw)
         ' Me.Page.RenderControl(hw)
-        UC_TABLE_DRUG_GROUP_CHANGE1.Page.RenderControl(hw)
+        UC_TABLE_DRUG_GROUP_CHANGE_V2.Page.RenderControl(hw)
         Dim sr As New StringReader(sw.ToString())
         Dim pdfDoc As New Document(PageSize.A4, 10.0F, 10.0F, 100.0F, 0.0F)
         Dim htmlparser As New HTMLWorker(pdfDoc)
@@ -162,10 +234,15 @@ Public Class POPUP_LCN_PRODUCTION_DRUG_GROUP2
     End Sub
 
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
-        Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP2.aspx?ida=" & Request.QueryString("ida"))
+        If Request.QueryString("edit") <> "" Then
+            Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP_HEAD.aspx?ida=" & Request.QueryString("ida") & "&edit=1")
+        Else
+            Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP_HEAD.aspx?ida=" & Request.QueryString("ida"))
+        End If
+
     End Sub
 
-    Private Sub POPUP_LCN_PRODUCTION_DRUG_GROUP2_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
+    Private Sub POPUP_LCN_PRODUCTION_DRUG_GROUP3_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
 
     End Sub
 End Class

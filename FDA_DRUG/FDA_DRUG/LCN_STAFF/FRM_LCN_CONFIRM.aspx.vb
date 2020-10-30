@@ -1409,6 +1409,67 @@ Public Class WebForm35
         class_xml.syslctaddr_thaaddr = dao.fields.syslctaddr_thaaddr
         class_xml.syslctaddr_thasoi = dao.fields.syslctaddr_thasoi
 
+        Dim dao_g1 As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
+        dao_g1.GetDataby_FKIDA(_IDA)
+        Dim drug_g1 As String = ""
+        Dim drug_g2 As String = ""
+        Dim drug_g3 As String = ""
+
+        Try
+            If dao_g1.fields.DRUG_TYPE IsNot Nothing Then
+                drug_g1 = "ยาแผนปัจจุบันสำหรับมนุษย์"
+            Else
+                drug_g1 = ""
+            End If
+        Catch ex As Exception
+
+        End Try
+        Try
+            If dao_g1.fields.DRUG_TYPE2 IsNot Nothing Then
+                drug_g2 = "ยาแผนปัจจุบันสำหรับสัตว์"
+            Else
+                drug_g2 = ""
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            If dao_g1.fields.DRUG_TYPE23 IsNot Nothing Then
+                drug_g3 = "ยาแผนปัจจุบันสำหรับทำการวิจัยทางคลินิกในมนุษย์ ระยะที่ ๑,๒,๓"
+            Else
+                drug_g3 = ""
+            End If
+        Catch ex As Exception
+
+        End Try
+        If drug_g1 <> "" Then
+            class_xml.Drug_Type1 = drug_g1
+            If drug_g2 <> "" Then
+                class_xml.Drug_Type2 = drug_g2
+                If drug_g3 <> "" Then
+                    class_xml.Drug_Type3 = drug_g3
+                End If
+            Else
+                If drug_g3 <> "" Then
+                    class_xml.Drug_Type2 = drug_g3
+                End If
+            End If
+        Else
+            If drug_g2 <> "" Then
+                class_xml.Drug_Type1 = drug_g2
+                If drug_g3 <> "" Then
+                    class_xml.Drug_Type2 = drug_g3
+                End If
+
+            Else
+                If drug_g3 <> "" Then
+                    class_xml.Drug_Type1 = drug_g3
+                End If
+            End If
+        End If
+
+
         p_dalcn = class_xml
 
 

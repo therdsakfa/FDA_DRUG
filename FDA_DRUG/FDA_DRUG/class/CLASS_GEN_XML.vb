@@ -245,22 +245,6 @@ Namespace CLASS_GEN_XML
             objStreamWriter.Close()
 
         End Sub
-        Public Sub GEN_XML_NORYORMOR3(ByVal PATH As String, ByVal p2 As CLASS_NYM_3_SM)  'ลีมทำ gen xml NYM2
-
-            Dim objStreamWriter As New StreamWriter(PATH)
-            Dim x As New XmlSerializer(p2.GetType)
-            x.Serialize(objStreamWriter, p2)                            'gen file xml
-            objStreamWriter.Close()
-
-        End Sub
-        Public Sub GEN_XML_NORYORMOR4(ByVal PATH As String, ByVal p2 As CLASS_NYM_4_SM)  'ลีมทำ gen xml NYM2
-
-            Dim objStreamWriter As New StreamWriter(PATH)
-            Dim x As New XmlSerializer(p2.GetType)
-            x.Serialize(objStreamWriter, p2)                            'gen file xml
-            objStreamWriter.Close()
-
-        End Sub
         Public Sub GEN_DRRGT_SUBSTITUTE(ByVal PATH As String, ByVal p2 As CLASS_DRRGT_SUB)
 
             Dim objStreamWriter As New StreamWriter(PATH)
@@ -2163,6 +2147,7 @@ Namespace CLASS_GEN_XML
             Dim bao_show As New BAO_SHOW
             class_xml.DT_SHOW.DT1 = bao.SP_DRUG_PRODUCT_ID(product_id_ida) 'บัญชีรายการยา
             class_xml.DT_SHOW.DT2 = bao.SP_DALCN_BY_IDA_FOR_NYM(product_id_LCN_IDA) 'เลขที่ใบอนุญาต
+
             'class_xml.DT_SHOW.DT3 = bao.SP_PRODUCT_ID_CHEMICAL_FK_IDA(product_id_ida) 'ตัวยาสำคัญ
             class_xml.DT_SHOW.DT3 = bao.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(product_id_ida) 'ตัวยาสำคัญ
             class_xml.DT_SHOW.DT4 = bao.SP_DRSAMP_BY_PRODUCT_ID_FOR_NYM(product_id_ida) 'ขนาดบรรจุ

@@ -77,7 +77,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         Dim dao As New DAO_DRUG.ClsDBdrsamp
         dao.GetDataby_IDA(IDA)
 
-        If dao.fields.STATUS_ID >= 8 Then
+        If dao.fields.STATUS_ID = 8 Or dao.fields.STATUS_ID = 7 Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
             btn_confirm.CssClass = "btn-danger btn-lg"
@@ -195,7 +195,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         Dim RCVNO As Integer
 
         dao.GetDataby_IDA(_IDA)
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        ''dao_up.GetDataby_IDA(dao.fields.TR_ID)
 
         Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
 
@@ -214,12 +214,12 @@ Public Class FRM_DS_STAFF_CONFIRM
         dao_date.insert()
         Dim ws As New AUTHEN_LOG.Authentication
 
-        If STATUS_ID = 3 Then 'รับคำขอ
+        If STATUS_ID = 10 Then 'รับคำขอ
             dao.fields.STATUS_ID = STATUS_ID
             RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
             dao.fields.rcvno = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)
             dao.fields.RCVNO_DISPLAY = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
-            dao.fields.rcvr_id = _CLS.CITIZEN_ID
+            dao.fields.CITIZEN_RCV = _CLS.CITIZEN_ID
             Try
                 dao.fields.rcvdate = Date.Now 'CDate(txt_app_date.Text)
             Catch ex As Exception
@@ -231,8 +231,9 @@ Public Class FRM_DS_STAFF_CONFIRM
             'Response.Redirect("FRM_DS_STAFF_RCV_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
             '--------------------------------
             alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.rcvno)
-            'ElseIf STATUS_ID = 6 Then 'เสนอลงนาม
-            '    Response.Redirect("FRM_DS_STAFF_CONSIDER_DATE.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
+        ElseIf STATUS_ID = 9 Then 'เสนอลงนาม
+            'dao.fields.STATUS_ID = STATUS_ID
+            Response.Redirect("FRM_DS_STAFF_CONSIDER_DATE.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
         ElseIf STATUS_ID = 8 Then 'อนุมัติ
 
             'dao.fields.STATUS_ID = STATUS_ID
@@ -290,8 +291,8 @@ Public Class FRM_DS_STAFF_CONFIRM
         If dao.fields.STATUS_ID < 4 Then
             int_group_ddl = 0
         ElseIf dao.fields.STATUS_ID = 4 Then
-            int_group_ddl = 33
-        ElseIf dao.fields.STATUS_ID = 6 Then
+            int_group_ddl = 55
+        ElseIf dao.fields.STATUS_ID = 9 Or dao.fields.STATUS_ID = 10 Then
             int_group_ddl = 33
         End If
 
@@ -637,10 +638,19 @@ Public Class FRM_DS_STAFF_CONFIRM
         Dim cls_regis As New CLASS_GEN_XML.drsamp2(_CLS.CITIZEN_ID, dao_lcn.fields.lcnsid, dao_lcn.fields.lcnno, dao_lcn.fields.lcntpcd, dao_lcn.fields.pvncd, dao_lcn.fields.IDA, dao_pid.fields.IDA, dao_pid.fields.FK_IDA, dao_pid.fields.IDA, dao.fields.TR_ID, dao.fields.phr_fk)
 
         Dim class_xml As New CLASS_DRSAMP
+        ''class_xml.drsamp = dao.fields
+
         class_xml = cls_regis.gen_xml()
+
+        If dao_lcn.fields.lcntpcd = "ผย1" Then
+            dao_pid.fields.DALCNTYPE_CD = 1
+        ElseIf dao_lcn.fields.lcntpcd = "นย1" Then
+            dao_pid.fields.DALCNTYPE_CD = 2
+        End If
+
         Try
             'cls_xml.DT_MASTER.DT18 = bao_master.SP_DALCN_PHR_BY_FK_IDA(dao_dalcn.fields.IDA) 'ผู้มีหน้าที่ปฏิบัติการ
-            For Each dr As DataRow In BAO_MASTER.SP_DALCN_PHR_BY_FK_IDA(dao_lcn.fields.IDA).Rows
+            For Each dr As DataRow In bao_master.SP_DALCN_PHR_BY_FK_IDA(dao_lcn.fields.IDA).Rows
                 If dr("IDA") = dao.fields.phr_fk Then
                     class_xml.phr_fullname = dr("PHR_FULLNAME")
                     class_xml.phr_nm = dr("FULLNAMEs")
@@ -652,11 +662,13 @@ Public Class FRM_DS_STAFF_CONFIRM
         Try
             Dim rcvdate As Date = dao.fields.rcvdate
             dao.fields.rcvdate = DateAdd(DateInterval.Year, 543, rcvdate)
+            class_xml.RCVDATE = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
             Dim write_date As Date = dao.fields.WRITE_DATE
             Dim app_date As Date = dao.fields.appdate
             dao.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
             class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, -543, write_date), "dd MMM yyyy")
             dao.fields.appdate = DateAdd(DateInterval.Year, 543, app_date)
+            class_xml.APPDATE = Format(DateAdd(DateInterval.Year, -543, app_date), "dd MMMM yyyy")
             class_xml.drsamp = dao.fields
             class_xml.regis = dao_pid.fields
         Catch ex As Exception
@@ -674,7 +686,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         Dim lcntype As String = dao.fields.lcntpcd
 
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
-        dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(dao_tr.fields.PROCESS_ID, lcntype, statusId, HiddenField2.Value, _group:=0)
+        dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(dao_tr.fields.PROCESS_ID, lcntype, statusId, HiddenField2.Value, _group)
 
         Dim paths As String = bao._PATH_DEFAULT
 
@@ -711,6 +723,14 @@ Public Class FRM_DS_STAFF_CONFIRM
         Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)
 
         LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, dao_tr.fields.PROCESS_ID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+        Try
+            Dim url As String = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
+            'Dim ws As New WS_QR_CODE.WS_QR_CODE
+            'class_xml.QR_CODE = ws.GetQRImgByte(url)
+            class_xml.QR_CODE = QR_CODE_IMG(url)
+        Catch ex As Exception
+
+        End Try
 
         lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
         hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่

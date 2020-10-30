@@ -110,9 +110,19 @@
 
     Private Sub btn_next_Click(sender As Object, e As EventArgs) Handles btn_next.Click
         If Request.QueryString("edit") <> "" Then
-            Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP2.aspx?ida=" & Request.QueryString("ida") & "&h=1&edit=1")
+            If Request.QueryString("n") <> "" Then
+                Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP3.aspx?ida=" & Request.QueryString("ida") & "&h=1&edit=1&n=1")
+            Else
+                Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP2.aspx?ida=" & Request.QueryString("ida") & "&h=1&edit=1")
+            End If
+
         Else
-            Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP2.aspx?ida=" & Request.QueryString("ida") & "&h=1")
+            If Request.QueryString("n") <> "" Then
+                Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP3.aspx?ida=" & Request.QueryString("ida") & "&h=1&n=1")
+            Else
+                Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP2.aspx?ida=" & Request.QueryString("ida") & "&h=1")
+            End If
+
         End If
 
     End Sub

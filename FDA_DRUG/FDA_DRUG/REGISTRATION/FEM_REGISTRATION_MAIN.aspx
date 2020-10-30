@@ -137,9 +137,7 @@
 
             
 
-            <asp:Button ID="btn_download" runat="server" Text="ดาวน์โหลดคำขอ" Width="170px" CssClass="btn-lg " />
             &nbsp;&nbsp;
-       <asp:Button ID="btn_upload" runat="server" Text="อัพโหลดคำขอ" Width="170px" CssClass="btn-lg " />
             <asp:Button ID="btn_insert" runat="server" Text="สร้างชื่อตำรับ" Width="170px" CssClass="btn-lg " />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btn_reload" runat="server" Text="reload" Style="display: none" />

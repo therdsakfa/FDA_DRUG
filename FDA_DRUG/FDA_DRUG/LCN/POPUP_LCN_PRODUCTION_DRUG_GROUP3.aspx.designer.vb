@@ -11,89 +11,71 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FEM_REGISTRATION_MAIN
-
+Partial Public Class POPUP_LCN_PRODUCTION_DRUG_GROUP3
+    
     '''<summary>
-    '''lbl_Header_txt control.
+    '''ss2s control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_Header_txt As Global.System.Web.UI.WebControls.Label
-
+    Protected WithEvents ss2s As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
     '''<summary>
-    '''UC_Information control.
+    '''pnlPerson control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents UC_Information As Global.FDA_DRUG.UC_Information
-
+    Protected WithEvents pnlPerson As Global.System.Web.UI.WebControls.Panel
+    
     '''<summary>
-    '''ddl_product_id control.
+    '''rdl_drug_type control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddl_product_id As Global.System.Web.UI.WebControls.DropDownList
-
+    Protected WithEvents rdl_drug_type As Global.System.Web.UI.WebControls.RadioButtonList
+    
     '''<summary>
-    '''lbl_sel_tamrab control.
+    '''cb_drug_type1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_sel_tamrab As Global.System.Web.UI.WebControls.Label
-
+    Protected WithEvents cb_drug_type1 As Global.System.Web.UI.WebControls.CheckBox
+    
     '''<summary>
-    '''ddl_tamrab control.
+    '''cb_drug_type2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddl_tamrab As Global.System.Web.UI.WebControls.DropDownList
-
+    Protected WithEvents cb_drug_type2 As Global.System.Web.UI.WebControls.CheckBox
+    
     '''<summary>
-    '''btn_insert control.
+    '''cb_drug_type3 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_insert As Global.System.Web.UI.WebControls.Button
-
+    Protected WithEvents cb_drug_type3 As Global.System.Web.UI.WebControls.CheckBox
+    
     '''<summary>
-    '''btn_reload control.
+    '''UC_TABLE_DRUG_GROUP_CHANGE_V2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Button1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Rg_regist control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Rg_regist As Global.Telerik.Web.UI.RadGrid
-
+    Protected WithEvents UC_TABLE_DRUG_GROUP_CHANGE_V2 As Global.FDA_DRUG.UC_TABLE_DRUG_GROUP_CHANGE_V2
+    
     '''<summary>
     '''btn_back control.
     '''</summary>
@@ -102,13 +84,31 @@ Partial Public Class FEM_REGISTRATION_MAIN
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_back As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
-    '''lbl_head1 control.
+    '''btn_save control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_head1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btn_goto control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_goto As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btn_Export control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_Export As Global.System.Web.UI.WebControls.Button
 End Class

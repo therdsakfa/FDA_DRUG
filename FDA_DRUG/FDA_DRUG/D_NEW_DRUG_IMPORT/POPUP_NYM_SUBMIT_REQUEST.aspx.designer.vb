@@ -41,24 +41,6 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
-    '''_edit control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents _edit As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''remark_edit control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents remark_edit As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''btn_confirm control.
     '''</summary>
     '''<remarks>

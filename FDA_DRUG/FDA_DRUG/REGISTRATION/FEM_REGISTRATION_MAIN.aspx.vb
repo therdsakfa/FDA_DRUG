@@ -40,7 +40,7 @@ Public Class FEM_REGISTRATION_MAIN
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('ระบบตรวจพบว่าท่านเปิดการใช้งานหลายหน้าจอ จะทำการออกจากระบบโดยอัตโนมัติ');window.location.href = 'https://privus.fda.moph.go.th';", True)
             End If
         End If
-       
+
         If Not IsPostBack() Then
             bind_ddl_product()
             bind_ddl()
@@ -49,8 +49,8 @@ Public Class FEM_REGISTRATION_MAIN
                 lbl_sel_tamrab.Style.Add("display", "block")
                 ddl_tamrab.Style.Add("display", "block")
 
-                btn_download.Visible = False
-                btn_upload.Visible = False
+                'btn_download.Visible = False
+                'btn_upload.Visible = False
             Else
                 lbl_sel_tamrab.Style.Add("display", "none")
                 ddl_tamrab.Style.Add("display", "none")
@@ -60,7 +60,7 @@ Public Class FEM_REGISTRATION_MAIN
             Catch ex As Exception
 
             End Try
-            
+
         End If
 
     End Sub
@@ -130,23 +130,23 @@ Public Class FEM_REGISTRATION_MAIN
         'GV_data.DataBind()
     End Sub
 
-    Protected Sub btn_download_Click(sender As Object, e As EventArgs) Handles btn_download.Click
-        If Request.QueryString("tt") = "" Then
-            Bind_PDF()
-        Else
-            If ddl_tamrab.SelectedValue <> "0" Then
-                Bind_PDF()
-            Else
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกชื่อตำรับยา');", True)
-            End If
-        End If
+    'Protected Sub btn_download_Click(sender As Object, e As EventArgs) Handles btn_download.Click
+    '    If Request.QueryString("tt") = "" Then
+    '        Bind_PDF()
+    '    Else
+    '        If ddl_tamrab.SelectedValue <> "0" Then
+    '            Bind_PDF()
+    '        Else
+    '            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกชื่อตำรับยา');", True)
+    '        End If
+    '    End If
 
-        'If _process = 9 Then
-        '    Bind_PDF("PDF_REGISTRATION.pdf")
-        'ElseIf _process = 19 Then
-        '    Bind_PDF("PDF_REGISTRATION_ANIMAL.pdf")
-        'End If
-    End Sub
+    '    'If _process = 9 Then
+    '    '    Bind_PDF("PDF_REGISTRATION.pdf")
+    '    'ElseIf _process = 19 Then
+    '    '    Bind_PDF("PDF_REGISTRATION_ANIMAL.pdf")
+    '    'End If
+    'End Sub
 
 
     Private Sub Bind_PDF()
@@ -198,7 +198,7 @@ Public Class FEM_REGISTRATION_MAIN
         End Try
         Dim cls As New CLASS_GEN_XML.DRUG_REGISTRATION(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID_CUSTOMER, dao_lcn.fields.lcnno, _r_process, dao_lcn.fields.IDA)
         Dim cls_xml As New CLASS_REGISTRATION
-        
+
 
 
         cls_xml = cls.gen_xml()
@@ -394,7 +394,7 @@ Public Class FEM_REGISTRATION_MAIN
 
             If e.CommandName = "_sel" Then
                 dao.GetDataby_IDA(str_ID)
-                Dim tr_id As String= 0
+                Dim tr_id As String = 0
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception
@@ -494,7 +494,7 @@ Public Class FEM_REGISTRATION_MAIN
 
             If count_chem > 0 And count_pro > 0 Then
                 btn_Select.Style.Add("display", "block")
-                
+
             End If
 
             If Request.QueryString("tt") <> "" Then
@@ -510,7 +510,7 @@ Public Class FEM_REGISTRATION_MAIN
             End If
             Try
                 'dao.GetDataby_IDA(IDA)
-               
+
             Catch ex As Exception
 
             End Try
