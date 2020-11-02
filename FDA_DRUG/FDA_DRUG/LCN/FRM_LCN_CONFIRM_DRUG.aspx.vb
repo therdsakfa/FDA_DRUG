@@ -646,7 +646,14 @@ Public Class FRM_LCN_CONFIRM_DRUG
         'Next
         'class_xml.DT_MASTER.DT18 = DT18
 
-        class_xml.DT_SHOW.DT19 = bao_show.SP_DRUG_GROUP_LCN(_IDA)
+        Dim tt As Integer = 0
+        If dao.fields.lcntpcd.Contains("ผ") Then
+            tt = 1
+        Else
+            tt = 2
+        End If
+        class_xml.DT_SHOW.DT19 = bao_show.SP_DRUG_GROUP_LCN_HERB(_IDA, tt)
+
 
         class_xml.DT_MASTER.DT24 = bao_master.SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_BY_IDA(_IDA)
 
