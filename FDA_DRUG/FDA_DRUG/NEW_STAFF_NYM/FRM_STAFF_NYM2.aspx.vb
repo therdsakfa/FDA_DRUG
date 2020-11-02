@@ -83,6 +83,16 @@ Public Class FRM_STAFF_NYM2
                 End Try
 
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM2_ida & "&process= " & _process & "&DL=" & _DL & "');", True)
+            ElseIf e.CommandName = "_edit" Then
+                dao.GetDataby_IDA(NYM2_ida)
+                Dim _DL As String = 0
+                Try
+                    _DL = dao.fields.DL
+                Catch ex As Exception
+
+                End Try
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & NYM2_ida & "&process= " & _process & "&DL=" & _DL & " &edit=" & 1 & "');", True)
+
             End If
         End If
     End Sub
@@ -103,10 +113,10 @@ Public Class FRM_STAFF_NYM2
                 End If
             Catch ex As Exception
             End Try
-            'Dim url As String = "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & IDA & "&process=" & _process
+            'Dim url As String = "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & IDA & "&process=" & _process & "&edit=" & 1
             'btn_edit.Attributes.Add("OnClick", "Popups2('" & url & "'); return false;")
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & IDA & "&process= " & _process & "&DL=" & _DL & "');", True)
-        End If
+                'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & IDA & "&process= " & _process & "&DL=" & _DL & "');", True)
+            End If
     End Sub
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
         Dim process_id As String
