@@ -149,7 +149,7 @@
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
-                           CommandName="_edit" Text="แก้ไขการเสนอลงนาม">
+                           CommandName="_edit" Text="แก้ไข">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
                    </Columns>

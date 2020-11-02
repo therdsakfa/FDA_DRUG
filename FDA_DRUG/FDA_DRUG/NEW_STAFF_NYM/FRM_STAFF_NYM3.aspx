@@ -123,6 +123,9 @@
                        <telerik:GridBoundColumn DataField="NYM3_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM3_IDA column" HeaderText="IDA"
                            SortExpression="NYM3_IDA" UniqueName="NYM3_IDA" Display="false">
                        </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
+                        HeaderText="เลขIDAของDL" SortExpression="DL" UniqueName="DL" Display="false">
+                    </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="PROCESS_ID" DataType="System.Int32" FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                            SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
                        </telerik:GridBoundColumn>
@@ -149,7 +152,7 @@
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
-                           CommandName="_edit" Text="แก้ไขการเสนอลงนาม">
+                           CommandName="_edit" Text="แก้ไข">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
                    </Columns>
