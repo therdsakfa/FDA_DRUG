@@ -68,142 +68,29 @@
             กรุณาเลือกไฟล์ที่อยู่ของpdf หรือไฟล์อะไรก็ได้ 
         </h3>
 
-         <table class="table"> <tr><td style="width:15%;">   เอกสารยืนยันการส่งคืนต้นทางหรือเอกสารยืนยันการบริจาค</td><td>   <asp:FileUpload ID="FileUpload1" runat="server" CssClass="btn-default" />  </td></tr>
+      <!--   <table class="table"> <tr><td style="width:15%;">   เอกสารยืนยันการส่งคืนต้นทางหรือเอกสารยืนยันการบริจาค</td><td>   <asp:FileUpload ID="FileUpload1" runat="server" CssClass="btn-default" />  </td></tr> -->
                                
              <tr><td colspan="2">
                    <!-- นยม.3 --> 
                  <asp:Panel ID="Panel1028" runat="server" style="display:none;">
                      <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG1" runat="server" />
+                 </asp:Panel>
+                   <!-- นยม.4 --> 
+                 <asp:Panel ID="Panel1029" runat="server" style="display:none;">
+
                      <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG2" runat="server" />
-                     <%--<uc1:UC_ATTACH_DRUG ID="uc101_3" runat="server" />--%>
                      <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG3" runat="server" />
-                     <%--<uc1:UC_ATTACH_DRUG ID="uc101_5" runat="server" />--%>
                      <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG4" runat="server" />
                      <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG5" runat="server" />
                      <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG6" runat="server" />
                  </asp:Panel>
-                   <!-- นยม.4 --> 
-                 <asp:Panel ID="Panel1029" runat="server" style="display:none;">
-                     <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG7" runat="server" />
-                     <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG8" runat="server" />
-                     <%--<uc1:UC_ATTACH_DRUG ID="uc101_3" runat="server" />--%>
-                     <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG9" runat="server" />
-                     <%--<uc1:UC_ATTACH_DRUG ID="uc101_5" runat="server" />--%>
-                     <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG10" runat="server" />
-                     <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG11" runat="server" />
-                     <uc1:UC_ATTACH_DRUG ID="UC_ATTACH_DRUG12" runat="server" />
-                 </asp:Panel>
-                 <!-- ขย.1 --> 
-                 <asp:Panel ID="Panel101" runat="server" style="display:none;">
-                     <uc1:UC_ATTACH_DRUG ID="uc101_1" runat="server" />
-                     <uc1:UC_ATTACH_DRUG ID="uc101_2" runat="server" />
-                     <%--<uc1:UC_ATTACH_DRUG ID="uc101_3" runat="server" />--%>
-                     <uc1:UC_ATTACH_DRUG ID="uc101_4" runat="server" />
-                     <%--<uc1:UC_ATTACH_DRUG ID="uc101_5" runat="server" />--%>
-                     <uc1:UC_ATTACH_DRUG ID="uc101_6" runat="server" />
-                     <uc1:UC_ATTACH_DRUG ID="uc101_7" runat="server" />
-                     <uc1:UC_ATTACH_DRUG ID="uc101_8" runat="server" />
-
-                 </asp:Panel>
-
-                 <!-- ขย.2 -->
-                 <asp:Panel ID="Panel102" runat="server" style="display:none;">
-                     <uc1:UC_ATTACH_DRUG ID="uc102_1" runat="server" />
-                     <uc1:UC_ATTACH_DRUG ID="uc102_2" runat="server" />
-                     <%--<uc1:UC_ATTACH_DRUG ID="uc102_3" runat="server" />--%>
-                     <uc1:UC_ATTACH_DRUG ID="uc102_4" runat="server" />
-                     <%--<uc1:UC_ATTACH_DRUG ID="uc102_5" runat="server" />--%>
-                     <uc1:UC_ATTACH_DRUG ID="uc102_6" runat="server" />
-                     <uc1:UC_ATTACH_DRUG ID="uc102_7" runat="server" />
-                     <uc1:UC_ATTACH_DRUG ID="uc102_8" runat="server" />
-                 </asp:Panel>
-
-                 <!-- ขย.3 -->
-                 <asp:Panel ID="Panel103" runat="server" style="display:none;">
-                     <uc1:UC_ATTACH_DRUG ID="uc103_1" runat="server" />
-                     <uc1:UC_ATTACH_DRUG ID="uc103_2" runat="server" />
-                     <%--<uc1:UC_ATTACH_DRUG ID="uc103_3" runat="server" />--%>
-                     <uc1:UC_ATTACH_DRUG ID="uc103_4" runat="server" />
-                     <%--<uc1:UC_ATTACH_DRUG ID="uc103_5" runat="server" />--%>
-                     <uc1:UC_ATTACH_DRUG ID="uc103_6" runat="server" />
-                     <uc1:UC_ATTACH_DRUG ID="uc103_7" runat="server" />
-                     <uc1:UC_ATTACH_DRUG ID="uc103_8" runat="server" />
-                 </asp:Panel>
-
-                 <!-- ขย.4 -->
-                 <asp:Panel ID="Panel104" runat="server" style="display:none;">
-                     <uc2:UC_ATTACH_DRUG runat="server" ID="uc104_1" />
-                     <uc2:UC_ATTACH_DRUG runat="server" ID="uc104_2" />
-                     <%--<uc2:UC_ATTACH_DRUG runat="server" ID="uc104_3" />--%>
-                     <uc2:UC_ATTACH_DRUG runat="server" ID="uc104_4" />
-                     <%--<uc2:UC_ATTACH_DRUG runat="server" ID="uc104_5" />--%>
-                     <uc2:UC_ATTACH_DRUG runat="server" ID="uc104_6" />
-                     <uc2:UC_ATTACH_DRUG runat="server" ID="uc104_7" />
-                     <uc2:UC_ATTACH_DRUG runat="server" ID="uc104_8" />
-                 </asp:Panel>
-
-                 <!-- นย.1 -->
-                 <asp:Panel ID="Panel105" runat="server" style="display:none;">
-                     <uc2:UC_ATTACH_DRUG ID="uc105_1" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc105_2" runat="server" />
-                     <%--<uc2:UC_ATTACH_DRUG ID="uc105_3" runat="server" />--%>
-                     <uc2:UC_ATTACH_DRUG ID="uc105_4" runat="server" />
-                     <%--<uc2:UC_ATTACH_DRUG ID="uc105_5" runat="server" />--%>
-                     <uc2:UC_ATTACH_DRUG ID="uc105_6" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc105_7" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc105_8" runat="server" />
-                 </asp:Panel>
-
-                 <!-- ผย.1 -->
-                 <asp:Panel ID="Panel106" runat="server" style="display:none;">
-                     <uc2:UC_ATTACH_DRUG ID="uc106_1" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc106_2" runat="server" />
-                     <%--<uc2:UC_ATTACH_DRUG ID="uc106_3" runat="server" />--%>
-                     <uc2:UC_ATTACH_DRUG ID="uc106_4" runat="server" />
-                     <%--<uc2:UC_ATTACH_DRUG ID="uc106_5" runat="server" />--%>
-                     <uc2:UC_ATTACH_DRUG ID="uc106_6" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc106_7" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc106_8" runat="server" />
-
-                 </asp:Panel>
-
-                 <!-- ขยบ. -->
-                 <asp:Panel ID="Panel107" runat="server" style="display:none;">
-                     <uc2:UC_ATTACH_DRUG ID="uc107_1" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc107_2" runat="server" />
-                     <%--<uc2:UC_ATTACH_DRUG ID="uc107_3" runat="server" />--%>
-                     <uc2:UC_ATTACH_DRUG ID="uc107_4" runat="server" />
-                     <%--<uc2:UC_ATTACH_DRUG ID="uc107_5" runat="server" />--%>
-                     <uc2:UC_ATTACH_DRUG ID="uc107_6" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc107_7" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc107_8" runat="server" />
-                 </asp:Panel>
-
-                 <!-- นยบ. -->
-                 <asp:Panel ID="Panel108" runat="server" style="display:none;">
-                     <uc2:UC_ATTACH_DRUG ID="uc108_1" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc108_2" runat="server" />
-                     <%--<uc2:UC_ATTACH_DRUG ID="uc108_3" runat="server" />--%>
-                     <uc2:UC_ATTACH_DRUG ID="uc108_4" runat="server" />
-                     <%--<uc2:UC_ATTACH_DRUG ID="uc108_5" runat="server" />--%>
-                     <uc2:UC_ATTACH_DRUG ID="uc108_6" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc108_7" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc108_8" runat="server" />
-                 </asp:Panel>
-
-                 <!-- ผยบ. -->
-                 <asp:Panel ID="Panel109" runat="server" style="display:none;">
-                     <uc2:UC_ATTACH_DRUG ID="uc109_1" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc109_2" runat="server" />
-                     <%--<uc2:UC_ATTACH_DRUG ID="uc109_3" runat="server" />--%>
-                     <uc2:UC_ATTACH_DRUG ID="uc109_4" runat="server" />
-                     <%--<uc2:UC_ATTACH_DRUG ID="uc109_5" runat="server" />--%>
-                     <uc2:UC_ATTACH_DRUG ID="uc109_6" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc109_7" runat="server" />
-                     <uc2:UC_ATTACH_DRUG ID="uc109_8" runat="server" />
-                 </asp:Panel>
+                 
                  </td></tr>
+        
              <tr><td colspan="2">&nbsp;</td></tr>
+         <br>
+         <br>
+         <br>
              <tr><td colspan="2"> <asp:Button ID="btn_Upload" runat="server" Text="อัพโหลด"   CssClass=" btn-lg" />
                  &nbsp;
                  <asp:Button ID="Button1" runat="server" Text="ปิด"  CssClass=" btn-lg" Width="150px"  />
