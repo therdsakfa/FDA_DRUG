@@ -52,11 +52,11 @@ Public Class FRM_STAFFNYM_CONFIRM
             '    'Else
             '    '    BindData_PDF()
             'End If
-            ''''''''''''''''''''''''''''''''''''''''''''Bind_ddl_Status_staff()
-            '''''''''''''''''''''''''''''''''''''''''''load_fdpdtno()
+            Bind_ddl_Status_staff()
+            load_fdpdtno()
             'UC_GRID_PHARMACIST.load_gv(_IDA)
             ''''''''''''''''''''''''''''''''''''''''''''UC_GRID_ATTACH.loadatteachfromdrugimportupload(_IDA, type)
-            ''''''''''''''''''''''''''''''''''''''''''''set_hide(_IDA)
+            set_hide(_IDA)
 
             'Try
             '    Dim dao As New DAO_DRUG.ClsDBdrsamp
@@ -73,7 +73,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
         End If
         set_lbl()
-        'show_btn(_IDA)
+        show_btn(_IDA)
     End Sub
 
     Sub show_btn(ByVal ID As String)
@@ -829,7 +829,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
 
             ElseIf STATUS_ID = 7 Then                                                                                   'คืนคำขอ ถึงต้องมี remark  หน้า remark เด้งขึ้นมา 
-                Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID)
+                Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID & "&status=" & STATUS_ID)
                 'AddLogStatus(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
                 '_TR_ID = Request.QueryString("TR_ID")
                 '_IDA = Request.QueryString("IDA")
@@ -936,7 +936,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
 
             ElseIf STATUS_ID = 7 Then                                                                                   'คืนคำขอ ถึงต้องมี remark  หน้า remark เด้งขึ้นมา 
-                Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID)
+                Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID & "&status=" & STATUS_ID)
                 'AddLogStatus(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
                 '_TR_ID = Request.QueryString("TR_ID")
                 '_IDA = Request.QueryString("IDA")

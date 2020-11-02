@@ -90,16 +90,32 @@
                         'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
 
                         AddLogStatustodrugimport(9, _process, _CLS.CITIZEN_ID, _IDA)
-                        TextBox2.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        TextBox3.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        TextBox4.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        TextBox5.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        TextBox6.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        Txt_Remark.Text = dao.fields.REMARK
-                        ddl_staff_offer.Text = dao.fields.NYM2_IDENTIFY_STAFF
-                        TextBox1.Text = dao.fields.CONSIDER_DATE
-                        txt_app_date.Text = dao.fields.ESTIMATE_CONSIDER_DATE
+                        'TextBox2.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'TextBox3.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'TextBox4.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'TextBox5.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'TextBox6.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'Txt_Remark.Text = dao.fields.REMARK
+                        'ddl_staff_offer.Text = dao.fields.NYM2_IDENTIFY_STAFF
+                        'TextBox1.Text = dao.fields.CONSIDER_DATE
+                        'txt_app_date.Text = dao.fields.ESTIMATE_CONSIDER_DATE
 
+                        'dao.fields.REMARK = Txt_Remark.Text
+                        'dao.fields.POSITION_CONSIDER_LINE1 = TextBox2.Text
+                        'dao.fields.POSITION_CONSIDER_LINE2 = TextBox3.Text
+                        'dao.fields.POSITION_CONSIDER_LINE3 = TextBox4.Text
+                        'dao.fields.POSITION_CONSIDER_LINE4 = TextBox5.Text
+                        'dao.fields.POSITION_CONSIDER_LINE5 = TextBox6.Text
+                        'dao.fields.STATUS_ID = 9
+                        'dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.Text
+                        'dao.fields.CONSIDER_DATE = TextBox1.Text
+                        'dao.fields.ESTIMATE_CONSIDER_DATE = txt_app_date.Text
+                        'Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+                        'dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA
+                        'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
+                        ' AddLogStatustodrugimport(9, _process, _CLS.CITIZEN_ID, _IDA)        'เปลี่ยน function สีเหลืองให้อยู่ใน drug import 
+                        Dim PROCESS_ID As Integer = dao.fields.NYM_TYPE
+                        Dim CONSIDER_DATE As Date = Date.Now
                         dao.fields.REMARK = Txt_Remark.Text
                         dao.fields.POSITION_CONSIDER_LINE1 = TextBox2.Text
                         dao.fields.POSITION_CONSIDER_LINE2 = TextBox3.Text
@@ -107,9 +123,16 @@
                         dao.fields.POSITION_CONSIDER_LINE4 = TextBox5.Text
                         dao.fields.POSITION_CONSIDER_LINE5 = TextBox6.Text
                         dao.fields.STATUS_ID = 9
-                        dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.Text
-                        dao.fields.CONSIDER_DATE = TextBox1.Text
-                        dao.fields.ESTIMATE_CONSIDER_DATE = txt_app_date.Text
+                        dao.fields.CONSIDER_DATE = CONSIDER_DATE
+
+                        dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
+                        Try
+                            dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
+                        Catch ex As Exception
+
+                        End Try
+                        dao.update()
+                        alert("บันทึกข้อมูลเรียบร้อย")
                     Else
                         Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
                         dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA
@@ -143,17 +166,29 @@
                         'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
 
                         AddLogStatustodrugimport(9, _process, _CLS.CITIZEN_ID, _IDA)
-                        TextBox2.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        TextBox3.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        TextBox4.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        TextBox5.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        TextBox6.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        Txt_Remark.Text = dao.fields.REMARK
-                        ddl_staff_offer.Text = dao.fields.NYM2_IDENTIFY_STAFF
-                        TextBox1.Text = dao.fields.CONSIDER_DATE
-                        txt_app_date.Text = dao.fields.ESTIMATE_CONSIDER_DATE
+                        'TextBox2.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'TextBox3.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'TextBox4.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'TextBox5.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'TextBox6.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'Txt_Remark.Text = dao.fields.REMARK
+                        'ddl_staff_offer.Text = dao.fields.NYM2_IDENTIFY_STAFF
+                        'TextBox1.Text = dao.fields.CONSIDER_DATE
+                        'txt_app_date.Text = dao.fields.ESTIMATE_CONSIDER_DATE
 
 
+                        'dao.fields.REMARK = Txt_Remark.Text
+                        'dao.fields.POSITION_CONSIDER_LINE1 = TextBox2.Text
+                        'dao.fields.POSITION_CONSIDER_LINE2 = TextBox3.Text
+                        'dao.fields.POSITION_CONSIDER_LINE3 = TextBox4.Text
+                        'dao.fields.POSITION_CONSIDER_LINE4 = TextBox5.Text
+                        'dao.fields.POSITION_CONSIDER_LINE5 = TextBox6.Text
+                        'dao.fields.STATUS_ID = 9
+                        'dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.Text
+                        'dao.fields.CONSIDER_DATE = TextBox1.Text
+                        'dao.fields.ESTIMATE_CONSIDER_DATE = txt_app_date.Text
+                        Dim PROCESS_ID As Integer = dao.fields.NYM_TYPE
+                        Dim CONSIDER_DATE As Date = Date.Now
                         dao.fields.REMARK = Txt_Remark.Text
                         dao.fields.POSITION_CONSIDER_LINE1 = TextBox2.Text
                         dao.fields.POSITION_CONSIDER_LINE2 = TextBox3.Text
@@ -161,9 +196,16 @@
                         dao.fields.POSITION_CONSIDER_LINE4 = TextBox5.Text
                         dao.fields.POSITION_CONSIDER_LINE5 = TextBox6.Text
                         dao.fields.STATUS_ID = 9
-                        dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.Text
-                        dao.fields.CONSIDER_DATE = TextBox1.Text
-                        dao.fields.ESTIMATE_CONSIDER_DATE = txt_app_date.Text
+                        dao.fields.CONSIDER_DATE = CONSIDER_DATE
+
+                        dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
+                        Try
+                            dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
+                        Catch ex As Exception
+
+                        End Try
+                        dao.update()
+                        alert("บันทึกข้อมูลเรียบร้อย")
                     Else
                         Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
                         dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA
@@ -205,17 +247,29 @@
                         'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
 
                         AddLogStatustodrugimport(9, _process, _CLS.CITIZEN_ID, _IDA)
-                        TextBox2.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        TextBox3.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        TextBox4.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        TextBox5.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        TextBox6.Text = dao.fields.POSITION_CONSIDER_LINE1
-                        Txt_Remark.Text = dao.fields.REMARK
-                        ddl_staff_offer.Text = dao.fields.NYM2_IDENTIFY_STAFF
-                        TextBox1.Text = dao.fields.CONSIDER_DATE
-                        txt_app_date.Text = dao.fields.ESTIMATE_CONSIDER_DATE
+                        'TextBox2.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'TextBox3.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'TextBox4.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'TextBox5.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'TextBox6.Text = dao.fields.POSITION_CONSIDER_LINE1
+                        'Txt_Remark.Text = dao.fields.REMARK
+                        'ddl_staff_offer.Text = dao.fields.NYM2_IDENTIFY_STAFF
+                        'TextBox1.Text = dao.fields.CONSIDER_DATE
+                        'txt_app_date.Text = dao.fields.ESTIMATE_CONSIDER_DATE
 
 
+                        'dao.fields.REMARK = Txt_Remark.Text
+                        'dao.fields.POSITION_CONSIDER_LINE1 = TextBox2.Text
+                        'dao.fields.POSITION_CONSIDER_LINE2 = TextBox3.Text
+                        'dao.fields.POSITION_CONSIDER_LINE3 = TextBox4.Text
+                        'dao.fields.POSITION_CONSIDER_LINE4 = TextBox5.Text
+                        'dao.fields.POSITION_CONSIDER_LINE5 = TextBox6.Text
+                        'dao.fields.STATUS_ID = 9
+                        'dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.Text
+                        'dao.fields.CONSIDER_DATE = TextBox1.Text
+                        'dao.fields.ESTIMATE_CONSIDER_DATE = txt_app_date.Text
+                        Dim PROCESS_ID As Integer = dao.fields.NYM_TYPE
+                        Dim CONSIDER_DATE As Date = Date.Now
                         dao.fields.REMARK = Txt_Remark.Text
                         dao.fields.POSITION_CONSIDER_LINE1 = TextBox2.Text
                         dao.fields.POSITION_CONSIDER_LINE2 = TextBox3.Text
@@ -223,9 +277,16 @@
                         dao.fields.POSITION_CONSIDER_LINE4 = TextBox5.Text
                         dao.fields.POSITION_CONSIDER_LINE5 = TextBox6.Text
                         dao.fields.STATUS_ID = 9
-                        dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.Text
-                        dao.fields.CONSIDER_DATE = TextBox1.Text
-                        dao.fields.ESTIMATE_CONSIDER_DATE = txt_app_date.Text
+                        dao.fields.CONSIDER_DATE = CONSIDER_DATE
+
+                        dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
+                        Try
+                            dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
+                        Catch ex As Exception
+
+                        End Try
+                        dao.update()
+                        alert("บันทึกข้อมูลเรียบร้อย")
                     Else
                         Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
                         dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA

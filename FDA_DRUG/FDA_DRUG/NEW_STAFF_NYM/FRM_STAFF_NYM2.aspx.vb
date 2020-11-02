@@ -91,7 +91,7 @@ Public Class FRM_STAFF_NYM2
                 Catch ex As Exception
 
                 End Try
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & NYM2_ida & "&process= " & _process & "&DL=" & _DL & " &edit=" & 1 & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & NYM2_ida & "&process= " & _process & "&DL=" & _DL & " &edit=" & 0 & "');", True)
 
             End If
         End If
