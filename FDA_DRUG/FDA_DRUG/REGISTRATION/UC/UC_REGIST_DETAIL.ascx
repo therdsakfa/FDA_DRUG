@@ -15,6 +15,9 @@
             </asp:DropDownList>--%>
             <telerik:RadComboBox ID="rcb_dactg" runat="server" filter="Contains"></telerik:RadComboBox>
         </td>
+        <td style="color:red;padding:0px 0px 0px 10px;">
+                  * 
+        </td>
     </tr>
     <tr>
         <td>
@@ -29,7 +32,9 @@
             <telerik:RadComboBox ID="rcb_drclass" runat="server" filter="Contains"></telerik:RadComboBox>
             <%--<asp:DropDownList ID="ddl_drclass" runat="server">
             </asp:DropDownList>--%>
-
+        </td>
+        <td style="color:red;padding:0px 0px 0px 10px;">
+                  * 
         </td>
     </tr>
     <tr>
@@ -39,13 +44,16 @@
             <asp:Label ID="lbl_drdosage" runat="server" Text=""></asp:Label>
 
         </td>
-        <td style="padding:0px 0px 0px 50px;">
-            แก้ไขเป็น</td>
+        <td style="padding: 0px 0px 0px 50px;">
+            แก้ไขเป็น
+        </td>
         <td style="padding:0px 0px 0px 50px;">
             <telerik:RadComboBox ID="rcb_drdosage" runat="server" filter="Contains"></telerik:RadComboBox>
             <%--<asp:DropDownList ID="ddl_drdosage" runat="server">
             </asp:DropDownList>--%>
-
+        </td>
+        <td style="color:red;padding:0px 0px 0px 10px;">
+                  * 
         </td>
     </tr>
     <tr>
@@ -62,7 +70,9 @@
 
             <%--<asp:DropDownList ID="ddl_small_unit" runat="server">
             </asp:DropDownList>--%>
-
+        </td>
+        <td style="color:red;padding:0px 0px 0px 10px;">
+                  * 
         </td>
     </tr>
     <tr>
