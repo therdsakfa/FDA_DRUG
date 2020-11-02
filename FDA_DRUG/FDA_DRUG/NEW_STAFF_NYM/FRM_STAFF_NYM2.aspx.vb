@@ -96,14 +96,14 @@ Public Class FRM_STAFF_NYM2
             dao.GetDataby_IDA(IDA)
             btn_edit.Style.Add("display", "none")
             Try
-                If dao.fields.STATUS_ID = 6 Then
+                If dao.fields.STATUS_ID = 9 Then
                     btn_edit.Style.Add("display", "block")
                 End If
             Catch ex As Exception
 
             End Try
-            Dim url As String = "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & IDA
-            btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
+            Dim url As String = "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & IDA & "&process=" & _process
+            btn_edit.Attributes.Add("OnClick", "Popups2('" & url & "'); return false;")
         End If
     End Sub
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
@@ -141,8 +141,6 @@ Public Class FRM_STAFF_NYM2
         Response.Write("<script type='text/javascript'>alert('" + text + "');</script> ") 'จาวาคำสั่ง Alert
     End Sub
     Protected Sub btn_reload_Click(sender As Object, e As EventArgs) Handles btn_reload.Click
-
         RadGrid1.Rebind()
-
     End Sub
 End Class

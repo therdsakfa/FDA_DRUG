@@ -5,10 +5,15 @@ Public Class FRM_STAFF_NYM31
     Private _CLS As New CLS_SESSION         'public class
     Private _process As String
     Private _type As String
+    Private _DL As String
+    Private _IDA As Integer
     Private _pvncd As Integer
     Sub RunSession()
         Try
             _CLS = Session("CLS")
+            _process = Request.QueryString("process")
+            _DL = Session("DL")
+            _IDA = Session("IDA")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
@@ -70,8 +75,14 @@ Public Class FRM_STAFF_NYM31
 
 
             If e.CommandName = "sel" Then
+                dao.GetDataby_IDA(NYM3_ida)
+                Dim _DL As String = 0
+                Try
+                    _DL = dao.fields.DL
+                Catch ex As Exception
 
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "');", True)
+                End Try
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
             End If
         End If
     End Sub
@@ -80,18 +91,19 @@ Public Class FRM_STAFF_NYM31
             Dim item As GridDataItem
             item = e.Item
             Dim IDA As String = item("NYM3_IDA").Text
+            'Dim DL As String = item("DL").Text
             Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
             dao.GetDataby_IDA(IDA)
             btn_edit.Style.Add("display", "none")
             Try
-                If dao.fields.STATUS_ID = 6 Then
+                If dao.fields.STATUS_ID = 9 Then
                     btn_edit.Style.Add("display", "block")
                 End If
             Catch ex As Exception
 
             End Try
-            Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
+            Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & _IDA & "&DL=" & _DL
             btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
         End If
     End Sub
@@ -129,5 +141,8 @@ Public Class FRM_STAFF_NYM31
     End Sub
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>alert('" + text + "');</script> ") 'จาวาคำสั่ง Alert
+    End Sub
+    Protected Sub btn_reload_Click(sender As Object, e As EventArgs) Handles btn_reload.Click
+        RadGrid1.Rebind()
     End Sub
 End Class

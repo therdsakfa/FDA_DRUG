@@ -70,17 +70,18 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         dao2.GetDataby_IDA(ID)
         dao3.GetDataby_IDA(ID)
         dao4.GetDataby_IDA(ID)
-        If dao2.fields.STATUS_ID <> 1 Then
+
+        If dao2.fields.STATUS_ID <> 1 And _process = 1027 Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
             btn_confirm.CssClass = "btn-danger btn-lg"
             btn_cancel.CssClass = "btn-danger btn-lg"
-        ElseIf dao3.fields.STATUS_ID <> 1 Then
+        ElseIf dao3.fields.STATUS_ID <> 1 And _process = 1028 Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
             btn_confirm.CssClass = "btn-danger btn-lg"
             btn_cancel.CssClass = "btn-danger btn-lg"
-        ElseIf dao4.fields.STATUS_ID <> 1 Then
+        ElseIf dao4.fields.STATUS_ID <> 1 And _process = 1029 Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
             btn_confirm.CssClass = "btn-danger btn-lg"
