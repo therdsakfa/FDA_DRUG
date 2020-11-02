@@ -102,8 +102,8 @@ Public Class FRM_STAFF_NYM2
             Catch ex As Exception
 
             End Try
-            Dim url As String = "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & IDA
-            btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
+            Dim url As String = "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & IDA & "&process=" & _process
+            btn_edit.Attributes.Add("OnClick", "Popups2('" & url & "'); return false;")
         End If
     End Sub
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click

@@ -4,7 +4,8 @@
     Private _IDA As Integer
     Private _CLS As New CLS_SESSION
     Private _status As Integer
-    Public Property _process As String
+    Private _process As Integer
+
     ' Private _type As String
 
     Private Sub runQuery()
