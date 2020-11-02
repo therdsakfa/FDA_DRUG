@@ -20,7 +20,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         End Try
 
         _IDA = Request.QueryString("IDA")
-        ' _ProcessID = Request.QueryString("process")
+        _ProcessID = Request.QueryString("process")
         _TR_ID = Request.QueryString("TR_ID")
         '_YEARS = con_year(Date.Now.Year)
     End Sub
@@ -34,7 +34,7 @@ Public Class FRM_DS_STAFF_CONFIRM
             Bind_ddl_Status_staff()
             load_fdpdtno()
             'UC_GRID_PHARMACIST.load_gv(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
             set_hide(_IDA)
 
             'Try
