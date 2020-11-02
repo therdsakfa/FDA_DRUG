@@ -83,6 +83,16 @@ Public Class FRM_STAFF_NYM31
 
                 End Try
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
+            ElseIf e.CommandName = "_edit" Then
+                dao.GetDataby_IDA(NYM3_ida)
+                Dim _DL As String = 0
+                Try
+                    _DL = dao.fields.DL
+                Catch ex As Exception
+
+                End Try
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & NYM3_ida & "&process= " & _process & "&DL=" & _DL & " &edit=" & 0 & "');", True)
+
             End If
         End If
     End Sub
@@ -103,8 +113,8 @@ Public Class FRM_STAFF_NYM31
             Catch ex As Exception
 
             End Try
-            Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & _IDA & "&DL=" & _DL
-            btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
+            '  Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & _IDA & "&DL=" & _DL
+            ' btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
         End If
     End Sub
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
