@@ -130,15 +130,16 @@ Public Class FRM_REPORT_REGIST
 
                 'If dao_pc.fields.FK_IDA Is Nothing Then
                 '    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกขนาดบรรจุ');</script> ")
-                'ElseIf dao.fields.UNIT_NORMAL = "" Then
-                '    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหน่วยนับตามรูปของแบบยา');</script> ")
-                'ElseIf dao.fields.DRUG_GROUP = "" Then
-                '    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหมวดยา');</script> ")
-                'ElseIf dao.fields.GROUP_TYPE = "" Then
-                '    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกประเภทของยา');</script> ")
-                'ElseIf dao.fields.FK_DOSAGE_FORM = "" Then
-                '    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกรูปแบบของยา');</script> ")
-                'Else
+                If dao.fields.UNIT_NORMAL = "" Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหน่วยนับตามรูปของแบบยา');</script> ")
+                ElseIf dao.fields.DRUG_GROUP = "" Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหมวดยา');</script> ")
+                ElseIf dao.fields.GROUP_TYPE = "" Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกประเภทของยา');</script> ")
+                ElseIf dao.fields.FK_DOSAGE_FORM = "" Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกรูปแบบของยา');</script> ")
+                End If
+
                 Try
                     dao.fields.RCVDATE = Date.Now 'CDate(txt_app_date.Text)
                 Catch ex As Exception

@@ -95,6 +95,11 @@
 
                     Dim CONSIDER_DATE As Date = Date.Now
                     dao.fields.REMARK = Txt_Remark.Text
+                    dao.fields.POSITION_CONSIDER_LINE1 = TextBox2.Text
+                    dao.fields.POSITION_CONSIDER_LINE2 = TextBox3.Text
+                    dao.fields.POSITION_CONSIDER_LINE3 = TextBox4.Text
+                    dao.fields.POSITION_CONSIDER_LINE4 = TextBox5.Text
+                    dao.fields.POSITION_CONSIDER_LINE5 = TextBox6.Text
                     dao.fields.STATUS_ID = 9
                     dao.fields.CONSIDER_DATE = CONSIDER_DATE
 
@@ -123,6 +128,11 @@
 
                     Dim CONSIDER_DATE As Date = Date.Now
                     dao.fields.REMARK = Txt_Remark.Text
+                    dao.fields.POSITION_CONSIDER_LINE1 = TextBox2.Text
+                    dao.fields.POSITION_CONSIDER_LINE2 = TextBox3.Text
+                    dao.fields.POSITION_CONSIDER_LINE3 = TextBox4.Text
+                    dao.fields.POSITION_CONSIDER_LINE4 = TextBox5.Text
+                    dao.fields.POSITION_CONSIDER_LINE5 = TextBox6.Text
                     dao.fields.STATUS_ID = 9
                     dao.fields.CONSIDER_DATE = CONSIDER_DATE
 
@@ -151,6 +161,11 @@
 
                     Dim CONSIDER_DATE As Date = Date.Now
                     dao.fields.REMARK = Txt_Remark.Text
+                    dao.fields.POSITION_CONSIDER_LINE1 = TextBox2.Text
+                    dao.fields.POSITION_CONSIDER_LINE2 = TextBox3.Text
+                    dao.fields.POSITION_CONSIDER_LINE3 = TextBox4.Text
+                    dao.fields.POSITION_CONSIDER_LINE4 = TextBox5.Text
+                    dao.fields.POSITION_CONSIDER_LINE5 = TextBox6.Text
                     dao.fields.STATUS_ID = 9
                     dao.fields.CONSIDER_DATE = CONSIDER_DATE
 

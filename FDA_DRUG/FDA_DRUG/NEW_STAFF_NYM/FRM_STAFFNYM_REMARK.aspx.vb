@@ -3,7 +3,9 @@
     Private _TR_ID As Integer
     Private _IDA As Integer
     Private _CLS As New CLS_SESSION
-    Public Property _process As String
+    Private _status As Integer
+    Private _process As Integer
+
     ' Private _type As String
 
     Private Sub runQuery()
@@ -14,6 +16,7 @@
             _IDA = Request.QueryString("IDA")
             _CLS = Session("CLS")
             _process = Request.QueryString("process")
+            _status = Request.QueryString("status")
             ' _type = "1"
         End If
 
@@ -51,35 +54,76 @@
     '    End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If _process = 1027 Then
-            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-            dao.GetDataby_IDA(_IDA)
+        If _status = 5 Then
+            If _process = 1027 Then
+                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+                dao.GetDataby_IDA(_IDA)
 
-            dao.fields.REMARK = TextBox1.Text
+                dao.fields.REMARK = TextBox1.Text
 
-            dao.fields.STATUS_ID = 7
+                dao.fields.STATUS_ID = 5
 
-            dao.update()
-            alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
-        ElseIf _process = 1028 Then
-            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
-            dao.GetDataby_IDA(_IDA)
-            dao.fields.REMARK = TextBox1.Text
+                dao.update()
+                AddLogStatustodrugimport(5, _process, _CLS.CITIZEN_ID, _IDA)
+                alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+            ElseIf _process = 1028 Then
+                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+                dao.GetDataby_IDA(_IDA)
+                dao.fields.REMARK = TextBox1.Text
 
-            dao.fields.STATUS_ID = 7
+                dao.fields.STATUS_ID = 5
 
-            dao.update()
-            alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+                dao.update()
+                AddLogStatustodrugimport(5, _process, _CLS.CITIZEN_ID, _IDA)
+                alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
 
-        ElseIf _process = 1029 Then
-            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
-            dao.GetDataby_IDA(_IDA)
-            dao.fields.REMARK = TextBox1.Text
+            ElseIf _process = 1029 Then
+                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+                dao.GetDataby_IDA(_IDA)
+                dao.fields.REMARK = TextBox1.Text
 
-            dao.fields.STATUS_ID = 7
+                dao.fields.STATUS_ID = 5
 
-            dao.update()
-            alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+                dao.update()
+                AddLogStatustodrugimport(5, _process, _CLS.CITIZEN_ID, _IDA)
+                alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+            End If
+
+        ElseIf _status = 7 Then
+
+            If _process = 1027 Then
+                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+                dao.GetDataby_IDA(_IDA)
+
+                dao.fields.REMARK = TextBox1.Text
+
+                dao.fields.STATUS_ID = 7
+
+                dao.update()
+                AddLogStatustodrugimport(7, _process, _CLS.CITIZEN_ID, _IDA)
+                alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+            ElseIf _process = 1028 Then
+                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+                dao.GetDataby_IDA(_IDA)
+                dao.fields.REMARK = TextBox1.Text
+
+                dao.fields.STATUS_ID = 7
+
+                dao.update()
+                AddLogStatustodrugimport(7, _process, _CLS.CITIZEN_ID, _IDA)
+                alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+
+            ElseIf _process = 1029 Then
+                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+                dao.GetDataby_IDA(_IDA)
+                dao.fields.REMARK = TextBox1.Text
+
+                dao.fields.STATUS_ID = 7
+
+                dao.update()
+                AddLogStatustodrugimport(7, _process, _CLS.CITIZEN_ID, _IDA)
+                alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+            End If
         End If
 
     End Sub

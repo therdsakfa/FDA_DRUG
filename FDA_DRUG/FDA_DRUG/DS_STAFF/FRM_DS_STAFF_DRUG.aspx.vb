@@ -183,7 +183,7 @@ Public Class FRM_DS_STAFF_DRUG
                 End Try
                 Dim ws As New AUTHEN_LOG.Authentication
                 ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", dao.fields.TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "เจ้าหน้าที่ดูข้อมูลใบอนุญาตยาตัวอย่าง", _process)
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_DS_STAFF_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_DS_STAFF_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & PROCESS_ID & "');", True)
             End If
 
         End If
