@@ -141,8 +141,6 @@ Public Class FRM_STAFF_NYM2
         Response.Write("<script type='text/javascript'>alert('" + text + "');</script> ") 'จาวาคำสั่ง Alert
     End Sub
     Protected Sub btn_reload_Click(sender As Object, e As EventArgs) Handles btn_reload.Click
-
         RadGrid1.Rebind()
-
     End Sub
 End Class
