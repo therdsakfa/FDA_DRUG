@@ -59,6 +59,8 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
             End Try
 
+
+
             If Request.QueryString("STATUS_ID") = "8" Then
                 BindData_PDF_SAI(newcode)
             Else
@@ -77,8 +79,16 @@ Public Class POPUP_DR_CONFIRM_STAFF
                         UC_GRID_ATTACH.load_gv(dao.fields.TR_ID)
                     Else
                         Dim dao As New DAO_DRUG.ClsDBdrrqt
-                        dao.GetDataby_IDA(_IDA)
-                        UC_GRID_ATTACH.load_gv(dao.fields.TR_ID)
+                    dao.GetDataby_IDA(_IDA)
+                    Try
+                        Dim dao_stat As New DAO_DRUG.ClsDBMAS_STATUS
+                        dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 8)
+                        lbl_current_stat.Text = dao_stat.fields.STATUS_NAME
+                    Catch ex As Exception
+
+                    End Try
+
+                    UC_GRID_ATTACH.load_gv(dao.fields.TR_ID)
                     End If
 
                     'End If
