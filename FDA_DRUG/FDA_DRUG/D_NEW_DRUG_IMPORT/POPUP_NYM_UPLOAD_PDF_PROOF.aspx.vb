@@ -139,6 +139,19 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
         ' upload_pdf()
         SET_ATTACH(_IDA, _ProcessID, Date.Now.Date().Year())
         AddLogStatustodrugimport(12, _ProcessID, _CLS.CITIZEN_ID, _IDA)         'อัพโหลด status ใหเเป็นส่งเอกสารแล้ว
+        alert("อัพโหลดรีบร้อย")
+        Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+        Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        If _ProcessID = 1028 Then
+            dao3.GetDataby_IDA(_IDA)
+            dao3.fields.STATUS_ID = 12
+            dao3.update()
+        ElseIf _ProcessID = 1029 Then
+            dao4.GetDataby_IDA(_IDA)
+            dao4.fields.STATUS_ID = 12
+            dao4.update()
+        End If
+        'ดึงข้อมูลโดยใช้ IDA
         Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")
 
     End Sub
