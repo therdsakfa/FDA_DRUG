@@ -108,8 +108,65 @@
 
 
                     alert("บันทึกข้อมูลเรียบร้อย")
+                ElseIf _process = 1028 Then
+                    Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+                    dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA
+                    'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
+
+                    AddLogStatustodrugimport(9, _process, _CLS.CITIZEN_ID, _IDA)        'เปลี่ยน function สีเหลืองให้อยู่ใน drug import 
+
+                    Dim PROCESS_ID As Integer = dao.fields.NYM_TYPE
+
+
+                    'dao_p.GetDataby_Process_ID(PROCESS_ID)                          'ไปเอาชื่อกระบวนการมา จาก base PROCESS_NAME ไม่น่าต้องแก้ไข
+                    'Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
+
+                    Dim CONSIDER_DATE As Date = Date.Now
+                    dao.fields.REMARK = Txt_Remark.Text
+                    dao.fields.STATUS_ID = 9
+                    dao.fields.CONSIDER_DATE = CONSIDER_DATE
+
+                    dao.fields.NYM3_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
+                    Try
+                        dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
+                    Catch ex As Exception
+
+                    End Try
+                    dao.update()
+
+
+                    alert("บันทึกข้อมูลเรียบร้อย")
+                ElseIf _process = 1029 Then
+                    Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+                    dao.GetDataby_IDA(_IDA)                                         'ดึงข้อมูลโดยใช้ IDA
+                    'dao_up.GetDataby_IDA(dao.fields.TR_ID)                        'ดึง หลักฐานการจ่ายเงินมั้ง รอพี่ X แก้
+
+                    AddLogStatustodrugimport(9, _process, _CLS.CITIZEN_ID, _IDA)        'เปลี่ยน function สีเหลืองให้อยู่ใน drug import 
+
+                    Dim PROCESS_ID As Integer = dao.fields.NYM_TYPE
+
+
+                    'dao_p.GetDataby_Process_ID(PROCESS_ID)                          'ไปเอาชื่อกระบวนการมา จาก base PROCESS_NAME ไม่น่าต้องแก้ไข
+                    'Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
+
+                    Dim CONSIDER_DATE As Date = Date.Now
+                    dao.fields.REMARK = Txt_Remark.Text
+                    dao.fields.STATUS_ID = 9
+                    dao.fields.CONSIDER_DATE = CONSIDER_DATE
+
+                    dao.fields.NYM4_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
+                    Try
+                        dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
+                    Catch ex As Exception
+
+                    End Try
+                    dao.update()
+
+
+                    alert("บันทึกข้อมูลเรียบร้อย")
                 End If
             End If
+
 
 
         Catch ex As Exception
