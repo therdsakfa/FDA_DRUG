@@ -2405,6 +2405,12 @@ Public Class WS_DRUG_XML
             Dim chk As Boolean = True
             Dim dao_edit As New DAO_DRUG.TB_LCN_EXTEND_LITE
             Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+            Try
+                dao_dal.GetDataby_IDA(LCN_IDA)
+            Catch ex As Exception
+
+            End Try
+
             Dim dao_process As New DAO_DRUG.ClsDBPROCESS_NAME
             dao_process.GetDataby_Process_ID(Process_ID)
             Dim cyear As Integer '= 2563
@@ -2423,11 +2429,16 @@ Public Class WS_DRUG_XML
                 bao.RunAppSettings()
                 Dim bao_tran As New BAO_TRANSECTION
                 bao_tran.CITIZEN_ID = CITIZEN_ID
-                bao_tran.CITIZEN_ID_AUTHORIZE = dao_dal.fields.CITIZEN_ID_AUTHORIZE
+                Try
+                    bao_tran.CITIZEN_ID_AUTHORIZE = dao_dal.fields.CITIZEN_ID_AUTHORIZE
+                Catch ex As Exception
+
+                End Try
+
                 TR_ID = bao_tran.insert_transection_new(Process_ID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
 
-                Dim PDF_TRADER As String
-                Dim XML_TRADER As String
+                Dim PDF_TRADER As String = ""
+                Dim XML_TRADER As String = ""
 
                 'Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
                 'dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0)

@@ -93,6 +93,11 @@
                          
                          </td></tr>
                      <tr><td>
+                                                  สถานะปัจจุบัน :
+                                                  <asp:Label ID="lbl_current_stat" runat="server" Text="-"></asp:Label>
+                         
+                         </td></tr>
+                     <tr><td>
                                                   <asp:DropDownList ID="ddl_cnsdcd" runat="server" Width="80%" DataTextField="STATUS_NAME" DataValueField="STATUS_ID">
                          </asp:DropDownList>
                          

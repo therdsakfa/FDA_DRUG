@@ -90,6 +90,13 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
             Catch ex As Exception
 
             End Try
+            Try
+                Dim dao_stat As New DAO_DRUG.ClsDBMAS_STATUS
+                dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 8)
+                lbl_current_stat.Text = dao_stat.fields.STATUS_NAME
+            Catch ex As Exception
+
+            End Try
             'Try
             '    If dao.fields.STATUS_ID = 14 Or dao.fields.STATUS_ID = 15 Then
             '        If dao.fields.cncdate IsNot Nothing Then

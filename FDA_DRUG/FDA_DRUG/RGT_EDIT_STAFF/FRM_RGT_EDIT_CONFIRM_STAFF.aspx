@@ -101,6 +101,10 @@
                          
                          </td></tr>
                      <tr><td>
+                                                  สถานะปัจจุบัน : <asp:Label ID="lbl_current_stat" runat="server" Text="-"></asp:Label>
+                         
+                         </td></tr>
+                     <tr><td>
                          โปรดเลือกสถานะถัดไป
                                                   <asp:DropDownList ID="ddl_status" runat="server" Width="80%" >
                          </asp:DropDownList>
