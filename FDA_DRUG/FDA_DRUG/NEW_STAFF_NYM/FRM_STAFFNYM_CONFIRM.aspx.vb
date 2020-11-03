@@ -698,9 +698,10 @@ Public Class FRM_STAFFNYM_CONFIRM
                 alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.NYM2_NO)
             ElseIf STATUS_ID = 5 Then
                 'AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
-                dao_prf2.GetDataby_IDA(_IDA)
-                dao_prf2.fields.STATUS_ID = STATUS_ID
-                dao_prf2.update()
+                'dao_prf2.GetDataby_IDA(_IDA)
+                'dao_prf2.fields.STATUS_ID = STATUS_ID
+                'dao_prf2.update()
+                Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID & "&status=" & STATUS_ID)
             ElseIf STATUS_ID = 9 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
                 Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&DL=" & _DL & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
             ElseIf STATUS_ID = 8 Then
@@ -805,9 +806,10 @@ Public Class FRM_STAFFNYM_CONFIRM
                 alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.NYM3_NO)
             ElseIf STATUS_ID = 5 Then
                 'AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
-                dao_prf3.GetDataby_IDA(_IDA)
-                dao_prf3.fields.STATUS_ID = STATUS_ID
-                dao_prf3.update()
+                'dao_prf3.GetDataby_IDA(_IDA)
+                'dao_prf3.fields.STATUS_ID = STATUS_ID
+                'dao_prf3.update()
+                Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID & "&status=" & STATUS_ID)
             ElseIf STATUS_ID = 9 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
                 Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&DL=" & _DL & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
             ElseIf STATUS_ID = 8 Then
@@ -912,9 +914,10 @@ Public Class FRM_STAFFNYM_CONFIRM
                 alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.NYM4_NO)
             ElseIf STATUS_ID = 5 Then
                 'AddLogStatustodrugimport(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
-                dao_prf3.GetDataby_IDA(_IDA)
-                dao_prf3.fields.STATUS_ID = STATUS_ID
-                dao_prf3.update()
+                'dao_prf3.GetDataby_IDA(_IDA)
+                'dao_prf3.fields.STATUS_ID = STATUS_ID
+                'dao_prf3.update()
+                Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID & "&status=" & STATUS_ID)
             ElseIf STATUS_ID = 9 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
                 Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&DL=" & _DL & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
             ElseIf STATUS_ID = 8 Then

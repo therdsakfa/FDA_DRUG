@@ -87,7 +87,7 @@
 
                  <table class="table" style="width:90%"> 
 
-                     <tr id="table_id"><td><asp:Label ID="txt_title" runat="server" Text="เงื่อนไข/หมายเหตุแก้ไข" AutoPostBack="True" />
+                     <tr id="table_id"><td><asp:Label ID="txt_title" runat="server" Text="หมายเหตุแก้ไข/คืนคำขอ" AutoPostBack="True" />
                           <asp:TextBox ID="txt_edit_remark" runat="server" CssClass="auto-style1" Height="100px" TextMode="MultiLine" Width="270px" Wrap="False" ReadOnly="True">ไม่ได้ระบุ</asp:TextBox>
                          </td></tr>
                      <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยื่นคำขอ" CssClass="btn-lg"   Width="80%" OnClientClick="return confirm('คุณต้องการบันทึกข้อมูลหรือไม่');"  /></td></tr>
