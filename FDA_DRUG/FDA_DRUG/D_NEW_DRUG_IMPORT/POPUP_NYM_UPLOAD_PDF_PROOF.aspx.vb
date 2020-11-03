@@ -66,10 +66,10 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
             UC_ATTACH_DRUG2.ATTACH(TR_ID, PROCESS_ID, YEAR, "1")
             UC_ATTACH_DRUG3.ATTACH(TR_ID, PROCESS_ID, YEAR, "2")
             'uc102_3.ATTACH(TR_ID, PROCESS_ID, YEAR, "3")
-            UC_ATTACH_DRUG4.ATTACH(TR_ID, PROCESS_ID, YEAR, "4")
+            UC_ATTACH_DRUG4.ATTACH(TR_ID, PROCESS_ID, YEAR, "3")
             'uc102_5.ATTACH(TR_ID, PROCESS_ID, YEAR, "5")
-            UC_ATTACH_DRUG5.ATTACH(TR_ID, PROCESS_ID, YEAR, "6")
-            UC_ATTACH_DRUG6.ATTACH(TR_ID, PROCESS_ID, YEAR, "7")
+            UC_ATTACH_DRUG5.ATTACH(TR_ID, PROCESS_ID, YEAR, "4")
+            UC_ATTACH_DRUG6.ATTACH(TR_ID, PROCESS_ID, YEAR, "5")
 
         End If
     End Sub
@@ -137,7 +137,7 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
     End Sub
     Protected Sub btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
         ' upload_pdf()
-        SET_ATTACH(_IDA, _ProcessID, Date.Now.Date().Year())
+        SET_ATTACH(_IDA, _ProcessID, Date.Now.Date().Year())        ' ตัวแปลแรก คือ transaction IDA เอา IDA where หามาแสดงได้ 
         AddLogStatustodrugimport(12, _ProcessID, _CLS.CITIZEN_ID, _IDA)         'อัพโหลด status ใหเเป็นส่งเอกสารแล้ว
         alert("อัพโหลดรีบร้อย")
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
