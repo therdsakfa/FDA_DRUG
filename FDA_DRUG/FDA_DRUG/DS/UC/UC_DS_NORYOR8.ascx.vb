@@ -213,7 +213,7 @@ Public Class UC_DS_NORYOR8
         item.Value = "0"
         ddl_phesaj.Items.Insert(0, item)
 
-        
+
 
         Dim baophr As New BAO.ClsDBSqlcommand
         ddl_snunit.DataSource = baophr.SP_DRUG_REGISTRATION_PACKAGE_BY_IDA(dao_drugname.fields.IDA)
