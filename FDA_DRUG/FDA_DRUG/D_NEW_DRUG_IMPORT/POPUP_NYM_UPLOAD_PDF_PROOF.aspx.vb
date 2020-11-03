@@ -137,7 +137,7 @@ Public Class POPUP_NYM_UPLOAD_PDF_PROOF
     End Sub
     Protected Sub btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
         ' upload_pdf()
-        SET_ATTACH(_IDA, _ProcessID, Date.Now.Date().Year())
+        SET_ATTACH(_IDA, _ProcessID, Date.Now.Date().Year())        ' ตัวแปลแรก คือ transaction IDA เอา IDA where หามาแสดงได้ 
         AddLogStatustodrugimport(12, _ProcessID, _CLS.CITIZEN_ID, _IDA)         'อัพโหลด status ใหเเป็นส่งเอกสารแล้ว
         alert("อัพโหลดรีบร้อย")
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3

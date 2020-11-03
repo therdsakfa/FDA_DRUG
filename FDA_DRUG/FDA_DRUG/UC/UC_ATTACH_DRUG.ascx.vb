@@ -21,7 +21,7 @@
             Dim NAME_FAKE As String 'ตัวแปรเก็บชื่อไฟล์ที่เบรา
             Dim NAME_REAL As String 'ตัวแปรเก็บชื่อไฟล์ที่แปลงเพื่อให้สัมพันธ์กับระบบ
             NAME_REAL = FileUpload1.FileName 'NAME_REALเก็บชื่อไฟล์ที่เบรา
-            Dim Array_NAME_REAL() As String = Split(NAME_REAL, ".")
+            Dim Array_NAME_REAL() As String = Split(NAME_REAL, ".") '   ตัดจุด
             Dim Last_Length As Integer = Array_NAME_REAL.Length - 1 'ดึงนามสกุลไฟล์ที่เบรามาใช้กับ NAME_FAKE 
             NAME_FAKE = "DA-" & PROCESS_ID & "-" & year & "-" & transection & "-" & type & System.IO.Path.GetExtension(FileUpload1.FileName) '"." & Array_NAME_REAL(Last_Length).ToString() 'สร้างชื่อไฟล์ใหม่โดยใช้นามสกุลไฟล์เดิม
             FileUpload1.SaveAs(bao._PATH_DEFAULT & "upload\" & NAME_FAKE) 'บันทึกไฟล์ลงserverโดยใช้ชื่อที่สรางขึ้นใหม่              'FileUpload    

@@ -8,8 +8,8 @@
     Private _TOKEN As String
 
     Private Sub RunQuery()
-        _TOKEN = Request("Token").ToString()
-        '_TOKEN = "uMQbsgMwpMN5rnZZJDaAvAUU" 'test                อย่าลืมแก้กลับ
+        '_TOKEN = Request("Token").ToString()
+        _TOKEN = "hB7qcS4ojfqGRgRgHpG6igUU" 'test                อย่าลืมแก้กลับ
         '_TOKEN = "K1JtRwgdZD5oslzpr5dLKgUU" 'AOF
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

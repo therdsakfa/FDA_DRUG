@@ -39,7 +39,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             show_btn(_IDA)
             set_hide(_IDA)
             ' UC_GRID_PHARMACIST.load_gv(_IDA)
-            'UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv(_IDA)
             If Request.QueryString("identify") <> "" Then
                 If Request.QueryString("identify") <> _CLS.CITIZEN_ID_AUTHORIZE Then
                     AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("identify"), 0, HttpContext.Current.Request.Url.AbsoluteUri)
