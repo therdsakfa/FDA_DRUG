@@ -128,5 +128,5 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents UC_GRID_ATTACH1 As Global.FDA_DRUG.UC_GRID_ATTACH
+    Protected WithEvents UC_GRID_ATTACH1 As Global.FDA_DRUG.UC_GRID_ATTACH_IMPORT
 End Class

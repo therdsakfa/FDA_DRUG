@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="POPUP_NYM_SUBMIT_REQUEST.aspx.vb" Inherits="FDA_DRUG.POPUP_NYM_SUBMIT_REQUEST" %>
 
 <%@ Register Src="~/UC/UC_GRID_ATTACH.ascx" TagPrefix="uc1" TagName="UC_GRID_ATTACH" %>
-
+<%@ Register Src="~/UC/UC_GRID_ATTACH_IMPORT.ascx" TagPrefix="uc1" TagName="UC_GRID_ATTACH_IMPORT" %>
 <%@ Register src="../UC/UC_GRID_PHARMACIST.ascx" tagname="UC_GRID_PHARMACIST" tagprefix="uc2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -108,7 +108,7 @@
                  <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" />  
                <br/>
            <asp:Label ID="Label2" runat="server" Text="เอกสารแนบ" AutoPostBack="True" />
-                 <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH1" />  
+                 <uc1:UC_GRID_ATTACH_IMPORT runat="server" id="UC_GRID_ATTACH1" />  
            
                  <br />
              </td>
