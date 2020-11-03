@@ -676,6 +676,7 @@
     <Content Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_CONSIDER.aspx" />
     <Content Include="STAFF_NYM\FRM_NYM_CONFIRM.aspx" />
     <Content Include="TABEAN_YA_STAFF\FRM_TABEAN_YA_CHANGE_STATUS.aspx" />
+    <Content Include="UC\UC_GRID_ATTACH_IMPORT.ascx" />
     <Content Include="XML_DRUG_RGT.asmx" />
     <None Include="DESIGN\Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="DESIGN\Scripts\jquery-1.8.2.js" />
@@ -6931,6 +6932,13 @@
     </Compile>
     <Compile Include="UC\UC_FILTER.ascx.vb">
       <DependentUpon>UC_FILTER.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\UC_GRID_ATTACH_IMPORT.ascx.designer.vb">
+      <DependentUpon>UC_GRID_ATTACH_IMPORT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_GRID_ATTACH_IMPORT.ascx.vb">
+      <DependentUpon>UC_GRID_ATTACH_IMPORT.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UC\UC_GRID_ATTACH.ascx.designer.vb">
