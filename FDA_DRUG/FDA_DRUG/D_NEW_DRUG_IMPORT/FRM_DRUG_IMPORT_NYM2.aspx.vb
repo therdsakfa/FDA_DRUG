@@ -86,7 +86,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM2_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
                 ' "Popups2('" & "POPUP_LCN_UPLOAD_NCT.aspx?type_id=" & _process & "&process=" & _process & "&IDA=" & _CLS.IDA & "&lcn_ida=" & _lcn_ida & "&lct_ida=" & _lct_ida & "');", True)
 
-            ElseIf e.CommandName = "edit" Then
+            ElseIf e.CommandName = "_edit" Then
                 dao.GetDataby_IDA_STATUS(NYM2_ida)
                 'Dim DL As Integer = 0
                 'Try

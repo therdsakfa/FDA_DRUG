@@ -89,47 +89,51 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         End If
     End Sub
     Public Sub set_hide(ByVal IDA As String)
-        'Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-        'Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
-        'Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
-        'dao2.GetDataby_IDA(IDA)
-        'If dao2.fields.STATUS_ID = 5 Then
-        '    btn_confirm.Enabled = False
-        '    btn_cancel.Enabled = False
-        '    btn_confirm.CssClass = "btn-danger btn-lg"
-        '    btn_cancel.CssClass = "btn-danger btn-lg"
+        Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+        Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        dao2.GetDataby_IDA(IDA)
+        If _process = 1027 Then
+            dao2.fields.STATUS_ID = 5
+            btn_confirm.Enabled = False
+            btn_cancel.Enabled = False
+            btn_confirm.CssClass = "btn-danger btn-lg"
+            btn_cancel.CssClass = "btn-danger btn-lg"
 
-        '    _edit.Style.Add("display", "block")
-        '    remark_edit.Style.Add("display", "block")
-        '    remark_edit.Text = dao2.fields.REMARK_EDIT
-        '    'Try
-        '    '    If dao.fields.STATUS_ID = 5 Then
-        '    '        remark_edit.Style.Add("display", "block")
-        '    '    End If
-        '    'Catch ex As Exception
-        '    'End Try
-        'ElseIf dao3.fields.STATUS_ID = 5 Then
-        '    btn_confirm.Enabled = False
-        '    btn_cancel.Enabled = False
-        '    btn_confirm.CssClass = "btn-danger btn-lg"
-        '    btn_cancel.CssClass = "btn-danger btn-lg"
+            txt_title.Style.Add("display", "block")
+            txt_edit_remark.Style.Add("display", "block")
+            txt_edit_remark.Text = dao2.fields.REMARK_EDIT
 
-        '    _edit.Style.Add("display", "block")
-        '    remark_edit.Style.Add("display", "block")
-        '    remark_edit.Text = dao3.fields.REMARK_EDIT              'อย่าลืม เพิ่มตารางใน base 
-        'ElseIf dao4.fields.STATUS_ID = 5 Then
-        '    btn_confirm.Enabled = False
-        '    btn_cancel.Enabled = False
-        '    btn_confirm.CssClass = "btn-danger btn-lg"
-        '    btn_cancel.CssClass = "btn-danger btn-lg"
+            'Try
+            '    If dao.fields.STATUS_ID = 5 Then
+            '        remark_edit.Style.Add("display", "block")
+            '    End If
+            'Catch ex As Exception
+            'End Try
+        ElseIf _process = 1028 Then
+            dao3.fields.STATUS_ID = 5
+            btn_confirm.Enabled = False
+            btn_cancel.Enabled = False
+            btn_confirm.CssClass = "btn-danger btn-lg"
+            btn_cancel.CssClass = "btn-danger btn-lg"
 
-        '    _edit.Style.Add("display", "block")
-        '    remark_edit.Style.Add("display", "block")
-        '    remark_edit.Text = dao4.fields.REMARK_EDIT              'อย่าลืม เพิ่มตารางใน base 
-        'Else
-        '    _edit.Style.Add("display", "none")
-        '    remark_edit.Style.Add("display", "none")
-        'End If
+            txt_title.Style.Add("display", "block")
+            txt_edit_remark.Style.Add("display", "block")
+            txt_edit_remark.Text = dao3.fields.REMARK_EDIT              'อย่าลืม เพิ่มตารางใน base 
+        ElseIf _process = 1029 Then
+            dao4.fields.STATUS_ID = 5
+            btn_confirm.Enabled = False
+            btn_cancel.Enabled = False
+            btn_confirm.CssClass = "btn-danger btn-lg"
+            btn_cancel.CssClass = "btn-danger btn-lg"
+
+            txt_title.Style.Add("display", "block")
+            txt_edit_remark.Style.Add("display", "block")
+            txt_edit_remark.Text = dao4.fields.REMARK_EDIT              'อย่าลืม เพิ่มตารางใน base 
+        Else
+            txt_title.Style.Add("display", "none")
+            txt_edit_remark.Style.Add("display", "none")
+        End If
     End Sub
     Private Function chk_pha() As Boolean                             'เอาไว้ทำอะไร
         Dim chk As Boolean = True
