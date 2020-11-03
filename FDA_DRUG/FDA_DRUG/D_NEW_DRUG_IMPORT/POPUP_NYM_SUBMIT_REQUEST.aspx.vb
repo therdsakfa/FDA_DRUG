@@ -93,43 +93,68 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
         dao2.GetDataby_IDA(IDA)
+        dao3.GetDataby_IDA(IDA)
+        dao4.GetDataby_IDA(IDA)
         If _process = 1027 Then
-            dao2.fields.STATUS_ID = 5
-            btn_confirm.Enabled = False
-            btn_cancel.Enabled = False
-            btn_confirm.CssClass = "btn-danger btn-lg"
-            btn_cancel.CssClass = "btn-danger btn-lg"
+            If dao2.fields.STATUS_ID = 5 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
 
-            txt_title.Style.Add("display", "block")
-            txt_edit_remark.Style.Add("display", "block")
-            txt_edit_remark.Text = dao2.fields.REMARK_EDIT
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao2.fields.REMARK_EDIT
+            ElseIf dao2.fields.STATUS_ID = 7 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
 
-            'Try
-            '    If dao.fields.STATUS_ID = 5 Then
-            '        remark_edit.Style.Add("display", "block")
-            '    End If
-            'Catch ex As Exception
-            'End Try
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao2.fields.REMARK
+            End If
         ElseIf _process = 1028 Then
-            dao3.fields.STATUS_ID = 5
-            btn_confirm.Enabled = False
-            btn_cancel.Enabled = False
-            btn_confirm.CssClass = "btn-danger btn-lg"
-            btn_cancel.CssClass = "btn-danger btn-lg"
+            If dao3.fields.STATUS_ID = 5 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
 
-            txt_title.Style.Add("display", "block")
-            txt_edit_remark.Style.Add("display", "block")
-            txt_edit_remark.Text = dao3.fields.REMARK_EDIT              'อย่าลืม เพิ่มตารางใน base 
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao3.fields.REMARK_EDIT
+            ElseIf dao3.fields.STATUS_ID = 7 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
+
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao3.fields.REMARK          'อย่าลืม เพิ่มตารางใน base 
+            End If
         ElseIf _process = 1029 Then
-            dao4.fields.STATUS_ID = 5
-            btn_confirm.Enabled = False
-            btn_cancel.Enabled = False
-            btn_confirm.CssClass = "btn-danger btn-lg"
-            btn_cancel.CssClass = "btn-danger btn-lg"
+            If dao4.fields.STATUS_ID = 5 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
 
-            txt_title.Style.Add("display", "block")
-            txt_edit_remark.Style.Add("display", "block")
-            txt_edit_remark.Text = dao4.fields.REMARK_EDIT              'อย่าลืม เพิ่มตารางใน base 
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao4.fields.REMARK_EDIT
+            ElseIf dao4.fields.STATUS_ID = 7 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
+
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao4.fields.REMARK           'อย่าลืม เพิ่มตารางใน base 
+            End If
         Else
             txt_title.Style.Add("display", "none")
             txt_edit_remark.Style.Add("display", "none")
