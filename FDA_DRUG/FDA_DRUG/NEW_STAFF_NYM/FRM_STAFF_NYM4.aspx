@@ -127,6 +127,9 @@
                        <telerik:GridBoundColumn DataField="NYM4_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM4_IDA column" HeaderText="IDA"
                            SortExpression="NYM4_IDA" UniqueName="NYM4_IDA" Display="false">
                        </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
+                        HeaderText="เลขIDAของDL" SortExpression="DL" UniqueName="DL" Display="false">
+                    </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="PROCESS_ID" DataType="System.Int32" FilterControlAltText="Filter PROCESS_ID column" HeaderText="PROCESS_ID"
                            SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
                        </telerik:GridBoundColumn>
@@ -142,8 +145,8 @@
                        <telerik:GridBoundColumn DataField="NYM4_WISH_MED" FilterControlAltText="Filter NYM4_WISH_MED column"
                            HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM4_WISH_MED" UniqueName="NYM4_WISH_MED">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM4_NO" FilterControlAltText="Filter NYM4_NO column"
-                           HeaderText="เลขดำเนินการ" SortExpression="NYM4_NO" UniqueName="NYM4_NO">
+                       <telerik:GridBoundColumn DataField="FK_IDA" FilterControlAltText="Filter FK_IDA column"
+                           HeaderText="เลขดำเนินการ" SortExpression="FK_IDA" UniqueName="FK_IDA">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
                            HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
@@ -153,7 +156,7 @@
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
-                           CommandName="_edit" Text="แก้ไขการเสนอลงนาม">
+                           CommandName="_edit" Text="แก้ไข">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
                    </Columns>

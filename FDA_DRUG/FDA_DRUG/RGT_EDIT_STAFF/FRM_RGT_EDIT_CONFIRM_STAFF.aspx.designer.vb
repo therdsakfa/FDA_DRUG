@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
-
+    
     '''<summary>
     '''hl_reader control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
-
+    
     '''<summary>
     '''HiddenField1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
-
+    
     '''<summary>
     '''lr_preview control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''lbl_rcvdate control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_rcvdate As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lbl_appdate control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_appdate As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lbl_rqt_type control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_rqt_type As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lbl_rqt_identify control.
     '''</summary>
@@ -75,7 +75,16 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_rqt_identify As Global.System.Web.UI.WebControls.Label
-
+    
+    '''<summary>
+    '''lbl_current_stat control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_current_stat As Global.System.Web.UI.WebControls.Label
+    
     '''<summary>
     '''ddl_status control.
     '''</summary>
@@ -84,7 +93,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_status As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''txt_appdate control.
     '''</summary>
@@ -93,7 +102,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_appdate As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btn_confirm control.
     '''</summary>
@@ -102,7 +111,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_send_edit control.
     '''</summary>
@@ -111,7 +120,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_send_edit As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_cancel control.
     '''</summary>
@@ -120,7 +129,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_load control.
     '''</summary>
@@ -129,7 +138,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_load0 control.
     '''</summary>
@@ -138,7 +147,7 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''UC_GRID_ATTACH control.
     '''</summary>

@@ -5,11 +5,15 @@ Public Class FRM_STAFF_NYM4
     Private _CLS As New CLS_SESSION         'public class
     Private _process As String
     Private _type As String
+    Private _DL As String
+    Private _IDA As Integer
     Private _pvncd As Integer
     Sub RunSession()
         Try
             _CLS = Session("CLS")
             _process = Request.QueryString("process")
+            _DL = Session("DL")
+            _IDA = Session("IDA")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
@@ -72,14 +76,14 @@ Public Class FRM_STAFF_NYM4
             dao.GetDataby_IDA(IDA)
             btn_edit.Style.Add("display", "none")
             Try
-                If dao.fields.STATUS_ID = 6 Then
+                If dao.fields.STATUS_ID = 9 Then
                     btn_edit.Style.Add("display", "block")
                 End If
             Catch ex As Exception
 
             End Try
-            Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
-            btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
+            ' Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
+            'btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
         End If
     End Sub
     Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand    'กดปุ่มใน grid ให้ทำอะไร จากหหน้
@@ -100,6 +104,16 @@ Public Class FRM_STAFF_NYM4
 
                 End Try
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM4_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
+            ElseIf e.CommandName = "_edit" Then
+                dao.GetDataby_IDA(NYM4_ida)
+                Dim _DL As String = 0
+                Try
+                    _DL = dao.fields.DL
+                Catch ex As Exception
+
+                End Try
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & NYM4_ida & "&process= " & _process & "&DL=" & _DL & " &edit=" & 0 & "');", True)
+
             End If
         End If
     End Sub

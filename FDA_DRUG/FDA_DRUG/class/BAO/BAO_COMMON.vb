@@ -558,8 +558,16 @@ Module BAO_COMMON
                 ElseIf PROSESS_ID = 1027 Then
                     Dim cls_xml As New CLASS_GEN_XML.NYM2_IMPORT
                     cls_xml.GEN_XML_NORYORMOR2(PATH_XML, p_nym2)
+
+                ElseIf PROSESS_ID = 1028 Then
+                    Dim cls_xml As New CLASS_GEN_XML.NYM3_IMPORT_SUB
+                    cls_xml.GEN_XML_NORYORMOR3(PATH_XML, p_nym3)
+                ElseIf PROSESS_ID = 1029 Then
+                    Dim cls_xml As New CLASS_GEN_XML.NYM4_IMPORT_SUB
+                    cls_xml.GEN_XML_NORYORMOR4(PATH_XML, p_nym4)
                 End If
             End If
+
             'ตรวจสอบว่ามี PDF มั้ย
             If Checkfile(PATH_PDF_TEMPLATE) = False Then
                 '
@@ -602,6 +610,26 @@ Module BAO_COMMON
             ElseIf PROSESS_ID = 1027 Then   'GENXML
                 Dim cls_xml As New CLASS_GEN_XML.NYM2_IMPORT
                 cls_xml.GEN_XML_NORYORMOR2(PATH_XML, p_nym2)    'วิ่งไปสร้าง XML
+                Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\        ดึง  template
+                    Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"  สร้างและเขียน
+                        Using stamper = New iTextSharp.text.pdf.PdfStamper(pdfReader__1, outputStream, ControlChars.NullChar, True)
+                            stamper.AcroFields.Xfa.FillXfaForm(PATH_XML)        'xml fill ใส่ PDF
+                        End Using
+                    End Using
+                End Using
+            ElseIf PROSESS_ID = 1028 Then   'GENXML
+                Dim cls_xml As New CLASS_GEN_XML.NYM3_IMPORT_SUB
+                cls_xml.GEN_XML_NORYORMOR3(PATH_XML, p_nym3)    'วิ่งไปสร้าง XML
+                Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\        ดึง  template
+                    Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"  สร้างและเขียน
+                        Using stamper = New iTextSharp.text.pdf.PdfStamper(pdfReader__1, outputStream, ControlChars.NullChar, True)
+                            stamper.AcroFields.Xfa.FillXfaForm(PATH_XML)        'xml fill ใส่ PDF
+                        End Using
+                    End Using
+                End Using
+            ElseIf PROSESS_ID = 1029 Then   'GENXML
+                Dim cls_xml As New CLASS_GEN_XML.NYM4_IMPORT_SUB
+                cls_xml.GEN_XML_NORYORMOR4(PATH_XML, p_nym4)    'วิ่งไปสร้าง XML
                 Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\        ดึง  template
                     Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"  สร้างและเขียน
                         Using stamper = New iTextSharp.text.pdf.PdfStamper(pdfReader__1, outputStream, ControlChars.NullChar, True)
