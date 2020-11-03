@@ -134,23 +134,22 @@ Public Class FRM_REPORT_REGIST
                     Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหน่วยนับตามรูปของแบบยา');</script> ")
                 ElseIf dao.fields.DRUG_GROUP = "" Then
                     Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหมวดยา');</script> ")
-                ElseIf dao.fields.GROUP_TYPE = "" Then
+                ElseIf dao.fields.GROUP_TYPE = 0 Then
                     Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกประเภทของยา');</script> ")
                 ElseIf dao.fields.FK_DOSAGE_FORM = "" Then
                     Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกรูปแบบของยา');</script> ")
+                Else
+                    Try
+                        dao.fields.RCVDATE = Date.Now 'CDate(txt_app_date.Text)
+                    Catch ex As Exception
+
+                    End Try
+                    dao.fields.RCVNO = rcvno
+                    dao.fields.RCVNO_DISPLAY = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
+                    dao.fields.REGIS_NO = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
+                    dao.update()
+                    alert("ยืนยันข้อมูลแล้ว คุณได้เลขรับที่ " & "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5))
                 End If
-
-                Try
-                    dao.fields.RCVDATE = Date.Now 'CDate(txt_app_date.Text)
-                Catch ex As Exception
-
-                End Try
-                dao.fields.RCVNO = rcvno
-                dao.fields.RCVNO_DISPLAY = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
-                dao.fields.REGIS_NO = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
-                dao.update()
-                alert("ยืนยันข้อมูลแล้ว คุณได้เลขรับที่ " & "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5))
-                'End If
             End If
         End If
     End Sub

@@ -395,11 +395,11 @@
             <%--<telerik:GridBoundColumn UniqueName="Unit" HeaderText="หน่วย" DataField="sunitengnm">
                             </telerik:GridBoundColumn>--%>
             <tr>
-                <td align="right" class="auto-style20">&nbsp;</td>
-                <td>
+                <td align="right" class="auto-style20">&nbsp;
                     <asp:Button ID="btn_package" runat="server" Height="53px" Text="เพิ่ม/ลบ ขนาดบรรจุ" Width="180px" CssClass="auto-style12" />
-
-                    <asp:Label ID="Label2" runat="server" Text="on" Visible="False"></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="Label2" runat="server" Visible="False"></asp:Label>
                 </td>
             </tr>
             <tr id="package2" runat="server" style="display: none;">
