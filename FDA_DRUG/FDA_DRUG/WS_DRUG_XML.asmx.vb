@@ -2420,11 +2420,11 @@ Public Class WS_DRUG_XML
             End If
             'dao_edit.GetDataby_FK_IDA(LCN_IDA)
             'dao_dal.GetDataby_IDA(LCN_IDA)
-            If dao_edit.fields.FK_IDA = dao_dal.fields.IDA And dao_edit.fields.extend_year = cyear And dao_edit.fields.STATUS_ID <> 7 And dao_edit.fields.STATUS_ID <> 5 And dao_edit.fields.PROCESS_ID <> "100747" And dao_edit.fields.PROCESS_ID <> "100745" Then
-                'Dim a As String = Replace("555555555", "o", "i")
-            Else
+            'If dao_edit.fields.FK_IDA = dao_dal.fields.IDA And dao_edit.fields.extend_year = cyear And dao_edit.fields.STATUS_ID <> 7 And dao_edit.fields.STATUS_ID <> 5 And dao_edit.fields.PROCESS_ID <> "100747" And dao_edit.fields.PROCESS_ID <> "100745" Then
+            '    'Dim a As String = Replace("555555555", "o", "i")
+            'Else
 
-                Dim TR_ID As String = ""
+            Dim TR_ID As String = ""
                 Dim bao As New BAO.AppSettings
                 bao.RunAppSettings()
                 Dim bao_tran As New BAO_TRANSECTION
@@ -2468,19 +2468,19 @@ Public Class WS_DRUG_XML
                 Else
                     insrt_extend_to_database(TR_ID, LCN_IDA, Process_ID, CITIZEN_ID, gpp:=gpp, tel:=tel)
                 End If
-                'If check = True Then
-                '    SET_ATTACH(_TR_ID, _ProcessID, con_year(Date.Now.Year))
-                '    If dao_edit.fields.STATUS_ID = 6 Then
-                '        AddLogStatusEtracking(6, 0, _CLS.CITIZEN_ID, "อัพโหลดเอกสารต่ออายุ(แก้ไข) " & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, dao_edit.fields.FK_IDA, dao_edit.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
-                '    Else
-                '        AddLogStatusEtracking(0, 0, _CLS.CITIZEN_ID, "อัพโหลดเอกสารต่ออายุ " & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, 0, 0, 0, HttpContext.Current.Request.Url.AbsoluteUri)
-                '    End If
-                '    alert("รหัสการดำเนินการ คือ DA-" & _ProcessID & "-" & con_year(Date.Now.Date().Year()) & "-" + _TR_ID)
-                'Else
-                '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('เกิดข้อผิดพลาดกรุณาตรวจสอบข้อมูลในไฟล์');", True)
-                'End If
+            'If check = True Then
+            '    SET_ATTACH(_TR_ID, _ProcessID, con_year(Date.Now.Year))
+            '    If dao_edit.fields.STATUS_ID = 6 Then
+            '        AddLogStatusEtracking(6, 0, _CLS.CITIZEN_ID, "อัพโหลดเอกสารต่ออายุ(แก้ไข) " & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, dao_edit.fields.FK_IDA, dao_edit.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
+            '    Else
+            '        AddLogStatusEtracking(0, 0, _CLS.CITIZEN_ID, "อัพโหลดเอกสารต่ออายุ " & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, 0, 0, 0, HttpContext.Current.Request.Url.AbsoluteUri)
+            '    End If
+            '    alert("รหัสการดำเนินการ คือ DA-" & _ProcessID & "-" & con_year(Date.Now.Date().Year()) & "-" + _TR_ID)
+            'Else
+            '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('เกิดข้อผิดพลาดกรุณาตรวจสอบข้อมูลในไฟล์');", True)
+            'End If
 
-            End If
+            'End If
         Catch ex As Exception
             'Response.Redirect("http://privus.fda.moph.go.th/")  'เกิด  ERROR  จะเกิดกลับมาหน้า privus
         End Try
