@@ -28,7 +28,7 @@
 
     End Sub
     Public Sub load_gv_V2(ByVal TR_ID As String, ByVal process As String)
-        If TR_ID <> "" And TR_ID <> 0 Then
+        If TR_ID <> "" And TR_ID <> "0" Then
             Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH 'เรียกใช้classตารางไฟล์แนบ
             dao.GetDataby_TR_ID_And_Process(TR_ID, process) 'ดึงข้อมูลโดยการ where TR_ID
             gv2.DataSource = dao.datas 'ใส่ข้อมูลลงตาราง

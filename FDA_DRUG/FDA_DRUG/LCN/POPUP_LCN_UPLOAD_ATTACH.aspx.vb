@@ -1252,6 +1252,7 @@ Public Class POPUP_LCN_UPLOAD_ATTACH
                     '    End If
 
                     'End If
+                    'dao_DALCN_PHR.fields.PHR_JOB_TYPE =dao_DALCN_PHR.fields.
                     Try
                         'dao_DALCN_PHR.fields.PHR_NAME = p2.DALCN_PHRs.phr
                     Catch ex As Exception
@@ -1323,6 +1324,7 @@ Public Class POPUP_LCN_UPLOAD_ATTACH
                     dao_DALCN_PHR_3.fields.FK_IDA = dao.fields.IDA
                     dao_DALCN_PHR_3.fields.PHR_STATUS_UPLOAD = 1
                     dao_DALCN_PHR_3.fields.PHR_MEDICAL_TYPE = 3
+
                     'dao_DALCN_PHR_2.fields.PHR_TEXT_WORK_TIME =
                     dao_DALCN_PHR_3.insert()
                     dao_DALCN_PHR_3 = New DAO_DRUG.ClsDBDALCN_PHR

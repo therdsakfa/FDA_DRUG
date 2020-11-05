@@ -36,12 +36,13 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
             Bind_ddl_Status_staff()
             load_fdpdtno()
             'UC_GRID_PHARMACIST.load_gv(_IDA)
-            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _process)
+
             set_hide(_IDA)
             set_lbl()
             show_btn(_IDA)
             Dim check As New DAO_DRUG.TB_LCN_EXTEND_LITE
             check.GetDataby_IDA(_IDA)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, check.fields.PROCESS_ID)
             txt_appdate.Text = Date.Now.ToShortDateString()
             Try
                 txt_appdate.Text = CDate(check.fields.app_date).ToString()

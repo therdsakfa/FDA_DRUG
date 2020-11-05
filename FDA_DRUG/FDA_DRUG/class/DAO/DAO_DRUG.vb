@@ -760,6 +760,12 @@ Namespace DAO_DRUG
 
             Return i
         End Function
+        Public Sub GetDataby_4key(ByVal rgtno As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal pvncd As Integer)
+
+            datas = (From p In db.drrgts Where p.rgtno = rgtno And p.rgttpcd = rgttpcd And p.drgtpcd = drgtpcd And p.pvncd = pvncd)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Function COUNT_REPEAT_RGTNO_PVNCD(ByVal rgtno As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal pvncd As Integer) As Integer
             Dim i As Integer = 0
             datas = (From p In db.drrgts Where p.rgtno = rgtno And p.rgttpcd = rgttpcd And p.drgtpcd = drgtpcd And p.pvncd = pvncd)
@@ -1371,6 +1377,12 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        'Public Sub GetDataby_TR_ID_type2(ByVal TR_ID As String, ByVal type As Integer)
+
+        '    datas = (From p In db.FILE_ATTACHes Where p.TRANSACTION_ID = TR_ID And p.TYPE = type And p.NAME_REAL <> "" Select p)
+        '    For Each Me.fields In datas
+        '    Next
+        'End Sub
         Public Sub GetDataby_TR_ID_type_process(ByVal TR_ID As String, ByVal type As Integer, ByVal process_id As String)
 
             datas = (From p In db.FILE_ATTACHes Where p.TRANSACTION_ID = TR_ID And p.TYPE = type And p.PROCESS_ID = process_id And p.NAME_REAL <> "" Select p)
@@ -2826,7 +2838,7 @@ Namespace DAO_DRUG
 
             Next
         End Sub
-        Public Sub GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW_AND_GROUP(ByVal P_ID As String, ByVal STATUS As Integer, ByVal PREVIEW As Integer, ByVal _group As Integer)
+        Public Sub GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW_AND_GROUP(ByVal P_ID As String, ByVal STATUS As Integer, ByVal PREVIEW As String, ByVal _group As Integer)
             datas = (From p In db.MAS_TEMPLATE_PROCESSes Where p.PROCESS_ID = P_ID And p.STATUS_ID = STATUS _
               And p.PREVIEW = PREVIEW And p.GROUPS = _group Select p)
             For Each Me.fields In datas

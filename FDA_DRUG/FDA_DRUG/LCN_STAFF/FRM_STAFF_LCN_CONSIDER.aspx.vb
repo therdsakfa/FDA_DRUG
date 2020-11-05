@@ -51,10 +51,17 @@
     Public Sub Bind_ddl_staff_offer()
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
-        bao.SP_STAFF_OFFER_DDL()
+        'bao.SP_STAFF_OFFER_DDL()
+        Try
+            bao.SP_STAFF_OFFER_DDL_BY_PVNCD(_CLS.PVCODE)
+            'ddl_staff_offer.DataSource = bao.dt
+            'ddl_staff_offer.DataBind()
+            rcb_staff_offer.DataSource = bao.dt
+            rcb_staff_offer.DataBind()
+        Catch ex As Exception
 
-        ddl_staff_offer.DataSource = bao.dt
-        ddl_staff_offer.DataBind()
+        End Try
+
     End Sub
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
@@ -105,7 +112,12 @@
             dao.fields.STATUS_ID = 6
             dao.fields.CONSIDER_DATE = CONSIDER_DATE
 
-            dao.fields.FK_STAFF_OFFER_IDA = ddl_staff_offer.SelectedValue
+            dao.fields.FK_STAFF_OFFER_IDA = rcb_staff_offer.SelectedValue
+            Try
+                dao.fields.TABLET_CAPSULE = rcb_staff_offer.SelectedItem.Text
+            Catch ex As Exception
+
+            End Try
             Try
                 dao.fields.appdate = CDate(txt_app_date.Text)
             Catch ex As Exception

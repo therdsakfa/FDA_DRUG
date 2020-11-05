@@ -121,6 +121,11 @@
                        <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
                            HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
                        </telerik:GridBoundColumn>
+                       
+                       <telerik:GridBoundColumn DataField="newcode" FilterControlAltText="Filter newcode column"
+                           HeaderText="newcode" SortExpression="newcode" UniqueName="newcode" Display="false">
+                       </telerik:GridBoundColumn>
+
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
                            CommandName="sel" Text="ดูข้อมูล">
                            <HeaderStyle Width="70px" />

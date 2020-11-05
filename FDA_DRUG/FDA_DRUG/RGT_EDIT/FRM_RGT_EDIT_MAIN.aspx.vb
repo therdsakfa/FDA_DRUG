@@ -50,19 +50,39 @@ Public Class FRM_RGT_EDIT_MAIN
 
             End Try
 
-            
             Try
-                'Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
-                'dao_drrgt.GetDataby_IDA(_rgt_ida)
-                Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
-                dao_drrgt.GetDataby_IDA_drrgt(_rgt_ida)
+                'dt = bao.SP_DRRGT_BY_IDA(Request.QueryString("rgt_ida"))
+                'lbl_rgtno.Text = dt(0)("rgtno_display")
+                Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+                dao_e.GetDataby_NEWCODE(Request.QueryString("newcode"))
+                lbl_rgtno.Text = dao_e.fields.register
 
-                Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
-                dao_lcn.GetDataby_u1(dao_drrgt.fields.Newcode_not)
-                Bind_ddl_phr(dao_lcn.fields.IDA_dalcn)
+
             Catch ex As Exception
 
             End Try
+            Try
+                Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+                dao_e.GetDataby_NEWCODE(Request.QueryString("newcode"))
+                Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+                dao_lcn.GetDataby_u1(dao_e.fields.Newcode_not)
+                Bind_ddl_phr(dao_lcn.fields.IDA_dalcn)
+
+            Catch ex As Exception
+
+            End Try
+            'Try
+            '    'Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
+            '    'dao_drrgt.GetDataby_IDA(_rgt_ida)
+            '    Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+            '    dao_drrgt.GetDataby_IDA_drrgt(_rgt_ida)
+
+            '    Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+            '    dao_lcn.GetDataby_u1(dao_drrgt.fields.Newcode_not)
+            '    Bind_ddl_phr(dao_lcn.fields.IDA_dalcn)
+            'Catch ex As Exception
+
+            'End Try
             load_HL()
         End If
 
@@ -401,24 +421,24 @@ Public Class FRM_RGT_EDIT_MAIN
             If e.CommandName = "sel" Then
                 Dim _process_id As String = 0
 
-                Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-                Try
-                    If Len(tr_id) >= 9 Then
-                        dao_tr.GetDataby_TR_ID_Process(tr_id, _process)
-                        _process_id = dao.fields.PROCESS_ID
-                    Else
-                        dao_tr.GetDataby_IDA(tr_id)
-                        _process_id = dao.fields.PROCESS_ID
-                    End If
+                'Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+                'Try
+                '    If Len(tr_id) >= 9 Then
+                '        dao_tr.GetDataby_TR_ID_Process(tr_id, _process)
+                '        _process_id = dao.fields.PROCESS_ID
+                '    Else
+                '        dao_tr.GetDataby_IDA(tr_id)
+                '        _process_id = dao.fields.PROCESS_ID
+                '    End If
 
-                Catch ex As Exception
+                'Catch ex As Exception
 
-                End Try
+                'End Try
 
                 Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
                 dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
                 'lbl_titlename.Text = "พิจารณาคำขอขึ้นทะเบียนตำรับ"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../RGT_EDIT/FRM_RGT_EDIT_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & item("TR_ID").Text & "&Process=" & _process_id & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../RGT_EDIT/FRM_RGT_EDIT_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & item("TR_ID").Text & "&process=" & Request.QueryString("process") & "&newcode=" & Request.QueryString("newcode") & "');", True)
             ElseIf e.CommandName = "_report" Then
                 Dim url As String = ""
                 url = "../TABEAN_YA_STAFF/FRM_APPOINTMENT2.aspx?IDA=" & IDA & "&STATUS_ID=" & item("STATUS_ID").Text & "&status=" & item("STATUS_ID").Text & "&p=1"

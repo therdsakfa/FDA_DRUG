@@ -47,10 +47,19 @@
     Public Sub Bind_ddl_staff_offer()
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
-        bao.SP_STAFF_OFFER_DDL_ex()
+        ' bao.SP_STAFF_OFFER_DDL_ex()
+        Try
+            bao.SP_STAFF_OFFER_DDL_BY_PVNCD(_CLS.PVCODE)
+            'ddl_staff_offer.DataSource = bao.dt
+            'ddl_staff_offer.DataBind()
 
-        ddl_staff_offer.DataSource = bao.dt
-        ddl_staff_offer.DataBind()
+            rcb_staff_offer.DataSource = bao.dt
+            rcb_staff_offer.DataBind()
+        Catch ex As Exception
+
+        End Try
+        'ddl_staff_offer.DataSource = bao.dt
+        'ddl_staff_offer.DataBind()
     End Sub
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
@@ -74,8 +83,8 @@
             dao.fields.CONSIDER_DATE = CDate(TextBox1.Text)
             dao.fields.OFF_CITIZEN = _CLS.CITIZEN_ID
             dao.fields.OFFICER_NAME = set_name_company(_CLS.CITIZEN_ID)
-            dao.fields.FK_STAFF_OFFER_IDA = ddl_staff_offer.SelectedValue
-            dao.fields.ALLOW_NAME = ddl_staff_offer.SelectedValue
+            dao.fields.FK_STAFF_OFFER_IDA = rcb_staff_offer.SelectedValue
+            dao.fields.ALLOW_NAME = rcb_staff_offer.SelectedValue
 
             Dim dao_officer As New DAO_DRUG.TB_MAS_STAFF_OFFER
             dao_officer.GetDataby_IDA(dao.fields.FK_STAFF_OFFER_IDA)

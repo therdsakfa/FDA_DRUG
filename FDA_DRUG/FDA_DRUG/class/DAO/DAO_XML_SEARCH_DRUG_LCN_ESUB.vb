@@ -107,6 +107,19 @@
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_NEWCODE(ByVal u1 As String)
+
+            datas = (From p In db.XML_SEARCH_PRODUCT_GROUP_ESUBs Where p.Newcode_U = u1 And p.frn_no = "1" Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_4Key(ByVal rgtno As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal pvncd As String)
+
+            datas = (From p In db.XML_SEARCH_PRODUCT_GROUP_ESUBs Where p.rgtno = rgtno And p.rgttpcd = rgttpcd And p.pvncd = pvncd And p.drgtpcd = drgtpcd And p.frn_no = "1" Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub GetDataby_u1(ByVal u1 As String)
 
             datas = (From p In db.XML_SEARCH_PRODUCT_GROUP_ESUBs Where p.Newcode_U = u1 Select p)

@@ -59,7 +59,9 @@ Public Class FRM_RQT_REGIST_INFORMATION
             UC_general.bind_dosage_form()
             UC_general.bind_drclass()
             UC_general.bind_drkdofdrg()
-            'UC_general.show_data_rqt(_IDA)
+
+
+
             UC_general.bind_ddl_bio_unit()
             UC_general.bind_ddl_packaging()
             UC_general.bind_ddl_small_unit()
@@ -67,6 +69,7 @@ Public Class FRM_RQT_REGIST_INFORMATION
             UC_general.show_data(Request.QueryString("IDA"))
             UC_general.bind_label()
             UC_COLOR1.load_data()
+            'UC_general.show_data_rqt(_IDA)
 
             ' UC_recipe.bind_ddl_atc()
             UC_officer_che.bind_unit_head()

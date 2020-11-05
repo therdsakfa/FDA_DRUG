@@ -116,6 +116,7 @@ Public Class UC_general
             Catch ex As Exception
 
             End Try
+
         Else
             Dim dao As New DAO_DRUG.ClsDBdrrqt
             dao.GetDataby_IDA(IDA)
@@ -194,6 +195,38 @@ Public Class UC_general
             Dim dao As New DAO_DRUG.ClsDBdrrqt
             dao.GetDataby_IDA(IDA)
             Try
+                Dim dao_dactg As New DAO_DRUG.ClsDBdactg
+                dao_dactg.GetData_by_cd(dao.fields.ctgcd)
+                lbl_dactg.Text = dao_dactg.fields.ctgthanm
+            Catch ex As Exception
+
+            End Try
+            Try
+                'rcb_drdosage.SelectedValue = dao.fields.FK_DOSAGE_FORM
+
+                Dim dao_dose As New DAO_DRUG.TB_drdosage
+                dao_dose.GetDataby_cd(dao.fields.dsgcd)
+                lbl_drdosage.Text = dao_dose.fields.thadsgnm & " / " & dao_dose.fields.engdsgnm
+            Catch ex As Exception
+
+            End Try
+            'ประเภทของยา
+            Try
+                Dim dao_drclass As New DAO_DRUG.TB_drclass
+                dao_drclass.GetDataBycd(dao.fields.classcd)
+                lbl_drclass.Text = dao_drclass.fields.thaclassnm & "/" & dao_drclass.fields.engclassnm
+            Catch ex As Exception
+
+            End Try
+            'หน่วยนับตามรูปของแบบยา
+            Try
+                Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT
+                dao_unit.GetDataby_sunitcd(dao.fields.UNIT_NORMAL)
+                lbl_small_unit.Text = dao_unit.fields.unit_name
+            Catch ex As Exception
+
+            End Try
+            Try
                 'ddl_dactg.DropDownSelectData(dao.fields.ctgcd)
                 rcb_dactg.SelectedValue = dao.fields.ctgcd
             Catch ex As Exception
@@ -263,7 +296,38 @@ Public Class UC_general
         Else
             Dim dao As New DAO_DRUG.ClsDBdrrqt
             dao.GetDataby_IDA(IDA)
+            Try
+                Dim dao_dactg As New DAO_DRUG.ClsDBdactg
+                dao_dactg.GetData_by_cd(dao.fields.ctgcd)
+                lbl_dactg.Text = dao_dactg.fields.ctgthanm
+            Catch ex As Exception
 
+            End Try
+            Try
+                'rcb_drdosage.SelectedValue = dao.fields.FK_DOSAGE_FORM
+
+                Dim dao_dose As New DAO_DRUG.TB_drdosage
+                dao_dose.GetDataby_cd(dao.fields.dsgcd)
+                lbl_drdosage.Text = dao_dose.fields.thadsgnm & " / " & dao_dose.fields.engdsgnm
+            Catch ex As Exception
+
+            End Try
+            'ประเภทของยา
+            Try
+                Dim dao_drclass As New DAO_DRUG.TB_drclass
+                dao_drclass.GetDataBycd(dao.fields.classcd)
+                lbl_drclass.Text = dao_drclass.fields.thaclassnm & "/" & dao_drclass.fields.engclassnm
+            Catch ex As Exception
+
+            End Try
+            'หน่วยนับตามรูปของแบบยา
+            Try
+                Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT
+                dao_unit.GetDataby_sunitcd(dao.fields.UNIT_NORMAL)
+                lbl_small_unit.Text = dao_unit.fields.unit_name
+            Catch ex As Exception
+
+            End Try
             Try
                 'ddl_dactg.DropDownSelectData(dao.fields.ctgcd)
                 rcb_dactg.SelectedValue = dao.fields.ctgcd
@@ -335,7 +399,9 @@ Public Class UC_general
 
     End Sub
     Public Sub bind_label()
-        If Request.QueryString("STATUS_ID") = "8" Then
+        RunQuery()
+
+        If STATUS_ID = "8" Then
             Dim dao As New DAO_DRUG.ClsDBdrrgt
             dao.GetDataby_IDA(Request.QueryString("IDA"))
             'หมวดยา
@@ -418,13 +484,13 @@ Public Class UC_general
 
             End Try
             ''ประเภทของยา
-            'Try
-            '    Dim dao_drclass As New DAO_DRUG.TB_drclass
-            '    dao_drclass.GetDataBycd(dao.fields.classcd)
-            '    lbl_drclass.Text = dao_drclass.fields.thaclassnm
-            'Catch ex As Exception
+            Try
+                Dim dao_drclass As New DAO_DRUG.TB_drclass
+                dao_drclass.GetDataBycd(dao.fields.classcd)
+                lbl_drclass.Text = dao_drclass.fields.thaclassnm
+            Catch ex As Exception
 
-            'End Try
+            End Try
             'หน่วยนับชีวะภาพ
             Try
                 Dim dao_bio As New DAO_DRUG.TB_MAS_BIO_UNIT
@@ -457,15 +523,15 @@ Public Class UC_general
             Catch ex As Exception
 
             End Try
-            'Try
-            '    'rcb_drdosage.SelectedValue = dao.fields.FK_DOSAGE_FORM
+            Try
+                'rcb_drdosage.SelectedValue = dao.fields.FK_DOSAGE_FORM
 
-            '    Dim dao_dose As New DAO_DRUG.TB_drdosage
-            '    dao_dose.GetDataby_cd(dao.fields.dsgcd)
-            '    lbl_drdosage.Text = dao_dose.fields.thadsgnm
-            'Catch ex As Exception
+                Dim dao_dose As New DAO_DRUG.TB_drdosage
+                dao_dose.GetDataby_cd(dao.fields.dsgcd)
+                lbl_drdosage.Text = dao_dose.fields.thadsgnm
+            Catch ex As Exception
 
-            'End Try
+            End Try
 
             'ชนิดยา
             Try

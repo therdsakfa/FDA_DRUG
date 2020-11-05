@@ -120,7 +120,7 @@
             If Request.QueryString("n") <> "" Then
                 Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP3.aspx?ida=" & Request.QueryString("ida") & "&h=1&n=1")
             Else
-                Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP2.aspx?ida=" & Request.QueryString("ida") & "&h=1")
+                Response.Redirect("POPUP_LCN_PRODUCTION_DRUG_GROUP3.aspx?ida=" & Request.QueryString("ida") & "&h=1")
             End If
 
         End If

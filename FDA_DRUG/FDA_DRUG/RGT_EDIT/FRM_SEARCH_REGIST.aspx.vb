@@ -111,15 +111,27 @@ Public Class FRM_SEARCH_REGIST
 
             Try
 
+                Dim newcode As String = ""
                 Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
                 dao_rg.GetDataby_IDA(rcb_search.SelectedValue)
+
+                Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+                Try
+                    dao_drrgt.GetDataby_4Key(dao_rg.fields.rgtno, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.pvncd)
+                    newcode = dao_drrgt.fields.Newcode_U
+                Catch ex As Exception
+
+                End Try
                 Dim dao_da As New DAO_DRUG.ClsDBdalcn
-                dao_da.GetDataby_IDA(dao_rg.fields.FK_LCN_IDA)
-                'Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-                'dao_tr.GetDataby_IDA(dao_p.fields.TR_ID)
+                Try
+                    dao_da.GetDataby_IDA(dao_rg.fields.FK_LCN_IDA)
+                Catch ex As Exception
+
+                End Try
+
                 Dim url As String = ""
                 If _process = "130099" Then
-                    url = "../RGT_EDIT/FRM_RGT_EDIT_MAIN.aspx?rgt_ida=" & str_ID & "&lcn_ida=" & dao_rg.fields.FK_LCN_IDA & "&lct_ida=" & dao_da.fields.FK_IDA & "&process=" & Request.QueryString("process")
+                    url = "../RGT_EDIT/FRM_RGT_EDIT_MAIN.aspx?rgt_ida=" & str_ID & "&lcn_ida=" & dao_rg.fields.FK_LCN_IDA & "&lct_ida=" & dao_da.fields.FK_IDA & "&process=" & Request.QueryString("process") & "&newcode=" & newcode
 
                 ElseIf _process = "130098" Then
                     url = "../SUBSTITUTE_TABEAN/FRM_SUBSTITUTE_MAIN.aspx?rgt_ida=" & str_ID & "&lcn_ida=" & dao_rg.fields.FK_LCN_IDA & "&lct_ida=" & dao_da.fields.FK_IDA & "&process=" & Request.QueryString("process")

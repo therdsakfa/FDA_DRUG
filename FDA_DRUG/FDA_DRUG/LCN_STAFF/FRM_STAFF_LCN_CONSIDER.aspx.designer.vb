@@ -12,7 +12,16 @@ Option Explicit On
 
 
 Partial Public Class FRM_STAFF_LCN_CONSIDER
-
+    
+    '''<summary>
+    '''ScriptManager1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+    
     '''<summary>
     '''Txt_Remark control.
     '''</summary>
@@ -21,16 +30,16 @@ Partial Public Class FRM_STAFF_LCN_CONSIDER
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Txt_Remark As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
-    '''ddl_staff_offer control.
+    '''rcb_staff_offer control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddl_staff_offer As Global.System.Web.UI.WebControls.DropDownList
-
+    Protected WithEvents rcb_staff_offer As Global.Telerik.Web.UI.RadComboBox
+    
     '''<summary>
     '''TextBox1 control.
     '''</summary>
@@ -39,7 +48,7 @@ Partial Public Class FRM_STAFF_LCN_CONSIDER
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''txt_app_date control.
     '''</summary>
@@ -48,7 +57,7 @@ Partial Public Class FRM_STAFF_LCN_CONSIDER
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_app_date As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Button1 control.
     '''</summary>
@@ -57,7 +66,7 @@ Partial Public Class FRM_STAFF_LCN_CONSIDER
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Button2 control.
     '''</summary>

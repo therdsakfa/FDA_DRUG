@@ -2065,17 +2065,17 @@ Partial Public Class Linq_DRUGDataContext
     End Sub
   Partial Private Sub DeleteMAS_STAFF_OFFER(instance As MAS_STAFF_OFFER)
     End Sub
-  Partial Private Sub InsertDALCN_IMPORT_DRUG_GROUP_DETAIL1(instance As DALCN_IMPORT_DRUG_GROUP_DETAIL1)
-    End Sub
-  Partial Private Sub UpdateDALCN_IMPORT_DRUG_GROUP_DETAIL1(instance As DALCN_IMPORT_DRUG_GROUP_DETAIL1)
-    End Sub
-  Partial Private Sub DeleteDALCN_IMPORT_DRUG_GROUP_DETAIL1(instance As DALCN_IMPORT_DRUG_GROUP_DETAIL1)
-    End Sub
   Partial Private Sub InsertDALCN_IMPORT_DRUG_GROUP_DETAIL2(instance As DALCN_IMPORT_DRUG_GROUP_DETAIL2)
     End Sub
   Partial Private Sub UpdateDALCN_IMPORT_DRUG_GROUP_DETAIL2(instance As DALCN_IMPORT_DRUG_GROUP_DETAIL2)
     End Sub
   Partial Private Sub DeleteDALCN_IMPORT_DRUG_GROUP_DETAIL2(instance As DALCN_IMPORT_DRUG_GROUP_DETAIL2)
+    End Sub
+  Partial Private Sub InsertDALCN_IMPORT_DRUG_GROUP_DETAIL1(instance As DALCN_IMPORT_DRUG_GROUP_DETAIL1)
+    End Sub
+  Partial Private Sub UpdateDALCN_IMPORT_DRUG_GROUP_DETAIL1(instance As DALCN_IMPORT_DRUG_GROUP_DETAIL1)
+    End Sub
+  Partial Private Sub DeleteDALCN_IMPORT_DRUG_GROUP_DETAIL1(instance As DALCN_IMPORT_DRUG_GROUP_DETAIL1)
     End Sub
   #End Region
 	
@@ -4174,15 +4174,15 @@ Partial Public Class Linq_DRUGDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property DALCN_IMPORT_DRUG_GROUP_DETAIL1s() As System.Data.Linq.Table(Of DALCN_IMPORT_DRUG_GROUP_DETAIL1)
-		Get
-			Return Me.GetTable(Of DALCN_IMPORT_DRUG_GROUP_DETAIL1)
-		End Get
-	End Property
-	
 	Public ReadOnly Property DALCN_IMPORT_DRUG_GROUP_DETAIL2s() As System.Data.Linq.Table(Of DALCN_IMPORT_DRUG_GROUP_DETAIL2)
 		Get
 			Return Me.GetTable(Of DALCN_IMPORT_DRUG_GROUP_DETAIL2)
+		End Get
+	End Property
+	
+	Public ReadOnly Property DALCN_IMPORT_DRUG_GROUP_DETAIL1s() As System.Data.Linq.Table(Of DALCN_IMPORT_DRUG_GROUP_DETAIL1)
+		Get
+			Return Me.GetTable(Of DALCN_IMPORT_DRUG_GROUP_DETAIL1)
 		End Get
 	End Property
 End Class
@@ -134784,156 +134784,6 @@ Partial Public Class MAS_STAFF_OFFER
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DALCN_IMPORT_DRUG_GROUP_DETAIL1")>  _
-Partial Public Class DALCN_IMPORT_DRUG_GROUP_DETAIL1
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _IDA As Integer
-	
-	Private _DRUG_TYPE As System.Nullable(Of Integer)
-	
-	Private _FK_IDA As System.Nullable(Of Integer)
-	
-	Private _DRUG_TYPE2 As System.Nullable(Of Integer)
-	
-	Private _DRUG_TYPE23 As System.Nullable(Of Integer)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnIDAChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnIDAChanged()
-    End Sub
-    Partial Private Sub OnDRUG_TYPEChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDRUG_TYPEChanged()
-    End Sub
-    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnFK_IDAChanged()
-    End Sub
-    Partial Private Sub OnDRUG_TYPE2Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDRUG_TYPE2Changed()
-    End Sub
-    Partial Private Sub OnDRUG_TYPE23Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDRUG_TYPE23Changed()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property IDA() As Integer
-		Get
-			Return Me._IDA
-		End Get
-		Set
-			If ((Me._IDA = value)  _
-						= false) Then
-				Me.OnIDAChanging(value)
-				Me.SendPropertyChanging
-				Me._IDA = value
-				Me.SendPropertyChanged("IDA")
-				Me.OnIDAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DRUG_TYPE", DbType:="Int")>  _
-	Public Property DRUG_TYPE() As System.Nullable(Of Integer)
-		Get
-			Return Me._DRUG_TYPE
-		End Get
-		Set
-			If (Me._DRUG_TYPE.Equals(value) = false) Then
-				Me.OnDRUG_TYPEChanging(value)
-				Me.SendPropertyChanging
-				Me._DRUG_TYPE = value
-				Me.SendPropertyChanged("DRUG_TYPE")
-				Me.OnDRUG_TYPEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
-	Public Property FK_IDA() As System.Nullable(Of Integer)
-		Get
-			Return Me._FK_IDA
-		End Get
-		Set
-			If (Me._FK_IDA.Equals(value) = false) Then
-				Me.OnFK_IDAChanging(value)
-				Me.SendPropertyChanging
-				Me._FK_IDA = value
-				Me.SendPropertyChanged("FK_IDA")
-				Me.OnFK_IDAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DRUG_TYPE2", DbType:="Int")>  _
-	Public Property DRUG_TYPE2() As System.Nullable(Of Integer)
-		Get
-			Return Me._DRUG_TYPE2
-		End Get
-		Set
-			If (Me._DRUG_TYPE2.Equals(value) = false) Then
-				Me.OnDRUG_TYPE2Changing(value)
-				Me.SendPropertyChanging
-				Me._DRUG_TYPE2 = value
-				Me.SendPropertyChanged("DRUG_TYPE2")
-				Me.OnDRUG_TYPE2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DRUG_TYPE23", DbType:="Int")>  _
-	Public Property DRUG_TYPE23() As System.Nullable(Of Integer)
-		Get
-			Return Me._DRUG_TYPE23
-		End Get
-		Set
-			If (Me._DRUG_TYPE23.Equals(value) = false) Then
-				Me.OnDRUG_TYPE23Changing(value)
-				Me.SendPropertyChanging
-				Me._DRUG_TYPE23 = value
-				Me.SendPropertyChanged("DRUG_TYPE23")
-				Me.OnDRUG_TYPE23Changed
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DALCN_IMPORT_DRUG_GROUP_DETAIL2")>  _
 Partial Public Class DALCN_IMPORT_DRUG_GROUP_DETAIL2
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -135193,6 +135043,156 @@ Partial Public Class DALCN_IMPORT_DRUG_GROUP_DETAIL2
 				Me._COL_ALLS = value
 				Me.SendPropertyChanged("COL_ALLS")
 				Me.OnCOL_ALLSChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DALCN_IMPORT_DRUG_GROUP_DETAIL1")>  _
+Partial Public Class DALCN_IMPORT_DRUG_GROUP_DETAIL1
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _DRUG_TYPE As System.Nullable(Of Integer)
+	
+	Private _FK_IDA As System.Nullable(Of Integer)
+	
+	Private _DRUG_TYPE2 As System.Nullable(Of Integer)
+	
+	Private _DRUG_TYPE23 As System.Nullable(Of Integer)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OnDRUG_TYPEChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDRUG_TYPEChanged()
+    End Sub
+    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnFK_IDAChanged()
+    End Sub
+    Partial Private Sub OnDRUG_TYPE2Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDRUG_TYPE2Changed()
+    End Sub
+    Partial Private Sub OnDRUG_TYPE23Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDRUG_TYPE23Changed()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DRUG_TYPE", DbType:="Int")>  _
+	Public Property DRUG_TYPE() As System.Nullable(Of Integer)
+		Get
+			Return Me._DRUG_TYPE
+		End Get
+		Set
+			If (Me._DRUG_TYPE.Equals(value) = false) Then
+				Me.OnDRUG_TYPEChanging(value)
+				Me.SendPropertyChanging
+				Me._DRUG_TYPE = value
+				Me.SendPropertyChanged("DRUG_TYPE")
+				Me.OnDRUG_TYPEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
+	Public Property FK_IDA() As System.Nullable(Of Integer)
+		Get
+			Return Me._FK_IDA
+		End Get
+		Set
+			If (Me._FK_IDA.Equals(value) = false) Then
+				Me.OnFK_IDAChanging(value)
+				Me.SendPropertyChanging
+				Me._FK_IDA = value
+				Me.SendPropertyChanged("FK_IDA")
+				Me.OnFK_IDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DRUG_TYPE2", DbType:="Int")>  _
+	Public Property DRUG_TYPE2() As System.Nullable(Of Integer)
+		Get
+			Return Me._DRUG_TYPE2
+		End Get
+		Set
+			If (Me._DRUG_TYPE2.Equals(value) = false) Then
+				Me.OnDRUG_TYPE2Changing(value)
+				Me.SendPropertyChanging
+				Me._DRUG_TYPE2 = value
+				Me.SendPropertyChanged("DRUG_TYPE2")
+				Me.OnDRUG_TYPE2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DRUG_TYPE23", DbType:="Int")>  _
+	Public Property DRUG_TYPE23() As System.Nullable(Of Integer)
+		Get
+			Return Me._DRUG_TYPE23
+		End Get
+		Set
+			If (Me._DRUG_TYPE23.Equals(value) = false) Then
+				Me.OnDRUG_TYPE23Changing(value)
+				Me.SendPropertyChanging
+				Me._DRUG_TYPE23 = value
+				Me.SendPropertyChanged("DRUG_TYPE23")
+				Me.OnDRUG_TYPE23Changed
 			End If
 		End Set
 	End Property

@@ -1565,6 +1565,25 @@ Public Class BAO_SHOW
         Return dt
     End Function
     '
+    Public Function SP_PHR_FUNCTION() As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_PHR_FUNCTION "
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        dt.TableName = "SP_PHR_FUNCTION"
+        Return dt
+    End Function
+
     Public Function SP_LOCATION_BSN_BY_LCN_IDA(ByVal lcnida As Integer) As DataTable
         Dim clsds As New ClassDataset
         Dim sql As String = "exec SP_LOCATION_BSN_BY_LCN_IDA @LCN_IDA=" & lcnida

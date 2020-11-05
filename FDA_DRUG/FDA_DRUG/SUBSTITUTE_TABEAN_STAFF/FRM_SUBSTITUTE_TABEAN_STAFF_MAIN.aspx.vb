@@ -70,7 +70,7 @@ Public Class FRM_SUBSTITUTE_TABEAN_STAFF_MAIN
                 Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
                 dao_rg.GetDataby_IDA(dao.fields.FK_IDA)
                 _process_id = "1400001"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_TABEAN_STAFF/FRM_SUBSTITUTE_TABEAN_PREVIEW.aspx?IDA=" & IDA & "&TR_ID=" & dao.fields.TR_ID & "&Process=" & dao.fields.PROCESS_ID & "&rgt_ida=" & tebean_ida & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_TABEAN_STAFF/FRM_SUBSTITUTE_TABEAN_PREVIEW.aspx?IDA=" & IDA & "&TR_ID=" & dao.fields.TR_ID & "&Process=" & dao.fields.PROCESS_ID & "&newcode=" & item("newcode").Text & "&rgt_ida=" & tebean_ida & "&STATUS_ID=8');", True)
             End If
 
         End If
