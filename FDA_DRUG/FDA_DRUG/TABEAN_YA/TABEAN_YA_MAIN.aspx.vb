@@ -729,7 +729,7 @@ Public Class TABEAN_YA_MAIN
             End If
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
         ElseIf e.CommandName = "_add" Then
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_REGIST_INFORMATION.aspx?IDA=" & dao.fields.IDA & "&TR_ID=" & tr_id & "&process=" & Request.QueryString("process") & "&rq=1&type=rg'); ", True)
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_REGIST_INFORMATION.aspx?IDA=" & dao.fields.IDA & "&TR_ID=" & tr_id & "&process=" & Request.QueryString("process") & "&STATUS_ID=" & dao.fields.STATUS_ID & "&rq=1&type=rg'); ", True)
 
         End If
     End Sub
@@ -872,10 +872,10 @@ Public Class TABEAN_YA_MAIN
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
             ElseIf e.CommandName = "_add" Then
                 If Request.QueryString("tt") <> "" Then
-                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_REGIST_INFORMATION.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & Request.QueryString("process") & "&STATUS_ID=" & dao.fields.STATUS_ID & "&rq=1&tt=1'); ", True)
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_REGIST_INFORMATION.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & Request.QueryString("process") & "&STATUS_ID=" & status_id & "&rq=1&tt=1'); ", True)
 
                 Else
-                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_REGIST_INFORMATION.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & Request.QueryString("process") & "&STATUS_ID=" & dao.fields.STATUS_ID & "&rq=1'); ", True)
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_REGIST_INFORMATION.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & Request.QueryString("process") & "&STATUS_ID=" & status_id & "&rq=1'); ", True)
 
                 End If
             ElseIf e.CommandName = "_report" Then

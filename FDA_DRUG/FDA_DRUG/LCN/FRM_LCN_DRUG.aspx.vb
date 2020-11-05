@@ -203,11 +203,11 @@ Public Class FRM_LCN_DRUG
                 Catch ex As Exception
 
                 End Try
-                If bool = False Then
-                    btn_Select.Style.Add("display", "none")
-                Else
-                    btn_Select.Style.Add("display", "block")
-                End If
+                'If bool = False Then
+                '    btn_drug_group.Style.Add("display", "none")
+                'Else
+                btn_drug_group.Style.Add("display", "block")
+                'End If
 
             ElseIf _process = "101" Then
                 Dim dao_ky As New DAO_DRUG.ClsDBdalcn
@@ -506,6 +506,8 @@ Public Class FRM_LCN_DRUG
         Catch ex As Exception
 
         End Try
+        cls_xml.DT_SHOW.DT20 = bao_show.SP_PHR_FUNCTION()
+
 
         Dim objStreamWriter As New StreamWriter(path)                                                         'ประกาศตัวแปร
         Dim x As New XmlSerializer(cls_xml.GetType)                                                           'ประกาศ

@@ -84,9 +84,9 @@ Public Class POPUP_LCN_PRODUCTION_DRUG_GROUP3
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         Dim dao_t As New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
         dao_t.GetDataby_FKIDA(Request.QueryString("ida"))
-        'For Each dao_t.fields In dao_t.datas
-        dao_t.delete()
-        'Next
+        For Each dao_t.fields In dao_t.datas
+            dao_t.delete()
+        Next
 
         dao_t = New DAO_DRUG.TB_DALCN_IMPORT_DRUG_GROUP_DETAIL1
         dao_t.fields.FK_IDA = Request.QueryString("ida")

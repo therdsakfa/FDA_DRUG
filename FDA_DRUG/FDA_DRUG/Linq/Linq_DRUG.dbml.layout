@@ -2072,16 +2072,16 @@
         <elementListCompartment Id="fb0bedd4-b646-4c05-afed-d96e009f5f14" absoluteBounds="2.765, 41.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="330fff58-d4c2-49d7-ab9e-352aa00e5288" absoluteBounds="26.375, 22.75, 2, 1.7708968098958309">
-      <DataClassMoniker Name="/Linq_DRUGDataContext/DALCN_IMPORT_DRUG_GROUP_DETAIL1" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9fbac7ed-3e1c-4b1d-ba47-82d7e9ff1e50" absoluteBounds="26.39, 23.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="1eec996e-5bbd-49c7-a204-ed2e1de78ff8" absoluteBounds="26.375, 25.75, 2, 2.9247054036458309">
       <DataClassMoniker Name="/Linq_DRUGDataContext/DALCN_IMPORT_DRUG_GROUP_DETAIL2" />
       <nestedChildShapes>
         <elementListCompartment Id="20b05dcd-d364-4855-bff6-cf4975125e68" absoluteBounds="26.39, 26.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="924e3899-9e7d-47b8-a40a-fae65cab4dfe" absoluteBounds="26.125, 21.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/DALCN_IMPORT_DRUG_GROUP_DETAIL1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e9bad79-8f81-4f27-b560-f95dfd6a321c" absoluteBounds="26.14, 22.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

@@ -60,7 +60,7 @@ Public Class FRM_XML
         Dim x As New XmlSerializer(cls_xml.GetType)
         Dim a As String = ""
 
-
+        cls_xml.DT_SHOW.DT20 = bao_show.SP_PHR_FUNCTION()
         'Dim info() As System.Reflection.PropertyInfo = cls_xml.GetType().GetProperties()
 
 

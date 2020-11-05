@@ -2608,7 +2608,7 @@ Public Class WS_DRUG_XML
 
         End Try
         Try
-            dao_lcnre.fields.thanm = dt(0)("thanm")
+            dao_lcnre.fields.thanm = dt(0)("thanameplace")
         Catch ex As Exception
 
         End Try
