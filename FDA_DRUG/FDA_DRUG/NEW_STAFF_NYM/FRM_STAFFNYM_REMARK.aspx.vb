@@ -59,7 +59,7 @@
                 Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
                 dao.GetDataby_IDA(_IDA)
 
-                dao.fields.REMARK = TextBox1.Text
+                dao.fields.REMARK_EDIT = TextBox1.Text
 
                 dao.fields.STATUS_ID = 5
 
@@ -69,7 +69,7 @@
             ElseIf _process = 1028 Then
                 Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
                 dao.GetDataby_IDA(_IDA)
-                dao.fields.REMARK = TextBox1.Text
+                dao.fields.REMARK_EDIT = TextBox1.Text
 
                 dao.fields.STATUS_ID = 5
 
@@ -80,7 +80,7 @@
             ElseIf _process = 1029 Then
                 Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
                 dao.GetDataby_IDA(_IDA)
-                dao.fields.REMARK = TextBox1.Text
+                dao.fields.REMARK_EDIT = TextBox1.Text
 
                 dao.fields.STATUS_ID = 5
 

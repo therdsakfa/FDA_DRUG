@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="POPUP_NYM_SUBMIT_REQUEST.aspx.vb" Inherits="FDA_DRUG.POPUP_NYM_SUBMIT_REQUEST" %>
 
 <%@ Register Src="~/UC/UC_GRID_ATTACH.ascx" TagPrefix="uc1" TagName="UC_GRID_ATTACH" %>
-
+<%@ Register Src="~/UC/UC_GRID_ATTACH_IMPORT.ascx" TagPrefix="uc1" TagName="UC_GRID_ATTACH_IMPORT" %>
 <%@ Register src="../UC/UC_GRID_PHARMACIST.ascx" tagname="UC_GRID_PHARMACIST" tagprefix="uc2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -87,7 +87,7 @@
 
                  <table class="table" style="width:90%"> 
 
-                     <tr id="table_id"><td><asp:Label ID="txt_title" runat="server" Text="เงื่อนไข/หมายเหตุแก้ไข" AutoPostBack="True" />
+                     <tr id="table_id"><td><asp:Label ID="txt_title" runat="server" Text="หมายเหตุแก้ไข/คืนคำขอ" AutoPostBack="True" />
                           <asp:TextBox ID="txt_edit_remark" runat="server" CssClass="auto-style1" Height="100px" TextMode="MultiLine" Width="270px" Wrap="False" ReadOnly="True">ไม่ได้ระบุ</asp:TextBox>
                          </td></tr>
                      <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยื่นคำขอ" CssClass="btn-lg"   Width="80%" OnClientClick="return confirm('คุณต้องการบันทึกข้อมูลหรือไม่');"  /></td></tr>
@@ -102,13 +102,19 @@
              </td>
         </tr>
         <tr>
-           <td style="width:30%;height:50%;padding-left:10%">
 
+           <td style="width:30%;height:50%;padding-left:10%">
+               <asp:Label ID="Label1" runat="server" Text="เอกสารยื่นยันการส่งคืนหรือการบริจาค" AutoPostBack="True" />
                  <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" />  
+               <br/>
+           <asp:Label ID="Label2" runat="server" Text="เอกสารแนบ" AutoPostBack="True" />
+                 <uc1:UC_GRID_ATTACH_IMPORT runat="server" id="UC_GRID_ATTACH1" />  
            
                  <br />
              </td>
+
         </tr>
+
         </table> 
     
 </asp:Content>

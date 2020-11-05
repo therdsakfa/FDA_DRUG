@@ -606,7 +606,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         'Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
         'Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", PROCESS_ID, YEAR, _TR_ID)
         'LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, PROCESS_ID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
-
+        'Dim bao1 As New BAO.ClsDBSqlcommand
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
         Dim bao_master As New BAO_MASTER
@@ -619,7 +619,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
         dao_lcn.GetDataby_IDA(dao.fields.lcnno)
         Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+        dao_tr.GetDataby_TR_ID_Process(dao.fields.TR_ID,dao.fields.process_id)
         'Dim dao_phr As New DAO_DRUG.ClsDBDALCN_PHR
         'dao_phr.GetDataby_FK_IDA(dao.fields.PRODUCT_ID_IDA)
         Dim _YEARS As String = dao_tr.fields.YEAR
@@ -635,7 +635,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         End Try
 
         'Dim cls_regis As New CLASS_GEN_XML.drsamp2(_CLS.CITIZEN_ID, dao_lcn.fields.lcnsid, dao_lcn.fields.lcnno, dao_lcn.fields.lcntpcd, dao_lcn.fields.pvncd, dao_lcn.fields.IDA, dao_pid.fields.IDA, dao_pid.fields.FK_IDA, dao_pid.fields.FK_IDA, 0, dao.fields.TR_ID, dao.fields.phr_fk)
-        Dim cls_regis As New CLASS_GEN_XML.drsamp2(_CLS.CITIZEN_ID, dao_lcn.fields.lcnsid, dao_lcn.fields.lcnno, dao_lcn.fields.lcntpcd, dao_lcn.fields.pvncd, dao_lcn.fields.IDA, dao_pid.fields.IDA, dao_pid.fields.FK_IDA, dao_pid.fields.IDA, dao.fields.TR_ID, dao.fields.phr_fk)
+        Dim cls_regis As New CLASS_GEN_XML.drsamp2(_CLS.CITIZEN_ID, dao_lcn.fields.lcnsid, dao_lcn.fields.lcnno, dao_lcn.fields.lcntpcd, dao_lcn.fields.pvncd, dao_lcn.fields.IDA, dao_pid.fields.IDA, dao_pid.fields.FK_IDA, dao_pid.fields.IDA, dao.fields.TR_ID, dao.fields.phr_fk, dao.fields.staff_approved_iden, dao.fields.CITIZEN_RCV)
 
         Dim class_xml As New CLASS_DRSAMP
         ''class_xml.drsamp = dao.fields
@@ -660,17 +660,37 @@ Public Class FRM_DS_STAFF_CONFIRM
 
         End Try
         Try
-            Dim rcvdate As Date = dao.fields.rcvdate
-            dao.fields.rcvdate = DateAdd(DateInterval.Year, 543, rcvdate)
-            class_xml.RCVDATE = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
-            Dim write_date As Date = dao.fields.WRITE_DATE
-            Dim app_date As Date = dao.fields.appdate
-            dao.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
-            class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, -543, write_date), "dd MMM yyyy")
-            dao.fields.appdate = DateAdd(DateInterval.Year, 543, app_date)
-            class_xml.APPDATE = Format(DateAdd(DateInterval.Year, -543, app_date), "dd MMMM yyyy")
-            class_xml.drsamp = dao.fields
-            class_xml.regis = dao_pid.fields
+            If dao.fields.STATUS_ID <= 4 Then
+                Dim write_date As Date = dao.fields.WRITE_DATE
+                dao.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
+                class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, -543, write_date), "dd MMM yyyy")
+                class_xml.drsamp = dao.fields
+                class_xml.regis = dao_pid.fields
+
+            ElseIf dao.fields.STATUS_ID = 9 Or dao.fields.STATUS_ID = 10 Then
+                Dim rcvdate As Date = dao.fields.rcvdate
+                dao.fields.rcvdate = DateAdd(DateInterval.Year, 543, rcvdate)
+                class_xml.RCVDATE = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
+                Dim write_date As Date = dao.fields.WRITE_DATE
+                dao.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
+                class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, -543, write_date), "dd MMM yyyy")
+                class_xml.drsamp = dao.fields
+                class_xml.regis = dao_pid.fields
+
+            ElseIf dao.fields.STATUS_ID = 8 Then
+                Dim rcvdate As Date = dao.fields.rcvdate
+                dao.fields.rcvdate = DateAdd(DateInterval.Year, 543, rcvdate)
+                class_xml.RCVDATE = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
+                Dim app_date As Date = dao.fields.appdate
+                dao.fields.appdate = DateAdd(DateInterval.Year, 543, app_date)
+                class_xml.APPDATE = Format(DateAdd(DateInterval.Year, -543, app_date), "dd MMMM yyyy")
+                Dim write_date As Date = dao.fields.WRITE_DATE
+                dao.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
+                class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, -543, write_date), "dd MMM yyyy")
+                class_xml.drsamp = dao.fields
+                class_xml.regis = dao_pid.fields
+            End If
+
         Catch ex As Exception
 
         End Try

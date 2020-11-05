@@ -33,6 +33,8 @@
             dao.GetDataby_IDA(_IDA)
             dao.fields.STATUS_ID = 8
             dao.fields.REMARK = Txt_Remark.Text
+            dao.fields.staff_approved_iden = _CLS.CITIZEN_ID
+            dao.fields.appdate = Date.Now
             Try
                 dao.fields.rcvdate = CDate(txt_app_date.Text)
                 RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, _ProcessID, _IDA)

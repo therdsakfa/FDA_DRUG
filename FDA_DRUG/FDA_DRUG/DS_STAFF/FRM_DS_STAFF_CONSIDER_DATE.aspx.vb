@@ -39,11 +39,11 @@
 
         End Try
 
-        Try
-            txt_app_date.Text = CDate(dao.fields.appdate).ToShortDateString()
-        Catch ex As Exception
-            txt_app_date.Text = Date.Now.ToShortDateString()
-        End Try
+        'Try
+        '    txt_app_date.Text = CDate(dao.fields.appdate).ToShortDateString()
+        'Catch ex As Exception
+        '    txt_app_date.Text = Date.Now.ToShortDateString()
+        'End Try
         Txt_Remark.Text = dao.fields.remark
     End Sub
     Public Sub set_data(ByRef dao As DAO_DRUG.ClsDBdalcn)
@@ -87,11 +87,11 @@
             dao.fields.CONSIDER_DATE = CONSIDER_DATE 'วันที่คาดว่าจะอนุมัติ
 
             dao.fields.FK_STAFF_OFFER_IDA = ddl_staff_offer.SelectedValue 'ชื่อผู้ลงนาม
-            Try
-                dao.fields.appdate = CDate(txt_app_date.Text)
-            Catch ex As Exception
+            'Try
+            '    dao.fields.appdate = CDate(txt_app_date.Text)
+            'Catch ex As Exception
 
-            End Try
+            'End Try
             dao.update()
 
 
