@@ -41,6 +41,24 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
+    '''txt_title control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_title As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''txt_edit_remark control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_edit_remark As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''btn_confirm control.
     '''</summary>
     '''<remarks>
@@ -77,6 +95,15 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''UC_GRID_ATTACH control.
     '''</summary>
     '''<remarks>
@@ -84,4 +111,22 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UC_GRID_ATTACH As Global.FDA_DRUG.UC_GRID_ATTACH
+
+    '''<summary>
+    '''Label2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''UC_GRID_ATTACH1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_GRID_ATTACH1 As Global.FDA_DRUG.UC_GRID_ATTACH_IMPORT
 End Class

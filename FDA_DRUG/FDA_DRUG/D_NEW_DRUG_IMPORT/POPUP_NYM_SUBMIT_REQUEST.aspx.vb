@@ -34,12 +34,22 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         'If Session("b64") IsNot Nothing Then
         '    b64 = Session("b64")
         'End If
+        Dim type As Integer
+        If _process = 1027 Then
+            type = 2
+        ElseIf _process = 1028 Then
+            type = 3
+        ElseIf _process = 1029 Then
+            type = 4
+        End If
+
         If Not IsPostBack Then
             BindData_PDF()
             show_btn(_IDA)
             set_hide(_IDA)
             ' UC_GRID_PHARMACIST.load_gv(_IDA)
-            'UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv(_IDA)
+            UC_GRID_ATTACH1.loadatteachfromdrugimportupload(_IDA, type)
             If Request.QueryString("identify") <> "" Then
                 If Request.QueryString("identify") <> _CLS.CITIZEN_ID_AUTHORIZE Then
                     AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("identify"), 0, HttpContext.Current.Request.Url.AbsoluteUri)
@@ -89,47 +99,76 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         End If
     End Sub
     Public Sub set_hide(ByVal IDA As String)
-        'Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
-        'Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
-        'Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
-        'dao2.GetDataby_IDA(IDA)
-        'If dao2.fields.STATUS_ID = 5 Then
-        '    btn_confirm.Enabled = False
-        '    btn_cancel.Enabled = False
-        '    btn_confirm.CssClass = "btn-danger btn-lg"
-        '    btn_cancel.CssClass = "btn-danger btn-lg"
+        Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+        Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        dao2.GetDataby_IDA(IDA)
+        dao3.GetDataby_IDA(IDA)
+        dao4.GetDataby_IDA(IDA)
+        If _process = 1027 Then
+            If dao2.fields.STATUS_ID = 5 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
 
-        '    _edit.Style.Add("display", "block")
-        '    remark_edit.Style.Add("display", "block")
-        '    remark_edit.Text = dao2.fields.REMARK_EDIT
-        '    'Try
-        '    '    If dao.fields.STATUS_ID = 5 Then
-        '    '        remark_edit.Style.Add("display", "block")
-        '    '    End If
-        '    'Catch ex As Exception
-        '    'End Try
-        'ElseIf dao3.fields.STATUS_ID = 5 Then
-        '    btn_confirm.Enabled = False
-        '    btn_cancel.Enabled = False
-        '    btn_confirm.CssClass = "btn-danger btn-lg"
-        '    btn_cancel.CssClass = "btn-danger btn-lg"
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao2.fields.REMARK_EDIT
+            ElseIf dao2.fields.STATUS_ID = 7 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
 
-        '    _edit.Style.Add("display", "block")
-        '    remark_edit.Style.Add("display", "block")
-        '    remark_edit.Text = dao3.fields.REMARK_EDIT              'อย่าลืม เพิ่มตารางใน base 
-        'ElseIf dao4.fields.STATUS_ID = 5 Then
-        '    btn_confirm.Enabled = False
-        '    btn_cancel.Enabled = False
-        '    btn_confirm.CssClass = "btn-danger btn-lg"
-        '    btn_cancel.CssClass = "btn-danger btn-lg"
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao2.fields.REMARK
+            End If
+        ElseIf _process = 1028 Then
+            If dao3.fields.STATUS_ID = 5 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
 
-        '    _edit.Style.Add("display", "block")
-        '    remark_edit.Style.Add("display", "block")
-        '    remark_edit.Text = dao4.fields.REMARK_EDIT              'อย่าลืม เพิ่มตารางใน base 
-        'Else
-        '    _edit.Style.Add("display", "none")
-        '    remark_edit.Style.Add("display", "none")
-        'End If
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao3.fields.REMARK_EDIT
+            ElseIf dao3.fields.STATUS_ID = 7 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
+
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao3.fields.REMARK          'อย่าลืม เพิ่มตารางใน base 
+            End If
+        ElseIf _process = 1029 Then
+            If dao4.fields.STATUS_ID = 5 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
+
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao4.fields.REMARK_EDIT
+            ElseIf dao4.fields.STATUS_ID = 7 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
+
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao4.fields.REMARK           'อย่าลืม เพิ่มตารางใน base 
+            End If
+        Else
+            txt_title.Style.Add("display", "none")
+            txt_edit_remark.Style.Add("display", "none")
+        End If
     End Sub
     Private Function chk_pha() As Boolean                             'เอาไว้ทำอะไร
         Dim chk As Boolean = True
