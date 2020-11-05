@@ -460,6 +460,11 @@ Module BAO_COMMON
                     Dim cls_xml As New CLASS_GEN_XML.Center
                     cls_xml.GEN_XML_DRUG_CONSIDER_REQUESTS(PATH_XML, _p_DRUG_CONSIDER_REQUESTS)
 
+                ElseIf PROSESS_ID = 1701 Or PROSESS_ID = 1702 Or PROSESS_ID = 1703 Or PROSESS_ID = 1704 Or PROSESS_ID = 1705 Or PROSESS_ID = 1706 Or PROSESS_ID = 1707 Then 'ตระกูล 8 ยาตัวอย่าง
+                    Dim cls_xml As New CLASS_GEN_XML.drsamp2
+                    cls_xml.GEN_XML_DRSAMP(PATH_XML, p_drsamp)
+
+
 
                 ElseIf (PROSESS_ID = 110 Or PROSESS_ID = 111 Or PROSESS_ID = 112 Or PROSESS_ID = 113 _
                     Or PROSESS_ID = 114 Or PROSESS_ID = 115 Or PROSESS_ID = 116 Or PROSESS_ID = 117 _
@@ -483,10 +488,6 @@ Module BAO_COMMON
                 ElseIf PROSESS_ID = 1027 Then
                     Dim cls_xml As New CLASS_GEN_XML.NYM2_IMPORT
                     cls_xml.GEN_XML_NORYORMOR2(PATH_XML, p_nym2)
-
-                ElseIf PROSESS_ID = 1701 Or PROSESS_ID = 1702 Or PROSESS_ID = 1703 Or PROSESS_ID = 1704 Or PROSESS_ID = 1705 Or PROSESS_ID = 1706 Or PROSESS_ID = 1707 Then 'ตระกูล 8
-                    Dim cls_xml As New CLASS_GEN_XML.drsamp2
-                    cls_xml.GEN_XML_DRSAMP(PATH_XML, p_drsamp)
                 ElseIf PROSESS_ID = 10061 Then
                     Dim cls_xml As New CLASS_GEN_XML.Cerf
                     cls_xml.GEN_XML_CER_FOREIGN(PATH_XML, p_cerf)
@@ -715,6 +716,9 @@ Module BAO_COMMON
                         End Using
                     End Using
                 End Using
+
+
+
             ElseIf (PROSESS_ID = 123 Or PROSESS_ID = 124 Or PROSESS_ID = 125 Or PROSESS_ID = 126 _
                Or PROSESS_ID = 127 Or PROSESS_ID = 128 Or PROSESS_ID = 129 Or PROSESS_ID = 130 _
                Or PROSESS_ID = 131 Or PROSESS_ID = 132 Or PROSESS_ID = 133 Or PROSESS_ID = 134) And temps <> "" Then
