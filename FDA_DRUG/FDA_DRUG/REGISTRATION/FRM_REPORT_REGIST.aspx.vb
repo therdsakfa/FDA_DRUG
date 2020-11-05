@@ -144,6 +144,13 @@ Public Class FRM_REPORT_REGIST
                     Catch ex As Exception
 
                     End Try
+
+                    If dao.fields.LCNTPCD = "ผย1" Then
+                        dao.fields.DALCNTYPE_CD = "1"
+                    ElseIf dao.fields.LCNTPCD = "นย1" Then
+                        dao.fields.DALCNTYPE_CD = "2"
+                    End If
+
                     dao.fields.RCVNO = rcvno
                     dao.fields.RCVNO_DISPLAY = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
                     dao.fields.REGIS_NO = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
