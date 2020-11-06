@@ -464,8 +464,6 @@ Module BAO_COMMON
                     Dim cls_xml As New CLASS_GEN_XML.drsamp2
                     cls_xml.GEN_XML_DRSAMP(PATH_XML, p_drsamp)
 
-
-
                 ElseIf (PROSESS_ID = 110 Or PROSESS_ID = 111 Or PROSESS_ID = 112 Or PROSESS_ID = 113 _
                     Or PROSESS_ID = 114 Or PROSESS_ID = 115 Or PROSESS_ID = 116 Or PROSESS_ID = 117 _
                     Or PROSESS_ID = 118 Or PROSESS_ID = 119 Or PROSESS_ID = 120 Or PROSESS_ID = 121 _
@@ -559,6 +557,10 @@ Module BAO_COMMON
                 ElseIf PROSESS_ID = 1027 Then
                     Dim cls_xml As New CLASS_GEN_XML.NYM2_IMPORT
                     cls_xml.GEN_XML_NORYORMOR2(PATH_XML, p_nym2)
+
+                ElseIf PROSESS_ID = 1701 Or PROSESS_ID = 1702 Or PROSESS_ID = 1703 Or PROSESS_ID = 1704 Or PROSESS_ID = 1705 Or PROSESS_ID = 1706 Or PROSESS_ID = 1707 Then 'ตระกูล 8 ยาตัวอย่าง
+                    Dim cls_xml As New CLASS_GEN_XML.drsamp2
+                    cls_xml.GEN_XML_DRSAMP(PATH_XML, p_drsamp)
 
                 ElseIf PROSESS_ID = 1028 Then
                     Dim cls_xml As New CLASS_GEN_XML.NYM3_IMPORT_SUB
@@ -717,7 +719,16 @@ Module BAO_COMMON
                     End Using
                 End Using
 
-
+            ElseIf PROSESS_ID = 1701 Or PROSESS_ID = 1702 Or PROSESS_ID = 1703 Or PROSESS_ID = 1704 Or PROSESS_ID = 1705 Or PROSESS_ID = 1706 Or PROSESS_ID = 1707 Then 'ตระกูล 8 ยาตัวอย่าง
+                Dim cls_xml As New CLASS_GEN_XML.drsamp2
+                cls_xml.GEN_XML_DRSAMP(PATH_XML, p_drsamp)
+                Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\
+                    Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"
+                        Using stamper = New iTextSharp.text.pdf.PdfStamper(pdfReader__1, outputStream, ControlChars.NullChar, True)
+                            stamper.AcroFields.Xfa.FillXfaForm(PATH_XML)
+                        End Using
+                    End Using
+                End Using
 
             ElseIf (PROSESS_ID = 123 Or PROSESS_ID = 124 Or PROSESS_ID = 125 Or PROSESS_ID = 126 _
                Or PROSESS_ID = 127 Or PROSESS_ID = 128 Or PROSESS_ID = 129 Or PROSESS_ID = 130 _

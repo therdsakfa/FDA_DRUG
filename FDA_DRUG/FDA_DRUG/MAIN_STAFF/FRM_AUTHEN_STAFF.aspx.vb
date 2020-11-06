@@ -11,7 +11,7 @@
     Private _TOKEN As String
     Private Sub RunQuery()
         _TOKEN = Request("Token").ToString()
-        ' _TOKEN = "uUxUfqVZ6aNHe/ufg9O7VgUU"    '--------
+        '_TOKEN = "2C7QkkAaaDhqT1pUWCkvnAUU"    '--------
         '_TOKEN = "N/J1pNwqJ2fJvZ/1jRPoRwUU"
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -35,7 +35,7 @@
             Else 'กรณีต้นทางไม่ใช่มาจาก privus ให้ย้อนกลับไปที่ privus
                 Response.Redirect("https://privus.fda.moph.go.th")
             End If
-        Catch ex As Exception 'กรณีตรวจสอบไม่เจอ url ต้นทางให้ย้อนกลับไปที่ privus
+        Catch ex As Exception 'กรณีตรวจสอบไม่เจอ url ต้นทางให้ย้อนกลับไปที่ privuss
             Response.Redirect("https://privus.fda.moph.go.th")
         End Try
 
