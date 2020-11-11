@@ -28,7 +28,7 @@ Public Class FRM_DS_STAFF_CONFIRM
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunQuery()
         If Not IsPostBack Then
-            'txt_app_date.Text = Date.Now.ToShortDateString()
+
             HiddenField2.Value = 0
             BindData_PDF()
             Bind_ddl_Status_staff()
@@ -36,7 +36,7 @@ Public Class FRM_DS_STAFF_CONFIRM
             'UC_GRID_PHARMACIST.load_gv(_IDA)
             UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
             set_hide(_IDA)
-
+            show_btn(_IDA)
             'Try
             '    Dim dao As New DAO_DRUG.ClsDBdrsamp
             '    dao.GetDataby_IDA(_IDA)
@@ -51,17 +51,17 @@ Public Class FRM_DS_STAFF_CONFIRM
 
         End If
         'set_lbl()
-        show_btn(_IDA)
+
     End Sub
 
     Sub show_btn(ByVal ID As String) 'รับคำขอ
         Dim dao As New DAO_DRUG.ClsDBdrsamp
         dao.GetDataby_IDA(ID)
 
-        If dao.fields.STATUS_ID <> 3 Then
-            btn_preview.Enabled = False
+        If dao.fields.STATUS_ID = 9 Then
+            btn_preview.Enabled = True
             ' btn_cancel.Enabled = False
-            btn_preview.CssClass = "btn-danger btn-lg"
+            btn_preview.CssClass = "btn-lg"
             'btn_preview.CssClass = "btn-danger btn-lg"
 
         End If
@@ -700,7 +700,7 @@ Public Class FRM_DS_STAFF_CONFIRM
 
         class_xml.IMPORT_AMOUNTS = dao.fields.QUANTITY & " " & unit_physic.fields.unit_name
 
-        p_drsamp = class_xml
+
 
         Dim statusId As Integer = dao.fields.STATUS_ID
         Dim lcntype As String = dao.fields.lcntpcd
@@ -742,15 +742,15 @@ Public Class FRM_DS_STAFF_CONFIRM
         'Dim filename As String = paths & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)        'code เปิดใช้ตอนอัพ
         Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)
 
-        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, dao_tr.fields.PROCESS_ID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
-        Try
+        If dao.fields.STATUS_ID = "8" Then
             Dim url As String = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
-            'Dim ws As New WS_QR_CODE.WS_QR_CODE
-            'class_xml.QR_CODE = ws.GetQRImgByte(url)
             class_xml.QR_CODE = QR_CODE_IMG(url)
-        Catch ex As Exception
+        End If
 
-        End Try
+        p_drsamp = class_xml
+
+        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, dao_tr.fields.PROCESS_ID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+
 
         lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
         hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
