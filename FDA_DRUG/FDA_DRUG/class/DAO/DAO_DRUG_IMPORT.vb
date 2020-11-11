@@ -58,7 +58,7 @@
 
             Next
         End Sub
-        Public Sub GetDataby_TR_ID(ByVal TR_ID As Integer)
+        Public Sub GetDataby_TR_ID(ByVal TR_ID As String)
 
             datas = (From p In db.FDA_DRUG_IMPORT_NYM_2s Where p.TR_ID = TR_ID Select p)
             For Each Me.fields In datas

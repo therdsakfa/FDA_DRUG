@@ -150,6 +150,11 @@
 
         End Try
         Try
+            dao_rqt.fields.A_NO = Txt_rcvno_temp.Text
+        Catch ex As Exception
+
+        End Try
+        Try
             dao_rqt.fields.STAFF_IDEN_RECEIVE = txt_iden_staff.Text
         Catch ex As Exception
 

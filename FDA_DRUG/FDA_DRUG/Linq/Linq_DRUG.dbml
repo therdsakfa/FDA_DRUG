@@ -6749,4 +6749,10 @@
       <Column Name="DRUG_TYPE23" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.MAS_ORG_NAME_NYM" Member="MAS_ORG_NAME_NYMs">
+    <Type Name="MAS_ORG_NAME_NYM">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TYPE_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

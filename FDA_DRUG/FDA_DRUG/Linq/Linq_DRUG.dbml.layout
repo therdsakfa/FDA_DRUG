@@ -2084,5 +2084,11 @@
         <elementListCompartment Id="0e9bad79-8f81-4f27-b560-f95dfd6a321c" absoluteBounds="26.14, 22.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="3ebcf777-8b24-44b0-9a51-c51480a5800c" absoluteBounds="9.25, 2, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/MAS_ORG_NAME_NYM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee5478cf-0e39-44a0-9d3d-ec987a80a232" absoluteBounds="9.265, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

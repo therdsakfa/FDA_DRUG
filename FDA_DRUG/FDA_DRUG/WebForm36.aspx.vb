@@ -2857,5 +2857,10 @@ Public Class WebForm36
         End If
         Dim curent_year As Integer = byearMax
     End Sub
+
+    Protected Sub btn_hen_tr_id_Click(sender As Object, e As EventArgs) Handles btn_hen_tr_id.Click
+        Dim ws As New WS_NORYORMOR_DATA
+        ws.Gen_TR_ID(1027, "1710500118665", "0000000000000")
+    End Sub
 End Class
 

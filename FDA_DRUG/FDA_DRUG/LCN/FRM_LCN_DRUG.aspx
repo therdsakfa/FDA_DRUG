@@ -125,6 +125,15 @@
                                                <asp:Button ID="btn_upload" runat="server" Text="อัพโหลดคำขอ" CssClass="btn-lg" />
                                            </td>
                                        </tr>
+                                       <tr>
+                                           <td>
+                                               <asp:Label ID="lbl_head_org" runat="server" Text="กรุณาเลือกประเภทหน่วยงาน" style="display:none;"></asp:Label>
+                                           </td>
+                                           <td colspan="3">
+                                               <asp:RadioButtonList ID="rdl_org" runat="server" RepeatDirection="Horizontal" RepeatColumns="6" style="display:none;">
+                                               </asp:RadioButtonList>
+                                           </td>
+                                       </tr>
                                    </table>
                                      <asp:Button ID="btn_reload" runat="server" Text="" style="display:none;"  />
                                      <asp:Button ID="Button1" runat="server" Text="" style="display:none;"  />

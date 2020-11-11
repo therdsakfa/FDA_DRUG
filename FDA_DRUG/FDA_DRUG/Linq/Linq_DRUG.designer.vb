@@ -2077,6 +2077,12 @@ Partial Public Class Linq_DRUGDataContext
     End Sub
   Partial Private Sub DeleteDALCN_IMPORT_DRUG_GROUP_DETAIL1(instance As DALCN_IMPORT_DRUG_GROUP_DETAIL1)
     End Sub
+  Partial Private Sub InsertMAS_ORG_NAME_NYM(instance As MAS_ORG_NAME_NYM)
+    End Sub
+  Partial Private Sub UpdateMAS_ORG_NAME_NYM(instance As MAS_ORG_NAME_NYM)
+    End Sub
+  Partial Private Sub DeleteMAS_ORG_NAME_NYM(instance As MAS_ORG_NAME_NYM)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -4183,6 +4189,12 @@ Partial Public Class Linq_DRUGDataContext
 	Public ReadOnly Property DALCN_IMPORT_DRUG_GROUP_DETAIL1s() As System.Data.Linq.Table(Of DALCN_IMPORT_DRUG_GROUP_DETAIL1)
 		Get
 			Return Me.GetTable(Of DALCN_IMPORT_DRUG_GROUP_DETAIL1)
+		End Get
+	End Property
+	
+	Public ReadOnly Property MAS_ORG_NAME_NYMs() As System.Data.Linq.Table(Of MAS_ORG_NAME_NYM)
+		Get
+			Return Me.GetTable(Of MAS_ORG_NAME_NYM)
 		End Get
 	End Property
 End Class
@@ -135193,6 +135205,90 @@ Partial Public Class DALCN_IMPORT_DRUG_GROUP_DETAIL1
 				Me._DRUG_TYPE23 = value
 				Me.SendPropertyChanged("DRUG_TYPE23")
 				Me.OnDRUG_TYPE23Changed
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.MAS_ORG_NAME_NYM")>  _
+Partial Public Class MAS_ORG_NAME_NYM
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _TYPE_NAME As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OnTYPE_NAMEChanging(value As String)
+    End Sub
+    Partial Private Sub OnTYPE_NAMEChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TYPE_NAME", DbType:="NVarChar(MAX)")>  _
+	Public Property TYPE_NAME() As String
+		Get
+			Return Me._TYPE_NAME
+		End Get
+		Set
+			If (String.Equals(Me._TYPE_NAME, value) = false) Then
+				Me.OnTYPE_NAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._TYPE_NAME = value
+				Me.SendPropertyChanged("TYPE_NAME")
+				Me.OnTYPE_NAMEChanged
 			End If
 		End Set
 	End Property

@@ -48,8 +48,8 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             show_btn(_IDA)
             set_hide(_IDA)
             ' UC_GRID_PHARMACIST.load_gv(_IDA)
-            UC_GRID_ATTACH.load_gv(_IDA)
-            UC_GRID_ATTACH1.loadatteachfromdrugimportupload(_IDA, type)
+            UC_GRID_ATTACH.load_gv_V2(Request.QueryString("TR_ID"), Request.QueryString("Process"))
+            'UC_GRID_ATTACH1.loadatteachfromdrugimportupload(_IDA, type)
             If Request.QueryString("identify") <> "" Then
                 If Request.QueryString("identify") <> _CLS.CITIZEN_ID_AUTHORIZE Then
                     AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("identify"), 0, HttpContext.Current.Request.Url.AbsoluteUri)
@@ -351,7 +351,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim class_xml3 As New CLASS_NYM_3_SM
         Dim class_xml4 As New CLASS_NYM_4_SM
 
-        ' class_xml = cls_dalcn.gen_xml()
+        class_xml21.NYM_2s = dao2.fields
         'class_xml21.NYM_2s = dao2.fields
         'class_xml22.NYM_2s = dao2.fields
         'class_xml3.NYM_3s = dao3.fields
@@ -392,17 +392,17 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim year As String = Date.Now.Year
         'Path_XML มาจาก ข้างบน ถ้าเปลี่ยน ที่อยู่ path มีตัวแปล paths dao_nym3 dao_pdftemplate
-        Dim filename As String
-        Dim Path_XML As String
+        Dim filename As String = ""
+        Dim Path_XML As String = ""
         If _process = 1027 Then
-            filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym2.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
-            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym2.fields.DL) 'load_PDF(filename)
+            filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym2.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym2.fields.TR_ID) 'load_PDF(filename)
         ElseIf _process = 1028 Then
-            filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym3.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
-            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym3.fields.DL) 'load_PDF(filename)                       BAO_COMMOND 627
+            filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym3.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym3.fields.TR_ID) 'load_PDF(filename)                       BAO_COMMOND 627
         ElseIf _process = 1029 Then
-            filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym4.fields.DL) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
-            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym4.fields.DL) 'load_PDF(filename)
+            filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym4.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym4.fields.TR_ID) 'load_PDF(filename)
         End If
 
 
@@ -415,11 +415,11 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
         HiddenField1.Value = filename
         If _process = 1027 Then
-            _CLS.FILENAME_PDF = NAME_PDF("DA", _process, year, dao_nym2.fields.DL)
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _process, year, dao_nym2.fields.TR_ID)
         ElseIf _process = 1028 Then
-            _CLS.FILENAME_PDF = NAME_PDF("DA", _process, year, dao_nym3.fields.DL)
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _process, year, dao_nym3.fields.TR_ID)
         ElseIf _process = 1029 Then
-            _CLS.FILENAME_PDF = NAME_PDF("DA", _process, year, dao_nym4.fields.DL)
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _process, year, dao_nym4.fields.TR_ID)
         End If
         _CLS.PDFNAME = filename
         '    show_btn() 'ตรวจสอบปุ่ม
