@@ -43,7 +43,7 @@ Public Class FRM_LCN_DRUG
             End If
             If _process = "201" Or _process = "202" Or _process = "203" Or _process = "204" Or _process = "205" Or _process = "206" Then
                 lbl_head_org.Style.Add("display", "block")
-                rdl_org.Style.Add("display", "block")
+                ddl_org.Style.Add("display", "block")
                 Bind_rdl()
 
             End If
@@ -62,8 +62,12 @@ Public Class FRM_LCN_DRUG
         Dim dao As New DAO_DRUG.TB_MAS_ORG_NAME_NYM
         dao.GetDataAll()
 
-        rdl_org.DataSource = dao.datas
-        rdl_org.DataBind()
+        ddl_org.DataSource = dao.datas
+        ddl_org.DataTextField = "TYPE_NAME"
+        ddl_org.DataValueField = "IDA"
+        ddl_org.DataBind()
+
+        ddl_org.DropDownInsertDataFirstRow("--กรุณาเลือก--", "0")
     End Sub
     Private Sub load_HL()
         Dim urls As String = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN
@@ -378,7 +382,7 @@ Public Class FRM_LCN_DRUG
         Else
             If String.IsNullOrEmpty(_process) = False Then  'ถ้าให้ค่า _process เป็นค่าว่าง จะไม่เป็นความจริง
                 If _process = "201" Or _process = "202" Or _process = "203" Or _process = "204" Or _process = "205" Or _process = "206" Then
-                    If rdl_org.SelectedValue = "" Then
+                    If ddl_org.SelectedValue = "0" Then
                         alert("กรุณาเลือกประเภทหน่วยงาน")
                     Else
                         Bind_PDF()
@@ -524,7 +528,7 @@ Public Class FRM_LCN_DRUG
         Dim dao As New DAO_DRUG.TB_DALCN_LOCATION_BSN
         dao.Getdata_by_fk_id2(_lct_ida)
         If _process = "201" Or _process = "202" Or _process = "203" Or _process = "204" Or _process = "205" Or _process = "206" Then
-            cls_xml.dalcns.Co_name = rdl_org.SelectedValue
+            cls_xml.dalcns.Co_name = ddl_org.SelectedValue
         End If
         Try
             If dao.fields.BSN_NATIONALITY_CD = 1 Then

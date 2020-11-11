@@ -77,13 +77,13 @@ Partial Public Class FRM_LCN_DRUG
     Protected WithEvents lbl_head_org As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''rdl_org control.
+    '''ddl_org control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents rdl_org As Global.System.Web.UI.WebControls.RadioButtonList
+    Protected WithEvents ddl_org As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''btn_reload control.

@@ -268,16 +268,16 @@ Public Class POPUP_DI_CONFIRM
             STATUS = dr.STATUS_ID
         Next
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        If Len(_TR_ID) >= 9 Then
-            Try
-                dao_up.GetDataby_IDA(_TR_ID)
-            Catch ex As Exception
+        'If Len(_TR_ID) >= 9 Then
+        '    Try
+        '        dao_up.GetDataby_IDA(_TR_ID)
+        '    Catch ex As Exception
 
-            End Try
-        Else
-            dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
-        End If
-        Dim CITIEZEN_ID_AUTHORIZE As String = ""
+        '    End Try
+        'Else
+        dao_up.GetDataby_TR_ID_Process(_TR_ID, _ProcessID)
+            'End If
+            Dim CITIEZEN_ID_AUTHORIZE As String = ""
 
 
         'Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID.ToString()
@@ -330,7 +330,7 @@ Public Class POPUP_DI_CONFIRM
 
         class_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
         class_xml.DT_SHOW.DT11 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(1, _CLS.CITIZEN_ID_AUTHORIZE) 'ข้อมูลที่ตั้งหลัก
-        class_xml.DT_SHOW.DT12 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFYV2(dao_up.fields.CITIEZEN_ID_AUTHORIZE, dao.fields.LCNSID) 'ข้อมูลบริษัท
+        class_xml.DT_SHOW.DT12 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFYV2(dao.fields.IDENTIFY, dao.fields.LCNSID) 'ข้อมูลบริษัท
         'class_xml.DT_SHOW.DT12 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
         class_xml.DT_SHOW.DT13 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(2, _CLS.CITIZEN_ID_AUTHORIZE) 'ที่เก็บ
         class_xml.DT_SHOW.DT13.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSID_2"

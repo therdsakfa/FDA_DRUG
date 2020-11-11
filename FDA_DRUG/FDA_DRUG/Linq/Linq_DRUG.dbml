@@ -3256,75 +3256,6 @@
       <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DALCN_LOCATION_ADDRESS" Member="DALCN_LOCATION_ADDRESSes">
-    <Type Name="DALCN_LOCATION_ADDRESS">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OLD_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="thaaddr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="engaddr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="tharoom" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thamu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thafloor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thasoi" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thabuilding" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="engsoi" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="tharoad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="engroad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="zipcode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="tel" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Mobile" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="fax" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="lstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DOWN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CITIZEN_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CITIZEN_ID_UPLOAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="XMLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="engmu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="engfloor" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="engbuilding" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="rcvno" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="rcvdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="thanameplace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="engnameplace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HOUSENO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Branch" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="LOCATION_TYPE_NORMAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LOCATION_TYPE_KEEP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LOCATION_TYPE_OTHER" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LOCATION_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SYSTEM_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="thmblcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="amphrcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="thathmblnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="thaamphrnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="thachngwtnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="engthmblnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="engamphrnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="engchngwtnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="longitude" Type="System.Decimal" DbType="Decimal(18,10)" CanBeNull="true" />
-      <Column Name="latitude" Type="System.Decimal" DbType="Decimal(18,10)" CanBeNull="true" />
-      <Column Name="Status" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Country" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="groupdavision" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LOCATION_KIND" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="bumbud" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="beds_amount" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CITIZEN_RECORDER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="system_id" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="pvncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.DALCN_DETAIL_LOCATION_KEEP" Member="DALCN_DETAIL_LOCATION_KEEPs">
     <Type Name="DALCN_DETAIL_LOCATION_KEEP">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6753,6 +6684,75 @@
     <Type Name="MAS_ORG_NAME_NYM">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TYPE_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DALCN_LOCATION_ADDRESS" Member="DALCN_LOCATION_ADDRESSes">
+    <Type Name="DALCN_LOCATION_ADDRESS">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OLD_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thaaddr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="engaddr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tharoom" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thamu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thafloor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thasoi" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thabuilding" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="engsoi" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tharoad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="engroad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="zipcode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOWN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CITIZEN_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_ID_UPLOAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="XMLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="engmu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="engfloor" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="engbuilding" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rcvno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rcvdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thanameplace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="engnameplace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HOUSENO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Branch" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LOCATION_TYPE_NORMAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCATION_TYPE_KEEP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCATION_TYPE_OTHER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCATION_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SYSTEM_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thmblcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="amphrcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="thathmblnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thaamphrnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thachngwtnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="engthmblnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="engamphrnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="engchngwtnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="longitude" Type="System.Decimal" DbType="Decimal(18,10)" CanBeNull="true" />
+      <Column Name="latitude" Type="System.Decimal" DbType="Decimal(18,10)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="groupdavision" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOCATION_KIND" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bumbud" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="beds_amount" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_RECORDER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="system_id" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="pvncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

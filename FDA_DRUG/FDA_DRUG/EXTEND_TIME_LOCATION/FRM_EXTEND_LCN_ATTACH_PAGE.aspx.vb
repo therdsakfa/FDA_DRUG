@@ -10,9 +10,9 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
                 btn_upload.Style.Add("display", "block")
 
                 Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
-                dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
-                Try
-                    Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+                dao_edt.GetDataby_IDA(Request.QueryString("r_ida"))
+                'Try
+                Dim dao_dal As New DAO_DRUG.ClsDBdalcn
                     dao_dal.GetDataby_IDA(dao_edt.fields.FK_IDA)
 
                     Dim dao_lo As New DAO_DRUG.TB_DALCN_LOCATION_ADDRESS
@@ -21,11 +21,11 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
                     'txt_longitude.Text = dao_edt.fields.MAP_Y
                     txt_latitude.Text = dao_lo.fields.latitude
                     txt_longitude.Text = dao_lo.fields.longitude
-                Catch ex As Exception
+                    'Catch ex As Exception
 
-                End Try
+                    'End Try
 
-                Try
+                    Try
                     RadioButtonList1.SelectedValue = dao_edt.fields.ATTACH_TYPE
                     txt_ATTACH_DETAIL.Text = dao_edt.fields.ATTACH_DETAIL
                 Catch ex As Exception
@@ -91,7 +91,7 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
     Private Sub btn_save_lalong_Click(sender As Object, e As EventArgs) Handles btn_save_lalong.Click
         If Request.QueryString("TR_ID") <> "" Then
             Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
-            dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+            dao_edt.GetDataby_IDA(Request.QueryString("r_ida"))
             dao_edt.fields.MAP_X = txt_latitude.Text
             dao_edt.fields.MAP_Y = txt_longitude.Text
             dao_edt.update()
@@ -102,7 +102,7 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
     Protected Sub btn_att_type_Click(sender As Object, e As EventArgs) Handles btn_att_type.Click
         If Request.QueryString("TR_ID") <> "" Then
             Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
-            dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+            dao_edt.GetDataby_IDA(Request.QueryString("r_ida"))
             dao_edt.fields.ATTACH_TYPE = RadioButtonList1.SelectedValue
             dao_edt.fields.ATTACH_DETAIL = txt_ATTACH_DETAIL.Text
             dao_edt.update()
@@ -123,7 +123,7 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
     End Sub
     Sub set_lit()
         Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
-        dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+        dao_edt.GetDataby_IDA(Request.QueryString("r_ida"))
         Dim dt As New DataTable
         Dim bao As New BAO.ClsDBSqlcommand
         dt = bao.SP_LCN_EXTEND_RECEIPT_LIST(dao_edt.fields.IDA)
@@ -145,8 +145,8 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
             If file_ex = "jpg" Or file_ex = "png" Then
                 Dim IDA_dalcn As Integer = 0
                 Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
-                'dao.GetDataby_IDA(Request.QueryString("IDA"))
-                dao.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+                dao.GetDataby_IDA(Request.QueryString("r_ida"))
+                ' dao.GetDataby_TR_ID(Request.QueryString("TR_ID"))
                 Try
                     IDA_dalcn = dao.fields.FK_IDA
                 Catch ex As Exception
@@ -179,7 +179,7 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
             Dim IDA_dalcn As Integer = 0
             Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
             'dao.GetDataby_IDA(Request.QueryString("IDA"))
-            dao.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+            dao.GetDataby_IDA(Request.QueryString("r_ida"))
 
             Dim dao_dal As New DAO_DRUG.ClsDBdalcn
             dao_dal.GetDataby_IDA(dao.fields.FK_IDA)
