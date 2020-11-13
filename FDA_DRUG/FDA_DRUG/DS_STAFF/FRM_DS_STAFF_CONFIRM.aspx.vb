@@ -59,6 +59,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         dao.GetDataby_IDA(ID)
 
         If dao.fields.STATUS_ID = 9 Then
+            btn_preview.Visible = True
             btn_preview.Enabled = True
             ' btn_cancel.Enabled = False
             btn_preview.CssClass = "btn-lg"
@@ -619,7 +620,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
         dao_lcn.GetDataby_IDA(dao.fields.lcnno)
         Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_tr.GetDataby_TR_ID_Process(dao.fields.TR_ID,dao.fields.process_id)
+        dao_tr.GetDataby_TR_ID_Process(dao.fields.TR_ID, dao.fields.process_id)
         'Dim dao_phr As New DAO_DRUG.ClsDBDALCN_PHR
         'dao_phr.GetDataby_FK_IDA(dao.fields.PRODUCT_ID_IDA)
         Dim _YEARS As String = dao_tr.fields.YEAR

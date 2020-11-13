@@ -172,10 +172,12 @@ Public Class FRM_DS_STAFF_DRUG
 
             End Try
 
+            Dim dao As New DAO_DRUG.ClsDBdrsamp
+            dao.GetDataby_IDA(IDA)
+
             If e.CommandName = "sel" Then
-                Dim dao As New DAO_DRUG.ClsDBdrsamp
-                dao.GetDataby_IDA(IDA)
-                Dim tr_id As String= 0
+
+                Dim tr_id As String = 0
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception
@@ -184,6 +186,37 @@ Public Class FRM_DS_STAFF_DRUG
                 Dim ws As New AUTHEN_LOG.Authentication
                 ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", dao.fields.TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "เจ้าหน้าที่ดูข้อมูลใบอนุญาตยาตัวอย่าง", _process)
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_DS_STAFF_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & PROCESS_ID & "');", True)
+                'ElseIf e.CommandName = "_edit" Then
+                '    Dim dao_re As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+                '    dao_re.GetDataby_IDA(dao.fields.PRODUCT_ID_IDA)
+                '    IDA = dao_re.fields.IDA
+                '    Dim tamrab As String = ""
+                '    Try
+                '        tamrab = dao_re.fields.DRUG_EQ_TO
+
+                '    Catch ex As Exception
+
+                '    End Try
+                '    ''lbl_head1.Text = "เพิ่มข้อมูลส่วนที่ 2"
+                '    Try
+                '        If dao_re.fields.PROCESS_ID = "130002" Or dao_re.fields.PROCESS_ID = "130004" Then
+                '            If Request.QueryString("tt") <> "" Then
+                '                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx?IDA=" & IDA & "&req=1" & "&process=" & dao_re.fields.PROCESS_ID & "&a=1&tt=" & tamrab & "');", True)
+                '            Else
+                '                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx?IDA=" & IDA & "&req=1" & "&process=" & dao_re.fields.PROCESS_ID & "&a=1');", True)
+                '            End If
+                '        Else
+                '            '
+                '            If Request.QueryString("tt") <> "" Then
+                '                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & IDA & "&req=1" & "&process=" & dao_re.fields.PROCESS_ID & "&tt=" & tamrab & "');", True)
+                '            Else
+                '                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & IDA & "&req=1" & "&process=" & dao_re.fields.PROCESS_ID & "');", True)
+                '            End If
+                '        End If
+
+                '    Catch ex As Exception
+
+                '    End Try
             End If
 
         End If
@@ -193,19 +226,24 @@ Public Class FRM_DS_STAFF_DRUG
         If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
             Dim item As GridDataItem
             item = e.Item
+            Dim PROCESS_ID As Integer = 0
             Dim IDA As String = item("IDA").Text
             Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
-            Dim dao As New DAO_DRUG.ClsDBdalcn
+            Dim dao As New DAO_DRUG.ClsDBdrsamp
             dao.GetDataby_IDA(IDA)
             btn_edit.Style.Add("display", "none")
             Try
-                If dao.fields.STATUS_ID = 6 Then
+                If dao.fields.STATUS_ID = 5 Then
                     btn_edit.Style.Add("display", "block")
+                    Dim dao_re As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+                    dao_re.GetDataby_IDA(dao.fields.PRODUCT_ID_IDA)
+                    PROCESS_ID = dao_re.fields.PROCESS_ID
                 End If
             Catch ex As Exception
 
             End Try
-            Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
+            'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & dao.fields.PRODUCT_ID_IDA & "&req=1" & "&process=" & PROCESS_ID & "');", True)
+            Dim url As String = "../REGISTRATION/FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & dao.fields.PRODUCT_ID_IDA & "&req=1" & "&process=" & PROCESS_ID
             btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
         End If
     End Sub

@@ -391,6 +391,7 @@ Public Class FEM_REGISTRATION_MAIN
 
             Dim str_ID As String = item("H_IDA").Text
             Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+            dao.GetDataby_IDA(str_ID)
 
             If e.CommandName = "_sel" Then
                 dao.GetDataby_IDA(str_ID)
@@ -411,37 +412,37 @@ Public Class FEM_REGISTRATION_MAIN
                 End If
 
             ElseIf e.CommandName = "_add2" Then
-                dao.GetDataby_IDA(str_ID)
+
                 Dim tamrab As String = ""
                 Try
-                    tamrab = dao.fields.DRUG_EQ_TO
-                Catch ex As Exception
+                        tamrab = dao.fields.DRUG_EQ_TO
+                    Catch ex As Exception
 
-                End Try
-                lbl_head1.Text = "เพิ่มข้อมูลส่วนที่ 2"
-                Try
-                    If dao.fields.PROCESS_ID = "130002" Or dao.fields.PROCESS_ID = "130004" Then
-                        If Request.QueryString("tt") <> "" Then
-                            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&a=1&tt=" & tamrab & "');", True)
+                    End Try
+                    lbl_head1.Text = "เพิ่มข้อมูลส่วนที่ 2"
+                    Try
+                        If dao.fields.PROCESS_ID = "130002" Or dao.fields.PROCESS_ID = "130004" Then
+                            If Request.QueryString("tt") <> "" Then
+                                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&a=1&tt=" & tamrab & "');", True)
+                            Else
+                                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&a=1');", True)
+                            End If
                         Else
-                            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&a=1');", True)
+                            '
+                            If Request.QueryString("tt") <> "" Then
+                                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&tt=" & tamrab & "');", True)
+                            Else
+                                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "');", True)
+                            End If
                         End If
-                    Else
-                        '
-                        If Request.QueryString("tt") <> "" Then
-                            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&tt=" & tamrab & "');", True)
-                        Else
-                            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "');", True)
-                        End If
-                    End If
 
-                Catch ex As Exception
+                    Catch ex As Exception
 
-                End Try
+                    End Try
 
 
             ElseIf e.CommandName = "choose" Then
-                Dim url As String = "../TABEAN_YA/TABEAN_YA_MAIN.aspx?main_ida=" & str_ID & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "&lct_ida=" & _lct_ida & "&r_process=" & Request.QueryString("process")
+                    Dim url As String = "../TABEAN_YA/TABEAN_YA_MAIN.aspx?main_ida=" & str_ID & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "&lct_ida=" & _lct_ida & "&r_process=" & Request.QueryString("process")
                 If Request.QueryString("staff") <> "" Then
                     url &= "&staff=1&identify=" & Request.QueryString("identify")
                 End If
@@ -469,6 +470,11 @@ Public Class FEM_REGISTRATION_MAIN
                 dao.GetDataby_IDA(IDA)
                 dao_dal.GetDataby_IDA(dao.fields.FK_IDA)
                 lcntpcd = dao_dal.fields.lcntpcd
+                If dao.fields.RCVNO_DISPLAY <> "" Then
+                    btn_add2.Style.Add("display", "none")
+                Else
+                    btn_add2.Style.Add("display", "block")
+                End If
 
                 If dao.fields.STATUS_ID = 8 Then
                     btn_Choose.Style.Add("display", "block")

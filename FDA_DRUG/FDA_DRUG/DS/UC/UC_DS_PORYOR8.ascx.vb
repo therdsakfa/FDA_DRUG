@@ -1034,12 +1034,17 @@ Public Class UC_DS_PORYOR8
             ddl_package_sum.Visible = False
             Button4.Visible = False
         Else
-            setsum(dao_package.fields.IDA)
-            ddl_package_unit.Visible = False
+            all_sum.Visible = True
+            txt_summ.Visible = True
+            ddl_package_sum.Visible = True
+            Button4.Visible = True
+            ddl_package_unit.Visible = True
             txt_qty.Visible = False
             imp_unit.Visible = False
             lbl_import_sum.Visible = False
             Button3.Visible = False
+            setsum(dao_package.fields.IDA)
+
         End If
 
 

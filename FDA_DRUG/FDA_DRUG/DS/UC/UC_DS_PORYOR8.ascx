@@ -40,6 +40,13 @@
     .auto-style18 {
         width: 644px;
     }
+    .auto-style19 {
+        width: 644px;
+        height: 57px;
+    }
+    .auto-style20 {
+        height: 57px;
+    }
     </style>
 <link href="../css/css_radgrid.css" rel="stylesheet" />
 <div class="box">
@@ -244,9 +251,9 @@
                 ปริมาณที่จะผลิต/นำสั่ง :</td>
              <td class="auto-style7">
                  <br />
-                 <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal" AutoPostBack ="True" Height="30px" Width="224px">
-                     <asp:ListItem Value="1">แบบแพ็กเกจ</asp:ListItem>
-                     <asp:ListItem Value="2">แบบปริมาณ</asp:ListItem>
+                 <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal" AutoPostBack ="True" Height="30px" Width="457px">
+                     <asp:ListItem Value="1">แบบระบุขนาดบรรจุแบบ SKU</asp:ListItem>
+                     <asp:ListItem Value="2">แบบระบุปริมาณที่ต้องการ</asp:ListItem>
                  </asp:RadioButtonList>
                  <br />
                 <asp:DropDownList ID="ddl_package_unit" runat="server" Visible="false" AutoPostBack="True">
@@ -295,7 +302,7 @@
                                                      <telerik:GridBoundColumn UniqueName="IDA" HeaderText="ลำดับ" DataField="IDA" display ="false"  >
                                  <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
-                             <telerik:GridBoundColumn UniqueName="IM_DETAIL" HeaderText="ชื่อขนาดบรรจุ" DataField="IM_DETAIL" >
+                             <telerik:GridBoundColumn UniqueName="IM_DETAIL" HeaderText="รายละเอียดของสินค้าที่อนุญาต" DataField="IM_DETAIL" >
                                   <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
                             <telerik:GridButtonColumn UniqueName="del" ButtonType="LinkButton" Text="ลบข้อมูล" CommandName="del">
@@ -312,9 +319,9 @@
                <%-- <asp:DropDownList ID="ddl_unit2" runat="server" DataTextField="unit_name" DataValueField="unit_name">
                 </asp:DropDownList>--%>
              <tr>
-        <td align="right" class="auto-style18">
-            &nbsp;</td>
-        <td>
+        <td align="right" class="auto-style19">
+                 </td>
+        <td class="auto-style20">
                <asp:Button ID="btn_package" runat="server" Height="53px" Text="เพิ่ม/ลบ ขนาดบรรจุ" Width="180px" CssClass="auto-style11" />
 
            <%-- <asp:Label ID="Label2" runat="server" Text="on" Visible="False"></asp:Label>

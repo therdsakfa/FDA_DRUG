@@ -128,9 +128,9 @@ Public Class FRM_REPORT_REGIST
                 Dim rcvno As String = bao.GEN_NO_06(con_year(Date.Now.Year()), _CLS.PVCODE, "130001", _CLS.LCNNO, "", "", _IDA, "")
                 Dim rcv_format As String = bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), rcvno)
 
-                'If dao_pc.fields.FK_IDA Is Nothing Then
-                '    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกขนาดบรรจุ');</script> ")
-                If dao.fields.UNIT_NORMAL = "" Then
+                If dao_pc.fields.FK_IDA Is Nothing Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกขนาดบรรจุ');</script> ")
+                ElseIf dao.fields.UNIT_NORMAL = "" Then
                     Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหน่วยนับตามรูปของแบบยา');</script> ")
                 ElseIf dao.fields.DRUG_GROUP = "" Then
                     Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหมวดยา');</script> ")
