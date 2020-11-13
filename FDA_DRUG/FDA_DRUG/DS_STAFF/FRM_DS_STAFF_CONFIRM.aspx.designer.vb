@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class FRM_DS_STAFF_CONFIRM
-    
+
     '''<summary>
     '''hl_reader control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
-    
+
     '''<summary>
     '''HiddenField1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
-    
+
     '''<summary>
     '''HiddenField2 control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HiddenField2 As Global.System.Web.UI.WebControls.HiddenField
-    
+
     '''<summary>
     '''HiddenField3 control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HiddenField3 As Global.System.Web.UI.WebControls.HiddenField
-    
+
     '''<summary>
     '''lr_preview control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
-    
+
     '''<summary>
     '''ddl_cnsdcd control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_cnsdcd As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''remark_box control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents remark_box As Global.System.Web.UI.HtmlControls.HtmlTableRow
-    
+
     '''<summary>
     '''CheckBox1 control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CheckBox1 As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''txt_REMARK control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_REMARK As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''btn_confirm control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btn_cancel control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btn_load control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btn_preview control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_preview As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btn_load0 control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btn_drug_group control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_drug_group As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''UC_GRID_ATTACH control.
     '''</summary>

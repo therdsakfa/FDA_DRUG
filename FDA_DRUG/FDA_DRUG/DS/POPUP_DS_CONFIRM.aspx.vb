@@ -564,12 +564,13 @@ Public Class POPUP_DS_CONFIRM
 
         End Try
         Try
-
-
             Dim unit_physic As New DAO_DRUG.TB_DRUG_UNIT
             unit_physic.GetDataby_sunitcd(dao_pack.fields.SMALL_UNIT)
-
-            class_xml.IMPORT_AMOUNTS = dao.fields.QUANTITY & " " & unit_physic.fields.unit_name
+            If dao.fields.QUANTITY <> "" Then
+                class_xml.IMPORT_AMOUNTS = dao.fields.QUANTITY & " " & unit_physic.fields.unit_name
+            Else
+                class_xml.IMPORT_AMOUNTS = dao_pack.fields.SUM & " " & unit_physic.fields.unit_name
+            End If
         Catch ex As Exception
 
         End Try

@@ -60,13 +60,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="0" MultiPageID="RadMultiPage1" Orientation="HorizontalTop">
+    <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="2" MultiPageID="RadMultiPage1">
         <Tabs>
-            <telerik:RadTab runat="server" Text="1.ข้อมูลทั่วไป" Selected="True" Value="1">
+            <telerik:RadTab runat="server" Text="1.ข้อมูลทั่วไป" Value="1">
             </telerik:RadTab>
             <telerik:RadTab runat="server" Text="2.ขนาดบรรจุ" Value="2">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="3.1 ผู้ผลิตต่างประเทศ" Value="3">
+            <telerik:RadTab runat="server" Text="3.1 ผู้ผลิตต่างประเทศ" Value="3" Selected="True">
             </telerik:RadTab>
             <telerik:RadTab runat="server" Text="3.2 ผู้ผลิตในประเทศ" Value="4">
             </telerik:RadTab>
@@ -93,7 +93,7 @@
         </tr>
     </table>
     <br />
-    <telerik:RadMultiPage ID="RadMultiPage1" runat="server" SelectedIndex="0" CssClass="fa left">
+    <telerik:RadMultiPage ID="RadMultiPage1" runat="server" SelectedIndex="2" CssClass="fa left">
 
         <telerik:RadPageView ID="RadPageView1" runat="server" TabIndex="1">
             <table class="table" width="100%">
@@ -113,7 +113,7 @@
                         </asp:Panel>
                         <table width="100%">
                             <tr>
-                                <td>คำบรรยายขนาดบรรจุ</td>
+                                <td>ขนาดบรรจุแบบคำบรรยาย</td>
                                 <td width="70%">
                                     <asp:TextBox ID="txt_package" runat="server" TextMode="MultiLine" Height="300px" Width="100%"></asp:TextBox>
                                 </td>

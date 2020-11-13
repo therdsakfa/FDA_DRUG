@@ -132,7 +132,7 @@
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
-                           CommandName="_edit" Text="แก้ไขการเสนอลงนาม">
+                           CommandName="_edit" Text="แก้ไขข้อมูลส่วนที่ 2">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
                    </Columns>
@@ -206,7 +206,7 @@
         <div class="panel panel-info" style="width: 100%">
             <div class="panel-heading">
                 <div class="modal-title text-center h1 ">
-                    เสนอลงนาม
+                    ข้อมูลส่วนที่ 2
                     <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
                 </div>
                 <div class="panel-body panel-info" style="width: 100%">
