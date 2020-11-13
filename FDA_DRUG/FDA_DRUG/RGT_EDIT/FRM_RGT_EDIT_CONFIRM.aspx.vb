@@ -256,7 +256,7 @@ Public Class FRM_RGT_EDIT_CONFIRM
         Dim rcvno_auto As String = ""
         Dim lcnsid As String = ""
         Try
-            rcvno_auto = dao.fields.rcvno
+            rcvno_auto = dao_sc.fields.rcvno
         Catch ex As Exception
 
         End Try

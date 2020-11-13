@@ -662,6 +662,7 @@
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx" />
     <Content Include="EDIT_LOCATION_STAFF\UC\UC_TABLE_DRUG_GROUP_CHANGE_V2.ascx" />
     <Content Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx" />
+    <Content Include="LCN\FRM_LCN_DRUG_CHOOSE_TYPE.aspx" />
     <Content Include="LCN\POPUP_LCN_PRODUCTION_DRUG_GROUP3.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_CONFIRM.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_RCV_MANUAL.aspx" />
@@ -3342,6 +3343,13 @@
     </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\FRM_LCN_DRUG_CHOOSE_TYPE.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_DRUG_CHOOSE_TYPE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\FRM_LCN_DRUG_CHOOSE_TYPE.aspx.vb">
+      <DependentUpon>FRM_LCN_DRUG_CHOOSE_TYPE.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="LCN\FRM_LCN_NCT_TEMP_MAIN.aspx.designer.vb">
       <DependentUpon>FRM_LCN_NCT_TEMP_MAIN.aspx</DependentUpon>

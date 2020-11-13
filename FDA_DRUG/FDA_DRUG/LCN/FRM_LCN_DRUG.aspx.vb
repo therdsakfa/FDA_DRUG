@@ -41,14 +41,33 @@ Public Class FRM_LCN_DRUG
             If _process = "106" Then
                 lbl_remark.Style.Add("display", "block")
             End If
+            If _process = "201" Or _process = "202" Or _process = "203" Or _process = "204" Or _process = "205" Or _process = "206" Then
+                lbl_head_org.Style.Add("display", "block")
+                ddl_org.Style.Add("display", "block")
+                Bind_rdl()
+
+            End If
+
+
             'ให้รันฟังก์ชั่นลำดับที่ 2
             load_GV_lcnno()         'ให้รันฟังก์ชั่นลำดับที่ 3
             load_lbl_name()         'ให้รันฟังก์ชั่นลำดับที่ 4
             load_HL()
 
-            
+
         End If
         UC_INFMT.Shows(_lct_ida)
+    End Sub
+    Sub Bind_rdl()
+        Dim dao As New DAO_DRUG.TB_MAS_ORG_NAME_NYM
+        dao.GetDataAll()
+
+        ddl_org.DataSource = dao.datas
+        ddl_org.DataTextField = "TYPE_NAME"
+        ddl_org.DataValueField = "IDA"
+        ddl_org.DataBind()
+
+        ddl_org.DropDownInsertDataFirstRow("--กรุณาเลือก--", "0")
     End Sub
     Private Sub load_HL()
         Dim urls As String = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN
@@ -362,7 +381,17 @@ Public Class FRM_LCN_DRUG
             alert("กรุณากรอกเลขบัตรผู้ดำเนินกิจการ")
         Else
             If String.IsNullOrEmpty(_process) = False Then  'ถ้าให้ค่า _process เป็นค่าว่าง จะไม่เป็นความจริง
-                Bind_PDF()                                  'เรียกฟังก์ชั่น  Bind_PDF มาใช้งาน
+                If _process = "201" Or _process = "202" Or _process = "203" Or _process = "204" Or _process = "205" Or _process = "206" Then
+                    If ddl_org.SelectedValue = "0" Then
+                        alert("กรุณาเลือกประเภทหน่วยงาน")
+                    Else
+                        Bind_PDF()
+                    End If
+
+                Else
+                    Bind_PDF()
+                End If
+                'เรียกฟังก์ชั่น  Bind_PDF มาใช้งาน
             Else
                 alert("กรุณาเลือกประเภทใบอนุญาตก่อนทำการดาวน์โหลด")  'ถ้าค่าว่างจะ ERROR
             End If
@@ -374,7 +403,7 @@ Public Class FRM_LCN_DRUG
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>alert('" + text + "');</script> ") 'จาวาคำสั่ง Alert
     End Sub
-    Private Sub Bind_PDF()
+    Sub Bind_PDF()
         Dim bao_app As New BAO.AppSettings                                          'บอกที่อยู่ของไฟล์
         bao_app.RunAppSettings()                                                    'บอกที่อยู่ของไฟล์
 
@@ -407,7 +436,7 @@ Public Class FRM_LCN_DRUG
         Session("CLS") = _CLS
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "closespinner();", True)                   'จาวา .Gif
     End Sub
-    
+
     ''' <summary>
     ''' แปลงค่าจากDatabase เป็น XML
     ''' </summary>
@@ -498,7 +527,9 @@ Public Class FRM_LCN_DRUG
 
         Dim dao As New DAO_DRUG.TB_DALCN_LOCATION_BSN
         dao.Getdata_by_fk_id2(_lct_ida)
-
+        If _process = "201" Or _process = "202" Or _process = "203" Or _process = "204" Or _process = "205" Or _process = "206" Then
+            cls_xml.dalcns.Co_name = ddl_org.SelectedValue
+        End If
         Try
             If dao.fields.BSN_NATIONALITY_CD = 1 Then
                 cls_xml.dalcns.NATION = "ไทย"

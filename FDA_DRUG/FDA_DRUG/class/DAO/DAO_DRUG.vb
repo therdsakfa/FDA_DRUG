@@ -13953,6 +13953,34 @@ Namespace DAO_DRUG
             Next
         End Sub
     End Class
+
+    Public Class TB_MAS_ORG_NAME_NYM
+        Inherits MAINCONTEXT
+        Public fields As New MAS_ORG_NAME_NYM
+        Public Sub insert()
+            db.MAS_ORG_NAME_NYMs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+        Public Sub delete()
+            db.MAS_ORG_NAME_NYMs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+            datas = (From p In db.MAS_ORG_NAME_NYMs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+            datas = (From p In db.MAS_ORG_NAME_NYMs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+    End Class
 End Namespace
 
 

@@ -219,4 +219,14 @@ Public Class WS_NORYORMOR_DATA
 
         Return str_name
     End Function
+
+    <WebMethod()>
+    Public Function Gen_TR_ID(ByVal Prcess_id As String, ByVal CITIZEN_ID As String, ByVal CITIZEN_ID_AUTHORIZE As String) As String
+        Dim TR_ID As String = ""
+        Dim bao_tran As New BAO_TRANSECTION
+        bao_tran.CITIZEN_ID = CITIZEN_ID
+        bao_tran.CITIZEN_ID_AUTHORIZE = CITIZEN_ID_AUTHORIZE
+        TR_ID = bao_tran.insert_transection_new(Prcess_id)
+        Return TR_ID
+    End Function
 End Class

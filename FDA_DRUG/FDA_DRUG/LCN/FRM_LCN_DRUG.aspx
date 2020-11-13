@@ -108,7 +108,7 @@
     <div class="h3" style="padding-left:5%;">  </div>
     
      <div class="panel" style="text-align:left ;width:100%">
-         <div class="panel-heading panel-title" style="height:70px" > 
+         <div class="panel-heading panel-title" style="height:90px" > 
             
              <div  class="col-lg-4 col-md-4"><h4> ใบอนุญาต<asp:Label ID="lbl_name_2" runat="server"  Text=""></asp:Label><asp:Label ID="lbl_name" runat="server"  Text=""></asp:Label> </h4> </div>
                           <div  class="col-lg-8 col-md-8">
@@ -125,12 +125,27 @@
                                                <asp:Button ID="btn_upload" runat="server" Text="อัพโหลดคำขอ" CssClass="btn-lg" />
                                            </td>
                                        </tr>
+                                       <tr>
+                                           <td>
+<asp:Label ID="lbl_head_org" runat="server" Text="กรุณาเลือกประเภทหน่วยงาน" style="display:none;"></asp:Label>
+                                           </td>
+                                           <td colspan="3" align="left">
+                                               
+
+                                               <asp:DropDownList ID="ddl_org" runat="server"></asp:DropDownList>
+
+                                              <%-- <asp:RadioButtonList ID="rdl_org" runat="server" RepeatDirection="Horizontal" RepeatColumns="6" style="display:none;">
+                                               </asp:RadioButtonList>--%>
+                                           </td>
+                                       </tr>
                                    </table>
                                      <asp:Button ID="btn_reload" runat="server" Text="" style="display:none;"  />
                                      <asp:Button ID="Button1" runat="server" Text="" style="display:none;"  />
         </p>
-                          </div>
 
+
+                          </div>
+            
          </div>
     
     </div>

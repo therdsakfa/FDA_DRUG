@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class FRM_LCN_DRUG
-
+    
     '''<summary>
     '''UC_INFMT control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class FRM_LCN_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UC_INFMT As Global.FDA_DRUG.UC_INFMT
-
+    
     '''<summary>
     '''lbl_name_2 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class FRM_LCN_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_name_2 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lbl_name control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class FRM_LCN_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_name As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txt_bsn control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class FRM_LCN_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_bsn As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btn_download control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class FRM_LCN_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_download As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_upload control.
     '''</summary>
@@ -66,7 +66,25 @@ Partial Public Class FRM_LCN_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_upload As Global.System.Web.UI.WebControls.Button
-
+    
+    '''<summary>
+    '''lbl_head_org control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_head_org As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''ddl_org control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_org As Global.System.Web.UI.WebControls.DropDownList
+    
     '''<summary>
     '''btn_reload control.
     '''</summary>
@@ -75,7 +93,7 @@ Partial Public Class FRM_LCN_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Button1 control.
     '''</summary>
@@ -84,7 +102,7 @@ Partial Public Class FRM_LCN_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''lbl_remark control.
     '''</summary>
@@ -93,7 +111,7 @@ Partial Public Class FRM_LCN_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_remark As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''GV_lcnno control.
     '''</summary>
@@ -102,7 +120,7 @@ Partial Public Class FRM_LCN_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GV_lcnno As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''hl_pay control.
     '''</summary>

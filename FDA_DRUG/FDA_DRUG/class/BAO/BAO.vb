@@ -639,6 +639,19 @@ Namespace BAO
                 End With
                 dao_no.insert()
             Next
+
+            Dim dao_per As New DAO_DRUG.TB_DRRQT_DRUG_PER_UNIT
+            dao_per.GetDataby_FKIDA(FK_IDA)
+            For Each dao_per.fields In dao_nou.datas
+                Dim dao_no As New DAO_DRUG.TB_DRRGT_DRUG_PER_UNIT
+                With dao_no.fields
+                    .FK_IDA = IDA_rgt
+                    .drugperunit = dao_per.fields.drugperunit
+                    .QTY = dao_per.fields.QTY
+                    .SUNITCD = dao_per.fields.SUNITCD
+                End With
+                dao_no.insert()
+            Next
         End Sub
         Public Function SP_TEMP_CASE1441() As DataTable
 
@@ -1302,6 +1315,13 @@ Namespace BAO
             Return dta
         End Function
         '
+        Public Function SP_DRRGT_EDIT_REQUEST_BY_NEWCODE(ByVal newcode As String) As DataTable
+            Dim sql As String = "exec SP_DRRGT_EDIT_REQUEST_BY_NEWCODE @newcode='" & newcode & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DRRGT_EDIT_REQUEST_BY_NEWCODE"
+            Return dta
+        End Function
         Public Function SP_DRRGT_SUBSTITUTE_BY_FK_IDA(ByVal FK_IDA As Integer) As DataTable
             Dim sql As String = "exec SP_DRRGT_SUBSTITUTE_BY_FK_IDA @FK_IDA=" & FK_IDA
             Dim dta As New DataTable

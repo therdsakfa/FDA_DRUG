@@ -200,14 +200,14 @@
             <td width="150px">
                 รายละเอียดการแก้ไข จาก</td>
             <td>
-                <asp:TextBox ID="txt_old" runat="server" Width="100%"></asp:TextBox>
+                <asp:TextBox ID="txt_old" runat="server" Width="100%" Height="300px" TextMode="MultiLine"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td width="150px">
                 เป็น</td>
             <td>
-                <asp:TextBox ID="txt_new" runat="server" Width="100%"></asp:TextBox>
+                <asp:TextBox ID="txt_new" runat="server" Width="100%" Height="300px" TextMode="MultiLine"></asp:TextBox>
             </td>
         </tr>
         <tr>

@@ -139,6 +139,10 @@
                         <telerik:GridBoundColumn DataField="STATUS_ID" DataType="System.Int32" FilterControlAltText="Filter STATUS_ID column" HeaderText="STATUS_ID"
                            SortExpression="STATUS_ID" UniqueName="STATUS_ID" Display="false" AllowFiltering="true">
                        </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="NEWCODE_U" FilterControlAltText="Filter NEWCODE_U column"
+                           HeaderText="NEWCODE_U" SortExpression="NEWCODE_U" UniqueName="NEWCODE_U" Display="false">
+                       </telerik:GridBoundColumn>
+
                        <telerik:GridBoundColumn DataField="RCVNO_MANUAL" FilterControlAltText="Filter RCVNO_MANUAL column"
                            HeaderText="เลขรับที่" SortExpression="RCVNO_MANUAL" UniqueName="RCVNO_MANUAL">
                        </telerik:GridBoundColumn>

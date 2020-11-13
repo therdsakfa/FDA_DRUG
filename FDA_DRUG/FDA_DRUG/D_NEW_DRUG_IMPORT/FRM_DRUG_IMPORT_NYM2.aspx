@@ -115,6 +115,9 @@
                     <telerik:GridBoundColumn DataField="NYM2_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM2_IDA column" HeaderText="NYM2_IDA"
                         SortExpression="NYM2_IDA" UniqueName="NYM2_IDA" Display="false">
                     </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn DataField="TR_ID" FilterControlAltText="Filter TR_ID column" HeaderText="TR_ID"
+                        SortExpression="TR_ID" UniqueName="TR_ID" Display="false">
+                    </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
                         HeaderText="เลขIDAของDL" SortExpression="DL" UniqueName="DL" Display="false">
                     </telerik:GridBoundColumn>

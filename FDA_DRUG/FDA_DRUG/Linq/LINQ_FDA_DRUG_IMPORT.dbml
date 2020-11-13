@@ -424,98 +424,6 @@
       <Column Name="STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.FDA_DRUG_IMPORT_NYM_2" Member="FDA_DRUG_IMPORT_NYM_2s">
-    <Type Name="FDA_DRUG_IMPORT_NYM_2">
-      <Column Name="NYM2_IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NYM2_DATE_TOP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NYM2_NAME_RECEIVE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ALLOW_PLAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM2_WRITE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_WRITE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NYM2_TITLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM2_FULLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_POSITION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ALLOW_NAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM2_ALLOW_NAME_DETAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_LICENSE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_SOI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_STREET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_MOO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_DISTRICT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_AMPHUR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_PROVINCE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_PHONE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_FAX" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_WISH_MED" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_COUNT_MED" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM2_DEPARTMAENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM2_DEPARTMAENT_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_NAME_ASK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_NO_AFTER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NYM2_DATE_TOP_AFTER" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NYM2_NAME_RECEIVE_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ALLOW_PLAN_AFTER" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM2_WRITE_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_WRITE_DATE_AFTER" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NYM2_TITLE_AFTER" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM2_FULLNAME_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_FIRSTNAME_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_LASTNAME_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_POSITION_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ALLOW_NAME_AFTER" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM2_ALLOW_NAME_DETAIL_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_LICENSE_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_NO_AFTER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_SOI_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_STREET_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_MOO_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_DISTRICT_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_AMPHUR_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_PROVINCE_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_PHONE_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_ADDRESS_FAX_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_WISH_MED_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_COUNT_MED_AFTER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NYM2_DEPARTMAENT_ID_AFTER" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM2_DEPARTMAENT_NAME_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_NAME_ASK_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_DETAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_DETAIL_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM2_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="NYM2_COUNT_KEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM2_NEWCODE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_RCVNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NYM2_DL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TOKEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CITICEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="CREATE_USER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="UPDATE_USER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NYM2_IDENTIFY_STAFF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CONSIDER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="STAFF_RECEIVE_IDEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="APPROVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ESTIMATE_CONSIDER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="REMARK_CONSIDER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="REMARK_EDIT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="POSITION_CONSIDER_LINE1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="POSITION_CONSIDER_LINE2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="POSITION_CONSIDER_LINE3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="POSITION_CONSIDER_LINE4" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="POSITION_CONSIDER_LINE5" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.FDA_DRUG_IMPORT_NYM_3" Member="FDA_DRUG_IMPORT_NYM_3s">
     <Type Name="FDA_DRUG_IMPORT_NYM_3">
       <Column Name="NYM3_IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -905,6 +813,98 @@
       <Column Name="CONSIDER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="STAFF_RECEIVE_IDEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FDA_DRUG_IMPORT_NYM_2" Member="FDA_DRUG_IMPORT_NYM_2s">
+    <Type Name="FDA_DRUG_IMPORT_NYM_2">
+      <Column Name="NYM2_IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NYM2_DATE_TOP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NYM2_NAME_RECEIVE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ALLOW_PLAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM2_WRITE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_WRITE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NYM2_TITLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM2_FULLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_POSITION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ALLOW_NAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM2_ALLOW_NAME_DETAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_LICENSE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_SOI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_STREET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_MOO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_DISTRICT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_AMPHUR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_PROVINCE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_PHONE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_FAX" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_WISH_MED" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_COUNT_MED" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM2_DEPARTMAENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM2_DEPARTMAENT_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_NAME_ASK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_NO_AFTER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NYM2_DATE_TOP_AFTER" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NYM2_NAME_RECEIVE_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ALLOW_PLAN_AFTER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM2_WRITE_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_WRITE_DATE_AFTER" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NYM2_TITLE_AFTER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM2_FULLNAME_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_FIRSTNAME_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_LASTNAME_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_POSITION_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ALLOW_NAME_AFTER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM2_ALLOW_NAME_DETAIL_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_LICENSE_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_NO_AFTER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_SOI_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_STREET_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_MOO_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_DISTRICT_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_AMPHUR_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_PROVINCE_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_PHONE_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_ADDRESS_FAX_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_WISH_MED_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_COUNT_MED_AFTER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NYM2_DEPARTMAENT_ID_AFTER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM2_DEPARTMAENT_NAME_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_NAME_ASK_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_DETAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_DETAIL_AFTER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM2_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NYM2_COUNT_KEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM2_NEWCODE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_RCVNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NYM2_DL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TOKEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITICEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_USER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UPDATE_USER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TR_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NYM2_IDENTIFY_STAFF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CONSIDER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STAFF_RECEIVE_IDEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPROVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTIMATE_CONSIDER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REMARK_CONSIDER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARK_EDIT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="POSITION_CONSIDER_LINE1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="POSITION_CONSIDER_LINE2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="POSITION_CONSIDER_LINE3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="POSITION_CONSIDER_LINE4" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="POSITION_CONSIDER_LINE5" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

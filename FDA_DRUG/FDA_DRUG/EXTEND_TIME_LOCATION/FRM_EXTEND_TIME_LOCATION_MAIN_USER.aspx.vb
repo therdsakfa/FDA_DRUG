@@ -455,7 +455,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
 
             End Try
 
-            Response.Write("<script>window.open ('../EXTEND_TIME_LOCATION/FRM_EXTEND_LCN_ATTACH_PAGE.aspx?TR_ID=" & tr_id & "&process=" & dao.fields.PROCESS_ID & "&IDA=" & str_ID & "','_blank');</script>")
+            Response.Write("<script>window.open ('../EXTEND_TIME_LOCATION/FRM_EXTEND_LCN_ATTACH_PAGE.aspx?TR_ID=" & tr_id & "&process=" & dao.fields.PROCESS_ID & "&IDA=" & str_ID & "&r_ida=" & str_ID & "','_blank');</script>")
         ElseIf e.CommandName = "drug_group" Then
             dao.GetDataby_IDA(str_ID)
             Dim tr_id As String= 0
