@@ -37,6 +37,7 @@
         <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
         <asp:Button ID="btn_gen_dh" runat="server" Text="GEN_DH" />
         <asp:Button ID="btn_hen_tr_id" runat="server" Text="grn_td_nym" />
+        <asp:Button ID="btn_iowa_run" runat="server" Text="Run iowa" />
     <h2>
         บันทึกข้อมูลวันที่ขอตรวจ
         <telerik:RadScriptManager ID="RadScriptManager1" Runat="server">

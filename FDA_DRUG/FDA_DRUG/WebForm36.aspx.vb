@@ -2862,5 +2862,47 @@ Public Class WebForm36
         Dim ws As New WS_NORYORMOR_DATA
         ws.Gen_TR_ID(1027, "1710500118665", "0000000000000")
     End Sub
+
+    Protected Sub btn_iowa_run_Click(sender As Object, e As EventArgs) Handles btn_iowa_run.Click
+        Dim bao_master_2 As New BAO.ClsDBSqlcommand
+        Dim dt As New DataTable
+        dt = bao_master_2.GET_IOWA_NULL()
+
+        For Each dr As DataRow In dt.Rows
+            Dim bao As New BAO.ClsDBSqlcommand
+            Dim dtiowa As New DataTable
+            Dim i As Integer = 0
+            dtiowa = bao.SP_GET_GROUP_IOWA(dr("iowacd"))
+            For Each drr As DataRow In dtiowa.Rows
+                i += 1
+                Dim procuct As Object = 0
+                Dim import As Object = 0
+                Dim both As Object = 0
+                If drr("subtpcd") = 1 Then
+                    procuct = 1
+                ElseIf drr("subtpcd") = 3 Then
+                    import = 3
+                End If
+
+                bao.UPDATE_IOWA(drr("iowacd"), procuct, import, both)
+
+                'Dim dao As New DAO_DRUG.TB_driowa_temp
+                'dao.GetDataby_iowacd(drr("iowacd"))
+                'If drr("subtpcd") = 1 Then
+                '    dao.fields.Procuct = 1
+                'ElseIf drr("subtpcd") = 3 Then
+                '    dao.fields.Import = 1
+                'End If
+                'dao.update()
+            Next
+
+            'Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_IOW
+            If i = 0 Then
+                bao.UPDATE_IOWA(dr("iowacd"), 0, 0, 0, NO_ITEM:=1)
+            End If
+
+
+        Next
+    End Sub
 End Class
 

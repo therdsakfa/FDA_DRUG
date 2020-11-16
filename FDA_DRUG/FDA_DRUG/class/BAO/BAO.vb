@@ -60,6 +60,30 @@ Namespace BAO
         Dim strSQL As String = String.Empty
         '
         ''
+        Public Function GET_IOWA_NULL() As DataTable
+            Dim sql As String = "select * from [dbo].[driowa_temp] where  NO_ITEM is null"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+
+            Return dta
+        End Function
+        '
+        Public Function SP_GET_GROUP_IOWA(ByVal iowacd As String) As DataTable
+
+            Dim sql As String = "exec SP_GET_GROUP_IOWA @iowacd= '" & iowacd & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function UPDATE_IOWA(ByVal iowacd As String, ByVal product As Object, ByVal import As Object, ByVal boths As Object, Optional NO_ITEM As Integer = 0) As DataTable
+            Dim sql As String = "update [dbo].[driowa_temp] set Procuct=" & product & " , Import=" & import & " , Both=" & boths & " , NO_ITEM=" & NO_ITEM & " where iowacd ='" & iowacd & "'"
+
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+
+            Return dta
+        End Function
+
         Public Function SP_CUSTOMER_LOCATION_ADDRESS_by_LOCATION_TYPE_ID_and_IDENTITY(ByVal LOCATION_TYPE_ID As Integer, ByVal IDENTITY As String) As DataTable
 
             Dim sql As String = "exec SP_CUSTOMER_LOCATION_ADDRESS_by_LOCATION_TYPE_ID_and_IDENTITY @LOCATION_TYPE_ID=" & LOCATION_TYPE_ID & ",@IDENTITY= '" & IDENTITY & "'"

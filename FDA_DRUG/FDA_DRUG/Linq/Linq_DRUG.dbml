@@ -6755,4 +6755,19 @@
       <Column Name="pvncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.driowa_temp" Member="driowa_temps">
+    <Type Name="driowa_temp">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iowacd" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="iowanm" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="iowa" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="run" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="salt" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="syn" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="IS_CANCEL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Procuct" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Import" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Both" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

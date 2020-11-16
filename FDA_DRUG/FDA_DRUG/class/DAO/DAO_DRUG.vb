@@ -13981,6 +13981,38 @@ Namespace DAO_DRUG
         End Sub
 
     End Class
+
+    Public Class TB_driowa_temp
+        Inherits MAINCONTEXT
+        Public fields As New driowa_temp
+        Public Sub insert()
+            db.driowa_temps.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+        Public Sub delete()
+            db.driowa_temps.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+            datas = (From p In db.driowa_temps Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+            datas = (From p In db.driowa_temps Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_iowacd(ByVal iowacd As String)
+            datas = (From p In db.driowa_temps Where p.iowacd = iowacd Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
 End Namespace
 
 

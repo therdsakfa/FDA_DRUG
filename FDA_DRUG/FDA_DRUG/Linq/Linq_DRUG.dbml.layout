@@ -2090,5 +2090,11 @@
         <elementListCompartment Id="8e0a731c-178c-4635-9d67-ed04ee890b50" absoluteBounds="4.89, 46.21, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="34a1f1c2-8c01-4bcd-a0a3-ca129465041a" isExpanded="false" absoluteBounds="5.5, 0.875, 2, 0.45">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/driowa_temp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba74d0c3-7974-412c-abaf-0fa958538794" absoluteBounds="5.5150000000000006, 1.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

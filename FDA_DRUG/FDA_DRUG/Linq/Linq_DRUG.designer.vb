@@ -4197,6 +4197,12 @@ Partial Public Class Linq_DRUGDataContext
 			Return Me.GetTable(Of DALCN_LOCATION_ADDRESS)
 		End Get
 	End Property
+	
+	Public ReadOnly Property driowa_temps() As System.Data.Linq.Table(Of driowa_temp)
+		Get
+			Return Me.GetTable(Of driowa_temp)
+		End Get
+	End Property
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.RECIVE")>  _
@@ -135310,4 +135316,167 @@ Partial Public Class DALCN_LOCATION_ADDRESS
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
 	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.driowa_temp")>  _
+Partial Public Class driowa_temp
+	
+	Private _IDA As Integer
+	
+	Private _iowacd As String
+	
+	Private _iowanm As String
+	
+	Private _iowa As String
+	
+	Private _run As String
+	
+	Private _salt As String
+	
+	Private _syn As String
+	
+	Private _IS_CANCEL As String
+	
+	Private _Procuct As System.Nullable(Of Integer)
+	
+	Private _Import As System.Nullable(Of Integer)
+	
+	Private _Both As System.Nullable(Of Integer)
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.Always, DbType:="Int NOT NULL IDENTITY", IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me._IDA = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_iowacd", DbType:="VarChar(16) NOT NULL", CanBeNull:=false)>  _
+	Public Property iowacd() As String
+		Get
+			Return Me._iowacd
+		End Get
+		Set
+			If (String.Equals(Me._iowacd, value) = false) Then
+				Me._iowacd = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_iowanm", DbType:="VarChar(200) NOT NULL", CanBeNull:=false)>  _
+	Public Property iowanm() As String
+		Get
+			Return Me._iowanm
+		End Get
+		Set
+			If (String.Equals(Me._iowanm, value) = false) Then
+				Me._iowanm = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_iowa", DbType:="VarChar(6) NOT NULL", CanBeNull:=false)>  _
+	Public Property iowa() As String
+		Get
+			Return Me._iowa
+		End Get
+		Set
+			If (String.Equals(Me._iowa, value) = false) Then
+				Me._iowa = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_run", DbType:="VarChar(5) NOT NULL", CanBeNull:=false)>  _
+	Public Property run() As String
+		Get
+			Return Me._run
+		End Get
+		Set
+			If (String.Equals(Me._run, value) = false) Then
+				Me._run = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_salt", DbType:="VarChar(3) NOT NULL", CanBeNull:=false)>  _
+	Public Property salt() As String
+		Get
+			Return Me._salt
+		End Get
+		Set
+			If (String.Equals(Me._salt, value) = false) Then
+				Me._salt = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_syn", DbType:="VarChar(2) NOT NULL", CanBeNull:=false)>  _
+	Public Property syn() As String
+		Get
+			Return Me._syn
+		End Get
+		Set
+			If (String.Equals(Me._syn, value) = false) Then
+				Me._syn = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IS_CANCEL", DbType:="NVarChar(50)")>  _
+	Public Property IS_CANCEL() As String
+		Get
+			Return Me._IS_CANCEL
+		End Get
+		Set
+			If (String.Equals(Me._IS_CANCEL, value) = false) Then
+				Me._IS_CANCEL = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Procuct", DbType:="Int")>  _
+	Public Property Procuct() As System.Nullable(Of Integer)
+		Get
+			Return Me._Procuct
+		End Get
+		Set
+			If (Me._Procuct.Equals(value) = false) Then
+				Me._Procuct = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Import", DbType:="Int")>  _
+	Public Property Import() As System.Nullable(Of Integer)
+		Get
+			Return Me._Import
+		End Get
+		Set
+			If (Me._Import.Equals(value) = false) Then
+				Me._Import = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Both", DbType:="Int")>  _
+	Public Property Both() As System.Nullable(Of Integer)
+		Get
+			Return Me._Both
+		End Get
+		Set
+			If (Me._Both.Equals(value) = false) Then
+				Me._Both = value
+			End If
+		End Set
+	End Property
 End Class
