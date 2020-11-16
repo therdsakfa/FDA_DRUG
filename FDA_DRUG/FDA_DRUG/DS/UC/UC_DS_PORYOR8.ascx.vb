@@ -1029,6 +1029,7 @@ Public Class UC_DS_PORYOR8
             imp_unit.Visible = True
             lbl_import_sum.Visible = True
             Button3.Visible = True
+
             all_sum.Visible = False
             txt_summ.Visible = False
             ddl_package_sum.Visible = False
@@ -1039,6 +1040,7 @@ Public Class UC_DS_PORYOR8
             ddl_package_sum.Visible = True
             Button4.Visible = True
             ddl_package_unit.Visible = True
+
             txt_qty.Visible = False
             imp_unit.Visible = False
             lbl_import_sum.Visible = False

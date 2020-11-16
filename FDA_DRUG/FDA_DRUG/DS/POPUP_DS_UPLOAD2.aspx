@@ -79,9 +79,9 @@
         </tr>
              <tr><td class="auto-style1"><asp:Label ID="lbl_attach1" runat="server" Text="-"></asp:Label></td>
                  <td><asp:FileUpload ID="FileUpload2" runat="server" CssClass="btn-default" /></td></tr>        
-           <%--  <tr><td class="auto-style1"><asp:Label ID="lbl_attach2" runat="server" Text="-"></asp:Label></td>
+            <tr><td class="auto-style1"><asp:Label ID="lbl_attach2" runat="server" Text="-"></asp:Label></td>
             <td><asp:FileUpload ID="FileUpload3" runat="server" CssClass="btn-default"  /></td></tr>           
-            <tr><td class="auto-style1"><asp:Label ID="lbl_attach3" runat="server" Text="-"></asp:Label><br /></td>          
+            <%--<tr><td class="auto-style1"><asp:Label ID="lbl_attach3" runat="server" Text="-"></asp:Label><br /></td>          
             <td><asp:FileUpload ID="FileUpload4" runat="server" CssClass="btn-default"  /></td></tr> --%>
 
                  </td></tr>

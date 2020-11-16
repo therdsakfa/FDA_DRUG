@@ -186,37 +186,7 @@ Public Class FRM_DS_STAFF_DRUG
                 Dim ws As New AUTHEN_LOG.Authentication
                 ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", dao.fields.TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "เจ้าหน้าที่ดูข้อมูลใบอนุญาตยาตัวอย่าง", _process)
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_DS_STAFF_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & PROCESS_ID & "');", True)
-                'ElseIf e.CommandName = "_edit" Then
-                '    Dim dao_re As New DAO_DRUG.ClsDBDRUG_REGISTRATION
-                '    dao_re.GetDataby_IDA(dao.fields.PRODUCT_ID_IDA)
-                '    IDA = dao_re.fields.IDA
-                '    Dim tamrab As String = ""
-                '    Try
-                '        tamrab = dao_re.fields.DRUG_EQ_TO
 
-                '    Catch ex As Exception
-
-                '    End Try
-                '    ''lbl_head1.Text = "เพิ่มข้อมูลส่วนที่ 2"
-                '    Try
-                '        If dao_re.fields.PROCESS_ID = "130002" Or dao_re.fields.PROCESS_ID = "130004" Then
-                '            If Request.QueryString("tt") <> "" Then
-                '                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx?IDA=" & IDA & "&req=1" & "&process=" & dao_re.fields.PROCESS_ID & "&a=1&tt=" & tamrab & "');", True)
-                '            Else
-                '                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx?IDA=" & IDA & "&req=1" & "&process=" & dao_re.fields.PROCESS_ID & "&a=1');", True)
-                '            End If
-                '        Else
-                '            '
-                '            If Request.QueryString("tt") <> "" Then
-                '                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & IDA & "&req=1" & "&process=" & dao_re.fields.PROCESS_ID & "&tt=" & tamrab & "');", True)
-                '            Else
-                '                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & IDA & "&req=1" & "&process=" & dao_re.fields.PROCESS_ID & "');", True)
-                '            End If
-                '        End If
-
-                '    Catch ex As Exception
-
-                '    End Try
             End If
 
         End If
@@ -242,7 +212,7 @@ Public Class FRM_DS_STAFF_DRUG
             Catch ex As Exception
 
             End Try
-            'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & dao.fields.PRODUCT_ID_IDA & "&req=1" & "&process=" & PROCESS_ID & "');", True)
+
             Dim url As String = "../REGISTRATION/FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & dao.fields.PRODUCT_ID_IDA & "&req=1" & "&process=" & PROCESS_ID
             btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
         End If
