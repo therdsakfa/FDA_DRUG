@@ -465,10 +465,12 @@ Public Class FEM_REGISTRATION_MAIN
 
             Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
             Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+            Dim dao_ds As New DAO_DRUG.ClsDBdrsamp
             Dim lcntpcd As String = ""
             Try
                 dao.GetDataby_IDA(IDA)
                 dao_dal.GetDataby_IDA(dao.fields.FK_IDA)
+                dao_ds.GetDataby_PRODUCT_ID_IDA(IDA)
                 lcntpcd = dao_dal.fields.lcntpcd
                 If dao.fields.RCVNO_DISPLAY <> "" Then
                     btn_add2.Style.Add("display", "none")
@@ -481,6 +483,8 @@ Public Class FEM_REGISTRATION_MAIN
                 Else
                     btn_Choose.Style.Add("display", "none")
                 End If
+
+
             Catch ex As Exception
 
             End Try

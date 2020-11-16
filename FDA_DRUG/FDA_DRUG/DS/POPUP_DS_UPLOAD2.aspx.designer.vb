@@ -59,6 +59,24 @@ Partial Public Class POPUP_DS_UPLOAD2
     Protected WithEvents FileUpload2 As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
+    '''lbl_attach2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_attach2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''FileUpload3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents FileUpload3 As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
     '''btn_Upload control.
     '''</summary>
     '''<remarks>

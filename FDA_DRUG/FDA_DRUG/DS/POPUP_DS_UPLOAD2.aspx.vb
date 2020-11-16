@@ -51,6 +51,7 @@ Public Class POPUP_DS_UPLOAD2
     End Sub
     Sub set_attachment_label()
         lbl_attach1.Text = "ฉลากและเอกสารกำกับผลิตภัณฑ์ ทุกภาชนะบรรจุ"
+        lbl_attach2.Text = "อื่นๆ"
         'lbl_attach2.Text = "(2) ฉลากกล่อง/ฉลากซองพลาสติก"
         'lbl_attach3.Text = "(3) เอกสารกำกับผลิตภัณฑ์"
         If _ProcessID = "1701" Then
