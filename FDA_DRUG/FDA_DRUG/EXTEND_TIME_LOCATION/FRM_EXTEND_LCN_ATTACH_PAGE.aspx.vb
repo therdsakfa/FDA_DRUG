@@ -17,15 +17,24 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
 
                     Dim dao_lo As New DAO_DRUG.TB_DALCN_LOCATION_ADDRESS
                     dao_lo.GetDataby_IDA(dao_dal.fields.FK_IDA)
-                    'txt_latitude.Text = dao_edt.fields.MAP_X
-                    'txt_longitude.Text = dao_edt.fields.MAP_Y
+                'txt_latitude.Text = dao_edt.fields.MAP_X
+                'txt_longitude.Text = dao_edt.fields.MAP_Y
+                Try
                     txt_latitude.Text = dao_lo.fields.latitude
+                Catch ex As Exception
+
+                End Try
+                Try
                     txt_longitude.Text = dao_lo.fields.longitude
-                    'Catch ex As Exception
+                Catch ex As Exception
 
-                    'End Try
+                End Try
 
-                    Try
+                'Catch ex As Exception
+
+                'End Try
+
+                Try
                     RadioButtonList1.SelectedValue = dao_edt.fields.ATTACH_TYPE
                     txt_ATTACH_DETAIL.Text = dao_edt.fields.ATTACH_DETAIL
                 Catch ex As Exception
