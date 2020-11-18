@@ -83,8 +83,9 @@ Public Class POPUP_DR_TRANSFER_DL
                 Try
                     If RadioButtonList1.SelectedValue <> "" Then
                         Dim dao As New DAO_DRUG.ClsDBdrrgt
-                        dao.GetDataby_IDA(IDA)
-                        Bind_PDF(_main_ida, _process, IDA, dao.fields.FK_LCN_IDA)
+                        'dao.GetDataby_IDA(IDA)
+                        dao.GetDataby_4key(item("rgtno").Text, item("rgttpcd").Text, item("drgtpcd").Text, item("pvncd").Text)
+                        Bind_PDF(_main_ida, _process, IDA, dao.fields.FK_LCN_IDA, item("rgtno").Text, item("rgttpcd").Text, item("drgtpcd").Text, item("pvncd").Text)
                     Else
                         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกประเภท');", True)
                     End If
@@ -97,7 +98,7 @@ Public Class POPUP_DR_TRANSFER_DL
         End If
     End Sub
 
-    Private Sub Bind_PDF(ByVal main_ida As Integer, ByVal process As Integer, ByVal ida_transfer As Integer, ByVal lcn_ida As Integer)
+    Private Sub Bind_PDF(ByVal main_ida As Integer, ByVal process As Integer, ByVal ida_transfer As Integer, ByVal lcn_ida As Integer, ByVal rgtno As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal pvncd As Integer)
         Dim bao_app As New BAO.AppSettings
         bao_app.RunAppSettings()
 
@@ -124,7 +125,7 @@ Public Class POPUP_DR_TRANSFER_DL
         Dim file_xml As String = bao_app._PATH_DEFAULT & dao_TEMPLATE.fields.XML_PATH & "\" & NAME_DOWNLOAD_XML("DA", down_ID)      'เพื่อเก็บไฟล์ TEMPLATE PATH XML
         Dim file_PDF As String = bao_app._PATH_DEFAULT & dao_TEMPLATE.fields.PDF_OUTPUT & "\" & NAME_DOWNLOAD_PDF("DA", down_ID)    'เพื่อเก็บไฟล์ TEMPLATE PATH PDF
 
-        convert_Database_To_XML(file_xml, process, ida_transfer, lcn_ida)                                                                                           ' Gen XML
+        convert_Database_To_XML(file_xml, process, ida_transfer, lcn_ida, rgtno, rgttpcd, drgtpcd, pvncd)                                                                                           ' Gen XML
         convert_XML_To_PDF(file_PDF, file_xml, file_template)                                                                       ' XML PDF รวมกัน 
 
         _CLS.FILENAME_PDF = file_PDF                                                                                                ' โหลดไฟล์ PDF ลงไฟล์
@@ -144,7 +145,7 @@ Public Class POPUP_DR_TRANSFER_DL
 
         'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "closespinner();", True)
     End Sub
-    Private Sub convert_Database_To_XML(ByVal path As String, ByVal Process_id As Integer, ByVal ida_transfer As Integer, ByVal _lcn_ida As Integer)
+    Private Sub convert_Database_To_XML(ByVal path As String, ByVal Process_id As Integer, ByVal ida_transfer As Integer, ByVal _lcn_ida As Integer, ByVal rgtno As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal pvncd As Integer)
 
         Dim dao As New DAO_DRUG.ClsDBdalcn
         dao.GetDataby_IDA(_lcn_ida)
@@ -249,6 +250,34 @@ Public Class POPUP_DR_TRANSFER_DL
         Catch ex As Exception
 
         End Try
+
+
+
+        'Dim dao_g As New DAO_DRUG.TB_DRRGT_DRUG_GROUP
+        'dao_g.GetDataby_rgttpcd(rgttpcd)
+        '    If dao_g.fields.subtpcd = 1 Then
+        '        Try
+        '        cls_xml.drrgts.CHK_LCN_SUBTYPE1 = 1
+        '    Catch ex As Exception
+
+        '        End Try
+        '    ElseIf dao_g.fields.subtpcd = 2 Then
+        '        Try
+        '        cls_xml.drrgts.CHK_LCN_SUBTYPE2 = 2
+        '    Catch ex As Exception
+
+        '        End Try
+        '    ElseIf dao_g.fields.subtpcd = 3 Then
+        '        Try
+        '        cls_xml.drrgts.CHK_LCN_SUBTYPE3 = 3
+        '    Catch ex As Exception
+
+        '        End Try
+        '    End If
+
+
+
+
         '_______________SHOW_________________
         Dim bao_show As New BAO_SHOW
         Dim bao_ori As New BAO.ClsDBSqlcommand
@@ -302,7 +331,7 @@ Public Class POPUP_DR_TRANSFER_DL
         cls_xml.DT_SHOW.DT23.TableName = "SP_regis"
         cls_xml.DT_SHOW.DT7 = bao_show.SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDAV2(1) 'ผู้ดำเนิน
 
-        
+
 
         '_______________MASTER_________________
         Dim bao_master As New BAO_MASTER

@@ -74,6 +74,19 @@
                        <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
                            SortExpression="IDA" UniqueName="IDA" Display="false" AllowFiltering="true">
                        </telerik:GridBoundColumn>
+                        <telerik:GridBoundColumn DataField="rgtno" FilterControlAltText="Filter rgtno column" HeaderText="rgtno"
+                           SortExpression="rgtno" UniqueName="rgtno" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
+
+                        <telerik:GridBoundColumn DataField="drgtpcd" FilterControlAltText="Filter drgtpcd column" HeaderText="drgtpcd"
+                           SortExpression="drgtpcd" UniqueName="drgtpcd" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
+                        <telerik:GridBoundColumn DataField="rgttpcd" FilterControlAltText="Filter rgttpcd column" HeaderText="rgttpcd"
+                           SortExpression="rgttpcd" UniqueName="rgttpcd" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
+                        <telerik:GridBoundColumn DataField="pvncd" FilterControlAltText="Filter pvncd column" HeaderText="pvncd"
+                           SortExpression="pvncd" UniqueName="pvncd" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="rcvno_display" FilterControlAltText="Filter rcvno_display column"
                            HeaderText="เลขรับ" SortExpression="rcvno_display" UniqueName="rcvno_display">
                        </telerik:GridBoundColumn>
