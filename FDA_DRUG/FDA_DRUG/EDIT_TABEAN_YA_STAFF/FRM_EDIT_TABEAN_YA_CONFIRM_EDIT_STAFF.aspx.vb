@@ -25,7 +25,7 @@ Public Class FRM_EDIT_TABEAN_YA_CONFIRM_EDIT_STAFF
             Bind_ddl_Status()
             load_fdpdtno()
 
-            UC_GRID_ATTACH1.load_gv(_IDA)
+            'UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
         End If
 
     End Sub

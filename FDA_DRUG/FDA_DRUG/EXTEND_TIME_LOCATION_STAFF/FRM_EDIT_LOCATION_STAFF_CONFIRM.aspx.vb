@@ -32,7 +32,7 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM2
             Bind_ddl_Status_staff()
             load_fdpdtno()
             'UC_GRID_PHARMACIST.load_gv(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _process)
             set_hide(_IDA)
 
             'Try

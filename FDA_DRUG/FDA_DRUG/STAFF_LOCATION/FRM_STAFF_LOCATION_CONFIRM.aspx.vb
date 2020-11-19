@@ -21,7 +21,7 @@ Public Class FRM_STAFF_LOCATION_CONFIRM
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         runQuery()
-        UC_GRID_ATTACH.load_gv(_TR_ID)
+        UC_GRID_ATTACH.load_gv_V2(_TR_ID, _Process)
         If Not IsPostBack Then
             Bind_ddl_Status_staff()
             BindData_PDF()
@@ -30,7 +30,7 @@ Public Class FRM_STAFF_LOCATION_CONFIRM
         End If
     End Sub
     Private Sub Bind_GRID()
-        UC_GRID_ATTACH.load_gv(_TR_ID)
+        UC_GRID_ATTACH.load_gv_V2(_TR_ID, _Process)
     End Sub
     Public Sub Bind_ddl_Status_staff()
         Dim dt As New DataTable

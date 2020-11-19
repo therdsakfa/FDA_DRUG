@@ -61,7 +61,8 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
                 'btn_confirm2.Style.Add("display", "none")
                 btn_confirm.Visible = True
                 btn_confirm2.Visible = False
-                UC_GRID_ATTACH.load_gv(_TR_ID)
+                'UC_GRID_ATTACH.load_gv(_TR_ID)
+                UC_GRID_ATTACH.load_gv_V2(_TR_ID, check.fields.PROCESS_ID)
             End If
             'If check.fields.STATUS_ID <> 0 Then
             '    Me.chk1.Enabled = False

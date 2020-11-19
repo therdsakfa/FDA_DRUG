@@ -24,7 +24,7 @@ Public Class FRM_DRUG_EX_CONFIRM_STAFF
             Bind_ddl_Status()
             load_fdpdtno()
 
-            UC_GRID_ATTACH1.load_gv(_IDA)
+            'UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
         End If
 
     End Sub

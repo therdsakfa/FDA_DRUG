@@ -5,7 +5,7 @@
             <td>
                ชื่อผู้ผลิตต่างประเทศ :  <asp:TextBox ID="txt_search" runat="server" CssClass="input-lg" Width="300px"></asp:TextBox> 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ประเทศ
-                <telerik:RadComboBox ID="rcb_national" Runat="server" Filter="Contains">
+                <telerik:RadComboBox ID="rcb_national" Runat="server" Filter="Contains" Height="16px">
                 </telerik:RadComboBox> &nbsp;
                 <asp:Button ID="btn_search" runat="server" Text="ค้นหา" CssClass="input-lg" />
             </td>

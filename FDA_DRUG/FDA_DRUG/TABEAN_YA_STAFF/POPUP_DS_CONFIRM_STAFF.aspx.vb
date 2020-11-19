@@ -27,7 +27,7 @@ Public Class POPUP_DS_CONFIRM_STAFF
             lr_preview.Text = "<iframe id='iframe10'  style='height:500px;width:100%;' src='../PDF/FRM_PDF.aspx?ID=" & _IDA & "&ID_transection=" & _TR_ID & "&PROCESS_ID=1" & "&STATUS=" & load_STATUS() & "' ></iframe>"
 
             show_btn(_IDA)
-            UC_GRID_ATTACH.load_gv(_IDA)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
             Bind_ddl_Status_staff()
         End If
     End Sub

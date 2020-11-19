@@ -27,7 +27,7 @@ Public Class FRM_CHEMICAL_STAFF_CONFIRM
         If Not IsPostBack Then
             BindData_PDF()
             show_btn(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _process)
             Bind_ddl_Status_staff()
         End If
     End Sub

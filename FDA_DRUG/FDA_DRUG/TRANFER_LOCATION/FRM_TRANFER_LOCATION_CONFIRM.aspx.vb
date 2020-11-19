@@ -28,7 +28,7 @@ Public Class FRM_TRANFER_LOCATION_CONFIRM
             BindData_PDF()
             show_btn(_IDA)
             UC_GRID_PHARMACIST.load_gv(_IDA)
-            UC_GRID_ATTACH.load_gv(_IDA)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
         End If
     End Sub
     Function load_STATUS()

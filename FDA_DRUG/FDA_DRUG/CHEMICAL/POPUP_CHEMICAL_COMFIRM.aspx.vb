@@ -26,7 +26,7 @@ Public Class POPUP_CHEMICAL_COMFIRM
         If Not IsPostBack Then
             BindData_PDF()
             show_btn(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _process)
         End If
     End Sub
     Function load_STATUS()

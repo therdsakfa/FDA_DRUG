@@ -10,7 +10,7 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
                 btn_upload.Style.Add("display", "block")
 
                 Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
-                dao_edt.GetDataby_IDA(Request.QueryString("r_ida"))
+                dao_edt.GetDataby_IDA(Request.QueryString("IDA"))
                 'Try
                 Dim dao_dal As New DAO_DRUG.ClsDBdalcn
                     dao_dal.GetDataby_IDA(dao_edt.fields.FK_IDA)

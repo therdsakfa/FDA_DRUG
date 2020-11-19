@@ -29,7 +29,7 @@ Public Class POPUP_STAFF_CER_EXP_CONFIRM
         If Not IsPostBack Then
             txt_app_date.Text = Date.Now.ToShortDateString()
             show_btn(_IDA)
-            UC_GRID_ATTACH1.load_gv(_TR_ID)
+            UC_GRID_ATTACH1.load_gv_V2(_TR_ID, _process)
             Bind_ddl_Status_staff()
             Dim dao As New DAO_DRUG.TB_CER_EXTEND
             dao.GetDataby_IDA(Request.QueryString("IDA"))

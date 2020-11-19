@@ -40,7 +40,7 @@ Public Class FRM_TABEAN_CONFIRM_STAFF
             Bind_ddl_Status()
             load_fdpdtno()
             BindData_PDF()
-            UC_GRID_ATTACH1.load_gv(_IDA)
+            UC_GRID_ATTACH1.load_gv_V2(_TR_ID, _process)
         End If
 
     End Sub

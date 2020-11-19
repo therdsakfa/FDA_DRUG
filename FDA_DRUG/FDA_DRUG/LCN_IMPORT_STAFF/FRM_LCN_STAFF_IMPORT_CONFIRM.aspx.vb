@@ -27,7 +27,7 @@ Public Class FRM_LCN_STAFF_IMPORT_CONFIRM
             Bind_ddl_Status_staff()
             load_fdpdtno()
             UC_GRID_PHARMACIST.load_gv(_IDA)
-            UC_GRID_ATTACH.load_gv(_IDA)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
         End If
 
     End Sub

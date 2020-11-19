@@ -1391,7 +1391,7 @@ Namespace DAO_DRUG
         End Sub
         Public Sub GetDataby_TR_ID_And_Process(ByVal TR_ID As String, ByVal process As String)
 
-            datas = (From p In db.FILE_ATTACHes Where p.TRANSACTION_ID = TR_ID And p.PROCESS_ID = process Select p)
+            datas = (From p In db.FILE_ATTACHes Where p.TRANSACTION_ID = TR_ID And p.PROCESS_ID = process And p.NAME_REAL <> "" Select p)
             For Each Me.fields In datas
             Next
         End Sub
