@@ -21,14 +21,14 @@ Public Class FRM_STAFF_LOCATION_TO_CONFIRM
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         runQuery()
-        UC_GRID_ATTACH.load_gv(_TR_ID)
+        UC_GRID_ATTACH.load_gv_V2(_TR_ID, _Process)
         If Not IsPostBack Then
             BindData_PDF()
             Bind_GRID()
         End If
     End Sub
     Private Sub Bind_GRID()
-        UC_GRID_ATTACH.load_gv(_TR_ID)
+        UC_GRID_ATTACH.load_gv_V2(_TR_ID, _Process)
     End Sub
 
     Private Sub BindData_PDF()

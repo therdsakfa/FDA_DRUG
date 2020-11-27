@@ -79,7 +79,7 @@ Public Class WebForm7
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
         runQuery()
-        UC_GRID_ATTACH1.load_gv(_TR_ID)
+        UC_GRID_ATTACH1.load_gv_V2(_TR_ID, _ProcessID)
         If Not IsPostBack Then
             'lr_preview.Text = "<iframe id='iframe1'  style='height:500px;width:100%;' src='../PDF/PDF_PERVIEW.aspx?ID=" & _CLS.IDA & "&ID_transection=" & _CLS.TR_ID & "&PROCESS_ID=5" & "&STATUS=" & load_STATUS() & "' ></iframe>"
             Bind_ddl_Status_staff()

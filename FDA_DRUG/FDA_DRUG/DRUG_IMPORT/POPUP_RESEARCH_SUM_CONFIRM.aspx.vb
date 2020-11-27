@@ -27,7 +27,7 @@ Public Class POPUP_RESEARCH_SUM_CONFIRM
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
-        UC_GRID_ATTACH.load_gv(_TR_ID)
+        UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
         show_btn()
         If Not IsPostBack Then
             lr_preview.Text = "<iframe id='iframe1'  style='height:500px;width:100%;' src='../DRUG_IMPORT/POPUP_RESEARCH_SUM.aspx?IDA=" & _IDA & "' ></iframe>"

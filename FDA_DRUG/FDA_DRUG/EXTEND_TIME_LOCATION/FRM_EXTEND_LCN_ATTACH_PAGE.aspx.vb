@@ -10,7 +10,7 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
                 btn_upload.Style.Add("display", "block")
 
                 Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
-                dao_edt.GetDataby_IDA(Request.QueryString("r_ida"))
+                dao_edt.GetDataby_IDA(Request.QueryString("IDA"))
                 'Try
                 Dim dao_dal As New DAO_DRUG.ClsDBdalcn
                     dao_dal.GetDataby_IDA(dao_edt.fields.FK_IDA)
@@ -120,15 +120,15 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
     End Sub
 
     Protected Sub LinkButton1_Click(sender As Object, e As EventArgs) Handles LinkButton1.Click
-        Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
-        dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
-        Response.Write("<script>window.open ('../EXTEND_TIME_LOCATION/POPUP_SHOW_RDLC.aspx?IDA=" & dao_edt.fields.FK_IDA & "&type=1','_blank');</script>")
+        'Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
+        'dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+        Response.Write("<script>window.open ('../EXTEND_TIME_LOCATION/POPUP_SHOW_RDLC.aspx?IDA=" & Request.QueryString("r_ida") & "&type=1','_blank');</script>")
     End Sub
 
     Protected Sub LinkButton2_Click(sender As Object, e As EventArgs) Handles LinkButton2.Click
         Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE
-        dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
-        Response.Write("<script>window.open ('../EXTEND_TIME_LOCATION/POPUP_SHOW_RDLC.aspx?IDA=" & dao_edt.fields.FK_IDA & "&type=2','_blank');</script>")
+        ' dao_edt.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+        Response.Write("<script>window.open ('../EXTEND_TIME_LOCATION/POPUP_SHOW_RDLC.aspx?IDA=" & Request.QueryString("r_ida") & "&type=2','_blank');</script>")
     End Sub
     Sub set_lit()
         Dim dao_edt As New DAO_DRUG.TB_LCN_EXTEND_LITE

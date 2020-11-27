@@ -24,7 +24,7 @@ Public Class FRM_E_TRACKING_CONFIRM
             Bind_ddl_Status()
             load_fdpdtno()
 
-            UC_GRID_ATTACH.load_gv(_IDA)
+            'UC_GRID_ATTACH.load_gv_V2(IDA, _ProcessID)
         End If
 
     End Sub

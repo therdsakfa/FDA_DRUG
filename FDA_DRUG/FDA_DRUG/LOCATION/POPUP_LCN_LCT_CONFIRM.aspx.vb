@@ -36,7 +36,7 @@ Public Class FRM_LCN_LCT_CONFIRM
     End Sub
 
     Private Sub Bind_GRID()
-        UC_GRID_ATTACH.load_gv(_TR_ID)
+        UC_GRID_ATTACH.load_gv_V2(_TR_ID, "")
     End Sub
 
     Sub show_btn(ByVal ID As String)

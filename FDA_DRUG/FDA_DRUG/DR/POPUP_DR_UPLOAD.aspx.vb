@@ -361,6 +361,8 @@ Public Class POPUP_DR_UPLOAD
             Catch ex As Exception
 
             End Try
+
+
             Try
                 dao.fields.TABEAN_TYPE1 = p2.TABEAN_TYPE1
             Catch ex As Exception
@@ -1657,6 +1659,7 @@ Public Class POPUP_DR_UPLOAD
                     With dao_DRRGT_DTL.fields
                         .FK_IDA = main_ida
                         .dtl = dao_rq_DRUG_USE.fields.DRUG_USE
+
                     End With
                     dao_DRRGT_DTL.insert()
                 Next
@@ -1745,7 +1748,9 @@ Public Class POPUP_DR_UPLOAD
                 dao_up.update()
 
             Else
-                insert_tabean2(dao.fields.IDA, p2.TRANSFER)
+                Dim dao_rgtt As New DAO_DRUG.ClsDBdrrgt
+                dao_rgtt.GetDataby_IDA(p2.TRANSFER)
+                insert_tabean2(dao.fields.IDA, p2.TRANSFER, dao_rgtt.fields.rgtno, dao_rgtt.fields.rgttpcd, dao_rgtt.fields.drgtpcd, dao_rgtt.fields.pvncd)
             End If
 
         Catch ex As Exception
@@ -2154,12 +2159,13 @@ Public Class POPUP_DR_UPLOAD
         Next
 
     End Sub
-    Sub insert_tabean2(ByVal FK_IDA As Integer, ByVal fk_transfer As Integer)
+    Sub insert_tabean2(ByVal FK_IDA As Integer, ByVal fk_transfer As Integer, ByVal rgtno As Integer, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal pvncd As String)
         Dim dao_copy As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
 
         Dim newcode As String = ""
         Try
-            dao_copy.GetDataby_IDA_drrgt(fk_transfer)
+            'dao_copy.GetDataby_IDA_drrgt(fk_transfer)
+            dao_copy.GetDataby_4Key(rgtno, rgttpcd, drgtpcd, pvncd)
             newcode = dao_copy.fields.Newcode_U
         Catch ex As Exception
 
@@ -2239,73 +2245,73 @@ Public Class POPUP_DR_UPLOAD
             End Try
 
             Dim dao_XML_DRUG_FRGN As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_FRGN
-                dao_XML_DRUG_FRGN.GetDataby_u1(newcode)
-                If dao_XML_DRUG_FRGN.fields.engcntnm = "ไทย" Then
-                    For Each dao_XML_DRUG_FRGN.fields In dao_XML_DRUG_FRGN.datas
+            dao_XML_DRUG_FRGN.GetDataby_u1(newcode)
+            If dao_XML_DRUG_FRGN.fields.engcntnm = "ไทย" Then
+                For Each dao_XML_DRUG_FRGN.fields In dao_XML_DRUG_FRGN.datas
                     Dim dao_in As New DAO_DRUG.TB_DRRQT_PRODUCER_IN
                     With dao_in.fields
-                            .FK_IDA = IDA_rgt
+                        .FK_IDA = IDA_rgt
+                        Try
+                            Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+                            'dao_dal.GetDataby_pvncd_lcnno_lcntpcd(dao_XML_DRUG_FRGN.fields.pvncd, dao_XML_DRUG_FRGN.fields.lcnno, dao_XML_DRUG_FRGN.fields.lcntpcd)
+                            dao_dal.GetDataby_citi_lcnno(dao_XML_DRUG_FRGN.fields.CITIZEN_AUTHORIZE, dao_XML_DRUG_FRGN.fields.lcnno)
+                            .FK_LCN_IDA = dao_dal.fields.IDA
+                        Catch ex As Exception
+
+                        End Try
+                        .funccd = dao_XML_DRUG_FRGN.fields.funccd
+                        dao_in.insert()
+                    End With
+                Next
+            Else
+                For Each dao_XML_DRUG_FRGN.fields In dao_XML_DRUG_FRGN.datas
+                    Dim dao_pro As New DAO_DRUG.TB_DRRQT_PRODUCER
+                    With dao_pro.fields
+                        .FK_IDA = IDA_rgt
+                        .PRODUCER_WORK_TYPE = dao_XML_DRUG_FRGN.fields.funccd
+                        .funccd = dao_XML_DRUG_FRGN.fields.funccd
+                        Dim frgncd As Integer = 0
+                        Dim FK_PRODUCER As Integer = 0
+                        Dim addr_ida As Integer = 0
+                        Dim frgnlctcd As Integer = 0
+                        Dim dao_frgn_name As New DAO_DRUG.ClsDBsyspdcfrgn
+                        dao_frgn_name.GetData_by_engfrgnnm(dao_XML_DRUG_FRGN.fields.engfrgnnm)
+                        For Each dao_frgn_name.fields In dao_frgn_name.datas
+                            Dim icc As Integer = 0
+                            Dim bao_iso As New BAO.ClsDBSqlcommand
+                            Dim dt_iso As New DataTable
+                            dt_iso = bao_iso.SP_sysisocnt_SAI_by_engcntnm(dao_XML_DRUG_FRGN.fields.engcntnm) '
+                            Dim alpha3 As String = ""
                             Try
-                                Dim dao_dal As New DAO_DRUG.ClsDBdalcn
-                                'dao_dal.GetDataby_pvncd_lcnno_lcntpcd(dao_XML_DRUG_FRGN.fields.pvncd, dao_XML_DRUG_FRGN.fields.lcnno, dao_XML_DRUG_FRGN.fields.lcntpcd)
-                                dao_dal.GetDataby_citi_lcnno(dao_XML_DRUG_FRGN.fields.CITIZEN_AUTHORIZE, dao_XML_DRUG_FRGN.fields.lcnno)
-                                .FK_LCN_IDA = dao_dal.fields.IDA
+                                alpha3 = dt_iso(0)("alpha3")
                             Catch ex As Exception
 
                             End Try
-                            .funccd = dao_XML_DRUG_FRGN.fields.funccd
-                            dao_in.insert()
-                        End With
-                    Next
-                Else
-                    For Each dao_XML_DRUG_FRGN.fields In dao_XML_DRUG_FRGN.datas
-                    Dim dao_pro As New DAO_DRUG.TB_DRRQT_PRODUCER
-                    With dao_pro.fields
-                            .FK_IDA = IDA_rgt
-                            .PRODUCER_WORK_TYPE = dao_XML_DRUG_FRGN.fields.funccd
-                            .funccd = dao_XML_DRUG_FRGN.fields.funccd
-                            Dim frgncd As Integer = 0
-                            Dim FK_PRODUCER As Integer = 0
-                            Dim addr_ida As Integer = 0
-                            Dim frgnlctcd As Integer = 0
-                            Dim dao_frgn_name As New DAO_DRUG.ClsDBsyspdcfrgn
-                            dao_frgn_name.GetData_by_engfrgnnm(dao_XML_DRUG_FRGN.fields.engfrgnnm)
-                            For Each dao_frgn_name.fields In dao_frgn_name.datas
-                                Dim icc As Integer = 0
-                                Dim bao_iso As New BAO.ClsDBSqlcommand
-                                Dim dt_iso As New DataTable
-                                dt_iso = bao_iso.SP_sysisocnt_SAI_by_engcntnm(dao_XML_DRUG_FRGN.fields.engcntnm) '
-                                Dim alpha3 As String = ""
-                                Try
-                                    alpha3 = dt_iso(0)("alpha3")
-                                Catch ex As Exception
+                            Dim dao_frgn_addr As New DAO_DRUG.ClsDBdrfrgnaddr
+                            'dao_frgn_addr.GetDataAll_v2(dao_XML_DRUG_FRGN.fields.addr, alpha3, dao_XML_DRUG_FRGN.fields.district, dao_XML_DRUG_FRGN.fields.fax, dao_XML_DRUG_FRGN.fields.mu, _
+                            'dao_XML_DRUG_FRGN.fields.Province, dao_XML_DRUG_FRGN.fields.road, dao_XML_DRUG_FRGN.fields.soi, dao_XML_DRUG_FRGN.fields.subdiv, dao_XML_DRUG_FRGN.fields.tel, _
+                            'dao_XML_DRUG_FRGN.fields.zipcode, dao_frgn_name.fields.frgncd)
+                            dao_frgn_addr.GetDataAll_v3(dao_XML_DRUG_FRGN.fields.addr, alpha3, dao_XML_DRUG_FRGN.fields.district, dao_XML_DRUG_FRGN.fields.Province, dao_XML_DRUG_FRGN.fields.subdiv, dao_frgn_name.fields.frgncd)
 
-                                End Try
-                                Dim dao_frgn_addr As New DAO_DRUG.ClsDBdrfrgnaddr
-                                'dao_frgn_addr.GetDataAll_v2(dao_XML_DRUG_FRGN.fields.addr, alpha3, dao_XML_DRUG_FRGN.fields.district, dao_XML_DRUG_FRGN.fields.fax, dao_XML_DRUG_FRGN.fields.mu, _
-                                'dao_XML_DRUG_FRGN.fields.Province, dao_XML_DRUG_FRGN.fields.road, dao_XML_DRUG_FRGN.fields.soi, dao_XML_DRUG_FRGN.fields.subdiv, dao_XML_DRUG_FRGN.fields.tel, _
-                                'dao_XML_DRUG_FRGN.fields.zipcode, dao_frgn_name.fields.frgncd)
-                                dao_frgn_addr.GetDataAll_v3(dao_XML_DRUG_FRGN.fields.addr, alpha3, dao_XML_DRUG_FRGN.fields.district, dao_XML_DRUG_FRGN.fields.Province, dao_XML_DRUG_FRGN.fields.subdiv, dao_frgn_name.fields.frgncd)
+                            For Each dao_frgn_addr.fields In dao_frgn_addr.datas
+                                addr_ida = dao_frgn_addr.fields.IDA
+                                frgnlctcd = dao_frgn_addr.fields.frgnlctcd
+                                frgncd = dao_frgn_addr.fields.frgnlctcd
 
-                                For Each dao_frgn_addr.fields In dao_frgn_addr.datas
-                                    addr_ida = dao_frgn_addr.fields.IDA
-                                    frgnlctcd = dao_frgn_addr.fields.frgnlctcd
-                                    frgncd = dao_frgn_addr.fields.frgnlctcd
-
-                                Next
-                                FK_PRODUCER = dao_frgn_name.fields.IDA
                             Next
+                            FK_PRODUCER = dao_frgn_name.fields.IDA
+                        Next
 
-                            .frgncd = dao_frgn_name.fields.frgncd
-                            .addr_ida = addr_ida
-                            .FK_PRODUCER = FK_PRODUCER
-                            .frgnlctcd = frgnlctcd
-                        End With
-                        dao_pro.insert()
-                    Next
+                        .frgncd = dao_frgn_name.fields.frgncd
+                        .addr_ida = addr_ida
+                        .FK_PRODUCER = FK_PRODUCER
+                        .frgnlctcd = frgnlctcd
+                    End With
+                    dao_pro.insert()
+                Next
 
 
-                End If
+            End If
 
 
             'Dim dao_pack As New DAO_DRUG.TB_DRRGT_PACKAGE_DETAIL
@@ -2483,7 +2489,16 @@ Public Class POPUP_DR_UPLOAD
             Next
         End If
 
+        Try
+            Dim dao_contain As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_CONTAIN
+            dao_contain.GetDataby_Newcode(newcode)
+            Dim dao_rqtt As New DAO_DRUG.ClsDBdrrqt
+            dao_rqtt.GetDataby_IDA(FK_IDA)
+            dao_rqtt.fields.PACKAGE_DETAIL = dao_contain.fields.SUBTITLE_SIZE_DRUG
+            dao_rqtt.update()
+        Catch ex As Exception
 
+        End Try
 
         'Dim dao_color As New DAO_DRUG.TB_DRRGT_COLOR
         'dao_color.GetDataby_FK_IDA(fk_transfer)

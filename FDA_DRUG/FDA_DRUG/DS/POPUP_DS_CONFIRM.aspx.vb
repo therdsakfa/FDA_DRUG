@@ -30,7 +30,7 @@ Public Class POPUP_DS_CONFIRM
         If Not IsPostBack Then
             BindData_PDF()
             show_btn(_IDA)
-            UC_GRID_ATTACH.load_gv(_IDA)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
 
         End If
     End Sub

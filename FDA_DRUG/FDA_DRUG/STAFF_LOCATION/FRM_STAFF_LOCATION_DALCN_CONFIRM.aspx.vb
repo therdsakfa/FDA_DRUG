@@ -19,7 +19,7 @@
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         runQuery()
-        UC_GRID_ATTACH.load_gv(_TR_ID)
+        UC_GRID_ATTACH.load_gv_V2(_TR_ID, _Process)
         If Not IsPostBack Then
             Bind_ddl_Status_staff()
             Bind_GRID()
@@ -28,7 +28,7 @@
         End If
     End Sub
     Private Sub Bind_GRID()
-        UC_GRID_ATTACH.load_gv(_TR_ID)
+        UC_GRID_ATTACH.load_gv_V2(_TR_ID, _Process)
     End Sub
     Public Sub loadData_by_Identify()
         Dim dao_loca_addr As New DAO_DRUG.TB_DALCN_LOCATION_ADDRESS

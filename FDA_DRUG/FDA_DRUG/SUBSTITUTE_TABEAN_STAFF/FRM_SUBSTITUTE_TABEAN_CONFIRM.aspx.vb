@@ -39,7 +39,7 @@
             BindData_PDF()
             'bind_ddl_rqt()
             show_btn(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
             Bind_ddl_Status_staff()
         End If
     End Sub

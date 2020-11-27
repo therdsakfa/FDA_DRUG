@@ -76,8 +76,8 @@ Public Class POPUP_DR_CONFIRM_STAFF
                     If Request.QueryString("STATUS_ID") = "8" Then
                         Dim dao As New DAO_DRUG.ClsDBdrrgt
                         dao.GetDataby_IDA(_IDA)
-                        UC_GRID_ATTACH.load_gv(dao.fields.TR_ID)
-                    Else
+                    UC_GRID_ATTACH.load_gv_V2(dao.fields.TR_ID, _ProcessID)
+                Else
                         Dim dao As New DAO_DRUG.ClsDBdrrqt
                     dao.GetDataby_IDA(_IDA)
                     Try
@@ -88,8 +88,8 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
                     End Try
 
-                    UC_GRID_ATTACH.load_gv(dao.fields.TR_ID)
-                    End If
+                    UC_GRID_ATTACH.load_gv_V2(dao.fields.TR_ID, _ProcessID)
+                End If
 
                     'End If
                 Catch ex As Exception

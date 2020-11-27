@@ -4,20 +4,20 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
-    ''' <summary>
-    ''' ใส่ข้อมูลลงตารางไฟล์แนบ
-    ''' </summary>
-    ''' <param name="TR_ID"></param>
-    ''' <remarks></remarks>
-    Public Sub load_gv(ByVal TR_ID As String)
-        If TR_ID <> "" And TR_ID <> "0" Then
-            Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH 'เรียกใช้classตารางไฟล์แนบ
-            dao.GetDataby_TR_ID(TR_ID) 'ดึงข้อมูลโดยการ where TR_ID
-            gv2.DataSource = dao.datas 'ใส่ข้อมูลลงตาราง
-            gv2.DataBind() 'รันข้อมูลทุกrowของตาราง
-        End If
+    '''' <summary>
+    '''' ใส่ข้อมูลลงตารางไฟล์แนบ
+    '''' </summary>
+    '''' <param name="TR_ID"></param>
+    '''' <remarks></remarks>
+    'Public Sub load_gv(ByVal TR_ID As String)
+    '    If TR_ID <> "" And TR_ID <> "0" Then
+    '        Dim dao As New DAO_DRUG.ClsDBFILE_ATTACH 'เรียกใช้classตารางไฟล์แนบ
+    '        dao.GetDataby_TR_ID(TR_ID) 'ดึงข้อมูลโดยการ where TR_ID
+    '        gv2.DataSource = dao.datas 'ใส่ข้อมูลลงตาราง
+    '        gv2.DataBind() 'รันข้อมูลทุกrowของตาราง
+    '    End If
 
-    End Sub
+    'End Sub
     Public Sub loadatteachfromdrugimportupload(ByVal ida As String, ByVal type As Integer)               'MINทำนะ
         If ida <> "" And ida <> "0" Then
             Dim dao As New DAO_DRUG_IMPORT.ClsDBDRUG_IMPORT_UPLOAD 'เรียกใช้classตารางไฟล์แนบ
