@@ -642,6 +642,7 @@
     <Content Include="DESIGN\Scripts\jquery-1.4.2.min.js" />
     <Content Include="DESIGN\Scripts\jquery-1.7.2.js" />
     <Content Include="assets\Charts\DataJson.json" />
+    <Content Include="DI\FRM_SEARCH_LCN_TO_DL.aspx" />
     <Content Include="DRUG_STAFF_IMPORT_DRUG\FRM_STAFF_IMPORT_DRUG_MAIN.aspx" />
     <Content Include="DRUG_STAFF_IMPORT_DRUG\WebForm90.aspx" />
     <Content Include="DRUG_STAFF_NORYORMOR2\FRM_STAFF_PORYORBOR2_MAIN.aspx" />
@@ -2406,6 +2407,13 @@
     </Compile>
     <Compile Include="DI\FRM_SEARCH_LCN.aspx.vb">
       <DependentUpon>FRM_SEARCH_LCN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DI\FRM_SEARCH_LCN_TO_DL.aspx.designer.vb">
+      <DependentUpon>FRM_SEARCH_LCN_TO_DL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DI\FRM_SEARCH_LCN_TO_DL.aspx.vb">
+      <DependentUpon>FRM_SEARCH_LCN_TO_DL.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="DI\POPUP_DI_CONFIRM.aspx.designer.vb">
