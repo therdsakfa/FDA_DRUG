@@ -415,34 +415,34 @@ Public Class FEM_REGISTRATION_MAIN
 
                 Dim tamrab As String = ""
                 Try
-                        tamrab = dao.fields.DRUG_EQ_TO
-                    Catch ex As Exception
+                    tamrab = dao.fields.DRUG_EQ_TO
+                Catch ex As Exception
 
-                    End Try
-                    lbl_head1.Text = "เพิ่มข้อมูลส่วนที่ 2"
-                    Try
-                        If dao.fields.PROCESS_ID = "130002" Or dao.fields.PROCESS_ID = "130004" Then
-                            If Request.QueryString("tt") <> "" Then
-                                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&a=1&tt=" & tamrab & "');", True)
-                            Else
-                                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&a=1');", True)
-                            End If
+                End Try
+                lbl_head1.Text = "เพิ่มข้อมูลส่วนที่ 2"
+                Try
+                    If dao.fields.PROCESS_ID = "130002" Or dao.fields.PROCESS_ID = "130004" Then
+                        If Request.QueryString("tt") <> "" Then
+                            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&a=1&tt=" & tamrab & "');", True)
                         Else
-                            '
-                            If Request.QueryString("tt") <> "" Then
-                                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&tt=" & tamrab & "');", True)
-                            Else
-                                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "');", True)
-                            End If
+                            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_ANIMAL_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&a=1');", True)
                         End If
+                    Else
+                        '
+                        If Request.QueryString("tt") <> "" Then
+                            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&tt=" & tamrab & "');", True)
+                        Else
+                            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "');", True)
+                        End If
+                    End If
 
-                    Catch ex As Exception
+                Catch ex As Exception
 
-                    End Try
+                End Try
 
 
             ElseIf e.CommandName = "choose" Then
-                    Dim url As String = "../TABEAN_YA/TABEAN_YA_MAIN.aspx?main_ida=" & str_ID & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "&lct_ida=" & _lct_ida & "&r_process=" & Request.QueryString("process")
+                Dim url As String = "../TABEAN_YA/TABEAN_YA_MAIN.aspx?main_ida=" & str_ID & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "&lct_ida=" & _lct_ida & "&r_process=" & Request.QueryString("process")
                 If Request.QueryString("staff") <> "" Then
                     url &= "&staff=1&identify=" & Request.QueryString("identify")
                 End If
@@ -555,4 +555,5 @@ Public Class FEM_REGISTRATION_MAIN
         End Try
 
     End Sub
+
 End Class
