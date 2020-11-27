@@ -2904,5 +2904,10 @@ Public Class WebForm36
 
         Next
     End Sub
+
+    Protected Sub btn_test_str_Click(sender As Object, e As EventArgs) Handles btn_test_str.Click
+        Dim str_acc As String = ""
+        str_acc = "บันทึกเลข 555555 เรียบร้อยแล้ว เมื่อเวลา " & Date.Now.ToString("HH:mm") & " วันที่ " & Date.Now.ToLongDateString
+    End Sub
 End Class
 
