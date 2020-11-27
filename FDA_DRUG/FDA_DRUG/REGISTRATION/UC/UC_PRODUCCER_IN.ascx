@@ -2,14 +2,30 @@
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
     
 
-    <table class="table" style="width:100%;">
+    <style type="text/css">
+        .auto-style2 {
+            width: 12%;
+        }
+        .auto-style3 {
+            width: 15%;
+        }
+        .auto-style4 {
+            width: 8%;
+        }
+        .auto-style5 {
+            width: 100%;
+        }
+    </style>
+    
+
+    <table class="auto-style5">
           <tr>
-            <td style="width:25%;"></td>
-            <td style="width:25%;">เลขใบอนุญาต</td>
-            <td style="width:25%;">
+            <td class="auto-style3"></td>
+            <td class="auto-style2">เลขใบอนุญาต</td>
+            <td class="auto-style4">
                 <asp:TextBox ID="txt_NUM" runat="server"  CssClass="input-lg" ></asp:TextBox></td>
-            <td style="width:25%;">
-                </td>
+            <td style="width:25%;color:red">
+                ตัวอย่าง กท 1/2563 และสามารถตรวจสอบเลขที่ใบอนุญาตจากหน้าเว็บ อย. ได้เลย (สำหรับ ผย8 ,ยบ8 และสำหรับทะเบียน 1A ,2A ,1B ,2B ,1D ,2D ,L และ M )</td>
         </tr>
           <tr>
             <td  colspan="4" style="text-align:center;">
