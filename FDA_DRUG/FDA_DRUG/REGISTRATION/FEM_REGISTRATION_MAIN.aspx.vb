@@ -405,7 +405,7 @@ Public Class FEM_REGISTRATION_MAIN
                 If Request.QueryString("tt") <> "" Then
                     'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('POPUP_REGISTRATION_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _r_process & "&tt=1');", True)
 
-                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REPORT_REGIST.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _r_process & "&tt=1');", True)
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REPORT_REGIST.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&staff=1" & "&process=" & _r_process & "&tt=1');", True)
                 Else
                     'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('POPUP_REGISTRATION_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _r_process & "');", True)
                     System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REPORT_REGIST.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _r_process & "');", True)
@@ -472,7 +472,7 @@ Public Class FEM_REGISTRATION_MAIN
                 dao_dal.GetDataby_IDA(dao.fields.FK_IDA)
                 dao_ds.GetDataby_PRODUCT_ID_IDA(IDA)
                 lcntpcd = dao_dal.fields.lcntpcd
-                If dao.fields.RCVNO_DISPLAY <> "" Then
+                If dao.fields.RCVNO_DISPLAY <> "" Or dao_ds.fields.STATUS_ID = 5 Then
                     btn_add2.Style.Add("display", "none")
                 Else
                     btn_add2.Style.Add("display", "block")

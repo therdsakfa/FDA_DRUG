@@ -60,18 +60,18 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="2" MultiPageID="RadMultiPage1">
+    <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="3" MultiPageID="RadMultiPage1">
         <Tabs>
-            <telerik:RadTab runat="server" Text="1.ข้อมูลทั่วไป" Value="1">
+            <telerik:RadTab runat="server" Text="1.ข้อมูลทั่วไป"  Value="1">
             </telerik:RadTab>
             <telerik:RadTab runat="server" Text="2.ขนาดบรรจุ" Value="2">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="3.1 ผู้ผลิตต่างประเทศ" Value="3" Selected="True">
+            <telerik:RadTab runat="server" Text="3.สูตรสาร" Value="5">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="3.2 ผู้ผลิตในประเทศ" Value="4">
+            <telerik:RadTab runat="server" Text="4.1 ผู้ผลิตต่างประเทศ" Value="3" Selected="True">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="4.สูตรสาร" Value="5">
-            </telerik:RadTab>
+            <telerik:RadTab runat="server" Text="4.2 ผู้ผลิตในประเทศ" Value="4">
+            </telerik:RadTab>            
             <telerik:RadTab runat="server" Text="5.การเก็บรักษา" Value="6">
             </telerik:RadTab>     
             <telerik:RadTab runat="server" Text="6.กลุ่มตำรับ" Value="7">
@@ -93,7 +93,7 @@
         </tr>
     </table>
     <br />
-    <telerik:RadMultiPage ID="RadMultiPage1" runat="server" SelectedIndex="2" CssClass="fa left">
+    <telerik:RadMultiPage ID="RadMultiPage1" runat="server" SelectedIndex="3" CssClass="fa left">
 
         <telerik:RadPageView ID="RadPageView1" runat="server" TabIndex="1">
             <table class="table" width="100%">
@@ -131,6 +131,14 @@
                 </tr>
             </table>
         </telerik:RadPageView>
+        <telerik:RadPageView ID="RadPageView4" runat="server" TabIndex="5">
+            <table class="table" width="100%">
+                <tr>
+                    <td>ส่วนประกอบของตำรับ<uc1:UC_CHEM ID="UC_CHEM" runat="server" />
+                    </td>
+                </tr>
+            </table>
+        </telerik:RadPageView>
         <telerik:RadPageView ID="RadPageView3" runat="server" TabIndex="3">
             <table class="table" width="100%">
                 <tr>
@@ -151,14 +159,7 @@
                 </tr>
             </table>
         </telerik:RadPageView>
-        <telerik:RadPageView ID="RadPageView4" runat="server" TabIndex="5">
-            <table class="table" width="100%">
-                <tr>
-                    <td>ส่วนประกอบของตำรับ<uc1:UC_CHEM ID="UC_CHEM" runat="server" />
-                    </td>
-                </tr>
-            </table>
-        </telerik:RadPageView>
+        
         <telerik:RadPageView ID="RadPageView5" runat="server" TabIndex="6">
             <table class="table" width="100%">
                 <tr>

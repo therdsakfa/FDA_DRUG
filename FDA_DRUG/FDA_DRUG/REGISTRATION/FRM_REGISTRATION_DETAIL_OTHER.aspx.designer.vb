@@ -113,6 +113,24 @@ Partial Public Class FRM_REGISTRATION_DETAIL_OTHER
     Protected WithEvents UC_PACKAGING_DETAIL_V21 As Global.FDA_DRUG.UC_PACKAGING_DETAIL_V2
 
     '''<summary>
+    '''RadPageView4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RadPageView4 As Global.Telerik.Web.UI.RadPageView
+
+    '''<summary>
+    '''UC_CHEM control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_CHEM As Global.FDA_DRUG.UC_CHEM
+
+    '''<summary>
     '''RadPageView3 control.
     '''</summary>
     '''<remarks>
@@ -147,24 +165,6 @@ Partial Public Class FRM_REGISTRATION_DETAIL_OTHER
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UC_PRODUCCER_IN1 As Global.FDA_DRUG.UC_PRODUCCER_IN
-
-    '''<summary>
-    '''RadPageView4 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RadPageView4 As Global.Telerik.Web.UI.RadPageView
-
-    '''<summary>
-    '''UC_CHEM control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents UC_CHEM As Global.FDA_DRUG.UC_CHEM
 
     '''<summary>
     '''RadPageView5 control.
