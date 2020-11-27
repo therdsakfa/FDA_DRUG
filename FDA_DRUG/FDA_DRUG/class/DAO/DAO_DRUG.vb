@@ -8459,6 +8459,13 @@ Namespace DAO_DRUG
 
             Next
         End Sub
+        Public Sub GetDataby_FK_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.DRUG_REGISTRATION_PRODUCERs Where p.FK_IDA = IDA Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
         Public Function CountDataby_FK_IDA(ByVal IDA As Integer) As Integer
             Dim a As Integer = 0
             datas = (From p In db.DRUG_REGISTRATION_PRODUCERs Where p.FK_IDA = IDA Select p)

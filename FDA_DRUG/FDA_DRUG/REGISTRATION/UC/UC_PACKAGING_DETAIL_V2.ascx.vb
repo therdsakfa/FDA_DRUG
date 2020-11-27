@@ -36,7 +36,7 @@ Public Class UC_PACKAGING_DETAIL_V2
             bind_ddl_txt1()
             If _req <> "" Then
                 btn_back.Style.Add("display", "none")
-                lbl_head.Text = "ขนาดบรรจุ"
+                lbl_head.Text = "ขนาดบรรจุแบบ SKU"
             Else
                 lbl_head.Text = "เพิ่ม/ลบขนาดบรรจุสำหรับยาตัวอย่าง"
             End If
