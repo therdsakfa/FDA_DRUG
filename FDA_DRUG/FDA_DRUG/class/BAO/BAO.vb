@@ -666,7 +666,7 @@ Namespace BAO
 
             Dim dao_per As New DAO_DRUG.TB_DRRQT_DRUG_PER_UNIT
             dao_per.GetDataby_FKIDA(FK_IDA)
-            For Each dao_per.fields In dao_nou.datas
+            For Each dao_per.fields In dao_per.datas
                 Dim dao_no As New DAO_DRUG.TB_DRRGT_DRUG_PER_UNIT
                 With dao_no.fields
                     .FK_IDA = IDA_rgt
@@ -1135,6 +1135,14 @@ Namespace BAO
             Dim dta As New DataTable
             dta = Queryds(sql)
             dta.TableName = "SP_drug_general_sai"
+            Return dta
+        End Function
+        '
+        Public Function SP_drug_general_sai_by_newcode(ByVal newcode As String) As DataTable
+            Dim sql As String = "exec SP_drug_general_sai_by_newcode @newcode='" & newcode & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_drug_general_sai_by_newcode"
             Return dta
         End Function
 

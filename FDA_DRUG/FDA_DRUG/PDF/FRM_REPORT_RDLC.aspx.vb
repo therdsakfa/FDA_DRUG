@@ -77,7 +77,7 @@ Public Class FRM_REPORT_RDLC
             'dt_animal = bao_show.SP_dramldrg_BY_FK_IDA(Request.QueryString("IDA")) 'SP_dramldrg_BY_newcode
             'dt_tp_stock = bao_show.SP_DRRGT_KEEP_DRUG_BY_FK_IDA(Request.QueryString("IDA")) 'SP_DRRGT_KEEP_DRUG_BY_newcode
             'dt_edit_history = bao_show.SP_DRRGT_EDIT_REQUEST_HISTORY(Request.QueryString("IDA"))
-            dt_drug_general = bao_master_2.SP_drug_general_sai(Request.QueryString("IDA")) '
+            dt_drug_general = bao_master_2.SP_drug_general_sai_by_newcode(Request.QueryString("NEWCODE")) '
             dt_formula = bao_master_2.SP_drug_formula_rg_by_Newcode(Request.QueryString("NEWCODE")) '
             dt_frgn = bao_show.SP_DRRGT_PRODUCER_ALL_BY_NEWCODE(Request.QueryString("NEWCODE")) '
             dt_drug_recipe = bao_show.SP_DRRGT_ATC_DETAIL_BY_Newcode(Request.QueryString("NEWCODE")) '

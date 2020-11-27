@@ -128,7 +128,7 @@
 
                <asp:TextBox ID="txt_thabuilding_lo" runat="server"   Width="70%" ></asp:TextBox>
 
-                </td>
+                    *กรุณากรอกคำว่า &quot;อาคาร&quot; เช่น อาคาร 1</td>
             </tr>
                         <tr>
                 <td style="text-align:right" colspan="2" class="auto-style1">
@@ -164,7 +164,7 @@
 
                <asp:TextBox ID="txt_thamu_lo" runat="server"   Width="70%" ></asp:TextBox>
 
-                    *กรุณากรอกคำว่า &quot;อาคาร&quot; เช่น อาคาร 1</td>
+                    </td>
             </tr>
               <tr>
                 <td style="width:30%  ; text-align:right" colspan="2">

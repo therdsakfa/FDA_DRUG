@@ -163,8 +163,15 @@
 
             End Try
 
+            Dim dao_d2 As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
+            dao_d2.GetDataby_IDA(Request.QueryString("id_r"))
+            Dim str_acc As String = ""
+            str_acc = "บันทึกเลข " & dao_d2.fields.RCVNO_DISPLAY & " เรียบร้อยแล้ว เมื่อเวลา " & Date.Now.ToString("HH:mm")
 
             dao.update()
+
+
+
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
 
         End If
