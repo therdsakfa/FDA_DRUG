@@ -57,7 +57,7 @@
         </tr>
         <tr>
             <td colspan="2" align="center" class="auto-style2">
-                <asp:Button ID="btn_save" runat="server" Text="บันทึก" />
+                <asp:Button ID="btn_save" runat="server" Text="บันทึก" OnClientClick="return confirm('โปรดตรวจสอบชื่อการค้าให้ถูกต้องก่อนกดบึนทึก');" />
                 <asp:Button ID="btn_back" runat="server" Text="ปิดหน้าต่าง" />
             </td>
         </tr>

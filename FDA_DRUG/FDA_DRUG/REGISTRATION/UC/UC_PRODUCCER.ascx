@@ -3,13 +3,19 @@
 <table style="width:100%;" class="table">
         <tr>
             <td>
-               ชื่อผู้ผลิตต่างประเทศ :  <asp:TextBox ID="txt_search" runat="server" CssClass="input-lg" Width="300px"></asp:TextBox> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ประเทศ
+               ชื่อผู้ผลิตต่างประเทศ :  <asp:TextBox ID="txt_search" runat="server" CssClass="input-lg" Width="300px"></asp:TextBox>
+                &nbsp;
+                ประเทศ
                 <telerik:RadComboBox ID="rcb_national" Runat="server" Filter="Contains">
                 </telerik:RadComboBox> &nbsp;
                 <asp:Button ID="btn_search" runat="server" Text="ค้นหา" CssClass="input-lg" />
                 <asp:Button ID="btn_rqt" runat="server" Text="การขอเพิ่มชื่อผู้ผลิต ฯ" OnClientClick="alert('ส่งเมลไปที่ drug-Smarthelp@fda.moph.go.th หรือ แนบ cpp \nหรือ gmp เพื่อประกอบการเพิ่มชื่อ/ที่อยู่ผู้ผลิตต่างประเทศ ');" />
             </td>
+            
         </tr>
+    <tr>
+        <td style="color:red">หมายเหตุ ท่านสามารถพิมพ์บางส่วนของคำ หรือบางส่วนของชื่อ เพื่อช่วยในการค้นหา (สำหรับ นย8 ยบ8 และทะเบียน 1C ,2C ,1F ,2F ,N)</td>
+    </tr>
         <tr>
             <td>
              <telerik:RadGrid ID="rg_search_fore" runat="server" AllowPaging="true" PageSize="10">

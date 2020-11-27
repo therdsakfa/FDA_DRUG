@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class UC_officer_che
-    
+
     '''<summary>
     '''txt_each control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_each As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ddl_unit_each control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_unit_each As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''ddl_set_each control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_set_each As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''btn_save control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''txt_each_txt control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_each_txt As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_search control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_search As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''btn_search control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_search As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''rg_search_iowa control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rg_search_iowa As Global.Telerik.Web.UI.RadGrid
-    
+
     '''<summary>
     '''ddl_CAS_TYPE control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_CAS_TYPE As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''ddl_remark1 control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_remark1 As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''txt_QTY control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_QTY As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ddl_unit control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_unit As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''txt_QTY2 control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_QTY2 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ddl_unit4 control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_unit4 As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''txt_sbioqty control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_sbioqty As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ddl_unit2 control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_unit2 As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''txt_sbiosqno control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_sbiosqno As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_ebioqty control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_ebioqty As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ddl_unit3 control.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_unit3 As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''txt_ebiosqno control.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_ebiosqno As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_ref control.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_ref As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_remark control.
     '''</summary>
@@ -210,7 +210,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_remark As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ddl_aori control.
     '''</summary>
@@ -219,7 +219,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_aori As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''ddl_set control.
     '''</summary>
@@ -228,7 +228,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_set As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''txt_ROWS control.
     '''</summary>
@@ -237,7 +237,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_ROWS As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''btn_select control.
     '''</summary>
@@ -246,7 +246,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_select As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''lbl_each control.
     '''</summary>
@@ -255,7 +255,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_each As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''btn_up control.
     '''</summary>
@@ -264,7 +264,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_up As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btn_down control.
     '''</summary>
@@ -273,7 +273,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_down As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btn_reset control.
     '''</summary>
@@ -282,7 +282,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_reset As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''rg_chem control.
     '''</summary>
@@ -291,7 +291,7 @@ Partial Public Class UC_officer_che
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rg_chem As Global.Telerik.Web.UI.RadGrid
-    
+
     '''<summary>
     '''btn_rows_save control.
     '''</summary>

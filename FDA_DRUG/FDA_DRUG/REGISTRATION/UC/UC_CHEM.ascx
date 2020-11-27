@@ -19,17 +19,8 @@
         <td>
           <table>
               <tr>
-                  <td>
-                      Each
-                  </td>
-                  <td>
-                      <asp:TextBox ID="txt_each" runat="server"></asp:TextBox>
-                  </td>
-                  <td>
-                      <asp:DropDownList ID="ddl_unit" runat="server"></asp:DropDownList>
-                  </td>
-                  <td>Contains;</td>
-                  <td>ของสูตรที่</td>
+                  
+                  <td>สูตรที่</td>
                   <td>
                         <asp:DropDownList ID="ddl_set_each" runat="server" AutoPostBack="True" Width="90px">
                             <asp:ListItem>1</asp:ListItem>
@@ -62,6 +53,18 @@
                         &nbsp;</td>
                   <td>
                       &nbsp;</td>
+              </tr>
+              <tr>
+                  <td>
+                      Each
+                  </td>
+                  <td>
+                      <asp:TextBox ID="txt_each" runat="server"></asp:TextBox>
+                  </td>
+                  <td>
+                      <asp:DropDownList ID="ddl_unit" runat="server"></asp:DropDownList>
+                  </td>
+                  <td>Contains</td>
               </tr>
           </table>
         </td>
@@ -170,8 +173,18 @@
                         </asp:DropDownList>
                     </td>
                     <td>
+                        <%--<asp:Button ID="btn_select" runat="server" Text="เพิ่มสาร" CssClass="input-lg"/>--%>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ลำดับสาร</td>
+                    <td>
+                        <asp:TextBox ID="txt_ROWS" runat="server" TextMode="Number"></asp:TextBox>
+                    </td>
+                    <td>
                         <asp:Button ID="btn_select" runat="server" Text="เพิ่มสาร" CssClass="input-lg"/>
                     </td>
+                    <td>&nbsp;</td>
                 </tr>
             </table>
 
