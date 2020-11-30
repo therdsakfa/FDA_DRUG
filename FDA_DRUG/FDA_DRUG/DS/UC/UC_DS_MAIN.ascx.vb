@@ -180,7 +180,7 @@ Public Class UC_DS_MAIN
     End Sub
     Public Sub GV_lcnno_DataBinding()
         Dim bao As New BAO.ClsDBSqlcommand
-        Dim dt = bao.SP_DRSAMP_BY_PRODUCT_ID(_main_ida)
+        Dim dt = bao.SP_GET_TR_UPLOAD_BY_PROCESS_ID_AND_IDA(_process, _CLS.CITIZEN_ID_AUTHORIZE, _main_ida)
 
         '    RadGrid1.DataSource = dt
         GV_lcnno.DataSource = dt                'นำข้อมูลมโชในจาก SP มาไว้ที่ DataTable 

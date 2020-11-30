@@ -159,11 +159,11 @@
         
     </div>--%>
   
-    <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="0" MultiPageID="RadMultiPage1" Orientation="HorizontalTop" Width="100%">
+    <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="0" MultiPageID="RadMultiPage1" Width="100%">
         <Tabs>
-            <telerik:RadTab runat="server" Text="ยาตัวอย่าง" Selected="True" Value="1">
+            <telerik:RadTab runat="server" Text="ยาตัวอย่าง" Value="1" Selected="True">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="ย.1" Value="2">
+            <telerik:RadTab runat="server" Text="ย.1" Value="2"  >
             </telerik:RadTab>
         </Tabs>
     </telerik:RadTabStrip>
@@ -245,7 +245,7 @@
            </table>
        </fieldset>
         </telerik:RadPageView>
-        <telerik:RadPageView ID="RadPageView2" runat="server" TabIndex="2">
+        <telerik:RadPageView ID="RadPageView2" runat="server" TabIndex="2" >
             <fieldset>
            <legend style="color: red;"> <asp:Label ID="lbl_tabean" runat="server" Text="คำขอขึ้นทะเบียนยา"></asp:Label></legend>
            <table style="width: 100%;">
