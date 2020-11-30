@@ -124,7 +124,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
                     bao_tran.CITIZEN_ID_AUTHORIZE = ""
                 End Try
                 Try
-                    _ProcessID = _process
+                    _ProcessID = "1028"
                 Catch ex As Exception
 
                 End Try
