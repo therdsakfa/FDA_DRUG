@@ -24,14 +24,49 @@ Public Class FRM_SEARCH_LCN_TO_DL
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
+        If Not IsPostBack Then
+            load_ddl()
+        End If
     End Sub
+    Private Sub load_ddl()
+        'Dim ws As New WS_PVNCD.WebService1
 
+
+        'Dim dt As New DataTable
+        'dt = ws.getNewcode_Lcnno_by_identify_and_taxnoauthorize(_CLS.CITIZEN_ID, _CLS.CITIZEN_ID_AUTHORIZE)
+
+        'Dim dao As New DAO_DRUG.ClsDBdalcn
+
+        'dao.GetDataby_FK_IDA_and_PROCESS_ID_AND_IDEN(_CLS.CITIZEN_ID_AUTHORIZE)
+        Dim dt As New DataTable
+        Dim bao As New BAO.ClsDBSqlcommand
+        If Request.QueryString("process") = "130001" Or Request.QueryString("process") = "130002" Or Request.QueryString("process") = "130003" Or Request.QueryString("process") = "130004" Then
+            If Request.QueryString("process") = "130001" Or Request.QueryString("process") = "130002" Then
+                dt = bao.SP_DDL_LCN_DI_by_type(_CLS.CITIZEN_ID_AUTHORIZE, 1)
+            Else
+                dt = bao.SP_DDL_LCN_DI_by_type(_CLS.CITIZEN_ID_AUTHORIZE, 2)
+            End If
+        ElseIf Request.QueryString("process") = "11103" Then
+            dt = bao.SP_DDL_LCN_NCT(_CLS.CITIZEN_ID_AUTHORIZE)
+        Else
+            dt = bao.SP_DDL_LCN_DI(_CLS.CITIZEN_ID_AUTHORIZE)
+        End If
+
+        rcb_search.DataSource = dt 'dao.datas
+        rcb_search.DataTextField = "LCNNO_MANUAL"
+        rcb_search.DataValueField = "IDA"
+        rcb_search.DataBind()
+        Dim item As New RadComboBoxItem
+        item.Text = "กรุณาเลือกเลขที่ใบอนุญาต"
+        item.Value = "0"
+        rcb_search.Items.Insert(0, item)
+    End Sub
     Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
         Dim bao_DB As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
 
         Try
-            bao_DB.SP_DRUG_REGISTRATION_BY_FK_IDA(rcb_search.SelectedValue)
+            bao_DB.SP_DRUG_REGISTRATION_BY_FK_IDA_V2(rcb_search.SelectedValue)
             RadGrid1.DataSource = bao_DB.dt
             RadGrid1.DataBind()
         Catch ex As Exception
@@ -46,7 +81,7 @@ Public Class FRM_SEARCH_LCN_TO_DL
             Dim bao_infor As New BAO.information
             Dim item As GridDataItem = e.Item
 
-            Dim str_ID As String = item("H_IDA").Text
+            Dim str_ID As String = item("IDA").Text
             Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
             dao.GetDataby_IDA(str_ID)
 

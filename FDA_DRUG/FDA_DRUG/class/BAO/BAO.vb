@@ -4586,6 +4586,22 @@ Namespace BAO
             conn.Close()
 
         End Sub
+        '
+        Public Sub SP_DRUG_REGISTRATION_BY_FK_IDA_V2(ByVal FK_IDA As Integer)
+
+            strSQL = "SP_DRUG_REGISTRATION_BY_FK_IDA_V2"
+            SqlCmd = New SqlCommand(strSQL, conn)
+            If (conn.State = ConnectionState.Open) Then
+                conn.Close()
+            End If
+            conn.Open()
+            SqlCmd.CommandType = CommandType.StoredProcedure
+            SqlCmd.Parameters.Add("@FK_IDA", SqlDbType.Int).Value = FK_IDA
+            dtAdapter = New SqlDataAdapter(SqlCmd)
+            dtAdapter.Fill(dt)
+            conn.Close()
+
+        End Sub
         'SP_DRUG_REGISTRATION_STAFF
         Public Sub SP_DRUG_REGISTRATION_BY_FK_IDA_PROCESS_ID(ByVal FK_IDA As Integer, ByVal process As Integer)
 

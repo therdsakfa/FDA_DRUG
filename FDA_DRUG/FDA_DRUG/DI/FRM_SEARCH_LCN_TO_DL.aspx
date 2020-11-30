@@ -125,8 +125,8 @@
            <telerik:RadGrid ID="RadGrid1" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="15">
                <MasterTableView AutoGenerateColumns="False">
                    <Columns>
-                       <telerik:GridBoundColumn DataField="H_IDA" DataType="System.Int32" FilterControlAltText="Filter H_IDA column" HeaderText="H_IDA"
-                           SortExpression="H_IDA" UniqueName="H_IDA" Display="false" AllowFiltering="true">
+                       <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
+                           SortExpression="IDA" UniqueName="IDA" Display="false" AllowFiltering="true">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="RCVNO_DISPLAY" FilterControlAltText="Filter RCVNO_DISPLAY column"
                            HeaderText="เลขที่ตำรับ" SortExpression="RCVNO_DISPLAY" UniqueName="RCVNO_DISPLAY">
@@ -144,8 +144,8 @@
                            HeaderText="เลขดำเนินการ" SortExpression="TR_ID" UniqueName="TR_ID">
                        </telerik:GridBoundColumn>
                        
-                       <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="choose" HeaderText="เลือกข้อมูล"
-                            CommandName="choose" Text="เลือกข้อมูล">
+                       <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="_sel" HeaderText="เลือกข้อมูล"
+                            CommandName="_sel" Text="เลือกข้อมูล">
                             <HeaderStyle Width="70px" />
                         </telerik:GridButtonColumn>
                    </Columns>

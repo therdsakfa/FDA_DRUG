@@ -136,8 +136,8 @@
                     <telerik:GridBoundColumn DataField="NYM2_WISH_MED" FilterControlAltText="Filter NYM2_WISH_MED column"
                         HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM2_WISH_MED" UniqueName="NYM2_WISH_MED">
                     </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="FK_IDA" FilterControlAltText="Filter FK_IDA column"
-                        HeaderText="เลขดำเนินการ" SortExpression="FK_IDA" UniqueName="FK_IDA">   
+                    <telerik:GridBoundColumn DataField="TR_ID_FORMAT" FilterControlAltText="Filter TR_ID_FORMAT column"
+                        HeaderText="เลขดำเนินการ" SortExpression="TR_ID_FORMAT" UniqueName="TR_ID_FORMAT">   
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
                         HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
@@ -154,6 +154,10 @@
                         CommandName="_edit" Text="แก้ไข">
                         <HeaderStyle Width="70px" />
                     </telerik:GridButtonColumn>
+                    <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_trid"
+                       CommandName="_trid" Text="ขอเลขดำเนินการ" ConfirmText="คุณต้องการทำต่อหรือไม่?">
+                       <HeaderStyle Width="70px" />
+                   </telerik:GridButtonColumn>
                 </Columns>
             </MasterTableView>
         </telerik:RadGrid>
