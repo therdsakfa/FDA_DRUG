@@ -3,7 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
-            width: 20%;
+            width: 35%;
+        }
+        .auto-style2 {
+            width: 228px;
         }
     </style>
 </asp:Content>
@@ -71,16 +74,16 @@
             กรุณาเลือกไฟล์ที่อยู่ของpdf
         </h3>
 
-         <table class="table"> <tr><td class="auto-style1">   แบบคำขอ ย.8</td><td>   <asp:FileUpload ID="FileUpload1" runat="server" CssClass="btn-default" />  </td></tr>
+         <table class="table"> <tr><td class="auto-style1">   แบบคำขอ ผย8/นย8/ยบ8 ที่ได้มาจากระบบเท่านั้น</td><td class="auto-style2">   <asp:FileUpload ID="FileUpload1" runat="server" CssClass="btn-default" />  &nbsp; </td><td style="color:red">*</td></tr>
              <tr><td colspan="2"> &nbsp;
          <tr>
             <td colspan="2">
                 แนบเอกสารเพิ่มเติม </td>
         </tr>
              <tr><td class="auto-style1"><asp:Label ID="lbl_attach1" runat="server" Text="-"></asp:Label></td>
-                 <td><asp:FileUpload ID="FileUpload2" runat="server" CssClass="btn-default" /></td></tr>        
+                 <td class="auto-style2"><asp:FileUpload ID="FileUpload2" runat="server" CssClass="btn-default" /></td><td style="color:red">*</td></tr>        
             <tr><td class="auto-style1"><asp:Label ID="lbl_attach2" runat="server" Text="-"></asp:Label></td>
-            <td><asp:FileUpload ID="FileUpload3" runat="server" CssClass="btn-default"  /></td></tr>           
+            <td class="auto-style2"><asp:FileUpload ID="FileUpload3" runat="server" CssClass="btn-default"  /></td></tr>           
             <%--<tr><td class="auto-style1"><asp:Label ID="lbl_attach3" runat="server" Text="-"></asp:Label><br /></td>          
             <td><asp:FileUpload ID="FileUpload4" runat="server" CssClass="btn-default"  /></td></tr> --%>
 
