@@ -97,6 +97,43 @@ Public Class FRM_DRUG_IMPORT_MAIN
 
                 url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process & "&IDA=" & NYM2_ida
                 Response.Redirect(url)
+            ElseIf e.CommandName = "_trid" Then
+                Dim TR_ID As String = ""
+                Dim _ProcessID As String = ""
+                Dim bao_tran As New BAO_TRANSECTION
+                Dim dao_nym As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+                Dim dao_dalcn As New DAO_DRUG.ClsDBdalcn
+                Try
+                    dao_dalcn.GetDataby_IDA(Request.QueryString("lcnida"))
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao.GetDataby_IDA(item("NYM2_IDA").Text)
+                Catch ex As Exception
+
+                End Try
+                Try
+                    bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+                Catch ex As Exception
+                    bao_tran.CITIZEN_ID = ""
+                End Try
+                Try
+                    bao_tran.CITIZEN_ID_AUTHORIZE = dao_dalcn.fields.CITIZEN_ID_AUTHORIZE
+                Catch ex As Exception
+                    bao_tran.CITIZEN_ID_AUTHORIZE = ""
+                End Try
+                Try
+                    _ProcessID = _process
+                Catch ex As Exception
+
+                End Try
+
+                TR_ID = bao_tran.insert_transection_new(_ProcessID)
+                dao.fields.TR_ID = TR_ID
+                dao.update()
+                RadGrid1.Rebind()
+
             End If
 
         End If
@@ -108,9 +145,12 @@ Public Class FRM_DRUG_IMPORT_MAIN
             item = e.Item
             Dim DL As String = item("DL").Text
             Dim NYM2_ida As String = item("NYM2_IDA").Text
+            Dim btn_trid As LinkButton = DirectCast(item("btn_trid").Controls(0), LinkButton)
             'Dim btn_upload As LinkButton = DirectCast(item("btn_upload").Controls(0), LinkButton)
             Dim btn_Select As LinkButton = DirectCast(item("btn_Select").Controls(0), LinkButton)
             Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
+            btn_trid.Style.Add("display", "none")
+
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
             dao.getdata_dl(DL)
             'btn_upload.Style.Add("display", "none")
@@ -125,6 +165,17 @@ Public Class FRM_DRUG_IMPORT_MAIN
                 End If
             Catch ex As Exception
             End Try
+
+            Dim tr_id As String = 0
+            Try
+                tr_id = dao.fields.TR_ID
+            Catch ex As Exception
+
+            End Try
+            If tr_id = 0 Then
+                btn_Select.Style.Add("display", "none")
+                btn_trid.Style.Add("display", "block")
+            End If
 
             'DL = 96703&NYM=2&process=1027
             'Dim url As String = "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?DL=" & _DL & "&NYM=" & NYM & "&process=" & _process & ""     'แก้ไขบรรทัดนี้

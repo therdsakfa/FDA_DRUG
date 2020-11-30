@@ -154,6 +154,10 @@
                         CommandName="_edit" Text="แก้ไข">
                         <HeaderStyle Width="70px" />
                     </telerik:GridButtonColumn>
+                    <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_trid"
+                       CommandName="_trid" Text="ขอเลขดำเนินการ" ConfirmText="คุณต้องการทำต่อหรือไม่?">
+                       <HeaderStyle Width="70px" />
+                   </telerik:GridButtonColumn>
                 </Columns>
             </MasterTableView>
         </telerik:RadGrid>
