@@ -58,14 +58,36 @@ Public Class FRM_SEARCH_LCN_TO_DL
                 Catch ex As Exception
 
                 End Try
-                If Request.QueryString("tt") <> "" Then
-                    'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('POPUP_REGISTRATION_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _r_process & "&tt=1');", True)
 
-                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REPORT_REGIST.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&staff=1" & "&process=" & _process & "&tt=1');", True)
-                Else
-                    'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('POPUP_REGISTRATION_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _r_process & "');", True)
-                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REPORT_REGIST.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
+                Dim url As String = ""
+                Dim NYM As String = ""
+                If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
+                    Select Case _process
+                        Case "1027"
+                            NYM = "2"
+                            url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM2.aspx?DL=" & str_ID & "&IDA=" & str_ID & "&NYM=" & NYM & "&process=" & _process & "&lcnida=" & dao.fields.FK_IDA
+
+                        Case "1028"
+                            NYM = "3"
+                            url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM3.aspx?DL=" & str_ID & "&IDA=" & str_ID & "&NYM=" & NYM & "&process=" & _process & "&lcnida=" & dao.fields.FK_IDA
+
+                        Case "1029"
+                            NYM = "4"
+                            url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM4.aspx?DL=" & str_ID & "&IDA=" & str_ID & "&NYM=" & NYM & "&process=" & _process & "&lcnida=" & dao.fields.FK_IDA
+
+                        Case "1030"
+                            NYM = "5"
+                            url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM5.aspx?DL=" & str_ID & "&IDA=" & str_ID & "&NYM=" & NYM & "&process=" & _process & "&lcnida=" & dao.fields.FK_IDA
+
+                    End Select
+                    'url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_MAIN.aspx?DL=" & rcb_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
+                    Response.Redirect(url)
                 End If
+
+
+
+                'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('POPUP_REGISTRATION_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _r_process & "');", True)
+                'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_REPORT_REGIST.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
 
             End If
         End If
