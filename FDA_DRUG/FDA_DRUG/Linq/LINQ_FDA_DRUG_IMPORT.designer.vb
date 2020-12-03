@@ -17536,6 +17536,10 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_2
 	
 	Private _POSITION_CONSIDER_LINE5 As String
 	
+	Private _rcvdate As System.Nullable(Of Date)
+	
+	Private _PROCESS_ID As String
+	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
     End Sub
@@ -17894,6 +17898,14 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_2
     Partial Private Sub OnPOSITION_CONSIDER_LINE5Changing(value As String)
     End Sub
     Partial Private Sub OnPOSITION_CONSIDER_LINE5Changed()
+    End Sub
+    Partial Private Sub OnrcvdateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnrcvdateChanged()
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanged()
     End Sub
     #End Region
 	
@@ -19307,6 +19319,38 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_2
 				Me._POSITION_CONSIDER_LINE5 = value
 				Me.SendPropertyChanged("POSITION_CONSIDER_LINE5")
 				Me.OnPOSITION_CONSIDER_LINE5Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_rcvdate", DbType:="DateTime")>  _
+	Public Property rcvdate() As System.Nullable(Of Date)
+		Get
+			Return Me._rcvdate
+		End Get
+		Set
+			If (Me._rcvdate.Equals(value) = false) Then
+				Me.OnrcvdateChanging(value)
+				Me.SendPropertyChanging
+				Me._rcvdate = value
+				Me.SendPropertyChanged("rcvdate")
+				Me.OnrcvdateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROCESS_ID", DbType:="NVarChar(50)")>  _
+	Public Property PROCESS_ID() As String
+		Get
+			Return Me._PROCESS_ID
+		End Get
+		Set
+			If (String.Equals(Me._PROCESS_ID, value) = false) Then
+				Me.OnPROCESS_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._PROCESS_ID = value
+				Me.SendPropertyChanged("PROCESS_ID")
+				Me.OnPROCESS_IDChanged
 			End If
 		End Set
 	End Property

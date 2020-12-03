@@ -118,6 +118,9 @@
                        <telerik:GridBoundColumn DataField="NYM2_IDA" DataType="System.Int32" FilterControlAltText="Filter NYM2_IDA column" HeaderText="IDA"
                            SortExpression="NYM2_IDA" UniqueName="NYM2_IDA" Display="false">
                        </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="TR_ID" FilterControlAltText="Filter TR_ID column" HeaderText="TR_ID"
+                        SortExpression="TR_ID" UniqueName="TR_ID" Display="false">
+                    </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="DL" FilterControlAltText="Filter DL column"
                         HeaderText="เลขIDAของDL" SortExpression="DL" UniqueName="DL" Display="false">
                     </telerik:GridBoundColumn>
@@ -137,8 +140,8 @@
                        <telerik:GridBoundColumn DataField="NYM2_WISH_MED" FilterControlAltText="Filter NYM2_WISH_MED column"
                            HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM2_WISH_MED" UniqueName="NYM2_WISH_MED">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="FK_IDA" FilterControlAltText="Filter FK_IDA column"
-                           HeaderText="เลขดำเนินการ" SortExpression="FK_IDA" UniqueName="FK_IDA">
+                       <telerik:GridBoundColumn DataField="TR_ID_FORMAT" FilterControlAltText="Filter TR_ID_FORMAT column"
+                           HeaderText="เลขดำเนินการ" SortExpression="TR_ID_FORMAT" UniqueName="TR_ID_FORMAT">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
                            HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
