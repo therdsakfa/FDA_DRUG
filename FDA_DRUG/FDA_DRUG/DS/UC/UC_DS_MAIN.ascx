@@ -99,7 +99,7 @@
                                <p style="text-align:right;padding-right:5%;">
             <asp:Button ID="btn_download" runat="server" Text="เพิ่มคำขอ" CssClass="btn-lg" Height="50px" style="font-size: large" Width="200px" />
         &nbsp;&nbsp;
-            <asp:Button ID="btn_upload" runat="server" Text="อัพโหลดคำขอ" CssClass="btn-lg" style="font-size: large" Width="200px"  />
+            <asp:Button ID="btn_upload" runat="server" Text="อัพโหลดคำขอ" CssClass="btn-lg" Height="50px" style="font-size: large" Width="200px"  />
                                      <asp:Button ID="btn_reload" runat="server" Text="" style="display:none;"  />
                                      <asp:Button ID="Button1" runat="server" Text="" style="display:none;"  />
         </p>

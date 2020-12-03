@@ -11,16 +11,25 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_DS_STAFF_CONSIDER_DATE
+Partial Public Class FRM_DS_STAFF_EDIT
 
     '''<summary>
-    '''Txt_Remark control.
+    '''Txt_EDIT control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Txt_Remark As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txt_EDIT As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txt_lmdfdate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_lmdfdate As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Button1 control.
@@ -30,4 +39,13 @@ Partial Public Class FRM_DS_STAFF_CONSIDER_DATE
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Button2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
 End Class

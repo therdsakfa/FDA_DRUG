@@ -27,6 +27,9 @@
             <td style="width:25%;color:red">
                 ตัวอย่าง กท 1/2563 และสามารถตรวจสอบเลขที่ใบอนุญาตจากหน้าเว็บ อย. ได้เลย (สำหรับ ผย8 ,ยบ8 และสำหรับทะเบียน 1A ,2A ,1B ,2B ,1D ,2D ,L และ M )</td>
         </tr>
+        <tr>
+            <td></td>
+        </tr>
           <tr>
             <td  colspan="4" style="text-align:center;">
                  <asp:Button ID="btn_SEARCH" runat="server" Text="ค้นหา" CssClass="input-lg" />

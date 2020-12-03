@@ -100,42 +100,36 @@
     <asp:Panel ID="Panel3" runat="server" GroupingText="ข้อมูล">
         <table class="table" style="width: 100%;">
             <tr>
-                <td>
+                <td style="font-size:larger;">
                     ชื่อบริษัท</td>
                 <td>
                     <asp:Label ID="lbl_lcn_name" runat="server"></asp:Label>
                 </td>
-                <td>
+                <td style="font-size:larger">
                     เลขที่ใบอนุญาต
                 </td>
                 <td>
-<asp:Label ID="lbl_lcnno" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lbl_lcnno" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
              <tr>
-                 <td>ชื่อยา(ไทย) </td>
+                 <td style="font-size:larger">ชื่อยา(ไทย) </td>
                  <td>
-                     <h1>
-<asp:Label ID="lb_drug_name" runat="server" Text=""></asp:Label>
-                     </h1>
-                     
+                 <asp:Label ID="lb_drug_name" runat="server" Text=""></asp:Label>
                  </td>
-                 <td>ชื่อยา(ภาษาอังกฤษ) </td>
+                 <td style="font-size:larger">ชื่อยา(ภาษาอังกฤษ) </td>
                  <td>
-                     <h2>
-<asp:Label ID="lb_drug_name_other" runat="server" Text=""></asp:Label>
-                     </h2>
-                     
+                <asp:Label ID="lb_drug_name_other" runat="server" Text=""></asp:Label>                     
                  </td>
             </tr>
              <tr>
-                <td>
+                <td style="font-size:larger">
                    หมวดยา
                 </td>
                 <td>
                     <asp:Label ID="lb_drug_group" runat="server" Text=""></asp:Label>
                 </td>
-                <td>
+                <td style="font-size:larger">
                     ชนิดของยา
                 </td>
                  <td>
@@ -143,7 +137,7 @@
                 </td>
             </tr>
             <tr>
-                <td>เลขที่ตำรับ</td>
+                <td style="font-size:larger">เลขที่ตำรับ</td>
                 <td>
                     <asp:Label ID="lbl_dl" runat="server" Text="-"></asp:Label>
                 </td>

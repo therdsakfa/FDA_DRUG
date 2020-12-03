@@ -221,7 +221,7 @@
                             </telerik:GridBoundColumn>     
                             <%--  <telerik:GridBoundColumn UniqueName="Unit" HeaderText="หน่วย" DataField="sunitengnm" >
                             </telerik:GridBoundColumn>--%>                   
-                               <telerik:GridBoundColumn UniqueName="unit_name" HeaderText="หน่วย" DataField="unit_name" >
+                               <telerik:GridBoundColumn UniqueName="unit_name" HeaderText="หน่วย" DataField="sunitengnm" >
                                     <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>   
                           
@@ -358,12 +358,13 @@
             <td align="right" class="auto-style3">
               </td>
             <td>
-               <asp:Button ID="btn_save" runat="server" Text="บันทึก" Height="53px"  Width="150px" CssClass="auto-style11"></asp:Button>
+               <asp:Button ID="btn_save" runat="server" Text="สร้างคำขอยาตัวอย่าง" Height="53px"  Width="185px" CssClass="auto-style11"></asp:Button>
                 &nbsp;
                 <asp:Button ID="btn_back" runat="server" Text="ปิดหน้าต่าง" Height="53px"  Width="150px" CssClass="auto-style11" />
                 <%--<asp:Button ID="btn_gen" runat="server" Text="gen xml" />--%>
                  <%--<asp:Button ID="btn_genf" runat="server" Text="gen pdf"/>--%>
             </td>
+            <td style="color:red">&nbsp;&nbsp;&nbsp;&nbsp;* โปรดนำคำขอที่สร้างขึ้นไปอัพโหลดในขั้นตอนต่อไป</td>
         </tr>
 
 

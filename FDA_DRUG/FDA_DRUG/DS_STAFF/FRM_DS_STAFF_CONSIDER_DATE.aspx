@@ -16,7 +16,7 @@
                         </td>
                     </tr>
 
-                    <tr>
+                    <%--<tr>
                         <td>ชื่อผู้ลงนาม </td>
                         <td>
                             <asp:DropDownList ID="ddl_staff_offer" runat="server" DataTextField="STAFF_OFFER_NAME" DataValueField="IDA" CssClass="input-lg" Width="200px">
@@ -38,7 +38,7 @@
                         <td>วันที่คาดว่าจะอนุมัติ</td>
                         <td>
                             <asp:TextBox ID="txt_app_date" runat="server" CssClass="input-lg"></asp:TextBox></td>
-                    </tr>
+                    </tr>--%>
 
                 </table>
             </div>

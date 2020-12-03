@@ -1,4 +1,4 @@
-﻿Public Class FRM_DS_STAFF_REMARK
+﻿Public Class FRM_DS_STAFF_EDIT
     Inherits System.Web.UI.Page
     Private _TR_ID As Integer
     Private _IDA As Integer
@@ -12,34 +12,35 @@
             _TR_ID = Request.QueryString("TR_ID")
             _IDA = Request.QueryString("IDA")
             _CLS = Session("CLS")
-            _ProcessID = Request.QueryString("process")
+            '_ProcessID = Request.QueryString("process")
             ' _type = "1"
         End If
 
     End Sub
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         runQuery()
         If Not IsPostBack Then
-            txt_app_date.Text = Date.Now.ToShortDateString()
+            txt_lmdfdate.Text = Date.Now.ToShortDateString()
             'default_Remark()
         End If
-    End Sub
 
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
             Dim dao As New DAO_DRUG.ClsDBdrsamp
             dao.GetDataby_IDA(_IDA)
-            dao.fields.STATUS_ID = 7
-            dao.fields.REMARK = Txt_Remark.Text
+            dao.fields.STATUS_ID = 5
+            ''dao.fields.REMARK = Txt_Remark.Text
             Try
-                dao.fields.rcvdate = CDate(txt_app_date.Text)
+                dao.fields.rcvdate = CDate(txt_lmdfdate.Text)
             Catch ex As Exception
 
             End Try
             dao.update()
 
             AddLogStatus(5, _ProcessID, _CLS.CITIZEN_ID, _IDA)
-            alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+            ''alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
         Catch ex As Exception
             Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")
         End Try

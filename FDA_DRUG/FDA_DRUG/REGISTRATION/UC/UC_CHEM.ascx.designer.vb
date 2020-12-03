@@ -23,15 +23,6 @@ Partial Public Class UC_CHEM
     Protected WithEvents ddl_set_each As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''btn_save control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''txt_each_txt control.
     '''</summary>
     '''<remarks>
@@ -57,6 +48,15 @@ Partial Public Class UC_CHEM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_unit As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''btn_save control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''txt_search control.

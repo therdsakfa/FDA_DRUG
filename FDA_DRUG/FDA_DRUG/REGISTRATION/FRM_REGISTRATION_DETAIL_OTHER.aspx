@@ -60,15 +60,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="3" MultiPageID="RadMultiPage1">
+    <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="0" MultiPageID="RadMultiPage1">
         <Tabs>
-            <telerik:RadTab runat="server" Text="1.ข้อมูลทั่วไป"  Value="1">
+            <telerik:RadTab runat="server" Text="1.ข้อมูลทั่วไป"  Value="1" Selected="True">
             </telerik:RadTab>
             <telerik:RadTab runat="server" Text="2.ขนาดบรรจุ" Value="2">
             </telerik:RadTab>
             <telerik:RadTab runat="server" Text="3.สูตรสาร" Value="5">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="4.1 ผู้ผลิตต่างประเทศ" Value="3" Selected="True">
+            <telerik:RadTab runat="server" Text="4.1 ผู้ผลิตต่างประเทศ" Value="3">
             </telerik:RadTab>
             <telerik:RadTab runat="server" Text="4.2 ผู้ผลิตในประเทศ" Value="4">
             </telerik:RadTab>            
@@ -93,7 +93,7 @@
         </tr>
     </table>
     <br />
-    <telerik:RadMultiPage ID="RadMultiPage1" runat="server" SelectedIndex="3" CssClass="fa left">
+    <telerik:RadMultiPage ID="RadMultiPage1" runat="server" SelectedIndex="0" CssClass="fa left">
 
         <telerik:RadPageView ID="RadPageView1" runat="server" TabIndex="1">
             <table class="table" width="100%">
@@ -113,16 +113,22 @@
                         </asp:Panel>
                         <table width="100%">
                             <tr>
-                                <td>ขนาดบรรจุแบบคำบรรยาย</td>
+                                <td style="font-size:x-large">
+                                    ขนาดบรรจุแบบคำบรรยาย
+                                </td>
+                            </tr>
+                            <tr>
+                                
                                 <td width="70%">
                                     <asp:TextBox ID="txt_package" runat="server" TextMode="MultiLine" Height="300px" Width="100%"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td>&nbsp;</td>
+                              
                                 <td width="70%">
-                                    <asp:Button ID="btn_save_pack" runat="server" Text="บันทึก" />
+                                    <asp:Button ID="btn_save_pack" runat="server" Text="บันทึก" CssClass="auto-style11" Height="53px" Width="180px"  />
                                 </td>
+                                
                             </tr>
                         </table>
                         <uc6:UC_PACKAGING_DETAIL_V2 ID="UC_PACKAGING_DETAIL_V21" runat="server" />

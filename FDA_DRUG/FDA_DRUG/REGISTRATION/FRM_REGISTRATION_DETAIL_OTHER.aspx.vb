@@ -16,7 +16,7 @@ Public Class FRM_REGISTRATION_DETAIL_OTHER
             'UC_ANIMAL1.bind_ddl_dramltype()
             'UC_ANIMAL1.bind_ddl_dramlusetp()
             'UC_ANIMAL1.bind_ddl_dramltype()
-            
+
             Dim dao_re As New DAO_DRUG.ClsDBDRUG_REGISTRATION
             dao_re.GetDataby_IDA(Request.QueryString("IDA"))
             Dim lcntpcd As String = ""
@@ -104,4 +104,5 @@ Public Class FRM_REGISTRATION_DETAIL_OTHER
 
         Response.Write("<script type='text/javascript'>window.alert('บันทึกเรียบร้อย');</script> ")
     End Sub
+
 End Class

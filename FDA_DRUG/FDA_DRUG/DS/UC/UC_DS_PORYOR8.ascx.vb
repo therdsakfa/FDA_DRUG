@@ -172,11 +172,13 @@ Public Class UC_DS_PORYOR8
 
         Dim dao_lcn As New DAO_DRUG.ClsDBdalcn 'ตาราางเก็บที่อยู่
         Dim dao_addr As New DAO_DRUG.TB_DALCN_LOCATION_ADDRESS
+        'Dim dao_phr As New DAO_DRUG.ClsDBDALCN_PHR
         Try
 
 
             dao_lcn.GetDataby_IDA(dao_drugname.fields.FK_IDA)
             dao_addr.GetDataby_IDA(dao_lcn.fields.FK_IDA)
+            'dao_phr.GetDataby_FK_IDA(dao_lcn.fields.IDA)
             'dao_lcn.GetDataEditby_IDEN(dao_drugname.fields.CITIZEN_ID_AUTHORIZE)
             'txt_WRITE_AT.Text = dao_lcn.fields.WRITE_AT            'เขียนที่
             lbl_lcnno.Text = dao_lcn.fields.lcntpcd + " " + dao_lcn.fields.LCNNO_DISPLAY  'เลขที่ใบอนุญาต
@@ -243,13 +245,13 @@ Public Class UC_DS_PORYOR8
         End If
 
         Dim bao As New BAO_MASTER
-        ddl_phesaj.DataSource = bao.SP_DALCN_PHR_BY_FK_IDA(dao_lcn.fields.IDA)
+        ddl_phesaj.DataSource = bao.SP_DALCN_PHR_BY_FK_IDA_AND_PHR_CTZNO(_CLS.CITIZEN_ID, dao_lcn.fields.IDA)
         ddl_phesaj.DataTextField = "FULLNAMEs"
         ddl_phesaj.DataValueField = "IDA"
         ddl_phesaj.DataBind()
         Dim item As New ListItem
-        item.Text = "เลือกผู้มีหน้าที่ปฏิบัติการ"
-        item.Value = "0"
+        item.Text = ddl_phesaj.DataTextField ''"เลือกผู้มีหน้าที่ปฏิบัติการ"
+        'item.Value = "0"
         ddl_phesaj.Items.Insert(0, item)
 
         'Try
@@ -292,8 +294,8 @@ Public Class UC_DS_PORYOR8
         End Try
 
         'ดึงตัวยาสำคัญ
-        RadGrid1_NeedDataSource(dao_drugname.fields.IDA)
-        HiddenField1.Value = dao_drugname.fields.IDA
+        'RadGrid1_NeedDataSource(dao_drugname.fields.IDA)
+        'HiddenField1.Value = dao_drugname.fields.IDA
         'Unit_Radgrid(dao_drugname.fields.IDA) 'ดึงขนาดบรรจุ
         package(dao_drugname.fields.IDA)
         RadGrid5_NeedDataSource(dao_drugname.fields.IDA)
@@ -1051,6 +1053,7 @@ Public Class UC_DS_PORYOR8
 
 
     End Sub
+
 
 
     'Protected Sub RadGrid2_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid2.NeedDataSource

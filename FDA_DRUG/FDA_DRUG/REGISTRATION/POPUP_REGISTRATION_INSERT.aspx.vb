@@ -71,7 +71,7 @@
         If i >= 9 Or Request.QueryString("tt") = "" Then
             If txt_DRUG_NAME_OTHER.Text = "" And txt_DRUG_NAME_THAI.Text = "" Then
                 Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกชื่อการค้าภาษาไทยหรือภาษาอังกฤษ');</script> ")
-            ElseIf txt_DRUG_COLOR.Text = "" Then
+            ElseIf txt_DRUG_COLOR.Text = "" And Len(txt_DRUG_COLOR.Text) > 3 Then
                 Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกคำบรรยายลักษณะของยา');</script> ")
             Else
                 Dim bao As New BAO.AppSettings
