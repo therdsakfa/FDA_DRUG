@@ -38,10 +38,13 @@ Public Class TABEAN_YA_MAIN
         set_name()
         set_regis()
         load_HL()
+        LoadTab()
+
         If Not IsPostBack Then
+
             load_GV_Tabean()
             'load_GV_Tabean2()
-            ' load_GV_Drug_EX()
+            'load_GV_Drug_EX()
             If Request.QueryString("identify") <> "" Then
                 If Request.QueryString("identify") <> _CLS.CITIZEN_ID_AUTHORIZE Then
                     'AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("identify"), 0, HttpContext.Current.Request.Url.AbsoluteUri)
@@ -58,6 +61,12 @@ Public Class TABEAN_YA_MAIN
         End If
         ' btn_upload_t.Attributes.Add("onclick", "return  Popups2('../DR/POPUP_DR_UPLOAD.aspx?IDA=" & _IDA & "&process=" & _process & "');")
         ' btn_upload_ex.Attributes.Add("onclick", "return  Popups2('../DS/POPUP_DS_UPLOAD.aspx?IDA=" & _IDA & "&process=" & _process & "');")
+    End Sub
+    Sub LoadTab()
+        If _staff <> "1" Then
+            RadTabStrip1.FindTabByText("ย.1").Enabled = False
+            RadTabStrip1.FindTabByText("ย.1").Selected = False
+        End If
     End Sub
     Sub load_lcnno()
         Dim dao As New DAO_DRUG.ClsDBdalcn
@@ -489,7 +498,7 @@ Public Class TABEAN_YA_MAIN
 
         End Try
 
-        Dim tr_id As String= 0
+        Dim tr_id As String = 0
         Try
             tr_id = dao.fields.TR_ID
         Catch ex As Exception
@@ -511,7 +520,7 @@ Public Class TABEAN_YA_MAIN
             'End If
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
         ElseIf e.CommandName = "_add" Then
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_REGIST_INFORMATION.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & Request.QueryString("process") & "&STATUS_ID=" & dao.fields.STATUS_ID  & "&rq=1'); ", True)
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_REGIST_INFORMATION.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & Request.QueryString("process") & "&STATUS_ID=" & dao.fields.STATUS_ID & "&rq=1'); ", True)
 
         End If
     End Sub
@@ -564,7 +573,7 @@ Public Class TABEAN_YA_MAIN
 
         If e.CommandName = "sel" Then
             dao.GetDataby_IDA(str_ID)
-            Dim tr_id As String= 0
+            Dim tr_id As String = 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -672,9 +681,12 @@ Public Class TABEAN_YA_MAIN
         End If
     End Sub
     Protected Sub btn_reload_Click(sender As Object, e As EventArgs) Handles btn_reload.Click
+
+
         load_GV_Drug_EX()
         load_GV_Tabean()
         load_GV_Tabean2()
+
         'ปิด
         '
         Try
@@ -707,7 +719,7 @@ Public Class TABEAN_YA_MAIN
 
         End Try
 
-        Dim tr_id As String= 0
+        Dim tr_id As String = 0
         Try
             tr_id = dao.fields.TR_ID
         Catch ex As Exception
@@ -769,7 +781,7 @@ Public Class TABEAN_YA_MAIN
             Dim dao As New DAO_DRUG.ClsDBdrrgt
             dao.GetDataby_IDA(IDA)
             Dim fk_ida As String = ""
-            Dim tr_id As String= 0
+            Dim tr_id As String = 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -786,7 +798,7 @@ Public Class TABEAN_YA_MAIN
 
             End Try
             If e.CommandName = "sel" Then
-                 Dim url As String = ""
+                Dim url As String = ""
 
                 If Request.QueryString("staff") <> "" Then
                     If item("STATUS_ID").Text <> 8 And item("STATUS_ID").Text < 10 Then
@@ -841,7 +853,7 @@ Public Class TABEAN_YA_MAIN
             End Try
             Dim dao As New DAO_DRUG.ClsDBdrrqt
             dao.GetDataby_IDA(IDA)
-            Dim tr_id As String= 0
+            Dim tr_id As String = 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -920,7 +932,7 @@ Public Class TABEAN_YA_MAIN
             Catch ex As Exception
 
             End Try
-           
+
         End If
     End Sub
 
@@ -947,4 +959,5 @@ Public Class TABEAN_YA_MAIN
     Private Sub btn_download_t2_Click(sender As Object, e As EventArgs) Handles btn_download_t2.Click
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../DR/POPUP_DR_TRANSFER_DL.aspx?IDA=" & _main_ida & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "');", True)
     End Sub
+
 End Class

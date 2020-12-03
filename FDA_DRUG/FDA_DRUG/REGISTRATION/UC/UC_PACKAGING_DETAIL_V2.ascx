@@ -12,7 +12,7 @@
 <div class="box">
         <div >
                 <h1>
-                    <asp:Label ID="lbl_head" runat="server" Text="-"></asp:Label></h1> 
+                    <asp:Label ID="lbl_head" runat="server" Text="-" Font-Size="X-Large"></asp:Label></h1> 
             <table class="table" style="width: 100%;">
                 <tr>
                     <td>

@@ -36,7 +36,7 @@
                         </asp:DropDownList>
                     </td>
                   <td>
-                      <asp:Button ID="btn_save" runat="server" Text="บันทึก" />
+                      
                   </td>
               </tr>
               <tr>
@@ -46,7 +46,7 @@
                       <asp:TextBox ID="txt_each_txt" runat="server"></asp:TextBox>
                   </td>
                   <td>
-                      (คำบรรยาย)</td>
+                      (หมายเหตุประกอบสูตร)</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>
@@ -71,10 +71,11 @@
     </tr>
 
     <tr>
-        <td>
-            &nbsp;</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="btn_save" runat="server" Text="บันทึก" />&nbsp;</td>
     </tr>
-
+    <tr>
+        <td></td>
+    </tr>
     <tr>
         <td>
             ระบุส่วนประกอบของตำรับ</td>
@@ -82,9 +83,12 @@
 
     <tr>
         <td>
-            <asp:TextBox ID="txt_search" runat="server"></asp:TextBox><asp:Button ID="btn_search" runat="server" Text="ค้นหาสาร" />
+            <asp:TextBox ID="txt_search" runat="server"></asp:TextBox>&nbsp;&nbsp;&nbsp;<asp:Button ID="btn_search" runat="server" Text="ค้นหาสาร" />&nbsp;
             <asp:Button ID="btn_rqt" runat="server" OnClientClick="alert('ส่งเมลไปที่ drug-smarthelp@fda.moph.go.th หรือ แนบ cpp');" Text="การขอเพิ่มสาร" />
         </td>
+    </tr>
+    <tr>
+        <td></td>
     </tr>
     <tr>
         <td>
@@ -182,7 +186,7 @@
                         <asp:TextBox ID="txt_ROWS" runat="server" TextMode="Number"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:Button ID="btn_select" runat="server" Text="เพิ่มสาร" CssClass="input-lg"/>
+                        <asp:Button ID="btn_select" runat="server" Text="เพิ่มสาร" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>

@@ -1049,6 +1049,26 @@
         End If
         Return dt
     End Function
+    Public Function SP_DALCN_PHR_BY_FK_IDA_AND_PHR_CTZNO(ByVal PHR_CTZNO As String, ByVal IDA As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_DALCN_PHR_BY_FK_IDA_AND_PHR_CTZNO @PHR_CTZNO='" & PHR_CTZNO & "',@FK_IDA =" & IDA
+        Dim dt As New DataTable
+        dt.TableName = "SP_DALCN_PHR_BY_FK_IDA_AND_PHR_CTZNO"
+        Try
+            dt = clsds.dsQueryselect(sql, conn).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+                'dt.Clear()
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+            'dt.Clear()
+        End If
+        Return dt
+    End Function
     '
     Public Function SP_DALCN_PHR_BY_FK_IDA_V2(ByVal IDA As Integer) As DataTable
         Dim clsds As New ClassDataset

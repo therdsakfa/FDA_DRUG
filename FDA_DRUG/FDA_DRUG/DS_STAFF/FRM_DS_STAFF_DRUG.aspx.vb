@@ -203,7 +203,7 @@ Public Class FRM_DS_STAFF_DRUG
             dao.GetDataby_IDA(IDA)
             btn_edit.Style.Add("display", "none")
             Try
-                If dao.fields.STATUS_ID = 5 Then
+                If dao.fields.STATUS_ID >= 4 Then
                     btn_edit.Style.Add("display", "block")
                     Dim dao_re As New DAO_DRUG.ClsDBDRUG_REGISTRATION
                     dao_re.GetDataby_IDA(dao.fields.PRODUCT_ID_IDA)

@@ -232,6 +232,8 @@ Public Class FRM_DS_STAFF_CONFIRM
             'Response.Redirect("FRM_DS_STAFF_RCV_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
             '--------------------------------
             alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.rcvno)
+        ElseIf STATUS_ID = 5 Then 'ยื่นแก้ไข
+            Response.Redirect("FRM_DS_STAFF_EDIT.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
         ElseIf STATUS_ID = 9 Then 'เสนอลงนาม
             'dao.fields.STATUS_ID = STATUS_ID
             Response.Redirect("FRM_DS_STAFF_CONSIDER_DATE.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
@@ -297,7 +299,9 @@ Public Class FRM_DS_STAFF_CONFIRM
             int_group_ddl = 44
         ElseIf dao.fields.STATUS_ID = 6 Then
             int_group_ddl = 55
-        ElseIf dao.fields.STATUS_ID = 9 Or dao.fields.STATUS_ID = 10 Then
+        ElseIf dao.fields.STATUS_ID = 10 Then
+            int_group_ddl = 66
+        ElseIf dao.fields.STATUS_ID = 9 Then
             int_group_ddl = 33
         End If
 
@@ -306,7 +310,7 @@ Public Class FRM_DS_STAFF_CONFIRM
 
         ddl_cnsdcd.DataSource = dt
         ddl_cnsdcd.DataValueField = "STATUS_ID"
-        ddl_cnsdcd.DataTextField = "STATUS_NAME"
+        ddl_cnsdcd.DataTextField = "STATUS_NAME_STAFF"
         ddl_cnsdcd.DataBind()
     End Sub
 

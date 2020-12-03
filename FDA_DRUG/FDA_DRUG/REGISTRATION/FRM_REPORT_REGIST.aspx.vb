@@ -142,13 +142,13 @@ Public Class FRM_REPORT_REGIST
                 '    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกขนาดบรรจุ');</script> ")
                 'Else
                 If dao.fields.UNIT_NORMAL = "" Then
-                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหน่วยนับตามรูปของแบบยา');</script> ")
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 ElseIf dao.fields.DRUG_GROUP = "" Then
-                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหมวดยา');</script> ")
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 ElseIf dao.fields.GROUP_TYPE = 0 Then
-                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกประเภทของยา');</script> ")
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 ElseIf dao.fields.FK_DOSAGE_FORM = "" Then
-                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกรูปแบบของยา');</script> ")
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 Else
                     Try
                         dao.fields.RCVDATE = Date.Now 'CDate(txt_app_date.Text)
@@ -174,19 +174,19 @@ Public Class FRM_REPORT_REGIST
                 Dim rcv_format As String = bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), rcvno)
 
                 If dao_pc.fields.FK_IDA Is Nothing Then
-                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกขนาดบรรจุ');</script> ")
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 ElseIf dao_iow.fields.FK_IDA Is Nothing Then
-                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกสูตรสาร');</script> ")
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 ElseIf dao_pro.fields.FK_IDA Is Nothing And dao_pro_in.fields.FK_IDA Is Nothing Then
-                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกผู้ผลิตในประเทศหรือผู้ผลิตต่างประเทศ');</script> ")
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 ElseIf dao.fields.UNIT_NORMAL = "" Then
-                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหน่วยนับตามรูปของแบบยา');</script> ")
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 ElseIf dao.fields.DRUG_GROUP = "" Then
-                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกหมวดยา');</script> ")
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 ElseIf dao.fields.GROUP_TYPE = 0 Then
-                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกประเภทของยา');</script> ")
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 ElseIf dao.fields.FK_DOSAGE_FORM = "" Then
-                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณาเลือกรูปแบบของยา');</script> ")
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 Else
                     Try
                         dao.fields.RCVDATE = Date.Now 'CDate(txt_app_date.Text)

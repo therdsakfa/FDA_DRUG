@@ -100,42 +100,36 @@
     <asp:Panel ID="Panel3" runat="server" GroupingText="ข้อมูล">
         <table class="table" style="width: 100%;">
             <tr>
-                <td>
+                <td style="font-size:larger;">
                     ชื่อบริษัท</td>
                 <td>
                     <asp:Label ID="lbl_lcn_name" runat="server"></asp:Label>
                 </td>
-                <td>
+                <td style="font-size:larger">
                     เลขที่ใบอนุญาต
                 </td>
                 <td>
-<asp:Label ID="lbl_lcnno" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lbl_lcnno" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
              <tr>
-                 <td>ชื่อยา(ไทย) </td>
+                 <td style="font-size:larger">ชื่อยา(ไทย) </td>
                  <td>
-                     <h1>
-<asp:Label ID="lb_drug_name" runat="server" Text=""></asp:Label>
-                     </h1>
-                     
+                 <asp:Label ID="lb_drug_name" runat="server" Text=""></asp:Label>
                  </td>
-                 <td>ชื่อยา(ภาษาอังกฤษ) </td>
+                 <td style="font-size:larger">ชื่อยา(ภาษาอังกฤษ) </td>
                  <td>
-                     <h2>
-<asp:Label ID="lb_drug_name_other" runat="server" Text=""></asp:Label>
-                     </h2>
-                     
+                <asp:Label ID="lb_drug_name_other" runat="server" Text=""></asp:Label>                     
                  </td>
             </tr>
              <tr>
-                <td>
+                <td style="font-size:larger">
                    หมวดยา
                 </td>
                 <td>
                     <asp:Label ID="lb_drug_group" runat="server" Text=""></asp:Label>
                 </td>
-                <td>
+                <td style="font-size:larger">
                     ชนิดของยา
                 </td>
                  <td>
@@ -143,7 +137,7 @@
                 </td>
             </tr>
             <tr>
-                <td>เลขที่ตำรับ</td>
+                <td style="font-size:larger">เลขที่ตำรับ</td>
                 <td>
                     <asp:Label ID="lbl_dl" runat="server" Text="-"></asp:Label>
                 </td>
@@ -159,11 +153,11 @@
         
     </div>--%>
   
-    <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="0" MultiPageID="RadMultiPage1" Orientation="HorizontalTop" Width="100%">
+    <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="0" MultiPageID="RadMultiPage1" Width="100%">
         <Tabs>
-            <telerik:RadTab runat="server" Text="ยาตัวอย่าง" Selected="True" Value="1">
+            <telerik:RadTab runat="server" Text="ยาตัวอย่าง" Value="1" Selected="True">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="ย.1" Value="2">
+            <telerik:RadTab runat="server" Text="ย.1" Value="2"  >
             </telerik:RadTab>
         </Tabs>
     </telerik:RadTabStrip>
@@ -245,7 +239,7 @@
            </table>
        </fieldset>
         </telerik:RadPageView>
-        <telerik:RadPageView ID="RadPageView2" runat="server" TabIndex="2">
+        <telerik:RadPageView ID="RadPageView2" runat="server" TabIndex="2" >
             <fieldset>
            <legend style="color: red;"> <asp:Label ID="lbl_tabean" runat="server" Text="คำขอขึ้นทะเบียนยา"></asp:Label></legend>
            <table style="width: 100%;">

@@ -180,7 +180,7 @@ Public Class UC_DS_MAIN
     End Sub
     Public Sub GV_lcnno_DataBinding()
         Dim bao As New BAO.ClsDBSqlcommand
-        Dim dt = bao.SP_DRSAMP_BY_PRODUCT_ID(_main_ida)
+        Dim dt = bao.SP_GET_TR_UPLOAD_BY_PROCESS_ID_AND_IDA(_process, _CLS.CITIZEN_ID_AUTHORIZE, _main_ida)
 
         '    RadGrid1.DataSource = dt
         GV_lcnno.DataSource = dt                'นำข้อมูลมโชในจาก SP มาไว้ที่ DataTable 
@@ -195,21 +195,31 @@ Public Class UC_DS_MAIN
     Protected Sub btn_download_Click(sender As Object, e As EventArgs) Handles btn_download.Click
         Dim url As String = ""
 
-        If _process = "1701" Then
-            url = "../DS/FRM_DS_PORYOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
-        ElseIf _process = "1702" Then
-            url = "../DS/FRM_DS_NORYOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
-        ElseIf _process = "1703" Then
-            url = "../DS/FRM_DS_PORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
-        ElseIf _process = "1704" Then
-            url = "../DS/FRM_DS_NORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
-        ElseIf _process = "1705" Then
-            url = "../DS/FRM_DS_PORYOR8(YAVEJAI).aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
-        ElseIf _process = "1706" Then
-            url = "../DS/FRM_DS_PORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&tt=" & Request.QueryString("tt") & "&process_id=" & _process
-        ElseIf _process = "1707" Then
-            url = "../DS/FRM_DS_NORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&tt=" & Request.QueryString("tt") & "&process_id=" & _process
-        End If
+        Dim dao As New ClsDBDALCN_PHR
+        dao.GetDataby_FK_IDA(_lcn_ida)
+
+        For Each dao.fields In dao.datas
+
+            If dao.fields.PHR_CTZNO = _CLS.CITIZEN_ID Then
+                If _process = "1701" Then
+                    url = "../DS/FRM_DS_PORYOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
+                ElseIf _process = "1702" Then
+                    url = "../DS/FRM_DS_NORYOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
+                ElseIf _process = "1703" Then
+                    url = "../DS/FRM_DS_PORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
+                ElseIf _process = "1704" Then
+                    url = "../DS/FRM_DS_NORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
+                ElseIf _process = "1705" Then
+                    url = "../DS/FRM_DS_PORYOR8(YAVEJAI).aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
+                ElseIf _process = "1706" Then
+                    url = "../DS/FRM_DS_PORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&tt=" & Request.QueryString("tt") & "&process_id=" & _process
+                ElseIf _process = "1707" Then
+                    url = "../DS/FRM_DS_NORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&tt=" & Request.QueryString("tt") & "&process_id=" & _process
+                End If
+            End If
+
+        Next
+
 
         'Dim ws As New AUTHEN_LOG.Authentication
         'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "เพิ่มคำขอยาตัวอย่าง", _process)
@@ -270,18 +280,24 @@ Public Class UC_DS_MAIN
     End Sub
 
     Private Sub GV_lcnno_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles GV_lcnno.RowCommand
+
         Dim int_index As Integer = Convert.ToInt32(e.CommandArgument)
         Dim str_ID As String = GV_lcnno.DataKeys.Item(int_index)("IDA").ToString()
         Dim dao As New DAO_DRUG.ClsDBdrsamp
+        dao.GetDataby_IDA(str_ID)
 
         If e.CommandName = "sel" Then
-            dao.GetDataby_IDA(str_ID)
-            Dim tr_id As String = 0
-            Try
-                tr_id = dao.fields.TR_ID
-            Catch ex As Exception
 
-            End Try
+            If dao.fields.STATUS_ID >= 4 Then
+                'GV_lcnno.BottomPagerRow.Enabled = False
+            Else
+                Dim tr_id As String = 0
+                Try
+                    tr_id = dao.fields.TR_ID
+                Catch ex As Exception
+
+                End Try
+            End If
 
             'Response.Redirect("~\DS\POPUP_DS_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "")
             'Dim ws As New AUTHEN_LOG.Authentication
