@@ -164,6 +164,9 @@
                              <asp:TextBox ID="txt_app_date" runat="server"></asp:TextBox>
                          </td>
                      </tr>--%>
+                     <tr><td>วันที่รับ/อนุมัติ
+                         <asp:TextBox ID="txt_appdate" runat="server"></asp:TextBox>
+                         </td></tr>
                      <tr id="remark_box" runat="server" style="display:none;"><td> 
                          <asp:CheckBox ID="CheckBox1" runat="server" Text="เงื่อนไข/หมายเหตุ" AutoPostBack="True" />
 
