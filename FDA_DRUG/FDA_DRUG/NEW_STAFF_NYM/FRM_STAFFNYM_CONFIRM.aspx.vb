@@ -44,7 +44,8 @@ Public Class FRM_STAFFNYM_CONFIRM
         If Not IsPostBack Then
             txt_appdate.Text = Date.Now.ToShortDateString()
             HiddenField2.Value = 0
-            BindData_PDF()
+            'BindData_PDF()
+            BindData_PDF_RQT()
             'If _ProcessID = "1026" Then
             '    BindData_PDF2()
             'Else    'If _ProcessID = "1030" Then
@@ -693,7 +694,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 Catch ex As Exception
 
                 End Try
-                dao_prf2.fields.NYM2_RCVNO = RCVNO
+                'dao_prf2.fields.NYM2_RCVNO = RCVNO
                 dao_prf2.update()
                 '-----------------ลิ้งไปหน้าคีย์มือ----------
                 'Response.Redirect("FRM_STAFF_NYM_RCV_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&precess=" & _ProcessID)
@@ -1277,6 +1278,99 @@ Public Class FRM_STAFFNYM_CONFIRM
 
         'load_PDF(filename)
 
+        '    show_btn() 'ตรวจสอบปุ่ม
+
+    End Sub
+
+    Private Sub BindData_PDF_RQT()
+        Dim bao As New BAO.AppSettings
+
+        Dim dao_up As New DAO_DRUG_IMPORT.ClsDBDRUG_IMPORT_UPLOAD
+        dao_up.GetDataby_IDA(_IDA)                                      ' 
+        ' Dim dao As New DAO_DRUG_IMPORT
+        Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+        Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+
+        dao2.GetDataby_IDA(_IDA)
+        dao3.getdata_ida(_IDA)
+        dao4.getdata_ida(_IDA)
+        Dim class_xml21 As New CLASS_NYM_2
+        'Dim class_xml22 As New CLASS_NYM_2
+        Dim class_xml3 As New CLASS_NYM_3_SM
+        Dim class_xml4 As New CLASS_NYM_4_SM
+
+        class_xml21.NYM_2s = dao2.fields
+        'class_xml21.NYM_2s = dao2.fields
+        'class_xml22.NYM_2s = dao2.fields
+        'class_xml3.NYM_3s = dao3.fields
+        'class_xml4.NYM_4s = dao4.fields
+
+        'Dim p_noryormor2 As New CLASS_NYM_2
+        'p_noryormor2 = p_nym2
+        'p_dalcn2.DT_MASTER = Nothing
+
+        'Dim cls_sop1 As New CLS_SOP
+        'Session("b64") = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
+        'b64 = cls_sop1.CLASS_TO_BASE64(p_noryormor2)
+
+        Dim bao_show As New BAO_SHOW
+        'class_xml2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA)
+        class_xml21.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2_ONLY1(_IDA)
+        class_xml21.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA) '76 66
+        class_xml3.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(_IDA)                        'แก้ตรงนี้ 
+        class_xml4.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)                        'แก้ตรงนี้
+
+        p_nym2 = class_xml21
+
+        Dim dao_nym2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
+        Dim dao_nym3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+        Dim dao_nym4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        If _ProcessID = 1027 Then
+            dao_nym2.GetDataby_IDA(_IDA)                                                     'ดึงข่้อมูลจาก IDA
+        ElseIf _ProcessID = 1028 Then
+            dao_nym3.GetDataby_IDA(_IDA)                                                     'ดึงข่้อมูลจาก IDA
+        ElseIf _ProcessID = 1029 Then
+            dao_nym4.GetDataby_IDA(_IDA)                                                     'ดึงข่้อมูลจาก IDA
+        End If
+
+        Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
+        Dim paths As String = bao._PATH_DEFAULT                                         ' PART ต้องเป็น defult ก่อน 
+
+        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_ProcessID, 1, 0)                     'DAO บรรทัด 2809
+        Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+        Dim year As String = Date.Now.Year
+        'Path_XML มาจาก ข้างบน ถ้าเปลี่ยน ที่อยู่ path มีตัวแปล paths dao_nym3 dao_pdftemplate
+        Dim filename As String = ""
+        Dim Path_XML As String = ""
+        If _ProcessID = 1027 Then
+            filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym2.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, year, dao_nym2.fields.TR_ID) 'load_PDF(filename)
+        ElseIf _ProcessID = 1028 Then
+            filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym3.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, year, dao_nym3.fields.TR_ID) 'load_PDF(filename)                       BAO_COMMOND 627
+        ElseIf _ProcessID = 1029 Then
+            filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, year, dao_nym4.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, year, dao_nym4.fields.TR_ID) 'load_PDF(filename)
+        End If
+
+
+        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
+
+
+        lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>" 'แสดงไฟล์บนหน้าเว็บ
+        hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่ ACOBAT
+
+
+        HiddenField1.Value = filename
+        If _ProcessID = 1027 Then
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym2.fields.TR_ID)
+        ElseIf _ProcessID = 1028 Then
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym3.fields.TR_ID)
+        ElseIf _ProcessID = 1029 Then
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, year, dao_nym4.fields.TR_ID)
+        End If
+        _CLS.PDFNAME = filename
         '    show_btn() 'ตรวจสอบปุ่ม
 
     End Sub
