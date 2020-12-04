@@ -857,6 +857,14 @@ Public Class BAO_SHOW
         dta.TableName = "SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA"
         Return dta
     End Function
+
+    Public Function SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
+        Dim sql As String = "exec SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA @FK_IDA=" & fk_ida
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA"
+        Return dta
+    End Function
     '
     Public Function SP_DRUG_REGISTRATION_PRODUCER_IN_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
         Dim sql As String = "exec SP_DRUG_REGISTRATION_PRODUCER_IN_BY_FK_IDA @FK_IDA=" & fk_ida

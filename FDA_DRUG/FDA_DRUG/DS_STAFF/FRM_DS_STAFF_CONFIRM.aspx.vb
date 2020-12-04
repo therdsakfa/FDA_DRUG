@@ -751,7 +751,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         'Dim filename As String = paths & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID)        'code เปิดใช้ตอนอัพ
         Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", dao_tr.fields.PROCESS_ID, _YEARS, _TR_ID)
 
-        If dao.fields.STATUS_ID = "9" Then
+        If dao.fields.STATUS_ID = "9" Or dao.fields.STATUS_ID = "8" Then
             Dim url As String = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
             class_xml.QR_CODE = QR_CODE_IMG(url)
         End If

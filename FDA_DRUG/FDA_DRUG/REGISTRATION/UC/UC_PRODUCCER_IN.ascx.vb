@@ -26,6 +26,8 @@ Public Class UC_PRODUCCER_IN
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
+        Search_FN()
+        RadGrid1.Rebind()
         If Not IsPostBack Then
             If Request.QueryString("tt") <> "" Then
                 btn_save_work_type.Visible = False
