@@ -608,7 +608,7 @@ Public Class POPUP_DS_CONFIRM
             Dim url As String = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
             'Dim ws As New WS_QR_CODE.WS_QR_CODE
             'class_xml.QR_CODE = ws.GetQRImgByte(url)
-            class_xml.QR_CODE = QR_CODE_IMG(url)
+            'class_xml.QR_CODE = QR_CODE_IMG(url)
         Catch ex As Exception
 
         End Try

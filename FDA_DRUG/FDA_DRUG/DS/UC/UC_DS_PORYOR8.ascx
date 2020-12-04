@@ -52,7 +52,7 @@
 <div class="box">
     <table class="table" style="width: 100%;">
     <div class="panel-heading panel-title">
-                <h1 class="auto-style12">ผลิตยาตัวอย่างเพื่อขอขึ้นทะเบียนตำรับยา (ผย8)</h1> (หากมีปัญหาเกี่ยวกับการใช้งานระบบหรือไม่พบตัวเลือกโปรดแจ้ง Drug-SmartHelp@fda.moph.go.th)
+                <center><h1 class="auto-style12">ผลิตยาตัวอย่างเพื่อขอขึ้นทะเบียนตำรับยา (ผย8)</h1></center> <center>(หากมีปัญหาเกี่ยวกับการใช้งานระบบหรือไม่พบตัวเลือกโปรดแจ้ง Drug-SmartHelp@fda.moph.go.th)</center>
             </div>
         <br />
                 </table>

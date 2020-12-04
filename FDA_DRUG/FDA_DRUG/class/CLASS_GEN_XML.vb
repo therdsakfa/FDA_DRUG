@@ -2173,6 +2173,7 @@ Namespace CLASS_GEN_XML
             class_xml.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
             class_xml.DT_SHOW.DT8 = bao.SP_DRSAMP_PACKAGE_DETAIL_CHK_BY_FK_IDA(product_id_ida)    'ขนาดบรรจุ multi
             class_xml.DT_SHOW.DT10 = bao_show.SP_MAINPERSON_CTZNO(_citizen_submit) 'ผู้ยื่น
+            class_xml.DT_SHOW.DT11 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(product_id_ida)  '
             Try
                 class_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA(product_id_FK_IDA) 'ผู้ดำเนิน
             Catch ex As Exception

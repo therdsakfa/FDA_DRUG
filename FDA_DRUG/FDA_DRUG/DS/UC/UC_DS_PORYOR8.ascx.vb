@@ -19,6 +19,7 @@ Public Class UC_DS_PORYOR8
     Private _write_at As String
     Private _phesaj As String
     Private _forother As String
+    Private _staff As String
 
 
 
@@ -30,6 +31,7 @@ Public Class UC_DS_PORYOR8
                 _CLS = Session("CLS")
                 _lcn_ida = Request("lcn_ida").ToString()
                 '_lcn_ida = 41017
+                _staff = Request("staff").ToString()
                 _main_ida = Request("main_ida").ToString()
                 main_ida = CInt(_main_ida)
                 Try
@@ -244,16 +246,27 @@ Public Class UC_DS_PORYOR8
             chk_forhuman.Checked = True
         End If
 
-        Dim bao As New BAO_MASTER
-        ddl_phesaj.DataSource = bao.SP_DALCN_PHR_BY_FK_IDA_AND_PHR_CTZNO(_CLS.CITIZEN_ID, dao_lcn.fields.IDA)
-        ddl_phesaj.DataTextField = "FULLNAMEs"
-        ddl_phesaj.DataValueField = "IDA"
-        ddl_phesaj.DataBind()
-        Dim item As New ListItem
-        item.Text = ddl_phesaj.DataTextField ''"เลือกผู้มีหน้าที่ปฏิบัติการ"
-        'item.Value = "0"
-        ddl_phesaj.Items.Insert(0, item)
-
+        If Request.QueryString("staff") <> 1 Then
+            Dim bao As New BAO_MASTER
+            ddl_phesaj.DataSource = bao.SP_DALCN_PHR_BY_FK_IDA_AND_PHR_CTZNO(_CLS.CITIZEN_ID, dao_lcn.fields.IDA)
+            ddl_phesaj.DataTextField = "FULLNAMEs"
+            ddl_phesaj.DataValueField = "IDA"
+            ddl_phesaj.DataBind()
+            'Dim item As New ListItem
+            'item.Text = "เลือกผู้มีหน้าที่ปฏิบัติการ"
+            'item.Value = "0"
+            'ddl_phesaj.Items.Insert(0, item)
+        Else
+            Dim bao As New BAO_MASTER
+            ddl_phesaj.DataSource = bao.SP_DALCN_PHR_BY_FK_IDA(dao_lcn.fields.IDA)
+            ddl_phesaj.DataTextField = "FULLNAMEs"
+            ddl_phesaj.DataValueField = "IDA"
+            ddl_phesaj.DataBind()
+            Dim item As New ListItem
+            item.Text = "เลือกผู้มีหน้าที่ปฏิบัติการ"
+            item.Value = "0"
+            ddl_phesaj.Items.Insert(0, item)
+        End If
         'Try
         '    ddl_phesaj.DropDownSelectData(_CLS.CITIZEN_ID)
         'Catch ex As Exception
@@ -294,7 +307,7 @@ Public Class UC_DS_PORYOR8
         End Try
 
         'ดึงตัวยาสำคัญ
-        'RadGrid1_NeedDataSource(dao_drugname.fields.IDA)
+        RadGrid1_NeedDataSource(dao_drugname.fields.IDA)
         'HiddenField1.Value = dao_drugname.fields.IDA
         'Unit_Radgrid(dao_drugname.fields.IDA) 'ดึงขนาดบรรจุ
         package(dao_drugname.fields.IDA)
@@ -476,6 +489,9 @@ Public Class UC_DS_PORYOR8
             If qty = 0 Then
                 save.fields.QUANTITY = sum_finally.Text
                 save.fields.QUANTITY_UNIT = unit_finally.Text
+            Else
+                save.fields.QUANTITY = qty
+                save.fields.QUANTITY_UNIT = dao_pac.fields.SMALL_UNIT
             End If
             save.insert()
             'save.GetDataby_PRODUCT_ID_IDA(dao_pac.fields.FK_IDA)

@@ -93,6 +93,7 @@ Public Class UC_DS_MAIN
             If Request.QueryString("tt") <> "" Then
                 btn_download.Text = "เพิ่มคำขอ ยบ.8"
                 hl_pay.Visible = False
+
             End If
         End If
     End Sub
@@ -185,6 +186,8 @@ Public Class UC_DS_MAIN
         '    RadGrid1.DataSource = dt
         GV_lcnno.DataSource = dt                'นำข้อมูลมโชในจาก SP มาไว้ที่ DataTable 
         GV_lcnno.DataBind()                       'นำข้อมูลมโชใน Gridview ชื่อ Gridview ว่า GV_lcnno   เพื่อให้ข้อมูลวิ่ง
+
+        ''GV_lcnno.fin = Visible
     End Sub
 
     Protected Sub GV_lcnno_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles GV_lcnno.PageIndexChanging
@@ -198,28 +201,46 @@ Public Class UC_DS_MAIN
         Dim dao As New ClsDBDALCN_PHR
         dao.GetDataby_FK_IDA(_lcn_ida)
 
-        For Each dao.fields In dao.datas
+        If Request.QueryString("staff") <> 1 Then
 
-            If dao.fields.PHR_CTZNO = _CLS.CITIZEN_ID Then
-                If _process = "1701" Then
-                    url = "../DS/FRM_DS_PORYOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
-                ElseIf _process = "1702" Then
-                    url = "../DS/FRM_DS_NORYOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
-                ElseIf _process = "1703" Then
-                    url = "../DS/FRM_DS_PORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
-                ElseIf _process = "1704" Then
-                    url = "../DS/FRM_DS_NORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
-                ElseIf _process = "1705" Then
-                    url = "../DS/FRM_DS_PORYOR8(YAVEJAI).aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
-                ElseIf _process = "1706" Then
-                    url = "../DS/FRM_DS_PORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&tt=" & Request.QueryString("tt") & "&process_id=" & _process
-                ElseIf _process = "1707" Then
-                    url = "../DS/FRM_DS_NORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&tt=" & Request.QueryString("tt") & "&process_id=" & _process
+            For Each dao.fields In dao.datas
+
+                If dao.fields.PHR_CTZNO = _CLS.CITIZEN_ID Then
+                    If _process = "1701" Then
+                        url = "../DS/FRM_DS_PORYOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
+                    ElseIf _process = "1702" Then
+                        url = "../DS/FRM_DS_NORYOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
+                    ElseIf _process = "1703" Then
+                        url = "../DS/FRM_DS_PORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
+                    ElseIf _process = "1704" Then
+                        url = "../DS/FRM_DS_NORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
+                    ElseIf _process = "1705" Then
+                        url = "../DS/FRM_DS_PORYOR8(YAVEJAI).aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process
+                    ElseIf _process = "1706" Then
+                        url = "../DS/FRM_DS_PORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&tt=" & Request.QueryString("tt") & "&process_id=" & _process
+                    ElseIf _process = "1707" Then
+                        url = "../DS/FRM_DS_NORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&tt=" & Request.QueryString("tt") & "&process_id=" & _process
+                    End If
                 End If
+
+            Next
+        Else
+            If _process = "1701" Then
+                url = "../DS/FRM_DS_PORYOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process & "&staff=" & Request.QueryString("staff")
+            ElseIf _process = "1702" Then
+                url = "../DS/FRM_DS_NORYOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process & "&staff=" & Request.QueryString("staff")
+            ElseIf _process = "1703" Then
+                url = "../DS/FRM_DS_PORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process & "&staff=" & Request.QueryString("staff")
+            ElseIf _process = "1704" Then
+                url = "../DS/FRM_DS_NORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process & "&staff=" & Request.QueryString("staff")
+            ElseIf _process = "1705" Then
+                url = "../DS/FRM_DS_PORYOR8(YAVEJAI).aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&process_id=" & _process & "&staff=" & Request.QueryString("staff")
+            ElseIf _process = "1706" Then
+                url = "../DS/FRM_DS_PORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&tt=" & Request.QueryString("tt") & "&process_id=" & _process & "&staff=" & Request.QueryString("staff")
+            ElseIf _process = "1707" Then
+                url = "../DS/FRM_DS_NORYORBOR8.aspx?lcn_ida=" & _lcn_ida & "&main_ida=" & _main_ida & "&tt=" & Request.QueryString("tt") & "&process_id=" & _process & "&staff=" & Request.QueryString("staff")
             End If
-
-        Next
-
+        End If
 
         'Dim ws As New AUTHEN_LOG.Authentication
         'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "เพิ่มคำขอยาตัวอย่าง", _process)
@@ -287,47 +308,73 @@ Public Class UC_DS_MAIN
         dao.GetDataby_IDA(str_ID)
 
         If e.CommandName = "sel" Then
-
-            If dao.fields.STATUS_ID >= 4 Then
-                'GV_lcnno.BottomPagerRow.Enabled = False
-            Else
-                Dim tr_id As String = 0
-                Try
-                    tr_id = dao.fields.TR_ID
-                Catch ex As Exception
-
-                End Try
-            End If
-
-            'Response.Redirect("~\DS\POPUP_DS_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "")
-            'Dim ws As New AUTHEN_LOG.Authentication
-            'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", dao.fields.TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
-
-            Dim ws_118 As New WS_AUTHENTICATION.Authentication
-            Dim ws_66 As New Authentication_66.Authentication
-            Dim ws_104 As New AUTHENTICATION_104.Authentication
+            Dim tr_id As String = 0
             Try
-                ws_118.Timeout = 10000
-                ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+                tr_id = dao.fields.TR_ID
             Catch ex As Exception
+
+            End Try
+        End If
+
+        'Response.Redirect("~\DS\POPUP_DS_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "")
+        'Dim ws As New AUTHEN_LOG.Authentication
+        'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", dao.fields.TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+
+        Dim ws_118 As New WS_AUTHENTICATION.Authentication
+        Dim ws_66 As New Authentication_66.Authentication
+        Dim ws_104 As New AUTHENTICATION_104.Authentication
+        Try
+            ws_118.Timeout = 10000
+            ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+        Catch ex As Exception
+            Try
+                ws_66.Timeout = 10000
+                ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+
+            Catch ex2 As Exception
                 Try
-                    ws_66.Timeout = 10000
-                    ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+                    ws_104.Timeout = 10000
+                    ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
 
-                Catch ex2 As Exception
-                    Try
-                        ws_104.Timeout = 10000
-                        ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
-
-                    Catch ex3 As Exception
-                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'http://privus.fda.moph.go.th';", True)
-                    End Try
+                Catch ex3 As Exception
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'http://privus.fda.moph.go.th';", True)
                 End Try
             End Try
+        End Try
 
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../DS/POPUP_DS_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "');", True)
+        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../DS/POPUP_DS_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "');", True)
 
-        End If
     End Sub
+
+    'Private Sub GV_lcnno_DataBound(sender As Object, e As GridItemEventArgs) Handles GV_lcnno.DataBound
+    '    If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
+    '        Dim item As GridDataItem
+    '        item = e.Item
+    '        Dim IDA As String = item("H_IDA").Text
+    '        Dim btn_Select As LinkButton = DirectCast(item("_sel").Controls(0), LinkButton)
+
+
+    '        Dim dao_ds As New DAO_DRUG.ClsDBdrsamp
+    '        Dim lcntpcd As String = ""
+    '        Try
+    '            dao_ds.GetDataby_PRODUCT_ID_IDA(IDA)
+    '            If dao_ds.fields.STATUS_ID >= 4 Then
+    '                btn_Select.Style.Add("display", "none")
+    '            Else
+    '                btn_Select.Style.Add("display", "block")
+    '            End If
+
+    '        Catch ex As Exception
+
+    '        End Try
+
+    '        Try
+    '            'dao.GetDataby_IDA(IDA)
+
+    '        Catch ex As Exception
+
+    '        End Try
+    '    End If
+    'End Sub
 
 End Class
