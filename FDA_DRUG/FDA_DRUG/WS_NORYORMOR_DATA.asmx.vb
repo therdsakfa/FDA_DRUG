@@ -229,4 +229,55 @@ Public Class WS_NORYORMOR_DATA
         TR_ID = bao_tran.insert_transection_new(Prcess_id)
         Return TR_ID
     End Function
+
+    <WebMethod()>
+    Public Function Get_Package_Cal(ByVal Package_IDA As Integer, ByVal qty As Double) As DataTable
+        Dim dt As New DataTable
+        dt.Columns.Add("Cal_text")
+        dt.Columns.Add("cal_qty")
+        dt.Columns.Add("unit_small_name")
+
+        Try
+            Dim dao_package As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
+            dao_package.GetDataby_IDA(Package_IDA)
+
+            Dim sum As Integer = 0
+            sum = CInt(dao_package.fields.SMALL_AMOUNT) * CInt(dao_package.fields.MEDIUM_AMOUNT)
+            sum = sum * CInt(qty)
+
+            Dim unit_name As String = ""
+
+            Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT 'ตารางเก็บหน่วยขนาดบรรจุ
+            Try
+                dao_unit.GetDataby_sunitcd(dao_package.fields.SMALL_UNIT)
+                unit_name = dao_unit.fields.unit_name 'หน่วยนับตามรูปแบบยา
+            Catch ex As Exception
+
+            End Try
+            Dim str_cal_text As String = ""
+
+            'str_cal_text = "( " & sum & " " & unit_name & ")"
+
+            Dim dao_mas_unit As New DAO_DRUG.TB_drsunit
+            dao_mas_unit.GetDataby_sunitcd(dao_package.fields.MEDIUM_UNIT)
+            Dim dao_mas_unit1 As New DAO_DRUG.TB_drsunit
+            dao_mas_unit1.GetDataby_sunitcd(dao_package.fields.SMALL_UNIT)
+            Dim dao_mas_unit2 As New DAO_DRUG.TB_drsunit
+            dao_mas_unit2.GetDataby_sunitcd(dao_package.fields.BIG_UNIT)
+
+
+
+            str_cal_text = dao_package.fields.SMALL_AMOUNT & " " & dao_mas_unit1.fields.sunitthanm & " x " & dao_package.fields.MEDIUM_AMOUNT & " " & dao_mas_unit.fields.sunitthanm & " x " & dao_package.fields.BIG_AMOUNT & " " & dao_mas_unit2.fields.sunitthanm & " จำนวน " & qty & " " & dao_mas_unit2.fields.sunitengnm & " (" & sum & " " & unit_name & ")"
+
+            Dim dr As DataRow = dt.NewRow()
+            dr("Cal_text") = str_cal_text
+            dr("cal_qty") = sum
+            dr("unit_small_name") = unit_name
+            dt.Rows.Add(dr)
+            dt.TableName = "Get_Package_Cal"
+        Catch ex As Exception
+
+        End Try
+        Return dt
+    End Function
 End Class
