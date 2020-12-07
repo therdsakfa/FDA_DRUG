@@ -91,9 +91,27 @@
         Catch ex As Exception
 
         End Try
-       
+
         Try
             lbl_CER_SCOPE.Text = dao.fields.CER_SCOPE
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            lbl_DEPARTMENT_REGIST_CER_NAME.Text = dao.fields.DEPARTMENT_REGIST_CER_NAME
+        Catch ex As Exception
+
+        End Try
+        Try
+            Dim dao_iso As New DAO_DRUG.clsDBsysisocnt
+            dao_iso.GetDataby_IDA(Trim(dao.fields.COUNTRY_OF_DEPARTMENT_IDA))
+            lbl_COUNTRY_OF_DEPARTMENT.Text = dao_iso.fields.engcntnm
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_LOCATION_STANDARD.Text = dao_mf.fields.LOCATION_STANDARD
         Catch ex As Exception
 
         End Try

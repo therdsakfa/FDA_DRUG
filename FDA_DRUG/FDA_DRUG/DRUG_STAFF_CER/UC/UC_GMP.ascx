@@ -1,6 +1,12 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_GMP.ascx.vb" Inherits="FDA_DRUG.UC_GMP" %>
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 
+<style type="text/css">
+    .auto-style1 {
+        height: 25px;
+    }
+</style>
+
 <h2 style="font-family:'TH SarabunPSK';font-size:24px;">
   <b> แบบกรอกรายละเอียดใบรับรองสถานที่ผลิตในต่างประเทศ</b>
 </h2>
@@ -83,10 +89,10 @@
             &nbsp;</td>
     </tr>
     <tr>
-        <td style="height:25px">
+        <td class="auto-style1">
             <asp:CheckBox ID="cb_DEPARTMENT_REGIST_CER_TYPE" runat="server" Text="ชื่อหน่วยงานรัฐของประเทศผู้ผลิต" />
         </td>
-        <td style="border-bottom:dotted;border-bottom-width:thin;">
+        <td style="border-bottom:dotted;border-bottom-width:thin;" class="auto-style1">
             <asp:Label ID="lbl_DEPARTMENT_REGIST_CER_NAME" runat="server" Text="-"></asp:Label>
         </td>
     </tr>

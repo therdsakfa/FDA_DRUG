@@ -31,7 +31,7 @@ Public Class UC_DS_PORYOR8
                 _CLS = Session("CLS")
                 _lcn_ida = Request("lcn_ida").ToString()
                 '_lcn_ida = 41017
-                _staff = Request("staff").ToString()
+                '_staff = Request("staff").ToString()
                 _main_ida = Request("main_ida").ToString()
                 main_ida = CInt(_main_ida)
                 Try

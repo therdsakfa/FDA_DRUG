@@ -133,7 +133,7 @@ Public Class FRM_REPORT_REGIST
                 End If
 
 
-            ElseIf Request.QueryString("staff") <> "" Then
+            ElseIf Request.QueryString("staff") <> "1" Then
                 Dim bao As New BAO.GenNumber
                 Dim rcvno As String = bao.GEN_NO_06(con_year(Date.Now.Year()), _CLS.PVCODE, "130001", _CLS.LCNNO, "", "", _IDA, "")
                 Dim rcv_format As String = bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), rcvno)

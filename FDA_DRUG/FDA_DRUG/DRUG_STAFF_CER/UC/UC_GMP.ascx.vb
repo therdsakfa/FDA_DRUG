@@ -91,6 +91,7 @@
         Catch ex As Exception
 
         End Try
+
         Try
             If Trim(dao.fields.DEPARTMENT_REGIST_CER_TYPE) = "1" Then
                 cb_DEPARTMENT_REGIST_CER_TYPE.Checked = True
