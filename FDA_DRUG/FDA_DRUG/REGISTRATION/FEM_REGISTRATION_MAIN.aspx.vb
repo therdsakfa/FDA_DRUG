@@ -432,7 +432,7 @@ Public Class FEM_REGISTRATION_MAIN
                         If Request.QueryString("tt") <> "" Then
                             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "&tt=" & tamrab & "');", True)
                         Else
-                            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&process=" & _r_process & "');", True)
+                            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & str_ID & "&req=1" & "&staff=1" & "&process=" & _r_process & "');", True)
                         End If
                     End If
 

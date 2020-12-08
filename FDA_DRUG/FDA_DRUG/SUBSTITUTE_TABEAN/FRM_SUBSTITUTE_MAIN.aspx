@@ -156,7 +156,7 @@
                </MasterTableView>
            </telerik:RadGrid>
            <div class="h5" style="padding-left:87%;">  
-                      <asp:HyperLink ID="hl_pay" runat="server"  target="_blank" style="display:none;"> ชำระเงินคลิกที่นี้</asp:HyperLink>
+                      <asp:HyperLink ID="hl_pay" runat="server"  target="_blank" style="display:block;"> ชำระเงินคลิกที่นี้</asp:HyperLink>
                         </div>
     </div>
    

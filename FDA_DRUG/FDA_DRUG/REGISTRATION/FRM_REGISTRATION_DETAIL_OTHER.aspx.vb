@@ -87,6 +87,12 @@ Public Class FRM_REGISTRATION_DETAIL_OTHER
 
             End If
 
+            If Request.QueryString("staff") = 1 Then
+                RadTabStrip1.FindTabByText("2.ขนาดบรรจุ").ForeColor = Drawing.Color.Black
+                RadTabStrip1.FindTabByText("3.สูตรสาร").ForeColor = Drawing.Color.Black
+                RadTabStrip1.FindTabByText("4.1 ผู้ผลิตต่างประเทศ").ForeColor = Drawing.Color.Black
+                RadTabStrip1.FindTabByText("4.2 ผู้ผลิตในประเทศ").ForeColor = Drawing.Color.Black
+            End If
 
             'RadTabStrip1.SelectedTab.Value = Request.QueryString("tab")
         End If

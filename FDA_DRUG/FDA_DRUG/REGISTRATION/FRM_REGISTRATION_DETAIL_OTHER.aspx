@@ -62,15 +62,15 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="0" MultiPageID="RadMultiPage1">
         <Tabs>
-            <telerik:RadTab runat="server" Text="1.ข้อมูลทั่วไป"  Value="1" Selected="True">
+            <telerik:RadTab runat="server" Text="1.ข้อมูลทั่วไป"  Value="1" Selected="True" ForeColor="Red">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="2.ขนาดบรรจุ" Value="2">
+            <telerik:RadTab runat="server" Text="2.ขนาดบรรจุ" Value="2" ForeColor="Red">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="3.สูตรสาร" Value="5">
+            <telerik:RadTab runat="server" Text="3.สูตรสาร" Value="5" ForeColor="Red">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="4.1 ผู้ผลิตต่างประเทศ" Value="3">
+            <telerik:RadTab runat="server" Text="4.1 ผู้ผลิตต่างประเทศ" Value="3" ForeColor="Red">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="4.2 ผู้ผลิตในประเทศ" Value="4">
+            <telerik:RadTab runat="server" Text="4.2 ผู้ผลิตในประเทศ" Value="4" ForeColor="Red">
             </telerik:RadTab>            
             <telerik:RadTab runat="server" Text="5.การเก็บรักษา" Value="6">
             </telerik:RadTab>     
