@@ -7,6 +7,9 @@
     .auto-style1 {
         height: 30px;
     }
+    .auto-style2 {
+        height: 25px;
+    }
     </style>
 <table width="70%">
 
@@ -122,12 +125,39 @@
                     <td colspan="4" align="left">กรุณาเลือกสารจากตารางด้านบนก่อนคลิกปุ่มเพิ่มสาร</td>
                 </tr>
                 <tr>
-                    <td>ปริมาณสาร: </td>
+                    <td>ปริมาณยา/ปริมาณชีววัตถุ</td>
                     <td>
+                        <asp:DropDownList ID="ddl_CAS_TYPE" runat="server" AutoPostBack="True">
+                            <asp:ListItem Value="1">ปริมาณยา</asp:ListItem>
+                            <asp:ListItem Value="2">ปริมาณชีววัตถุ</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td>เงื่อนไข</td>
+                    <td colspan="3" align="left">
+                        <asp:DropDownList ID="ddl_remark1" runat="server">
+                            <asp:ListItem Value="0">กรุณาเลือก</asp:ListItem>
+                            <asp:ListItem Value="1">&lt;=</asp:ListItem>
+                            <asp:ListItem Value="2">&lt;</asp:ListItem>
+                            <asp:ListItem Value="3">=</asp:ListItem>
+                            <asp:ListItem Value="4">&gt;=</asp:ListItem>
+                            <asp:ListItem Value="5">&gt;</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">ปริมาณสาร (ตั้งต้น) : </td>
+                    <td class="auto-style2">
                         <asp:TextBox ID="txt_QTY" runat="server" Width="100px" ></asp:TextBox>
                     </td>
-                    <td>หน่วย :</td>
-                    <td>
+                    <td class="auto-style2">หน่วย :</td>
+                    <td class="auto-style2">
                         <%--<asp:DropDownList ID="ddl_unit" runat="server" Height="16px"></asp:DropDownList>--%>
                         <telerik:RadComboBox ID="rcb_unit" Runat="server" Filter="Contains">
                         </telerik:RadComboBox>
@@ -136,7 +166,85 @@
                     
                 </tr>
                 <tr>
-                    <td align="left">เอกสารอ้างอิง</td>
+                    <td class="auto-style2">ปริมาณสาร (สุดท้าย) : </td>
+                    <td class="auto-style2">
+                        <asp:TextBox ID="txt_QTY2" runat="server" Width="100px" ></asp:TextBox>
+                    </td>
+                    <td class="auto-style2">หน่วย :</td>
+                    <td class="auto-style2">
+                        <%--<asp:DropDownList ID="ddl_unit" runat="server" Height="16px"></asp:DropDownList>--%>
+                        <telerik:RadComboBox ID="rcb_unit2" Runat="server" Filter="Contains">
+                        </telerik:RadComboBox>
+                    </td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>ปริมาณชีววัตถุ</td>
+                    <td>
+                        &nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>ปริมาณตั้งต้น</td>
+                    <td>
+                        <asp:TextBox ID="txt_sbioqty" runat="server" Width="100px"></asp:TextBox>
+                    </td>
+                    <td>
+                        หน่วยตั้งต้น :</td>
+                    <td>
+                        <asp:DropDownList ID="ddl_unit2" runat="server"></asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>เลขยกกำลัง(ตั้งต้น)</td>
+                    <td>
+                        <asp:TextBox ID="txt_sbiosqno" runat="server" Width="100px"></asp:TextBox>
+                    </td>
+                    <td>
+                        &nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>ปริมาณสุดท้าย</td>
+                    <td>
+                        <asp:TextBox ID="txt_ebioqty" runat="server" Width="100px"></asp:TextBox>
+                    </td>
+                    <td>
+                        หน่วยสุดท้าย :</td>
+                    <td>
+                        <asp:DropDownList ID="ddl_unit3" runat="server"></asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>เลขยกกำลัง(สุดท้าย)</td>
+                    <td>
+                        <asp:TextBox ID="txt_ebiosqno" runat="server" Width="100px"></asp:TextBox>
+                    </td>
+                    <td>
+                        &nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td >เอกสารอ้างอิง</td>
                     <td align="left" colspan="3">
                         <asp:TextBox ID="txt_ref" runat="server" Width="100%"></asp:TextBox>
                         </td>

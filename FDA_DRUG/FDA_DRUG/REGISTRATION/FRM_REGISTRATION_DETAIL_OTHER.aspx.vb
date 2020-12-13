@@ -5,6 +5,9 @@ Public Class FRM_REGISTRATION_DETAIL_OTHER
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             UC_CHEM.bind_unit()
+            UC_CHEM.bind_unit2()
+            UC_CHEM.bind_unit3()
+            UC_CHEM.bind_unit4()
             UC_CHEM.bind_unit_head()
             UC_CHEM.bind_unit_each()
             UC_DRUG_ATC1.bind_ddl_atc()

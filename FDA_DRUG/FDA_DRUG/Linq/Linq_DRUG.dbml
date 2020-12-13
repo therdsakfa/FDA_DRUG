@@ -5892,26 +5892,6 @@
       <Column Name="BIG_AMOUNT" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DRUG_REGISTRATION_DETAIL_CAS" Member="DRUG_REGISTRATION_DETAIL_CAs">
-    <Type Name="DRUG_REGISTRATION_DETAIL_CA">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FK_IDA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ROWS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="IOWA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="QTY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="SUNITCD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="EQTO_IOWA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="EQTO_QTY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="EQTO_SUNITCD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="BASE_FORM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="AORI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="IOWACD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="REF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="FK_SET" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CONDITION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.[15_TAMRAP_CONDITION]" Member="_15_TAMRAP_CONDITIONs">
     <Type Name="_15_TAMRAP_CONDITION">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6768,6 +6748,35 @@
       <Column Name="Procuct" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Import" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Both" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DRUG_REGISTRATION_DETAIL_CAS" Member="DRUG_REGISTRATION_DETAIL_CAs">
+    <Type Name="DRUG_REGISTRATION_DETAIL_CA">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ROWS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IOWA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="QTY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SUNITCD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EQTO_IOWA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EQTO_QTY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EQTO_SUNITCD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BASE_FORM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AORI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IOWACD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FK_SET" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CONDITION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sbioqty" Type="System.Decimal" DbType="Decimal(14,8)" CanBeNull="true" />
+      <Column Name="sbiosqno" Type="System.Decimal" DbType="Decimal(14,8)" CanBeNull="true" />
+      <Column Name="sbiounitcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ebioqty" Type="System.Decimal" DbType="Decimal(14,8)" CanBeNull="true" />
+      <Column Name="ebiosqno" Type="System.Decimal" DbType="Decimal(14,8)" CanBeNull="true" />
+      <Column Name="ebiounitcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mltplr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QTY2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SUNITCD2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

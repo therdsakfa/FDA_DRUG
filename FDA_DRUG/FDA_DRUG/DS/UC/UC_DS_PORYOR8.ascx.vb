@@ -488,7 +488,7 @@ Public Class UC_DS_PORYOR8
             save.fields.CUSTOMER_CITIZEN_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
             If qty = 0 Then
                 save.fields.QUANTITY = sum_finally.Text
-                save.fields.QUANTITY_UNIT = unit_finally.Text
+                save.fields.QUANTITY_UNIT = dao_pac.fields.SMALL_UNIT
             Else
                 save.fields.QUANTITY = qty
                 save.fields.QUANTITY_UNIT = dao_pac.fields.SMALL_UNIT

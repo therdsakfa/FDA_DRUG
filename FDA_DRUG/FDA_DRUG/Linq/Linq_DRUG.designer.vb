@@ -1897,12 +1897,6 @@ Partial Public Class Linq_DRUGDataContext
     End Sub
   Partial Private Sub Delete_15_TAMRAP_PACK_DETAIL(instance As _15_TAMRAP_PACK_DETAIL)
     End Sub
-  Partial Private Sub InsertDRUG_REGISTRATION_DETAIL_CA(instance As DRUG_REGISTRATION_DETAIL_CA)
-    End Sub
-  Partial Private Sub UpdateDRUG_REGISTRATION_DETAIL_CA(instance As DRUG_REGISTRATION_DETAIL_CA)
-    End Sub
-  Partial Private Sub DeleteDRUG_REGISTRATION_DETAIL_CA(instance As DRUG_REGISTRATION_DETAIL_CA)
-    End Sub
   Partial Private Sub Insert_15_TAMRAP_CONDITION(instance As _15_TAMRAP_CONDITION)
     End Sub
   Partial Private Sub Update_15_TAMRAP_CONDITION(instance As _15_TAMRAP_CONDITION)
@@ -2082,6 +2076,12 @@ Partial Public Class Linq_DRUGDataContext
   Partial Private Sub UpdateDALCN_LOCATION_ADDRESS(instance As DALCN_LOCATION_ADDRESS)
     End Sub
   Partial Private Sub DeleteDALCN_LOCATION_ADDRESS(instance As DALCN_LOCATION_ADDRESS)
+    End Sub
+  Partial Private Sub InsertDRUG_REGISTRATION_DETAIL_CA(instance As DRUG_REGISTRATION_DETAIL_CA)
+    End Sub
+  Partial Private Sub UpdateDRUG_REGISTRATION_DETAIL_CA(instance As DRUG_REGISTRATION_DETAIL_CA)
+    End Sub
+  Partial Private Sub DeleteDRUG_REGISTRATION_DETAIL_CA(instance As DRUG_REGISTRATION_DETAIL_CA)
     End Sub
   #End Region
 	
@@ -4006,12 +4006,6 @@ Partial Public Class Linq_DRUGDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property DRUG_REGISTRATION_DETAIL_CAs() As System.Data.Linq.Table(Of DRUG_REGISTRATION_DETAIL_CA)
-		Get
-			Return Me.GetTable(Of DRUG_REGISTRATION_DETAIL_CA)
-		End Get
-	End Property
-	
 	Public ReadOnly Property _15_TAMRAP_CONDITIONs() As System.Data.Linq.Table(Of _15_TAMRAP_CONDITION)
 		Get
 			Return Me.GetTable(Of _15_TAMRAP_CONDITION)
@@ -4201,6 +4195,12 @@ Partial Public Class Linq_DRUGDataContext
 	Public ReadOnly Property driowa_temps() As System.Data.Linq.Table(Of driowa_temp)
 		Get
 			Return Me.GetTable(Of driowa_temp)
+		End Get
+	End Property
+	
+	Public ReadOnly Property DRUG_REGISTRATION_DETAIL_CAs() As System.Data.Linq.Table(Of DRUG_REGISTRATION_DETAIL_CA)
+		Get
+			Return Me.GetTable(Of DRUG_REGISTRATION_DETAIL_CA)
 		End Get
 	End Property
 End Class
@@ -117978,398 +117978,6 @@ Partial Public Class _15_TAMRAP_PACK_DETAIL
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DRUG_REGISTRATION_DETAIL_CAS")>  _
-Partial Public Class DRUG_REGISTRATION_DETAIL_CA
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _IDA As Integer
-	
-	Private _FK_IDA As String
-	
-	Private _ROWS As String
-	
-	Private _IOWA As String
-	
-	Private _QTY As String
-	
-	Private _SUNITCD As String
-	
-	Private _EQTO_IOWA As String
-	
-	Private _EQTO_QTY As String
-	
-	Private _EQTO_SUNITCD As String
-	
-	Private _BASE_FORM As String
-	
-	Private _AORI As String
-	
-	Private _IOWACD As String
-	
-	Private _REF As String
-	
-	Private _REMARK As String
-	
-	Private _FK_SET As System.Nullable(Of Integer)
-	
-	Private _CONDITION As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnIDAChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnIDAChanged()
-    End Sub
-    Partial Private Sub OnFK_IDAChanging(value As String)
-    End Sub
-    Partial Private Sub OnFK_IDAChanged()
-    End Sub
-    Partial Private Sub OnROWSChanging(value As String)
-    End Sub
-    Partial Private Sub OnROWSChanged()
-    End Sub
-    Partial Private Sub OnIOWAChanging(value As String)
-    End Sub
-    Partial Private Sub OnIOWAChanged()
-    End Sub
-    Partial Private Sub OnQTYChanging(value As String)
-    End Sub
-    Partial Private Sub OnQTYChanged()
-    End Sub
-    Partial Private Sub OnSUNITCDChanging(value As String)
-    End Sub
-    Partial Private Sub OnSUNITCDChanged()
-    End Sub
-    Partial Private Sub OnEQTO_IOWAChanging(value As String)
-    End Sub
-    Partial Private Sub OnEQTO_IOWAChanged()
-    End Sub
-    Partial Private Sub OnEQTO_QTYChanging(value As String)
-    End Sub
-    Partial Private Sub OnEQTO_QTYChanged()
-    End Sub
-    Partial Private Sub OnEQTO_SUNITCDChanging(value As String)
-    End Sub
-    Partial Private Sub OnEQTO_SUNITCDChanged()
-    End Sub
-    Partial Private Sub OnBASE_FORMChanging(value As String)
-    End Sub
-    Partial Private Sub OnBASE_FORMChanged()
-    End Sub
-    Partial Private Sub OnAORIChanging(value As String)
-    End Sub
-    Partial Private Sub OnAORIChanged()
-    End Sub
-    Partial Private Sub OnIOWACDChanging(value As String)
-    End Sub
-    Partial Private Sub OnIOWACDChanged()
-    End Sub
-    Partial Private Sub OnREFChanging(value As String)
-    End Sub
-    Partial Private Sub OnREFChanged()
-    End Sub
-    Partial Private Sub OnREMARKChanging(value As String)
-    End Sub
-    Partial Private Sub OnREMARKChanged()
-    End Sub
-    Partial Private Sub OnFK_SETChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnFK_SETChanged()
-    End Sub
-    Partial Private Sub OnCONDITIONChanging(value As String)
-    End Sub
-    Partial Private Sub OnCONDITIONChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property IDA() As Integer
-		Get
-			Return Me._IDA
-		End Get
-		Set
-			If ((Me._IDA = value)  _
-						= false) Then
-				Me.OnIDAChanging(value)
-				Me.SendPropertyChanging
-				Me._IDA = value
-				Me.SendPropertyChanged("IDA")
-				Me.OnIDAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="NVarChar(MAX)")>  _
-	Public Property FK_IDA() As String
-		Get
-			Return Me._FK_IDA
-		End Get
-		Set
-			If (String.Equals(Me._FK_IDA, value) = false) Then
-				Me.OnFK_IDAChanging(value)
-				Me.SendPropertyChanging
-				Me._FK_IDA = value
-				Me.SendPropertyChanged("FK_IDA")
-				Me.OnFK_IDAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ROWS", DbType:="NVarChar(MAX)")>  _
-	Public Property ROWS() As String
-		Get
-			Return Me._ROWS
-		End Get
-		Set
-			If (String.Equals(Me._ROWS, value) = false) Then
-				Me.OnROWSChanging(value)
-				Me.SendPropertyChanging
-				Me._ROWS = value
-				Me.SendPropertyChanged("ROWS")
-				Me.OnROWSChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IOWA", DbType:="NVarChar(MAX)")>  _
-	Public Property IOWA() As String
-		Get
-			Return Me._IOWA
-		End Get
-		Set
-			If (String.Equals(Me._IOWA, value) = false) Then
-				Me.OnIOWAChanging(value)
-				Me.SendPropertyChanging
-				Me._IOWA = value
-				Me.SendPropertyChanged("IOWA")
-				Me.OnIOWAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_QTY", DbType:="NVarChar(MAX)")>  _
-	Public Property QTY() As String
-		Get
-			Return Me._QTY
-		End Get
-		Set
-			If (String.Equals(Me._QTY, value) = false) Then
-				Me.OnQTYChanging(value)
-				Me.SendPropertyChanging
-				Me._QTY = value
-				Me.SendPropertyChanged("QTY")
-				Me.OnQTYChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SUNITCD", DbType:="NVarChar(MAX)")>  _
-	Public Property SUNITCD() As String
-		Get
-			Return Me._SUNITCD
-		End Get
-		Set
-			If (String.Equals(Me._SUNITCD, value) = false) Then
-				Me.OnSUNITCDChanging(value)
-				Me.SendPropertyChanging
-				Me._SUNITCD = value
-				Me.SendPropertyChanged("SUNITCD")
-				Me.OnSUNITCDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EQTO_IOWA", DbType:="NVarChar(MAX)")>  _
-	Public Property EQTO_IOWA() As String
-		Get
-			Return Me._EQTO_IOWA
-		End Get
-		Set
-			If (String.Equals(Me._EQTO_IOWA, value) = false) Then
-				Me.OnEQTO_IOWAChanging(value)
-				Me.SendPropertyChanging
-				Me._EQTO_IOWA = value
-				Me.SendPropertyChanged("EQTO_IOWA")
-				Me.OnEQTO_IOWAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EQTO_QTY", DbType:="NVarChar(MAX)")>  _
-	Public Property EQTO_QTY() As String
-		Get
-			Return Me._EQTO_QTY
-		End Get
-		Set
-			If (String.Equals(Me._EQTO_QTY, value) = false) Then
-				Me.OnEQTO_QTYChanging(value)
-				Me.SendPropertyChanging
-				Me._EQTO_QTY = value
-				Me.SendPropertyChanged("EQTO_QTY")
-				Me.OnEQTO_QTYChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EQTO_SUNITCD", DbType:="NVarChar(MAX)")>  _
-	Public Property EQTO_SUNITCD() As String
-		Get
-			Return Me._EQTO_SUNITCD
-		End Get
-		Set
-			If (String.Equals(Me._EQTO_SUNITCD, value) = false) Then
-				Me.OnEQTO_SUNITCDChanging(value)
-				Me.SendPropertyChanging
-				Me._EQTO_SUNITCD = value
-				Me.SendPropertyChanged("EQTO_SUNITCD")
-				Me.OnEQTO_SUNITCDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BASE_FORM", DbType:="NVarChar(MAX)")>  _
-	Public Property BASE_FORM() As String
-		Get
-			Return Me._BASE_FORM
-		End Get
-		Set
-			If (String.Equals(Me._BASE_FORM, value) = false) Then
-				Me.OnBASE_FORMChanging(value)
-				Me.SendPropertyChanging
-				Me._BASE_FORM = value
-				Me.SendPropertyChanged("BASE_FORM")
-				Me.OnBASE_FORMChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AORI", DbType:="NVarChar(50)")>  _
-	Public Property AORI() As String
-		Get
-			Return Me._AORI
-		End Get
-		Set
-			If (String.Equals(Me._AORI, value) = false) Then
-				Me.OnAORIChanging(value)
-				Me.SendPropertyChanging
-				Me._AORI = value
-				Me.SendPropertyChanged("AORI")
-				Me.OnAORIChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IOWACD", DbType:="NVarChar(MAX)")>  _
-	Public Property IOWACD() As String
-		Get
-			Return Me._IOWACD
-		End Get
-		Set
-			If (String.Equals(Me._IOWACD, value) = false) Then
-				Me.OnIOWACDChanging(value)
-				Me.SendPropertyChanging
-				Me._IOWACD = value
-				Me.SendPropertyChanged("IOWACD")
-				Me.OnIOWACDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REF", DbType:="NVarChar(MAX)")>  _
-	Public Property REF() As String
-		Get
-			Return Me._REF
-		End Get
-		Set
-			If (String.Equals(Me._REF, value) = false) Then
-				Me.OnREFChanging(value)
-				Me.SendPropertyChanging
-				Me._REF = value
-				Me.SendPropertyChanged("REF")
-				Me.OnREFChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK", DbType:="NVarChar(MAX)")>  _
-	Public Property REMARK() As String
-		Get
-			Return Me._REMARK
-		End Get
-		Set
-			If (String.Equals(Me._REMARK, value) = false) Then
-				Me.OnREMARKChanging(value)
-				Me.SendPropertyChanging
-				Me._REMARK = value
-				Me.SendPropertyChanged("REMARK")
-				Me.OnREMARKChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_SET", DbType:="Int")>  _
-	Public Property FK_SET() As System.Nullable(Of Integer)
-		Get
-			Return Me._FK_SET
-		End Get
-		Set
-			If (Me._FK_SET.Equals(value) = false) Then
-				Me.OnFK_SETChanging(value)
-				Me.SendPropertyChanging
-				Me._FK_SET = value
-				Me.SendPropertyChanged("FK_SET")
-				Me.OnFK_SETChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CONDITION", DbType:="NVarChar(50)")>  _
-	Public Property CONDITION() As String
-		Get
-			Return Me._CONDITION
-		End Get
-		Set
-			If (String.Equals(Me._CONDITION, value) = false) Then
-				Me.OnCONDITIONChanging(value)
-				Me.SendPropertyChanging
-				Me._CONDITION = value
-				Me.SendPropertyChanged("CONDITION")
-				Me.OnCONDITIONChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.[15_TAMRAP_CONDITION]")>  _
 Partial Public Class _15_TAMRAP_CONDITION
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -135479,4 +135087,594 @@ Partial Public Class driowa_temp
 			End If
 		End Set
 	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DRUG_REGISTRATION_DETAIL_CAS")>  _
+Partial Public Class DRUG_REGISTRATION_DETAIL_CA
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _FK_IDA As String
+	
+	Private _ROWS As String
+	
+	Private _IOWA As String
+	
+	Private _QTY As String
+	
+	Private _SUNITCD As String
+	
+	Private _EQTO_IOWA As String
+	
+	Private _EQTO_QTY As String
+	
+	Private _EQTO_SUNITCD As String
+	
+	Private _BASE_FORM As String
+	
+	Private _AORI As String
+	
+	Private _IOWACD As String
+	
+	Private _REF As String
+	
+	Private _REMARK As String
+	
+	Private _FK_SET As System.Nullable(Of Integer)
+	
+	Private _CONDITION As String
+	
+	Private _sbioqty As System.Nullable(Of Decimal)
+	
+	Private _sbiosqno As System.Nullable(Of Decimal)
+	
+	Private _sbiounitcd As System.Nullable(Of Integer)
+	
+	Private _ebioqty As System.Nullable(Of Decimal)
+	
+	Private _ebiosqno As System.Nullable(Of Decimal)
+	
+	Private _ebiounitcd As System.Nullable(Of Integer)
+	
+	Private _mltplr As System.Nullable(Of Integer)
+	
+	Private _QTY2 As String
+	
+	Private _SUNITCD2 As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OnFK_IDAChanging(value As String)
+    End Sub
+    Partial Private Sub OnFK_IDAChanged()
+    End Sub
+    Partial Private Sub OnROWSChanging(value As String)
+    End Sub
+    Partial Private Sub OnROWSChanged()
+    End Sub
+    Partial Private Sub OnIOWAChanging(value As String)
+    End Sub
+    Partial Private Sub OnIOWAChanged()
+    End Sub
+    Partial Private Sub OnQTYChanging(value As String)
+    End Sub
+    Partial Private Sub OnQTYChanged()
+    End Sub
+    Partial Private Sub OnSUNITCDChanging(value As String)
+    End Sub
+    Partial Private Sub OnSUNITCDChanged()
+    End Sub
+    Partial Private Sub OnEQTO_IOWAChanging(value As String)
+    End Sub
+    Partial Private Sub OnEQTO_IOWAChanged()
+    End Sub
+    Partial Private Sub OnEQTO_QTYChanging(value As String)
+    End Sub
+    Partial Private Sub OnEQTO_QTYChanged()
+    End Sub
+    Partial Private Sub OnEQTO_SUNITCDChanging(value As String)
+    End Sub
+    Partial Private Sub OnEQTO_SUNITCDChanged()
+    End Sub
+    Partial Private Sub OnBASE_FORMChanging(value As String)
+    End Sub
+    Partial Private Sub OnBASE_FORMChanged()
+    End Sub
+    Partial Private Sub OnAORIChanging(value As String)
+    End Sub
+    Partial Private Sub OnAORIChanged()
+    End Sub
+    Partial Private Sub OnIOWACDChanging(value As String)
+    End Sub
+    Partial Private Sub OnIOWACDChanged()
+    End Sub
+    Partial Private Sub OnREFChanging(value As String)
+    End Sub
+    Partial Private Sub OnREFChanged()
+    End Sub
+    Partial Private Sub OnREMARKChanging(value As String)
+    End Sub
+    Partial Private Sub OnREMARKChanged()
+    End Sub
+    Partial Private Sub OnFK_SETChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnFK_SETChanged()
+    End Sub
+    Partial Private Sub OnCONDITIONChanging(value As String)
+    End Sub
+    Partial Private Sub OnCONDITIONChanged()
+    End Sub
+    Partial Private Sub OnsbioqtyChanging(value As System.Nullable(Of Decimal))
+    End Sub
+    Partial Private Sub OnsbioqtyChanged()
+    End Sub
+    Partial Private Sub OnsbiosqnoChanging(value As System.Nullable(Of Decimal))
+    End Sub
+    Partial Private Sub OnsbiosqnoChanged()
+    End Sub
+    Partial Private Sub OnsbiounitcdChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnsbiounitcdChanged()
+    End Sub
+    Partial Private Sub OnebioqtyChanging(value As System.Nullable(Of Decimal))
+    End Sub
+    Partial Private Sub OnebioqtyChanged()
+    End Sub
+    Partial Private Sub OnebiosqnoChanging(value As System.Nullable(Of Decimal))
+    End Sub
+    Partial Private Sub OnebiosqnoChanged()
+    End Sub
+    Partial Private Sub OnebiounitcdChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnebiounitcdChanged()
+    End Sub
+    Partial Private Sub OnmltplrChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnmltplrChanged()
+    End Sub
+    Partial Private Sub OnQTY2Changing(value As String)
+    End Sub
+    Partial Private Sub OnQTY2Changed()
+    End Sub
+    Partial Private Sub OnSUNITCD2Changing(value As String)
+    End Sub
+    Partial Private Sub OnSUNITCD2Changed()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="NVarChar(MAX)")>  _
+	Public Property FK_IDA() As String
+		Get
+			Return Me._FK_IDA
+		End Get
+		Set
+			If (String.Equals(Me._FK_IDA, value) = false) Then
+				Me.OnFK_IDAChanging(value)
+				Me.SendPropertyChanging
+				Me._FK_IDA = value
+				Me.SendPropertyChanged("FK_IDA")
+				Me.OnFK_IDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ROWS", DbType:="NVarChar(MAX)")>  _
+	Public Property ROWS() As String
+		Get
+			Return Me._ROWS
+		End Get
+		Set
+			If (String.Equals(Me._ROWS, value) = false) Then
+				Me.OnROWSChanging(value)
+				Me.SendPropertyChanging
+				Me._ROWS = value
+				Me.SendPropertyChanged("ROWS")
+				Me.OnROWSChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IOWA", DbType:="NVarChar(MAX)")>  _
+	Public Property IOWA() As String
+		Get
+			Return Me._IOWA
+		End Get
+		Set
+			If (String.Equals(Me._IOWA, value) = false) Then
+				Me.OnIOWAChanging(value)
+				Me.SendPropertyChanging
+				Me._IOWA = value
+				Me.SendPropertyChanged("IOWA")
+				Me.OnIOWAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_QTY", DbType:="NVarChar(MAX)")>  _
+	Public Property QTY() As String
+		Get
+			Return Me._QTY
+		End Get
+		Set
+			If (String.Equals(Me._QTY, value) = false) Then
+				Me.OnQTYChanging(value)
+				Me.SendPropertyChanging
+				Me._QTY = value
+				Me.SendPropertyChanged("QTY")
+				Me.OnQTYChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SUNITCD", DbType:="NVarChar(MAX)")>  _
+	Public Property SUNITCD() As String
+		Get
+			Return Me._SUNITCD
+		End Get
+		Set
+			If (String.Equals(Me._SUNITCD, value) = false) Then
+				Me.OnSUNITCDChanging(value)
+				Me.SendPropertyChanging
+				Me._SUNITCD = value
+				Me.SendPropertyChanged("SUNITCD")
+				Me.OnSUNITCDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EQTO_IOWA", DbType:="NVarChar(MAX)")>  _
+	Public Property EQTO_IOWA() As String
+		Get
+			Return Me._EQTO_IOWA
+		End Get
+		Set
+			If (String.Equals(Me._EQTO_IOWA, value) = false) Then
+				Me.OnEQTO_IOWAChanging(value)
+				Me.SendPropertyChanging
+				Me._EQTO_IOWA = value
+				Me.SendPropertyChanged("EQTO_IOWA")
+				Me.OnEQTO_IOWAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EQTO_QTY", DbType:="NVarChar(MAX)")>  _
+	Public Property EQTO_QTY() As String
+		Get
+			Return Me._EQTO_QTY
+		End Get
+		Set
+			If (String.Equals(Me._EQTO_QTY, value) = false) Then
+				Me.OnEQTO_QTYChanging(value)
+				Me.SendPropertyChanging
+				Me._EQTO_QTY = value
+				Me.SendPropertyChanged("EQTO_QTY")
+				Me.OnEQTO_QTYChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EQTO_SUNITCD", DbType:="NVarChar(MAX)")>  _
+	Public Property EQTO_SUNITCD() As String
+		Get
+			Return Me._EQTO_SUNITCD
+		End Get
+		Set
+			If (String.Equals(Me._EQTO_SUNITCD, value) = false) Then
+				Me.OnEQTO_SUNITCDChanging(value)
+				Me.SendPropertyChanging
+				Me._EQTO_SUNITCD = value
+				Me.SendPropertyChanged("EQTO_SUNITCD")
+				Me.OnEQTO_SUNITCDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BASE_FORM", DbType:="NVarChar(MAX)")>  _
+	Public Property BASE_FORM() As String
+		Get
+			Return Me._BASE_FORM
+		End Get
+		Set
+			If (String.Equals(Me._BASE_FORM, value) = false) Then
+				Me.OnBASE_FORMChanging(value)
+				Me.SendPropertyChanging
+				Me._BASE_FORM = value
+				Me.SendPropertyChanged("BASE_FORM")
+				Me.OnBASE_FORMChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AORI", DbType:="NVarChar(50)")>  _
+	Public Property AORI() As String
+		Get
+			Return Me._AORI
+		End Get
+		Set
+			If (String.Equals(Me._AORI, value) = false) Then
+				Me.OnAORIChanging(value)
+				Me.SendPropertyChanging
+				Me._AORI = value
+				Me.SendPropertyChanged("AORI")
+				Me.OnAORIChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IOWACD", DbType:="NVarChar(MAX)")>  _
+	Public Property IOWACD() As String
+		Get
+			Return Me._IOWACD
+		End Get
+		Set
+			If (String.Equals(Me._IOWACD, value) = false) Then
+				Me.OnIOWACDChanging(value)
+				Me.SendPropertyChanging
+				Me._IOWACD = value
+				Me.SendPropertyChanged("IOWACD")
+				Me.OnIOWACDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REF", DbType:="NVarChar(MAX)")>  _
+	Public Property REF() As String
+		Get
+			Return Me._REF
+		End Get
+		Set
+			If (String.Equals(Me._REF, value) = false) Then
+				Me.OnREFChanging(value)
+				Me.SendPropertyChanging
+				Me._REF = value
+				Me.SendPropertyChanged("REF")
+				Me.OnREFChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK", DbType:="NVarChar(MAX)")>  _
+	Public Property REMARK() As String
+		Get
+			Return Me._REMARK
+		End Get
+		Set
+			If (String.Equals(Me._REMARK, value) = false) Then
+				Me.OnREMARKChanging(value)
+				Me.SendPropertyChanging
+				Me._REMARK = value
+				Me.SendPropertyChanged("REMARK")
+				Me.OnREMARKChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_SET", DbType:="Int")>  _
+	Public Property FK_SET() As System.Nullable(Of Integer)
+		Get
+			Return Me._FK_SET
+		End Get
+		Set
+			If (Me._FK_SET.Equals(value) = false) Then
+				Me.OnFK_SETChanging(value)
+				Me.SendPropertyChanging
+				Me._FK_SET = value
+				Me.SendPropertyChanged("FK_SET")
+				Me.OnFK_SETChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CONDITION", DbType:="NVarChar(50)")>  _
+	Public Property CONDITION() As String
+		Get
+			Return Me._CONDITION
+		End Get
+		Set
+			If (String.Equals(Me._CONDITION, value) = false) Then
+				Me.OnCONDITIONChanging(value)
+				Me.SendPropertyChanging
+				Me._CONDITION = value
+				Me.SendPropertyChanged("CONDITION")
+				Me.OnCONDITIONChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sbioqty", DbType:="Decimal(14,8)")>  _
+	Public Property sbioqty() As System.Nullable(Of Decimal)
+		Get
+			Return Me._sbioqty
+		End Get
+		Set
+			If (Me._sbioqty.Equals(value) = false) Then
+				Me.OnsbioqtyChanging(value)
+				Me.SendPropertyChanging
+				Me._sbioqty = value
+				Me.SendPropertyChanged("sbioqty")
+				Me.OnsbioqtyChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sbiosqno", DbType:="Decimal(14,8)")>  _
+	Public Property sbiosqno() As System.Nullable(Of Decimal)
+		Get
+			Return Me._sbiosqno
+		End Get
+		Set
+			If (Me._sbiosqno.Equals(value) = false) Then
+				Me.OnsbiosqnoChanging(value)
+				Me.SendPropertyChanging
+				Me._sbiosqno = value
+				Me.SendPropertyChanged("sbiosqno")
+				Me.OnsbiosqnoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sbiounitcd", DbType:="Int")>  _
+	Public Property sbiounitcd() As System.Nullable(Of Integer)
+		Get
+			Return Me._sbiounitcd
+		End Get
+		Set
+			If (Me._sbiounitcd.Equals(value) = false) Then
+				Me.OnsbiounitcdChanging(value)
+				Me.SendPropertyChanging
+				Me._sbiounitcd = value
+				Me.SendPropertyChanged("sbiounitcd")
+				Me.OnsbiounitcdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ebioqty", DbType:="Decimal(14,8)")>  _
+	Public Property ebioqty() As System.Nullable(Of Decimal)
+		Get
+			Return Me._ebioqty
+		End Get
+		Set
+			If (Me._ebioqty.Equals(value) = false) Then
+				Me.OnebioqtyChanging(value)
+				Me.SendPropertyChanging
+				Me._ebioqty = value
+				Me.SendPropertyChanged("ebioqty")
+				Me.OnebioqtyChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ebiosqno", DbType:="Decimal(14,8)")>  _
+	Public Property ebiosqno() As System.Nullable(Of Decimal)
+		Get
+			Return Me._ebiosqno
+		End Get
+		Set
+			If (Me._ebiosqno.Equals(value) = false) Then
+				Me.OnebiosqnoChanging(value)
+				Me.SendPropertyChanging
+				Me._ebiosqno = value
+				Me.SendPropertyChanged("ebiosqno")
+				Me.OnebiosqnoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ebiounitcd", DbType:="Int")>  _
+	Public Property ebiounitcd() As System.Nullable(Of Integer)
+		Get
+			Return Me._ebiounitcd
+		End Get
+		Set
+			If (Me._ebiounitcd.Equals(value) = false) Then
+				Me.OnebiounitcdChanging(value)
+				Me.SendPropertyChanging
+				Me._ebiounitcd = value
+				Me.SendPropertyChanged("ebiounitcd")
+				Me.OnebiounitcdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_mltplr", DbType:="Int")>  _
+	Public Property mltplr() As System.Nullable(Of Integer)
+		Get
+			Return Me._mltplr
+		End Get
+		Set
+			If (Me._mltplr.Equals(value) = false) Then
+				Me.OnmltplrChanging(value)
+				Me.SendPropertyChanging
+				Me._mltplr = value
+				Me.SendPropertyChanged("mltplr")
+				Me.OnmltplrChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_QTY2", DbType:="NVarChar(MAX)")>  _
+	Public Property QTY2() As String
+		Get
+			Return Me._QTY2
+		End Get
+		Set
+			If (String.Equals(Me._QTY2, value) = false) Then
+				Me.OnQTY2Changing(value)
+				Me.SendPropertyChanging
+				Me._QTY2 = value
+				Me.SendPropertyChanged("QTY2")
+				Me.OnQTY2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SUNITCD2", DbType:="NVarChar(MAX)")>  _
+	Public Property SUNITCD2() As String
+		Get
+			Return Me._SUNITCD2
+		End Get
+		Set
+			If (String.Equals(Me._SUNITCD2, value) = false) Then
+				Me.OnSUNITCD2Changing(value)
+				Me.SendPropertyChanging
+				Me._SUNITCD2 = value
+				Me.SendPropertyChanged("SUNITCD2")
+				Me.OnSUNITCD2Changed
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
 End Class

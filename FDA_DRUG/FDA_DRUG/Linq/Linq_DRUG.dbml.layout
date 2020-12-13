@@ -1898,12 +1898,6 @@
         <elementListCompartment Id="4e5b1aef-67ee-4ab3-bf67-ff73c50b6709" absoluteBounds="33.015, 4.835, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cce5a4b2-2024-46c7-8910-ce5b5a5c2451" isExpanded="false" absoluteBounds="9, 26.25, 2, 0.45">
-      <DataClassMoniker Name="/Linq_DRUGDataContext/DRUG_REGISTRATION_DETAIL_CA" />
-      <nestedChildShapes>
-        <elementListCompartment Id="eb9b0ede-a129-4ed5-864e-4c4543fe58c8" absoluteBounds="9.015, 26.71, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="4d13737d-5757-4649-8c40-416da412f2ec" isExpanded="false" absoluteBounds="9.375, 28.125, 2, 0.45">
       <DataClassMoniker Name="/Linq_DRUGDataContext/_15_TAMRAP_CONDITION" />
       <nestedChildShapes>
@@ -2094,6 +2088,12 @@
       <DataClassMoniker Name="/Linq_DRUGDataContext/driowa_temp" />
       <nestedChildShapes>
         <elementListCompartment Id="ba74d0c3-7974-412c-abaf-0fa958538794" absoluteBounds="5.5150000000000006, 1.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="37ea349e-e8f6-4c3d-8d84-4bd1283a823e" isExpanded="false" absoluteBounds="9.125, 25, 2, 0.45">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/DRUG_REGISTRATION_DETAIL_CA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a69cbb33-55f8-4ced-bd98-0fd2e86e8f6e" absoluteBounds="9.14, 25.46, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

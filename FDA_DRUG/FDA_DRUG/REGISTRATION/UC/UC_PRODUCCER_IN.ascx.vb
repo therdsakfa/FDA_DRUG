@@ -46,6 +46,7 @@ Public Class UC_PRODUCCER_IN
         'Dim bao As New BAO.ClsDBSqlcommand
         'bao.SP_DALCN_STAFF_SEARCH()
         Dim lcntpcd As String = ""
+        Dim lcnno_no As String = ""
 
         Dim sql As String = ""
         sql = "select * from dbo.VW_DALCN_STAFF_SEARCH where STATUS_NAME = 'อนุมัติ' and "
@@ -55,6 +56,7 @@ Public Class UC_PRODUCCER_IN
             Dim dao_dal As New DAO_DRUG.ClsDBdalcn
             dao_dal.GetDataby_IDA(dao_regis.fields.FK_IDA)
             lcntpcd = dao_dal.fields.lcntpcd
+            lcnno_no = dao_dal.fields.LCNNO_DISPLAY
         Catch ex As Exception
 
         End Try
@@ -74,6 +76,20 @@ Public Class UC_PRODUCCER_IN
             'Else
             sql &= "lcnno_no like '%" & txt_NUM.Text & "%'"
             'End If
+
+            If lcntpcd <> "" Then
+                If lcntpcd.Contains("ผย") Then
+                    sql &= " and lcntpcd like '%ผย%'"
+                ElseIf lcntpcd.Contains("นย") Then
+                    sql &= " and lcntpcd like '%นย%'"
+                End If
+
+            End If
+
+            dt = bao.Queryds(sql)
+        Else
+            txt_NUM.Text = lcnno_no
+            sql &= "lcnno_no like '%" & lcnno_no & "%'"
 
             If lcntpcd <> "" Then
                 If lcntpcd.Contains("ผย") Then

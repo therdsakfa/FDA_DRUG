@@ -95,6 +95,24 @@ Partial Public Class UC_CHEM
     Protected WithEvents rg_search_iowa As Global.Telerik.Web.UI.RadGrid
 
     '''<summary>
+    '''ddl_CAS_TYPE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_CAS_TYPE As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''ddl_remark1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_remark1 As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''txt_QTY control.
     '''</summary>
     '''<remarks>
@@ -111,6 +129,78 @@ Partial Public Class UC_CHEM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rcb_unit As Global.Telerik.Web.UI.RadComboBox
+
+    '''<summary>
+    '''txt_QTY2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_QTY2 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''rcb_unit2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rcb_unit2 As Global.Telerik.Web.UI.RadComboBox
+
+    '''<summary>
+    '''txt_sbioqty control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_sbioqty As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ddl_unit2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_unit2 As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''txt_sbiosqno control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_sbiosqno As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txt_ebioqty control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_ebioqty As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ddl_unit3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_unit3 As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''txt_ebiosqno control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_ebiosqno As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txt_ref control.

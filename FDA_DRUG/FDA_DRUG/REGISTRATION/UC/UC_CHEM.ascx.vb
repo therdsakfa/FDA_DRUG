@@ -266,6 +266,64 @@ Public Class UC_CHEM
         'item.Value = "0"
         'ddl_unit.Items.Insert(0, item)
     End Sub
+    Public Sub bind_unit2()
+        'Dim dt As New DataTable
+        'Dim bao As New BAO_MASTER
+        'dt = bao.SP_MASTER_drsunit()
+
+        'ddl_unit.DataSource = dt
+        'ddl_unit.DataTextField = "sunitnmsht"
+        'ddl_unit.DataValueField = "sunitcd"
+        'ddl_unit.DataBind()
+
+
+        Dim bao As New BAO.ClsDBSqlcommand
+        Dim dt As New DataTable
+        dt = bao.SP_DRUG_UNIT_PHYSIC()
+        rcb_unit2.DataSource = dt
+        rcb_unit2.DataTextField = "unit_name"
+        rcb_unit2.DataValueField = "sunitcd"
+        rcb_unit2.DataBind()
+
+        Dim r3 As New RadComboBoxItem
+        r3.Text = "กรุณาเลือก"
+        r3.Value = 0
+        rcb_unit2.Items.Insert(0, r3)
+        'Dim item As New ListItem
+        'item.Text = "--กรุณาเลือก--"
+        'item.Value = "0"
+        'ddl_unit.Items.Insert(0, item)
+    End Sub
+    Public Sub bind_unit3()
+        Dim dt As New DataTable
+        Dim bao As New BAO_MASTER
+        dt = bao.SP_MASTER_drsunit()
+
+        ddl_unit2.DataSource = dt
+        ddl_unit2.DataTextField = "sunitnmsht"
+        ddl_unit2.DataValueField = "sunitcd"
+        ddl_unit2.DataBind()
+
+        Dim item As New ListItem
+        item.Text = "--กรุณาเลือก--"
+        item.Value = "0"
+        ddl_unit2.Items.Insert(0, item)
+    End Sub
+    Public Sub bind_unit4()
+        Dim dt As New DataTable
+        Dim bao As New BAO_MASTER
+        dt = bao.SP_MASTER_drsunit()
+
+        ddl_unit3.DataSource = dt
+        ddl_unit3.DataTextField = "sunitnmsht"
+        ddl_unit3.DataValueField = "sunitcd"
+        ddl_unit3.DataBind()
+
+        Dim item As New ListItem
+        item.Text = "--กรุณาเลือก--"
+        item.Value = "0"
+        ddl_unit3.Items.Insert(0, item)
+    End Sub
     Public Sub bind_unit_head()
         'Dim dt As New DataTable
         'Dim bao As New BAO_MASTER
