@@ -360,10 +360,46 @@ Public Class UC_CHEM
                 dao.fields.IOWACD = item("iowacd").Text
                 dao.fields.IOWA = item("iowacd").Text
                 dao.fields.QTY = txt_QTY.Text
+                dao.fields.QTY2 = txt_QTY2.Text
                 dao.fields.AORI = ddl_aori.SelectedItem.Text
                 dao.fields.FK_SET = ddl_set.SelectedValue
                 Try
                     dao.fields.SUNITCD = rcb_unit.SelectedValue
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao.fields.SUNITCD2 = rcb_unit2.SelectedValue
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao.fields.sbioqty = txt_sbioqty.Text
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao.fields.sbiosqno = txt_sbiosqno.Text
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao.fields.sbiounitcd = ddl_unit2.SelectedValue
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao.fields.ebioqty = txt_ebioqty.Text
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao.fields.ebiosqno = txt_ebiosqno.Text
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao.fields.ebiounitcd = ddl_unit3.SelectedValue
                 Catch ex As Exception
 
                 End Try
