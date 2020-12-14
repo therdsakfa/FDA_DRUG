@@ -47,10 +47,11 @@ Public Class FRM_DRUG_IMPORT_MAIN
         'dao.GetDataby_IDA(_DL)
         'Dim _IDA As String = 0
         '_IDA = dao.fields.NYM2_IDA
+
         Dim url As String = ""
         Dim NYM As String = ""
-        If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
-            Select Case _process
+        'If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
+        Select Case _process
                 Case "1027"
                     NYM = "2"
                 Case "1028"
@@ -61,9 +62,11 @@ Public Class FRM_DRUG_IMPORT_MAIN
                     NYM = "5"
             End Select
             url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process ' & " & NYM2_ida" & _IDA
-            Response.Redirect(url)
-        End If
+        'Response.Redirect(url)
         'End If
+
+        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
+
     End Sub
     Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand    'กดปุ่มใน grid ให้ทำอะไร จากหหน้
         If TypeOf e.Item Is GridDataItem Then
