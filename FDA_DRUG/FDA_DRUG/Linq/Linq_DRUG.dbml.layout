@@ -2090,10 +2090,22 @@
         <elementListCompartment Id="774da422-3b7d-4355-a8ab-ca65a5d9b4cd" absoluteBounds="17.39, 30.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="accf08e5-e798-4d5c-9317-975d0fc344e2" absoluteBounds="29.375, 20.75, 2, 5.6169254557291666">
+    <classShape Id="42cc1d9c-ddf2-491c-b256-3f47f67cac01" absoluteBounds="29.375, 20.75, 2, 11.578269856770831">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/CHEMICAL_REQUEST1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="461c6ffb-9edc-4bf9-bf8c-66c66ae6e06c" absoluteBounds="29.39, 21.21, 1.9700000000000002, 11.018269856770832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="121ed5b1-e850-4adf-8db9-393496a8f6d6" absoluteBounds="20.375, 30.75, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/driowa1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d9149a0-2ac7-4dcd-bc6b-c23855b9c52f" absoluteBounds="20.39, 31.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2745dfd8-cf62-42ef-a666-b92015f9dab4" absoluteBounds="23.375, 30.75, 2, 5.616925455729163">
       <DataClassMoniker Name="/Linq_DRUGDataContext/MAS_CHEMICAL" />
       <nestedChildShapes>
-        <elementListCompartment Id="f68930cf-bf59-4cd6-b183-12a44872df3b" absoluteBounds="29.39, 21.21, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="97d3727b-d395-4743-ba4b-b1dc172b145b" absoluteBounds="23.39, 31.21, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
