@@ -708,6 +708,9 @@ Public Class FRM_STAFFNYM_CONFIRM
                 Response.Redirect("FRM_STAFFNYM_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID & "&status=" & STATUS_ID)
                 'ElseIf STATUS_ID = 9 Then                                                                                                       ' ยื่นแก้ไขคำขอ status 6 ของเราคือรอแก้ไข
                 '    Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&DL=" & _DL & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
+
+            ElseIf STATUS_ID = 9 Then
+                Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&DL=" & _DL & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
             ElseIf STATUS_ID = 8 Then
                 'แก้ dao_prf
 
@@ -1022,11 +1025,11 @@ Public Class FRM_STAFFNYM_CONFIRM
             If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
                 int_group_ddl = 11
             ElseIf dao.fields.STATUS_ID = 4 Or dao.fields.STATUS_ID = 5 Then                                           'ถ้า starus มากกว่า 6
-                int_group_ddl = 44
+                int_group_ddl = 33
             ElseIf dao.fields.STATUS_ID > 5 And dao.fields.STATUS_ID <= 9 Then               'ถ้า starus2 to 6 
                 int_group_ddl = 33
-            ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
-                int_group_ddl = 33
+            ElseIf dao.fields.STATUS_ID = 9 Then                                      'แก้ตอนของ นยม อื่น 
+                int_group_ddl = 44
             End If
         ElseIf _ProcessID = 1029 Then                                                                              'กระบวนการอื่นๆ
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4                                     'เชื่อม base 
@@ -1048,11 +1051,11 @@ Public Class FRM_STAFFNYM_CONFIRM
             If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
                 int_group_ddl = 11
             ElseIf dao.fields.STATUS_ID = 4 Or dao.fields.STATUS_ID = 5 Then                                           'ถ้า starus มากกว่า 6
+                int_group_ddl = 33
+                'ElseIf dao.fields.STATUS_ID > 5 And dao.fields.STATUS_ID <= 9 Then               'ถ้า starus2 to 6 
+                '    int_group_ddl = 33
+            ElseIf dao.fields.STATUS_ID = 9 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 44
-            ElseIf dao.fields.STATUS_ID > 5 And dao.fields.STATUS_ID <= 9 Then               'ถ้า starus2 to 6 
-                int_group_ddl = 33
-            ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
-                int_group_ddl = 33
             End If
         End If
 

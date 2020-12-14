@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class WebForm20
-
+    
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''Button1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Button2 control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Button3 control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button3 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''QRQQQQ control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents QRQQQQ As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_gen_xml control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_gen_xml As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''txt_url control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_url As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''RadMaskedTextBox1 control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadMaskedTextBox1 As Global.Telerik.Web.UI.RadMaskedTextBox
-
+    
     '''<summary>
     '''RadScriptManager1 control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadScriptManager1 As Global.Telerik.Web.UI.RadScriptManager
-
+    
     '''<summary>
     '''TextBox1 control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''RadBarcode1 control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadBarcode1 As Global.Telerik.Web.UI.RadBarcode
-
+    
     '''<summary>
     '''RadBinaryImage1 control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadBinaryImage1 As Global.Telerik.Web.UI.RadBinaryImage
-
+    
     '''<summary>
     '''RadBinaryImage2 control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadBinaryImage2 As Global.Telerik.Web.UI.RadBinaryImage
-
+    
     '''<summary>
     '''txt_dh_id control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_dh_id As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btn_gendh control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_gendh As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''FileUpload1 control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
-
+    
     '''<summary>
     '''btn_upload control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_upload As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''RadComboBox1 control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadComboBox1 As Global.Telerik.Web.UI.RadComboBox
-
+    
     '''<summary>
     '''rcb_shape control.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rcb_shape As Global.Telerik.Web.UI.RadComboBox
-
+    
     '''<summary>
     '''TextBox2 control.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''TextBox3 control.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btn_check_date control.
     '''</summary>
@@ -210,7 +210,16 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_check_date As Global.System.Web.UI.WebControls.Button
-
+    
+    '''<summary>
+    '''Button4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button4 As Global.System.Web.UI.WebControls.Button
+    
     '''<summary>
     '''txt_date control.
     '''</summary>
@@ -219,7 +228,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_date As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''txt_number control.
     '''</summary>
@@ -228,7 +237,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_number As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''DropDownList2 control.
     '''</summary>
@@ -237,7 +246,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DropDownList2 As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''btn_day control.
     '''</summary>
@@ -246,7 +255,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_day As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''lbl_number_day control.
     '''</summary>
@@ -255,7 +264,7 @@ Partial Public Class WebForm20
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_number_day As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''DropDownList3 control.
     '''</summary>

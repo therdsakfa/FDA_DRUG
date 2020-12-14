@@ -56,7 +56,7 @@
                 'Else
                 '    dao_up.GetDataby_IDA(_TR_ID)
                 'End If
-                AddLogStatus(6, _process, _CLS.CITIZEN_ID, _IDA)
+                AddLogStatus(9, _process, _CLS.CITIZEN_ID, _IDA)
                 'AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
 
                 'Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
@@ -67,7 +67,7 @@
 
                 Dim CONSIDER_DATE As Date = CDate(TextBox1.Text)
                 dao.fields.REMARK = Txt_Remark.Text
-                dao.fields.STATUS_ID = 6
+                dao.fields.STATUS_ID = 9
                 dao.fields.CONSIDER_DATE = CONSIDER_DATE
 
                 dao.fields.FK_STAFF_OFFER_IDA = ddl_staff_offer.SelectedValue

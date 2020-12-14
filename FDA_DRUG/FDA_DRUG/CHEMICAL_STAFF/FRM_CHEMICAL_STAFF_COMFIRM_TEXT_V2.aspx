@@ -156,6 +156,12 @@
                             </td>
                         </tr>--%>
                         <tr>
+                            <td>dv&nbsp;</td>
+                            <td>
+                                <asp:TextBox ID="txt_dv" runat="server" CssClass="input-sm" Width="300px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>aori</td>
                             <td>
                                 <asp:Label ID="lb_chem_type" runat="server" Text="-"></asp:Label>

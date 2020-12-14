@@ -1,10 +1,6 @@
-﻿Imports System.IO
-Imports System.Xml.Serialization
-Imports FDA_DRUG.XML_CENTER
-Imports Telerik.Web.UI
-Public Class FRM_DRUG_IMPORT_MAIN
+﻿Imports Telerik.Web.UI
+Public Class FRM_DRUG_IMPORT_NYM2_V2
     Inherits System.Web.UI.Page
-
     Private _CLS As New CLS_SESSION
     Private _type As String
     Private _process As String = ""
@@ -42,12 +38,9 @@ Public Class FRM_DRUG_IMPORT_MAIN
 
         End Try
     End Sub
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
-
     End Sub
-
     Protected Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         'Dim DL As String
         'DL = rcb_search.SelectedValue
@@ -61,15 +54,15 @@ Public Class FRM_DRUG_IMPORT_MAIN
         Dim NYM As String = ""
         'If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
         Select Case _process
-                Case "1027"
-                    NYM = "2"
-                Case "1028"
-                    NYM = "3"
-                Case "1029"
-                    NYM = "4"
-                Case "1030"
-                    NYM = "5"
-            End Select
+            Case "1027"
+                NYM = "2"
+            Case "1028"
+                NYM = "3"
+            Case "1029"
+                NYM = "4"
+            Case "1030"
+                NYM = "5"
+        End Select
         'url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & 2 & "&process=" & "1027" ' & " & NYM2_ida" & _IDA
         'Response.Redirect(url)
         'End If
