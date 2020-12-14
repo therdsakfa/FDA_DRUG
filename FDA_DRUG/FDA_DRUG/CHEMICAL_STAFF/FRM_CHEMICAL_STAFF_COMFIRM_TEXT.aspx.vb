@@ -212,6 +212,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT
                 dao.fields.salt = txt_salt.Text
                 dao.fields.syn = txt_syn.Text
                 dao.fields.aori = ddl_aori.SelectedValue
+                dao.fields.add_digit = txt_dv.Text
                 'dao.fields.cas_number = txt_cas_number.Text
 
                 dao.fields.cas_type = Nothing
@@ -222,7 +223,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT
                 dao.fields.MODERN_TRADITION = ddl_Modern_drug.SelectedValue
                 dao.fields.cas_number = txt_Cas_number.Text
                 Try
-                    dao.fields.iowa = txt_iowacd.Text & txt_runno.Text & txt_salt.Text & txt_syn.Text
+                    dao.fields.iowa = txt_iowacd.Text & txt_runno.Text & txt_salt.Text & txt_syn.Text & txt_dv.Text
                 Catch ex As Exception
 
                 End Try
@@ -270,6 +271,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT
         dao_cm.fields.runno = dao.fields.runno
         dao_cm.fields.salt = dao.fields.salt
         dao_cm.fields.syn = dao.fields.syn
+        dao_cm.fields.add_digit = dao.fields.add_digit
         dao_cm.fields.cas_number = dao.fields.cas_number
         dao_cm.fields.cas_type = dao.fields.cas_type
         dao_cm.fields.iowa = Nothing
@@ -278,10 +280,10 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT
         dao_cm.fields.MIX_TYPE = dao.fields.MIX_TYPE
         dao_cm.fields.REGIS_STATUS = dao.fields.REGIS_STATUS
         If dao.fields.SUB_TYPE = 2 Then
-            dao_cm.fields.iowa = dao.fields.iowacd & dao.fields.runno & dao.fields.salt & dao.fields.syn & "M"
+            dao_cm.fields.iowa = dao.fields.iowacd & dao.fields.runno & dao.fields.salt & dao.fields.syn & dao.fields.add_digit & "M"
             dao_cm.fields.MIX_TYPE = 1
         Else
-            dao_cm.fields.iowa = dao.fields.iowacd & dao.fields.runno & dao.fields.salt & dao.fields.syn
+            dao_cm.fields.iowa = dao.fields.iowacd & dao.fields.runno & dao.fields.salt & dao.fields.syn & dao.fields.add_digit
         End If
 
         dao_cm.fields.MODERN_TRADITION = dao.fields.MODERN_TRADITION
@@ -301,6 +303,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT
         dao_cm.fields.syn = dao.fields.syn
         dao_cm.fields.iowacd = dao.fields.iowa
         dao_cm.fields.iowanm = dao.fields.iowanm
+        dao_cm.fields.add_digit = dao.fields.add_digit
         dao_cm.insert()
     End Sub
     Private Sub RadGrid2_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid2.NeedDataSource

@@ -46,8 +46,9 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT_V2
 
             End Try
 
-            set_runno()
+
         End If
+        set_runno()
     End Sub
 
     Private Sub RadGrid1_NeedDataSource(sender As Object, e As Telerik.Web.UI.GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
@@ -91,7 +92,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT_V2
     Protected Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
         Dim statusID As Integer = ddl_cnsdcd.SelectedItem.Value
         Dim bao As New BAO.GenNumber
-        Dim all_iowa As String = txt_iowacd.Text & txt_runno.Text & txt_salt.Text & txt_syn.Text
+        Dim all_iowa As String = txt_iowacd.Text & txt_runno.Text & txt_salt.Text & txt_syn.Text & txt_dv.Text
         Dim i As Integer = 0
         Dim dao_chem As New DAO_DRUG.TB_MAS_CHEMICAL
         i = dao_chem.Count_data_by_iowa(all_iowa)
@@ -141,6 +142,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT_V2
                 dao.fields.runno = txt_runno.Text
                 dao.fields.salt = txt_salt.Text
                 dao.fields.syn = txt_syn.Text
+                dao.fields.add_digit = txt_dv.Text
                 'dao.fields.aori = ddl_aori.SelectedValue
                 dao.fields.cas_number = txt_cas_number.Text
 
@@ -151,7 +153,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT_V2
                 dao.fields.REGIS_STATUS = "R"
                 dao.fields.MODERN_TRADITION = txt_MODERN_TRADITION.Text
                 Try
-                    dao.fields.iowa = txt_iowacd.Text & txt_runno.Text & txt_salt.Text & txt_syn.Text
+                    dao.fields.iowa = txt_iowacd.Text & txt_runno.Text & txt_salt.Text & txt_syn.Text & txt_dv.Text
                 Catch ex As Exception
 
                 End Try
@@ -184,6 +186,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT_V2
         dao_cm.fields.runno = dao.fields.runno
         dao_cm.fields.salt = dao.fields.salt
         dao_cm.fields.syn = dao.fields.syn
+        dao_cm.fields.add_digit = dao.fields.add_digit
         dao_cm.fields.cas_number = dao.fields.cas_number
         dao_cm.fields.cas_type = dao.fields.cas_type
         dao_cm.fields.iowa = Nothing
@@ -191,8 +194,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT_V2
         dao_cm.fields.look_type = dao.fields.look_type
         dao_cm.fields.MIX_TYPE = dao.fields.MIX_TYPE
         dao_cm.fields.REGIS_STATUS = dao.fields.REGIS_STATUS
-        dao_cm.fields.iowa = dao.fields.iowacd & dao.fields.runno & dao.fields.salt & dao.fields.syn
-        dao_cm.fields.MODERN_TRADITION = dao.fields.MODERN_TRADITION
+        dao_cm.fields.iowa = dao.fields.iowacd & dao.fields.runno & dao.fields.salt & dao.fields.syn & dao.fields.add_digit
         dao_cm.insert()
     End Sub
     Private Sub RadGrid2_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid2.NeedDataSource
