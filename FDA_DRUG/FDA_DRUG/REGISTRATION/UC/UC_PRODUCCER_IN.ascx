@@ -58,12 +58,13 @@
                        <telerik:GridBoundColumn DataField="lcntpcd" FilterControlAltText="Filter lcntpcd column"
                            HeaderText="ประเภท" SortExpression="lcntpcd" UniqueName="lcntpcd">
                        </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="thanm" FilterControlAltText="Filter thanm column"
+                           HeaderText="ชื่อสถานที่" SortExpression="thanm" UniqueName="thanm">
+                       </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="thanm_addr" FilterControlAltText="Filter thanm_addr column"
                            HeaderText="ที่อยู่" SortExpression="thanm_addr" UniqueName="thanm_addr">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="lcnsid" FilterControlAltText="Filter lcnsid column"
-                           HeaderText="รหัสผู้ประกอบการ" SortExpression="lcnsid" UniqueName="lcnsid">
-                       </telerik:GridBoundColumn>
+                       
                    </Columns>
                </MasterTableView>
                     <ClientSettings EnableRowHoverStyle="true" >

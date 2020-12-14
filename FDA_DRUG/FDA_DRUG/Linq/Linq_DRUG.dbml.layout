@@ -1928,10 +1928,10 @@
         <elementListCompartment Id="3dc5f28d-663b-4126-90d4-c828452ff69c" absoluteBounds="2.64, 30.585, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="deddb231-df19-4f65-a839-e255cd521ab9" isExpanded="false" absoluteBounds="1.875, 9.375, 2, 0.45">
+    <classShape Id="deddb231-df19-4f65-a839-e255cd521ab9" isExpanded="false" absoluteBounds="1.75, 9.125, 2, 0.45">
       <DataClassMoniker Name="/Linq_DRUGDataContext/DDL_VORJOR" />
       <nestedChildShapes>
-        <elementListCompartment Id="25b25664-63c8-45a6-859b-a383260745a0" absoluteBounds="1.8900000000000001, 9.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="25b25664-63c8-45a6-859b-a383260745a0" absoluteBounds="1.7650000000000001, 9.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="60439d0e-1215-423d-af03-c05912d7a587" isExpanded="false" absoluteBounds="8.5, 0.875, 2, 0.45">
@@ -2090,10 +2090,10 @@
         <elementListCompartment Id="ba74d0c3-7974-412c-abaf-0fa958538794" absoluteBounds="5.5150000000000006, 1.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="37ea349e-e8f6-4c3d-8d84-4bd1283a823e" isExpanded="false" absoluteBounds="9.125, 25, 2, 0.45">
+    <classShape Id="3d7b7290-3470-456f-b3f3-4f797924595e" isExpanded="false" absoluteBounds="9.5, 24.875, 2, 0.45">
       <DataClassMoniker Name="/Linq_DRUGDataContext/DRUG_REGISTRATION_DETAIL_CA" />
       <nestedChildShapes>
-        <elementListCompartment Id="a69cbb33-55f8-4ced-bd98-0fd2e86e8f6e" absoluteBounds="9.14, 25.46, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9b92b664-12a9-4331-bcdf-ddd9772b03d8" absoluteBounds="9.515, 25.335, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

@@ -6777,6 +6777,7 @@
       <Column Name="mltplr" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="QTY2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="SUNITCD2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CAS_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

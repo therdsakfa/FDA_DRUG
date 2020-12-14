@@ -135145,6 +135145,8 @@ Partial Public Class DRUG_REGISTRATION_DETAIL_CA
 	
 	Private _SUNITCD2 As String
 	
+	Private _CAS_TYPE As System.Nullable(Of Integer)
+	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
     End Sub
@@ -135251,6 +135253,10 @@ Partial Public Class DRUG_REGISTRATION_DETAIL_CA
     Partial Private Sub OnSUNITCD2Changing(value As String)
     End Sub
     Partial Private Sub OnSUNITCD2Changed()
+    End Sub
+    Partial Private Sub OnCAS_TYPEChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnCAS_TYPEChanged()
     End Sub
     #End Region
 	
@@ -135656,6 +135662,22 @@ Partial Public Class DRUG_REGISTRATION_DETAIL_CA
 				Me._SUNITCD2 = value
 				Me.SendPropertyChanged("SUNITCD2")
 				Me.OnSUNITCD2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CAS_TYPE", DbType:="Int")>  _
+	Public Property CAS_TYPE() As System.Nullable(Of Integer)
+		Get
+			Return Me._CAS_TYPE
+		End Get
+		Set
+			If (Me._CAS_TYPE.Equals(value) = false) Then
+				Me.OnCAS_TYPEChanging(value)
+				Me.SendPropertyChanging
+				Me._CAS_TYPE = value
+				Me.SendPropertyChanged("CAS_TYPE")
+				Me.OnCAS_TYPEChanged
 			End If
 		End Set
 	End Property

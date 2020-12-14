@@ -27,13 +27,13 @@ Public Class UC_PRODUCCER_IN
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
         Search_FN()
-        RadGrid1.Rebind()
         If Not IsPostBack Then
             If Request.QueryString("tt") <> "" Then
                 btn_save_work_type.Visible = False
                 btn_select.Visible = False
             End If
         End If
+
     End Sub
     Private Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');parent.close_modal();</script> ")
@@ -102,7 +102,7 @@ Public Class UC_PRODUCCER_IN
 
             dt = bao.Queryds(sql)
         End If
-        
+
         'r_result = dt.Select(str_where)
 
         'dt2 = dt.Clone

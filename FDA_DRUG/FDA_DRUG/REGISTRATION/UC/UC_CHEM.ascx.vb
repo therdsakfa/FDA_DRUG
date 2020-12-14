@@ -11,9 +11,10 @@ Public Class UC_CHEM
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunQuery()
+
         If Not IsPostBack Then
             bind_lbl()
-
+            set_hide()
             If Request.QueryString("tt") <> "" Then
                 btn_save.Visible = False
                 btn_select.Visible = False
@@ -94,6 +95,8 @@ Public Class UC_CHEM
             item = e.Item
             Dim lbl_iowanm As Label = DirectCast(item("iowanm2").FindControl("lbl_iowanm"), Label)
             Dim rcb_iowanm As RadComboBox = DirectCast(item("iowanm2").FindControl("rcb_iowanm"), RadComboBox)
+            Dim lbl_rows As Label = DirectCast(item("ROWS").FindControl("lbl_rows"), Label)
+            Dim txt_rows As TextBox = DirectCast(item("ROWS").FindControl("txt_rows"), TextBox)
 
             ' Dim btn_del As RadComboBox = DirectCast(item("_del").FindControl("rcb_iowanm"), RadComboBox)
             Dim btn_del As LinkButton = CType(item("_del").Controls(0), LinkButton)
@@ -134,6 +137,7 @@ Public Class UC_CHEM
                 lbl_iowanm.Style.Add("display", "block")
             End If
 
+
             If Request.QueryString("tt") <> "" Then
                 Try
                     Dim dao_regis As New DAO_DRUG.ClsDBDRUG_REGISTRATION
@@ -161,7 +165,7 @@ Public Class UC_CHEM
                         btn_eqto.Style.Add("display", "none")
                     End If
 
-                   
+
                 Catch ex As Exception
 
                 End Try
@@ -184,6 +188,12 @@ Public Class UC_CHEM
 
                 End Try
             End If
+            Try
+                txt_rows.Text = dao_tt.fields.ROWS
+
+            Catch ex As Exception
+
+            End Try
             Try
                 lbl_qty.Text = dao_tt.fields.QTY
             Catch ex As Exception
@@ -339,6 +349,36 @@ Public Class UC_CHEM
         'item.Value = "0"
         'ddl_unit_head.Items.Insert(0, item)
     End Sub
+    Private Sub ddl_CAS_TYPE_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_CAS_TYPE.SelectedIndexChanged
+        set_hide()
+    End Sub
+
+    Sub set_hide()
+        Dim cas_type As Integer = ddl_CAS_TYPE.SelectedValue
+        If cas_type = 1 Then
+            txt_QTY.Enabled = True
+            ddl_unit.Enabled = True
+            ddl_remark1.Enabled = True
+
+            txt_sbioqty.Enabled = False
+            ddl_unit2.Enabled = False
+            txt_sbiosqno.Enabled = False
+            txt_ebioqty.Enabled = False
+            ddl_unit3.Enabled = False
+            txt_ebiosqno.Enabled = False
+        Else
+            txt_QTY.Enabled = False
+            ddl_unit.Enabled = False
+            ddl_remark1.Enabled = False
+
+            txt_sbioqty.Enabled = True
+            ddl_unit2.Enabled = True
+            txt_sbiosqno.Enabled = True
+            txt_ebioqty.Enabled = True
+            ddl_unit3.Enabled = True
+            txt_ebiosqno.Enabled = True
+        End If
+    End Sub
     Private Sub rg_search_iowa_NeedDataSource(sender As Object, e As Telerik.Web.UI.GridNeedDataSourceEventArgs) Handles rg_search_iowa.NeedDataSource
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
@@ -357,6 +397,7 @@ Public Class UC_CHEM
         If rcb_unit.SelectedValue <> "" And txt_QTY.Text <> "" Then
             For Each item As GridDataItem In rg_search_iowa.SelectedItems
                 Dim dao As New DAO_DRUG.TB_DRUG_REGISTRATION_DETAIL_CA
+                dao.fields.ROWS = txt_ROWS.Text
                 dao.fields.IOWACD = item("iowacd").Text
                 dao.fields.IOWA = item("iowacd").Text
                 dao.fields.QTY = txt_QTY.Text
@@ -413,6 +454,17 @@ Public Class UC_CHEM
                 Catch ex As Exception
 
                 End Try
+                Try
+                    dao.fields.CONDITION = ddl_remark1.SelectedItem.Text
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao.fields.CAS_TYPE = ddl_CAS_TYPE.SelectedValue
+                Catch ex As Exception
+
+                End Try
+
                 dao.fields.FK_IDA = _IDA
                 Dim dao_max As New DAO_DRUG.TB_DRUG_REGISTRATION_DETAIL_CA
                 dao_max.GET_MAX_ROWS_ID(_IDA)

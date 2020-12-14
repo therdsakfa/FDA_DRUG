@@ -352,7 +352,7 @@
                         </telerik:GridBoundColumn>--%>
                         <telerik:GridTemplateColumn UniqueName="QTY" HeaderText="ปริมาณ">
                                     <ItemTemplate>
-                                        <asp:TextBox ID="txt_QTY2" runat="server" Width="90px"></asp:TextBox>
+                                        <asp:TextBox ID="txt_QTY" runat="server" Width="90px"></asp:TextBox>
                                         <asp:Label ID="lbl_QTY" runat="server" Text="" style="display:none;"></asp:Label>
                                     </ItemTemplate>
                                 </telerik:GridTemplateColumn>

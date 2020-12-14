@@ -135,7 +135,7 @@
                    <asp:TemplateField ItemStyle-Width="15%" ItemStyle-HorizontalAlign="center">
                        <ItemTemplate>
 
-                           <asp:Button ID="btn_Select" runat="server" Text="ดูข้อมูล/ยื่นคำขอ" CommandName="sel" Enabled="false" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
+                           <asp:Button ID="btn_Select" runat="server" Text="ดูข้อมูล/ยื่นคำขอ" CommandName="sel" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
                            &nbsp; &nbsp; &nbsp;
                         
                        </ItemTemplate>
