@@ -330,9 +330,12 @@
                         <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
                             SortExpression="IDA" UniqueName="IDA" Display="false">
                         </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn DataField="ROWS" FilterControlAltText="Filter ROWS column" HeaderText="ลำดับ"
-                            SortExpression="ROWS" UniqueName="ROWS" Display="false">
-                        </telerik:GridBoundColumn>
+                        <telerik:GridTemplateColumn UniqueName="ROWS" HeaderText="ลำดับ">
+                                    <ItemTemplate>
+                                        <asp:TextBox ID="txt_rows" runat="server" Width="20px"></asp:TextBox>
+                                        <asp:Label ID="lbl_rows" runat="server" Text="" style="display:none;"></asp:Label>
+                                    </ItemTemplate>
+                                </telerik:GridTemplateColumn>
                         <%--<telerik:GridBoundColumn DataField="iowacd" FilterControlAltText="Filter iowacd column" HeaderText="iowacd"
                             SortExpression="iowacd" UniqueName="iowacd" Display="false">
                         </telerik:GridBoundColumn>--%>
