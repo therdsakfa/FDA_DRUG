@@ -73,6 +73,7 @@
         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
         <asp:Button ID="btn_check_date" runat="server" Text="check_date" />
+        <asp:Button ID="Button4" runat="server" Text="Button" />
         <br />
                  
         <table width="50%">

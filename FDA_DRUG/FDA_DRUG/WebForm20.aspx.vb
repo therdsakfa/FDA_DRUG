@@ -425,4 +425,11 @@ Public Class WebForm20
         ws.GETDATE_WORKING(CDate(txt_date.Text), True, txt_number.Text, True, date_result, True)
         lbl_number_day.Text = date_result.ToLongDateString()
     End Sub
+
+    Protected Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim url As String = ""
+        url = "http://10.111.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN="
+        ' Response.Redirect(url)
+        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "window.location.href ='" & url & "';", True)
+    End Sub
 End Class
