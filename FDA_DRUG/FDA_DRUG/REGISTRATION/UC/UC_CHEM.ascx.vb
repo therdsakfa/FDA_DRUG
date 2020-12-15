@@ -93,8 +93,8 @@ Public Class UC_CHEM
         If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
             Dim item As GridDataItem
             item = e.Item
-            Dim lbl_iowanm As Label = DirectCast(item("iowanm2").FindControl("lbl_iowanm"), Label)
-            Dim rcb_iowanm As RadComboBox = DirectCast(item("iowanm2").FindControl("rcb_iowanm"), RadComboBox)
+            Dim lbl_iowanm As Label = DirectCast(item("iowanm").FindControl("lbl_iowanm"), Label)
+            Dim rcb_iowanm As RadComboBox = DirectCast(item("iowanm").FindControl("rcb_iowanm"), RadComboBox)
             Dim lbl_rows As Label = DirectCast(item("ROWS").FindControl("lbl_rows"), Label)
             Dim txt_rows As TextBox = DirectCast(item("ROWS").FindControl("txt_rows"), TextBox)
 
@@ -129,13 +129,13 @@ Public Class UC_CHEM
             Catch ex As Exception
 
             End Try
-            If dao_tt.fields.IOWA = "" Then
-                rcb_iowanm.Style.Add("display", "block")
-                lbl_iowanm.Style.Add("display", "none")
-            Else
-                rcb_iowanm.Style.Add("display", "none")
-                lbl_iowanm.Style.Add("display", "block")
-            End If
+            'If dao_tt.fields.IOWA = "" Then
+            '    rcb_iowanm.Style.Add("display", "block")
+            '    lbl_iowanm.Style.Add("display", "none")
+            'Else
+            '    rcb_iowanm.Style.Add("display", "none")
+            '    lbl_iowanm.Style.Add("display", "block")
+            'End If
 
 
             If Request.QueryString("tt") <> "" Then
@@ -563,12 +563,12 @@ Public Class UC_CHEM
 
     Private Sub btn_save_qty_Click(sender As Object, e As EventArgs) Handles btn_save_qty.Click
         For Each item As GridDataItem In rg_chem.Items
-            Dim txt_qty As TextBox = DirectCast(item("QTY").FindControl("txt_QTY"), TextBox)
+            Dim txt_rows As TextBox = DirectCast(item("ROWS").FindControl("txt_rows"), TextBox)
             Try
                 Dim dao As New DAO_DRUG.TB_DRUG_REGISTRATION_DETAIL_CA
                 dao.GetDataby_IDA(item("IDA").Text)
                 Try
-                    dao.fields.QTY = Trim(txt_qty.Text)
+                    dao.fields.ROWS = Trim(txt_rows.Text)
                 Catch ex As Exception
 
                 End Try

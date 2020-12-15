@@ -327,8 +327,13 @@
             <telerik:RadGrid ID="rg_chem" runat="server" Width="100%">
                 <MasterTableView AutoGenerateColumns="False" DataKeyNames="IDA" NoMasterRecordsText="ไม่พบข้อมูล">
                     <Columns>
+                        <telerik:GridClientSelectColumn UniqueName="chk" HeaderText="เลือก">
+                        </telerik:GridClientSelectColumn>
                         <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
                             SortExpression="IDA" UniqueName="IDA" Display="false">
+                        </telerik:GridBoundColumn>
+                        <telerik:GridBoundColumn DataField="FK_SET" FilterControlAltText="Filter FK_SET column" HeaderText="สูตรที่"
+                            SortExpression="FK_SET" UniqueName="FK_SET" >
                         </telerik:GridBoundColumn>
                         <telerik:GridTemplateColumn UniqueName="ROWS" HeaderText="ลำดับ">
                                     <ItemTemplate>
@@ -342,23 +347,19 @@
                         <telerik:GridBoundColumn DataField="iowanm" FilterControlAltText="Filter iowanm column"
                             HeaderText="ชื่อสาร" SortExpression="iowanm" UniqueName="iowanm" Display="false">
                         </telerik:GridBoundColumn>
-                        <telerik:GridTemplateColumn UniqueName="iowanm2" HeaderText="ชื่อสาร">
+                        <%--<telerik:GridTemplateColumn UniqueName="iowanm2" HeaderText="ชื่อสาร">
                                     <ItemTemplate>
                                         <telerik:RadComboBox ID="rcb_iowanm" runat="server" filter="Contains"></telerik:RadComboBox>
                                         <asp:Label ID="lbl_iowanm" runat="server" Text="" style="display:none;"></asp:Label>
                                     </ItemTemplate>
-                                </telerik:GridTemplateColumn>
+                                </telerik:GridTemplateColumn>--%>
                        <%-- <telerik:GridBoundColumn DataField="QTY" FilterControlAltText="Filter QTY column" HeaderText="ปริมาณ" DataType="System.Decimal" SortExpression="QTY" UniqueName="QTY">
                         </telerik:GridBoundColumn>--%>
-                        <telerik:GridTemplateColumn UniqueName="QTY" HeaderText="ปริมาณ">
-                                    <ItemTemplate>
-                                        <asp:TextBox ID="txt_QTY" runat="server" Width="90px"></asp:TextBox>
-                                        <asp:Label ID="lbl_QTY" runat="server" Text="" style="display:none;"></asp:Label>
-                                    </ItemTemplate>
-                                </telerik:GridTemplateColumn>
+                        <telerik:GridBoundColumn DataField="QTY" FilterControlAltText="Filter QTY column" HeaderText="ปริมาณ" SortExpression="QTY" UniqueName="QTY">
+                        </telerik:GridBoundColumn>
                         <telerik:GridBoundColumn DataField="sunitengnm" FilterControlAltText="Filter sunitengnm column" HeaderText="หน่วย" SortExpression="sunitengnm" UniqueName="sunitengnm">
                         </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn DataField="AORI" FilterControlAltText="Filter AORI column" HeaderText="A/I ตัวยา (Base Form)" SortExpression="AORI" UniqueName="AORI">
+                        <telerik:GridBoundColumn DataField="AORI" FilterControlAltText="Filter AORI column" HeaderText="A/I" SortExpression="AORI" UniqueName="AORI">
                         </telerik:GridBoundColumn>
                         <telerik:GridBoundColumn DataField="REF" FilterControlAltText="Filter REF column" HeaderText="เอกสารอ้างอิง" SortExpression="REF" UniqueName="REF">
                         </telerik:GridBoundColumn>
@@ -374,6 +375,9 @@
                         </telerik:GridButtonColumn>
                     </Columns>
                 </MasterTableView>
+                <ClientSettings EnableRowHoverStyle="true" >
+        <Selecting AllowRowSelect="true" />
+    </ClientSettings>
             </telerik:RadGrid>
         </td>
     </tr>

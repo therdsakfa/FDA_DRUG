@@ -49,14 +49,15 @@ Public Class UC_PRODUCCER_IN
         Dim lcnno_no As String = ""
 
         Dim sql As String = ""
-        sql = "select * from dbo.VW_DALCN_STAFF_SEARCH where STATUS_NAME = 'อนุมัติ' and "
+        sql = "select * from dbo.Vw_SP_DALCN_SEARCH_EDIT where "  'STATUS_NAME = 'อนุมัติ' and 
         Dim dao_regis As New DAO_DRUG.ClsDBDRUG_REGISTRATION
         Try
             dao_regis.GetDataby_IDA(Request.QueryString("IDA"))
             Dim dao_dal As New DAO_DRUG.ClsDBdalcn
             dao_dal.GetDataby_IDA(dao_regis.fields.FK_IDA)
             lcntpcd = dao_dal.fields.lcntpcd
-            lcnno_no = dao_dal.fields.LCNNO_DISPLAY
+
+            lcnno_no = dao_dal.fields.pvnabbr + " " + CStr(CInt(Right(dao_dal.fields.lcnno, 4))) + "/25" + Left(dao_dal.fields.lcnno.ToString, 2)
         Catch ex As Exception
 
         End Try

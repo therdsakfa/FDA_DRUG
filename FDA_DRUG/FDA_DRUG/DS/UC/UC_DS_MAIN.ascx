@@ -1,7 +1,8 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_DS_MAIN.ascx.vb" Inherits="FDA_DRUG.UC_DS_MAIN" %>
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
-
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <script type="text/javascript" >
+    
 
 
 

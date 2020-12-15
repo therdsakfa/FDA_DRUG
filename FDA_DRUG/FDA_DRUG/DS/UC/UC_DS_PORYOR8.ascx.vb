@@ -311,7 +311,7 @@ Public Class UC_DS_PORYOR8
         'HiddenField1.Value = dao_drugname.fields.IDA
         'Unit_Radgrid(dao_drugname.fields.IDA) 'ดึงขนาดบรรจุ
         package(dao_drugname.fields.IDA)
-        RadGrid5_NeedDataSource(dao_drugname.fields.IDA)
+        'RadGrid5_NeedDataSource(dao_drugname.fields.IDA)
         Smtext_unit(dao_drugname.fields.IDA)
     End Sub
     Private Sub RadGrid1_NeedDataSource(lcnno As Integer) 'ตัวยาสำคัญ
@@ -574,6 +574,7 @@ Public Class UC_DS_PORYOR8
         cls_xml.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
         cls_xml.DT_SHOW.DT8 = bao.SP_DRSAMP_PACKAGE_DETAIL_CHK_BY_FK_IDA(dao.fields.IDA)    'ขนาดบรรจุ multi
         cls_xml.DT_SHOW.DT10 = bao_show.SP_MAINPERSON_CTZNO(_CLS.CITIZEN_ID) 'ผู้ยื่น
+        cls_xml.DT_SHOW.DT11 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(dao.fields.IDA)
         Try
             cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA(dao.fields.FK_IDA) 'ผู้ดำเนิน
             cls_xml.DT_SHOW.DT20 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_BY_FK_IDA_NEW(dao.fields.IDA) 'สารสำคัญ/ส่วนประกอบ(รวม)

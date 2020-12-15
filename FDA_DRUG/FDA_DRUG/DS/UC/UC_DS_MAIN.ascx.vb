@@ -274,7 +274,10 @@ Public Class UC_DS_MAIN
 
     Protected Sub btn_upload_Click(sender As Object, e As EventArgs) Handles btn_upload.Click
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../DS/POPUP_DS_UPLOAD2.aspx?process=" & _process & "&lcn_ida=" & _lcn_ida & "&staff=" & _staff & "&tt=" & Request.QueryString("tt") & "&main_ida=" & _main_ida & "');", True)
-        'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2(window.location.href = 'http://10.111.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=');", True)
+        'Dim url As String = ""
+        'url = "http://10.111.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN="
+        ''url = "https://privus.fda.moph.go.th"
+        'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
         'Response.Redirect("~\DS\POPUP_DS_UPLOAD2.aspx?process=" & _process & "&lcn_ida=" & _lcn_ida & "")
         'Response.Redirect("~\DS\POPUP_DS_UPLOAD2.aspx?lcn_ida=" & _lcn_ida & "")
         'Dim ws As New AUTHEN_LOG.Authentication
