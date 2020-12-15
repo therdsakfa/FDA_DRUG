@@ -100,7 +100,7 @@ Public Class FRM_SEARCH_LCN_TO_DL
                     Select Case _process
                         Case "1027"
                             NYM = "2"
-                            url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM2_V2.aspx?DL=" & str_ID & "&IDA=" & str_ID & "&NYM=" & NYM & "&process=" & _process & "&lcnida=" & dao.fields.FK_IDA
+                            url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM2.aspx?DL=" & str_ID & "&IDA=" & str_ID & "&NYM=" & NYM & "&process=" & _process & "&lcnida=" & dao.fields.FK_IDA
 
                         Case "1028"
                             NYM = "3"

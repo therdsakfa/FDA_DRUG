@@ -56,7 +56,7 @@
         End Select
         'url = "http://10.111.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process ' & " & NYM2_ida" & _IDA
         'Response.Clear()
-        Response.Redirect("http://10.111.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process)
+        Response.Redirect("https://medicina.fda.moph.go.th/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process)
         'Response.End()
         ' Response.Redirect("http://privus.fda.moph.go.th/")
         'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "window.location.href ='" & url & "';", True)
