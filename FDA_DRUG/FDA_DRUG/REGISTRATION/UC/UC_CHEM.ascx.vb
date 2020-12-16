@@ -578,5 +578,6 @@ Public Class UC_CHEM
 
             End Try
         Next
+        rg_chem.Rebind()
     End Sub
 End Class
