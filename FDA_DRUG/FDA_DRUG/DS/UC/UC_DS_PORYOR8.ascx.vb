@@ -311,7 +311,7 @@ Public Class UC_DS_PORYOR8
         'HiddenField1.Value = dao_drugname.fields.IDA
         'Unit_Radgrid(dao_drugname.fields.IDA) 'ดึงขนาดบรรจุ
         package(dao_drugname.fields.IDA)
-        'RadGrid5_NeedDataSource(dao_drugname.fields.IDA)
+        RadGrid5_NeedDataSource(dao_drugname.fields.IDA)
         Smtext_unit(dao_drugname.fields.IDA)
     End Sub
     Private Sub RadGrid1_NeedDataSource(lcnno As Integer) 'ตัวยาสำคัญ
@@ -854,40 +854,40 @@ Public Class UC_DS_PORYOR8
         Dim dao_drsamp As New DAO_DRUG.ClsDBdrsamp
         dao_drsamp.GetDataby_PRODUCT_ID_IDA(dao_package.fields.FK_IDA)
         ' dao_package.fields.FK_IDA = dao_drsamp.fields.IDA
-        If dao_package.fields.CHECK_PACKAGE = True Then
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ขนาดบรรจุนี้ มีปริมาณที่จะผลิต/นำสั่งแล้ว');", True)
-        Else
-            dao_package.fields.IM_QTY = CInt(txt_qty.Text)
-            Dim sum As Integer = CInt(dao_package.fields.SMALL_AMOUNT) * CInt(dao_package.fields.MEDIUM_AMOUNT)
-            sum = sum * CInt(txt_qty.Text)
-            dao_package.fields.SUM = sum
-            dao_package.fields.IM_DETAIL = dao_package.fields.SMALL_AMOUNT & " " & dao_mas_unit1.fields.sunitthanm & " x " & dao_package.fields.MEDIUM_AMOUNT & " " & dao_mas_unit.fields.sunitthanm & " x " & dao_package.fields.BIG_AMOUNT & " " & dao_mas_unit2.fields.sunitthanm & " จำนวน " & txt_qty.Text & " " & dao_mas_unit2.fields.sunitengnm & " (" & sum & " " & lbl_unit.Text & ")"
-            dao_package.fields.CHECK_PACKAGE = 1
-            dao_package.update()
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
-            RadGrid5_NeedDataSource(dao_package.fields.FK_IDA)
-            'setsum(dao_package.fields.IDA)
-            'If dao_package.fields.SUM = 0 And dao_package.fields.IM_DETAIL.Count > 1 Then
-            '    all_sum.Text = "จำนวนผลิตทั้งหมด:"
-            '    all_sum.Visible = True
-            '    txt_summ.Visible = True
-            '    ddl_package_sum.Visible = True
-            '    Button4.Visible = True
-            '    Dim baophr As New BAO.ClsDBSqlcommand
-            '    ddl_package_sum.DataSource = dao_mas_unit1.datas
-            '    ddl_package_sum.DataTextField = "sunitthanm"
-            '    ddl_package_sum.DataValueField = "sunitcd"
-            '    ddl_package_sum.DataBind()
-            '    Dim item2 As New ListItem
-            '    item2.Text = "เลือกหน่วยนับตามรูปแบบยา"
-            '    item2.Value = "0"
-            '    ddl_package_sum.Items.Insert(0, item2)
-            '    ' ddl_package_sum.Items.Insert(0, New ListItem("กรุณาเลือก", 5))
-            '    ddl_package_sum.Items.Add(New ListItem("kilogram", 769))
-            '    ddl_package_sum.Items.Add(New ListItem("LITS", 773))
-            'End If
+        'If dao_package.fields.CHECK_PACKAGE = True Then
+        '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ขนาดบรรจุนี้ มีปริมาณที่จะผลิต/นำสั่งแล้ว');", True)
+        'Else
+        dao_package.fields.IM_QTY = CInt(txt_qty.Text)
+        Dim sum As Integer = CInt(dao_package.fields.SMALL_AMOUNT) * CInt(dao_package.fields.MEDIUM_AMOUNT)
+        sum = sum * CInt(txt_qty.Text)
+        dao_package.fields.SUM = sum
+        dao_package.fields.IM_DETAIL = dao_package.fields.SMALL_AMOUNT & " " & dao_mas_unit1.fields.sunitthanm & " x " & dao_package.fields.MEDIUM_AMOUNT & " " & dao_mas_unit.fields.sunitthanm & " x " & dao_package.fields.BIG_AMOUNT & " " & dao_mas_unit2.fields.sunitthanm & " จำนวน " & txt_qty.Text & " " & dao_mas_unit2.fields.sunitengnm & " (" & sum & " " & lbl_unit.Text & ")"
+        dao_package.fields.CHECK_PACKAGE = 1
+        dao_package.update()
+        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
+        RadGrid5_NeedDataSource(dao_package.fields.FK_IDA)
+        'setsum(dao_package.fields.IDA)
+        'If dao_package.fields.SUM = 0 And dao_package.fields.IM_DETAIL.Count > 1 Then
+        '    all_sum.Text = "จำนวนผลิตทั้งหมด:"
+        '    all_sum.Visible = True
+        '    txt_summ.Visible = True
+        '    ddl_package_sum.Visible = True
+        '    Button4.Visible = True
+        '    Dim baophr As New BAO.ClsDBSqlcommand
+        '    ddl_package_sum.DataSource = dao_mas_unit1.datas
+        '    ddl_package_sum.DataTextField = "sunitthanm"
+        '    ddl_package_sum.DataValueField = "sunitcd"
+        '    ddl_package_sum.DataBind()
+        '    Dim item2 As New ListItem
+        '    item2.Text = "เลือกหน่วยนับตามรูปแบบยา"
+        '    item2.Value = "0"
+        '    ddl_package_sum.Items.Insert(0, item2)
+        '    ' ddl_package_sum.Items.Insert(0, New ListItem("กรุณาเลือก", 5))
+        '    ddl_package_sum.Items.Add(New ListItem("kilogram", 769))
+        '    ddl_package_sum.Items.Add(New ListItem("LITS", 773))
+        'End If
 
-        End If
+        'End If
         'Dim ws As New AUTHEN_LOG.Authentication
         'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "บันทึกปริมาณผลิตยาตัวอย่าง", _process)
 
