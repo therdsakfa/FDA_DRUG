@@ -190,6 +190,7 @@ Public Class UC_DS_MAIN
         ''GV_lcnno.fin = Visible
     End Sub
 
+
     Protected Sub GV_lcnno_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles GV_lcnno.PageIndexChanging
         GV_lcnno.PageIndex = e.NewPageIndex
         GV_lcnno_DataBinding()
@@ -309,6 +310,8 @@ Public Class UC_DS_MAIN
 
         Dim int_index As Integer = Convert.ToInt32(e.CommandArgument)
         Dim str_ID As String = GV_lcnno.DataKeys.Item(int_index)("IDA").ToString()
+
+
         Dim dao As New DAO_DRUG.ClsDBdrsamp
         dao.GetDataby_IDA(str_ID)
 
@@ -319,7 +322,9 @@ Public Class UC_DS_MAIN
             Catch ex As Exception
 
             End Try
+
         End If
+
 
         'Response.Redirect("~\DS\POPUP_DS_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "")
         'Dim ws As New AUTHEN_LOG.Authentication
@@ -351,35 +356,17 @@ Public Class UC_DS_MAIN
 
     End Sub
 
-    'Private Sub GV_lcnno_DataBound(sender As Object, e As GridItemEventArgs) Handles GV_lcnno.DataBound
-    '    If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
-    '        Dim item As GridDataItem
-    '        item = e.Item
-    '        Dim IDA As String = item("H_IDA").Text
-    '        Dim btn_Select As LinkButton = DirectCast(item("_sel").Controls(0), LinkButton)
+    Private Sub GV_lcnno_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles GV_lcnno.RowDataBound
+        If e.Row.RowType = DataControlRowType.DataRow Then
+            Dim btn_edit As Button = DirectCast(e.Row.FindControl("btn_select"), Button)
+            Dim ida As String = GV_lcnno.DataKeys.Item(e.Row.RowIndex).Value.ToString()
 
-
-    '        Dim dao_ds As New DAO_DRUG.ClsDBdrsamp
-    '        Dim lcntpcd As String = ""
-    '        Try
-    '            dao_ds.GetDataby_PRODUCT_ID_IDA(IDA)
-    '            If dao_ds.fields.STATUS_ID >= 4 Then
-    '                btn_Select.Style.Add("display", "none")
-    '            Else
-    '                btn_Select.Style.Add("display", "block")
-    '            End If
-
-    '        Catch ex As Exception
-
-    '        End Try
-
-    '        Try
-    '            'dao.GetDataby_IDA(IDA)
-
-    '        Catch ex As Exception
-
-    '        End Try
-    '    End If
-    'End Sub
+            Dim dao As New DAO_DRUG.ClsDBdrsamp
+            dao.GetDataby_IDA(ida)
+            If dao.fields.STATUS_ID >= 2 Then
+                btn_edit.Style.Add("display", "none")
+            End If
+        End If
+    End Sub
 
 End Class

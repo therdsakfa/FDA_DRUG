@@ -206,7 +206,18 @@
                 _RCVDATE = value
             End Set
         End Property
+
+        Private _REMARK As String
+        Public Property REMARK() As String
+            Get
+                Return _REMARK
+            End Get
+            Set(ByVal value As String)
+                _REMARK = value
+            End Set
+        End Property
     End Class
+
     ' 
 
 
