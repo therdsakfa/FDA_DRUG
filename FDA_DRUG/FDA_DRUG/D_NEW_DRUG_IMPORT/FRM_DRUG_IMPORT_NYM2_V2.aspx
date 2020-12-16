@@ -175,7 +175,7 @@
         <div class="panel panel-info" style="width: 100%">
             <div class="panel-heading">
                 <div class="modal-title text-center h1 ">
-                    นยม.<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                    นยม.<button type="button" class="btn btn-default pull-right" data-dismiss="modal" onclick="close_modal();">Close</button>
                 </div>
                 <div class="panel-body panel-info" style="width: 100%">
 
