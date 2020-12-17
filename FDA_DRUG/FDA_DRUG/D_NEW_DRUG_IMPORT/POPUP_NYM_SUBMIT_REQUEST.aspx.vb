@@ -342,7 +342,12 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        Dim dao_rg As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+        Try
+            dao_rg.GetDataby_IDA(_DL)
+        Catch ex As Exception
 
+        End Try
         dao2.GetDataby_IDA(_IDA)
         dao3.getdata_ida(_IDA)
         dao4.getdata_ida(_IDA)
@@ -351,11 +356,25 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim class_xml3 As New CLASS_NYM_3_SM
         Dim class_xml4 As New CLASS_NYM_4_SM
 
-        class_xml21.NYM_2s = dao2.fields
+        Try
+            class_xml21.NYM_2s = dao2.fields
+        Catch ex As Exception
+
+        End Try
+        Try
+            class_xml3.NYM_3s = dao3.fields
+        Catch ex As Exception
+
+        End Try
+        Try
+            class_xml4.NYM_4s = dao4.fields
+        Catch ex As Exception
+
+        End Try
         'class_xml21.NYM_2s = dao2.fields
         'class_xml22.NYM_2s = dao2.fields
-        'class_xml3.NYM_3s = dao3.fields
-        'class_xml4.NYM_4s = dao4.fields
+
+
 
         'Dim p_noryormor2 As New CLASS_NYM_2
         'p_noryormor2 = p_nym2
@@ -372,7 +391,39 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         class_xml3.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(_IDA)                        'แก้ตรงนี้ 
         class_xml4.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)                        'แก้ตรงนี้
 
+        If _process = 1027 Then
+            class_xml21.DT_SHOW.DT7 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(_DL) 'ดึงตัวยาสำคัญ
+            class_xml21.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
+            class_xml21.DT_SHOW.DT11 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(_DL)
+            Try
+                class_xml21.DT_SHOW.DT10 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_rg.fields.CITIZEN_ID_AUTHORIZE, 0)
+            Catch ex As Exception
+
+            End Try
+        ElseIf _process = 1028 Then
+            class_xml3.DT_SHOW.DT7 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(_DL) 'ดึงตัวยาสำคัญ
+            class_xml3.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
+            class_xml3.DT_SHOW.DT11 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(_DL)
+            Try
+                class_xml3.DT_SHOW.DT10 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_rg.fields.CITIZEN_ID_AUTHORIZE, 0)
+            Catch ex As Exception
+
+            End Try
+        ElseIf _process = 1029 Then
+            class_xml4.DT_SHOW.DT7 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(_DL) 'ดึงตัวยาสำคัญ
+            class_xml4.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
+            class_xml4.DT_SHOW.DT11 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(_DL)
+            Try
+                class_xml4.DT_SHOW.DT10 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_rg.fields.CITIZEN_ID_AUTHORIZE, 0)
+            Catch ex As Exception
+
+            End Try
+        End If
+
+
         p_nym2 = class_xml21
+        p_nym3 = class_xml3
+        p_nym4 = class_xml4
 
         Dim dao_nym2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao_nym3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
