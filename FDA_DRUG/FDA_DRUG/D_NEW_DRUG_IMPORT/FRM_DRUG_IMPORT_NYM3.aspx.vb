@@ -13,11 +13,22 @@ Public Class FRM_DRUG_IMPORT_NYM3
     Sub RunSession()
 
         Try
+            _process = Request.QueryString("process")
+        Catch ex As Exception
+
+        End Try
+        Try
+            _DL = Request.QueryString("DL")
+        Catch ex As Exception
+
+        End Try
+        Try
             _CLS = Session("CLS")
             ''นำค่า Session ใส่ ในตัวแปร _CLS
-            _process = Request.QueryString("process")           'เรียก Process ที่เราเรียก
-            _DL = Request.QueryString("DL")
-            _IDA = Request.QueryString("IDA")
+            'เรียก Process ที่เราเรียก
+
+            '_IDA = Request.QueryString("IDA")
+            '_TR_ID = Request.QueryString("TR_ID")
             '_lct_ida = Request.QueryString("lct_ida")
             '_type = Request.QueryString("type")
             '_process_for = Request.QueryString("process_for")
@@ -37,26 +48,47 @@ Public Class FRM_DRUG_IMPORT_NYM3
     End Sub
 
     Protected Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
-        'Dim DL As String
-        'DL = rcb_search.SelectedValue
-        'If rcb_search.SelectedValue <> "0" Then
+        ''Dim DL As String
+        ''DL = rcb_search.SelectedValue
+        ''If rcb_search.SelectedValue <> "0" Then
+        'Dim url As String = ""
+        'Dim NYM As String = ""
+        'If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
+        '    Select Case _process
+        '        Case "1027"
+        '            NYM = "2"
+        '        Case "1028"
+        '            NYM = "3"
+        '        Case "1029"
+        '            NYM = "4"
+        '        Case "1030"
+        '            NYM = "5"
+        '    End Select
+        '    url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process
+        '    Response.Redirect(url)
+        'End If
+        ''End If
         Dim url As String = ""
         Dim NYM As String = ""
-        If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
-            Select Case _process
-                Case "1027"
-                    NYM = "2"
-                Case "1028"
-                    NYM = "3"
-                Case "1029"
-                    NYM = "4"
-                Case "1030"
-                    NYM = "5"
-            End Select
-            url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process
-            Response.Redirect(url)
-        End If
+        'If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
+        Select Case _process
+            Case "1027"
+                NYM = "2"
+            Case "1028"
+                NYM = "3"
+            Case "1029"
+                NYM = "4"
+            Case "1030"
+                NYM = "5"
+        End Select
+        'url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & 2 & "&process=" & "1027" ' & " & NYM2_ida" & _IDA
+        'Response.Redirect(url)
         'End If
+        url = "../D_NEW_DRUG_IMPORT/POPUP_NYM_REDIRECT2.aspx?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & 2 & "&process=" & "1028" ' & " & NYM2_ida" & _IDA
+        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
+
+
+
     End Sub
     Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand    'กดปุ่มใน grid ให้ทำอะไร จากหหน้
         If TypeOf e.Item Is GridDataItem Then
@@ -74,7 +106,7 @@ Public Class FRM_DRUG_IMPORT_NYM3
                 '    tr_id = dao.fields.TR_ID
                 'Catch ex As Exception
                 'End Try
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "&DL=" & _DL & "&TR_ID=" & item("TR_ID").Text & "');", True)
             ElseIf e.CommandName = "edit" Then
                 dao.GetDataby_IDA_STATUS(NYM3_ida)
                 'Dim DL As Integer = 0

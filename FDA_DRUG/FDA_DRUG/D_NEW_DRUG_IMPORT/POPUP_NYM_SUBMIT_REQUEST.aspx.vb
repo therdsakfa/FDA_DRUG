@@ -342,7 +342,12 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        Dim dao_rg As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+        Try
+            dao_rg.GetDataby_IDA(_DL)
+        Catch ex As Exception
 
+        End Try
         dao2.GetDataby_IDA(_IDA)
         dao3.getdata_ida(_IDA)
         dao4.getdata_ida(_IDA)
@@ -351,11 +356,25 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim class_xml3 As New CLASS_NYM_3_SM
         Dim class_xml4 As New CLASS_NYM_4_SM
 
-        class_xml21.NYM_2s = dao2.fields
+        Try
+            class_xml21.NYM_2s = dao2.fields
+        Catch ex As Exception
+
+        End Try
+        Try
+            class_xml3.NYM_3s = dao3.fields
+        Catch ex As Exception
+
+        End Try
+        Try
+            class_xml4.NYM_4s = dao4.fields
+        Catch ex As Exception
+
+        End Try
         'class_xml21.NYM_2s = dao2.fields
         'class_xml22.NYM_2s = dao2.fields
-        'class_xml3.NYM_3s = dao3.fields
-        'class_xml4.NYM_4s = dao4.fields
+
+
 
         'Dim p_noryormor2 As New CLASS_NYM_2
         'p_noryormor2 = p_nym2
@@ -368,11 +387,200 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim bao_show As New BAO_SHOW
         'class_xml2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA)
         class_xml21.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2_ONLY1(_IDA)
-        class_xml21.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA) '76 66
-        class_xml3.DT_SHOW.DT25 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(_IDA)                        'แก้ตรงนี้ 
-        class_xml4.DT_SHOW.DT27 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)                        'แก้ตรงนี้
+
+
+        'แก้ตรงนี้
+
+        Dim bao_n As New BAO.ClsDBSqlcommand
+        Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
+        Try
+            dao_lcn.GetDataby_IDA(dao_rg.fields.FK_IDA)
+
+        Catch ex As Exception
+
+        End Try
+        If _process = 1027 Then
+
+            Try
+                class_xml21.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
+            Catch ex As Exception
+
+            End Try
+            class_xml21.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM2(_IDA) '76 66
+            class_xml21.DT_SHOW.DT7 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(_DL) 'ดึงตัวยาสำคัญ
+            class_xml21.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
+            class_xml21.DT_SHOW.DT11 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(_DL)
+            Try
+                class_xml21.DT_SHOW.DT10 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_rg.fields.CITIZEN_ID_AUTHORIZE, 0)
+            Catch ex As Exception
+
+            End Try
+            class_xml21.DT_SHOW.DT6 = bao_n.SP_regis(_DL)
+            Try
+                class_xml21.REMARK = dao2.fields.REMARK
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml21.DRUG_COLOR = dao_rg.fields.DRUG_COLOR
+            Catch ex As Exception
+
+            End Try
+            Try
+                If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
+                    dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then
+                    Dim val As String = ""
+                    val = dao_lcn.fields.Co_name
+                    If val = "1" Or val = "2" Or val = "3" Or val = "4" Or val = "5" Or val = "9" Or val = "10" Then
+                        class_xml21.CHK_TYPE_LCN = val
+                        If dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000160127" Then
+                            class_xml21.CHK_TYPE_LCN = "4"
+                        ElseIf dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000165315" Then
+                            class_xml21.CHK_TYPE_LCN = "5"
+                        End If
+                    ElseIf val = "9" Or val = "10" Then
+                        If dao_lcn.fields.lcntpcd.Contains("ผย") Then
+                            class_xml21.CHK_TYPE_LCN = "6"
+                        ElseIf dao_lcn.fields.lcntpcd.Contains("นย") Then
+                            class_xml21.CHK_TYPE_LCN = "7"
+                        End If
+
+                        If dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000160127" Then
+                            class_xml21.CHK_TYPE_LCN = "4"
+                        ElseIf dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000165315" Then
+                            class_xml21.CHK_TYPE_LCN = "5"
+                        End If
+
+                    End If
+                End If
+
+            Catch ex As Exception
+
+            End Try
+        ElseIf _process = 1028 Then
+            Try
+
+                class_xml3.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
+            Catch ex As Exception
+
+            End Try
+            class_xml3.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(_IDA)                        'แก้ตรงนี้ 
+            class_xml3.DT_SHOW.DT7 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(_DL) 'ดึงตัวยาสำคัญ
+            class_xml3.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
+            class_xml3.DT_SHOW.DT11 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(_DL)
+            class_xml3.DT_SHOW.DT6 = bao_n.SP_regis(_DL)
+            Try
+                class_xml3.DT_SHOW.DT10 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_rg.fields.CITIZEN_ID_AUTHORIZE, 0)
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml3.REMARK = dao2.fields.REMARK
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml3.DRUG_COLOR = dao_rg.fields.DRUG_COLOR
+            Catch ex As Exception
+
+            End Try
+
+            Try
+                If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
+                    dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then
+                    Dim val As String = ""
+                    val = dao_lcn.fields.Co_name
+                    If val = "1" Or val = "2" Or val = "3" Or val = "4" Or val = "5" Or val = "9" Or val = "10" Then
+                        class_xml3.CHK_TYPE_LCN = val
+                        If dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000160127" Then
+                            class_xml3.CHK_TYPE_LCN = "4"
+                        ElseIf dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000165315" Then
+                            class_xml3.CHK_TYPE_LCN = "5"
+                        End If
+                    ElseIf val = "9" Or val = "10" Then
+                        If dao_lcn.fields.lcntpcd.Contains("ผย") Then
+                            class_xml3.CHK_TYPE_LCN = "6"
+                        ElseIf dao_lcn.fields.lcntpcd.Contains("นย") Then
+                            class_xml3.CHK_TYPE_LCN = "7"
+                        End If
+
+                        If dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000160127" Then
+                            class_xml3.CHK_TYPE_LCN = "4"
+                        ElseIf dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000165315" Then
+                            class_xml3.CHK_TYPE_LCN = "5"
+                        End If
+
+                    End If
+                End If
+
+            Catch ex As Exception
+
+            End Try
+        ElseIf _process = 1029 Then
+            Try
+
+                class_xml4.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
+            Catch ex As Exception
+
+            End Try
+            class_xml4.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)
+            class_xml4.DT_SHOW.DT7 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(_DL) 'ดึงตัวยาสำคัญ
+            class_xml4.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
+            class_xml4.DT_SHOW.DT11 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(_DL)
+            class_xml4.DT_SHOW.DT6 = bao_n.SP_regis(_DL)
+            Try
+                class_xml4.DT_SHOW.DT10 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_rg.fields.CITIZEN_ID_AUTHORIZE, 0)
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml4.REMARK = dao2.fields.REMARK
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml4.DRUG_COLOR = dao_rg.fields.DRUG_COLOR
+            Catch ex As Exception
+
+            End Try
+
+            Try
+                If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
+                    dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then
+                    Dim val As String = ""
+                    val = dao_lcn.fields.Co_name
+                    If val = "1" Or val = "2" Or val = "3" Or val = "4" Or val = "5" Or val = "9" Or val = "10" Then
+                        class_xml4.CHK_TYPE_LCN = val
+                        If dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000160127" Then
+                            class_xml4.CHK_TYPE_LCN = "4"
+                        ElseIf dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000165315" Then
+                            class_xml4.CHK_TYPE_LCN = "5"
+                        End If
+                    ElseIf val = "9" Or val = "10" Then
+                        If dao_lcn.fields.lcntpcd.Contains("ผย") Then
+                            class_xml4.CHK_TYPE_LCN = "6"
+                        ElseIf dao_lcn.fields.lcntpcd.Contains("นย") Then
+                            class_xml4.CHK_TYPE_LCN = "7"
+                        End If
+
+                        If dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000160127" Then
+                            class_xml4.CHK_TYPE_LCN = "4"
+                        ElseIf dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000165315" Then
+                            class_xml4.CHK_TYPE_LCN = "5"
+                        End If
+
+                    End If
+                End If
+
+            Catch ex As Exception
+
+            End Try
+        End If
+
 
         p_nym2 = class_xml21
+        p_nym3 = class_xml3
+        p_nym4 = class_xml4
 
         Dim dao_nym2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao_nym3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
