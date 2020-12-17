@@ -207,7 +207,7 @@
             <tr>
               <td class="auto-style18">
 
-                   <telerik:RadGrid ID="RadGrid1" runat="server" GridLines="None"  ShowFooter="True" Width="228%" AutoGenerateColumns="False" CellSpacing="0" >
+                   <telerik:RadGrid ID="RadGrid1" runat="server" GridLines="None"  ShowFooter="True" Width="150%" AutoGenerateColumns="False" CellSpacing="0" >
                    <MasterTableView>
                         <Columns>
                             <telerik:GridBoundColumn UniqueName="RowNumber" HeaderText="ลำดับ" DataField="RowNumber" >
@@ -302,8 +302,14 @@
                                                      <telerik:GridBoundColumn UniqueName="IDA" HeaderText="ลำดับ" DataField="IDA" display ="false"  >
                                  <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
-                             <telerik:GridBoundColumn UniqueName="IM_DETAIL" HeaderText="รายละเอียดของสินค้าที่อนุญาต" DataField="IM_DETAIL" >
-                                  <ItemStyle HorizontalAlign="Left" />
+                            <telerik:GridBoundColumn UniqueName="IM_DETAIL" HeaderText="รายละเอียดของสินค้าที่อนุญาต" DataField="IM_DETAIL" >
+                                 <ItemStyle HorizontalAlign="Left" />
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn UniqueName="SUM" HeaderText="จำนวนปริมาณนำสั่ง / ผลิต" DataField="SUM" >
+                                 <ItemStyle HorizontalAlign="Center" />
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn UniqueName="SMALL_UNIT" HeaderText="หน่วย" DataField="SMALL_UNIT" >
+                                 <ItemStyle HorizontalAlign="Center" />
                             </telerik:GridBoundColumn>
                             <telerik:GridButtonColumn UniqueName="del" ButtonType="LinkButton" Text="ลบข้อมูล" CommandName="del">
                             </telerik:GridButtonColumn>

@@ -138,9 +138,17 @@
                            <asp:Button ID="btn_Select" runat="server" Text="ดูข้อมูล/ยื่นคำขอ" CommandName="sel" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
                            &nbsp; &nbsp; &nbsp;                        
                        </ItemTemplate>
-
+                       
                        <ItemStyle Width="15%" HorizontalAlign="center"></ItemStyle>
                    </asp:TemplateField>
+                   <%--<asp:TemplateField ItemStyle-Width="15%" ItemStyle-HorizontalAlign="center">
+                       <ItemTemplate>
+                           <asp:Button ID="btn_choose" runat="server" Text="แก้ไขข้อมูลส่วนที่ 2" CommandName="choose" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
+                           &nbsp; &nbsp; &nbsp;                        
+                       </ItemTemplate>
+                       
+                       <ItemStyle Width="15%" HorizontalAlign="center"></ItemStyle>
+                   </asp:TemplateField>--%>
                   
                    </Columns>
                <EmptyDataTemplate>
