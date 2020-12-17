@@ -400,7 +400,13 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
         End Try
         If _process = 1027 Then
+            Try
+                Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT
+                dao_unit.GetDataby_sunitcd(dao_rg.fields.UNIT_NORMAL)
+                class_xml21.SMALL_UNIT = dao_unit.fields.unit_name
+            Catch ex As Exception
 
+            End Try
             Try
                 class_xml21.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
             Catch ex As Exception
@@ -425,6 +431,12 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 class_xml21.DRUG_COLOR = dao_rg.fields.DRUG_COLOR
             Catch ex As Exception
 
+            End Try
+            Try
+
+                class_xml21.PACK_SIZE = dao_rg.fields.PACKAGE_DETAIL
+            Catch ex As Exception
+                class_xml21.PACK_SIZE = "-"
             End Try
             Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
@@ -464,6 +476,13 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Catch ex As Exception
 
             End Try
+            Try
+                Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT
+                dao_unit.GetDataby_sunitcd(dao_rg.fields.UNIT_NORMAL)
+                class_xml3.SMALL_UNIT = dao_unit.fields.unit_name
+            Catch ex As Exception
+
+            End Try
             class_xml3.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM3(_IDA)                        'แก้ตรงนี้ 
             class_xml3.DT_SHOW.DT7 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(_DL) 'ดึงตัวยาสำคัญ
             class_xml3.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
@@ -484,7 +503,12 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Catch ex As Exception
 
             End Try
+            Try
 
+                class_xml3.PACK_SIZE = dao_rg.fields.PACKAGE_DETAIL
+            Catch ex As Exception
+                class_xml3.PACK_SIZE = "-"
+            End Try
             Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
                     dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then
@@ -523,6 +547,13 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Catch ex As Exception
 
             End Try
+            Try
+                Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT
+                dao_unit.GetDataby_sunitcd(dao_rg.fields.UNIT_NORMAL)
+                class_xml4.SMALL_UNIT = dao_unit.fields.unit_name
+            Catch ex As Exception
+
+            End Try
             class_xml4.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)
             class_xml4.DT_SHOW.DT7 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(_DL) 'ดึงตัวยาสำคัญ
             class_xml4.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
@@ -543,7 +574,12 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Catch ex As Exception
 
             End Try
+            Try
 
+                class_xml4.PACK_SIZE = dao_rg.fields.PACKAGE_DETAIL
+            Catch ex As Exception
+                class_xml4.PACK_SIZE = "-"
+            End Try
             Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
                     dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then

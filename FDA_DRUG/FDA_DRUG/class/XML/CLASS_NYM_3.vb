@@ -51,4 +51,22 @@
             _CHK_TYPE_LCN = value
         End Set
     End Property
+    Private _PACK_SIZE As String
+    Public Property PACK_SIZE() As String
+        Get
+            Return _PACK_SIZE
+        End Get
+        Set(ByVal value As String)
+            _PACK_SIZE = value
+        End Set
+    End Property
+    Private _SMALL_UNIT As String
+    Public Property SMALL_UNIT() As String
+        Get
+            Return _SMALL_UNIT
+        End Get
+        Set(ByVal value As String)
+            _SMALL_UNIT = value
+        End Set
+    End Property
 End Class

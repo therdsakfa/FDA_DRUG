@@ -131,7 +131,7 @@
                 End Try
                 str = "เพิ่ม/แก้ไขวันที่เริ่มกระบวนการ " & start_date & " เป็น " & start_date & " และเพิ่ม/แก้ไขวันสิ้นสุดจาก " _
                     & end_date & " เป็น " & end_date & " และเพิ่ม/แก้ไขการอนุมัติเป็น " & ddl_app.SelectedItem.Text & " และเพิ่ม/แก้ไขเลขอ้างอิงโฆษณาจาก " & IIf(Len(dao.fields.REF_NO) <= 0, "-", dao.fields.REF_NO) & " เป็น " _
-                    & txt_ref_no.Text  '& " เพิ่ม/แก้ไขหมายเหตุประกอบผลพิจารณาจาก " & "" & " เป็น " & txt_remark.Text
+                    & txt_ref_no.Text & " เพิ่ม/แก้ไขหมายเหตุประกอบผลพิจารณาจาก " & "" & " เป็น " & txt_remark.Text
 
                 'Dim ws As New AUTHEN_LOG.Authentication
                 'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "บันทึกวันที่เริ่ม-สิ้นสุดของช่วงเวลา", "")
