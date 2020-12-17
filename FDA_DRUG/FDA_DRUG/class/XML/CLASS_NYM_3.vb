@@ -24,4 +24,31 @@
         End Set
     End Property
 #End Region
+    Private _REMARK As String
+    Public Property REMARK() As String
+        Get
+            Return _REMARK
+        End Get
+        Set(ByVal value As String)
+            _REMARK = value
+        End Set
+    End Property
+    Private _DRUG_COLOR As String
+    Public Property DRUG_COLOR() As String
+        Get
+            Return _DRUG_COLOR
+        End Get
+        Set(ByVal value As String)
+            _DRUG_COLOR = value
+        End Set
+    End Property
+    Private _CHK_TYPE_LCN As String
+    Public Property CHK_TYPE_LCN() As String
+        Get
+            Return _CHK_TYPE_LCN
+        End Get
+        Set(ByVal value As String)
+            _CHK_TYPE_LCN = value
+        End Set
+    End Property
 End Class
