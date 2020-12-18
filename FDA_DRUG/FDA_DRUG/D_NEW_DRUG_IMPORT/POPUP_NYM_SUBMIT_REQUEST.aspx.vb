@@ -762,9 +762,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         End If
 
 
-        p_nym2 = class_xml21
-        p_nym3 = class_xml3
-        p_nym4 = class_xml4
+
 
         Dim dao_nym2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao_nym3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
@@ -797,7 +795,19 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym4.fields.TR_ID) 'load_PDF(filename)
         End If
 
+        Try
+            Dim url As String = ""
+            url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
 
+            class_xml21.QR_CODE = QR_CODE_IMG(url)
+            class_xml3.QR_CODE = QR_CODE_IMG(url)
+            class_xml4.QR_CODE = QR_CODE_IMG(url)
+        Catch ex As Exception
+
+        End Try
+        p_nym2 = class_xml21
+        p_nym3 = class_xml3
+        p_nym4 = class_xml4
         LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
 
 

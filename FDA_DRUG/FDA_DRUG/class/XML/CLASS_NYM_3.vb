@@ -105,4 +105,13 @@
             _LONG_RCVDATE = value
         End Set
     End Property
+    Private _QR_CODE As String
+    Public Property QR_CODE() As String
+        Get
+            Return _QR_CODE
+        End Get
+        Set(ByVal value As String)
+            _QR_CODE = value
+        End Set
+    End Property
 End Class
