@@ -115,23 +115,11 @@ Partial Public Class LINQ_FDA_DRUG_IMPORTDataContext
     End Sub
   Partial Private Sub DeleteFDA_DRUG_IMPORT_NYM_1(instance As FDA_DRUG_IMPORT_NYM_1)
     End Sub
-  Partial Private Sub InsertFDA_DRUG_IMPORT_NYM_3(instance As FDA_DRUG_IMPORT_NYM_3)
-    End Sub
-  Partial Private Sub UpdateFDA_DRUG_IMPORT_NYM_3(instance As FDA_DRUG_IMPORT_NYM_3)
-    End Sub
-  Partial Private Sub DeleteFDA_DRUG_IMPORT_NYM_3(instance As FDA_DRUG_IMPORT_NYM_3)
-    End Sub
   Partial Private Sub InsertFDA_DRUG_IMPORT_NYM_5(instance As FDA_DRUG_IMPORT_NYM_5)
     End Sub
   Partial Private Sub UpdateFDA_DRUG_IMPORT_NYM_5(instance As FDA_DRUG_IMPORT_NYM_5)
     End Sub
   Partial Private Sub DeleteFDA_DRUG_IMPORT_NYM_5(instance As FDA_DRUG_IMPORT_NYM_5)
-    End Sub
-  Partial Private Sub InsertFDA_DRUG_IMPORT_NYM_4(instance As FDA_DRUG_IMPORT_NYM_4)
-    End Sub
-  Partial Private Sub UpdateFDA_DRUG_IMPORT_NYM_4(instance As FDA_DRUG_IMPORT_NYM_4)
-    End Sub
-  Partial Private Sub DeleteFDA_DRUG_IMPORT_NYM_4(instance As FDA_DRUG_IMPORT_NYM_4)
     End Sub
   Partial Private Sub InsertFDA_DRUG_IMPORT_NYM_6(instance As FDA_DRUG_IMPORT_NYM_6)
     End Sub
@@ -144,6 +132,18 @@ Partial Public Class LINQ_FDA_DRUG_IMPORTDataContext
   Partial Private Sub UpdateFDA_DRUG_IMPORT_NYM_2(instance As FDA_DRUG_IMPORT_NYM_2)
     End Sub
   Partial Private Sub DeleteFDA_DRUG_IMPORT_NYM_2(instance As FDA_DRUG_IMPORT_NYM_2)
+    End Sub
+  Partial Private Sub InsertFDA_DRUG_IMPORT_NYM_3(instance As FDA_DRUG_IMPORT_NYM_3)
+    End Sub
+  Partial Private Sub UpdateFDA_DRUG_IMPORT_NYM_3(instance As FDA_DRUG_IMPORT_NYM_3)
+    End Sub
+  Partial Private Sub DeleteFDA_DRUG_IMPORT_NYM_3(instance As FDA_DRUG_IMPORT_NYM_3)
+    End Sub
+  Partial Private Sub InsertFDA_DRUG_IMPORT_NYM_4(instance As FDA_DRUG_IMPORT_NYM_4)
+    End Sub
+  Partial Private Sub UpdateFDA_DRUG_IMPORT_NYM_4(instance As FDA_DRUG_IMPORT_NYM_4)
+    End Sub
+  Partial Private Sub DeleteFDA_DRUG_IMPORT_NYM_4(instance As FDA_DRUG_IMPORT_NYM_4)
     End Sub
   #End Region
 	
@@ -256,21 +256,9 @@ Partial Public Class LINQ_FDA_DRUG_IMPORTDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property FDA_DRUG_IMPORT_NYM_3s() As System.Data.Linq.Table(Of FDA_DRUG_IMPORT_NYM_3)
-		Get
-			Return Me.GetTable(Of FDA_DRUG_IMPORT_NYM_3)
-		End Get
-	End Property
-	
 	Public ReadOnly Property FDA_DRUG_IMPORT_NYM_5s() As System.Data.Linq.Table(Of FDA_DRUG_IMPORT_NYM_5)
 		Get
 			Return Me.GetTable(Of FDA_DRUG_IMPORT_NYM_5)
-		End Get
-	End Property
-	
-	Public ReadOnly Property FDA_DRUG_IMPORT_NYM_4s() As System.Data.Linq.Table(Of FDA_DRUG_IMPORT_NYM_4)
-		Get
-			Return Me.GetTable(Of FDA_DRUG_IMPORT_NYM_4)
 		End Get
 	End Property
 	
@@ -283,6 +271,18 @@ Partial Public Class LINQ_FDA_DRUG_IMPORTDataContext
 	Public ReadOnly Property FDA_DRUG_IMPORT_NYM_2s() As System.Data.Linq.Table(Of FDA_DRUG_IMPORT_NYM_2)
 		Get
 			Return Me.GetTable(Of FDA_DRUG_IMPORT_NYM_2)
+		End Get
+	End Property
+	
+	Public ReadOnly Property FDA_DRUG_IMPORT_NYM_3s() As System.Data.Linq.Table(Of FDA_DRUG_IMPORT_NYM_3)
+		Get
+			Return Me.GetTable(Of FDA_DRUG_IMPORT_NYM_3)
+		End Get
+	End Property
+	
+	Public ReadOnly Property FDA_DRUG_IMPORT_NYM_4s() As System.Data.Linq.Table(Of FDA_DRUG_IMPORT_NYM_4)
+		Get
+			Return Me.GetTable(Of FDA_DRUG_IMPORT_NYM_4)
 		End Get
 	End Property
 End Class
@@ -8944,1982 +8944,6 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_1
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.FDA_DRUG_IMPORT_NYM_3")>  _
-Partial Public Class FDA_DRUG_IMPORT_NYM_3
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _NYM3_IDA As Integer
-	
-	Private _FK_IDA As System.Nullable(Of Integer)
-	
-	Private _DL As String
-	
-	Private _NYM3_NO As String
-	
-	Private _NYM3_DATE_TOP As System.Nullable(Of Date)
-	
-	Private _NYM3_NAME_RECEIVE As String
-	
-	Private _NYM3_ALLOW_PLAN As System.Nullable(Of Integer)
-	
-	Private _NYM3_WRITE As String
-	
-	Private _NYM3_WRITE_DATE As System.Nullable(Of Date)
-	
-	Private _NYM3_TITLE As System.Nullable(Of Integer)
-	
-	Private _NYM3_FULLNAME As String
-	
-	Private _NYM3_POSITION As String
-	
-	Private _NYM3_ALLOW_NAME As System.Nullable(Of Integer)
-	
-	Private _NYM3_ALLOW_NAME_DETAIL As String
-	
-	Private _NYM3_LICENSE As String
-	
-	Private _NYM3_ADDRESS_NO As String
-	
-	Private _NYM3_ADDRESS_SOI As String
-	
-	Private _NYM3_ADDRESS_STREET As String
-	
-	Private _NYM3_ADDRESS_MOO As String
-	
-	Private _NYM3_ADDRESS_DISTRICT As String
-	
-	Private _NYM3_ADDRESS_AMPHUR As String
-	
-	Private _NYM3_ADDRESS_PROVINCE As String
-	
-	Private _NYM3_ADDRESS_PHONE As String
-	
-	Private _NYM3_ADDRESS_FAX As String
-	
-	Private _NYM3_WISH_MED As String
-	
-	Private _NYM3_COUNT_MED As System.Nullable(Of Integer)
-	
-	Private _NYM3_DEPARTMAENT_ID As System.Nullable(Of Integer)
-	
-	Private _NYM3_DEPARTMAENT_NAME As String
-	
-	Private _NYM3_NAME_ASK As String
-	
-	Private _NYM3_NO_AFTER As String
-	
-	Private _NYM3_DATE_TOP_AFTER As System.Nullable(Of Date)
-	
-	Private _NYM3_NAME_RECEIVE_AFTER As String
-	
-	Private _NYM3_ALLOW_PLAN_AFTER As System.Nullable(Of Integer)
-	
-	Private _NYM3_WRITE_AFTER As String
-	
-	Private _NYM3_WRITE_DATE_AFTER As System.Nullable(Of Date)
-	
-	Private _NYM3_TITLE_AFTER As System.Nullable(Of Integer)
-	
-	Private _NYM3_FULLNAME_AFTER As String
-	
-	Private _NYM3_FIRSTNAME_AFTER As String
-	
-	Private _NYM3_LASTNAME_AFTER As String
-	
-	Private _NYM3_POSITION_AFTER As String
-	
-	Private _NYM3_ALLOW_NAME_AFTER As System.Nullable(Of Integer)
-	
-	Private _NYM3_ALLOW_NAME_DETAIL_AFTER As String
-	
-	Private _NYM3_LICENSE_AFTER As String
-	
-	Private _NYM3_ADDRESS_NO_AFTER As String
-	
-	Private _NYM3_ADDRESS_SOI_AFTER As String
-	
-	Private _NYM3_ADDRESS_STREET_AFTER As String
-	
-	Private _NYM3_ADDRESS_MOO_AFTER As String
-	
-	Private _NYM3_ADDRESS_DISTRICT_AFTER As String
-	
-	Private _NYM3_ADDRESS_AMPHUR_AFTER As String
-	
-	Private _NYM3_ADDRESS_PROVINCE_AFTER As String
-	
-	Private _NYM3_ADDRESS_PHONE_AFTER As String
-	
-	Private _NYM3_ADDRESS_FAX_AFTER As String
-	
-	Private _NYM3_WISH_MED_AFTER As String
-	
-	Private _NYM3_COUNT_MED_AFTER As String
-	
-	Private _NYM3_DEPARTMAENT_ID_AFTER As System.Nullable(Of Integer)
-	
-	Private _NYM3_DEPARTMAENT_NAME_AFTER As String
-	
-	Private _NYM3_NAME_ASK_AFTER As String
-	
-	Private _NYM3_DETAIL As String
-	
-	Private _NYM3_DETAIL_AFTER As String
-	
-	Private _NYM3_ACTIVE As System.Nullable(Of Boolean)
-	
-	Private _NYM3_COUNT_KEY As System.Nullable(Of Integer)
-	
-	Private _NYM3_NEWCODE As String
-	
-	Private _NYM3_RCVNO As String
-	
-	Private _NYM3_IDENTIFY As String
-	
-	Private _NYM3_DL As String
-	
-	Private _NYM_TYPE As System.Nullable(Of Integer)
-	
-	Private _TOKEN As String
-	
-	Private _CITICEN As String
-	
-	Private _CREATE_DATE As System.Nullable(Of Date)
-	
-	Private _CREATE_USER As String
-	
-	Private _UPDATE_DATE As System.Nullable(Of Date)
-	
-	Private _UPDATE_USER As String
-	
-	Private _TR_ID As System.Nullable(Of Integer)
-	
-	Private _STATUS_ID As System.Nullable(Of Integer)
-	
-	Private _NYM3_IDENTIFY_STAFF As String
-	
-	Private _CONSIDER_DATE As System.Nullable(Of Date)
-	
-	Private _STAFF_RECEIVE_IDEN As String
-	
-	Private _STAFF_NAME As String
-	
-	Private _APPROVE_DATE As System.Nullable(Of Date)
-	
-	Private _REMARK As String
-	
-	Private _ESTIMATE_CONSIDER_DATE As System.Nullable(Of Date)
-	
-	Private _REMARK_CONSIDER As String
-	
-	Private _REMARK_EDIT As String
-	
-	Private _POSITION_CONSIDER_LINE1 As String
-	
-	Private _POSITION_CONSIDER_LINE2 As String
-	
-	Private _POSITION_CONSIDER_LINE3 As String
-	
-	Private _POSITION_CONSIDER_LINE4 As String
-	
-	Private _POSITION_CONSIDER_LINE5 As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnNYM3_IDAChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnNYM3_IDAChanged()
-    End Sub
-    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnFK_IDAChanged()
-    End Sub
-    Partial Private Sub OnDLChanging(value As String)
-    End Sub
-    Partial Private Sub OnDLChanged()
-    End Sub
-    Partial Private Sub OnNYM3_NOChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_NOChanged()
-    End Sub
-    Partial Private Sub OnNYM3_DATE_TOPChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnNYM3_DATE_TOPChanged()
-    End Sub
-    Partial Private Sub OnNYM3_NAME_RECEIVEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_NAME_RECEIVEChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ALLOW_PLANChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM3_ALLOW_PLANChanged()
-    End Sub
-    Partial Private Sub OnNYM3_WRITEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_WRITEChanged()
-    End Sub
-    Partial Private Sub OnNYM3_WRITE_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnNYM3_WRITE_DATEChanged()
-    End Sub
-    Partial Private Sub OnNYM3_TITLEChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM3_TITLEChanged()
-    End Sub
-    Partial Private Sub OnNYM3_FULLNAMEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_FULLNAMEChanged()
-    End Sub
-    Partial Private Sub OnNYM3_POSITIONChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_POSITIONChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ALLOW_NAMEChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM3_ALLOW_NAMEChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ALLOW_NAME_DETAILChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ALLOW_NAME_DETAILChanged()
-    End Sub
-    Partial Private Sub OnNYM3_LICENSEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_LICENSEChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_NOChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_NOChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_SOIChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_SOIChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_STREETChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_STREETChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_MOOChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_MOOChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_DISTRICTChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_DISTRICTChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_AMPHURChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_AMPHURChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_PROVINCEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_PROVINCEChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_PHONEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_PHONEChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_FAXChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_FAXChanged()
-    End Sub
-    Partial Private Sub OnNYM3_WISH_MEDChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_WISH_MEDChanged()
-    End Sub
-    Partial Private Sub OnNYM3_COUNT_MEDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM3_COUNT_MEDChanged()
-    End Sub
-    Partial Private Sub OnNYM3_DEPARTMAENT_IDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM3_DEPARTMAENT_IDChanged()
-    End Sub
-    Partial Private Sub OnNYM3_DEPARTMAENT_NAMEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_DEPARTMAENT_NAMEChanged()
-    End Sub
-    Partial Private Sub OnNYM3_NAME_ASKChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_NAME_ASKChanged()
-    End Sub
-    Partial Private Sub OnNYM3_NO_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_NO_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_DATE_TOP_AFTERChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnNYM3_DATE_TOP_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_NAME_RECEIVE_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_NAME_RECEIVE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ALLOW_PLAN_AFTERChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM3_ALLOW_PLAN_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_WRITE_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_WRITE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_WRITE_DATE_AFTERChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnNYM3_WRITE_DATE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_TITLE_AFTERChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM3_TITLE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_FULLNAME_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_FULLNAME_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_FIRSTNAME_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_FIRSTNAME_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_LASTNAME_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_LASTNAME_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_POSITION_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_POSITION_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ALLOW_NAME_AFTERChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM3_ALLOW_NAME_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ALLOW_NAME_DETAIL_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ALLOW_NAME_DETAIL_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_LICENSE_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_LICENSE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_NO_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_NO_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_SOI_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_SOI_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_STREET_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_STREET_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_MOO_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_MOO_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_DISTRICT_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_DISTRICT_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_AMPHUR_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_AMPHUR_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_PROVINCE_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_PROVINCE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_PHONE_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_PHONE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_FAX_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_ADDRESS_FAX_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_WISH_MED_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_WISH_MED_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_COUNT_MED_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_COUNT_MED_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_DEPARTMAENT_ID_AFTERChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM3_DEPARTMAENT_ID_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_DEPARTMAENT_NAME_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_DEPARTMAENT_NAME_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_NAME_ASK_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_NAME_ASK_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_DETAILChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_DETAILChanged()
-    End Sub
-    Partial Private Sub OnNYM3_DETAIL_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_DETAIL_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM3_ACTIVEChanging(value As System.Nullable(Of Boolean))
-    End Sub
-    Partial Private Sub OnNYM3_ACTIVEChanged()
-    End Sub
-    Partial Private Sub OnNYM3_COUNT_KEYChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM3_COUNT_KEYChanged()
-    End Sub
-    Partial Private Sub OnNYM3_NEWCODEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_NEWCODEChanged()
-    End Sub
-    Partial Private Sub OnNYM3_RCVNOChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_RCVNOChanged()
-    End Sub
-    Partial Private Sub OnNYM3_IDENTIFYChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_IDENTIFYChanged()
-    End Sub
-    Partial Private Sub OnNYM3_DLChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_DLChanged()
-    End Sub
-    Partial Private Sub OnNYM_TYPEChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM_TYPEChanged()
-    End Sub
-    Partial Private Sub OnTOKENChanging(value As String)
-    End Sub
-    Partial Private Sub OnTOKENChanged()
-    End Sub
-    Partial Private Sub OnCITICENChanging(value As String)
-    End Sub
-    Partial Private Sub OnCITICENChanged()
-    End Sub
-    Partial Private Sub OnCREATE_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnCREATE_DATEChanged()
-    End Sub
-    Partial Private Sub OnCREATE_USERChanging(value As String)
-    End Sub
-    Partial Private Sub OnCREATE_USERChanged()
-    End Sub
-    Partial Private Sub OnUPDATE_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnUPDATE_DATEChanged()
-    End Sub
-    Partial Private Sub OnUPDATE_USERChanging(value As String)
-    End Sub
-    Partial Private Sub OnUPDATE_USERChanged()
-    End Sub
-    Partial Private Sub OnTR_IDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnTR_IDChanged()
-    End Sub
-    Partial Private Sub OnSTATUS_IDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnSTATUS_IDChanged()
-    End Sub
-    Partial Private Sub OnNYM3_IDENTIFY_STAFFChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM3_IDENTIFY_STAFFChanged()
-    End Sub
-    Partial Private Sub OnCONSIDER_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnCONSIDER_DATEChanged()
-    End Sub
-    Partial Private Sub OnSTAFF_RECEIVE_IDENChanging(value As String)
-    End Sub
-    Partial Private Sub OnSTAFF_RECEIVE_IDENChanged()
-    End Sub
-    Partial Private Sub OnSTAFF_NAMEChanging(value As String)
-    End Sub
-    Partial Private Sub OnSTAFF_NAMEChanged()
-    End Sub
-    Partial Private Sub OnAPPROVE_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnAPPROVE_DATEChanged()
-    End Sub
-    Partial Private Sub OnREMARKChanging(value As String)
-    End Sub
-    Partial Private Sub OnREMARKChanged()
-    End Sub
-    Partial Private Sub OnESTIMATE_CONSIDER_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnESTIMATE_CONSIDER_DATEChanged()
-    End Sub
-    Partial Private Sub OnREMARK_CONSIDERChanging(value As String)
-    End Sub
-    Partial Private Sub OnREMARK_CONSIDERChanged()
-    End Sub
-    Partial Private Sub OnREMARK_EDITChanging(value As String)
-    End Sub
-    Partial Private Sub OnREMARK_EDITChanged()
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE1Changing(value As String)
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE1Changed()
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE2Changing(value As String)
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE2Changed()
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE3Changing(value As String)
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE3Changed()
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE4Changing(value As String)
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE4Changed()
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE5Changing(value As String)
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE5Changed()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property NYM3_IDA() As Integer
-		Get
-			Return Me._NYM3_IDA
-		End Get
-		Set
-			If ((Me._NYM3_IDA = value)  _
-						= false) Then
-				Me.OnNYM3_IDAChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_IDA = value
-				Me.SendPropertyChanged("NYM3_IDA")
-				Me.OnNYM3_IDAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
-	Public Property FK_IDA() As System.Nullable(Of Integer)
-		Get
-			Return Me._FK_IDA
-		End Get
-		Set
-			If (Me._FK_IDA.Equals(value) = false) Then
-				Me.OnFK_IDAChanging(value)
-				Me.SendPropertyChanging
-				Me._FK_IDA = value
-				Me.SendPropertyChanged("FK_IDA")
-				Me.OnFK_IDAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DL", DbType:="NVarChar(MAX)")>  _
-	Public Property DL() As String
-		Get
-			Return Me._DL
-		End Get
-		Set
-			If (String.Equals(Me._DL, value) = false) Then
-				Me.OnDLChanging(value)
-				Me.SendPropertyChanging
-				Me._DL = value
-				Me.SendPropertyChanged("DL")
-				Me.OnDLChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NO", DbType:="NVarChar(50)")>  _
-	Public Property NYM3_NO() As String
-		Get
-			Return Me._NYM3_NO
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_NO, value) = false) Then
-				Me.OnNYM3_NOChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_NO = value
-				Me.SendPropertyChanged("NYM3_NO")
-				Me.OnNYM3_NOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DATE_TOP", DbType:="DateTime")>  _
-	Public Property NYM3_DATE_TOP() As System.Nullable(Of Date)
-		Get
-			Return Me._NYM3_DATE_TOP
-		End Get
-		Set
-			If (Me._NYM3_DATE_TOP.Equals(value) = false) Then
-				Me.OnNYM3_DATE_TOPChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_DATE_TOP = value
-				Me.SendPropertyChanged("NYM3_DATE_TOP")
-				Me.OnNYM3_DATE_TOPChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NAME_RECEIVE", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_NAME_RECEIVE() As String
-		Get
-			Return Me._NYM3_NAME_RECEIVE
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_NAME_RECEIVE, value) = false) Then
-				Me.OnNYM3_NAME_RECEIVEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_NAME_RECEIVE = value
-				Me.SendPropertyChanged("NYM3_NAME_RECEIVE")
-				Me.OnNYM3_NAME_RECEIVEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ALLOW_PLAN", DbType:="Int")>  _
-	Public Property NYM3_ALLOW_PLAN() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM3_ALLOW_PLAN
-		End Get
-		Set
-			If (Me._NYM3_ALLOW_PLAN.Equals(value) = false) Then
-				Me.OnNYM3_ALLOW_PLANChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ALLOW_PLAN = value
-				Me.SendPropertyChanged("NYM3_ALLOW_PLAN")
-				Me.OnNYM3_ALLOW_PLANChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_WRITE", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_WRITE() As String
-		Get
-			Return Me._NYM3_WRITE
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_WRITE, value) = false) Then
-				Me.OnNYM3_WRITEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_WRITE = value
-				Me.SendPropertyChanged("NYM3_WRITE")
-				Me.OnNYM3_WRITEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_WRITE_DATE", DbType:="DateTime")>  _
-	Public Property NYM3_WRITE_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._NYM3_WRITE_DATE
-		End Get
-		Set
-			If (Me._NYM3_WRITE_DATE.Equals(value) = false) Then
-				Me.OnNYM3_WRITE_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_WRITE_DATE = value
-				Me.SendPropertyChanged("NYM3_WRITE_DATE")
-				Me.OnNYM3_WRITE_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_TITLE", DbType:="Int")>  _
-	Public Property NYM3_TITLE() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM3_TITLE
-		End Get
-		Set
-			If (Me._NYM3_TITLE.Equals(value) = false) Then
-				Me.OnNYM3_TITLEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_TITLE = value
-				Me.SendPropertyChanged("NYM3_TITLE")
-				Me.OnNYM3_TITLEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_FULLNAME", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_FULLNAME() As String
-		Get
-			Return Me._NYM3_FULLNAME
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_FULLNAME, value) = false) Then
-				Me.OnNYM3_FULLNAMEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_FULLNAME = value
-				Me.SendPropertyChanged("NYM3_FULLNAME")
-				Me.OnNYM3_FULLNAMEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_POSITION", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_POSITION() As String
-		Get
-			Return Me._NYM3_POSITION
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_POSITION, value) = false) Then
-				Me.OnNYM3_POSITIONChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_POSITION = value
-				Me.SendPropertyChanged("NYM3_POSITION")
-				Me.OnNYM3_POSITIONChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ALLOW_NAME", DbType:="Int")>  _
-	Public Property NYM3_ALLOW_NAME() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM3_ALLOW_NAME
-		End Get
-		Set
-			If (Me._NYM3_ALLOW_NAME.Equals(value) = false) Then
-				Me.OnNYM3_ALLOW_NAMEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ALLOW_NAME = value
-				Me.SendPropertyChanged("NYM3_ALLOW_NAME")
-				Me.OnNYM3_ALLOW_NAMEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ALLOW_NAME_DETAIL", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ALLOW_NAME_DETAIL() As String
-		Get
-			Return Me._NYM3_ALLOW_NAME_DETAIL
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ALLOW_NAME_DETAIL, value) = false) Then
-				Me.OnNYM3_ALLOW_NAME_DETAILChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ALLOW_NAME_DETAIL = value
-				Me.SendPropertyChanged("NYM3_ALLOW_NAME_DETAIL")
-				Me.OnNYM3_ALLOW_NAME_DETAILChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_LICENSE", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_LICENSE() As String
-		Get
-			Return Me._NYM3_LICENSE
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_LICENSE, value) = false) Then
-				Me.OnNYM3_LICENSEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_LICENSE = value
-				Me.SendPropertyChanged("NYM3_LICENSE")
-				Me.OnNYM3_LICENSEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_NO", DbType:="NVarChar(50)")>  _
-	Public Property NYM3_ADDRESS_NO() As String
-		Get
-			Return Me._NYM3_ADDRESS_NO
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_NO, value) = false) Then
-				Me.OnNYM3_ADDRESS_NOChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_NO = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_NO")
-				Me.OnNYM3_ADDRESS_NOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_SOI", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_SOI() As String
-		Get
-			Return Me._NYM3_ADDRESS_SOI
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_SOI, value) = false) Then
-				Me.OnNYM3_ADDRESS_SOIChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_SOI = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_SOI")
-				Me.OnNYM3_ADDRESS_SOIChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_STREET", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_STREET() As String
-		Get
-			Return Me._NYM3_ADDRESS_STREET
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_STREET, value) = false) Then
-				Me.OnNYM3_ADDRESS_STREETChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_STREET = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_STREET")
-				Me.OnNYM3_ADDRESS_STREETChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_MOO", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_MOO() As String
-		Get
-			Return Me._NYM3_ADDRESS_MOO
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_MOO, value) = false) Then
-				Me.OnNYM3_ADDRESS_MOOChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_MOO = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_MOO")
-				Me.OnNYM3_ADDRESS_MOOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_DISTRICT", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_DISTRICT() As String
-		Get
-			Return Me._NYM3_ADDRESS_DISTRICT
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_DISTRICT, value) = false) Then
-				Me.OnNYM3_ADDRESS_DISTRICTChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_DISTRICT = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_DISTRICT")
-				Me.OnNYM3_ADDRESS_DISTRICTChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_AMPHUR", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_AMPHUR() As String
-		Get
-			Return Me._NYM3_ADDRESS_AMPHUR
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_AMPHUR, value) = false) Then
-				Me.OnNYM3_ADDRESS_AMPHURChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_AMPHUR = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_AMPHUR")
-				Me.OnNYM3_ADDRESS_AMPHURChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_PROVINCE", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_PROVINCE() As String
-		Get
-			Return Me._NYM3_ADDRESS_PROVINCE
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_PROVINCE, value) = false) Then
-				Me.OnNYM3_ADDRESS_PROVINCEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_PROVINCE = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_PROVINCE")
-				Me.OnNYM3_ADDRESS_PROVINCEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_PHONE", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_PHONE() As String
-		Get
-			Return Me._NYM3_ADDRESS_PHONE
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_PHONE, value) = false) Then
-				Me.OnNYM3_ADDRESS_PHONEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_PHONE = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_PHONE")
-				Me.OnNYM3_ADDRESS_PHONEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_FAX", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_FAX() As String
-		Get
-			Return Me._NYM3_ADDRESS_FAX
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_FAX, value) = false) Then
-				Me.OnNYM3_ADDRESS_FAXChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_FAX = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_FAX")
-				Me.OnNYM3_ADDRESS_FAXChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_WISH_MED", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_WISH_MED() As String
-		Get
-			Return Me._NYM3_WISH_MED
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_WISH_MED, value) = false) Then
-				Me.OnNYM3_WISH_MEDChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_WISH_MED = value
-				Me.SendPropertyChanged("NYM3_WISH_MED")
-				Me.OnNYM3_WISH_MEDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_COUNT_MED", DbType:="Int")>  _
-	Public Property NYM3_COUNT_MED() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM3_COUNT_MED
-		End Get
-		Set
-			If (Me._NYM3_COUNT_MED.Equals(value) = false) Then
-				Me.OnNYM3_COUNT_MEDChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_COUNT_MED = value
-				Me.SendPropertyChanged("NYM3_COUNT_MED")
-				Me.OnNYM3_COUNT_MEDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DEPARTMAENT_ID", DbType:="Int")>  _
-	Public Property NYM3_DEPARTMAENT_ID() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM3_DEPARTMAENT_ID
-		End Get
-		Set
-			If (Me._NYM3_DEPARTMAENT_ID.Equals(value) = false) Then
-				Me.OnNYM3_DEPARTMAENT_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_DEPARTMAENT_ID = value
-				Me.SendPropertyChanged("NYM3_DEPARTMAENT_ID")
-				Me.OnNYM3_DEPARTMAENT_IDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DEPARTMAENT_NAME", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_DEPARTMAENT_NAME() As String
-		Get
-			Return Me._NYM3_DEPARTMAENT_NAME
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_DEPARTMAENT_NAME, value) = false) Then
-				Me.OnNYM3_DEPARTMAENT_NAMEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_DEPARTMAENT_NAME = value
-				Me.SendPropertyChanged("NYM3_DEPARTMAENT_NAME")
-				Me.OnNYM3_DEPARTMAENT_NAMEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NAME_ASK", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_NAME_ASK() As String
-		Get
-			Return Me._NYM3_NAME_ASK
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_NAME_ASK, value) = false) Then
-				Me.OnNYM3_NAME_ASKChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_NAME_ASK = value
-				Me.SendPropertyChanged("NYM3_NAME_ASK")
-				Me.OnNYM3_NAME_ASKChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NO_AFTER", DbType:="NVarChar(50)")>  _
-	Public Property NYM3_NO_AFTER() As String
-		Get
-			Return Me._NYM3_NO_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_NO_AFTER, value) = false) Then
-				Me.OnNYM3_NO_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_NO_AFTER = value
-				Me.SendPropertyChanged("NYM3_NO_AFTER")
-				Me.OnNYM3_NO_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DATE_TOP_AFTER", DbType:="DateTime")>  _
-	Public Property NYM3_DATE_TOP_AFTER() As System.Nullable(Of Date)
-		Get
-			Return Me._NYM3_DATE_TOP_AFTER
-		End Get
-		Set
-			If (Me._NYM3_DATE_TOP_AFTER.Equals(value) = false) Then
-				Me.OnNYM3_DATE_TOP_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_DATE_TOP_AFTER = value
-				Me.SendPropertyChanged("NYM3_DATE_TOP_AFTER")
-				Me.OnNYM3_DATE_TOP_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NAME_RECEIVE_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_NAME_RECEIVE_AFTER() As String
-		Get
-			Return Me._NYM3_NAME_RECEIVE_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_NAME_RECEIVE_AFTER, value) = false) Then
-				Me.OnNYM3_NAME_RECEIVE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_NAME_RECEIVE_AFTER = value
-				Me.SendPropertyChanged("NYM3_NAME_RECEIVE_AFTER")
-				Me.OnNYM3_NAME_RECEIVE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ALLOW_PLAN_AFTER", DbType:="Int")>  _
-	Public Property NYM3_ALLOW_PLAN_AFTER() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM3_ALLOW_PLAN_AFTER
-		End Get
-		Set
-			If (Me._NYM3_ALLOW_PLAN_AFTER.Equals(value) = false) Then
-				Me.OnNYM3_ALLOW_PLAN_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ALLOW_PLAN_AFTER = value
-				Me.SendPropertyChanged("NYM3_ALLOW_PLAN_AFTER")
-				Me.OnNYM3_ALLOW_PLAN_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_WRITE_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_WRITE_AFTER() As String
-		Get
-			Return Me._NYM3_WRITE_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_WRITE_AFTER, value) = false) Then
-				Me.OnNYM3_WRITE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_WRITE_AFTER = value
-				Me.SendPropertyChanged("NYM3_WRITE_AFTER")
-				Me.OnNYM3_WRITE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_WRITE_DATE_AFTER", DbType:="DateTime")>  _
-	Public Property NYM3_WRITE_DATE_AFTER() As System.Nullable(Of Date)
-		Get
-			Return Me._NYM3_WRITE_DATE_AFTER
-		End Get
-		Set
-			If (Me._NYM3_WRITE_DATE_AFTER.Equals(value) = false) Then
-				Me.OnNYM3_WRITE_DATE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_WRITE_DATE_AFTER = value
-				Me.SendPropertyChanged("NYM3_WRITE_DATE_AFTER")
-				Me.OnNYM3_WRITE_DATE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_TITLE_AFTER", DbType:="Int")>  _
-	Public Property NYM3_TITLE_AFTER() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM3_TITLE_AFTER
-		End Get
-		Set
-			If (Me._NYM3_TITLE_AFTER.Equals(value) = false) Then
-				Me.OnNYM3_TITLE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_TITLE_AFTER = value
-				Me.SendPropertyChanged("NYM3_TITLE_AFTER")
-				Me.OnNYM3_TITLE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_FULLNAME_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_FULLNAME_AFTER() As String
-		Get
-			Return Me._NYM3_FULLNAME_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_FULLNAME_AFTER, value) = false) Then
-				Me.OnNYM3_FULLNAME_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_FULLNAME_AFTER = value
-				Me.SendPropertyChanged("NYM3_FULLNAME_AFTER")
-				Me.OnNYM3_FULLNAME_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_FIRSTNAME_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_FIRSTNAME_AFTER() As String
-		Get
-			Return Me._NYM3_FIRSTNAME_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_FIRSTNAME_AFTER, value) = false) Then
-				Me.OnNYM3_FIRSTNAME_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_FIRSTNAME_AFTER = value
-				Me.SendPropertyChanged("NYM3_FIRSTNAME_AFTER")
-				Me.OnNYM3_FIRSTNAME_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_LASTNAME_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_LASTNAME_AFTER() As String
-		Get
-			Return Me._NYM3_LASTNAME_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_LASTNAME_AFTER, value) = false) Then
-				Me.OnNYM3_LASTNAME_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_LASTNAME_AFTER = value
-				Me.SendPropertyChanged("NYM3_LASTNAME_AFTER")
-				Me.OnNYM3_LASTNAME_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_POSITION_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_POSITION_AFTER() As String
-		Get
-			Return Me._NYM3_POSITION_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_POSITION_AFTER, value) = false) Then
-				Me.OnNYM3_POSITION_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_POSITION_AFTER = value
-				Me.SendPropertyChanged("NYM3_POSITION_AFTER")
-				Me.OnNYM3_POSITION_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ALLOW_NAME_AFTER", DbType:="Int")>  _
-	Public Property NYM3_ALLOW_NAME_AFTER() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM3_ALLOW_NAME_AFTER
-		End Get
-		Set
-			If (Me._NYM3_ALLOW_NAME_AFTER.Equals(value) = false) Then
-				Me.OnNYM3_ALLOW_NAME_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ALLOW_NAME_AFTER = value
-				Me.SendPropertyChanged("NYM3_ALLOW_NAME_AFTER")
-				Me.OnNYM3_ALLOW_NAME_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ALLOW_NAME_DETAIL_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ALLOW_NAME_DETAIL_AFTER() As String
-		Get
-			Return Me._NYM3_ALLOW_NAME_DETAIL_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ALLOW_NAME_DETAIL_AFTER, value) = false) Then
-				Me.OnNYM3_ALLOW_NAME_DETAIL_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ALLOW_NAME_DETAIL_AFTER = value
-				Me.SendPropertyChanged("NYM3_ALLOW_NAME_DETAIL_AFTER")
-				Me.OnNYM3_ALLOW_NAME_DETAIL_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_LICENSE_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_LICENSE_AFTER() As String
-		Get
-			Return Me._NYM3_LICENSE_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_LICENSE_AFTER, value) = false) Then
-				Me.OnNYM3_LICENSE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_LICENSE_AFTER = value
-				Me.SendPropertyChanged("NYM3_LICENSE_AFTER")
-				Me.OnNYM3_LICENSE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_NO_AFTER", DbType:="NVarChar(50)")>  _
-	Public Property NYM3_ADDRESS_NO_AFTER() As String
-		Get
-			Return Me._NYM3_ADDRESS_NO_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_NO_AFTER, value) = false) Then
-				Me.OnNYM3_ADDRESS_NO_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_NO_AFTER = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_NO_AFTER")
-				Me.OnNYM3_ADDRESS_NO_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_SOI_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_SOI_AFTER() As String
-		Get
-			Return Me._NYM3_ADDRESS_SOI_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_SOI_AFTER, value) = false) Then
-				Me.OnNYM3_ADDRESS_SOI_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_SOI_AFTER = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_SOI_AFTER")
-				Me.OnNYM3_ADDRESS_SOI_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_STREET_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_STREET_AFTER() As String
-		Get
-			Return Me._NYM3_ADDRESS_STREET_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_STREET_AFTER, value) = false) Then
-				Me.OnNYM3_ADDRESS_STREET_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_STREET_AFTER = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_STREET_AFTER")
-				Me.OnNYM3_ADDRESS_STREET_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_MOO_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_MOO_AFTER() As String
-		Get
-			Return Me._NYM3_ADDRESS_MOO_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_MOO_AFTER, value) = false) Then
-				Me.OnNYM3_ADDRESS_MOO_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_MOO_AFTER = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_MOO_AFTER")
-				Me.OnNYM3_ADDRESS_MOO_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_DISTRICT_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_DISTRICT_AFTER() As String
-		Get
-			Return Me._NYM3_ADDRESS_DISTRICT_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_DISTRICT_AFTER, value) = false) Then
-				Me.OnNYM3_ADDRESS_DISTRICT_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_DISTRICT_AFTER = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_DISTRICT_AFTER")
-				Me.OnNYM3_ADDRESS_DISTRICT_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_AMPHUR_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_AMPHUR_AFTER() As String
-		Get
-			Return Me._NYM3_ADDRESS_AMPHUR_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_AMPHUR_AFTER, value) = false) Then
-				Me.OnNYM3_ADDRESS_AMPHUR_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_AMPHUR_AFTER = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_AMPHUR_AFTER")
-				Me.OnNYM3_ADDRESS_AMPHUR_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_PROVINCE_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_PROVINCE_AFTER() As String
-		Get
-			Return Me._NYM3_ADDRESS_PROVINCE_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_PROVINCE_AFTER, value) = false) Then
-				Me.OnNYM3_ADDRESS_PROVINCE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_PROVINCE_AFTER = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_PROVINCE_AFTER")
-				Me.OnNYM3_ADDRESS_PROVINCE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_PHONE_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_PHONE_AFTER() As String
-		Get
-			Return Me._NYM3_ADDRESS_PHONE_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_PHONE_AFTER, value) = false) Then
-				Me.OnNYM3_ADDRESS_PHONE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_PHONE_AFTER = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_PHONE_AFTER")
-				Me.OnNYM3_ADDRESS_PHONE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_FAX_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_ADDRESS_FAX_AFTER() As String
-		Get
-			Return Me._NYM3_ADDRESS_FAX_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_ADDRESS_FAX_AFTER, value) = false) Then
-				Me.OnNYM3_ADDRESS_FAX_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ADDRESS_FAX_AFTER = value
-				Me.SendPropertyChanged("NYM3_ADDRESS_FAX_AFTER")
-				Me.OnNYM3_ADDRESS_FAX_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_WISH_MED_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_WISH_MED_AFTER() As String
-		Get
-			Return Me._NYM3_WISH_MED_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_WISH_MED_AFTER, value) = false) Then
-				Me.OnNYM3_WISH_MED_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_WISH_MED_AFTER = value
-				Me.SendPropertyChanged("NYM3_WISH_MED_AFTER")
-				Me.OnNYM3_WISH_MED_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_COUNT_MED_AFTER", DbType:="NVarChar(50)")>  _
-	Public Property NYM3_COUNT_MED_AFTER() As String
-		Get
-			Return Me._NYM3_COUNT_MED_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_COUNT_MED_AFTER, value) = false) Then
-				Me.OnNYM3_COUNT_MED_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_COUNT_MED_AFTER = value
-				Me.SendPropertyChanged("NYM3_COUNT_MED_AFTER")
-				Me.OnNYM3_COUNT_MED_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DEPARTMAENT_ID_AFTER", DbType:="Int")>  _
-	Public Property NYM3_DEPARTMAENT_ID_AFTER() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM3_DEPARTMAENT_ID_AFTER
-		End Get
-		Set
-			If (Me._NYM3_DEPARTMAENT_ID_AFTER.Equals(value) = false) Then
-				Me.OnNYM3_DEPARTMAENT_ID_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_DEPARTMAENT_ID_AFTER = value
-				Me.SendPropertyChanged("NYM3_DEPARTMAENT_ID_AFTER")
-				Me.OnNYM3_DEPARTMAENT_ID_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DEPARTMAENT_NAME_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_DEPARTMAENT_NAME_AFTER() As String
-		Get
-			Return Me._NYM3_DEPARTMAENT_NAME_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_DEPARTMAENT_NAME_AFTER, value) = false) Then
-				Me.OnNYM3_DEPARTMAENT_NAME_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_DEPARTMAENT_NAME_AFTER = value
-				Me.SendPropertyChanged("NYM3_DEPARTMAENT_NAME_AFTER")
-				Me.OnNYM3_DEPARTMAENT_NAME_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NAME_ASK_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_NAME_ASK_AFTER() As String
-		Get
-			Return Me._NYM3_NAME_ASK_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_NAME_ASK_AFTER, value) = false) Then
-				Me.OnNYM3_NAME_ASK_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_NAME_ASK_AFTER = value
-				Me.SendPropertyChanged("NYM3_NAME_ASK_AFTER")
-				Me.OnNYM3_NAME_ASK_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DETAIL", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_DETAIL() As String
-		Get
-			Return Me._NYM3_DETAIL
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_DETAIL, value) = false) Then
-				Me.OnNYM3_DETAILChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_DETAIL = value
-				Me.SendPropertyChanged("NYM3_DETAIL")
-				Me.OnNYM3_DETAILChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DETAIL_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_DETAIL_AFTER() As String
-		Get
-			Return Me._NYM3_DETAIL_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_DETAIL_AFTER, value) = false) Then
-				Me.OnNYM3_DETAIL_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_DETAIL_AFTER = value
-				Me.SendPropertyChanged("NYM3_DETAIL_AFTER")
-				Me.OnNYM3_DETAIL_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ACTIVE", DbType:="Bit")>  _
-	Public Property NYM3_ACTIVE() As System.Nullable(Of Boolean)
-		Get
-			Return Me._NYM3_ACTIVE
-		End Get
-		Set
-			If (Me._NYM3_ACTIVE.Equals(value) = false) Then
-				Me.OnNYM3_ACTIVEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_ACTIVE = value
-				Me.SendPropertyChanged("NYM3_ACTIVE")
-				Me.OnNYM3_ACTIVEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_COUNT_KEY", DbType:="Int")>  _
-	Public Property NYM3_COUNT_KEY() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM3_COUNT_KEY
-		End Get
-		Set
-			If (Me._NYM3_COUNT_KEY.Equals(value) = false) Then
-				Me.OnNYM3_COUNT_KEYChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_COUNT_KEY = value
-				Me.SendPropertyChanged("NYM3_COUNT_KEY")
-				Me.OnNYM3_COUNT_KEYChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NEWCODE", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_NEWCODE() As String
-		Get
-			Return Me._NYM3_NEWCODE
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_NEWCODE, value) = false) Then
-				Me.OnNYM3_NEWCODEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_NEWCODE = value
-				Me.SendPropertyChanged("NYM3_NEWCODE")
-				Me.OnNYM3_NEWCODEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_RCVNO", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_RCVNO() As String
-		Get
-			Return Me._NYM3_RCVNO
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_RCVNO, value) = false) Then
-				Me.OnNYM3_RCVNOChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_RCVNO = value
-				Me.SendPropertyChanged("NYM3_RCVNO")
-				Me.OnNYM3_RCVNOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_IDENTIFY", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_IDENTIFY() As String
-		Get
-			Return Me._NYM3_IDENTIFY
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_IDENTIFY, value) = false) Then
-				Me.OnNYM3_IDENTIFYChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_IDENTIFY = value
-				Me.SendPropertyChanged("NYM3_IDENTIFY")
-				Me.OnNYM3_IDENTIFYChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DL", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_DL() As String
-		Get
-			Return Me._NYM3_DL
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_DL, value) = false) Then
-				Me.OnNYM3_DLChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_DL = value
-				Me.SendPropertyChanged("NYM3_DL")
-				Me.OnNYM3_DLChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM_TYPE", DbType:="Int")>  _
-	Public Property NYM_TYPE() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM_TYPE
-		End Get
-		Set
-			If (Me._NYM_TYPE.Equals(value) = false) Then
-				Me.OnNYM_TYPEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM_TYPE = value
-				Me.SendPropertyChanged("NYM_TYPE")
-				Me.OnNYM_TYPEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TOKEN", DbType:="NVarChar(MAX)")>  _
-	Public Property TOKEN() As String
-		Get
-			Return Me._TOKEN
-		End Get
-		Set
-			If (String.Equals(Me._TOKEN, value) = false) Then
-				Me.OnTOKENChanging(value)
-				Me.SendPropertyChanging
-				Me._TOKEN = value
-				Me.SendPropertyChanged("TOKEN")
-				Me.OnTOKENChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITICEN", DbType:="NVarChar(50)")>  _
-	Public Property CITICEN() As String
-		Get
-			Return Me._CITICEN
-		End Get
-		Set
-			If (String.Equals(Me._CITICEN, value) = false) Then
-				Me.OnCITICENChanging(value)
-				Me.SendPropertyChanging
-				Me._CITICEN = value
-				Me.SendPropertyChanged("CITICEN")
-				Me.OnCITICENChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATE_DATE", DbType:="DateTime")>  _
-	Public Property CREATE_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._CREATE_DATE
-		End Get
-		Set
-			If (Me._CREATE_DATE.Equals(value) = false) Then
-				Me.OnCREATE_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._CREATE_DATE = value
-				Me.SendPropertyChanged("CREATE_DATE")
-				Me.OnCREATE_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATE_USER", DbType:="NVarChar(MAX)")>  _
-	Public Property CREATE_USER() As String
-		Get
-			Return Me._CREATE_USER
-		End Get
-		Set
-			If (String.Equals(Me._CREATE_USER, value) = false) Then
-				Me.OnCREATE_USERChanging(value)
-				Me.SendPropertyChanging
-				Me._CREATE_USER = value
-				Me.SendPropertyChanged("CREATE_USER")
-				Me.OnCREATE_USERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UPDATE_DATE", DbType:="DateTime")>  _
-	Public Property UPDATE_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._UPDATE_DATE
-		End Get
-		Set
-			If (Me._UPDATE_DATE.Equals(value) = false) Then
-				Me.OnUPDATE_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._UPDATE_DATE = value
-				Me.SendPropertyChanged("UPDATE_DATE")
-				Me.OnUPDATE_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UPDATE_USER", DbType:="NVarChar(MAX)")>  _
-	Public Property UPDATE_USER() As String
-		Get
-			Return Me._UPDATE_USER
-		End Get
-		Set
-			If (String.Equals(Me._UPDATE_USER, value) = false) Then
-				Me.OnUPDATE_USERChanging(value)
-				Me.SendPropertyChanging
-				Me._UPDATE_USER = value
-				Me.SendPropertyChanged("UPDATE_USER")
-				Me.OnUPDATE_USERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TR_ID", DbType:="Int")>  _
-	Public Property TR_ID() As System.Nullable(Of Integer)
-		Get
-			Return Me._TR_ID
-		End Get
-		Set
-			If (Me._TR_ID.Equals(value) = false) Then
-				Me.OnTR_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._TR_ID = value
-				Me.SendPropertyChanged("TR_ID")
-				Me.OnTR_IDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STATUS_ID", DbType:="Int")>  _
-	Public Property STATUS_ID() As System.Nullable(Of Integer)
-		Get
-			Return Me._STATUS_ID
-		End Get
-		Set
-			If (Me._STATUS_ID.Equals(value) = false) Then
-				Me.OnSTATUS_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._STATUS_ID = value
-				Me.SendPropertyChanged("STATUS_ID")
-				Me.OnSTATUS_IDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_IDENTIFY_STAFF", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM3_IDENTIFY_STAFF() As String
-		Get
-			Return Me._NYM3_IDENTIFY_STAFF
-		End Get
-		Set
-			If (String.Equals(Me._NYM3_IDENTIFY_STAFF, value) = false) Then
-				Me.OnNYM3_IDENTIFY_STAFFChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM3_IDENTIFY_STAFF = value
-				Me.SendPropertyChanged("NYM3_IDENTIFY_STAFF")
-				Me.OnNYM3_IDENTIFY_STAFFChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CONSIDER_DATE", DbType:="DateTime")>  _
-	Public Property CONSIDER_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._CONSIDER_DATE
-		End Get
-		Set
-			If (Me._CONSIDER_DATE.Equals(value) = false) Then
-				Me.OnCONSIDER_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._CONSIDER_DATE = value
-				Me.SendPropertyChanged("CONSIDER_DATE")
-				Me.OnCONSIDER_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STAFF_RECEIVE_IDEN", DbType:="NVarChar(MAX)")>  _
-	Public Property STAFF_RECEIVE_IDEN() As String
-		Get
-			Return Me._STAFF_RECEIVE_IDEN
-		End Get
-		Set
-			If (String.Equals(Me._STAFF_RECEIVE_IDEN, value) = false) Then
-				Me.OnSTAFF_RECEIVE_IDENChanging(value)
-				Me.SendPropertyChanging
-				Me._STAFF_RECEIVE_IDEN = value
-				Me.SendPropertyChanged("STAFF_RECEIVE_IDEN")
-				Me.OnSTAFF_RECEIVE_IDENChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STAFF_NAME", DbType:="NVarChar(MAX)")>  _
-	Public Property STAFF_NAME() As String
-		Get
-			Return Me._STAFF_NAME
-		End Get
-		Set
-			If (String.Equals(Me._STAFF_NAME, value) = false) Then
-				Me.OnSTAFF_NAMEChanging(value)
-				Me.SendPropertyChanging
-				Me._STAFF_NAME = value
-				Me.SendPropertyChanged("STAFF_NAME")
-				Me.OnSTAFF_NAMEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_APPROVE_DATE", DbType:="DateTime")>  _
-	Public Property APPROVE_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._APPROVE_DATE
-		End Get
-		Set
-			If (Me._APPROVE_DATE.Equals(value) = false) Then
-				Me.OnAPPROVE_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._APPROVE_DATE = value
-				Me.SendPropertyChanged("APPROVE_DATE")
-				Me.OnAPPROVE_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK", DbType:="NVarChar(MAX)")>  _
-	Public Property REMARK() As String
-		Get
-			Return Me._REMARK
-		End Get
-		Set
-			If (String.Equals(Me._REMARK, value) = false) Then
-				Me.OnREMARKChanging(value)
-				Me.SendPropertyChanging
-				Me._REMARK = value
-				Me.SendPropertyChanged("REMARK")
-				Me.OnREMARKChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ESTIMATE_CONSIDER_DATE", DbType:="DateTime")>  _
-	Public Property ESTIMATE_CONSIDER_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._ESTIMATE_CONSIDER_DATE
-		End Get
-		Set
-			If (Me._ESTIMATE_CONSIDER_DATE.Equals(value) = false) Then
-				Me.OnESTIMATE_CONSIDER_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._ESTIMATE_CONSIDER_DATE = value
-				Me.SendPropertyChanged("ESTIMATE_CONSIDER_DATE")
-				Me.OnESTIMATE_CONSIDER_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK_CONSIDER", DbType:="NVarChar(MAX)")>  _
-	Public Property REMARK_CONSIDER() As String
-		Get
-			Return Me._REMARK_CONSIDER
-		End Get
-		Set
-			If (String.Equals(Me._REMARK_CONSIDER, value) = false) Then
-				Me.OnREMARK_CONSIDERChanging(value)
-				Me.SendPropertyChanging
-				Me._REMARK_CONSIDER = value
-				Me.SendPropertyChanged("REMARK_CONSIDER")
-				Me.OnREMARK_CONSIDERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK_EDIT", DbType:="NVarChar(MAX)")>  _
-	Public Property REMARK_EDIT() As String
-		Get
-			Return Me._REMARK_EDIT
-		End Get
-		Set
-			If (String.Equals(Me._REMARK_EDIT, value) = false) Then
-				Me.OnREMARK_EDITChanging(value)
-				Me.SendPropertyChanging
-				Me._REMARK_EDIT = value
-				Me.SendPropertyChanged("REMARK_EDIT")
-				Me.OnREMARK_EDITChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE1", DbType:="NVarChar(MAX)")>  _
-	Public Property POSITION_CONSIDER_LINE1() As String
-		Get
-			Return Me._POSITION_CONSIDER_LINE1
-		End Get
-		Set
-			If (String.Equals(Me._POSITION_CONSIDER_LINE1, value) = false) Then
-				Me.OnPOSITION_CONSIDER_LINE1Changing(value)
-				Me.SendPropertyChanging
-				Me._POSITION_CONSIDER_LINE1 = value
-				Me.SendPropertyChanged("POSITION_CONSIDER_LINE1")
-				Me.OnPOSITION_CONSIDER_LINE1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE2", DbType:="NVarChar(MAX)")>  _
-	Public Property POSITION_CONSIDER_LINE2() As String
-		Get
-			Return Me._POSITION_CONSIDER_LINE2
-		End Get
-		Set
-			If (String.Equals(Me._POSITION_CONSIDER_LINE2, value) = false) Then
-				Me.OnPOSITION_CONSIDER_LINE2Changing(value)
-				Me.SendPropertyChanging
-				Me._POSITION_CONSIDER_LINE2 = value
-				Me.SendPropertyChanged("POSITION_CONSIDER_LINE2")
-				Me.OnPOSITION_CONSIDER_LINE2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE3", DbType:="NVarChar(MAX)")>  _
-	Public Property POSITION_CONSIDER_LINE3() As String
-		Get
-			Return Me._POSITION_CONSIDER_LINE3
-		End Get
-		Set
-			If (String.Equals(Me._POSITION_CONSIDER_LINE3, value) = false) Then
-				Me.OnPOSITION_CONSIDER_LINE3Changing(value)
-				Me.SendPropertyChanging
-				Me._POSITION_CONSIDER_LINE3 = value
-				Me.SendPropertyChanged("POSITION_CONSIDER_LINE3")
-				Me.OnPOSITION_CONSIDER_LINE3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE4", DbType:="NVarChar(MAX)")>  _
-	Public Property POSITION_CONSIDER_LINE4() As String
-		Get
-			Return Me._POSITION_CONSIDER_LINE4
-		End Get
-		Set
-			If (String.Equals(Me._POSITION_CONSIDER_LINE4, value) = false) Then
-				Me.OnPOSITION_CONSIDER_LINE4Changing(value)
-				Me.SendPropertyChanging
-				Me._POSITION_CONSIDER_LINE4 = value
-				Me.SendPropertyChanged("POSITION_CONSIDER_LINE4")
-				Me.OnPOSITION_CONSIDER_LINE4Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE5", DbType:="NVarChar(MAX)")>  _
-	Public Property POSITION_CONSIDER_LINE5() As String
-		Get
-			Return Me._POSITION_CONSIDER_LINE5
-		End Get
-		Set
-			If (String.Equals(Me._POSITION_CONSIDER_LINE5, value) = false) Then
-				Me.OnPOSITION_CONSIDER_LINE5Changing(value)
-				Me.SendPropertyChanging
-				Me._POSITION_CONSIDER_LINE5 = value
-				Me.SendPropertyChanged("POSITION_CONSIDER_LINE5")
-				Me.OnPOSITION_CONSIDER_LINE5Changed
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.FDA_DRUG_IMPORT_NYM_5")>  _
 Partial Public Class FDA_DRUG_IMPORT_NYM_5
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -13049,2026 +11073,6 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_5
 				Me._STAFF_NAME = value
 				Me.SendPropertyChanged("STAFF_NAME")
 				Me.OnSTAFF_NAMEChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.FDA_DRUG_IMPORT_NYM_4")>  _
-Partial Public Class FDA_DRUG_IMPORT_NYM_4
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _NYM4_IDA As Integer
-	
-	Private _FK_IDA As System.Nullable(Of Integer)
-	
-	Private _DL As String
-	
-	Private _NYM4_NO As String
-	
-	Private _NYM4_DATE_TOP As System.Nullable(Of Date)
-	
-	Private _NYM4_NAME_RECEIVE As String
-	
-	Private _NYM4_ALLOW_PLAN As System.Nullable(Of Integer)
-	
-	Private _NYM4_WRITE As String
-	
-	Private _NYM4_WRITE_DATE As System.Nullable(Of Date)
-	
-	Private _NYM4_TITLE As System.Nullable(Of Integer)
-	
-	Private _NYM4_FULLNAME As String
-	
-	Private _NYM4_POSITION As String
-	
-	Private _NYM4_ALLOW_NAME As System.Nullable(Of Integer)
-	
-	Private _NYM4_ALLOW_NAME_DETAIL As String
-	
-	Private _NYM4_LICENSE As String
-	
-	Private _NYM4_ADDRESS_NO As String
-	
-	Private _NYM4_ADDRESS_SOI As String
-	
-	Private _NYM4_ADDRESS_STREET As String
-	
-	Private _NYM4_ADDRESS_MOO As String
-	
-	Private _NYM4_ADDRESS_DISTRICT As String
-	
-	Private _NYM4_ADDRESS_AMPHUR As String
-	
-	Private _NYM4_ADDRESS_PROVINCE As String
-	
-	Private _NYM4_ADDRESS_PHONE As String
-	
-	Private _NYM4_ADDRESS_FAX As String
-	
-	Private _NYM4_WISH_MED As String
-	
-	Private _NYM4_COUNT_MED As System.Nullable(Of Integer)
-	
-	Private _NYM4_DEPARTMAENT_ID As System.Nullable(Of Integer)
-	
-	Private _NYM4_DEPARTMAENT_NAME As String
-	
-	Private _NYM4_GIVETO As String
-	
-	Private _NYM4_NAME_ASK As String
-	
-	Private _NYM4_NO_AFTER As String
-	
-	Private _NYM4_DATE_TOP_AFTER As System.Nullable(Of Date)
-	
-	Private _NYM_NAME_RECEIVE_AFTER As String
-	
-	Private _NYM4_ALLOW_PLAN_AFTER As System.Nullable(Of Integer)
-	
-	Private _NYM4_WRITE_AFTER As String
-	
-	Private _NYM4_WRITE_DATE_AFTER As System.Nullable(Of Date)
-	
-	Private _NYM4_TITLE_AFTER As System.Nullable(Of Integer)
-	
-	Private _NYM4_FULLNAME_AFTER As String
-	
-	Private _NYM4_FIRSTNAME_AFTER As String
-	
-	Private _NYM4_LASTNAME_AFTER As String
-	
-	Private _NYM4_POSITION_AFTER As String
-	
-	Private _NYM4_ALLOW_NAME_AFTER As System.Nullable(Of Integer)
-	
-	Private _NYM4_ALLOW_NAME_DETAIL_AFTER As String
-	
-	Private _NYM4_LICENSE_AFTER As String
-	
-	Private _NYM4_ADDRESS_NO_AFTER As String
-	
-	Private _NYM4_ADDRESS_SOI_AFTER As String
-	
-	Private _NYM4_ADDRESS_STREET_AFTER As String
-	
-	Private _NYM4_ADDRESS_MOO_AFTER As String
-	
-	Private _NYM4_ADDRESS_DISTRICT_AFTER As String
-	
-	Private _NYM4_ADDRESS_AMPHUR_AFTER As String
-	
-	Private _NYM4_ADDRESS_PROVINCE_AFTER As String
-	
-	Private _NYM4_ADDRESS_PHONE_AFTER As String
-	
-	Private _NYM4_ADDRESS_FAX_AFTER As String
-	
-	Private _NYM4_WISH_MED_AFTER As String
-	
-	Private _NYM4_COUNT_MED_AFTER As String
-	
-	Private _NYM4_DEPARTMAENT_ID_AFTER As System.Nullable(Of Integer)
-	
-	Private _NYM4_DEPARTMAENT_NAME_AFTER As String
-	
-	Private _NYM4_GIVETO_AFTER As String
-	
-	Private _NYM4_NAME_ASK_AFTER As String
-	
-	Private _NYM4_DETAIL As String
-	
-	Private _NYM4_DETAIL_AFTER As String
-	
-	Private _NYM4_ACTIVE As System.Nullable(Of Boolean)
-	
-	Private _NYM4_COUNT_KEY As System.Nullable(Of Integer)
-	
-	Private _NYM4_NEWCODE As String
-	
-	Private _NYM4_RCVNO As String
-	
-	Private _NYM4_IDENTIFY As String
-	
-	Private _NYM4_DL As String
-	
-	Private _NYM_TYPE As System.Nullable(Of Integer)
-	
-	Private _TOKEN As String
-	
-	Private _CITIZEN As String
-	
-	Private _CREATE_DATE As System.Nullable(Of Date)
-	
-	Private _CREATE_USER As String
-	
-	Private _UPDATE_DATE As System.Nullable(Of Date)
-	
-	Private _UPDATE_USER As String
-	
-	Private _TR_ID As System.Nullable(Of Integer)
-	
-	Private _STATUS_ID As System.Nullable(Of Integer)
-	
-	Private _NYM4_IDENTIFY_STAFF As String
-	
-	Private _CONSIDER_DATE As System.Nullable(Of Date)
-	
-	Private _STAFF_RECEIVE_IDEN As String
-	
-	Private _STAFF_NAME As String
-	
-	Private _REMARK As String
-	
-	Private _APPROVE_DATE As System.Nullable(Of Date)
-	
-	Private _ESTIMATE_CONSIDER_DATE As System.Nullable(Of Date)
-	
-	Private _REMARK_CONSIDER As String
-	
-	Private _REMARK_EDIT As String
-	
-	Private _POSITION_CONSIDER_LINE1 As String
-	
-	Private _POSITION_CONSIDER_LINE2 As String
-	
-	Private _POSITION_CONSIDER_LINE3 As String
-	
-	Private _POSITION_CONSIDER_LINE4 As String
-	
-	Private _POSITION_CONSIDER_LINE5 As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnNYM4_IDAChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnNYM4_IDAChanged()
-    End Sub
-    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnFK_IDAChanged()
-    End Sub
-    Partial Private Sub OnDLChanging(value As String)
-    End Sub
-    Partial Private Sub OnDLChanged()
-    End Sub
-    Partial Private Sub OnNYM4_NOChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_NOChanged()
-    End Sub
-    Partial Private Sub OnNYM4_DATE_TOPChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnNYM4_DATE_TOPChanged()
-    End Sub
-    Partial Private Sub OnNYM4_NAME_RECEIVEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_NAME_RECEIVEChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ALLOW_PLANChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM4_ALLOW_PLANChanged()
-    End Sub
-    Partial Private Sub OnNYM4_WRITEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_WRITEChanged()
-    End Sub
-    Partial Private Sub OnNYM4_WRITE_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnNYM4_WRITE_DATEChanged()
-    End Sub
-    Partial Private Sub OnNYM4_TITLEChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM4_TITLEChanged()
-    End Sub
-    Partial Private Sub OnNYM4_FULLNAMEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_FULLNAMEChanged()
-    End Sub
-    Partial Private Sub OnNYM4_POSITIONChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_POSITIONChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ALLOW_NAMEChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM4_ALLOW_NAMEChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ALLOW_NAME_DETAILChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ALLOW_NAME_DETAILChanged()
-    End Sub
-    Partial Private Sub OnNYM4_LICENSEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_LICENSEChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_NOChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_NOChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_SOIChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_SOIChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_STREETChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_STREETChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_MOOChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_MOOChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_DISTRICTChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_DISTRICTChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_AMPHURChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_AMPHURChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_PROVINCEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_PROVINCEChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_PHONEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_PHONEChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_FAXChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_FAXChanged()
-    End Sub
-    Partial Private Sub OnNYM4_WISH_MEDChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_WISH_MEDChanged()
-    End Sub
-    Partial Private Sub OnNYM4_COUNT_MEDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM4_COUNT_MEDChanged()
-    End Sub
-    Partial Private Sub OnNYM4_DEPARTMAENT_IDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM4_DEPARTMAENT_IDChanged()
-    End Sub
-    Partial Private Sub OnNYM4_DEPARTMAENT_NAMEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_DEPARTMAENT_NAMEChanged()
-    End Sub
-    Partial Private Sub OnNYM4_GIVETOChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_GIVETOChanged()
-    End Sub
-    Partial Private Sub OnNYM4_NAME_ASKChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_NAME_ASKChanged()
-    End Sub
-    Partial Private Sub OnNYM4_NO_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_NO_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_DATE_TOP_AFTERChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnNYM4_DATE_TOP_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM_NAME_RECEIVE_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM_NAME_RECEIVE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ALLOW_PLAN_AFTERChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM4_ALLOW_PLAN_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_WRITE_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_WRITE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_WRITE_DATE_AFTERChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnNYM4_WRITE_DATE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_TITLE_AFTERChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM4_TITLE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_FULLNAME_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_FULLNAME_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_FIRSTNAME_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_FIRSTNAME_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_LASTNAME_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_LASTNAME_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_POSITION_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_POSITION_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ALLOW_NAME_AFTERChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM4_ALLOW_NAME_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ALLOW_NAME_DETAIL_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ALLOW_NAME_DETAIL_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_LICENSE_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_LICENSE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_NO_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_NO_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_SOI_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_SOI_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_STREET_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_STREET_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_MOO_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_MOO_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_DISTRICT_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_DISTRICT_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_AMPHUR_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_AMPHUR_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_PROVINCE_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_PROVINCE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_PHONE_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_PHONE_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_FAX_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_ADDRESS_FAX_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_WISH_MED_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_WISH_MED_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_COUNT_MED_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_COUNT_MED_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_DEPARTMAENT_ID_AFTERChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM4_DEPARTMAENT_ID_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_DEPARTMAENT_NAME_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_DEPARTMAENT_NAME_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_GIVETO_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_GIVETO_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_NAME_ASK_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_NAME_ASK_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_DETAILChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_DETAILChanged()
-    End Sub
-    Partial Private Sub OnNYM4_DETAIL_AFTERChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_DETAIL_AFTERChanged()
-    End Sub
-    Partial Private Sub OnNYM4_ACTIVEChanging(value As System.Nullable(Of Boolean))
-    End Sub
-    Partial Private Sub OnNYM4_ACTIVEChanged()
-    End Sub
-    Partial Private Sub OnNYM4_COUNT_KEYChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM4_COUNT_KEYChanged()
-    End Sub
-    Partial Private Sub OnNYM4_NEWCODEChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_NEWCODEChanged()
-    End Sub
-    Partial Private Sub OnNYM4_RCVNOChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_RCVNOChanged()
-    End Sub
-    Partial Private Sub OnNYM4_IDENTIFYChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_IDENTIFYChanged()
-    End Sub
-    Partial Private Sub OnNYM4_DLChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_DLChanged()
-    End Sub
-    Partial Private Sub OnNYM_TYPEChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnNYM_TYPEChanged()
-    End Sub
-    Partial Private Sub OnTOKENChanging(value As String)
-    End Sub
-    Partial Private Sub OnTOKENChanged()
-    End Sub
-    Partial Private Sub OnCITIZENChanging(value As String)
-    End Sub
-    Partial Private Sub OnCITIZENChanged()
-    End Sub
-    Partial Private Sub OnCREATE_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnCREATE_DATEChanged()
-    End Sub
-    Partial Private Sub OnCREATE_USERChanging(value As String)
-    End Sub
-    Partial Private Sub OnCREATE_USERChanged()
-    End Sub
-    Partial Private Sub OnUPDATE_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnUPDATE_DATEChanged()
-    End Sub
-    Partial Private Sub OnUPDATE_USERChanging(value As String)
-    End Sub
-    Partial Private Sub OnUPDATE_USERChanged()
-    End Sub
-    Partial Private Sub OnTR_IDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnTR_IDChanged()
-    End Sub
-    Partial Private Sub OnSTATUS_IDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnSTATUS_IDChanged()
-    End Sub
-    Partial Private Sub OnNYM4_IDENTIFY_STAFFChanging(value As String)
-    End Sub
-    Partial Private Sub OnNYM4_IDENTIFY_STAFFChanged()
-    End Sub
-    Partial Private Sub OnCONSIDER_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnCONSIDER_DATEChanged()
-    End Sub
-    Partial Private Sub OnSTAFF_RECEIVE_IDENChanging(value As String)
-    End Sub
-    Partial Private Sub OnSTAFF_RECEIVE_IDENChanged()
-    End Sub
-    Partial Private Sub OnSTAFF_NAMEChanging(value As String)
-    End Sub
-    Partial Private Sub OnSTAFF_NAMEChanged()
-    End Sub
-    Partial Private Sub OnREMARKChanging(value As String)
-    End Sub
-    Partial Private Sub OnREMARKChanged()
-    End Sub
-    Partial Private Sub OnAPPROVE_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnAPPROVE_DATEChanged()
-    End Sub
-    Partial Private Sub OnESTIMATE_CONSIDER_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnESTIMATE_CONSIDER_DATEChanged()
-    End Sub
-    Partial Private Sub OnREMARK_CONSIDERChanging(value As String)
-    End Sub
-    Partial Private Sub OnREMARK_CONSIDERChanged()
-    End Sub
-    Partial Private Sub OnREMARK_EDITChanging(value As String)
-    End Sub
-    Partial Private Sub OnREMARK_EDITChanged()
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE1Changing(value As String)
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE1Changed()
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE2Changing(value As String)
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE2Changed()
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE3Changing(value As String)
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE3Changed()
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE4Changing(value As String)
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE4Changed()
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE5Changing(value As String)
-    End Sub
-    Partial Private Sub OnPOSITION_CONSIDER_LINE5Changed()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property NYM4_IDA() As Integer
-		Get
-			Return Me._NYM4_IDA
-		End Get
-		Set
-			If ((Me._NYM4_IDA = value)  _
-						= false) Then
-				Me.OnNYM4_IDAChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_IDA = value
-				Me.SendPropertyChanged("NYM4_IDA")
-				Me.OnNYM4_IDAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
-	Public Property FK_IDA() As System.Nullable(Of Integer)
-		Get
-			Return Me._FK_IDA
-		End Get
-		Set
-			If (Me._FK_IDA.Equals(value) = false) Then
-				Me.OnFK_IDAChanging(value)
-				Me.SendPropertyChanging
-				Me._FK_IDA = value
-				Me.SendPropertyChanged("FK_IDA")
-				Me.OnFK_IDAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DL", DbType:="NVarChar(MAX)")>  _
-	Public Property DL() As String
-		Get
-			Return Me._DL
-		End Get
-		Set
-			If (String.Equals(Me._DL, value) = false) Then
-				Me.OnDLChanging(value)
-				Me.SendPropertyChanging
-				Me._DL = value
-				Me.SendPropertyChanged("DL")
-				Me.OnDLChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_NO", DbType:="NVarChar(50)")>  _
-	Public Property NYM4_NO() As String
-		Get
-			Return Me._NYM4_NO
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_NO, value) = false) Then
-				Me.OnNYM4_NOChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_NO = value
-				Me.SendPropertyChanged("NYM4_NO")
-				Me.OnNYM4_NOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DATE_TOP", DbType:="DateTime")>  _
-	Public Property NYM4_DATE_TOP() As System.Nullable(Of Date)
-		Get
-			Return Me._NYM4_DATE_TOP
-		End Get
-		Set
-			If (Me._NYM4_DATE_TOP.Equals(value) = false) Then
-				Me.OnNYM4_DATE_TOPChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_DATE_TOP = value
-				Me.SendPropertyChanged("NYM4_DATE_TOP")
-				Me.OnNYM4_DATE_TOPChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_NAME_RECEIVE", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_NAME_RECEIVE() As String
-		Get
-			Return Me._NYM4_NAME_RECEIVE
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_NAME_RECEIVE, value) = false) Then
-				Me.OnNYM4_NAME_RECEIVEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_NAME_RECEIVE = value
-				Me.SendPropertyChanged("NYM4_NAME_RECEIVE")
-				Me.OnNYM4_NAME_RECEIVEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ALLOW_PLAN", DbType:="Int")>  _
-	Public Property NYM4_ALLOW_PLAN() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM4_ALLOW_PLAN
-		End Get
-		Set
-			If (Me._NYM4_ALLOW_PLAN.Equals(value) = false) Then
-				Me.OnNYM4_ALLOW_PLANChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ALLOW_PLAN = value
-				Me.SendPropertyChanged("NYM4_ALLOW_PLAN")
-				Me.OnNYM4_ALLOW_PLANChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_WRITE", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_WRITE() As String
-		Get
-			Return Me._NYM4_WRITE
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_WRITE, value) = false) Then
-				Me.OnNYM4_WRITEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_WRITE = value
-				Me.SendPropertyChanged("NYM4_WRITE")
-				Me.OnNYM4_WRITEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_WRITE_DATE", DbType:="DateTime")>  _
-	Public Property NYM4_WRITE_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._NYM4_WRITE_DATE
-		End Get
-		Set
-			If (Me._NYM4_WRITE_DATE.Equals(value) = false) Then
-				Me.OnNYM4_WRITE_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_WRITE_DATE = value
-				Me.SendPropertyChanged("NYM4_WRITE_DATE")
-				Me.OnNYM4_WRITE_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_TITLE", DbType:="Int")>  _
-	Public Property NYM4_TITLE() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM4_TITLE
-		End Get
-		Set
-			If (Me._NYM4_TITLE.Equals(value) = false) Then
-				Me.OnNYM4_TITLEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_TITLE = value
-				Me.SendPropertyChanged("NYM4_TITLE")
-				Me.OnNYM4_TITLEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_FULLNAME", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_FULLNAME() As String
-		Get
-			Return Me._NYM4_FULLNAME
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_FULLNAME, value) = false) Then
-				Me.OnNYM4_FULLNAMEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_FULLNAME = value
-				Me.SendPropertyChanged("NYM4_FULLNAME")
-				Me.OnNYM4_FULLNAMEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_POSITION", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_POSITION() As String
-		Get
-			Return Me._NYM4_POSITION
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_POSITION, value) = false) Then
-				Me.OnNYM4_POSITIONChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_POSITION = value
-				Me.SendPropertyChanged("NYM4_POSITION")
-				Me.OnNYM4_POSITIONChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ALLOW_NAME", DbType:="Int")>  _
-	Public Property NYM4_ALLOW_NAME() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM4_ALLOW_NAME
-		End Get
-		Set
-			If (Me._NYM4_ALLOW_NAME.Equals(value) = false) Then
-				Me.OnNYM4_ALLOW_NAMEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ALLOW_NAME = value
-				Me.SendPropertyChanged("NYM4_ALLOW_NAME")
-				Me.OnNYM4_ALLOW_NAMEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ALLOW_NAME_DETAIL", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ALLOW_NAME_DETAIL() As String
-		Get
-			Return Me._NYM4_ALLOW_NAME_DETAIL
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ALLOW_NAME_DETAIL, value) = false) Then
-				Me.OnNYM4_ALLOW_NAME_DETAILChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ALLOW_NAME_DETAIL = value
-				Me.SendPropertyChanged("NYM4_ALLOW_NAME_DETAIL")
-				Me.OnNYM4_ALLOW_NAME_DETAILChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_LICENSE", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_LICENSE() As String
-		Get
-			Return Me._NYM4_LICENSE
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_LICENSE, value) = false) Then
-				Me.OnNYM4_LICENSEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_LICENSE = value
-				Me.SendPropertyChanged("NYM4_LICENSE")
-				Me.OnNYM4_LICENSEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_NO", DbType:="NVarChar(50)")>  _
-	Public Property NYM4_ADDRESS_NO() As String
-		Get
-			Return Me._NYM4_ADDRESS_NO
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_NO, value) = false) Then
-				Me.OnNYM4_ADDRESS_NOChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_NO = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_NO")
-				Me.OnNYM4_ADDRESS_NOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_SOI", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_SOI() As String
-		Get
-			Return Me._NYM4_ADDRESS_SOI
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_SOI, value) = false) Then
-				Me.OnNYM4_ADDRESS_SOIChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_SOI = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_SOI")
-				Me.OnNYM4_ADDRESS_SOIChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_STREET", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_STREET() As String
-		Get
-			Return Me._NYM4_ADDRESS_STREET
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_STREET, value) = false) Then
-				Me.OnNYM4_ADDRESS_STREETChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_STREET = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_STREET")
-				Me.OnNYM4_ADDRESS_STREETChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_MOO", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_MOO() As String
-		Get
-			Return Me._NYM4_ADDRESS_MOO
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_MOO, value) = false) Then
-				Me.OnNYM4_ADDRESS_MOOChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_MOO = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_MOO")
-				Me.OnNYM4_ADDRESS_MOOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_DISTRICT", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_DISTRICT() As String
-		Get
-			Return Me._NYM4_ADDRESS_DISTRICT
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_DISTRICT, value) = false) Then
-				Me.OnNYM4_ADDRESS_DISTRICTChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_DISTRICT = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_DISTRICT")
-				Me.OnNYM4_ADDRESS_DISTRICTChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_AMPHUR", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_AMPHUR() As String
-		Get
-			Return Me._NYM4_ADDRESS_AMPHUR
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_AMPHUR, value) = false) Then
-				Me.OnNYM4_ADDRESS_AMPHURChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_AMPHUR = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_AMPHUR")
-				Me.OnNYM4_ADDRESS_AMPHURChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_PROVINCE", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_PROVINCE() As String
-		Get
-			Return Me._NYM4_ADDRESS_PROVINCE
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_PROVINCE, value) = false) Then
-				Me.OnNYM4_ADDRESS_PROVINCEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_PROVINCE = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_PROVINCE")
-				Me.OnNYM4_ADDRESS_PROVINCEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_PHONE", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_PHONE() As String
-		Get
-			Return Me._NYM4_ADDRESS_PHONE
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_PHONE, value) = false) Then
-				Me.OnNYM4_ADDRESS_PHONEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_PHONE = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_PHONE")
-				Me.OnNYM4_ADDRESS_PHONEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_FAX", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_FAX() As String
-		Get
-			Return Me._NYM4_ADDRESS_FAX
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_FAX, value) = false) Then
-				Me.OnNYM4_ADDRESS_FAXChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_FAX = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_FAX")
-				Me.OnNYM4_ADDRESS_FAXChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_WISH_MED", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_WISH_MED() As String
-		Get
-			Return Me._NYM4_WISH_MED
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_WISH_MED, value) = false) Then
-				Me.OnNYM4_WISH_MEDChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_WISH_MED = value
-				Me.SendPropertyChanged("NYM4_WISH_MED")
-				Me.OnNYM4_WISH_MEDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_COUNT_MED", DbType:="Int")>  _
-	Public Property NYM4_COUNT_MED() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM4_COUNT_MED
-		End Get
-		Set
-			If (Me._NYM4_COUNT_MED.Equals(value) = false) Then
-				Me.OnNYM4_COUNT_MEDChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_COUNT_MED = value
-				Me.SendPropertyChanged("NYM4_COUNT_MED")
-				Me.OnNYM4_COUNT_MEDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DEPARTMAENT_ID", DbType:="Int")>  _
-	Public Property NYM4_DEPARTMAENT_ID() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM4_DEPARTMAENT_ID
-		End Get
-		Set
-			If (Me._NYM4_DEPARTMAENT_ID.Equals(value) = false) Then
-				Me.OnNYM4_DEPARTMAENT_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_DEPARTMAENT_ID = value
-				Me.SendPropertyChanged("NYM4_DEPARTMAENT_ID")
-				Me.OnNYM4_DEPARTMAENT_IDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DEPARTMAENT_NAME", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_DEPARTMAENT_NAME() As String
-		Get
-			Return Me._NYM4_DEPARTMAENT_NAME
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_DEPARTMAENT_NAME, value) = false) Then
-				Me.OnNYM4_DEPARTMAENT_NAMEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_DEPARTMAENT_NAME = value
-				Me.SendPropertyChanged("NYM4_DEPARTMAENT_NAME")
-				Me.OnNYM4_DEPARTMAENT_NAMEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_GIVETO", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_GIVETO() As String
-		Get
-			Return Me._NYM4_GIVETO
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_GIVETO, value) = false) Then
-				Me.OnNYM4_GIVETOChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_GIVETO = value
-				Me.SendPropertyChanged("NYM4_GIVETO")
-				Me.OnNYM4_GIVETOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_NAME_ASK", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_NAME_ASK() As String
-		Get
-			Return Me._NYM4_NAME_ASK
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_NAME_ASK, value) = false) Then
-				Me.OnNYM4_NAME_ASKChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_NAME_ASK = value
-				Me.SendPropertyChanged("NYM4_NAME_ASK")
-				Me.OnNYM4_NAME_ASKChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_NO_AFTER", DbType:="NVarChar(50)")>  _
-	Public Property NYM4_NO_AFTER() As String
-		Get
-			Return Me._NYM4_NO_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_NO_AFTER, value) = false) Then
-				Me.OnNYM4_NO_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_NO_AFTER = value
-				Me.SendPropertyChanged("NYM4_NO_AFTER")
-				Me.OnNYM4_NO_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DATE_TOP_AFTER", DbType:="DateTime")>  _
-	Public Property NYM4_DATE_TOP_AFTER() As System.Nullable(Of Date)
-		Get
-			Return Me._NYM4_DATE_TOP_AFTER
-		End Get
-		Set
-			If (Me._NYM4_DATE_TOP_AFTER.Equals(value) = false) Then
-				Me.OnNYM4_DATE_TOP_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_DATE_TOP_AFTER = value
-				Me.SendPropertyChanged("NYM4_DATE_TOP_AFTER")
-				Me.OnNYM4_DATE_TOP_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM_NAME_RECEIVE_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM_NAME_RECEIVE_AFTER() As String
-		Get
-			Return Me._NYM_NAME_RECEIVE_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM_NAME_RECEIVE_AFTER, value) = false) Then
-				Me.OnNYM_NAME_RECEIVE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM_NAME_RECEIVE_AFTER = value
-				Me.SendPropertyChanged("NYM_NAME_RECEIVE_AFTER")
-				Me.OnNYM_NAME_RECEIVE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ALLOW_PLAN_AFTER", DbType:="Int")>  _
-	Public Property NYM4_ALLOW_PLAN_AFTER() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM4_ALLOW_PLAN_AFTER
-		End Get
-		Set
-			If (Me._NYM4_ALLOW_PLAN_AFTER.Equals(value) = false) Then
-				Me.OnNYM4_ALLOW_PLAN_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ALLOW_PLAN_AFTER = value
-				Me.SendPropertyChanged("NYM4_ALLOW_PLAN_AFTER")
-				Me.OnNYM4_ALLOW_PLAN_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_WRITE_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_WRITE_AFTER() As String
-		Get
-			Return Me._NYM4_WRITE_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_WRITE_AFTER, value) = false) Then
-				Me.OnNYM4_WRITE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_WRITE_AFTER = value
-				Me.SendPropertyChanged("NYM4_WRITE_AFTER")
-				Me.OnNYM4_WRITE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_WRITE_DATE_AFTER", DbType:="DateTime")>  _
-	Public Property NYM4_WRITE_DATE_AFTER() As System.Nullable(Of Date)
-		Get
-			Return Me._NYM4_WRITE_DATE_AFTER
-		End Get
-		Set
-			If (Me._NYM4_WRITE_DATE_AFTER.Equals(value) = false) Then
-				Me.OnNYM4_WRITE_DATE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_WRITE_DATE_AFTER = value
-				Me.SendPropertyChanged("NYM4_WRITE_DATE_AFTER")
-				Me.OnNYM4_WRITE_DATE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_TITLE_AFTER", DbType:="Int")>  _
-	Public Property NYM4_TITLE_AFTER() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM4_TITLE_AFTER
-		End Get
-		Set
-			If (Me._NYM4_TITLE_AFTER.Equals(value) = false) Then
-				Me.OnNYM4_TITLE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_TITLE_AFTER = value
-				Me.SendPropertyChanged("NYM4_TITLE_AFTER")
-				Me.OnNYM4_TITLE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_FULLNAME_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_FULLNAME_AFTER() As String
-		Get
-			Return Me._NYM4_FULLNAME_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_FULLNAME_AFTER, value) = false) Then
-				Me.OnNYM4_FULLNAME_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_FULLNAME_AFTER = value
-				Me.SendPropertyChanged("NYM4_FULLNAME_AFTER")
-				Me.OnNYM4_FULLNAME_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_FIRSTNAME_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_FIRSTNAME_AFTER() As String
-		Get
-			Return Me._NYM4_FIRSTNAME_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_FIRSTNAME_AFTER, value) = false) Then
-				Me.OnNYM4_FIRSTNAME_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_FIRSTNAME_AFTER = value
-				Me.SendPropertyChanged("NYM4_FIRSTNAME_AFTER")
-				Me.OnNYM4_FIRSTNAME_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_LASTNAME_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_LASTNAME_AFTER() As String
-		Get
-			Return Me._NYM4_LASTNAME_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_LASTNAME_AFTER, value) = false) Then
-				Me.OnNYM4_LASTNAME_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_LASTNAME_AFTER = value
-				Me.SendPropertyChanged("NYM4_LASTNAME_AFTER")
-				Me.OnNYM4_LASTNAME_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_POSITION_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_POSITION_AFTER() As String
-		Get
-			Return Me._NYM4_POSITION_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_POSITION_AFTER, value) = false) Then
-				Me.OnNYM4_POSITION_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_POSITION_AFTER = value
-				Me.SendPropertyChanged("NYM4_POSITION_AFTER")
-				Me.OnNYM4_POSITION_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ALLOW_NAME_AFTER", DbType:="Int")>  _
-	Public Property NYM4_ALLOW_NAME_AFTER() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM4_ALLOW_NAME_AFTER
-		End Get
-		Set
-			If (Me._NYM4_ALLOW_NAME_AFTER.Equals(value) = false) Then
-				Me.OnNYM4_ALLOW_NAME_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ALLOW_NAME_AFTER = value
-				Me.SendPropertyChanged("NYM4_ALLOW_NAME_AFTER")
-				Me.OnNYM4_ALLOW_NAME_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ALLOW_NAME_DETAIL_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ALLOW_NAME_DETAIL_AFTER() As String
-		Get
-			Return Me._NYM4_ALLOW_NAME_DETAIL_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ALLOW_NAME_DETAIL_AFTER, value) = false) Then
-				Me.OnNYM4_ALLOW_NAME_DETAIL_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ALLOW_NAME_DETAIL_AFTER = value
-				Me.SendPropertyChanged("NYM4_ALLOW_NAME_DETAIL_AFTER")
-				Me.OnNYM4_ALLOW_NAME_DETAIL_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_LICENSE_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_LICENSE_AFTER() As String
-		Get
-			Return Me._NYM4_LICENSE_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_LICENSE_AFTER, value) = false) Then
-				Me.OnNYM4_LICENSE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_LICENSE_AFTER = value
-				Me.SendPropertyChanged("NYM4_LICENSE_AFTER")
-				Me.OnNYM4_LICENSE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_NO_AFTER", DbType:="NVarChar(50)")>  _
-	Public Property NYM4_ADDRESS_NO_AFTER() As String
-		Get
-			Return Me._NYM4_ADDRESS_NO_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_NO_AFTER, value) = false) Then
-				Me.OnNYM4_ADDRESS_NO_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_NO_AFTER = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_NO_AFTER")
-				Me.OnNYM4_ADDRESS_NO_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_SOI_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_SOI_AFTER() As String
-		Get
-			Return Me._NYM4_ADDRESS_SOI_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_SOI_AFTER, value) = false) Then
-				Me.OnNYM4_ADDRESS_SOI_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_SOI_AFTER = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_SOI_AFTER")
-				Me.OnNYM4_ADDRESS_SOI_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_STREET_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_STREET_AFTER() As String
-		Get
-			Return Me._NYM4_ADDRESS_STREET_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_STREET_AFTER, value) = false) Then
-				Me.OnNYM4_ADDRESS_STREET_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_STREET_AFTER = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_STREET_AFTER")
-				Me.OnNYM4_ADDRESS_STREET_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_MOO_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_MOO_AFTER() As String
-		Get
-			Return Me._NYM4_ADDRESS_MOO_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_MOO_AFTER, value) = false) Then
-				Me.OnNYM4_ADDRESS_MOO_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_MOO_AFTER = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_MOO_AFTER")
-				Me.OnNYM4_ADDRESS_MOO_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_DISTRICT_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_DISTRICT_AFTER() As String
-		Get
-			Return Me._NYM4_ADDRESS_DISTRICT_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_DISTRICT_AFTER, value) = false) Then
-				Me.OnNYM4_ADDRESS_DISTRICT_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_DISTRICT_AFTER = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_DISTRICT_AFTER")
-				Me.OnNYM4_ADDRESS_DISTRICT_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_AMPHUR_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_AMPHUR_AFTER() As String
-		Get
-			Return Me._NYM4_ADDRESS_AMPHUR_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_AMPHUR_AFTER, value) = false) Then
-				Me.OnNYM4_ADDRESS_AMPHUR_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_AMPHUR_AFTER = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_AMPHUR_AFTER")
-				Me.OnNYM4_ADDRESS_AMPHUR_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_PROVINCE_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_PROVINCE_AFTER() As String
-		Get
-			Return Me._NYM4_ADDRESS_PROVINCE_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_PROVINCE_AFTER, value) = false) Then
-				Me.OnNYM4_ADDRESS_PROVINCE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_PROVINCE_AFTER = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_PROVINCE_AFTER")
-				Me.OnNYM4_ADDRESS_PROVINCE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_PHONE_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_PHONE_AFTER() As String
-		Get
-			Return Me._NYM4_ADDRESS_PHONE_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_PHONE_AFTER, value) = false) Then
-				Me.OnNYM4_ADDRESS_PHONE_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_PHONE_AFTER = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_PHONE_AFTER")
-				Me.OnNYM4_ADDRESS_PHONE_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_FAX_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_ADDRESS_FAX_AFTER() As String
-		Get
-			Return Me._NYM4_ADDRESS_FAX_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_ADDRESS_FAX_AFTER, value) = false) Then
-				Me.OnNYM4_ADDRESS_FAX_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ADDRESS_FAX_AFTER = value
-				Me.SendPropertyChanged("NYM4_ADDRESS_FAX_AFTER")
-				Me.OnNYM4_ADDRESS_FAX_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_WISH_MED_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_WISH_MED_AFTER() As String
-		Get
-			Return Me._NYM4_WISH_MED_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_WISH_MED_AFTER, value) = false) Then
-				Me.OnNYM4_WISH_MED_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_WISH_MED_AFTER = value
-				Me.SendPropertyChanged("NYM4_WISH_MED_AFTER")
-				Me.OnNYM4_WISH_MED_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_COUNT_MED_AFTER", DbType:="NVarChar(50)")>  _
-	Public Property NYM4_COUNT_MED_AFTER() As String
-		Get
-			Return Me._NYM4_COUNT_MED_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_COUNT_MED_AFTER, value) = false) Then
-				Me.OnNYM4_COUNT_MED_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_COUNT_MED_AFTER = value
-				Me.SendPropertyChanged("NYM4_COUNT_MED_AFTER")
-				Me.OnNYM4_COUNT_MED_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DEPARTMAENT_ID_AFTER", DbType:="Int")>  _
-	Public Property NYM4_DEPARTMAENT_ID_AFTER() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM4_DEPARTMAENT_ID_AFTER
-		End Get
-		Set
-			If (Me._NYM4_DEPARTMAENT_ID_AFTER.Equals(value) = false) Then
-				Me.OnNYM4_DEPARTMAENT_ID_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_DEPARTMAENT_ID_AFTER = value
-				Me.SendPropertyChanged("NYM4_DEPARTMAENT_ID_AFTER")
-				Me.OnNYM4_DEPARTMAENT_ID_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DEPARTMAENT_NAME_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_DEPARTMAENT_NAME_AFTER() As String
-		Get
-			Return Me._NYM4_DEPARTMAENT_NAME_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_DEPARTMAENT_NAME_AFTER, value) = false) Then
-				Me.OnNYM4_DEPARTMAENT_NAME_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_DEPARTMAENT_NAME_AFTER = value
-				Me.SendPropertyChanged("NYM4_DEPARTMAENT_NAME_AFTER")
-				Me.OnNYM4_DEPARTMAENT_NAME_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_GIVETO_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_GIVETO_AFTER() As String
-		Get
-			Return Me._NYM4_GIVETO_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_GIVETO_AFTER, value) = false) Then
-				Me.OnNYM4_GIVETO_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_GIVETO_AFTER = value
-				Me.SendPropertyChanged("NYM4_GIVETO_AFTER")
-				Me.OnNYM4_GIVETO_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_NAME_ASK_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_NAME_ASK_AFTER() As String
-		Get
-			Return Me._NYM4_NAME_ASK_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_NAME_ASK_AFTER, value) = false) Then
-				Me.OnNYM4_NAME_ASK_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_NAME_ASK_AFTER = value
-				Me.SendPropertyChanged("NYM4_NAME_ASK_AFTER")
-				Me.OnNYM4_NAME_ASK_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DETAIL", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_DETAIL() As String
-		Get
-			Return Me._NYM4_DETAIL
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_DETAIL, value) = false) Then
-				Me.OnNYM4_DETAILChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_DETAIL = value
-				Me.SendPropertyChanged("NYM4_DETAIL")
-				Me.OnNYM4_DETAILChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DETAIL_AFTER", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_DETAIL_AFTER() As String
-		Get
-			Return Me._NYM4_DETAIL_AFTER
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_DETAIL_AFTER, value) = false) Then
-				Me.OnNYM4_DETAIL_AFTERChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_DETAIL_AFTER = value
-				Me.SendPropertyChanged("NYM4_DETAIL_AFTER")
-				Me.OnNYM4_DETAIL_AFTERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ACTIVE", DbType:="Bit")>  _
-	Public Property NYM4_ACTIVE() As System.Nullable(Of Boolean)
-		Get
-			Return Me._NYM4_ACTIVE
-		End Get
-		Set
-			If (Me._NYM4_ACTIVE.Equals(value) = false) Then
-				Me.OnNYM4_ACTIVEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_ACTIVE = value
-				Me.SendPropertyChanged("NYM4_ACTIVE")
-				Me.OnNYM4_ACTIVEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_COUNT_KEY", DbType:="Int")>  _
-	Public Property NYM4_COUNT_KEY() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM4_COUNT_KEY
-		End Get
-		Set
-			If (Me._NYM4_COUNT_KEY.Equals(value) = false) Then
-				Me.OnNYM4_COUNT_KEYChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_COUNT_KEY = value
-				Me.SendPropertyChanged("NYM4_COUNT_KEY")
-				Me.OnNYM4_COUNT_KEYChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_NEWCODE", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_NEWCODE() As String
-		Get
-			Return Me._NYM4_NEWCODE
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_NEWCODE, value) = false) Then
-				Me.OnNYM4_NEWCODEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_NEWCODE = value
-				Me.SendPropertyChanged("NYM4_NEWCODE")
-				Me.OnNYM4_NEWCODEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_RCVNO", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_RCVNO() As String
-		Get
-			Return Me._NYM4_RCVNO
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_RCVNO, value) = false) Then
-				Me.OnNYM4_RCVNOChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_RCVNO = value
-				Me.SendPropertyChanged("NYM4_RCVNO")
-				Me.OnNYM4_RCVNOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_IDENTIFY", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_IDENTIFY() As String
-		Get
-			Return Me._NYM4_IDENTIFY
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_IDENTIFY, value) = false) Then
-				Me.OnNYM4_IDENTIFYChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_IDENTIFY = value
-				Me.SendPropertyChanged("NYM4_IDENTIFY")
-				Me.OnNYM4_IDENTIFYChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DL", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_DL() As String
-		Get
-			Return Me._NYM4_DL
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_DL, value) = false) Then
-				Me.OnNYM4_DLChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_DL = value
-				Me.SendPropertyChanged("NYM4_DL")
-				Me.OnNYM4_DLChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM_TYPE", DbType:="Int")>  _
-	Public Property NYM_TYPE() As System.Nullable(Of Integer)
-		Get
-			Return Me._NYM_TYPE
-		End Get
-		Set
-			If (Me._NYM_TYPE.Equals(value) = false) Then
-				Me.OnNYM_TYPEChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM_TYPE = value
-				Me.SendPropertyChanged("NYM_TYPE")
-				Me.OnNYM_TYPEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TOKEN", DbType:="NVarChar(MAX)")>  _
-	Public Property TOKEN() As String
-		Get
-			Return Me._TOKEN
-		End Get
-		Set
-			If (String.Equals(Me._TOKEN, value) = false) Then
-				Me.OnTOKENChanging(value)
-				Me.SendPropertyChanging
-				Me._TOKEN = value
-				Me.SendPropertyChanged("TOKEN")
-				Me.OnTOKENChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITIZEN", DbType:="NVarChar(50)")>  _
-	Public Property CITIZEN() As String
-		Get
-			Return Me._CITIZEN
-		End Get
-		Set
-			If (String.Equals(Me._CITIZEN, value) = false) Then
-				Me.OnCITIZENChanging(value)
-				Me.SendPropertyChanging
-				Me._CITIZEN = value
-				Me.SendPropertyChanged("CITIZEN")
-				Me.OnCITIZENChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATE_DATE", DbType:="DateTime")>  _
-	Public Property CREATE_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._CREATE_DATE
-		End Get
-		Set
-			If (Me._CREATE_DATE.Equals(value) = false) Then
-				Me.OnCREATE_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._CREATE_DATE = value
-				Me.SendPropertyChanged("CREATE_DATE")
-				Me.OnCREATE_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATE_USER", DbType:="NVarChar(MAX)")>  _
-	Public Property CREATE_USER() As String
-		Get
-			Return Me._CREATE_USER
-		End Get
-		Set
-			If (String.Equals(Me._CREATE_USER, value) = false) Then
-				Me.OnCREATE_USERChanging(value)
-				Me.SendPropertyChanging
-				Me._CREATE_USER = value
-				Me.SendPropertyChanged("CREATE_USER")
-				Me.OnCREATE_USERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UPDATE_DATE", DbType:="DateTime")>  _
-	Public Property UPDATE_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._UPDATE_DATE
-		End Get
-		Set
-			If (Me._UPDATE_DATE.Equals(value) = false) Then
-				Me.OnUPDATE_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._UPDATE_DATE = value
-				Me.SendPropertyChanged("UPDATE_DATE")
-				Me.OnUPDATE_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UPDATE_USER", DbType:="NVarChar(MAX)")>  _
-	Public Property UPDATE_USER() As String
-		Get
-			Return Me._UPDATE_USER
-		End Get
-		Set
-			If (String.Equals(Me._UPDATE_USER, value) = false) Then
-				Me.OnUPDATE_USERChanging(value)
-				Me.SendPropertyChanging
-				Me._UPDATE_USER = value
-				Me.SendPropertyChanged("UPDATE_USER")
-				Me.OnUPDATE_USERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TR_ID", DbType:="Int")>  _
-	Public Property TR_ID() As System.Nullable(Of Integer)
-		Get
-			Return Me._TR_ID
-		End Get
-		Set
-			If (Me._TR_ID.Equals(value) = false) Then
-				Me.OnTR_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._TR_ID = value
-				Me.SendPropertyChanged("TR_ID")
-				Me.OnTR_IDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STATUS_ID", DbType:="Int")>  _
-	Public Property STATUS_ID() As System.Nullable(Of Integer)
-		Get
-			Return Me._STATUS_ID
-		End Get
-		Set
-			If (Me._STATUS_ID.Equals(value) = false) Then
-				Me.OnSTATUS_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._STATUS_ID = value
-				Me.SendPropertyChanged("STATUS_ID")
-				Me.OnSTATUS_IDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_IDENTIFY_STAFF", DbType:="NVarChar(MAX)")>  _
-	Public Property NYM4_IDENTIFY_STAFF() As String
-		Get
-			Return Me._NYM4_IDENTIFY_STAFF
-		End Get
-		Set
-			If (String.Equals(Me._NYM4_IDENTIFY_STAFF, value) = false) Then
-				Me.OnNYM4_IDENTIFY_STAFFChanging(value)
-				Me.SendPropertyChanging
-				Me._NYM4_IDENTIFY_STAFF = value
-				Me.SendPropertyChanged("NYM4_IDENTIFY_STAFF")
-				Me.OnNYM4_IDENTIFY_STAFFChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CONSIDER_DATE", DbType:="DateTime")>  _
-	Public Property CONSIDER_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._CONSIDER_DATE
-		End Get
-		Set
-			If (Me._CONSIDER_DATE.Equals(value) = false) Then
-				Me.OnCONSIDER_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._CONSIDER_DATE = value
-				Me.SendPropertyChanged("CONSIDER_DATE")
-				Me.OnCONSIDER_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STAFF_RECEIVE_IDEN", DbType:="NVarChar(MAX)")>  _
-	Public Property STAFF_RECEIVE_IDEN() As String
-		Get
-			Return Me._STAFF_RECEIVE_IDEN
-		End Get
-		Set
-			If (String.Equals(Me._STAFF_RECEIVE_IDEN, value) = false) Then
-				Me.OnSTAFF_RECEIVE_IDENChanging(value)
-				Me.SendPropertyChanging
-				Me._STAFF_RECEIVE_IDEN = value
-				Me.SendPropertyChanged("STAFF_RECEIVE_IDEN")
-				Me.OnSTAFF_RECEIVE_IDENChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STAFF_NAME", DbType:="NVarChar(MAX)")>  _
-	Public Property STAFF_NAME() As String
-		Get
-			Return Me._STAFF_NAME
-		End Get
-		Set
-			If (String.Equals(Me._STAFF_NAME, value) = false) Then
-				Me.OnSTAFF_NAMEChanging(value)
-				Me.SendPropertyChanging
-				Me._STAFF_NAME = value
-				Me.SendPropertyChanged("STAFF_NAME")
-				Me.OnSTAFF_NAMEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK", DbType:="NVarChar(MAX)")>  _
-	Public Property REMARK() As String
-		Get
-			Return Me._REMARK
-		End Get
-		Set
-			If (String.Equals(Me._REMARK, value) = false) Then
-				Me.OnREMARKChanging(value)
-				Me.SendPropertyChanging
-				Me._REMARK = value
-				Me.SendPropertyChanged("REMARK")
-				Me.OnREMARKChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_APPROVE_DATE", DbType:="DateTime")>  _
-	Public Property APPROVE_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._APPROVE_DATE
-		End Get
-		Set
-			If (Me._APPROVE_DATE.Equals(value) = false) Then
-				Me.OnAPPROVE_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._APPROVE_DATE = value
-				Me.SendPropertyChanged("APPROVE_DATE")
-				Me.OnAPPROVE_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ESTIMATE_CONSIDER_DATE", DbType:="DateTime")>  _
-	Public Property ESTIMATE_CONSIDER_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._ESTIMATE_CONSIDER_DATE
-		End Get
-		Set
-			If (Me._ESTIMATE_CONSIDER_DATE.Equals(value) = false) Then
-				Me.OnESTIMATE_CONSIDER_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._ESTIMATE_CONSIDER_DATE = value
-				Me.SendPropertyChanged("ESTIMATE_CONSIDER_DATE")
-				Me.OnESTIMATE_CONSIDER_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK_CONSIDER", DbType:="NVarChar(MAX)")>  _
-	Public Property REMARK_CONSIDER() As String
-		Get
-			Return Me._REMARK_CONSIDER
-		End Get
-		Set
-			If (String.Equals(Me._REMARK_CONSIDER, value) = false) Then
-				Me.OnREMARK_CONSIDERChanging(value)
-				Me.SendPropertyChanging
-				Me._REMARK_CONSIDER = value
-				Me.SendPropertyChanged("REMARK_CONSIDER")
-				Me.OnREMARK_CONSIDERChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK_EDIT", DbType:="NVarChar(MAX)")>  _
-	Public Property REMARK_EDIT() As String
-		Get
-			Return Me._REMARK_EDIT
-		End Get
-		Set
-			If (String.Equals(Me._REMARK_EDIT, value) = false) Then
-				Me.OnREMARK_EDITChanging(value)
-				Me.SendPropertyChanging
-				Me._REMARK_EDIT = value
-				Me.SendPropertyChanged("REMARK_EDIT")
-				Me.OnREMARK_EDITChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE1", DbType:="NVarChar(MAX)")>  _
-	Public Property POSITION_CONSIDER_LINE1() As String
-		Get
-			Return Me._POSITION_CONSIDER_LINE1
-		End Get
-		Set
-			If (String.Equals(Me._POSITION_CONSIDER_LINE1, value) = false) Then
-				Me.OnPOSITION_CONSIDER_LINE1Changing(value)
-				Me.SendPropertyChanging
-				Me._POSITION_CONSIDER_LINE1 = value
-				Me.SendPropertyChanged("POSITION_CONSIDER_LINE1")
-				Me.OnPOSITION_CONSIDER_LINE1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE2", DbType:="NVarChar(MAX)")>  _
-	Public Property POSITION_CONSIDER_LINE2() As String
-		Get
-			Return Me._POSITION_CONSIDER_LINE2
-		End Get
-		Set
-			If (String.Equals(Me._POSITION_CONSIDER_LINE2, value) = false) Then
-				Me.OnPOSITION_CONSIDER_LINE2Changing(value)
-				Me.SendPropertyChanging
-				Me._POSITION_CONSIDER_LINE2 = value
-				Me.SendPropertyChanged("POSITION_CONSIDER_LINE2")
-				Me.OnPOSITION_CONSIDER_LINE2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE3", DbType:="NVarChar(MAX)")>  _
-	Public Property POSITION_CONSIDER_LINE3() As String
-		Get
-			Return Me._POSITION_CONSIDER_LINE3
-		End Get
-		Set
-			If (String.Equals(Me._POSITION_CONSIDER_LINE3, value) = false) Then
-				Me.OnPOSITION_CONSIDER_LINE3Changing(value)
-				Me.SendPropertyChanging
-				Me._POSITION_CONSIDER_LINE3 = value
-				Me.SendPropertyChanged("POSITION_CONSIDER_LINE3")
-				Me.OnPOSITION_CONSIDER_LINE3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE4", DbType:="NVarChar(MAX)")>  _
-	Public Property POSITION_CONSIDER_LINE4() As String
-		Get
-			Return Me._POSITION_CONSIDER_LINE4
-		End Get
-		Set
-			If (String.Equals(Me._POSITION_CONSIDER_LINE4, value) = false) Then
-				Me.OnPOSITION_CONSIDER_LINE4Changing(value)
-				Me.SendPropertyChanging
-				Me._POSITION_CONSIDER_LINE4 = value
-				Me.SendPropertyChanged("POSITION_CONSIDER_LINE4")
-				Me.OnPOSITION_CONSIDER_LINE4Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE5", DbType:="NVarChar(MAX)")>  _
-	Public Property POSITION_CONSIDER_LINE5() As String
-		Get
-			Return Me._POSITION_CONSIDER_LINE5
-		End Get
-		Set
-			If (String.Equals(Me._POSITION_CONSIDER_LINE5, value) = false) Then
-				Me.OnPOSITION_CONSIDER_LINE5Changing(value)
-				Me.SendPropertyChanging
-				Me._POSITION_CONSIDER_LINE5 = value
-				Me.SendPropertyChanged("POSITION_CONSIDER_LINE5")
-				Me.OnPOSITION_CONSIDER_LINE5Changed
 			End If
 		End Set
 	End Property
@@ -19111,6 +15115,4090 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_2
 				Me._NYM2_IDENTIFY_STAFF = value
 				Me.SendPropertyChanged("NYM2_IDENTIFY_STAFF")
 				Me.OnNYM2_IDENTIFY_STAFFChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CONSIDER_DATE", DbType:="DateTime")>  _
+	Public Property CONSIDER_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CONSIDER_DATE
+		End Get
+		Set
+			If (Me._CONSIDER_DATE.Equals(value) = false) Then
+				Me.OnCONSIDER_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CONSIDER_DATE = value
+				Me.SendPropertyChanged("CONSIDER_DATE")
+				Me.OnCONSIDER_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STAFF_RECEIVE_IDEN", DbType:="NVarChar(MAX)")>  _
+	Public Property STAFF_RECEIVE_IDEN() As String
+		Get
+			Return Me._STAFF_RECEIVE_IDEN
+		End Get
+		Set
+			If (String.Equals(Me._STAFF_RECEIVE_IDEN, value) = false) Then
+				Me.OnSTAFF_RECEIVE_IDENChanging(value)
+				Me.SendPropertyChanging
+				Me._STAFF_RECEIVE_IDEN = value
+				Me.SendPropertyChanged("STAFF_RECEIVE_IDEN")
+				Me.OnSTAFF_RECEIVE_IDENChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STAFF_NAME", DbType:="NVarChar(MAX)")>  _
+	Public Property STAFF_NAME() As String
+		Get
+			Return Me._STAFF_NAME
+		End Get
+		Set
+			If (String.Equals(Me._STAFF_NAME, value) = false) Then
+				Me.OnSTAFF_NAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._STAFF_NAME = value
+				Me.SendPropertyChanged("STAFF_NAME")
+				Me.OnSTAFF_NAMEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK", DbType:="NVarChar(MAX)")>  _
+	Public Property REMARK() As String
+		Get
+			Return Me._REMARK
+		End Get
+		Set
+			If (String.Equals(Me._REMARK, value) = false) Then
+				Me.OnREMARKChanging(value)
+				Me.SendPropertyChanging
+				Me._REMARK = value
+				Me.SendPropertyChanged("REMARK")
+				Me.OnREMARKChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_APPROVE_DATE", DbType:="DateTime")>  _
+	Public Property APPROVE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._APPROVE_DATE
+		End Get
+		Set
+			If (Me._APPROVE_DATE.Equals(value) = false) Then
+				Me.OnAPPROVE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._APPROVE_DATE = value
+				Me.SendPropertyChanged("APPROVE_DATE")
+				Me.OnAPPROVE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ESTIMATE_CONSIDER_DATE", DbType:="DateTime")>  _
+	Public Property ESTIMATE_CONSIDER_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._ESTIMATE_CONSIDER_DATE
+		End Get
+		Set
+			If (Me._ESTIMATE_CONSIDER_DATE.Equals(value) = false) Then
+				Me.OnESTIMATE_CONSIDER_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._ESTIMATE_CONSIDER_DATE = value
+				Me.SendPropertyChanged("ESTIMATE_CONSIDER_DATE")
+				Me.OnESTIMATE_CONSIDER_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK_CONSIDER", DbType:="NVarChar(MAX)")>  _
+	Public Property REMARK_CONSIDER() As String
+		Get
+			Return Me._REMARK_CONSIDER
+		End Get
+		Set
+			If (String.Equals(Me._REMARK_CONSIDER, value) = false) Then
+				Me.OnREMARK_CONSIDERChanging(value)
+				Me.SendPropertyChanging
+				Me._REMARK_CONSIDER = value
+				Me.SendPropertyChanged("REMARK_CONSIDER")
+				Me.OnREMARK_CONSIDERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK_EDIT", DbType:="NVarChar(MAX)")>  _
+	Public Property REMARK_EDIT() As String
+		Get
+			Return Me._REMARK_EDIT
+		End Get
+		Set
+			If (String.Equals(Me._REMARK_EDIT, value) = false) Then
+				Me.OnREMARK_EDITChanging(value)
+				Me.SendPropertyChanging
+				Me._REMARK_EDIT = value
+				Me.SendPropertyChanged("REMARK_EDIT")
+				Me.OnREMARK_EDITChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE1", DbType:="NVarChar(MAX)")>  _
+	Public Property POSITION_CONSIDER_LINE1() As String
+		Get
+			Return Me._POSITION_CONSIDER_LINE1
+		End Get
+		Set
+			If (String.Equals(Me._POSITION_CONSIDER_LINE1, value) = false) Then
+				Me.OnPOSITION_CONSIDER_LINE1Changing(value)
+				Me.SendPropertyChanging
+				Me._POSITION_CONSIDER_LINE1 = value
+				Me.SendPropertyChanged("POSITION_CONSIDER_LINE1")
+				Me.OnPOSITION_CONSIDER_LINE1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE2", DbType:="NVarChar(MAX)")>  _
+	Public Property POSITION_CONSIDER_LINE2() As String
+		Get
+			Return Me._POSITION_CONSIDER_LINE2
+		End Get
+		Set
+			If (String.Equals(Me._POSITION_CONSIDER_LINE2, value) = false) Then
+				Me.OnPOSITION_CONSIDER_LINE2Changing(value)
+				Me.SendPropertyChanging
+				Me._POSITION_CONSIDER_LINE2 = value
+				Me.SendPropertyChanged("POSITION_CONSIDER_LINE2")
+				Me.OnPOSITION_CONSIDER_LINE2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE3", DbType:="NVarChar(MAX)")>  _
+	Public Property POSITION_CONSIDER_LINE3() As String
+		Get
+			Return Me._POSITION_CONSIDER_LINE3
+		End Get
+		Set
+			If (String.Equals(Me._POSITION_CONSIDER_LINE3, value) = false) Then
+				Me.OnPOSITION_CONSIDER_LINE3Changing(value)
+				Me.SendPropertyChanging
+				Me._POSITION_CONSIDER_LINE3 = value
+				Me.SendPropertyChanged("POSITION_CONSIDER_LINE3")
+				Me.OnPOSITION_CONSIDER_LINE3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE4", DbType:="NVarChar(MAX)")>  _
+	Public Property POSITION_CONSIDER_LINE4() As String
+		Get
+			Return Me._POSITION_CONSIDER_LINE4
+		End Get
+		Set
+			If (String.Equals(Me._POSITION_CONSIDER_LINE4, value) = false) Then
+				Me.OnPOSITION_CONSIDER_LINE4Changing(value)
+				Me.SendPropertyChanging
+				Me._POSITION_CONSIDER_LINE4 = value
+				Me.SendPropertyChanged("POSITION_CONSIDER_LINE4")
+				Me.OnPOSITION_CONSIDER_LINE4Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE5", DbType:="NVarChar(MAX)")>  _
+	Public Property POSITION_CONSIDER_LINE5() As String
+		Get
+			Return Me._POSITION_CONSIDER_LINE5
+		End Get
+		Set
+			If (String.Equals(Me._POSITION_CONSIDER_LINE5, value) = false) Then
+				Me.OnPOSITION_CONSIDER_LINE5Changing(value)
+				Me.SendPropertyChanging
+				Me._POSITION_CONSIDER_LINE5 = value
+				Me.SendPropertyChanged("POSITION_CONSIDER_LINE5")
+				Me.OnPOSITION_CONSIDER_LINE5Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_rcvdate", DbType:="DateTime")>  _
+	Public Property rcvdate() As System.Nullable(Of Date)
+		Get
+			Return Me._rcvdate
+		End Get
+		Set
+			If (Me._rcvdate.Equals(value) = false) Then
+				Me.OnrcvdateChanging(value)
+				Me.SendPropertyChanging
+				Me._rcvdate = value
+				Me.SendPropertyChanged("rcvdate")
+				Me.OnrcvdateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROCESS_ID", DbType:="NVarChar(50)")>  _
+	Public Property PROCESS_ID() As String
+		Get
+			Return Me._PROCESS_ID
+		End Get
+		Set
+			If (String.Equals(Me._PROCESS_ID, value) = false) Then
+				Me.OnPROCESS_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._PROCESS_ID = value
+				Me.SendPropertyChanged("PROCESS_ID")
+				Me.OnPROCESS_IDChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.FDA_DRUG_IMPORT_NYM_3")>  _
+Partial Public Class FDA_DRUG_IMPORT_NYM_3
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _NYM3_IDA As Integer
+	
+	Private _FK_IDA As System.Nullable(Of Integer)
+	
+	Private _DL As String
+	
+	Private _NYM3_NO As String
+	
+	Private _NYM3_DATE_TOP As System.Nullable(Of Date)
+	
+	Private _NYM3_NAME_RECEIVE As String
+	
+	Private _NYM3_ALLOW_PLAN As System.Nullable(Of Integer)
+	
+	Private _NYM3_WRITE As String
+	
+	Private _NYM3_WRITE_DATE As System.Nullable(Of Date)
+	
+	Private _NYM3_TITLE As System.Nullable(Of Integer)
+	
+	Private _NYM3_FULLNAME As String
+	
+	Private _NYM3_POSITION As String
+	
+	Private _NYM3_ALLOW_NAME As System.Nullable(Of Integer)
+	
+	Private _NYM3_ALLOW_NAME_DETAIL As String
+	
+	Private _NYM3_LICENSE As String
+	
+	Private _NYM3_ADDRESS_NO As String
+	
+	Private _NYM3_ADDRESS_SOI As String
+	
+	Private _NYM3_ADDRESS_STREET As String
+	
+	Private _NYM3_ADDRESS_MOO As String
+	
+	Private _NYM3_ADDRESS_DISTRICT As String
+	
+	Private _NYM3_ADDRESS_AMPHUR As String
+	
+	Private _NYM3_ADDRESS_PROVINCE As String
+	
+	Private _NYM3_ADDRESS_PHONE As String
+	
+	Private _NYM3_ADDRESS_FAX As String
+	
+	Private _NYM3_WISH_MED As String
+	
+	Private _NYM3_COUNT_MED As System.Nullable(Of Integer)
+	
+	Private _NYM3_DEPARTMAENT_ID As System.Nullable(Of Integer)
+	
+	Private _NYM3_DEPARTMAENT_NAME As String
+	
+	Private _NYM3_NAME_ASK As String
+	
+	Private _NYM3_NO_AFTER As String
+	
+	Private _NYM3_DATE_TOP_AFTER As System.Nullable(Of Date)
+	
+	Private _NYM3_NAME_RECEIVE_AFTER As String
+	
+	Private _NYM3_ALLOW_PLAN_AFTER As System.Nullable(Of Integer)
+	
+	Private _NYM3_WRITE_AFTER As String
+	
+	Private _NYM3_WRITE_DATE_AFTER As System.Nullable(Of Date)
+	
+	Private _NYM3_TITLE_AFTER As System.Nullable(Of Integer)
+	
+	Private _NYM3_FULLNAME_AFTER As String
+	
+	Private _NYM3_FIRSTNAME_AFTER As String
+	
+	Private _NYM3_LASTNAME_AFTER As String
+	
+	Private _NYM3_POSITION_AFTER As String
+	
+	Private _NYM3_ALLOW_NAME_AFTER As System.Nullable(Of Integer)
+	
+	Private _NYM3_ALLOW_NAME_DETAIL_AFTER As String
+	
+	Private _NYM3_LICENSE_AFTER As String
+	
+	Private _NYM3_ADDRESS_NO_AFTER As String
+	
+	Private _NYM3_ADDRESS_SOI_AFTER As String
+	
+	Private _NYM3_ADDRESS_STREET_AFTER As String
+	
+	Private _NYM3_ADDRESS_MOO_AFTER As String
+	
+	Private _NYM3_ADDRESS_DISTRICT_AFTER As String
+	
+	Private _NYM3_ADDRESS_AMPHUR_AFTER As String
+	
+	Private _NYM3_ADDRESS_PROVINCE_AFTER As String
+	
+	Private _NYM3_ADDRESS_PHONE_AFTER As String
+	
+	Private _NYM3_ADDRESS_FAX_AFTER As String
+	
+	Private _NYM3_WISH_MED_AFTER As String
+	
+	Private _NYM3_COUNT_MED_AFTER As String
+	
+	Private _NYM3_DEPARTMAENT_ID_AFTER As System.Nullable(Of Integer)
+	
+	Private _NYM3_DEPARTMAENT_NAME_AFTER As String
+	
+	Private _NYM3_NAME_ASK_AFTER As String
+	
+	Private _NYM3_DETAIL As String
+	
+	Private _NYM3_DETAIL_AFTER As String
+	
+	Private _NYM3_ACTIVE As System.Nullable(Of Boolean)
+	
+	Private _NYM3_COUNT_KEY As System.Nullable(Of Integer)
+	
+	Private _NYM3_NEWCODE As String
+	
+	Private _NYM3_RCVNO As String
+	
+	Private _NYM3_IDENTIFY As String
+	
+	Private _NYM3_DL As String
+	
+	Private _NYM_TYPE As System.Nullable(Of Integer)
+	
+	Private _TOKEN As String
+	
+	Private _CITICEN As String
+	
+	Private _CREATE_DATE As System.Nullable(Of Date)
+	
+	Private _CREATE_USER As String
+	
+	Private _UPDATE_DATE As System.Nullable(Of Date)
+	
+	Private _UPDATE_USER As String
+	
+	Private _TR_ID As String
+	
+	Private _STATUS_ID As System.Nullable(Of Integer)
+	
+	Private _NYM3_IDENTIFY_STAFF As String
+	
+	Private _CONSIDER_DATE As System.Nullable(Of Date)
+	
+	Private _STAFF_RECEIVE_IDEN As String
+	
+	Private _STAFF_NAME As String
+	
+	Private _APPROVE_DATE As System.Nullable(Of Date)
+	
+	Private _REMARK As String
+	
+	Private _ESTIMATE_CONSIDER_DATE As System.Nullable(Of Date)
+	
+	Private _REMARK_CONSIDER As String
+	
+	Private _REMARK_EDIT As String
+	
+	Private _POSITION_CONSIDER_LINE1 As String
+	
+	Private _POSITION_CONSIDER_LINE2 As String
+	
+	Private _POSITION_CONSIDER_LINE3 As String
+	
+	Private _POSITION_CONSIDER_LINE4 As String
+	
+	Private _POSITION_CONSIDER_LINE5 As String
+	
+	Private _rcvdate As System.Nullable(Of Date)
+	
+	Private _PROCESS_ID As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnNYM3_IDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnNYM3_IDAChanged()
+    End Sub
+    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnFK_IDAChanged()
+    End Sub
+    Partial Private Sub OnDLChanging(value As String)
+    End Sub
+    Partial Private Sub OnDLChanged()
+    End Sub
+    Partial Private Sub OnNYM3_NOChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_NOChanged()
+    End Sub
+    Partial Private Sub OnNYM3_DATE_TOPChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnNYM3_DATE_TOPChanged()
+    End Sub
+    Partial Private Sub OnNYM3_NAME_RECEIVEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_NAME_RECEIVEChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ALLOW_PLANChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM3_ALLOW_PLANChanged()
+    End Sub
+    Partial Private Sub OnNYM3_WRITEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_WRITEChanged()
+    End Sub
+    Partial Private Sub OnNYM3_WRITE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnNYM3_WRITE_DATEChanged()
+    End Sub
+    Partial Private Sub OnNYM3_TITLEChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM3_TITLEChanged()
+    End Sub
+    Partial Private Sub OnNYM3_FULLNAMEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_FULLNAMEChanged()
+    End Sub
+    Partial Private Sub OnNYM3_POSITIONChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_POSITIONChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ALLOW_NAMEChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM3_ALLOW_NAMEChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ALLOW_NAME_DETAILChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ALLOW_NAME_DETAILChanged()
+    End Sub
+    Partial Private Sub OnNYM3_LICENSEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_LICENSEChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_NOChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_NOChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_SOIChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_SOIChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_STREETChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_STREETChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_MOOChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_MOOChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_DISTRICTChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_DISTRICTChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_AMPHURChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_AMPHURChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_PROVINCEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_PROVINCEChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_PHONEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_PHONEChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_FAXChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_FAXChanged()
+    End Sub
+    Partial Private Sub OnNYM3_WISH_MEDChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_WISH_MEDChanged()
+    End Sub
+    Partial Private Sub OnNYM3_COUNT_MEDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM3_COUNT_MEDChanged()
+    End Sub
+    Partial Private Sub OnNYM3_DEPARTMAENT_IDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM3_DEPARTMAENT_IDChanged()
+    End Sub
+    Partial Private Sub OnNYM3_DEPARTMAENT_NAMEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_DEPARTMAENT_NAMEChanged()
+    End Sub
+    Partial Private Sub OnNYM3_NAME_ASKChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_NAME_ASKChanged()
+    End Sub
+    Partial Private Sub OnNYM3_NO_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_NO_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_DATE_TOP_AFTERChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnNYM3_DATE_TOP_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_NAME_RECEIVE_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_NAME_RECEIVE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ALLOW_PLAN_AFTERChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM3_ALLOW_PLAN_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_WRITE_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_WRITE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_WRITE_DATE_AFTERChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnNYM3_WRITE_DATE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_TITLE_AFTERChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM3_TITLE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_FULLNAME_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_FULLNAME_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_FIRSTNAME_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_FIRSTNAME_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_LASTNAME_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_LASTNAME_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_POSITION_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_POSITION_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ALLOW_NAME_AFTERChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM3_ALLOW_NAME_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ALLOW_NAME_DETAIL_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ALLOW_NAME_DETAIL_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_LICENSE_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_LICENSE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_NO_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_NO_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_SOI_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_SOI_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_STREET_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_STREET_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_MOO_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_MOO_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_DISTRICT_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_DISTRICT_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_AMPHUR_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_AMPHUR_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_PROVINCE_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_PROVINCE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_PHONE_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_PHONE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_FAX_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_ADDRESS_FAX_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_WISH_MED_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_WISH_MED_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_COUNT_MED_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_COUNT_MED_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_DEPARTMAENT_ID_AFTERChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM3_DEPARTMAENT_ID_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_DEPARTMAENT_NAME_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_DEPARTMAENT_NAME_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_NAME_ASK_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_NAME_ASK_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_DETAILChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_DETAILChanged()
+    End Sub
+    Partial Private Sub OnNYM3_DETAIL_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_DETAIL_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM3_ACTIVEChanging(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnNYM3_ACTIVEChanged()
+    End Sub
+    Partial Private Sub OnNYM3_COUNT_KEYChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM3_COUNT_KEYChanged()
+    End Sub
+    Partial Private Sub OnNYM3_NEWCODEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_NEWCODEChanged()
+    End Sub
+    Partial Private Sub OnNYM3_RCVNOChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_RCVNOChanged()
+    End Sub
+    Partial Private Sub OnNYM3_IDENTIFYChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_IDENTIFYChanged()
+    End Sub
+    Partial Private Sub OnNYM3_DLChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_DLChanged()
+    End Sub
+    Partial Private Sub OnNYM_TYPEChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM_TYPEChanged()
+    End Sub
+    Partial Private Sub OnTOKENChanging(value As String)
+    End Sub
+    Partial Private Sub OnTOKENChanged()
+    End Sub
+    Partial Private Sub OnCITICENChanging(value As String)
+    End Sub
+    Partial Private Sub OnCITICENChanged()
+    End Sub
+    Partial Private Sub OnCREATE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnCREATE_DATEChanged()
+    End Sub
+    Partial Private Sub OnCREATE_USERChanging(value As String)
+    End Sub
+    Partial Private Sub OnCREATE_USERChanged()
+    End Sub
+    Partial Private Sub OnUPDATE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnUPDATE_DATEChanged()
+    End Sub
+    Partial Private Sub OnUPDATE_USERChanging(value As String)
+    End Sub
+    Partial Private Sub OnUPDATE_USERChanged()
+    End Sub
+    Partial Private Sub OnTR_IDChanging(value As String)
+    End Sub
+    Partial Private Sub OnTR_IDChanged()
+    End Sub
+    Partial Private Sub OnSTATUS_IDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnSTATUS_IDChanged()
+    End Sub
+    Partial Private Sub OnNYM3_IDENTIFY_STAFFChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM3_IDENTIFY_STAFFChanged()
+    End Sub
+    Partial Private Sub OnCONSIDER_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnCONSIDER_DATEChanged()
+    End Sub
+    Partial Private Sub OnSTAFF_RECEIVE_IDENChanging(value As String)
+    End Sub
+    Partial Private Sub OnSTAFF_RECEIVE_IDENChanged()
+    End Sub
+    Partial Private Sub OnSTAFF_NAMEChanging(value As String)
+    End Sub
+    Partial Private Sub OnSTAFF_NAMEChanged()
+    End Sub
+    Partial Private Sub OnAPPROVE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnAPPROVE_DATEChanged()
+    End Sub
+    Partial Private Sub OnREMARKChanging(value As String)
+    End Sub
+    Partial Private Sub OnREMARKChanged()
+    End Sub
+    Partial Private Sub OnESTIMATE_CONSIDER_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnESTIMATE_CONSIDER_DATEChanged()
+    End Sub
+    Partial Private Sub OnREMARK_CONSIDERChanging(value As String)
+    End Sub
+    Partial Private Sub OnREMARK_CONSIDERChanged()
+    End Sub
+    Partial Private Sub OnREMARK_EDITChanging(value As String)
+    End Sub
+    Partial Private Sub OnREMARK_EDITChanged()
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE1Changing(value As String)
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE1Changed()
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE2Changing(value As String)
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE2Changed()
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE3Changing(value As String)
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE3Changed()
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE4Changing(value As String)
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE4Changed()
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE5Changing(value As String)
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE5Changed()
+    End Sub
+    Partial Private Sub OnrcvdateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnrcvdateChanged()
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property NYM3_IDA() As Integer
+		Get
+			Return Me._NYM3_IDA
+		End Get
+		Set
+			If ((Me._NYM3_IDA = value)  _
+						= false) Then
+				Me.OnNYM3_IDAChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_IDA = value
+				Me.SendPropertyChanged("NYM3_IDA")
+				Me.OnNYM3_IDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
+	Public Property FK_IDA() As System.Nullable(Of Integer)
+		Get
+			Return Me._FK_IDA
+		End Get
+		Set
+			If (Me._FK_IDA.Equals(value) = false) Then
+				Me.OnFK_IDAChanging(value)
+				Me.SendPropertyChanging
+				Me._FK_IDA = value
+				Me.SendPropertyChanged("FK_IDA")
+				Me.OnFK_IDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DL", DbType:="NVarChar(MAX)")>  _
+	Public Property DL() As String
+		Get
+			Return Me._DL
+		End Get
+		Set
+			If (String.Equals(Me._DL, value) = false) Then
+				Me.OnDLChanging(value)
+				Me.SendPropertyChanging
+				Me._DL = value
+				Me.SendPropertyChanged("DL")
+				Me.OnDLChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NO", DbType:="NVarChar(50)")>  _
+	Public Property NYM3_NO() As String
+		Get
+			Return Me._NYM3_NO
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_NO, value) = false) Then
+				Me.OnNYM3_NOChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_NO = value
+				Me.SendPropertyChanged("NYM3_NO")
+				Me.OnNYM3_NOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DATE_TOP", DbType:="DateTime")>  _
+	Public Property NYM3_DATE_TOP() As System.Nullable(Of Date)
+		Get
+			Return Me._NYM3_DATE_TOP
+		End Get
+		Set
+			If (Me._NYM3_DATE_TOP.Equals(value) = false) Then
+				Me.OnNYM3_DATE_TOPChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_DATE_TOP = value
+				Me.SendPropertyChanged("NYM3_DATE_TOP")
+				Me.OnNYM3_DATE_TOPChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NAME_RECEIVE", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_NAME_RECEIVE() As String
+		Get
+			Return Me._NYM3_NAME_RECEIVE
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_NAME_RECEIVE, value) = false) Then
+				Me.OnNYM3_NAME_RECEIVEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_NAME_RECEIVE = value
+				Me.SendPropertyChanged("NYM3_NAME_RECEIVE")
+				Me.OnNYM3_NAME_RECEIVEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ALLOW_PLAN", DbType:="Int")>  _
+	Public Property NYM3_ALLOW_PLAN() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM3_ALLOW_PLAN
+		End Get
+		Set
+			If (Me._NYM3_ALLOW_PLAN.Equals(value) = false) Then
+				Me.OnNYM3_ALLOW_PLANChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ALLOW_PLAN = value
+				Me.SendPropertyChanged("NYM3_ALLOW_PLAN")
+				Me.OnNYM3_ALLOW_PLANChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_WRITE", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_WRITE() As String
+		Get
+			Return Me._NYM3_WRITE
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_WRITE, value) = false) Then
+				Me.OnNYM3_WRITEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_WRITE = value
+				Me.SendPropertyChanged("NYM3_WRITE")
+				Me.OnNYM3_WRITEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_WRITE_DATE", DbType:="DateTime")>  _
+	Public Property NYM3_WRITE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._NYM3_WRITE_DATE
+		End Get
+		Set
+			If (Me._NYM3_WRITE_DATE.Equals(value) = false) Then
+				Me.OnNYM3_WRITE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_WRITE_DATE = value
+				Me.SendPropertyChanged("NYM3_WRITE_DATE")
+				Me.OnNYM3_WRITE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_TITLE", DbType:="Int")>  _
+	Public Property NYM3_TITLE() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM3_TITLE
+		End Get
+		Set
+			If (Me._NYM3_TITLE.Equals(value) = false) Then
+				Me.OnNYM3_TITLEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_TITLE = value
+				Me.SendPropertyChanged("NYM3_TITLE")
+				Me.OnNYM3_TITLEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_FULLNAME", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_FULLNAME() As String
+		Get
+			Return Me._NYM3_FULLNAME
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_FULLNAME, value) = false) Then
+				Me.OnNYM3_FULLNAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_FULLNAME = value
+				Me.SendPropertyChanged("NYM3_FULLNAME")
+				Me.OnNYM3_FULLNAMEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_POSITION", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_POSITION() As String
+		Get
+			Return Me._NYM3_POSITION
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_POSITION, value) = false) Then
+				Me.OnNYM3_POSITIONChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_POSITION = value
+				Me.SendPropertyChanged("NYM3_POSITION")
+				Me.OnNYM3_POSITIONChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ALLOW_NAME", DbType:="Int")>  _
+	Public Property NYM3_ALLOW_NAME() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM3_ALLOW_NAME
+		End Get
+		Set
+			If (Me._NYM3_ALLOW_NAME.Equals(value) = false) Then
+				Me.OnNYM3_ALLOW_NAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ALLOW_NAME = value
+				Me.SendPropertyChanged("NYM3_ALLOW_NAME")
+				Me.OnNYM3_ALLOW_NAMEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ALLOW_NAME_DETAIL", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ALLOW_NAME_DETAIL() As String
+		Get
+			Return Me._NYM3_ALLOW_NAME_DETAIL
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ALLOW_NAME_DETAIL, value) = false) Then
+				Me.OnNYM3_ALLOW_NAME_DETAILChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ALLOW_NAME_DETAIL = value
+				Me.SendPropertyChanged("NYM3_ALLOW_NAME_DETAIL")
+				Me.OnNYM3_ALLOW_NAME_DETAILChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_LICENSE", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_LICENSE() As String
+		Get
+			Return Me._NYM3_LICENSE
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_LICENSE, value) = false) Then
+				Me.OnNYM3_LICENSEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_LICENSE = value
+				Me.SendPropertyChanged("NYM3_LICENSE")
+				Me.OnNYM3_LICENSEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_NO", DbType:="NVarChar(50)")>  _
+	Public Property NYM3_ADDRESS_NO() As String
+		Get
+			Return Me._NYM3_ADDRESS_NO
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_NO, value) = false) Then
+				Me.OnNYM3_ADDRESS_NOChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_NO = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_NO")
+				Me.OnNYM3_ADDRESS_NOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_SOI", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_SOI() As String
+		Get
+			Return Me._NYM3_ADDRESS_SOI
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_SOI, value) = false) Then
+				Me.OnNYM3_ADDRESS_SOIChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_SOI = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_SOI")
+				Me.OnNYM3_ADDRESS_SOIChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_STREET", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_STREET() As String
+		Get
+			Return Me._NYM3_ADDRESS_STREET
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_STREET, value) = false) Then
+				Me.OnNYM3_ADDRESS_STREETChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_STREET = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_STREET")
+				Me.OnNYM3_ADDRESS_STREETChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_MOO", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_MOO() As String
+		Get
+			Return Me._NYM3_ADDRESS_MOO
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_MOO, value) = false) Then
+				Me.OnNYM3_ADDRESS_MOOChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_MOO = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_MOO")
+				Me.OnNYM3_ADDRESS_MOOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_DISTRICT", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_DISTRICT() As String
+		Get
+			Return Me._NYM3_ADDRESS_DISTRICT
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_DISTRICT, value) = false) Then
+				Me.OnNYM3_ADDRESS_DISTRICTChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_DISTRICT = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_DISTRICT")
+				Me.OnNYM3_ADDRESS_DISTRICTChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_AMPHUR", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_AMPHUR() As String
+		Get
+			Return Me._NYM3_ADDRESS_AMPHUR
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_AMPHUR, value) = false) Then
+				Me.OnNYM3_ADDRESS_AMPHURChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_AMPHUR = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_AMPHUR")
+				Me.OnNYM3_ADDRESS_AMPHURChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_PROVINCE", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_PROVINCE() As String
+		Get
+			Return Me._NYM3_ADDRESS_PROVINCE
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_PROVINCE, value) = false) Then
+				Me.OnNYM3_ADDRESS_PROVINCEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_PROVINCE = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_PROVINCE")
+				Me.OnNYM3_ADDRESS_PROVINCEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_PHONE", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_PHONE() As String
+		Get
+			Return Me._NYM3_ADDRESS_PHONE
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_PHONE, value) = false) Then
+				Me.OnNYM3_ADDRESS_PHONEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_PHONE = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_PHONE")
+				Me.OnNYM3_ADDRESS_PHONEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_FAX", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_FAX() As String
+		Get
+			Return Me._NYM3_ADDRESS_FAX
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_FAX, value) = false) Then
+				Me.OnNYM3_ADDRESS_FAXChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_FAX = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_FAX")
+				Me.OnNYM3_ADDRESS_FAXChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_WISH_MED", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_WISH_MED() As String
+		Get
+			Return Me._NYM3_WISH_MED
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_WISH_MED, value) = false) Then
+				Me.OnNYM3_WISH_MEDChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_WISH_MED = value
+				Me.SendPropertyChanged("NYM3_WISH_MED")
+				Me.OnNYM3_WISH_MEDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_COUNT_MED", DbType:="Int")>  _
+	Public Property NYM3_COUNT_MED() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM3_COUNT_MED
+		End Get
+		Set
+			If (Me._NYM3_COUNT_MED.Equals(value) = false) Then
+				Me.OnNYM3_COUNT_MEDChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_COUNT_MED = value
+				Me.SendPropertyChanged("NYM3_COUNT_MED")
+				Me.OnNYM3_COUNT_MEDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DEPARTMAENT_ID", DbType:="Int")>  _
+	Public Property NYM3_DEPARTMAENT_ID() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM3_DEPARTMAENT_ID
+		End Get
+		Set
+			If (Me._NYM3_DEPARTMAENT_ID.Equals(value) = false) Then
+				Me.OnNYM3_DEPARTMAENT_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_DEPARTMAENT_ID = value
+				Me.SendPropertyChanged("NYM3_DEPARTMAENT_ID")
+				Me.OnNYM3_DEPARTMAENT_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DEPARTMAENT_NAME", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_DEPARTMAENT_NAME() As String
+		Get
+			Return Me._NYM3_DEPARTMAENT_NAME
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_DEPARTMAENT_NAME, value) = false) Then
+				Me.OnNYM3_DEPARTMAENT_NAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_DEPARTMAENT_NAME = value
+				Me.SendPropertyChanged("NYM3_DEPARTMAENT_NAME")
+				Me.OnNYM3_DEPARTMAENT_NAMEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NAME_ASK", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_NAME_ASK() As String
+		Get
+			Return Me._NYM3_NAME_ASK
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_NAME_ASK, value) = false) Then
+				Me.OnNYM3_NAME_ASKChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_NAME_ASK = value
+				Me.SendPropertyChanged("NYM3_NAME_ASK")
+				Me.OnNYM3_NAME_ASKChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NO_AFTER", DbType:="NVarChar(50)")>  _
+	Public Property NYM3_NO_AFTER() As String
+		Get
+			Return Me._NYM3_NO_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_NO_AFTER, value) = false) Then
+				Me.OnNYM3_NO_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_NO_AFTER = value
+				Me.SendPropertyChanged("NYM3_NO_AFTER")
+				Me.OnNYM3_NO_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DATE_TOP_AFTER", DbType:="DateTime")>  _
+	Public Property NYM3_DATE_TOP_AFTER() As System.Nullable(Of Date)
+		Get
+			Return Me._NYM3_DATE_TOP_AFTER
+		End Get
+		Set
+			If (Me._NYM3_DATE_TOP_AFTER.Equals(value) = false) Then
+				Me.OnNYM3_DATE_TOP_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_DATE_TOP_AFTER = value
+				Me.SendPropertyChanged("NYM3_DATE_TOP_AFTER")
+				Me.OnNYM3_DATE_TOP_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NAME_RECEIVE_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_NAME_RECEIVE_AFTER() As String
+		Get
+			Return Me._NYM3_NAME_RECEIVE_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_NAME_RECEIVE_AFTER, value) = false) Then
+				Me.OnNYM3_NAME_RECEIVE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_NAME_RECEIVE_AFTER = value
+				Me.SendPropertyChanged("NYM3_NAME_RECEIVE_AFTER")
+				Me.OnNYM3_NAME_RECEIVE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ALLOW_PLAN_AFTER", DbType:="Int")>  _
+	Public Property NYM3_ALLOW_PLAN_AFTER() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM3_ALLOW_PLAN_AFTER
+		End Get
+		Set
+			If (Me._NYM3_ALLOW_PLAN_AFTER.Equals(value) = false) Then
+				Me.OnNYM3_ALLOW_PLAN_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ALLOW_PLAN_AFTER = value
+				Me.SendPropertyChanged("NYM3_ALLOW_PLAN_AFTER")
+				Me.OnNYM3_ALLOW_PLAN_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_WRITE_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_WRITE_AFTER() As String
+		Get
+			Return Me._NYM3_WRITE_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_WRITE_AFTER, value) = false) Then
+				Me.OnNYM3_WRITE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_WRITE_AFTER = value
+				Me.SendPropertyChanged("NYM3_WRITE_AFTER")
+				Me.OnNYM3_WRITE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_WRITE_DATE_AFTER", DbType:="DateTime")>  _
+	Public Property NYM3_WRITE_DATE_AFTER() As System.Nullable(Of Date)
+		Get
+			Return Me._NYM3_WRITE_DATE_AFTER
+		End Get
+		Set
+			If (Me._NYM3_WRITE_DATE_AFTER.Equals(value) = false) Then
+				Me.OnNYM3_WRITE_DATE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_WRITE_DATE_AFTER = value
+				Me.SendPropertyChanged("NYM3_WRITE_DATE_AFTER")
+				Me.OnNYM3_WRITE_DATE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_TITLE_AFTER", DbType:="Int")>  _
+	Public Property NYM3_TITLE_AFTER() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM3_TITLE_AFTER
+		End Get
+		Set
+			If (Me._NYM3_TITLE_AFTER.Equals(value) = false) Then
+				Me.OnNYM3_TITLE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_TITLE_AFTER = value
+				Me.SendPropertyChanged("NYM3_TITLE_AFTER")
+				Me.OnNYM3_TITLE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_FULLNAME_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_FULLNAME_AFTER() As String
+		Get
+			Return Me._NYM3_FULLNAME_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_FULLNAME_AFTER, value) = false) Then
+				Me.OnNYM3_FULLNAME_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_FULLNAME_AFTER = value
+				Me.SendPropertyChanged("NYM3_FULLNAME_AFTER")
+				Me.OnNYM3_FULLNAME_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_FIRSTNAME_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_FIRSTNAME_AFTER() As String
+		Get
+			Return Me._NYM3_FIRSTNAME_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_FIRSTNAME_AFTER, value) = false) Then
+				Me.OnNYM3_FIRSTNAME_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_FIRSTNAME_AFTER = value
+				Me.SendPropertyChanged("NYM3_FIRSTNAME_AFTER")
+				Me.OnNYM3_FIRSTNAME_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_LASTNAME_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_LASTNAME_AFTER() As String
+		Get
+			Return Me._NYM3_LASTNAME_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_LASTNAME_AFTER, value) = false) Then
+				Me.OnNYM3_LASTNAME_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_LASTNAME_AFTER = value
+				Me.SendPropertyChanged("NYM3_LASTNAME_AFTER")
+				Me.OnNYM3_LASTNAME_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_POSITION_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_POSITION_AFTER() As String
+		Get
+			Return Me._NYM3_POSITION_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_POSITION_AFTER, value) = false) Then
+				Me.OnNYM3_POSITION_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_POSITION_AFTER = value
+				Me.SendPropertyChanged("NYM3_POSITION_AFTER")
+				Me.OnNYM3_POSITION_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ALLOW_NAME_AFTER", DbType:="Int")>  _
+	Public Property NYM3_ALLOW_NAME_AFTER() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM3_ALLOW_NAME_AFTER
+		End Get
+		Set
+			If (Me._NYM3_ALLOW_NAME_AFTER.Equals(value) = false) Then
+				Me.OnNYM3_ALLOW_NAME_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ALLOW_NAME_AFTER = value
+				Me.SendPropertyChanged("NYM3_ALLOW_NAME_AFTER")
+				Me.OnNYM3_ALLOW_NAME_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ALLOW_NAME_DETAIL_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ALLOW_NAME_DETAIL_AFTER() As String
+		Get
+			Return Me._NYM3_ALLOW_NAME_DETAIL_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ALLOW_NAME_DETAIL_AFTER, value) = false) Then
+				Me.OnNYM3_ALLOW_NAME_DETAIL_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ALLOW_NAME_DETAIL_AFTER = value
+				Me.SendPropertyChanged("NYM3_ALLOW_NAME_DETAIL_AFTER")
+				Me.OnNYM3_ALLOW_NAME_DETAIL_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_LICENSE_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_LICENSE_AFTER() As String
+		Get
+			Return Me._NYM3_LICENSE_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_LICENSE_AFTER, value) = false) Then
+				Me.OnNYM3_LICENSE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_LICENSE_AFTER = value
+				Me.SendPropertyChanged("NYM3_LICENSE_AFTER")
+				Me.OnNYM3_LICENSE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_NO_AFTER", DbType:="NVarChar(50)")>  _
+	Public Property NYM3_ADDRESS_NO_AFTER() As String
+		Get
+			Return Me._NYM3_ADDRESS_NO_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_NO_AFTER, value) = false) Then
+				Me.OnNYM3_ADDRESS_NO_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_NO_AFTER = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_NO_AFTER")
+				Me.OnNYM3_ADDRESS_NO_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_SOI_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_SOI_AFTER() As String
+		Get
+			Return Me._NYM3_ADDRESS_SOI_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_SOI_AFTER, value) = false) Then
+				Me.OnNYM3_ADDRESS_SOI_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_SOI_AFTER = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_SOI_AFTER")
+				Me.OnNYM3_ADDRESS_SOI_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_STREET_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_STREET_AFTER() As String
+		Get
+			Return Me._NYM3_ADDRESS_STREET_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_STREET_AFTER, value) = false) Then
+				Me.OnNYM3_ADDRESS_STREET_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_STREET_AFTER = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_STREET_AFTER")
+				Me.OnNYM3_ADDRESS_STREET_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_MOO_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_MOO_AFTER() As String
+		Get
+			Return Me._NYM3_ADDRESS_MOO_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_MOO_AFTER, value) = false) Then
+				Me.OnNYM3_ADDRESS_MOO_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_MOO_AFTER = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_MOO_AFTER")
+				Me.OnNYM3_ADDRESS_MOO_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_DISTRICT_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_DISTRICT_AFTER() As String
+		Get
+			Return Me._NYM3_ADDRESS_DISTRICT_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_DISTRICT_AFTER, value) = false) Then
+				Me.OnNYM3_ADDRESS_DISTRICT_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_DISTRICT_AFTER = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_DISTRICT_AFTER")
+				Me.OnNYM3_ADDRESS_DISTRICT_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_AMPHUR_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_AMPHUR_AFTER() As String
+		Get
+			Return Me._NYM3_ADDRESS_AMPHUR_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_AMPHUR_AFTER, value) = false) Then
+				Me.OnNYM3_ADDRESS_AMPHUR_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_AMPHUR_AFTER = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_AMPHUR_AFTER")
+				Me.OnNYM3_ADDRESS_AMPHUR_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_PROVINCE_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_PROVINCE_AFTER() As String
+		Get
+			Return Me._NYM3_ADDRESS_PROVINCE_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_PROVINCE_AFTER, value) = false) Then
+				Me.OnNYM3_ADDRESS_PROVINCE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_PROVINCE_AFTER = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_PROVINCE_AFTER")
+				Me.OnNYM3_ADDRESS_PROVINCE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_PHONE_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_PHONE_AFTER() As String
+		Get
+			Return Me._NYM3_ADDRESS_PHONE_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_PHONE_AFTER, value) = false) Then
+				Me.OnNYM3_ADDRESS_PHONE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_PHONE_AFTER = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_PHONE_AFTER")
+				Me.OnNYM3_ADDRESS_PHONE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ADDRESS_FAX_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_ADDRESS_FAX_AFTER() As String
+		Get
+			Return Me._NYM3_ADDRESS_FAX_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_ADDRESS_FAX_AFTER, value) = false) Then
+				Me.OnNYM3_ADDRESS_FAX_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ADDRESS_FAX_AFTER = value
+				Me.SendPropertyChanged("NYM3_ADDRESS_FAX_AFTER")
+				Me.OnNYM3_ADDRESS_FAX_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_WISH_MED_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_WISH_MED_AFTER() As String
+		Get
+			Return Me._NYM3_WISH_MED_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_WISH_MED_AFTER, value) = false) Then
+				Me.OnNYM3_WISH_MED_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_WISH_MED_AFTER = value
+				Me.SendPropertyChanged("NYM3_WISH_MED_AFTER")
+				Me.OnNYM3_WISH_MED_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_COUNT_MED_AFTER", DbType:="NVarChar(50)")>  _
+	Public Property NYM3_COUNT_MED_AFTER() As String
+		Get
+			Return Me._NYM3_COUNT_MED_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_COUNT_MED_AFTER, value) = false) Then
+				Me.OnNYM3_COUNT_MED_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_COUNT_MED_AFTER = value
+				Me.SendPropertyChanged("NYM3_COUNT_MED_AFTER")
+				Me.OnNYM3_COUNT_MED_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DEPARTMAENT_ID_AFTER", DbType:="Int")>  _
+	Public Property NYM3_DEPARTMAENT_ID_AFTER() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM3_DEPARTMAENT_ID_AFTER
+		End Get
+		Set
+			If (Me._NYM3_DEPARTMAENT_ID_AFTER.Equals(value) = false) Then
+				Me.OnNYM3_DEPARTMAENT_ID_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_DEPARTMAENT_ID_AFTER = value
+				Me.SendPropertyChanged("NYM3_DEPARTMAENT_ID_AFTER")
+				Me.OnNYM3_DEPARTMAENT_ID_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DEPARTMAENT_NAME_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_DEPARTMAENT_NAME_AFTER() As String
+		Get
+			Return Me._NYM3_DEPARTMAENT_NAME_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_DEPARTMAENT_NAME_AFTER, value) = false) Then
+				Me.OnNYM3_DEPARTMAENT_NAME_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_DEPARTMAENT_NAME_AFTER = value
+				Me.SendPropertyChanged("NYM3_DEPARTMAENT_NAME_AFTER")
+				Me.OnNYM3_DEPARTMAENT_NAME_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NAME_ASK_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_NAME_ASK_AFTER() As String
+		Get
+			Return Me._NYM3_NAME_ASK_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_NAME_ASK_AFTER, value) = false) Then
+				Me.OnNYM3_NAME_ASK_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_NAME_ASK_AFTER = value
+				Me.SendPropertyChanged("NYM3_NAME_ASK_AFTER")
+				Me.OnNYM3_NAME_ASK_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DETAIL", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_DETAIL() As String
+		Get
+			Return Me._NYM3_DETAIL
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_DETAIL, value) = false) Then
+				Me.OnNYM3_DETAILChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_DETAIL = value
+				Me.SendPropertyChanged("NYM3_DETAIL")
+				Me.OnNYM3_DETAILChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DETAIL_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_DETAIL_AFTER() As String
+		Get
+			Return Me._NYM3_DETAIL_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_DETAIL_AFTER, value) = false) Then
+				Me.OnNYM3_DETAIL_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_DETAIL_AFTER = value
+				Me.SendPropertyChanged("NYM3_DETAIL_AFTER")
+				Me.OnNYM3_DETAIL_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_ACTIVE", DbType:="Bit")>  _
+	Public Property NYM3_ACTIVE() As System.Nullable(Of Boolean)
+		Get
+			Return Me._NYM3_ACTIVE
+		End Get
+		Set
+			If (Me._NYM3_ACTIVE.Equals(value) = false) Then
+				Me.OnNYM3_ACTIVEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_ACTIVE = value
+				Me.SendPropertyChanged("NYM3_ACTIVE")
+				Me.OnNYM3_ACTIVEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_COUNT_KEY", DbType:="Int")>  _
+	Public Property NYM3_COUNT_KEY() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM3_COUNT_KEY
+		End Get
+		Set
+			If (Me._NYM3_COUNT_KEY.Equals(value) = false) Then
+				Me.OnNYM3_COUNT_KEYChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_COUNT_KEY = value
+				Me.SendPropertyChanged("NYM3_COUNT_KEY")
+				Me.OnNYM3_COUNT_KEYChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_NEWCODE", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_NEWCODE() As String
+		Get
+			Return Me._NYM3_NEWCODE
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_NEWCODE, value) = false) Then
+				Me.OnNYM3_NEWCODEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_NEWCODE = value
+				Me.SendPropertyChanged("NYM3_NEWCODE")
+				Me.OnNYM3_NEWCODEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_RCVNO", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_RCVNO() As String
+		Get
+			Return Me._NYM3_RCVNO
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_RCVNO, value) = false) Then
+				Me.OnNYM3_RCVNOChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_RCVNO = value
+				Me.SendPropertyChanged("NYM3_RCVNO")
+				Me.OnNYM3_RCVNOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_IDENTIFY", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_IDENTIFY() As String
+		Get
+			Return Me._NYM3_IDENTIFY
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_IDENTIFY, value) = false) Then
+				Me.OnNYM3_IDENTIFYChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_IDENTIFY = value
+				Me.SendPropertyChanged("NYM3_IDENTIFY")
+				Me.OnNYM3_IDENTIFYChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_DL", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_DL() As String
+		Get
+			Return Me._NYM3_DL
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_DL, value) = false) Then
+				Me.OnNYM3_DLChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_DL = value
+				Me.SendPropertyChanged("NYM3_DL")
+				Me.OnNYM3_DLChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM_TYPE", DbType:="Int")>  _
+	Public Property NYM_TYPE() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM_TYPE
+		End Get
+		Set
+			If (Me._NYM_TYPE.Equals(value) = false) Then
+				Me.OnNYM_TYPEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM_TYPE = value
+				Me.SendPropertyChanged("NYM_TYPE")
+				Me.OnNYM_TYPEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TOKEN", DbType:="NVarChar(MAX)")>  _
+	Public Property TOKEN() As String
+		Get
+			Return Me._TOKEN
+		End Get
+		Set
+			If (String.Equals(Me._TOKEN, value) = false) Then
+				Me.OnTOKENChanging(value)
+				Me.SendPropertyChanging
+				Me._TOKEN = value
+				Me.SendPropertyChanged("TOKEN")
+				Me.OnTOKENChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITICEN", DbType:="NVarChar(50)")>  _
+	Public Property CITICEN() As String
+		Get
+			Return Me._CITICEN
+		End Get
+		Set
+			If (String.Equals(Me._CITICEN, value) = false) Then
+				Me.OnCITICENChanging(value)
+				Me.SendPropertyChanging
+				Me._CITICEN = value
+				Me.SendPropertyChanged("CITICEN")
+				Me.OnCITICENChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATE_DATE", DbType:="DateTime")>  _
+	Public Property CREATE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CREATE_DATE
+		End Get
+		Set
+			If (Me._CREATE_DATE.Equals(value) = false) Then
+				Me.OnCREATE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATE_DATE = value
+				Me.SendPropertyChanged("CREATE_DATE")
+				Me.OnCREATE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATE_USER", DbType:="NVarChar(MAX)")>  _
+	Public Property CREATE_USER() As String
+		Get
+			Return Me._CREATE_USER
+		End Get
+		Set
+			If (String.Equals(Me._CREATE_USER, value) = false) Then
+				Me.OnCREATE_USERChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATE_USER = value
+				Me.SendPropertyChanged("CREATE_USER")
+				Me.OnCREATE_USERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UPDATE_DATE", DbType:="DateTime")>  _
+	Public Property UPDATE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._UPDATE_DATE
+		End Get
+		Set
+			If (Me._UPDATE_DATE.Equals(value) = false) Then
+				Me.OnUPDATE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._UPDATE_DATE = value
+				Me.SendPropertyChanged("UPDATE_DATE")
+				Me.OnUPDATE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UPDATE_USER", DbType:="NVarChar(MAX)")>  _
+	Public Property UPDATE_USER() As String
+		Get
+			Return Me._UPDATE_USER
+		End Get
+		Set
+			If (String.Equals(Me._UPDATE_USER, value) = false) Then
+				Me.OnUPDATE_USERChanging(value)
+				Me.SendPropertyChanging
+				Me._UPDATE_USER = value
+				Me.SendPropertyChanged("UPDATE_USER")
+				Me.OnUPDATE_USERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TR_ID", DbType:="NVarChar(MAX)")>  _
+	Public Property TR_ID() As String
+		Get
+			Return Me._TR_ID
+		End Get
+		Set
+			If (String.Equals(Me._TR_ID, value) = false) Then
+				Me.OnTR_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._TR_ID = value
+				Me.SendPropertyChanged("TR_ID")
+				Me.OnTR_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STATUS_ID", DbType:="Int")>  _
+	Public Property STATUS_ID() As System.Nullable(Of Integer)
+		Get
+			Return Me._STATUS_ID
+		End Get
+		Set
+			If (Me._STATUS_ID.Equals(value) = false) Then
+				Me.OnSTATUS_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._STATUS_ID = value
+				Me.SendPropertyChanged("STATUS_ID")
+				Me.OnSTATUS_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM3_IDENTIFY_STAFF", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM3_IDENTIFY_STAFF() As String
+		Get
+			Return Me._NYM3_IDENTIFY_STAFF
+		End Get
+		Set
+			If (String.Equals(Me._NYM3_IDENTIFY_STAFF, value) = false) Then
+				Me.OnNYM3_IDENTIFY_STAFFChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM3_IDENTIFY_STAFF = value
+				Me.SendPropertyChanged("NYM3_IDENTIFY_STAFF")
+				Me.OnNYM3_IDENTIFY_STAFFChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CONSIDER_DATE", DbType:="DateTime")>  _
+	Public Property CONSIDER_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CONSIDER_DATE
+		End Get
+		Set
+			If (Me._CONSIDER_DATE.Equals(value) = false) Then
+				Me.OnCONSIDER_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CONSIDER_DATE = value
+				Me.SendPropertyChanged("CONSIDER_DATE")
+				Me.OnCONSIDER_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STAFF_RECEIVE_IDEN", DbType:="NVarChar(MAX)")>  _
+	Public Property STAFF_RECEIVE_IDEN() As String
+		Get
+			Return Me._STAFF_RECEIVE_IDEN
+		End Get
+		Set
+			If (String.Equals(Me._STAFF_RECEIVE_IDEN, value) = false) Then
+				Me.OnSTAFF_RECEIVE_IDENChanging(value)
+				Me.SendPropertyChanging
+				Me._STAFF_RECEIVE_IDEN = value
+				Me.SendPropertyChanged("STAFF_RECEIVE_IDEN")
+				Me.OnSTAFF_RECEIVE_IDENChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STAFF_NAME", DbType:="NVarChar(MAX)")>  _
+	Public Property STAFF_NAME() As String
+		Get
+			Return Me._STAFF_NAME
+		End Get
+		Set
+			If (String.Equals(Me._STAFF_NAME, value) = false) Then
+				Me.OnSTAFF_NAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._STAFF_NAME = value
+				Me.SendPropertyChanged("STAFF_NAME")
+				Me.OnSTAFF_NAMEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_APPROVE_DATE", DbType:="DateTime")>  _
+	Public Property APPROVE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._APPROVE_DATE
+		End Get
+		Set
+			If (Me._APPROVE_DATE.Equals(value) = false) Then
+				Me.OnAPPROVE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._APPROVE_DATE = value
+				Me.SendPropertyChanged("APPROVE_DATE")
+				Me.OnAPPROVE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK", DbType:="NVarChar(MAX)")>  _
+	Public Property REMARK() As String
+		Get
+			Return Me._REMARK
+		End Get
+		Set
+			If (String.Equals(Me._REMARK, value) = false) Then
+				Me.OnREMARKChanging(value)
+				Me.SendPropertyChanging
+				Me._REMARK = value
+				Me.SendPropertyChanged("REMARK")
+				Me.OnREMARKChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ESTIMATE_CONSIDER_DATE", DbType:="DateTime")>  _
+	Public Property ESTIMATE_CONSIDER_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._ESTIMATE_CONSIDER_DATE
+		End Get
+		Set
+			If (Me._ESTIMATE_CONSIDER_DATE.Equals(value) = false) Then
+				Me.OnESTIMATE_CONSIDER_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._ESTIMATE_CONSIDER_DATE = value
+				Me.SendPropertyChanged("ESTIMATE_CONSIDER_DATE")
+				Me.OnESTIMATE_CONSIDER_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK_CONSIDER", DbType:="NVarChar(MAX)")>  _
+	Public Property REMARK_CONSIDER() As String
+		Get
+			Return Me._REMARK_CONSIDER
+		End Get
+		Set
+			If (String.Equals(Me._REMARK_CONSIDER, value) = false) Then
+				Me.OnREMARK_CONSIDERChanging(value)
+				Me.SendPropertyChanging
+				Me._REMARK_CONSIDER = value
+				Me.SendPropertyChanged("REMARK_CONSIDER")
+				Me.OnREMARK_CONSIDERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REMARK_EDIT", DbType:="NVarChar(MAX)")>  _
+	Public Property REMARK_EDIT() As String
+		Get
+			Return Me._REMARK_EDIT
+		End Get
+		Set
+			If (String.Equals(Me._REMARK_EDIT, value) = false) Then
+				Me.OnREMARK_EDITChanging(value)
+				Me.SendPropertyChanging
+				Me._REMARK_EDIT = value
+				Me.SendPropertyChanged("REMARK_EDIT")
+				Me.OnREMARK_EDITChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE1", DbType:="NVarChar(MAX)")>  _
+	Public Property POSITION_CONSIDER_LINE1() As String
+		Get
+			Return Me._POSITION_CONSIDER_LINE1
+		End Get
+		Set
+			If (String.Equals(Me._POSITION_CONSIDER_LINE1, value) = false) Then
+				Me.OnPOSITION_CONSIDER_LINE1Changing(value)
+				Me.SendPropertyChanging
+				Me._POSITION_CONSIDER_LINE1 = value
+				Me.SendPropertyChanged("POSITION_CONSIDER_LINE1")
+				Me.OnPOSITION_CONSIDER_LINE1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE2", DbType:="NVarChar(MAX)")>  _
+	Public Property POSITION_CONSIDER_LINE2() As String
+		Get
+			Return Me._POSITION_CONSIDER_LINE2
+		End Get
+		Set
+			If (String.Equals(Me._POSITION_CONSIDER_LINE2, value) = false) Then
+				Me.OnPOSITION_CONSIDER_LINE2Changing(value)
+				Me.SendPropertyChanging
+				Me._POSITION_CONSIDER_LINE2 = value
+				Me.SendPropertyChanged("POSITION_CONSIDER_LINE2")
+				Me.OnPOSITION_CONSIDER_LINE2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE3", DbType:="NVarChar(MAX)")>  _
+	Public Property POSITION_CONSIDER_LINE3() As String
+		Get
+			Return Me._POSITION_CONSIDER_LINE3
+		End Get
+		Set
+			If (String.Equals(Me._POSITION_CONSIDER_LINE3, value) = false) Then
+				Me.OnPOSITION_CONSIDER_LINE3Changing(value)
+				Me.SendPropertyChanging
+				Me._POSITION_CONSIDER_LINE3 = value
+				Me.SendPropertyChanged("POSITION_CONSIDER_LINE3")
+				Me.OnPOSITION_CONSIDER_LINE3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE4", DbType:="NVarChar(MAX)")>  _
+	Public Property POSITION_CONSIDER_LINE4() As String
+		Get
+			Return Me._POSITION_CONSIDER_LINE4
+		End Get
+		Set
+			If (String.Equals(Me._POSITION_CONSIDER_LINE4, value) = false) Then
+				Me.OnPOSITION_CONSIDER_LINE4Changing(value)
+				Me.SendPropertyChanging
+				Me._POSITION_CONSIDER_LINE4 = value
+				Me.SendPropertyChanged("POSITION_CONSIDER_LINE4")
+				Me.OnPOSITION_CONSIDER_LINE4Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_POSITION_CONSIDER_LINE5", DbType:="NVarChar(MAX)")>  _
+	Public Property POSITION_CONSIDER_LINE5() As String
+		Get
+			Return Me._POSITION_CONSIDER_LINE5
+		End Get
+		Set
+			If (String.Equals(Me._POSITION_CONSIDER_LINE5, value) = false) Then
+				Me.OnPOSITION_CONSIDER_LINE5Changing(value)
+				Me.SendPropertyChanging
+				Me._POSITION_CONSIDER_LINE5 = value
+				Me.SendPropertyChanged("POSITION_CONSIDER_LINE5")
+				Me.OnPOSITION_CONSIDER_LINE5Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_rcvdate", DbType:="DateTime")>  _
+	Public Property rcvdate() As System.Nullable(Of Date)
+		Get
+			Return Me._rcvdate
+		End Get
+		Set
+			If (Me._rcvdate.Equals(value) = false) Then
+				Me.OnrcvdateChanging(value)
+				Me.SendPropertyChanging
+				Me._rcvdate = value
+				Me.SendPropertyChanged("rcvdate")
+				Me.OnrcvdateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROCESS_ID", DbType:="NVarChar(50)")>  _
+	Public Property PROCESS_ID() As String
+		Get
+			Return Me._PROCESS_ID
+		End Get
+		Set
+			If (String.Equals(Me._PROCESS_ID, value) = false) Then
+				Me.OnPROCESS_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._PROCESS_ID = value
+				Me.SendPropertyChanged("PROCESS_ID")
+				Me.OnPROCESS_IDChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.FDA_DRUG_IMPORT_NYM_4")>  _
+Partial Public Class FDA_DRUG_IMPORT_NYM_4
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _NYM4_IDA As Integer
+	
+	Private _FK_IDA As System.Nullable(Of Integer)
+	
+	Private _DL As String
+	
+	Private _NYM4_NO As String
+	
+	Private _NYM4_DATE_TOP As System.Nullable(Of Date)
+	
+	Private _NYM4_NAME_RECEIVE As String
+	
+	Private _NYM4_ALLOW_PLAN As System.Nullable(Of Integer)
+	
+	Private _NYM4_WRITE As String
+	
+	Private _NYM4_WRITE_DATE As System.Nullable(Of Date)
+	
+	Private _NYM4_TITLE As System.Nullable(Of Integer)
+	
+	Private _NYM4_FULLNAME As String
+	
+	Private _NYM4_POSITION As String
+	
+	Private _NYM4_ALLOW_NAME As System.Nullable(Of Integer)
+	
+	Private _NYM4_ALLOW_NAME_DETAIL As String
+	
+	Private _NYM4_LICENSE As String
+	
+	Private _NYM4_ADDRESS_NO As String
+	
+	Private _NYM4_ADDRESS_SOI As String
+	
+	Private _NYM4_ADDRESS_STREET As String
+	
+	Private _NYM4_ADDRESS_MOO As String
+	
+	Private _NYM4_ADDRESS_DISTRICT As String
+	
+	Private _NYM4_ADDRESS_AMPHUR As String
+	
+	Private _NYM4_ADDRESS_PROVINCE As String
+	
+	Private _NYM4_ADDRESS_PHONE As String
+	
+	Private _NYM4_ADDRESS_FAX As String
+	
+	Private _NYM4_WISH_MED As String
+	
+	Private _NYM4_COUNT_MED As System.Nullable(Of Integer)
+	
+	Private _NYM4_DEPARTMAENT_ID As System.Nullable(Of Integer)
+	
+	Private _NYM4_DEPARTMAENT_NAME As String
+	
+	Private _NYM4_GIVETO As String
+	
+	Private _NYM4_NAME_ASK As String
+	
+	Private _NYM4_NO_AFTER As String
+	
+	Private _NYM4_DATE_TOP_AFTER As System.Nullable(Of Date)
+	
+	Private _NYM_NAME_RECEIVE_AFTER As String
+	
+	Private _NYM4_ALLOW_PLAN_AFTER As System.Nullable(Of Integer)
+	
+	Private _NYM4_WRITE_AFTER As String
+	
+	Private _NYM4_WRITE_DATE_AFTER As System.Nullable(Of Date)
+	
+	Private _NYM4_TITLE_AFTER As System.Nullable(Of Integer)
+	
+	Private _NYM4_FULLNAME_AFTER As String
+	
+	Private _NYM4_FIRSTNAME_AFTER As String
+	
+	Private _NYM4_LASTNAME_AFTER As String
+	
+	Private _NYM4_POSITION_AFTER As String
+	
+	Private _NYM4_ALLOW_NAME_AFTER As System.Nullable(Of Integer)
+	
+	Private _NYM4_ALLOW_NAME_DETAIL_AFTER As String
+	
+	Private _NYM4_LICENSE_AFTER As String
+	
+	Private _NYM4_ADDRESS_NO_AFTER As String
+	
+	Private _NYM4_ADDRESS_SOI_AFTER As String
+	
+	Private _NYM4_ADDRESS_STREET_AFTER As String
+	
+	Private _NYM4_ADDRESS_MOO_AFTER As String
+	
+	Private _NYM4_ADDRESS_DISTRICT_AFTER As String
+	
+	Private _NYM4_ADDRESS_AMPHUR_AFTER As String
+	
+	Private _NYM4_ADDRESS_PROVINCE_AFTER As String
+	
+	Private _NYM4_ADDRESS_PHONE_AFTER As String
+	
+	Private _NYM4_ADDRESS_FAX_AFTER As String
+	
+	Private _NYM4_WISH_MED_AFTER As String
+	
+	Private _NYM4_COUNT_MED_AFTER As String
+	
+	Private _NYM4_DEPARTMAENT_ID_AFTER As System.Nullable(Of Integer)
+	
+	Private _NYM4_DEPARTMAENT_NAME_AFTER As String
+	
+	Private _NYM4_GIVETO_AFTER As String
+	
+	Private _NYM4_NAME_ASK_AFTER As String
+	
+	Private _NYM4_DETAIL As String
+	
+	Private _NYM4_DETAIL_AFTER As String
+	
+	Private _NYM4_ACTIVE As System.Nullable(Of Boolean)
+	
+	Private _NYM4_COUNT_KEY As System.Nullable(Of Integer)
+	
+	Private _NYM4_NEWCODE As String
+	
+	Private _NYM4_RCVNO As String
+	
+	Private _NYM4_IDENTIFY As String
+	
+	Private _NYM4_DL As String
+	
+	Private _NYM_TYPE As System.Nullable(Of Integer)
+	
+	Private _TOKEN As String
+	
+	Private _CITIZEN As String
+	
+	Private _CREATE_DATE As System.Nullable(Of Date)
+	
+	Private _CREATE_USER As String
+	
+	Private _UPDATE_DATE As System.Nullable(Of Date)
+	
+	Private _UPDATE_USER As String
+	
+	Private _TR_ID As String
+	
+	Private _STATUS_ID As System.Nullable(Of Integer)
+	
+	Private _NYM4_IDENTIFY_STAFF As String
+	
+	Private _CONSIDER_DATE As System.Nullable(Of Date)
+	
+	Private _STAFF_RECEIVE_IDEN As String
+	
+	Private _STAFF_NAME As String
+	
+	Private _REMARK As String
+	
+	Private _APPROVE_DATE As System.Nullable(Of Date)
+	
+	Private _ESTIMATE_CONSIDER_DATE As System.Nullable(Of Date)
+	
+	Private _REMARK_CONSIDER As String
+	
+	Private _REMARK_EDIT As String
+	
+	Private _POSITION_CONSIDER_LINE1 As String
+	
+	Private _POSITION_CONSIDER_LINE2 As String
+	
+	Private _POSITION_CONSIDER_LINE3 As String
+	
+	Private _POSITION_CONSIDER_LINE4 As String
+	
+	Private _POSITION_CONSIDER_LINE5 As String
+	
+	Private _rcvdate As System.Nullable(Of Date)
+	
+	Private _PROCESS_ID As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnNYM4_IDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnNYM4_IDAChanged()
+    End Sub
+    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnFK_IDAChanged()
+    End Sub
+    Partial Private Sub OnDLChanging(value As String)
+    End Sub
+    Partial Private Sub OnDLChanged()
+    End Sub
+    Partial Private Sub OnNYM4_NOChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_NOChanged()
+    End Sub
+    Partial Private Sub OnNYM4_DATE_TOPChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnNYM4_DATE_TOPChanged()
+    End Sub
+    Partial Private Sub OnNYM4_NAME_RECEIVEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_NAME_RECEIVEChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ALLOW_PLANChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM4_ALLOW_PLANChanged()
+    End Sub
+    Partial Private Sub OnNYM4_WRITEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_WRITEChanged()
+    End Sub
+    Partial Private Sub OnNYM4_WRITE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnNYM4_WRITE_DATEChanged()
+    End Sub
+    Partial Private Sub OnNYM4_TITLEChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM4_TITLEChanged()
+    End Sub
+    Partial Private Sub OnNYM4_FULLNAMEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_FULLNAMEChanged()
+    End Sub
+    Partial Private Sub OnNYM4_POSITIONChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_POSITIONChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ALLOW_NAMEChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM4_ALLOW_NAMEChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ALLOW_NAME_DETAILChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ALLOW_NAME_DETAILChanged()
+    End Sub
+    Partial Private Sub OnNYM4_LICENSEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_LICENSEChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_NOChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_NOChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_SOIChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_SOIChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_STREETChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_STREETChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_MOOChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_MOOChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_DISTRICTChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_DISTRICTChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_AMPHURChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_AMPHURChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_PROVINCEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_PROVINCEChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_PHONEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_PHONEChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_FAXChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_FAXChanged()
+    End Sub
+    Partial Private Sub OnNYM4_WISH_MEDChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_WISH_MEDChanged()
+    End Sub
+    Partial Private Sub OnNYM4_COUNT_MEDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM4_COUNT_MEDChanged()
+    End Sub
+    Partial Private Sub OnNYM4_DEPARTMAENT_IDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM4_DEPARTMAENT_IDChanged()
+    End Sub
+    Partial Private Sub OnNYM4_DEPARTMAENT_NAMEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_DEPARTMAENT_NAMEChanged()
+    End Sub
+    Partial Private Sub OnNYM4_GIVETOChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_GIVETOChanged()
+    End Sub
+    Partial Private Sub OnNYM4_NAME_ASKChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_NAME_ASKChanged()
+    End Sub
+    Partial Private Sub OnNYM4_NO_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_NO_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_DATE_TOP_AFTERChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnNYM4_DATE_TOP_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM_NAME_RECEIVE_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM_NAME_RECEIVE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ALLOW_PLAN_AFTERChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM4_ALLOW_PLAN_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_WRITE_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_WRITE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_WRITE_DATE_AFTERChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnNYM4_WRITE_DATE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_TITLE_AFTERChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM4_TITLE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_FULLNAME_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_FULLNAME_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_FIRSTNAME_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_FIRSTNAME_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_LASTNAME_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_LASTNAME_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_POSITION_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_POSITION_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ALLOW_NAME_AFTERChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM4_ALLOW_NAME_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ALLOW_NAME_DETAIL_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ALLOW_NAME_DETAIL_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_LICENSE_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_LICENSE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_NO_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_NO_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_SOI_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_SOI_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_STREET_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_STREET_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_MOO_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_MOO_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_DISTRICT_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_DISTRICT_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_AMPHUR_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_AMPHUR_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_PROVINCE_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_PROVINCE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_PHONE_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_PHONE_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_FAX_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_ADDRESS_FAX_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_WISH_MED_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_WISH_MED_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_COUNT_MED_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_COUNT_MED_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_DEPARTMAENT_ID_AFTERChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM4_DEPARTMAENT_ID_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_DEPARTMAENT_NAME_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_DEPARTMAENT_NAME_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_GIVETO_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_GIVETO_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_NAME_ASK_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_NAME_ASK_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_DETAILChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_DETAILChanged()
+    End Sub
+    Partial Private Sub OnNYM4_DETAIL_AFTERChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_DETAIL_AFTERChanged()
+    End Sub
+    Partial Private Sub OnNYM4_ACTIVEChanging(value As System.Nullable(Of Boolean))
+    End Sub
+    Partial Private Sub OnNYM4_ACTIVEChanged()
+    End Sub
+    Partial Private Sub OnNYM4_COUNT_KEYChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM4_COUNT_KEYChanged()
+    End Sub
+    Partial Private Sub OnNYM4_NEWCODEChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_NEWCODEChanged()
+    End Sub
+    Partial Private Sub OnNYM4_RCVNOChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_RCVNOChanged()
+    End Sub
+    Partial Private Sub OnNYM4_IDENTIFYChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_IDENTIFYChanged()
+    End Sub
+    Partial Private Sub OnNYM4_DLChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_DLChanged()
+    End Sub
+    Partial Private Sub OnNYM_TYPEChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnNYM_TYPEChanged()
+    End Sub
+    Partial Private Sub OnTOKENChanging(value As String)
+    End Sub
+    Partial Private Sub OnTOKENChanged()
+    End Sub
+    Partial Private Sub OnCITIZENChanging(value As String)
+    End Sub
+    Partial Private Sub OnCITIZENChanged()
+    End Sub
+    Partial Private Sub OnCREATE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnCREATE_DATEChanged()
+    End Sub
+    Partial Private Sub OnCREATE_USERChanging(value As String)
+    End Sub
+    Partial Private Sub OnCREATE_USERChanged()
+    End Sub
+    Partial Private Sub OnUPDATE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnUPDATE_DATEChanged()
+    End Sub
+    Partial Private Sub OnUPDATE_USERChanging(value As String)
+    End Sub
+    Partial Private Sub OnUPDATE_USERChanged()
+    End Sub
+    Partial Private Sub OnTR_IDChanging(value As String)
+    End Sub
+    Partial Private Sub OnTR_IDChanged()
+    End Sub
+    Partial Private Sub OnSTATUS_IDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnSTATUS_IDChanged()
+    End Sub
+    Partial Private Sub OnNYM4_IDENTIFY_STAFFChanging(value As String)
+    End Sub
+    Partial Private Sub OnNYM4_IDENTIFY_STAFFChanged()
+    End Sub
+    Partial Private Sub OnCONSIDER_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnCONSIDER_DATEChanged()
+    End Sub
+    Partial Private Sub OnSTAFF_RECEIVE_IDENChanging(value As String)
+    End Sub
+    Partial Private Sub OnSTAFF_RECEIVE_IDENChanged()
+    End Sub
+    Partial Private Sub OnSTAFF_NAMEChanging(value As String)
+    End Sub
+    Partial Private Sub OnSTAFF_NAMEChanged()
+    End Sub
+    Partial Private Sub OnREMARKChanging(value As String)
+    End Sub
+    Partial Private Sub OnREMARKChanged()
+    End Sub
+    Partial Private Sub OnAPPROVE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnAPPROVE_DATEChanged()
+    End Sub
+    Partial Private Sub OnESTIMATE_CONSIDER_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnESTIMATE_CONSIDER_DATEChanged()
+    End Sub
+    Partial Private Sub OnREMARK_CONSIDERChanging(value As String)
+    End Sub
+    Partial Private Sub OnREMARK_CONSIDERChanged()
+    End Sub
+    Partial Private Sub OnREMARK_EDITChanging(value As String)
+    End Sub
+    Partial Private Sub OnREMARK_EDITChanged()
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE1Changing(value As String)
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE1Changed()
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE2Changing(value As String)
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE2Changed()
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE3Changing(value As String)
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE3Changed()
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE4Changing(value As String)
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE4Changed()
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE5Changing(value As String)
+    End Sub
+    Partial Private Sub OnPOSITION_CONSIDER_LINE5Changed()
+    End Sub
+    Partial Private Sub OnrcvdateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnrcvdateChanged()
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property NYM4_IDA() As Integer
+		Get
+			Return Me._NYM4_IDA
+		End Get
+		Set
+			If ((Me._NYM4_IDA = value)  _
+						= false) Then
+				Me.OnNYM4_IDAChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_IDA = value
+				Me.SendPropertyChanged("NYM4_IDA")
+				Me.OnNYM4_IDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
+	Public Property FK_IDA() As System.Nullable(Of Integer)
+		Get
+			Return Me._FK_IDA
+		End Get
+		Set
+			If (Me._FK_IDA.Equals(value) = false) Then
+				Me.OnFK_IDAChanging(value)
+				Me.SendPropertyChanging
+				Me._FK_IDA = value
+				Me.SendPropertyChanged("FK_IDA")
+				Me.OnFK_IDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DL", DbType:="NVarChar(MAX)")>  _
+	Public Property DL() As String
+		Get
+			Return Me._DL
+		End Get
+		Set
+			If (String.Equals(Me._DL, value) = false) Then
+				Me.OnDLChanging(value)
+				Me.SendPropertyChanging
+				Me._DL = value
+				Me.SendPropertyChanged("DL")
+				Me.OnDLChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_NO", DbType:="NVarChar(50)")>  _
+	Public Property NYM4_NO() As String
+		Get
+			Return Me._NYM4_NO
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_NO, value) = false) Then
+				Me.OnNYM4_NOChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_NO = value
+				Me.SendPropertyChanged("NYM4_NO")
+				Me.OnNYM4_NOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DATE_TOP", DbType:="DateTime")>  _
+	Public Property NYM4_DATE_TOP() As System.Nullable(Of Date)
+		Get
+			Return Me._NYM4_DATE_TOP
+		End Get
+		Set
+			If (Me._NYM4_DATE_TOP.Equals(value) = false) Then
+				Me.OnNYM4_DATE_TOPChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_DATE_TOP = value
+				Me.SendPropertyChanged("NYM4_DATE_TOP")
+				Me.OnNYM4_DATE_TOPChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_NAME_RECEIVE", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_NAME_RECEIVE() As String
+		Get
+			Return Me._NYM4_NAME_RECEIVE
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_NAME_RECEIVE, value) = false) Then
+				Me.OnNYM4_NAME_RECEIVEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_NAME_RECEIVE = value
+				Me.SendPropertyChanged("NYM4_NAME_RECEIVE")
+				Me.OnNYM4_NAME_RECEIVEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ALLOW_PLAN", DbType:="Int")>  _
+	Public Property NYM4_ALLOW_PLAN() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM4_ALLOW_PLAN
+		End Get
+		Set
+			If (Me._NYM4_ALLOW_PLAN.Equals(value) = false) Then
+				Me.OnNYM4_ALLOW_PLANChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ALLOW_PLAN = value
+				Me.SendPropertyChanged("NYM4_ALLOW_PLAN")
+				Me.OnNYM4_ALLOW_PLANChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_WRITE", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_WRITE() As String
+		Get
+			Return Me._NYM4_WRITE
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_WRITE, value) = false) Then
+				Me.OnNYM4_WRITEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_WRITE = value
+				Me.SendPropertyChanged("NYM4_WRITE")
+				Me.OnNYM4_WRITEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_WRITE_DATE", DbType:="DateTime")>  _
+	Public Property NYM4_WRITE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._NYM4_WRITE_DATE
+		End Get
+		Set
+			If (Me._NYM4_WRITE_DATE.Equals(value) = false) Then
+				Me.OnNYM4_WRITE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_WRITE_DATE = value
+				Me.SendPropertyChanged("NYM4_WRITE_DATE")
+				Me.OnNYM4_WRITE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_TITLE", DbType:="Int")>  _
+	Public Property NYM4_TITLE() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM4_TITLE
+		End Get
+		Set
+			If (Me._NYM4_TITLE.Equals(value) = false) Then
+				Me.OnNYM4_TITLEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_TITLE = value
+				Me.SendPropertyChanged("NYM4_TITLE")
+				Me.OnNYM4_TITLEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_FULLNAME", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_FULLNAME() As String
+		Get
+			Return Me._NYM4_FULLNAME
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_FULLNAME, value) = false) Then
+				Me.OnNYM4_FULLNAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_FULLNAME = value
+				Me.SendPropertyChanged("NYM4_FULLNAME")
+				Me.OnNYM4_FULLNAMEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_POSITION", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_POSITION() As String
+		Get
+			Return Me._NYM4_POSITION
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_POSITION, value) = false) Then
+				Me.OnNYM4_POSITIONChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_POSITION = value
+				Me.SendPropertyChanged("NYM4_POSITION")
+				Me.OnNYM4_POSITIONChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ALLOW_NAME", DbType:="Int")>  _
+	Public Property NYM4_ALLOW_NAME() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM4_ALLOW_NAME
+		End Get
+		Set
+			If (Me._NYM4_ALLOW_NAME.Equals(value) = false) Then
+				Me.OnNYM4_ALLOW_NAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ALLOW_NAME = value
+				Me.SendPropertyChanged("NYM4_ALLOW_NAME")
+				Me.OnNYM4_ALLOW_NAMEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ALLOW_NAME_DETAIL", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ALLOW_NAME_DETAIL() As String
+		Get
+			Return Me._NYM4_ALLOW_NAME_DETAIL
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ALLOW_NAME_DETAIL, value) = false) Then
+				Me.OnNYM4_ALLOW_NAME_DETAILChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ALLOW_NAME_DETAIL = value
+				Me.SendPropertyChanged("NYM4_ALLOW_NAME_DETAIL")
+				Me.OnNYM4_ALLOW_NAME_DETAILChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_LICENSE", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_LICENSE() As String
+		Get
+			Return Me._NYM4_LICENSE
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_LICENSE, value) = false) Then
+				Me.OnNYM4_LICENSEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_LICENSE = value
+				Me.SendPropertyChanged("NYM4_LICENSE")
+				Me.OnNYM4_LICENSEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_NO", DbType:="NVarChar(50)")>  _
+	Public Property NYM4_ADDRESS_NO() As String
+		Get
+			Return Me._NYM4_ADDRESS_NO
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_NO, value) = false) Then
+				Me.OnNYM4_ADDRESS_NOChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_NO = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_NO")
+				Me.OnNYM4_ADDRESS_NOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_SOI", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_SOI() As String
+		Get
+			Return Me._NYM4_ADDRESS_SOI
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_SOI, value) = false) Then
+				Me.OnNYM4_ADDRESS_SOIChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_SOI = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_SOI")
+				Me.OnNYM4_ADDRESS_SOIChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_STREET", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_STREET() As String
+		Get
+			Return Me._NYM4_ADDRESS_STREET
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_STREET, value) = false) Then
+				Me.OnNYM4_ADDRESS_STREETChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_STREET = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_STREET")
+				Me.OnNYM4_ADDRESS_STREETChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_MOO", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_MOO() As String
+		Get
+			Return Me._NYM4_ADDRESS_MOO
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_MOO, value) = false) Then
+				Me.OnNYM4_ADDRESS_MOOChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_MOO = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_MOO")
+				Me.OnNYM4_ADDRESS_MOOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_DISTRICT", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_DISTRICT() As String
+		Get
+			Return Me._NYM4_ADDRESS_DISTRICT
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_DISTRICT, value) = false) Then
+				Me.OnNYM4_ADDRESS_DISTRICTChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_DISTRICT = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_DISTRICT")
+				Me.OnNYM4_ADDRESS_DISTRICTChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_AMPHUR", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_AMPHUR() As String
+		Get
+			Return Me._NYM4_ADDRESS_AMPHUR
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_AMPHUR, value) = false) Then
+				Me.OnNYM4_ADDRESS_AMPHURChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_AMPHUR = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_AMPHUR")
+				Me.OnNYM4_ADDRESS_AMPHURChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_PROVINCE", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_PROVINCE() As String
+		Get
+			Return Me._NYM4_ADDRESS_PROVINCE
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_PROVINCE, value) = false) Then
+				Me.OnNYM4_ADDRESS_PROVINCEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_PROVINCE = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_PROVINCE")
+				Me.OnNYM4_ADDRESS_PROVINCEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_PHONE", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_PHONE() As String
+		Get
+			Return Me._NYM4_ADDRESS_PHONE
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_PHONE, value) = false) Then
+				Me.OnNYM4_ADDRESS_PHONEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_PHONE = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_PHONE")
+				Me.OnNYM4_ADDRESS_PHONEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_FAX", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_FAX() As String
+		Get
+			Return Me._NYM4_ADDRESS_FAX
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_FAX, value) = false) Then
+				Me.OnNYM4_ADDRESS_FAXChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_FAX = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_FAX")
+				Me.OnNYM4_ADDRESS_FAXChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_WISH_MED", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_WISH_MED() As String
+		Get
+			Return Me._NYM4_WISH_MED
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_WISH_MED, value) = false) Then
+				Me.OnNYM4_WISH_MEDChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_WISH_MED = value
+				Me.SendPropertyChanged("NYM4_WISH_MED")
+				Me.OnNYM4_WISH_MEDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_COUNT_MED", DbType:="Int")>  _
+	Public Property NYM4_COUNT_MED() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM4_COUNT_MED
+		End Get
+		Set
+			If (Me._NYM4_COUNT_MED.Equals(value) = false) Then
+				Me.OnNYM4_COUNT_MEDChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_COUNT_MED = value
+				Me.SendPropertyChanged("NYM4_COUNT_MED")
+				Me.OnNYM4_COUNT_MEDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DEPARTMAENT_ID", DbType:="Int")>  _
+	Public Property NYM4_DEPARTMAENT_ID() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM4_DEPARTMAENT_ID
+		End Get
+		Set
+			If (Me._NYM4_DEPARTMAENT_ID.Equals(value) = false) Then
+				Me.OnNYM4_DEPARTMAENT_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_DEPARTMAENT_ID = value
+				Me.SendPropertyChanged("NYM4_DEPARTMAENT_ID")
+				Me.OnNYM4_DEPARTMAENT_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DEPARTMAENT_NAME", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_DEPARTMAENT_NAME() As String
+		Get
+			Return Me._NYM4_DEPARTMAENT_NAME
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_DEPARTMAENT_NAME, value) = false) Then
+				Me.OnNYM4_DEPARTMAENT_NAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_DEPARTMAENT_NAME = value
+				Me.SendPropertyChanged("NYM4_DEPARTMAENT_NAME")
+				Me.OnNYM4_DEPARTMAENT_NAMEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_GIVETO", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_GIVETO() As String
+		Get
+			Return Me._NYM4_GIVETO
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_GIVETO, value) = false) Then
+				Me.OnNYM4_GIVETOChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_GIVETO = value
+				Me.SendPropertyChanged("NYM4_GIVETO")
+				Me.OnNYM4_GIVETOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_NAME_ASK", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_NAME_ASK() As String
+		Get
+			Return Me._NYM4_NAME_ASK
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_NAME_ASK, value) = false) Then
+				Me.OnNYM4_NAME_ASKChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_NAME_ASK = value
+				Me.SendPropertyChanged("NYM4_NAME_ASK")
+				Me.OnNYM4_NAME_ASKChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_NO_AFTER", DbType:="NVarChar(50)")>  _
+	Public Property NYM4_NO_AFTER() As String
+		Get
+			Return Me._NYM4_NO_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_NO_AFTER, value) = false) Then
+				Me.OnNYM4_NO_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_NO_AFTER = value
+				Me.SendPropertyChanged("NYM4_NO_AFTER")
+				Me.OnNYM4_NO_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DATE_TOP_AFTER", DbType:="DateTime")>  _
+	Public Property NYM4_DATE_TOP_AFTER() As System.Nullable(Of Date)
+		Get
+			Return Me._NYM4_DATE_TOP_AFTER
+		End Get
+		Set
+			If (Me._NYM4_DATE_TOP_AFTER.Equals(value) = false) Then
+				Me.OnNYM4_DATE_TOP_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_DATE_TOP_AFTER = value
+				Me.SendPropertyChanged("NYM4_DATE_TOP_AFTER")
+				Me.OnNYM4_DATE_TOP_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM_NAME_RECEIVE_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM_NAME_RECEIVE_AFTER() As String
+		Get
+			Return Me._NYM_NAME_RECEIVE_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM_NAME_RECEIVE_AFTER, value) = false) Then
+				Me.OnNYM_NAME_RECEIVE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM_NAME_RECEIVE_AFTER = value
+				Me.SendPropertyChanged("NYM_NAME_RECEIVE_AFTER")
+				Me.OnNYM_NAME_RECEIVE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ALLOW_PLAN_AFTER", DbType:="Int")>  _
+	Public Property NYM4_ALLOW_PLAN_AFTER() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM4_ALLOW_PLAN_AFTER
+		End Get
+		Set
+			If (Me._NYM4_ALLOW_PLAN_AFTER.Equals(value) = false) Then
+				Me.OnNYM4_ALLOW_PLAN_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ALLOW_PLAN_AFTER = value
+				Me.SendPropertyChanged("NYM4_ALLOW_PLAN_AFTER")
+				Me.OnNYM4_ALLOW_PLAN_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_WRITE_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_WRITE_AFTER() As String
+		Get
+			Return Me._NYM4_WRITE_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_WRITE_AFTER, value) = false) Then
+				Me.OnNYM4_WRITE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_WRITE_AFTER = value
+				Me.SendPropertyChanged("NYM4_WRITE_AFTER")
+				Me.OnNYM4_WRITE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_WRITE_DATE_AFTER", DbType:="DateTime")>  _
+	Public Property NYM4_WRITE_DATE_AFTER() As System.Nullable(Of Date)
+		Get
+			Return Me._NYM4_WRITE_DATE_AFTER
+		End Get
+		Set
+			If (Me._NYM4_WRITE_DATE_AFTER.Equals(value) = false) Then
+				Me.OnNYM4_WRITE_DATE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_WRITE_DATE_AFTER = value
+				Me.SendPropertyChanged("NYM4_WRITE_DATE_AFTER")
+				Me.OnNYM4_WRITE_DATE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_TITLE_AFTER", DbType:="Int")>  _
+	Public Property NYM4_TITLE_AFTER() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM4_TITLE_AFTER
+		End Get
+		Set
+			If (Me._NYM4_TITLE_AFTER.Equals(value) = false) Then
+				Me.OnNYM4_TITLE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_TITLE_AFTER = value
+				Me.SendPropertyChanged("NYM4_TITLE_AFTER")
+				Me.OnNYM4_TITLE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_FULLNAME_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_FULLNAME_AFTER() As String
+		Get
+			Return Me._NYM4_FULLNAME_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_FULLNAME_AFTER, value) = false) Then
+				Me.OnNYM4_FULLNAME_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_FULLNAME_AFTER = value
+				Me.SendPropertyChanged("NYM4_FULLNAME_AFTER")
+				Me.OnNYM4_FULLNAME_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_FIRSTNAME_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_FIRSTNAME_AFTER() As String
+		Get
+			Return Me._NYM4_FIRSTNAME_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_FIRSTNAME_AFTER, value) = false) Then
+				Me.OnNYM4_FIRSTNAME_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_FIRSTNAME_AFTER = value
+				Me.SendPropertyChanged("NYM4_FIRSTNAME_AFTER")
+				Me.OnNYM4_FIRSTNAME_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_LASTNAME_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_LASTNAME_AFTER() As String
+		Get
+			Return Me._NYM4_LASTNAME_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_LASTNAME_AFTER, value) = false) Then
+				Me.OnNYM4_LASTNAME_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_LASTNAME_AFTER = value
+				Me.SendPropertyChanged("NYM4_LASTNAME_AFTER")
+				Me.OnNYM4_LASTNAME_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_POSITION_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_POSITION_AFTER() As String
+		Get
+			Return Me._NYM4_POSITION_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_POSITION_AFTER, value) = false) Then
+				Me.OnNYM4_POSITION_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_POSITION_AFTER = value
+				Me.SendPropertyChanged("NYM4_POSITION_AFTER")
+				Me.OnNYM4_POSITION_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ALLOW_NAME_AFTER", DbType:="Int")>  _
+	Public Property NYM4_ALLOW_NAME_AFTER() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM4_ALLOW_NAME_AFTER
+		End Get
+		Set
+			If (Me._NYM4_ALLOW_NAME_AFTER.Equals(value) = false) Then
+				Me.OnNYM4_ALLOW_NAME_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ALLOW_NAME_AFTER = value
+				Me.SendPropertyChanged("NYM4_ALLOW_NAME_AFTER")
+				Me.OnNYM4_ALLOW_NAME_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ALLOW_NAME_DETAIL_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ALLOW_NAME_DETAIL_AFTER() As String
+		Get
+			Return Me._NYM4_ALLOW_NAME_DETAIL_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ALLOW_NAME_DETAIL_AFTER, value) = false) Then
+				Me.OnNYM4_ALLOW_NAME_DETAIL_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ALLOW_NAME_DETAIL_AFTER = value
+				Me.SendPropertyChanged("NYM4_ALLOW_NAME_DETAIL_AFTER")
+				Me.OnNYM4_ALLOW_NAME_DETAIL_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_LICENSE_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_LICENSE_AFTER() As String
+		Get
+			Return Me._NYM4_LICENSE_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_LICENSE_AFTER, value) = false) Then
+				Me.OnNYM4_LICENSE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_LICENSE_AFTER = value
+				Me.SendPropertyChanged("NYM4_LICENSE_AFTER")
+				Me.OnNYM4_LICENSE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_NO_AFTER", DbType:="NVarChar(50)")>  _
+	Public Property NYM4_ADDRESS_NO_AFTER() As String
+		Get
+			Return Me._NYM4_ADDRESS_NO_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_NO_AFTER, value) = false) Then
+				Me.OnNYM4_ADDRESS_NO_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_NO_AFTER = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_NO_AFTER")
+				Me.OnNYM4_ADDRESS_NO_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_SOI_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_SOI_AFTER() As String
+		Get
+			Return Me._NYM4_ADDRESS_SOI_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_SOI_AFTER, value) = false) Then
+				Me.OnNYM4_ADDRESS_SOI_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_SOI_AFTER = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_SOI_AFTER")
+				Me.OnNYM4_ADDRESS_SOI_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_STREET_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_STREET_AFTER() As String
+		Get
+			Return Me._NYM4_ADDRESS_STREET_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_STREET_AFTER, value) = false) Then
+				Me.OnNYM4_ADDRESS_STREET_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_STREET_AFTER = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_STREET_AFTER")
+				Me.OnNYM4_ADDRESS_STREET_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_MOO_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_MOO_AFTER() As String
+		Get
+			Return Me._NYM4_ADDRESS_MOO_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_MOO_AFTER, value) = false) Then
+				Me.OnNYM4_ADDRESS_MOO_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_MOO_AFTER = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_MOO_AFTER")
+				Me.OnNYM4_ADDRESS_MOO_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_DISTRICT_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_DISTRICT_AFTER() As String
+		Get
+			Return Me._NYM4_ADDRESS_DISTRICT_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_DISTRICT_AFTER, value) = false) Then
+				Me.OnNYM4_ADDRESS_DISTRICT_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_DISTRICT_AFTER = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_DISTRICT_AFTER")
+				Me.OnNYM4_ADDRESS_DISTRICT_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_AMPHUR_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_AMPHUR_AFTER() As String
+		Get
+			Return Me._NYM4_ADDRESS_AMPHUR_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_AMPHUR_AFTER, value) = false) Then
+				Me.OnNYM4_ADDRESS_AMPHUR_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_AMPHUR_AFTER = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_AMPHUR_AFTER")
+				Me.OnNYM4_ADDRESS_AMPHUR_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_PROVINCE_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_PROVINCE_AFTER() As String
+		Get
+			Return Me._NYM4_ADDRESS_PROVINCE_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_PROVINCE_AFTER, value) = false) Then
+				Me.OnNYM4_ADDRESS_PROVINCE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_PROVINCE_AFTER = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_PROVINCE_AFTER")
+				Me.OnNYM4_ADDRESS_PROVINCE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_PHONE_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_PHONE_AFTER() As String
+		Get
+			Return Me._NYM4_ADDRESS_PHONE_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_PHONE_AFTER, value) = false) Then
+				Me.OnNYM4_ADDRESS_PHONE_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_PHONE_AFTER = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_PHONE_AFTER")
+				Me.OnNYM4_ADDRESS_PHONE_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ADDRESS_FAX_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_ADDRESS_FAX_AFTER() As String
+		Get
+			Return Me._NYM4_ADDRESS_FAX_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_ADDRESS_FAX_AFTER, value) = false) Then
+				Me.OnNYM4_ADDRESS_FAX_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ADDRESS_FAX_AFTER = value
+				Me.SendPropertyChanged("NYM4_ADDRESS_FAX_AFTER")
+				Me.OnNYM4_ADDRESS_FAX_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_WISH_MED_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_WISH_MED_AFTER() As String
+		Get
+			Return Me._NYM4_WISH_MED_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_WISH_MED_AFTER, value) = false) Then
+				Me.OnNYM4_WISH_MED_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_WISH_MED_AFTER = value
+				Me.SendPropertyChanged("NYM4_WISH_MED_AFTER")
+				Me.OnNYM4_WISH_MED_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_COUNT_MED_AFTER", DbType:="NVarChar(50)")>  _
+	Public Property NYM4_COUNT_MED_AFTER() As String
+		Get
+			Return Me._NYM4_COUNT_MED_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_COUNT_MED_AFTER, value) = false) Then
+				Me.OnNYM4_COUNT_MED_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_COUNT_MED_AFTER = value
+				Me.SendPropertyChanged("NYM4_COUNT_MED_AFTER")
+				Me.OnNYM4_COUNT_MED_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DEPARTMAENT_ID_AFTER", DbType:="Int")>  _
+	Public Property NYM4_DEPARTMAENT_ID_AFTER() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM4_DEPARTMAENT_ID_AFTER
+		End Get
+		Set
+			If (Me._NYM4_DEPARTMAENT_ID_AFTER.Equals(value) = false) Then
+				Me.OnNYM4_DEPARTMAENT_ID_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_DEPARTMAENT_ID_AFTER = value
+				Me.SendPropertyChanged("NYM4_DEPARTMAENT_ID_AFTER")
+				Me.OnNYM4_DEPARTMAENT_ID_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DEPARTMAENT_NAME_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_DEPARTMAENT_NAME_AFTER() As String
+		Get
+			Return Me._NYM4_DEPARTMAENT_NAME_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_DEPARTMAENT_NAME_AFTER, value) = false) Then
+				Me.OnNYM4_DEPARTMAENT_NAME_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_DEPARTMAENT_NAME_AFTER = value
+				Me.SendPropertyChanged("NYM4_DEPARTMAENT_NAME_AFTER")
+				Me.OnNYM4_DEPARTMAENT_NAME_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_GIVETO_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_GIVETO_AFTER() As String
+		Get
+			Return Me._NYM4_GIVETO_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_GIVETO_AFTER, value) = false) Then
+				Me.OnNYM4_GIVETO_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_GIVETO_AFTER = value
+				Me.SendPropertyChanged("NYM4_GIVETO_AFTER")
+				Me.OnNYM4_GIVETO_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_NAME_ASK_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_NAME_ASK_AFTER() As String
+		Get
+			Return Me._NYM4_NAME_ASK_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_NAME_ASK_AFTER, value) = false) Then
+				Me.OnNYM4_NAME_ASK_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_NAME_ASK_AFTER = value
+				Me.SendPropertyChanged("NYM4_NAME_ASK_AFTER")
+				Me.OnNYM4_NAME_ASK_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DETAIL", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_DETAIL() As String
+		Get
+			Return Me._NYM4_DETAIL
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_DETAIL, value) = false) Then
+				Me.OnNYM4_DETAILChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_DETAIL = value
+				Me.SendPropertyChanged("NYM4_DETAIL")
+				Me.OnNYM4_DETAILChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DETAIL_AFTER", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_DETAIL_AFTER() As String
+		Get
+			Return Me._NYM4_DETAIL_AFTER
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_DETAIL_AFTER, value) = false) Then
+				Me.OnNYM4_DETAIL_AFTERChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_DETAIL_AFTER = value
+				Me.SendPropertyChanged("NYM4_DETAIL_AFTER")
+				Me.OnNYM4_DETAIL_AFTERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_ACTIVE", DbType:="Bit")>  _
+	Public Property NYM4_ACTIVE() As System.Nullable(Of Boolean)
+		Get
+			Return Me._NYM4_ACTIVE
+		End Get
+		Set
+			If (Me._NYM4_ACTIVE.Equals(value) = false) Then
+				Me.OnNYM4_ACTIVEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_ACTIVE = value
+				Me.SendPropertyChanged("NYM4_ACTIVE")
+				Me.OnNYM4_ACTIVEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_COUNT_KEY", DbType:="Int")>  _
+	Public Property NYM4_COUNT_KEY() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM4_COUNT_KEY
+		End Get
+		Set
+			If (Me._NYM4_COUNT_KEY.Equals(value) = false) Then
+				Me.OnNYM4_COUNT_KEYChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_COUNT_KEY = value
+				Me.SendPropertyChanged("NYM4_COUNT_KEY")
+				Me.OnNYM4_COUNT_KEYChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_NEWCODE", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_NEWCODE() As String
+		Get
+			Return Me._NYM4_NEWCODE
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_NEWCODE, value) = false) Then
+				Me.OnNYM4_NEWCODEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_NEWCODE = value
+				Me.SendPropertyChanged("NYM4_NEWCODE")
+				Me.OnNYM4_NEWCODEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_RCVNO", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_RCVNO() As String
+		Get
+			Return Me._NYM4_RCVNO
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_RCVNO, value) = false) Then
+				Me.OnNYM4_RCVNOChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_RCVNO = value
+				Me.SendPropertyChanged("NYM4_RCVNO")
+				Me.OnNYM4_RCVNOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_IDENTIFY", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_IDENTIFY() As String
+		Get
+			Return Me._NYM4_IDENTIFY
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_IDENTIFY, value) = false) Then
+				Me.OnNYM4_IDENTIFYChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_IDENTIFY = value
+				Me.SendPropertyChanged("NYM4_IDENTIFY")
+				Me.OnNYM4_IDENTIFYChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_DL", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_DL() As String
+		Get
+			Return Me._NYM4_DL
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_DL, value) = false) Then
+				Me.OnNYM4_DLChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_DL = value
+				Me.SendPropertyChanged("NYM4_DL")
+				Me.OnNYM4_DLChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM_TYPE", DbType:="Int")>  _
+	Public Property NYM_TYPE() As System.Nullable(Of Integer)
+		Get
+			Return Me._NYM_TYPE
+		End Get
+		Set
+			If (Me._NYM_TYPE.Equals(value) = false) Then
+				Me.OnNYM_TYPEChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM_TYPE = value
+				Me.SendPropertyChanged("NYM_TYPE")
+				Me.OnNYM_TYPEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TOKEN", DbType:="NVarChar(MAX)")>  _
+	Public Property TOKEN() As String
+		Get
+			Return Me._TOKEN
+		End Get
+		Set
+			If (String.Equals(Me._TOKEN, value) = false) Then
+				Me.OnTOKENChanging(value)
+				Me.SendPropertyChanging
+				Me._TOKEN = value
+				Me.SendPropertyChanged("TOKEN")
+				Me.OnTOKENChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITIZEN", DbType:="NVarChar(50)")>  _
+	Public Property CITIZEN() As String
+		Get
+			Return Me._CITIZEN
+		End Get
+		Set
+			If (String.Equals(Me._CITIZEN, value) = false) Then
+				Me.OnCITIZENChanging(value)
+				Me.SendPropertyChanging
+				Me._CITIZEN = value
+				Me.SendPropertyChanged("CITIZEN")
+				Me.OnCITIZENChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATE_DATE", DbType:="DateTime")>  _
+	Public Property CREATE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CREATE_DATE
+		End Get
+		Set
+			If (Me._CREATE_DATE.Equals(value) = false) Then
+				Me.OnCREATE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATE_DATE = value
+				Me.SendPropertyChanged("CREATE_DATE")
+				Me.OnCREATE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATE_USER", DbType:="NVarChar(MAX)")>  _
+	Public Property CREATE_USER() As String
+		Get
+			Return Me._CREATE_USER
+		End Get
+		Set
+			If (String.Equals(Me._CREATE_USER, value) = false) Then
+				Me.OnCREATE_USERChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATE_USER = value
+				Me.SendPropertyChanged("CREATE_USER")
+				Me.OnCREATE_USERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UPDATE_DATE", DbType:="DateTime")>  _
+	Public Property UPDATE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._UPDATE_DATE
+		End Get
+		Set
+			If (Me._UPDATE_DATE.Equals(value) = false) Then
+				Me.OnUPDATE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._UPDATE_DATE = value
+				Me.SendPropertyChanged("UPDATE_DATE")
+				Me.OnUPDATE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UPDATE_USER", DbType:="NVarChar(MAX)")>  _
+	Public Property UPDATE_USER() As String
+		Get
+			Return Me._UPDATE_USER
+		End Get
+		Set
+			If (String.Equals(Me._UPDATE_USER, value) = false) Then
+				Me.OnUPDATE_USERChanging(value)
+				Me.SendPropertyChanging
+				Me._UPDATE_USER = value
+				Me.SendPropertyChanged("UPDATE_USER")
+				Me.OnUPDATE_USERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TR_ID", DbType:="NVarChar(MAX)")>  _
+	Public Property TR_ID() As String
+		Get
+			Return Me._TR_ID
+		End Get
+		Set
+			If (String.Equals(Me._TR_ID, value) = false) Then
+				Me.OnTR_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._TR_ID = value
+				Me.SendPropertyChanged("TR_ID")
+				Me.OnTR_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STATUS_ID", DbType:="Int")>  _
+	Public Property STATUS_ID() As System.Nullable(Of Integer)
+		Get
+			Return Me._STATUS_ID
+		End Get
+		Set
+			If (Me._STATUS_ID.Equals(value) = false) Then
+				Me.OnSTATUS_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._STATUS_ID = value
+				Me.SendPropertyChanged("STATUS_ID")
+				Me.OnSTATUS_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NYM4_IDENTIFY_STAFF", DbType:="NVarChar(MAX)")>  _
+	Public Property NYM4_IDENTIFY_STAFF() As String
+		Get
+			Return Me._NYM4_IDENTIFY_STAFF
+		End Get
+		Set
+			If (String.Equals(Me._NYM4_IDENTIFY_STAFF, value) = false) Then
+				Me.OnNYM4_IDENTIFY_STAFFChanging(value)
+				Me.SendPropertyChanging
+				Me._NYM4_IDENTIFY_STAFF = value
+				Me.SendPropertyChanged("NYM4_IDENTIFY_STAFF")
+				Me.OnNYM4_IDENTIFY_STAFFChanged
 			End If
 		End Set
 	End Property

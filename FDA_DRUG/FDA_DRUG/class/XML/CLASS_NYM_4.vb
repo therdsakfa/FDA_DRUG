@@ -70,4 +70,22 @@ Public Class CLASS_NYM_4_SM
             _SMALL_UNIT = value
         End Set
     End Property
+    Private _DRUG_NAME As String
+    Public Property DRUG_NAME() As String
+        Get
+            Return _DRUG_NAME
+        End Get
+        Set(ByVal value As String)
+            _DRUG_NAME = value
+        End Set
+    End Property
+    Private _LONG_APPDATE As String
+    Public Property LONG_APPDATE() As String
+        Get
+            Return _LONG_APPDATE
+        End Get
+        Set(ByVal value As String)
+            _LONG_APPDATE = value
+        End Set
+    End Property
 End Class

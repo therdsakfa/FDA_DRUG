@@ -44,9 +44,24 @@ Public Class FRM_DRUG_IMPORT_NYM3
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
-
+        load_HL()
     End Sub
+    Private Sub load_HL()
+        Dim urls As String = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN
+        If Request.QueryString("staff") <> "" Then
+            urls &= "&staff=1&identify=" & Request.QueryString("identify") & "&system=staffdrug"
+        Else
+            urls &= "&staff=1&identify=" & Request.QueryString("identify") & "&system=drug"
+        End If
 
+        hl_pay.NavigateUrl = urls
+
+
+        'hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug&ida_location=" & _lct_ida
+        'If Request.QueryString("staff") <> "" Then
+        '    hl_pay.NavigateUrl &= "&staff=1&identify=" & Request.QueryString("identify")
+        'End If
+    End Sub
     Protected Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         ''Dim DL As String
         ''DL = rcb_search.SelectedValue

@@ -112,4 +112,9 @@
         Dim aa As New WS_ACCEPT_RGT_AUTO
         aa.ACCEPT_AND_RUNNING_RGTNO(95519)
     End Sub
+
+    Protected Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim aaa As String = ""
+        aaa = Date.Now.ToLongDateString()
+    End Sub
 End Class

@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class WebForm37
-
+    
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class WebForm37
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''GridView1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class WebForm37
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''Button2 control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class WebForm37
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Button1 control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class WebForm37
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_get_cas control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class WebForm37
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_get_cas As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_get_pcksize control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class WebForm37
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_get_pcksize As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''TextBox1 control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class WebForm37
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Button3 control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class WebForm37
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button3 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''ddl_remark1 control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class WebForm37
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_remark1 As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''ddl_status control.
     '''</summary>
@@ -102,4 +102,13 @@ Partial Public Class WebForm37
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_status As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''Button4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button4 As Global.System.Web.UI.WebControls.Button
 End Class

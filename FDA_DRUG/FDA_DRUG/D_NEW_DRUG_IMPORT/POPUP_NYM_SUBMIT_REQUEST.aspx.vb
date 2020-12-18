@@ -348,6 +348,31 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Catch ex As Exception
 
         End Try
+        Dim drug_name_th As String = ""
+        Dim drug_name_eng As String = ""
+        Dim drug_name As String = ""
+        Try
+            drug_name_th = dao_rg.fields.DRUG_NAME_THAI
+        Catch ex As Exception
+
+        End Try
+        Try
+            drug_name_eng = dao_rg.fields.DRUG_NAME_OTHER
+        Catch ex As Exception
+
+        End Try
+        If (Trim(drug_name_th) = "-" Or Trim(drug_name_th) = "") And Trim(drug_name_eng) <> "" Then
+            drug_name = drug_name_eng
+        ElseIf (Trim(drug_name_eng) = "-" Or Trim(drug_name_eng) = "") And Trim(drug_name_th) <> "" Then
+            drug_name = drug_name_th
+        Else
+            drug_name = drug_name_th & " / " & drug_name_eng
+        End If
+
+        If Trim(drug_name) = "/" Then
+            drug_name = ""
+        End If
+
         dao2.GetDataby_IDA(_IDA)
         dao3.getdata_ida(_IDA)
         dao4.getdata_ida(_IDA)
@@ -403,7 +428,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Try
                 Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT
                 dao_unit.GetDataby_sunitcd(dao_rg.fields.UNIT_NORMAL)
-                class_xml21.SMALL_UNIT = dao_unit.fields.unit_name
+                class_xml21.SMALL_UNIT = CStr(dao2.fields.NYM2_COUNT_MED) & " " & dao_unit.fields.unit_name
             Catch ex As Exception
 
             End Try
@@ -439,6 +464,16 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 class_xml21.PACK_SIZE = "-"
             End Try
             Try
+                class_xml21.LONG_APPDATE = CDate(dao2.fields.APPROVE_DATE).ToLongDateString()
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml21.DRUG_NAME = drug_name
+            Catch ex As Exception
+
+            End Try
+            Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
                     dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then
                     Dim val As String = ""
@@ -464,6 +499,17 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                         End If
 
                     End If
+                Else
+                    If dao_lcn.fields.lcntpcd.Contains("ผย") Then
+                        class_xml21.CHK_TYPE_LCN = "6"
+                    ElseIf dao_lcn.fields.lcntpcd.Contains("นย") Then
+                        class_xml21.CHK_TYPE_LCN = "7"
+                    End If
+                    If dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000160127" Then
+                        class_xml21.CHK_TYPE_LCN = "4"
+                    ElseIf dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000165315" Then
+                        class_xml21.CHK_TYPE_LCN = "5"
+                    End If
                 End If
 
             Catch ex As Exception
@@ -479,7 +525,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Try
                 Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT
                 dao_unit.GetDataby_sunitcd(dao_rg.fields.UNIT_NORMAL)
-                class_xml3.SMALL_UNIT = dao_unit.fields.unit_name
+                class_xml3.SMALL_UNIT = CStr(dao3.fields.NYM3_COUNT_MED) & " " & dao_unit.fields.unit_name
             Catch ex As Exception
 
             End Try
@@ -494,7 +540,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
             End Try
             Try
-                class_xml3.REMARK = dao2.fields.REMARK
+                class_xml3.REMARK = dao3.fields.REMARK
             Catch ex As Exception
 
             End Try
@@ -508,6 +554,16 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 class_xml3.PACK_SIZE = dao_rg.fields.PACKAGE_DETAIL
             Catch ex As Exception
                 class_xml3.PACK_SIZE = "-"
+            End Try
+            Try
+                class_xml3.LONG_APPDATE = CDate(dao3.fields.APPROVE_DATE).ToLongDateString()
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml3.DRUG_NAME = drug_name
+            Catch ex As Exception
+
             End Try
             Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
@@ -535,6 +591,17 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                         End If
 
                     End If
+                Else
+                    If dao_lcn.fields.lcntpcd.Contains("ผย") Then
+                        class_xml3.CHK_TYPE_LCN = "6"
+                    ElseIf dao_lcn.fields.lcntpcd.Contains("นย") Then
+                        class_xml3.CHK_TYPE_LCN = "7"
+                    End If
+                    If dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000160127" Then
+                        class_xml3.CHK_TYPE_LCN = "4"
+                    ElseIf dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000165315" Then
+                        class_xml3.CHK_TYPE_LCN = "5"
+                    End If
                 End If
 
             Catch ex As Exception
@@ -550,7 +617,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Try
                 Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT
                 dao_unit.GetDataby_sunitcd(dao_rg.fields.UNIT_NORMAL)
-                class_xml4.SMALL_UNIT = dao_unit.fields.unit_name
+                class_xml4.SMALL_UNIT = CStr(dao4.fields.NYM4_COUNT_MED) & " " & dao_unit.fields.unit_name
             Catch ex As Exception
 
             End Try
@@ -565,7 +632,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
             End Try
             Try
-                class_xml4.REMARK = dao2.fields.REMARK
+                class_xml4.REMARK = dao4.fields.REMARK
             Catch ex As Exception
 
             End Try
@@ -579,6 +646,16 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 class_xml4.PACK_SIZE = dao_rg.fields.PACKAGE_DETAIL
             Catch ex As Exception
                 class_xml4.PACK_SIZE = "-"
+            End Try
+            Try
+                class_xml4.LONG_APPDATE = CDate(dao4.fields.APPROVE_DATE).ToLongDateString()
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml4.DRUG_NAME = drug_name
+            Catch ex As Exception
+
             End Try
             Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
@@ -605,6 +682,17 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                             class_xml4.CHK_TYPE_LCN = "5"
                         End If
 
+                    End If
+                Else
+                    If dao_lcn.fields.lcntpcd.Contains("ผย") Then
+                        class_xml4.CHK_TYPE_LCN = "6"
+                    ElseIf dao_lcn.fields.lcntpcd.Contains("นย") Then
+                        class_xml4.CHK_TYPE_LCN = "7"
+                    End If
+                    If dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000160127" Then
+                        class_xml4.CHK_TYPE_LCN = "4"
+                    ElseIf dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000165315" Then
+                        class_xml4.CHK_TYPE_LCN = "5"
                     End If
                 End If
 

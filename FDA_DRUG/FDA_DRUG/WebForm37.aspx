@@ -38,6 +38,7 @@
             <asp:DropDownList ID="ddl_status" runat="server" Width="80%">
             </asp:DropDownList>
         </p>
+        <asp:Button ID="Button4" runat="server" Text="Button" />
     </form>
 </body>
 </html>
