@@ -50,7 +50,7 @@ Public Class FRM_DS_STAFF_CONFIRM
             'End Try
 
         End If
-        'set_lbl()
+        set_lbl()
 
     End Sub
 
@@ -105,43 +105,43 @@ Public Class FRM_DS_STAFF_CONFIRM
     '''' <summary>
     '''' นำข้อมูลมาใส่ใน label
     '''' </summary>
-    'Sub set_lbl()
-    '    Dim dao As New DAO_DRUG.ClsDBdrsamp
-    '    dao.GetDataby_IDA(_IDA)
-    '    Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-    '    dao_up.GetDataby_IDA(dao.fields.TR_ID)
+    Sub set_lbl()
+        Dim dao As New DAO_DRUG.ClsDBdrsamp
+        dao.GetDataby_IDA(_IDA)
+        Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+        dao_up.GetDataby_IDA(dao.fields.TR_ID)
 
-    '    Dim dao_s As New DAO_DRUG.TB_MAS_STAFF_OFFER
-    '    Dim dao_stat As New DAO_DRUG.ClsDBMAS_STATUS
+        Dim dao_s As New DAO_DRUG.TB_MAS_STAFF_OFFER
+        Dim dao_stat As New DAO_DRUG.ClsDBMAS_STATUS
 
-    '    Try    'ชื่อผู้ลงนาม
-    '        dao_s.GetDataby_IDA(dao.fields.FK_STAFF_OFFER_IDA)
-    '        lbl_staff_consider.Text = dao_s.fields.STAFF_OFFER_NAME
-    '    Catch ex As Exception
-    '        lbl_staff_consider.Text = "-"
-    '    End Try
+        Try    'ชื่อผู้ลงนาม
+            dao_s.GetDataby_IDA(dao.fields.FK_STAFF_OFFER_IDA)
+            lbl_staff_consider.Text = dao_s.fields.STAFF_OFFER_NAME
+        Catch ex As Exception
+            lbl_staff_consider.Text = "-"
+        End Try
 
-    '    Try
-    '        lbl_app_date.Text = CDate(dao.fields.appdate).ToShortDateString()
-    '    Catch ex As Exception
-    '        lbl_app_date.Text = "-"
-    '    End Try
+        Try
+            lbl_app_date.Text = CDate(dao.fields.appdate).ToShortDateString()
+        Catch ex As Exception
+            lbl_app_date.Text = "-"
+        End Try
 
-    '    Try    ' วันที่เสนอลงนาม
-    '        lbl_consider_date.Text = CDate(dao.fields.CONSIDER_DATE).ToShortDateString()
-    '    Catch ex As Exception
-    '        lbl_consider_date.Text = "-"
-    '    End Try
+        Try    ' วันที่เสนอลงนาม
+            lbl_consider_date.Text = CDate(dao.fields.CONSIDER_DATE).ToShortDateString()
+        Catch ex As Exception
+            lbl_consider_date.Text = "-"
+        End Try
 
-    '    Try
-    '        dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 5)
-    '        lbl_Status.Text = dao_stat.fields.STATUS_NAME
-    '    Catch ex As Exception
+        Try
+            dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 9)
+            lbl_Status.Text = dao_stat.fields.STATUS_NAME
+        Catch ex As Exception
 
-    '    End Try
+        End Try
 
 
-    'End Sub
+    End Sub
     Sub load_fdpdtno()
         Dim bao As New BAO.ClsDBSqlcommand
         'lbl_fdpdtno.Text = get_fdpdtno().Substring(0, 2) & "-" & get_fdpdtno().Substring(2, 1) & "-" & get_fdpdtno().Substring(3, 5) & "-" & get_fdpdtno().Substring(8, 1) & "-"
@@ -231,12 +231,15 @@ Public Class FRM_DS_STAFF_CONFIRM
             '-----------------ลิ้งไปหน้าคีย์มือ----------
             'Response.Redirect("FRM_DS_STAFF_RCV_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
             '--------------------------------
+            AddLogStatusDS(10, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
             alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.rcvno)
         ElseIf STATUS_ID = 5 Then 'ยื่นแก้ไข
             Response.Redirect("FRM_DS_STAFF_EDIT.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
+            AddLogStatusDS(5, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
         ElseIf STATUS_ID = 9 Then 'เสนอลงนาม
             'dao.fields.STATUS_ID = STATUS_ID
             Response.Redirect("FRM_DS_STAFF_CONSIDER_DATE.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
+            AddLogStatusDS(9, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
         ElseIf STATUS_ID = 8 Then 'อนุมัติ
 
             'dao.fields.STATUS_ID = STATUS_ID
@@ -245,14 +248,14 @@ Public Class FRM_DS_STAFF_CONFIRM
             'dao.fields.REMARK = txt_REMARK.Text
             'package()
             Response.Redirect("FRM_DS_STAFF_REMARK2.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&PROCESS_ID=" & PROCESS_ID)
-            AddLogStatus(8, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+            AddLogStatusDS(8, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
             _TR_ID = Request.QueryString("TR_ID")
             _IDA = Request.QueryString("IDA")
             'alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
             ' ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", _TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "อนุมัติคำขอยาตัวอย่าง", _ProcessID)
         ElseIf STATUS_ID = 7 Then
             Response.Redirect("FRM_DS_STAFF_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
-            AddLogStatus(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+            AddLogStatusDS(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
             _TR_ID = Request.QueryString("TR_ID")
             _IDA = Request.QueryString("IDA")
             dao.update()

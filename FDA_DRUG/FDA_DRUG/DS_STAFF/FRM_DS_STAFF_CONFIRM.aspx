@@ -102,6 +102,38 @@
              <td style="padding-left:10%;height:50%;">
 
                  <table class="table" style="width:90%">
+                     <tr>
+                         <td>&nbsp;
+
+                             สถานะ :
+                             <asp:Label ID="lbl_Status" runat="server" Text="-"></asp:Label>
+
+                         </td>
+                     </tr> 
+                     <tr>
+                         <td>&nbsp;
+
+                             ชื่อผู้ลงนาม :
+                             <asp:Label ID="lbl_staff_consider" runat="server" Text="-"></asp:Label>
+
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>&nbsp;
+
+                         วันที่เสนอลงนาม :
+                             <asp:Label ID="lbl_consider_date" runat="server" Text="-"></asp:Label>
+
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>&nbsp;
+
+                         วันที่คาดว่าจะอนุมัติ :
+                             <asp:Label ID="lbl_app_date" runat="server" Text="-"></asp:Label>
+
+                         </td>
+                     </tr>
                      <%--<tr>
                          <td>&nbsp;
 
