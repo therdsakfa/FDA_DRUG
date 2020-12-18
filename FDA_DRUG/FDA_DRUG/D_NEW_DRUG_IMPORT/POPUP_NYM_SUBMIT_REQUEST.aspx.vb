@@ -473,6 +473,27 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Catch ex As Exception
 
             End Try
+            Dim rcvno_format As String = ""
+            Try
+                Try
+
+                    If Len(dao2.fields.NYM2_NO) > 0 Then
+                        rcvno_format = CStr(CInt(Right(dao2.fields.NYM2_NO, 5))) & "/" & Left(dao2.fields.NYM2_NO, 2)
+                        class_xml21.RCVNO_FORMAT = rcvno_format
+                    End If
+                Catch ex As Exception
+
+                End Try
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml21.LONG_RCVDATE = CDate(dao2.fields.rcvdate).ToLongDateString()
+            Catch ex As Exception
+
+            End Try
+
+
             Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
                     dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then
@@ -562,6 +583,25 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             End Try
             Try
                 class_xml3.DRUG_NAME = drug_name
+            Catch ex As Exception
+
+            End Try
+            Dim rcvno_format As String = ""
+            Try
+                Try
+
+                    If Len(dao3.fields.NYM3_NO) > 0 Then
+                        rcvno_format = CStr(CInt(Right(dao3.fields.NYM3_NO, 5))) & "/" & Left(dao3.fields.NYM3_NO, 2)
+                        class_xml3.RCVNO_FORMAT = rcvno_format
+                    End If
+                Catch ex As Exception
+
+                End Try
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml3.LONG_RCVDATE = CDate(dao3.fields.rcvdate).ToLongDateString()
             Catch ex As Exception
 
             End Try
@@ -657,6 +697,26 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Catch ex As Exception
 
             End Try
+            Dim rcvno_format As String = ""
+            Try
+                Try
+
+                    If Len(dao4.fields.NYM4_NO) > 0 Then
+                        rcvno_format = CStr(CInt(Right(dao4.fields.NYM4_NO, 5))) & "/" & Left(dao4.fields.NYM4_NO, 2)
+                        class_xml4.RCVNO_FORMAT = rcvno_format
+                    End If
+                Catch ex As Exception
+
+                End Try
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml4.LONG_RCVDATE = CDate(dao4.fields.rcvdate).ToLongDateString()
+            Catch ex As Exception
+
+            End Try
+
             Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
                     dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then
