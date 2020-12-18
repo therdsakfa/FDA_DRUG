@@ -14020,6 +14020,24 @@ Namespace DAO_DRUG
             Next
         End Sub
     End Class
+
+    Public Class TB_LOG_STATUS_DS
+        Inherits MAINCONTEXT
+        Public fields As New LOG_STATUS_D
+        Public Sub insert()
+            db.LOG_STATUS_Ds.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.LOG_STATUS_Ds.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+    End Class
 End Namespace
 
 

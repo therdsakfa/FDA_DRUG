@@ -6858,4 +6858,14 @@
       <Column Name="add_digit" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.LOG_STATUS_DS" Member="LOG_STATUS_Ds">
+    <Type Name="LOG_STATUS_D">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

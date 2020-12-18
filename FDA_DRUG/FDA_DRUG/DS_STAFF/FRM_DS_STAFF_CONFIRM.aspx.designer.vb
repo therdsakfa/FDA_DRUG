@@ -59,6 +59,42 @@ Partial Public Class FRM_DS_STAFF_CONFIRM
     Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
+    '''lbl_Status control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_Status As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_staff_consider control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_staff_consider As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_consider_date control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_consider_date As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_app_date control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_app_date As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''ddl_cnsdcd control.
     '''</summary>
     '''<remarks>
