@@ -710,7 +710,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '    Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&DL=" & _DL & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
 
             ElseIf STATUS_ID = 9 Then
-                Response.Redirect("FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&DL=" & _DL & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
+                Response.Redirect("../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & _IDA & "&DL=" & _DL & "&process=" & _ProcessID) 'น่าจะต้องแก้ trid
             ElseIf STATUS_ID = 8 Then
                 'แก้ dao_prf
 
