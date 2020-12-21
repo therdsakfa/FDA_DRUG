@@ -207,7 +207,7 @@
             <tr>
               <td class="auto-style18">
 
-                   <telerik:RadGrid ID="RadGrid1" runat="server" GridLines="None"  ShowFooter="True" Width="150%" AutoGenerateColumns="False" CellSpacing="0" >
+                   <telerik:RadGrid ID="RadGrid1" runat="server" GridLines="None"  ShowFooter="True" Width="150%" AutoGenerateColumns="False" CellSpacing="0" HorizontalAlign="Center">
                    <MasterTableView>
                         <Columns>
                             <telerik:GridBoundColumn UniqueName="RowNumber" HeaderText="ลำดับ" DataField="RowNumber" >
