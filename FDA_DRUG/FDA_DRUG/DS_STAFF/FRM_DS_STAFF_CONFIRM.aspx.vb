@@ -636,7 +636,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         'dao_phr.GetDataby_FK_IDA(dao.fields.PRODUCT_ID_IDA)
         Dim _YEARS As String = dao_tr.fields.YEAR
         Dim dao_pack As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
-        dao_pack.GetDataby_FK_IDA(dao.fields.IDA)
+        dao_pack.GetDataby_FK_IDA(dao.fields.PRODUCT_ID_IDA)
 
         Dim con_iden As String = ""
         Dim dao_staff_con As New DAO_DRUG.TB_MAS_STAFF_OFFER
@@ -688,6 +688,8 @@ Public Class FRM_DS_STAFF_CONFIRM
                 class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, -543, write_date), "dd MMM yyyy")
                 class_xml.drsamp = dao.fields
                 class_xml.regis = dao_pid.fields
+                class_xml.drsamp.rcvdate = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
+
 
             ElseIf dao.fields.STATUS_ID = 8 Then
                 Dim rcvdate As Date = dao.fields.rcvdate
@@ -701,6 +703,7 @@ Public Class FRM_DS_STAFF_CONFIRM
                 class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, -543, write_date), "dd MMM yyyy")
                 class_xml.drsamp = dao.fields
                 class_xml.regis = dao_pid.fields
+                class_xml.drsamp.rcvdate = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
             End If
 
         Catch ex As Exception

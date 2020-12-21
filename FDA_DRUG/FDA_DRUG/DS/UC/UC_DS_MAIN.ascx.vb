@@ -360,20 +360,17 @@ Public Class UC_DS_MAIN
     Private Sub GV_lcnno_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles GV_lcnno.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
             Dim btn_select As Button = DirectCast(e.Row.FindControl("btn_select"), Button)
-            Dim btn_edit As Button = DirectCast(e.Row.FindControl("btn_choose"), Button)
-            Dim ida As String = GV_lcnno.DataKeys.Item(e.Row.RowIndex).Value.ToString()
+            ''Dim btn_edit As Button = DirectCast(e.Row.FindControl("btn_choose"), Button)
+            'Dim ida As String = GV_lcnno.DataKeys.Item(e.Row.RowIndex).Value.ToString()
+            Try
+                Dim dao As New DAO_DRUG.ClsDBdrsamp
+                dao.GetDataby_PRODUCT_ID_IDA(_main_ida)
+                If dao.fields.STATUS_ID >= 2 Then
+                    btn_select.Style.Add("display", "none")
+                End If
+            Catch ex As Exception
 
-            Dim dao As New DAO_DRUG.ClsDBdrsamp
-            dao.GetDataby_IDA(ida)
-            If dao.fields.STATUS_ID >= 2 Then
-                btn_select.Style.Add("display", "none")
-            End If
-
-            If dao.fields.STATUS_ID = 6 Then
-                btn_edit.Style.Add("display", "none")
-            Else
-                btn_edit.Style.Add("display", "block")
-            End If
+            End Try
         End If
     End Sub
 
