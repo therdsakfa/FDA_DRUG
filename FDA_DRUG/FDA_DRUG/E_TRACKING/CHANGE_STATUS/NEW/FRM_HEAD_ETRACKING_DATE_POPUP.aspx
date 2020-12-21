@@ -78,6 +78,8 @@
                             <asp:ListItem Value="4">จำหน่ายคำขอ (บันทึกข้อมูลผิดพลาด)</asp:ListItem>
                             <asp:ListItem Value="5">ไม่อนุญาต</asp:ListItem>
                         </asp:DropDownList>
+                        
+
 
                     </td>
                 </tr>
