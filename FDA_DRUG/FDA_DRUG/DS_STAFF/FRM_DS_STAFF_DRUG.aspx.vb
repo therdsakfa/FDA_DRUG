@@ -208,6 +208,8 @@ Public Class FRM_DS_STAFF_DRUG
                     Dim dao_re As New DAO_DRUG.ClsDBDRUG_REGISTRATION
                     dao_re.GetDataby_IDA(dao.fields.PRODUCT_ID_IDA)
                     PROCESS_ID = dao_re.fields.PROCESS_ID
+                ElseIf dao.fields.STATUS_ID = 8 Then
+                    btn_edit.Style.Add("display", "none")
                 End If
             Catch ex As Exception
 

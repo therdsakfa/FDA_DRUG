@@ -308,7 +308,7 @@ Public Class FRM_DS_STAFF_CONFIRM
             int_group_ddl = 33
         End If
 
-        bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL8(9, int_group_ddl)
+        bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL8(99, int_group_ddl)
         dt = bao.dt
 
         ddl_cnsdcd.DataSource = dt
@@ -681,29 +681,29 @@ Public Class FRM_DS_STAFF_CONFIRM
 
             ElseIf dao.fields.STATUS_ID = 9 Or dao.fields.STATUS_ID = 10 Then
                 Dim rcvdate As Date = dao.fields.rcvdate
-                dao.fields.rcvdate = DateAdd(DateInterval.Year, 543, rcvdate)
-                class_xml.RCVDATE = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
+                dao.fields.rcvdate = Format(DateAdd(DateInterval.Year, 543, rcvdate), "dd MMMM yyyy")
+                class_xml.RCVDATE = Format(DateAdd(DateInterval.Year, 0, rcvdate), "dd MMMM yyyy")
                 Dim write_date As Date = dao.fields.WRITE_DATE
                 dao.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
-                class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, -543, write_date), "dd MMM yyyy")
+                class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, 0, write_date), "dd MMMM yyyy")
                 class_xml.drsamp = dao.fields
                 class_xml.regis = dao_pid.fields
-                class_xml.drsamp.rcvdate = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
+                ''class_xml.drsamp.rcvdate = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
 
 
             ElseIf dao.fields.STATUS_ID = 8 Then
                 Dim rcvdate As Date = dao.fields.rcvdate
-                dao.fields.rcvdate = DateAdd(DateInterval.Year, 543, rcvdate)
-                class_xml.RCVDATE = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
+                dao.fields.rcvdate = Format(DateAdd(DateInterval.Year, 543, rcvdate), "dd MMMM yyyy")
+                class_xml.RCVDATE = Format(DateAdd(DateInterval.Year, 0, rcvdate), "dd MMMM yyyy")
                 Dim app_date As Date = dao.fields.appdate
                 dao.fields.appdate = DateAdd(DateInterval.Year, 543, app_date)
                 class_xml.APPDATE = Format(DateAdd(DateInterval.Year, -543, app_date), "dd MMMM yyyy")
                 Dim write_date As Date = dao.fields.WRITE_DATE
                 dao.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
-                class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, -543, write_date), "dd MMM yyyy")
+                class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, 0, write_date), "dd MMMM yyyy")
                 class_xml.drsamp = dao.fields
                 class_xml.regis = dao_pid.fields
-                class_xml.drsamp.rcvdate = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
+                ''class_xml.drsamp.rcvdate = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
             End If
 
         Catch ex As Exception
