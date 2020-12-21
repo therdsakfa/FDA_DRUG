@@ -121,7 +121,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 btn_cancel.CssClass = "btn-danger btn-lg"
 
                 ddl_cnsdcd.Style.Add("display", "none")
-            ElseIf dao.fields.STATUS_ID = 6 Then
+            ElseIf dao.fields.STATUS_ID = 9 Then
                 remark_box.Style.Add("display", "block")
             End If
         ElseIf _ProcessID = 1028 Then                                                                            'ทำให้เป็น else if แยกนาม นยม         ตอนนี้ทำเป็นแค่ else เข้า 2 ทุกกรณีก่อน
@@ -134,7 +134,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 btn_cancel.CssClass = "btn-danger btn-lg"
 
                 ddl_cnsdcd.Style.Add("display", "none")
-            ElseIf dao.fields.STATUS_ID = 6 Then
+            ElseIf dao.fields.STATUS_ID = 9 Then
                 remark_box.Style.Add("display", "block")
             End If
         ElseIf _ProcessID = 1029 Then                                                                            'ทำให้เป็น else if แยกนาม นยม         ตอนนี้ทำเป็นแค่ else เข้า 2 ทุกกรณีก่อน
@@ -147,7 +147,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 btn_cancel.CssClass = "btn-danger btn-lg"
 
                 ddl_cnsdcd.Style.Add("display", "none")
-            ElseIf dao.fields.STATUS_ID = 6 Then
+            ElseIf dao.fields.STATUS_ID = 9 Then
                 remark_box.Style.Add("display", "block")
             End If
         ElseIf _ProcessID = 1030 Then                                                                            'ทำให้เป็น else if แยกนาม นยม         ตอนนี้ทำเป็นแค่ else เข้า 2 ทุกกรณีก่อน
@@ -160,7 +160,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 btn_cancel.CssClass = "btn-danger btn-lg"
 
                 ddl_cnsdcd.Style.Add("display", "none")
-            ElseIf dao.fields.STATUS_ID = 6 Then
+            ElseIf dao.fields.STATUS_ID = 9 Then
                 remark_box.Style.Add("display", "block")
             End If
         End If
