@@ -87,4 +87,31 @@
             _LONG_APPDATE = value
         End Set
     End Property
+    Private _RCVNO_FORMAT As String
+    Public Property RCVNO_FORMAT() As String
+        Get
+            Return _RCVNO_FORMAT
+        End Get
+        Set(ByVal value As String)
+            _RCVNO_FORMAT = value
+        End Set
+    End Property
+    Private _LONG_RCVDATE As String
+    Public Property LONG_RCVDATE() As String
+        Get
+            Return _LONG_RCVDATE
+        End Get
+        Set(ByVal value As String)
+            _LONG_RCVDATE = value
+        End Set
+    End Property
+    Private _QR_CODE As String
+    Public Property QR_CODE() As String
+        Get
+            Return _QR_CODE
+        End Get
+        Set(ByVal value As String)
+            _QR_CODE = value
+        End Set
+    End Property
 End Class

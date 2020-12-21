@@ -473,6 +473,27 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Catch ex As Exception
 
             End Try
+            Dim rcvno_format As String = ""
+            Try
+                Try
+
+                    If Len(dao2.fields.NYM2_NO) > 0 Then
+                        rcvno_format = CStr(CInt(Right(dao2.fields.NYM2_NO, 5))) & "/" & Left(dao2.fields.NYM2_NO, 2)
+                        class_xml21.RCVNO_FORMAT = rcvno_format
+                    End If
+                Catch ex As Exception
+
+                End Try
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml21.LONG_RCVDATE = CDate(dao2.fields.rcvdate).ToLongDateString()
+            Catch ex As Exception
+
+            End Try
+
+
             Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
                     dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then
@@ -562,6 +583,25 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             End Try
             Try
                 class_xml3.DRUG_NAME = drug_name
+            Catch ex As Exception
+
+            End Try
+            Dim rcvno_format As String = ""
+            Try
+                Try
+
+                    If Len(dao3.fields.NYM3_NO) > 0 Then
+                        rcvno_format = CStr(CInt(Right(dao3.fields.NYM3_NO, 5))) & "/" & Left(dao3.fields.NYM3_NO, 2)
+                        class_xml3.RCVNO_FORMAT = rcvno_format
+                    End If
+                Catch ex As Exception
+
+                End Try
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml3.LONG_RCVDATE = CDate(dao3.fields.rcvdate).ToLongDateString()
             Catch ex As Exception
 
             End Try
@@ -657,6 +697,26 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Catch ex As Exception
 
             End Try
+            Dim rcvno_format As String = ""
+            Try
+                Try
+
+                    If Len(dao4.fields.NYM4_NO) > 0 Then
+                        rcvno_format = CStr(CInt(Right(dao4.fields.NYM4_NO, 5))) & "/" & Left(dao4.fields.NYM4_NO, 2)
+                        class_xml4.RCVNO_FORMAT = rcvno_format
+                    End If
+                Catch ex As Exception
+
+                End Try
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml4.LONG_RCVDATE = CDate(dao4.fields.rcvdate).ToLongDateString()
+            Catch ex As Exception
+
+            End Try
+
             Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
                     dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then
@@ -702,9 +762,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         End If
 
 
-        p_nym2 = class_xml21
-        p_nym3 = class_xml3
-        p_nym4 = class_xml4
+
 
         Dim dao_nym2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao_nym3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
@@ -737,7 +795,19 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym4.fields.TR_ID) 'load_PDF(filename)
         End If
 
+        Try
+            Dim url As String = ""
+            url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
 
+            class_xml21.QR_CODE = QR_CODE_IMG(url)
+            class_xml3.QR_CODE = QR_CODE_IMG(url)
+            class_xml4.QR_CODE = QR_CODE_IMG(url)
+        Catch ex As Exception
+
+        End Try
+        p_nym2 = class_xml21
+        p_nym3 = class_xml3
+        p_nym4 = class_xml4
         LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
 
 

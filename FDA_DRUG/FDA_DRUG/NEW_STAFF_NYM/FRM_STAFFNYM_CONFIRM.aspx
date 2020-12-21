@@ -154,7 +154,7 @@
                          </td>
                      </tr>--%>
                      <tr><td>
-                         <asp:DropDownList ID="ddl_cnsdcd" runat="server" AutoPostBack="True" Width="80%" DataTextField="STATUS_NAME" DataValueField="STATUS_ID">
+                         <asp:DropDownList ID="ddl_cnsdcd" runat="server" Width="80%" DataTextField="STATUS_NAME" DataValueField="STATUS_ID" AutoPostBack="true">
                          </asp:DropDownList>
                          </td></tr>
                  <%--     <tr>
@@ -167,14 +167,14 @@
                      <tr><td>วันที่รับ/อนุมัติ
                          <asp:TextBox ID="txt_appdate" runat="server"></asp:TextBox>
                          </td></tr>
-                     <tr id="remark_box" runat="server" style="display:none;"><td> 
-                         <asp:CheckBox ID="CheckBox1" runat="server" Text="เงื่อนไข/หมายเหตุ" AutoPostBack="True" />
+                     <tr id="remark_box" runat="server" style="display:none;" ><td> 
+                         <asp:CheckBox ID="CheckBox1" runat="server" Text="เงื่อนไข/หมายเหตุ" AutoPostBack="True" style="display:none;" />
 
                          <br />
-                         <asp:TextBox ID="txt_REMARK" runat="server" CssClass="auto-style1" Height="100px" TextMode="MultiLine" Width="270px" Visible="False"></asp:TextBox>
+                         <asp:TextBox ID="txt_REMARK" runat="server" CssClass="auto-style1" Height="100px" TextMode="MultiLine" Width="270px" ></asp:TextBox>
 
                          </td></tr>
-                     <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยืนยัน" CssClass="btn-lg"   Width="80%" OnClientClick="return confirm('คุณต้องการบันทึกข้อมูลหรือไม่');" /></td></tr>
+                     <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยืนยัน" CssClass="btn-lg"   Width="80%" OnClientClick="confirm('คุณต้องการบันทึกข้อมูลหรือไม่');" /></td></tr>
                      <tr><td> <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก" CssClass="btn-lg"   Width="80%"/></td></tr>
                      <tr><td>  <asp:Button ID="btn_load" runat="server" Text="Download PDF" CssClass="btn-lg"   Width="80%" /></td></tr>
                      <tr style="display:none;"><td>  <asp:Button ID="btn_preview" runat="server" Text="Preview ใบอนุญาต" CssClass="btn-lg"   Width="80%" /></td></tr>
@@ -182,8 +182,6 @@
 
                  </table>
                  
-
-
              </td>
         </tr>
         <tr>
