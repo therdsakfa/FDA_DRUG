@@ -145,9 +145,9 @@
                        <telerik:GridBoundColumn DataField="NYM4_WISH_MED" FilterControlAltText="Filter NYM4_WISH_MED column"
                            HeaderText="ชื่อยา (Th/Eng)" SortExpression="NYM4_WISH_MED" UniqueName="NYM4_WISH_MED">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="FK_IDA" FilterControlAltText="Filter FK_IDA column"
-                           HeaderText="เลขดำเนินการ" SortExpression="FK_IDA" UniqueName="FK_IDA">
-                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="TR_ID_FORMAT" FilterControlAltText="Filter TR_ID_FORMAT column"
+                        HeaderText="เลขดำเนินการ" SortExpression="TR_ID_FORMAT" UniqueName="TR_ID_FORMAT">   
+                    </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
                            HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
                        </telerik:GridBoundColumn>
