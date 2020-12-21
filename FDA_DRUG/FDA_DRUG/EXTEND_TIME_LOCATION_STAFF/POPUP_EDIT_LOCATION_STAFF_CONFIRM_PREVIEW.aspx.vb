@@ -511,11 +511,11 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
         If dao.fields.STATUS_ID = 4 Then
             int_group_ddl = 55
 
-        ElseIf dao.fields.STATUS_ID = 6 Or dao.fields.STATUS_ID >= 9 Then
+        ElseIf dao.fields.STATUS_ID = 6 Or dao.fields.STATUS_ID <= 9 Then
             int_group_ddl = 33
 
-
-
+            'ElseIf dao.fields.STATUS_ID = 10 Then
+            '    int_group_ddl = 66
         End If
 
         bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL1(9, int_group_ddl, dao.fields.STATUS_ID)
