@@ -164,10 +164,10 @@ Public Class POPUP_DS_CONFIRM
         dao.update()
         AddLogStatusEtracking(1, 0, _CLS.CITIZEN_ID, "ยื่นเอกสารยาตัวอย่าง " & dao_p.fields.PROCESS_NAME, dao_p.fields.PROCESS_NAME, dao.fields.TR_ID, dao.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
         'alert("ยืนยันข้อมูลเรียบร้อย")
-        alert("ยืนยันข้อมูลเรียบร้อย เลขรับ คือ " & dao.fields.rcvno)
-            Response.Write("<script type langue =javascript>")
-            Response.Write("window.location.href = '../DS/FRM_DS_MAIN.aspx?process=" & _ProcessID & "&lcn_ida=" & _lcn_ida & "';")
-            Response.Write("</script type >")
+        'alert("ยืนยันข้อมูลเรียบร้อย เลขรับ คือ " & dao.fields.rcvno)
+        Response.Write("<script type langue =javascript>")
+        Response.Write("window.location.href = '../DS/FRM_DS_MAIN.aspx?process=" & _ProcessID & "&lcn_ida=" & _lcn_ida & "';")
+        Response.Write("</script type >")
 
         '            Else
         '                alert(result)

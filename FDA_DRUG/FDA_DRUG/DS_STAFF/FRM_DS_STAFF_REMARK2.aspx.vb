@@ -22,6 +22,13 @@
         If Not IsPostBack Then
             txt_app_date.Text = Date.Now.ToShortDateString()
             'default_Remark()
+            Try
+                Dim dao As New DAO_DRUG.ClsDBdrsamp
+                dao.GetDataby_IDA(_IDA)
+                Txt_Remark.Text = dao.fields.REMARK
+            Catch ex As Exception
+
+            End Try
         End If
     End Sub
 
