@@ -1415,7 +1415,18 @@ Public Class FRM_STAFFNYM_CONFIRM
             Catch ex As Exception
 
             End Try
+            Try
+                Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
+                dao_st.GetDataby_IDA(dao2.fields.NYM2_IDENTIFY_STAFF)
+                class_xml21.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+            Catch ex As Exception
 
+            End Try
+            Try
+                class_xml21.RECEIVER_NAME = set_name_company(dao2.fields.STAFF_RECEIVE_IDEN)
+            Catch ex As Exception
+
+            End Try
 
             Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
@@ -1535,6 +1546,19 @@ Public Class FRM_STAFFNYM_CONFIRM
 
             End Try
             Try
+                Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
+                dao_st.GetDataby_IDA(dao3.fields.NYM3_IDENTIFY_STAFF)
+                class_xml3.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml3.RECEIVER_NAME = set_name_company(dao3.fields.STAFF_RECEIVE_IDEN)
+            Catch ex As Exception
+
+            End Try
+
+            Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
                     dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then
                     Dim val As String = ""
@@ -1651,7 +1675,18 @@ Public Class FRM_STAFFNYM_CONFIRM
             Catch ex As Exception
 
             End Try
+            Try
+                Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
+                dao_st.GetDataby_IDA(dao4.fields.NYM4_IDENTIFY_STAFF)
+                class_xml4.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+            Catch ex As Exception
 
+            End Try
+            Try
+                class_xml4.RECEIVER_NAME = set_name_company(dao4.fields.STAFF_RECEIVE_IDEN)
+            Catch ex As Exception
+
+            End Try
             Try
                 If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
                     dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then
@@ -1942,4 +1977,26 @@ Public Class FRM_STAFFNYM_CONFIRM
     Protected Sub ddl_cnsdcd_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
+    Private Function set_name_company(ByVal identify As String) As String
+        Dim fullname As String = String.Empty
+        Try
+            Dim dao_syslcnsid As New DAO_CPN.clsDBsyslcnsid
+            dao_syslcnsid.GetDataby_identify(identify)
+
+            Dim dao_sysnmperson As New DAO_CPN.clsDBsyslcnsnm
+            dao_sysnmperson.GetDataby_lcnsid(dao_syslcnsid.fields.lcnsid)
+
+            Dim ws2 As New WS_Taxno_TaxnoAuthorize.WebService1
+
+            Dim ws_taxno = ws2.getProfile_byidentify(identify)
+
+            fullname = ws_taxno.SYSLCNSNMs.thanm & " " & ws_taxno.SYSLCNSNMs.thalnm
+
+
+        Catch ex As Exception
+            fullname = ""
+        End Try
+
+        Return fullname
+    End Function
 End Class
