@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class POPUP_NYM_SUBMIT_REQUEST
-
+    
     '''<summary>
     '''hl_reader control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
-
+    
     '''<summary>
     '''HiddenField1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
-
+    
     '''<summary>
     '''lr_preview control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''txt_title control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_title As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txt_edit_remark control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_edit_remark As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btn_confirm control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_cancel control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_load control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_load0 control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Label1 control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''UC_GRID_ATTACH control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UC_GRID_ATTACH As Global.FDA_DRUG.UC_GRID_ATTACH
-
+    
     '''<summary>
     '''Label2 control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''UC_GRID_ATTACH1 control.
     '''</summary>

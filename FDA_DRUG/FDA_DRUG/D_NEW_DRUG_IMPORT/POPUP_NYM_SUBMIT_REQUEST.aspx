@@ -101,13 +101,13 @@
 
              </td>
         </tr>
-        <tr>
+        <tr >
 
            <td style="width:30%;height:50%;padding-left:10%">
-               <asp:Label ID="Label1" runat="server" Text="เอกสารยื่นยันการส่งคืนหรือการบริจาค" AutoPostBack="True" />
-                 <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" />  
+               <asp:Label ID="Label1" runat="server" Text="เอกสารยื่นยันการส่งคืนหรือการบริจาค" AutoPostBack="True" style="display:none;" />
+                 <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH"  />  
                <br/>
-           <asp:Label ID="Label2" runat="server" Text="เอกสารแนบ" AutoPostBack="True" />
+           <asp:Label ID="Label2" runat="server" Text="เอกสารแนบ" AutoPostBack="True" style="display:none;" />
                  <uc1:UC_GRID_ATTACH_IMPORT runat="server" id="UC_GRID_ATTACH1" />  
            
                  <br />
