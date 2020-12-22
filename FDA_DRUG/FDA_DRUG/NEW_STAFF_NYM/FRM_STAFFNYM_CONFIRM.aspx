@@ -6,21 +6,7 @@
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
-    <script type="text/javascript">
-        $(document).ready(function () {
-            showdate($("#ContentPlaceHolder1_txt_app_date"));
-        });
-
-        </script>
-    <style type="text/css">
-        .auto-style1 {
-            font-size: 12px;
-            line-height: 1.5;
-            border-radius: 3px;
-            padding: 5px 10px;
-        }
-    </style>
+  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
        

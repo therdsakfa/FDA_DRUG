@@ -11,8 +11,8 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_STAFF_NYM31
-
+Partial Public Class FRM_STAFF_NYM3
+    
     '''<summary>
     '''lbl_name control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class FRM_STAFF_NYM31
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_name As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''ddl_search control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class FRM_STAFF_NYM31
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_search As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''btn_search control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class FRM_STAFF_NYM31
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_search As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''lbl_remark control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class FRM_STAFF_NYM31
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_remark As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''btn_proof control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class FRM_STAFF_NYM31
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_proof As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''RadGrid1 control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class FRM_STAFF_NYM31
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
-
+    
     '''<summary>
     '''btn_reload control.
     '''</summary>

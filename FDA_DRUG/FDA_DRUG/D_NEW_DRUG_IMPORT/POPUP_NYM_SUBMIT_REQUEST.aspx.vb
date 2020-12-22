@@ -343,6 +343,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
         Dim dao_rg As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+        Dim NYM_STATUS As Integer = 0
         Try
             dao_rg.GetDataby_IDA(_DL)
         Catch ex As Exception
@@ -425,6 +426,11 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
         End Try
         If _process = 1027 Then
+            Try
+                NYM_STATUS = dao2.fields.STATUS_ID
+            Catch ex As Exception
+
+            End Try
             Try
                 Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT
                 dao_unit.GetDataby_sunitcd(dao_rg.fields.UNIT_NORMAL)
@@ -551,6 +557,11 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             End Try
         ElseIf _process = 1028 Then
             Try
+                NYM_STATUS = dao2.fields.STATUS_ID
+            Catch ex As Exception
+
+            End Try
+            Try
 
                 class_xml3.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
             Catch ex As Exception
@@ -674,6 +685,11 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
 
             End Try
         ElseIf _process = 1029 Then
+            Try
+                NYM_STATUS = dao2.fields.STATUS_ID
+            Catch ex As Exception
+
+            End Try
             Try
 
                 class_xml4.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
@@ -817,13 +833,14 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         Dim paths As String = bao._PATH_DEFAULT                                         ' PART ต้องเป็น defult ก่อน 
 
-        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_process, 1, 0)                     'DAO บรรทัด 2809
+        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_process, NYM_STATUS, 0)                     'DAO บรรทัด 2809
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim year As String = Date.Now.Year
         'Path_XML มาจาก ข้างบน ถ้าเปลี่ยน ที่อยู่ path มีตัวแปล paths dao_nym3 dao_pdftemplate
         Dim filename As String = ""
         Dim Path_XML As String = ""
         If _process = 1027 Then
+            'filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, _TR_ID)
             filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym2.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
             Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym2.fields.TR_ID) 'load_PDF(filename)
         ElseIf _process = 1028 Then
@@ -844,6 +861,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Catch ex As Exception
 
         End Try
+
         p_nym2 = class_xml21
         p_nym3 = class_xml3
         p_nym4 = class_xml4

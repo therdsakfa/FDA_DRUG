@@ -108,9 +108,9 @@
                             If Request.QueryString("ida_c") <> "" Then
                                 url += "&ida_c=" & Request.QueryString("ida_c")
                             End If
-                            If Request.QueryString("process") <> "" And url.Contains("process") = False Then
-                                url += "&process=" & Request.QueryString("process")
-                            End If
+                            'If Request.QueryString("process") <> "" Then
+                            '    url += "&process=" & Request.QueryString("process")
+                            'End If
                         End If
 
                         If Request.QueryString("staff") <> "" Then
@@ -130,9 +130,9 @@
                             If Request.QueryString("ida_c") <> "" Then
                                 url += "&ida_c=" & Request.QueryString("ida_c")
                             End If
-                            If Request.QueryString("process") <> "" And url.Contains("process") = False Then
-                                url += "&process=" & Request.QueryString("process")
-                            End If
+                            'If Request.QueryString("process") <> "" And url.Contains("process") = False Then
+                            '    url += "&process=" & Request.QueryString("process")
+                            'End If
 
                             If Request.QueryString("staff") <> "" Then
                                 url = url & "&staff=1" & "&identify=" & Request.QueryString("identify")
@@ -232,9 +232,9 @@
                             If Request.QueryString("ida_c") <> "" Then
                                 url += "&ida_c=" & Request.QueryString("ida_c")
                             End If
-                            If Request.QueryString("process") <> "" And url.Contains("process") = False Then
-                                url += "&process=" & Request.QueryString("process")
-                            End If
+                            'If Request.QueryString("process") <> "" And url.Contains("process") = False Then
+                            '    url += "&process=" & Request.QueryString("process")
+                            'End If
                         End If
                         If Request.QueryString("staff") <> "" Then
                             url = url & "&staff=1" & "&identify=" & Request.QueryString("identify")
@@ -246,9 +246,9 @@
                         If Request.QueryString("ida_c") <> "" Then
                             url += "&ida_c=" & Request.QueryString("ida_c")
                         End If
-                        If Request.QueryString("process") <> "" And url.Contains("process") = False Then
-                            url += "&process=" & Request.QueryString("process")
-                        End If
+                        'If Request.QueryString("process") <> "" And url.Contains("process") = False Then
+                        '    url += "&process=" & Request.QueryString("process")
+                        'End If
                         If Request.QueryString("staff") <> "" Then
                             url = url & "&staff=1" & "&identify=" & Request.QueryString("identify")
                         End If

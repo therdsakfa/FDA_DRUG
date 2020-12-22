@@ -45,7 +45,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
         If Not IsPostBack Then
             Try
-                txt_appdate.Text = CStr(Date.Now).ToString("dd/MM/yyyy")
+                txt_appdate.Text = Date.Now.ToShortDateString()
             Catch ex As Exception
 
             End Try
@@ -1257,6 +1257,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        Dim NYM_STATUS As Integer = 0
         Dim dao_rg As New DAO_DRUG.ClsDBDRUG_REGISTRATION
         Try
             dao_rg.GetDataby_IDA(_DL)
@@ -1291,6 +1292,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         dao2.GetDataby_IDA(_IDA)
         dao3.getdata_ida(_IDA)
         dao4.getdata_ida(_IDA)
+
         Dim class_xml21 As New CLASS_NYM_2
         'Dim class_xml22 As New CLASS_NYM_2
         Dim class_xml3 As New CLASS_NYM_3_SM
@@ -1340,6 +1342,11 @@ Public Class FRM_STAFFNYM_CONFIRM
 
         End Try
         If _process = 1027 Then
+            Try
+                NYM_STATUS = dao2.fields.STATUS_ID
+            Catch ex As Exception
+
+            End Try
             Try
                 Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT
                 dao_unit.GetDataby_sunitcd(dao_rg.fields.UNIT_NORMAL)
@@ -1454,6 +1461,11 @@ Public Class FRM_STAFFNYM_CONFIRM
             End Try
         ElseIf _process = 1028 Then
             Try
+                NYM_STATUS = dao3.fields.STATUS_ID
+            Catch ex As Exception
+
+            End Try
+            Try
 
                 class_xml3.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
             Catch ex As Exception
@@ -1565,6 +1577,11 @@ Public Class FRM_STAFFNYM_CONFIRM
 
             End Try
         ElseIf _process = 1029 Then
+            Try
+                NYM_STATUS = dao4.fields.STATUS_ID
+            Catch ex As Exception
+
+            End Try
             Try
 
                 class_xml4.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
@@ -1696,7 +1713,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         Dim paths As String = bao._PATH_DEFAULT                                         ' PART ต้องเป็น defult ก่อน 
 
-        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_process, 1, 0)                     'DAO บรรทัด 2809
+        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_process, NYM_STATUS, 0)                     'DAO บรรทัด 2809
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim year As String = Date.Now.Year
         'Path_XML มาจาก ข้างบน ถ้าเปลี่ยน ที่อยู่ path มีตัวแปล paths dao_nym3 dao_pdftemplate
