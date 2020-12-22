@@ -269,19 +269,19 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
         If _process = 1027 Then
             dao2.GetDataby_IDA(Integer.Parse(_IDA))
-            dao2.fields.STATUS_ID = 14                                                                            'status ยกเลิกคำขอ ยังไม่มี
+            dao2.fields.STATUS_ID = 7                                                                            'status ยกเลิกคำขอ ยังไม่มี
             dao2.update()
-            AddLogStatusnymimport(14, _process, _CLS.CITIZEN_ID, _IDA)                              'น่าจะเอาไว้เก็บการอัพเดท สเตตัส
+            AddLogStatusnymimport(7, _process, _CLS.CITIZEN_ID, _IDA)                              'น่าจะเอาไว้เก็บการอัพเดท สเตตัส
         ElseIf _process = 1028 Then
             dao3.GetDataby_IDA(Integer.Parse(_IDA))
-            dao3.fields.STATUS_ID = 14                                                                            'status ยกเลิกคำขอ ยังไม่มี
+            dao3.fields.STATUS_ID = 7                                                                            'status ยกเลิกคำขอ ยังไม่มี
             dao3.update()
-            AddLogStatusnymimport(14, _process, _CLS.CITIZEN_ID, _IDA)
+            AddLogStatusnymimport(7, _process, _CLS.CITIZEN_ID, _IDA)
         ElseIf _process = 1029 Then
             dao4.GetDataby_IDA(Integer.Parse(_IDA))
-            dao4.fields.STATUS_ID = 14                                                                            'status ยกเลิกคำขอ ยังไม่มี
+            dao4.fields.STATUS_ID = 7                                                                            'status ยกเลิกคำขอ ยังไม่มี
             dao4.update()
-            AddLogStatusnymimport(14, _process, _CLS.CITIZEN_ID, _IDA)
+            AddLogStatusnymimport(7, _process, _CLS.CITIZEN_ID, _IDA)
         End If
         Response.Write("<script type='text/javascript'>parent.close_modal(); </script> ")
     End Sub
@@ -343,6 +343,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
         Dim dao_rg As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+        Dim NYM_STATUS As Integer = 0
         Try
             dao_rg.GetDataby_IDA(_DL)
         Catch ex As Exception
@@ -426,6 +427,11 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         End Try
         If _process = 1027 Then
             Try
+                NYM_STATUS = dao2.fields.STATUS_ID
+            Catch ex As Exception
+
+            End Try
+            Try
                 Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT
                 dao_unit.GetDataby_sunitcd(dao_rg.fields.UNIT_NORMAL)
                 class_xml21.SMALL_UNIT = CStr(dao2.fields.NYM2_COUNT_MED) & " " & dao_unit.fields.unit_name
@@ -471,6 +477,18 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             End Try
             Try
                 class_xml21.DRUG_NAME = drug_name
+            Catch ex As Exception
+
+            End Try
+            Try
+                Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
+                dao_st.GetDataby_IDA(dao2.fields.NYM2_IDENTIFY_STAFF)
+                class_xml21.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml21.RECEIVER_NAME = set_name_company(dao2.fields.STAFF_RECEIVE_IDEN)
             Catch ex As Exception
 
             End Try
@@ -539,6 +557,11 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             End Try
         ElseIf _process = 1028 Then
             Try
+                NYM_STATUS = dao2.fields.STATUS_ID
+            Catch ex As Exception
+
+            End Try
+            Try
 
                 class_xml3.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
             Catch ex As Exception
@@ -585,6 +608,18 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             End Try
             Try
                 class_xml3.DRUG_NAME = drug_name
+            Catch ex As Exception
+
+            End Try
+            Try
+                Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
+                dao_st.GetDataby_IDA(dao3.fields.NYM3_IDENTIFY_STAFF)
+                class_xml3.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml3.RECEIVER_NAME = set_name_company(dao3.fields.STAFF_RECEIVE_IDEN)
             Catch ex As Exception
 
             End Try
@@ -651,6 +686,11 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             End Try
         ElseIf _process = 1029 Then
             Try
+                NYM_STATUS = dao2.fields.STATUS_ID
+            Catch ex As Exception
+
+            End Try
+            Try
 
                 class_xml4.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
             Catch ex As Exception
@@ -697,6 +737,18 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             End Try
             Try
                 class_xml4.DRUG_NAME = drug_name
+            Catch ex As Exception
+
+            End Try
+            Try
+                Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
+                dao_st.GetDataby_IDA(dao4.fields.NYM4_IDENTIFY_STAFF)
+                class_xml4.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml4.RECEIVER_NAME = set_name_company(dao4.fields.STAFF_RECEIVE_IDEN)
             Catch ex As Exception
 
             End Try
@@ -781,13 +833,14 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         Dim paths As String = bao._PATH_DEFAULT                                         ' PART ต้องเป็น defult ก่อน 
 
-        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_process, 1, 0)                     'DAO บรรทัด 2809
+        dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW(_process, NYM_STATUS, 0)                     'DAO บรรทัด 2809
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim year As String = Date.Now.Year
         'Path_XML มาจาก ข้างบน ถ้าเปลี่ยน ที่อยู่ path มีตัวแปล paths dao_nym3 dao_pdftemplate
         Dim filename As String = ""
         Dim Path_XML As String = ""
         If _process = 1027 Then
+            'filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, _TR_ID)
             filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym2.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
             Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym2.fields.TR_ID) 'load_PDF(filename)
         ElseIf _process = 1028 Then
@@ -808,6 +861,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Catch ex As Exception
 
         End Try
+
         p_nym2 = class_xml21
         p_nym3 = class_xml3
         p_nym4 = class_xml4
@@ -873,6 +927,28 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             reader.Close()
         End Try
         Return imgBin
+    End Function
+    Private Function set_name_company(ByVal identify As String) As String
+        Dim fullname As String = String.Empty
+        Try
+            Dim dao_syslcnsid As New DAO_CPN.clsDBsyslcnsid
+            dao_syslcnsid.GetDataby_identify(identify)
+
+            Dim dao_sysnmperson As New DAO_CPN.clsDBsyslcnsnm
+            dao_sysnmperson.GetDataby_lcnsid(dao_syslcnsid.fields.lcnsid)
+
+            Dim ws2 As New WS_Taxno_TaxnoAuthorize.WebService1
+
+            Dim ws_taxno = ws2.getProfile_byidentify(identify)
+
+            fullname = ws_taxno.SYSLCNSNMs.thanm & " " & ws_taxno.SYSLCNSNMs.thalnm
+
+
+        Catch ex As Exception
+            fullname = ""
+        End Try
+
+        Return fullname
     End Function
     Protected Sub btn_load0_Click(sender As Object, e As EventArgs) Handles btn_load0.Click
         Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")

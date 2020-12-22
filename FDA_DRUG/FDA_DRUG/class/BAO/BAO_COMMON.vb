@@ -486,6 +486,12 @@ Module BAO_COMMON
                 ElseIf PROSESS_ID = 1027 Then
                     Dim cls_xml As New CLASS_GEN_XML.NYM2_IMPORT
                     cls_xml.GEN_XML_NORYORMOR2(PATH_XML, p_nym2)
+                ElseIf PROSESS_ID = 1028 Then
+                    Dim cls_xml As New CLASS_GEN_XML.NYM3_IMPORT
+                    cls_xml.GEN_XML_NORYORMOR3(PATH_XML, p_nym3)
+                ElseIf PROSESS_ID = 1029 Then
+                    Dim cls_xml As New CLASS_GEN_XML.NYM4_IMPORT
+                    cls_xml.GEN_XML_NORYORMOR4(PATH_XML, p_nym4)
                 ElseIf PROSESS_ID = 10061 Then
                     Dim cls_xml As New CLASS_GEN_XML.Cerf
                     cls_xml.GEN_XML_CER_FOREIGN(PATH_XML, p_cerf)
@@ -557,7 +563,12 @@ Module BAO_COMMON
                 ElseIf PROSESS_ID = 1027 Then
                     Dim cls_xml As New CLASS_GEN_XML.NYM2_IMPORT
                     cls_xml.GEN_XML_NORYORMOR2(PATH_XML, p_nym2)
-
+                ElseIf PROSESS_ID = 1028 Then
+                    Dim cls_xml As New CLASS_GEN_XML.NYM3_IMPORT
+                    cls_xml.GEN_XML_NORYORMOR3(PATH_XML, p_nym3)
+                ElseIf PROSESS_ID = 1029 Then
+                    Dim cls_xml As New CLASS_GEN_XML.NYM4_IMPORT
+                    cls_xml.GEN_XML_NORYORMOR4(PATH_XML, p_nym4)
                 ElseIf PROSESS_ID = 1701 Or PROSESS_ID = 1702 Or PROSESS_ID = 1703 Or PROSESS_ID = 1704 Or PROSESS_ID = 1705 Or PROSESS_ID = 1706 Or PROSESS_ID = 1707 Then 'ตระกูล 8 ยาตัวอย่าง
                     Dim cls_xml As New CLASS_GEN_XML.drsamp2
                     cls_xml.GEN_XML_DRSAMP(PATH_XML, p_drsamp)

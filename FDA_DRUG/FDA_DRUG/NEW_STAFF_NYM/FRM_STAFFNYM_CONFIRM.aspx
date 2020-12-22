@@ -6,25 +6,7 @@
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
-    <link href="../css/smoothness/jquery2.custom.css" rel="stylesheet" />
-    <script src="../Jsdate/ui.datepicker-th.js"></script>
-    <script src="../Jsdate/ui.datepicker.js"></script>
-    <script src="../Jsdate/jsdatemain_mol3.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            showdate($("#ContentPlaceHolder1_txt_app_date"));
-        });
-
-        </script>
-    <style type="text/css">
-        .auto-style1 {
-            font-size: 12px;
-            line-height: 1.5;
-            border-radius: 3px;
-            padding: 5px 10px;
-        }
-    </style>
+  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
        
@@ -175,7 +157,7 @@
 
                          </td></tr>
                      <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยืนยัน" CssClass="btn-lg"   Width="80%" OnClientClick="confirm('คุณต้องการบันทึกข้อมูลหรือไม่');" /></td></tr>
-                     <tr><td> <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก" CssClass="btn-lg"   Width="80%"/></td></tr>
+                     <tr><td> <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก" CssClass="btn-lg"   Width="80%" OnClientClick="confirm('คุณต้องการบันทึกข้อมูลหรือไม่');"/></td></tr>
                      <tr><td>  <asp:Button ID="btn_load" runat="server" Text="Download PDF" CssClass="btn-lg"   Width="80%" /></td></tr>
                      <tr style="display:none;"><td>  <asp:Button ID="btn_preview" runat="server" Text="Preview ใบอนุญาต" CssClass="btn-lg"   Width="80%" /></td></tr>
                      <tr><td>  <asp:Button ID="btn_load0" runat="server" Text="กลับหน้ารายการ" CssClass="btn-lg"   Width="80%" /></td></tr>

@@ -148,10 +148,15 @@
                         dao.fields.POSITION_CONSIDER_LINE5 = TextBox6.Text
                         dao.fields.STATUS_ID = 9
                         dao.fields.CONSIDER_DATE = CONSIDER_DATE
+                        Try
+
+                        Catch ex As Exception
+
+                        End Try
 
                         dao.fields.NYM2_IDENTIFY_STAFF = ddl_staff_offer.SelectedValue
                         Try
-                            dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
+                        dao.fields.ESTIMATE_CONSIDER_DATE = CDate(txt_app_date.Text)
                         Catch ex As Exception
 
                         End Try
