@@ -314,7 +314,11 @@ Public Class FRM_DS_STAFF_CONFIRM
         ddl_cnsdcd.DataSource = dt
         ddl_cnsdcd.DataValueField = "STATUS_ID"
         ddl_cnsdcd.DataTextField = "STATUS_NAME_STAFF"
-        ddl_cnsdcd.DataBind()
+        Dim item As New ListItem
+        item.Text = "กรุณาเลือกสถานะ"
+        item.Value = "0"
+        ddl_cnsdcd.Items.Insert(0, item)
+        'ddl_cnsdcd.DataBind()
     End Sub
 
     Private Sub alert(ByVal text As String)
@@ -622,6 +626,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
         Dim bao_master As New BAO_MASTER
+        Dim bao1 As New BAO.ClsDBSqlcommand
         Dim dao As New DAO_DRUG.ClsDBdrsamp
         dao.GetDataby_IDA(_IDA)
         'Dim dao_pid As New DAO_DRUG.TB_DRUG_PRODUCT_ID
@@ -653,6 +658,12 @@ Public Class FRM_DS_STAFF_CONFIRM
         ''class_xml.drsamp = dao.fields
 
         class_xml = cls_regis.gen_xml()
+
+        Try
+            class_xml.DT_SHOW.DT6 = bao1.SP_regis(dao_pid.fields.IDA) '' Each ของสูตรสาร
+        Catch ex As Exception
+
+        End Try
 
         If dao_lcn.fields.lcntpcd = "ผย1" Then
             dao_pid.fields.DALCNTYPE_CD = 1

@@ -32,13 +32,13 @@
             dao.fields.STATUS_ID = 7
             dao.fields.REMARK = Txt_Remark.Text
             Try
-                dao.fields.rcvdate = CDate(txt_app_date.Text)
+                dao.fields.appdate = CDate(txt_app_date.Text)
             Catch ex As Exception
 
             End Try
             dao.update()
 
-            AddLogStatus(5, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+            AddLogStatus(7, _ProcessID, _CLS.CITIZEN_ID, _IDA)
             alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
         Catch ex As Exception
             Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")
