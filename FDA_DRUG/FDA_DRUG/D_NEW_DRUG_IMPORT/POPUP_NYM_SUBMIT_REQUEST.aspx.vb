@@ -269,19 +269,19 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
         If _process = 1027 Then
             dao2.GetDataby_IDA(Integer.Parse(_IDA))
-            dao2.fields.STATUS_ID = 14                                                                            'status ยกเลิกคำขอ ยังไม่มี
+            dao2.fields.STATUS_ID = 7                                                                            'status ยกเลิกคำขอ ยังไม่มี
             dao2.update()
-            AddLogStatusnymimport(14, _process, _CLS.CITIZEN_ID, _IDA)                              'น่าจะเอาไว้เก็บการอัพเดท สเตตัส
+            AddLogStatusnymimport(7, _process, _CLS.CITIZEN_ID, _IDA)                              'น่าจะเอาไว้เก็บการอัพเดท สเตตัส
         ElseIf _process = 1028 Then
             dao3.GetDataby_IDA(Integer.Parse(_IDA))
-            dao3.fields.STATUS_ID = 14                                                                            'status ยกเลิกคำขอ ยังไม่มี
+            dao3.fields.STATUS_ID = 7                                                                            'status ยกเลิกคำขอ ยังไม่มี
             dao3.update()
-            AddLogStatusnymimport(14, _process, _CLS.CITIZEN_ID, _IDA)
+            AddLogStatusnymimport(7, _process, _CLS.CITIZEN_ID, _IDA)
         ElseIf _process = 1029 Then
             dao4.GetDataby_IDA(Integer.Parse(_IDA))
-            dao4.fields.STATUS_ID = 14                                                                            'status ยกเลิกคำขอ ยังไม่มี
+            dao4.fields.STATUS_ID = 7                                                                            'status ยกเลิกคำขอ ยังไม่มี
             dao4.update()
-            AddLogStatusnymimport(14, _process, _CLS.CITIZEN_ID, _IDA)
+            AddLogStatusnymimport(7, _process, _CLS.CITIZEN_ID, _IDA)
         End If
         Response.Write("<script type='text/javascript'>parent.close_modal(); </script> ")
     End Sub
