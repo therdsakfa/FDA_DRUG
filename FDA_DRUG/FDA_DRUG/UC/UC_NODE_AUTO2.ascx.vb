@@ -108,7 +108,7 @@
                             If Request.QueryString("ida_c") <> "" Then
                                 url += "&ida_c=" & Request.QueryString("ida_c")
                             End If
-                            If Request.QueryString("process") <> "" And Not url.Contains("process") Then
+                            If Request.QueryString("process") <> "" And url.Contains("process") = False Then
                                 url += "&process=" & Request.QueryString("process")
                             End If
                         End If
@@ -130,7 +130,7 @@
                             If Request.QueryString("ida_c") <> "" Then
                                 url += "&ida_c=" & Request.QueryString("ida_c")
                             End If
-                            If Request.QueryString("process") <> "" And Not url.Contains("process") Then
+                            If Request.QueryString("process") <> "" And url.Contains("process") = False Then
                                 url += "&process=" & Request.QueryString("process")
                             End If
 
@@ -232,7 +232,7 @@
                             If Request.QueryString("ida_c") <> "" Then
                                 url += "&ida_c=" & Request.QueryString("ida_c")
                             End If
-                            If Request.QueryString("process") <> "" And Not url.Contains("process") Then
+                            If Request.QueryString("process") <> "" And url.Contains("process") = False Then
                                 url += "&process=" & Request.QueryString("process")
                             End If
                         End If
@@ -246,7 +246,7 @@
                         If Request.QueryString("ida_c") <> "" Then
                             url += "&ida_c=" & Request.QueryString("ida_c")
                         End If
-                        If Request.QueryString("process") <> "" And Not url.Contains("process") Then
+                        If Request.QueryString("process") <> "" And url.Contains("process") = False Then
                             url += "&process=" & Request.QueryString("process")
                         End If
                         If Request.QueryString("staff") <> "" Then

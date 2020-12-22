@@ -474,6 +474,18 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Catch ex As Exception
 
             End Try
+            Try
+                Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
+                dao_st.GetDataby_IDA(dao2.fields.NYM2_IDENTIFY_STAFF)
+                class_xml21.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml21.RECEIVER_NAME = set_name_company(dao2.fields.STAFF_RECEIVE_IDEN)
+            Catch ex As Exception
+
+            End Try
             Dim rcvno_format As String = ""
             Try
                 Try
@@ -588,6 +600,18 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Catch ex As Exception
 
             End Try
+            Try
+                Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
+                dao_st.GetDataby_IDA(dao3.fields.NYM3_IDENTIFY_STAFF)
+                class_xml3.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml3.RECEIVER_NAME = set_name_company(dao3.fields.STAFF_RECEIVE_IDEN)
+            Catch ex As Exception
+
+            End Try
             Dim rcvno_format As String = ""
             Try
                 Try
@@ -697,6 +721,18 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             End Try
             Try
                 class_xml4.DRUG_NAME = drug_name
+            Catch ex As Exception
+
+            End Try
+            Try
+                Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
+                dao_st.GetDataby_IDA(dao4.fields.NYM4_IDENTIFY_STAFF)
+                class_xml4.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml4.RECEIVER_NAME = set_name_company(dao4.fields.STAFF_RECEIVE_IDEN)
             Catch ex As Exception
 
             End Try
@@ -873,6 +909,28 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             reader.Close()
         End Try
         Return imgBin
+    End Function
+    Private Function set_name_company(ByVal identify As String) As String
+        Dim fullname As String = String.Empty
+        Try
+            Dim dao_syslcnsid As New DAO_CPN.clsDBsyslcnsid
+            dao_syslcnsid.GetDataby_identify(identify)
+
+            Dim dao_sysnmperson As New DAO_CPN.clsDBsyslcnsnm
+            dao_sysnmperson.GetDataby_lcnsid(dao_syslcnsid.fields.lcnsid)
+
+            Dim ws2 As New WS_Taxno_TaxnoAuthorize.WebService1
+
+            Dim ws_taxno = ws2.getProfile_byidentify(identify)
+
+            fullname = ws_taxno.SYSLCNSNMs.thanm & " " & ws_taxno.SYSLCNSNMs.thalnm
+
+
+        Catch ex As Exception
+            fullname = ""
+        End Try
+
+        Return fullname
     End Function
     Protected Sub btn_load0_Click(sender As Object, e As EventArgs) Handles btn_load0.Click
         Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")

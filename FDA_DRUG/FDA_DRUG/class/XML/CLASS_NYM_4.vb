@@ -115,4 +115,22 @@ Public Class CLASS_NYM_4_SM
             _QR_CODE = value
         End Set
     End Property
+    Private _APPROVE_NAME As String
+    Public Property APPROVE_NAME() As String
+        Get
+            Return _APPROVE_NAME
+        End Get
+        Set(ByVal value As String)
+            _APPROVE_NAME = value
+        End Set
+    End Property
+    Private _RECEIVER_NAME As String
+    Public Property RECEIVER_NAME() As String
+        Get
+            Return _RECEIVER_NAME
+        End Get
+        Set(ByVal value As String)
+            _RECEIVER_NAME = value
+        End Set
+    End Property
 End Class

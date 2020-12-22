@@ -44,7 +44,12 @@ Public Class FRM_STAFFNYM_CONFIRM
 
 
         If Not IsPostBack Then
-            txt_appdate.Text = Date.Now.ToShortDateString()
+            Try
+                txt_appdate.Text = CStr(Date.Now).ToString("dd/MM/yyyy")
+            Catch ex As Exception
+
+            End Try
+
             HiddenField2.Value = 0
             'BindData_PDF()
             BindData_PDF_RQT()
@@ -690,7 +695,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
                 'dao_prf2.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
                 Try
-                    dao_prf2.fields.NYM2_IDENTIFY_STAFF = _CLS.CITIZEN_ID 'Date.Now 'CDate(txt_app_date.Text)
+                    dao_prf2.fields.STAFF_RECEIVE_IDEN = _CLS.CITIZEN_ID 'Date.Now 'CDate(txt_app_date.Text)
                 Catch ex As Exception
 
                 End Try
@@ -779,7 +784,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
                 'dao_prf2.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
                 Try
-                    dao_prf3.fields.NYM3_IDENTIFY_STAFF = _CLS.CITIZEN_ID 'Date.Now 'CDate(txt_app_date.Text)
+                    dao_prf3.fields.STAFF_RECEIVE_IDEN = _CLS.CITIZEN_ID 'Date.Now 'CDate(txt_app_date.Text)
                 Catch ex As Exception
 
                 End Try
@@ -859,7 +864,7 @@ Public Class FRM_STAFFNYM_CONFIRM
 
                 'dao_prf2.fields.NYM2_RCVNO = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
                 Try
-                    dao_prf4.fields.NYM4_IDENTIFY_STAFF = _CLS.CITIZEN_ID 'Date.Now 'CDate(txt_app_date.Text)
+                    dao_prf4.fields.STAFF_RECEIVE_IDEN = _CLS.CITIZEN_ID 'Date.Now 'CDate(txt_app_date.Text)
                 Catch ex As Exception
 
                 End Try
