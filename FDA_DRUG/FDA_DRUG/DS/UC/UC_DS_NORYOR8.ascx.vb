@@ -515,6 +515,15 @@ Public Class UC_DS_NORYOR8
             End If
         Next
 
+        Dim WRITEDATE As Date = dao_drsamp.fields.WRITE_DATE
+        If CDate(dao_drsamp.fields.WRITE_DATE).Year > 2500 Then
+            WRITEDATE = DateAdd(DateInterval.Year, -543, WRITEDATE)
+            cls_xml.WRITE_DATE = CDate(WRITEDATE).ToLongDateString
+        Else
+            WRITEDATE = DateAdd(DateInterval.Year, 543, WRITEDATE)
+            cls_xml.WRITE_DATE = CDate(WRITEDATE).ToLongDateString
+        End If
+
         Dim unit_physic As New DAO_DRUG.TB_DRUG_UNIT
         unit_physic.GetDataby_sunitcd(CInt(lbl_sunit_ida.Text))
 
@@ -760,7 +769,7 @@ Public Class UC_DS_NORYOR8
             Dim sum As Integer = CInt(dao_package.fields.SMALL_AMOUNT) * CInt(dao_package.fields.MEDIUM_AMOUNT)
             sum = sum * CInt(txt_qty.Text)
             dao_package.fields.SUM = sum
-            dao_package.fields.IM_DETAIL = dao_package.fields.SMALL_AMOUNT & " " & dao_mas_unit1.fields.sunitthanm & " x " & dao_package.fields.MEDIUM_AMOUNT & " " & dao_mas_unit.fields.sunitthanm & " x " & dao_package.fields.BIG_AMOUNT & " " & dao_mas_unit2.fields.sunitthanm & " จำนวน " & txt_qty.Text & " " & dao_mas_unit.fields.sunitengnm & " (" & sum & " " & lbl_unit.Text & ")"
+            dao_package.fields.IM_DETAIL = dao_package.fields.SMALL_AMOUNT & " " & dao_mas_unit1.fields.sunitthanm & " x " & dao_package.fields.MEDIUM_AMOUNT & " " & dao_mas_unit.fields.sunitthanm & " x " & dao_package.fields.BIG_AMOUNT & " " & dao_mas_unit2.fields.sunitthanm & " จำนวน " & txt_qty.Text & " " & dao_mas_unit.fields.sunitengnm ''& " (" & sum & " " & lbl_unit.Text & ")"
             dao_package.fields.CHECK_PACKAGE = 1
             dao_package.update()
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
@@ -884,6 +893,13 @@ Public Class UC_DS_NORYOR8
         dao_package.GetDataby_FK_IDA2(fk_ida)
         'For Each dao_package.fields In dao_package.datas
         'Next
+        For Each dao_package.fields In dao_package.datas
+
+            Dim dao_unit As New DAO_DRUG.TB_drsunit
+            dao_unit.GetDataby_sunitcd(dao_package.fields.SMALL_UNIT)
+
+            dao_package.fields.SMALL_UNIT = dao_unit.fields.sunitthanm
+        Next
         RadGrid5.DataSource = dao_package.datas
         RadGrid5.Rebind()
     End Sub

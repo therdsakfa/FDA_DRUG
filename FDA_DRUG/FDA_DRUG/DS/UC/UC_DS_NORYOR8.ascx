@@ -320,13 +320,13 @@
                             <telerik:GridBoundColumn UniqueName="iowanm" HeaderText="ตัวยาสำคัญ" DataField="iowanm">
                                 <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
-                            <telerik:GridBoundColumn UniqueName="QTY" HeaderText="ปริมาณ" DataField="QTY">
+                            <telerik:GridBoundColumn UniqueName="QTY" HeaderText="ปริมาณ" DataField="qty">
                                 <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
                             <%--<telerik:GridBoundColumn UniqueName="Unit" HeaderText="หน่วย" DataField="sunitengnm">
                             </telerik:GridBoundColumn>--%>
-                                                           <telerik:GridBoundColumn UniqueName="unit_name" HeaderText="หน่วย" DataField="unit_name" >
-                                                               <ItemStyle HorizontalAlign="Left" />
+                            <telerik:GridBoundColumn UniqueName="unit_name" HeaderText="หน่วย" DataField="sunitengnm" >
+                                <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>  
                         </Columns>
                     </MasterTableView>
@@ -381,6 +381,12 @@
                             </telerik:GridBoundColumn>
                              <telerik:GridBoundColumn UniqueName="IM_DETAIL" HeaderText="ชื่อขนาดบรรจุ" DataField="IM_DETAIL" >
                                   <ItemStyle HorizontalAlign="Left" />
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn UniqueName="SUM" HeaderText="จำนวนปริมาณนำสั่ง / ผลิต" DataField="SUM" >
+                                 <ItemStyle HorizontalAlign="Center" />
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn UniqueName="SMALL_UNIT" HeaderText="หน่วย" DataField="SMALL_UNIT" >
+                                 <ItemStyle HorizontalAlign="Center" />
                             </telerik:GridBoundColumn>
                             <telerik:GridButtonColumn UniqueName="del" ButtonType="LinkButton" Text="ลบข้อมูล" CommandName="del">
                             </telerik:GridButtonColumn>
