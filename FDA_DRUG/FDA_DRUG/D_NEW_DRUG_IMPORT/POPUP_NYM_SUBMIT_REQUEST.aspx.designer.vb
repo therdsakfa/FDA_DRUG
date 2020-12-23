@@ -122,11 +122,11 @@ Partial Public Class POPUP_NYM_SUBMIT_REQUEST
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''UC_GRID_ATTACH1 control.
+    '''UC_GRID_ATTACH_IMPORT1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents UC_GRID_ATTACH1 As Global.FDA_DRUG.UC_GRID_ATTACH_IMPORT
+    Protected WithEvents UC_GRID_ATTACH_IMPORT1 As Global.FDA_DRUG.UC_GRID_ATTACH_IMPORT
 End Class

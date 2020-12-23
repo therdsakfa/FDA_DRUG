@@ -63,6 +63,7 @@ Public Class FRM_STAFFNYM_CONFIRM
             Bind_ddl_Status_staff()
             load_fdpdtno()
             'UC_GRID_PHARMACIST.load_gv(_IDA)
+            UC_GRID_ATTACH_IMPORT.loadatteachfromdrugimportupload(_IDA, type)
             ''''''''''''''''''''''''''''''''''''''''''''UC_GRID_ATTACH.loadatteachfromdrugimportupload(_IDA, type)
             set_hide(_IDA)
 
