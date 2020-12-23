@@ -185,11 +185,11 @@ Partial Public Class FRM_STAFFNYM_CONFIRM
     Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''UC_GRID_ATTACH control.
+    '''UC_GRID_ATTACH_IMPORT control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents UC_GRID_ATTACH As Global.FDA_DRUG.UC_GRID_ATTACH
+    Protected WithEvents UC_GRID_ATTACH_IMPORT As Global.FDA_DRUG.UC_GRID_ATTACH_IMPORT
 End Class

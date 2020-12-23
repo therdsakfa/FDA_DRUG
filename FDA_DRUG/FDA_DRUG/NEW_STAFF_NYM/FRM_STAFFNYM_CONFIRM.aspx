@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="FRM_STAFFNYM_CONFIRM.aspx.vb" Inherits="FDA_DRUG.FRM_STAFFNYM_CONFIRM" %>
-<%@ Register Src="~/UC/UC_GRID_ATTACH.ascx" TagPrefix="uc1" TagName="UC_GRID_ATTACH" %>
 
-<%@ Register src="../UC/UC_GRID_PHARMACIST.ascx" tagname="UC_GRID_PHARMACIST" tagprefix="uc2" %>
 
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+<%@ Register Src="~/UC/UC_GRID_ATTACH_IMPORT.ascx" TagPrefix="uc1" TagName="UC_GRID_ATTACH_IMPORT" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
   
@@ -168,8 +168,8 @@
         </tr>
         <tr>
              <td style="width:30%;height:50%;padding-left:10%">
-
-                 <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" />
+                 <uc1:UC_GRID_ATTACH_IMPORT runat="server" ID="UC_GRID_ATTACH_IMPORT" />
+          
            
                  <br />
                  <%--<uc2:UC_GRID_PHARMACIST ID="UC_GRID_PHARMACIST" runat="server" />--%>
