@@ -6743,19 +6743,6 @@
       <Column Name="add_digit" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.driowa" Member="driowas">
-    <Type Name="driowa">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iowacd" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
-      <Column Name="iowanm" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="iowa" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="run" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="salt" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
-      <Column Name="syn" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
-      <Column Name="IS_CANCEL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="add_digit" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CHEMICAL_REQUEST" Member="CHEMICAL_REQUEST1s">
     <Type Name="CHEMICAL_REQUEST1">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6816,19 +6803,6 @@
       <Column Name="add_digit" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.driowa" Member="driowa1s">
-    <Type Name="driowa1">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iowacd" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
-      <Column Name="iowanm" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="iowa" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="run" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="salt" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
-      <Column Name="syn" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
-      <Column Name="IS_CANCEL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="add_digit" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.MAS_CHEMICAL" Member="MAS_CHEMICALs">
     <Type Name="MAS_CHEMICAL">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6866,6 +6840,19 @@
       <Column Name="STATUS_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.driowa" Member="driowas">
+    <Type Name="driowa">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iowacd" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="iowanm" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="iowa" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="run" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="salt" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="syn" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="IS_CANCEL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="add_digit" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
