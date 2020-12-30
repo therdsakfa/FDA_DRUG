@@ -136,6 +136,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
             i = dao.Sum_val()
             If i = 1 Then
                 btn_upload.Enabled = False
+                btn_extend.Enabled = False
             End If
         End If
     End Sub
