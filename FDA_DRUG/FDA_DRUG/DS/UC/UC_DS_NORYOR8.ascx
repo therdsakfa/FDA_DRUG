@@ -160,8 +160,20 @@
             text-align: left;
         }
         .auto-style27 {
-            width: 99%;
+            width: 120%;
             height: 20px;
+        }
+        .auto-style28 {
+            width: 1238px;
+        }
+        .auto-style29 {
+            width: 120%;
+        }
+        .auto-style30 {
+            width: 1239px;
+        }
+        .auto-style31 {
+            width: 1240px;
         }
     </style>
     <link href="../css/css_radgrid.css" rel="stylesheet" />
@@ -176,9 +188,9 @@
         </table>
     </div>
 
-    <center><h3>ข้อมูลทั่วไป</h3></center>
+    <center><h3 class="auto-style28">ข้อมูลทั่วไป</h3></center>
     <div class="box">
-        <table class="table" style="width: 100%;">
+        <table class="auto-style29">
             <tr>
                 <td align="right" class="auto-style19">เขียนที่ :</td>
                 <td class="auto-style11"><asp:TextBox ID="txt_WRITE_AT" runat="server"></asp:TextBox>
@@ -204,9 +216,9 @@
         </table>
     </div>
 
-    <center><h3>ข้อมูลใบอนุญาต</h3></center>
+    <center><h3 class="auto-style30">ข้อมูลใบอนุญาต</h3></center>
     <div class="box">
-        <table class="table" style="width: 100%;">
+        <table class="auto-style29">
             <tr>
                 <td align="right" class="auto-style21">ชื่อผู้รับอนุญาต :</td>
                 <td class="auto-style11">
@@ -291,9 +303,9 @@
         </table>
     </div>
 
-    <center><h3>ข้อมูลผลิตภัณฑ์ยา</h3></center>
+    <center><h3 class="auto-style31">ข้อมูลผลิตภัณฑ์ยา</h3></center>
     <div >
-        <table class="table" style="width: 100%;">
+        <table class="auto-style29">
             <tr>
                 <td align="right" class="auto-style20">ชื่อยา :</td>
                 <td class="auto-style11">
@@ -311,7 +323,7 @@
             <tr>
 
                 <td>
-                <telerik:RadGrid ID="RadGrid1" runat="server" GridLines="None" Width="228%" ShowFooter="true" AutoGenerateColumns="false">
+                <telerik:RadGrid ID="RadGrid1" runat="server" GridLines="None" Width="198%" ShowFooter="true" AutoGenerateColumns="false">
                     <MasterTableView>
                         <Columns>
                             <telerik:GridBoundColumn UniqueName="RowNumber" HeaderText="ลำดับ" DataField="RowNumber">
@@ -368,7 +380,7 @@
             </tr>
                 <tr >
                         <td colspan="2" style="padding-left: 33%;">
-                <telerik:RadGrid ID="RadGrid5" runat="server" GridLines="None" width="500px" ShowFooter="true"  AutoGenerateColumns="false">
+                <telerik:RadGrid ID="RadGrid5" runat="server" GridLines="None" width="557px" ShowFooter="true"  AutoGenerateColumns="false">
                    <MasterTableView>
                         <Columns>
                            <%-- <telerik:GridTemplateColumn UniqueName="TemplateColumn">

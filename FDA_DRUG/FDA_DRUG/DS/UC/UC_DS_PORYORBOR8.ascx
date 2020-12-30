@@ -9,10 +9,7 @@
     .auto-style1 {
         height: 21px;
         text-align: left;
-    }
-    .auto-style9 {
-        height: 24px;
-        text-align: left;
+        width: 1244px;
     }
     .auto-style11 {
         font-size: 18px;
@@ -21,11 +18,11 @@
         text-align: center;
     }
     .auto-style13 {
-        width: 1243px;
+        width: 1398px;
         height: 55px;
     }
     .auto-style14 {
-        width: 614px;
+        width: 552px;
     }
     .auto-style15 {
         text-align: left;
@@ -34,17 +31,35 @@
         height: 26px;
         text-align: left;
     }
-    .auto-style17 {
-        width: 626px;
+    .auto-style20 {
+        width: 1413px;
     }
-    .auto-style18 {
-        width: 627px;
+    .auto-style21 {
+        width: 1414px;
+    }
+    .auto-style23 {
+        width: 1406px;
+    }
+    .auto-style24 {
+        width: 137%;
+    }
+    .auto-style26 {
+        width: 821px;
+    }
+    .auto-style27 {
+        text-align: left;
+        width: 1244px;
+    }
+    .auto-style28 {
+        height: 24px;
+        text-align: left;
+        width: 1244px;
     }
 </style>
 <link href="../css/css_radgrid.css" rel="stylesheet" />
 <div class="auto-style12">
 <div class="box">
-    <table class="table" style="width: 100%;">
+    <table class="auto-style24">
     <div class="panel-heading panel-title">
 <div class="panel-heading panel-title">
                 <h1 class="auto-style13">การขอผลิต/นำเข้า ผลิตยาตัวอย่าง</h1> (หากมีปัญหาเกี่ยวกับการใช้งานระบบหรือไม่พบตัวเลือกโปรดแจ้ง Drug-SmartHelp@fda.moph.go.th)
@@ -53,9 +68,9 @@
                      </table>
          </div>
 
- <center><h3>ข้อมูลทั่วไป</h3></center>
+ <center><h3 class="auto-style23">ข้อมูลทั่วไป</h3></center>
           <div class="box">
-              <table class="table" style="width: 100%;">
+              <table class="auto-style24">
     <tr>
             <td align="right" class="auto-style14">
             คำขออนุญาต :</td>
@@ -94,107 +109,108 @@
                    </table>
           </div>
 
-    <center><h3>ข้อมูลใบอนุญาต</h3></center>
+    <center><h3 class="auto-style20">ข้อมูลใบอนุญาต</h3>
+    </center>
 <div class="box">
-<table class="table" style="width:100%;">
+<table class="auto-style24">
         <tr>
-            <td align="right" class="auto-style17">
+            <td align="right" class="auto-style26">
                 ชื่อผู้รับอนุญาต :</td>
-            <td class="auto-style15">
+            <td class="auto-style27">
                 <asp:Label ID="lbl_lcnsnm" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-        <td align="right" class="auto-style17">
+        <td align="right" class="auto-style26">
             ชื่อผู้ดำเนินกิจการ :</td>
-        <td class="auto-style15">
+        <td class="auto-style27">
             <asp:Label ID="lbl_bsn_name" runat="server" Text="-"></asp:Label>
         </td>
         </tr>
          <tr>
-            <td align="right" class="auto-style17">
+            <td align="right" class="auto-style26">
             ได้รับอนุญาตให้ :</td>
-            <td class="auto-style15">
+            <td class="auto-style27">
                 <asp:RadioButton ID="rdb_manufacture" runat="server" Text="ผลิตยาแผนโบราณ" AutoPostBack="True" Enabled="False"></asp:RadioButton>
                 <asp:RadioButton ID="rdb_direct_license" runat="server" Text="นำหรือสั่งยาแผนโบราณเข้ามาในราชอาณาจักรตามใบอนุญาต" AutoPostBack="True" Enabled="False"></asp:RadioButton>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style17">
+            <td align="right" class="auto-style26">
                 เลขที่ใบอนุญาต :</td>
-            <td class="auto-style15">
+            <td class="auto-style27">
                 <asp:Label ID="lbl_lcnno" runat="server" Text="-"></asp:Label>
                 <asp:Label ID="lbl_lcnno2" runat="server" Text=""></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style17">
+            <td align="right" class="auto-style26">
                 สถานที่ประกอบธุรกิจ :</td>
-            <td class="auto-style15">
+            <td class="auto-style27">
                 <asp:Label ID="lbl_place_name" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
      
         <tr>
-            <td align="right" class="auto-style17">
+            <td align="right" class="auto-style26">
                ที่อยู่ :</td>
             <td class="auto-style1">
                 <asp:Label ID="lbl_number" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style17">
+            <td align="right" class="auto-style26">
                 ซอย :</td>
-            <td class="auto-style15">
+            <td class="auto-style27">
                 <asp:Label ID="lbl_lane" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style17">
+            <td align="right" class="auto-style26">
                ถนน :</td>
-            <td class="auto-style15">
+            <td class="auto-style27">
                 <asp:Label ID="lbl_road" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style17">
+            <td align="right" class="auto-style26">
                หมู่ :</td>
-            <td class="auto-style15">
+            <td class="auto-style27">
                 <asp:Label ID="lbl_village_no" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style17">
+            <td align="right" class="auto-style26">
                 ตำบล :</td>
-            <td class="auto-style15">
+            <td class="auto-style27">
                 <asp:Label ID="lbl_sub_district" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style17">
+            <td align="right" class="auto-style26">
                 อำเภอ :</td>
-            <td class="auto-style15">
+            <td class="auto-style27">
                 <asp:Label ID="lbl_district" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style17">
+            <td align="right" class="auto-style26">
                 จังหวัด :</td>
-            <td class="auto-style15">
+            <td class="auto-style27">
                 <asp:Label ID="lbl_province" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style17">
+            <td align="right" class="auto-style26">
              โทรศัพท์ :</td>
-            <td class="auto-style9">
+            <td class="auto-style28">
                 <asp:Label ID="lbl_tel" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-                <td align="right" class="auto-style21">ผู้มีหน้าที่ปฏิบัติการ :<br />
+                <td align="right" class="auto-style26">ผู้มีหน้าที่ปฏิบัติการ :<br />
                 </td>
-                <td class="auto-style9">
+                <td class="auto-style28">
                     <asp:DropDownList ID="ddl_phesaj" runat="server" Height="16px">
                     </asp:DropDownList>
                     <br />
@@ -203,11 +219,11 @@
      </table>
     </div>
 
-    <center><h3>ข้อมูลผลิตภัณฑ์ยา</h3></center>
+    <center><h3 class="auto-style21">ข้อมูลผลิตภัณฑ์ยา </h3></center>
 <div class="box">
-    <table class="table" style="width: 100%;">
+    <table class="auto-style24">
     <tr>
-            <td align="right" class="auto-style18">
+            <td align="right" class="auto-style14">
             ขออนุญาต :</td>
             <td class="auto-style15">
                 <asp:RadioButton ID="rdb_samples_drug" runat="server" Text="ผลิตยาตัวอย่าง" AutoPostBack="True" Enabled="False" EnableTheming="True" ValidationGroup="Drug2"></asp:RadioButton>
@@ -215,7 +231,7 @@
             </td>
         </tr>
             <tr>
-            <td align="right" class="auto-style18">
+            <td align="right" class="auto-style14">
              ชื่อยา :</td>
             <td class="auto-style15">
                 <asp:Label ID="lbl_drugthanm" runat="server" Text="-"></asp:Label>
@@ -224,39 +240,39 @@
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style18">
+            <td align="right" class="auto-style14">
                 ลักษณะและสีของยา :</td>
             <td class="auto-style15">
                 <asp:Label ID="lbl_nature" runat="server" Text="-"></asp:Label>
             </td>
             <tr>
-              <td class="auto-style18">
+              <td class="auto-style14">
 
-                   <telerik:RadGrid ID="RadGrid1" runat="server" GridLines="None" Width="228%"  ShowFooter="true" AutoGenerateColumns="false">
+                   <telerik:RadGrid ID="RadGrid1" runat="server" GridLines="None" Width="201%"  ShowFooter="true" AutoGenerateColumns="false">
                    <MasterTableView>
                         <Columns>
-                            <telerik:GridBoundColumn UniqueName="RowNumber" HeaderText="ลำดับ" DataField="RowNumber" >
+                        <telerik:GridBoundColumn UniqueName="RowNumber" HeaderText="ลำดับ" DataField="RowNumber" >
                                 <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
                             <telerik:GridBoundColumn UniqueName="iowanm" HeaderText="ตัวยาสำคัญ" DataField="iowanm" >
                                 <ItemStyle HorizontalAlign="Left" />
-                            </telerik:GridBoundColumn> 
-                            <telerik:GridBoundColumn UniqueName="QTY" HeaderText="ปริมาณ" DataField="QTY" >
+                            </telerik:GridBoundColumn>
+                             <telerik:GridBoundColumn UniqueName="QTY" HeaderText="ปริมาณ" DataField="QTY" >
                                 <ItemStyle HorizontalAlign="Left" />
-                            </telerik:GridBoundColumn>                          
-                           <%-- <telerik:GridBoundColumn UniqueName="Unit" HeaderText="หน่วย" DataField="sunitengnm" >
+                            </telerik:GridBoundColumn> 
+                            <%-- <telerik:GridBoundColumn UniqueName="Unit" HeaderText="หน่วย" DataField="sunitengnm" >
                             </telerik:GridBoundColumn>--%>
-                             <telerik:GridBoundColumn UniqueName="unit_name" HeaderText="หน่วย" DataField="unit_name" >
+                         <telerik:GridBoundColumn UniqueName="unit_name" HeaderText="หน่วย" DataField="unit_name" >
                                  <ItemStyle HorizontalAlign="Left" />
-                            </telerik:GridBoundColumn>  
-                        </Columns>
-                    </MasterTableView>
-                                        </telerik:RadGrid>
+                            </telerik:GridBoundColumn>
+                           </Columns>
+                            </MasterTableView>
+                            </telerik:RadGrid>
 
                                     </td>
                                 </tr>
           <tr>
-            <td align="right" class="auto-style18">
+            <td align="right" class="auto-style14">
             ขออนุญาต :</td>
             <td class="auto-style15">
                 <asp:RadioButton ID="rdb_drug_produce" runat="server" Text="ยาที่ผลิต" AutoPostBack="True" Enabled="False"></asp:RadioButton>
@@ -264,13 +280,13 @@
             </td>
         </tr>
         <tr>
-        <td align="right" class="auto-style18">
+        <td align="right" class="auto-style14">
             หน่วยนับตามรูปแบบยา :</td>
         <td class="auto-style16">
             <%--<asp:DropDownList ID="ddl_unit" runat="server" DataTextField="unit_name" DataValueField="unit_name" AutoPostBack="True">
             </asp:DropDownList>--%>
             <asp:Label ID="lbl_unit" runat="server" Text="-" AutoPostBack="True"></asp:Label>
-            &nbsp;(
+            (
             <asp:Label ID="Stext_unit" runat="server"></asp:Label>
             )<asp:label ID="lbl_sunit_ida" runat="server" DataTextField="lbl_sunit_ida" DataValueField="lbl_sunit_ida" AutoPostBack="True" Visible="False"></asp:label>
             <asp:HiddenField ID="HiddenField1" runat="server" />
@@ -279,7 +295,7 @@
         </td>
         </tr>
         <tr>
-        <td align="right" class="auto-style18">
+        <td align="right" class="auto-style14">
                 ปริมาณที่จะผลิต/นำสั่ง :</td>
              <td class="auto-style16">
                 <asp:DropDownList ID="ddl_package_unit" runat="server" AutoPostBack="True">
@@ -305,25 +321,32 @@
             <tr >
                         <td colspan="2" style="padding-left: 33%;">
                 <telerik:RadGrid ID="RadGrid5" runat="server" GridLines="None" width="500px" ShowFooter="true"  AutoGenerateColumns="false">
-                   <MasterTableView>
-                        <Columns>
-                           <%-- <telerik:GridTemplateColumn UniqueName="TemplateColumn">
+                    
+                <MasterTableView>
+                <Columns>
+                 <%-- <telerik:GridTemplateColumn UniqueName="TemplateColumn">
                                 <ItemTemplate>
                                    <asp:CheckBox ID="checkColumn" runat="server" />
                                 </ItemTemplate>
                             </telerik:GridTemplateColumn>--%>
-                                                                 <telerik:GridBoundColumn UniqueName="IDA" HeaderText="ลำดับ" DataField="IDA" display ="false"  >
+                 <telerik:GridBoundColumn UniqueName="IDA" HeaderText="ลำดับ" DataField="IDA" display ="false"  >
                                  <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
 
-                             <telerik:GridBoundColumn UniqueName="IM_DETAIL" HeaderText="ชื่อขนาดบรรจุ" DataField="IM_DETAIL" >
+                   <telerik:GridBoundColumn UniqueName="IM_DETAIL" HeaderText="ชื่อขนาดบรรจุ" DataField="IM_DETAIL" >
                                   <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
-                            <telerik:GridButtonColumn UniqueName="del" ButtonType="LinkButton" Text="ลบข้อมูล" CommandName="del">
+                    <telerik:GridBoundColumn UniqueName="SUM" HeaderText="จำนวนปริมาณนำสั่ง / ผลิต" DataField="SUM" >
+                                 <ItemStyle HorizontalAlign="Center" />
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn UniqueName="SMALL_UNIT" HeaderText="หน่วย" DataField="SMALL_UNIT" >
+                                 <ItemStyle HorizontalAlign="Center" />
+                            </telerik:GridBoundColumn>
+                    <telerik:GridButtonColumn UniqueName="del" ButtonType="LinkButton" Text="ลบข้อมูล" CommandName="del">
                             </telerik:GridButtonColumn>
-                        </Columns>
+                    </Columns>
                     </MasterTableView>
-                                        </telerik:RadGrid>
+                    </telerik:RadGrid>
                 </td>
         </tr>
             <%--<td class="auto-style7">
@@ -332,7 +355,7 @@
                <%-- <asp:DropDownList ID="ddl_unit2" runat="server" DataTextField="unit_name" DataValueField="unit_name">
                 </asp:DropDownList>--%>
              <tr>
-        <td align="right" class="auto-style18">
+        <td align="right" class="auto-style14">
             &nbsp;</td>
         <td>
                <asp:Button ID="btn_package" runat="server" Height="53px" Text="เพิ่ม/ลบ ขนาดบรรจุ" Width="180px" CssClass="auto-style11" />
@@ -341,7 +364,7 @@
         </td>
         </tr>
             <tr id="package2" runat="server" style="display: none;">
-                <td align="right" class="auto-style18">
+                <td align="right" class="auto-style14">
                 <%--<asp:CheckBox ID="chk_unit" runat="server" Text="ขนาดบรรจุ :" AutoPostBack="True"></asp:CheckBox>--%>
                 <%-- <tr id="package2" runat="server" style="display:none;">--%>
                     <asp:Label ID="lb_unit" runat="server" Text="ขนาดบรรจุ :"></asp:Label>
@@ -378,37 +401,37 @@
             </td>
             </tr>--%>
             <tr id="package3" runat="server" style="display:none;">
-                <td class="auto-style18">
+                <td class="auto-style14">
               <%--<td class="auto-style10">--%>
 
-                   <telerik:RadGrid ID="RadGrid2" runat="server" GridLines="None" width="200%" ShowFooter="true" AutoGenerateColumns="false">
-                   <MasterTableView>
-                        <Columns>
-                            <telerik:GridBoundColumn UniqueName="IDA" HeaderText="IDA" DataField="IDA" Display="false" >
+                   <telerik:RadGrid ID="RadGrid2" runat="server" GridLines="None" width="200%" ShowFooter="true" AutoGenerateColumns="false">                       
+                    <MasterTableView>
+                    <Columns>
+                    <telerik:GridBoundColumn UniqueName="IDA" HeaderText="IDA" DataField="IDA" Display="false" >
                                  <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
                             <telerik:GridBoundColumn UniqueName="RowNumber" HeaderText="ลำดับ" DataField="RowNumber" >
                                  <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
-                             <telerik:GridBoundColumn UniqueName="PACKAGE_NAME" HeaderText="ชื่อขนาดบรรจุ" DataField="PACKAGE_NAME" >
+                            <telerik:GridBoundColumn UniqueName="PACKAGE_NAME" HeaderText="ชื่อขนาดบรรจุ" DataField="PACKAGE_NAME" >
                                   <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
-                            <telerik:GridBoundColumn UniqueName="SMALL_AMOUNT" HeaderText="จำนวน" DataField="SMALL_AMOUNT" >
+                             <telerik:GridBoundColumn UniqueName="SMALL_AMOUNT" HeaderText="จำนวน" DataField="SMALL_AMOUNT" >
                                  <ItemStyle HorizontalAlign="Left" />
-                            </telerik:GridBoundColumn>  
+                            </telerik:GridBoundColumn>
                             <telerik:GridBoundColumn UniqueName="SMALL_UNIT" HeaderText="หน่วย" DataField="SMALL_UNIT" >
                                  <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
                             <telerik:GridBoundColumn UniqueName="x" HeaderText="ต่อ" DataField="x" >
                                  <ItemStyle HorizontalAlign="Left" />
-                            </telerik:GridBoundColumn>  
+                            </telerik:GridBoundColumn>
                             <telerik:GridBoundColumn UniqueName="MEDIUM_AMOUNT" HeaderText="จำนวน" DataField="MEDIUM_AMOUNT" >
                                  <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
                             <telerik:GridBoundColumn UniqueName="MEDIUM_UNIT" HeaderText="หน่วย" DataField="MEDIUM_UNIT" >
                                  <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
-                             <telerik:GridBoundColumn UniqueName="fix_bigunit" HeaderText="จำนวน" DataField="fix_bigunit" >
+                            <telerik:GridBoundColumn UniqueName="fix_bigunit" HeaderText="จำนวน" DataField="fix_bigunit" >
                                   <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
                             <telerik:GridBoundColumn UniqueName="BIG_UNIT" HeaderText="หน่วย" DataField="BIG_UNIT" >
@@ -419,9 +442,9 @@
                             </telerik:GridBoundColumn>
                             <telerik:GridButtonColumn UniqueName="del" ButtonType="LinkButton" Text="ลบข้อมูล" CommandName="del">
                             </telerik:GridButtonColumn>
-                        </Columns>
-                    </MasterTableView>
-                                        </telerik:RadGrid>
+                            </Columns>
+                            </MasterTableView>
+                            </telerik:RadGrid>
 
                                     </td>
                                 </tr>

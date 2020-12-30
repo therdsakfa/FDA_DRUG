@@ -683,39 +683,18 @@ Public Class FRM_DS_STAFF_CONFIRM
 
         End Try
         Try
-            If dao.fields.STATUS_ID <= 4 Then
-                Dim write_date As Date = dao.fields.WRITE_DATE
-                dao.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
-                class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, -543, write_date), "dd MMM yyyy")
-                class_xml.drsamp = dao.fields
-                class_xml.regis = dao_pid.fields
+            Dim WRITEDATE As Date = dao.fields.WRITE_DATE
+            class_xml.WRITE_DATE = CDate(WRITEDATE).ToLongDateString
 
-            ElseIf dao.fields.STATUS_ID = 9 Or dao.fields.STATUS_ID = 10 Then
-                Dim rcvdate As Date = dao.fields.rcvdate
-                dao.fields.rcvdate = Format(DateAdd(DateInterval.Year, 543, rcvdate), "dd MMMM yyyy")
-                class_xml.RCVDATE = Format(DateAdd(DateInterval.Year, 0, rcvdate), "dd MMMM yyyy")
-                Dim write_date As Date = dao.fields.WRITE_DATE
-                dao.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
-                class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, 0, write_date), "dd MMMM yyyy")
-                class_xml.drsamp = dao.fields
-                class_xml.regis = dao_pid.fields
-                ''class_xml.drsamp.rcvdate = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
-
-
+            If dao.fields.STATUS_ID = 9 Or dao.fields.STATUS_ID = 10 Or dao.fields.STATUS_ID = 8 Then
+                Dim RCVDATE As Date = dao.fields.rcvdate
+                class_xml.RCVDATE = CDate(RCVDATE).ToLongDateString
             ElseIf dao.fields.STATUS_ID = 8 Then
-                Dim rcvdate As Date = dao.fields.rcvdate
-                dao.fields.rcvdate = Format(DateAdd(DateInterval.Year, 543, rcvdate), "dd MMMM yyyy")
-                class_xml.RCVDATE = Format(DateAdd(DateInterval.Year, 0, rcvdate), "dd MMMM yyyy")
-                Dim app_date As Date = dao.fields.appdate
-                dao.fields.appdate = DateAdd(DateInterval.Year, 543, app_date)
-                class_xml.APPDATE = Format(DateAdd(DateInterval.Year, -543, app_date), "dd MMMM yyyy")
-                Dim write_date As Date = dao.fields.WRITE_DATE
-                dao.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
-                class_xml.WRITE_DATE = Format(DateAdd(DateInterval.Year, 0, write_date), "dd MMMM yyyy")
-                class_xml.drsamp = dao.fields
-                class_xml.regis = dao_pid.fields
-                ''class_xml.drsamp.rcvdate = Format(DateAdd(DateInterval.Year, -543, rcvdate), "dd MMMM yyyy")
+                Dim APPDATE As Date = dao.fields.appdate
+                class_xml.APPDATE = CDate(APPDATE).ToLongDateString
             End If
+            class_xml.drsamp = dao.fields
+            class_xml.regis = dao_pid.fields
 
         Catch ex As Exception
 

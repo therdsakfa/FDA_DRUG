@@ -598,6 +598,15 @@ Public Class UC_DS_PORYOR8
             End If
         Next
 
+        Dim WRITEDATE As Date = dao_drsamp.fields.WRITE_DATE
+        If CDate(dao_drsamp.fields.WRITE_DATE).Year > 2500 Then
+            WRITEDATE = DateAdd(DateInterval.Year, -543, WRITEDATE)
+            cls_xml.WRITE_DATE = CDate(WRITEDATE).ToLongDateString
+        Else
+            WRITEDATE = DateAdd(DateInterval.Year, 543, WRITEDATE)
+            cls_xml.WRITE_DATE = CDate(WRITEDATE).ToLongDateString
+        End If
+
         Dim unit_physic As New DAO_DRUG.TB_DRUG_UNIT
         unit_physic.GetDataby_sunitcd(CInt(lbl_sunit_ida.Text))
 

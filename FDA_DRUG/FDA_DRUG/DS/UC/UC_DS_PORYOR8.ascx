@@ -23,16 +23,6 @@
     .auto-style12 {
         width: 1243px;
     }
-    .auto-style13 {
-        width: 613px;
-    }
-    .auto-style14 {
-        width: 619px;
-    }
-    .auto-style15 {
-        height: 24px;
-        width: 619px;
-    }
     .auto-style17 {
         height: 24px;
         width: 644px;
@@ -47,39 +37,71 @@
     .auto-style20 {
         height: 57px;
     }
+    .auto-style21 {
+        width: 121%;
+    }
+    .auto-style22 {
+        width: 1249px;
+    }
+    .auto-style23 {
+        height: 26px;
+        width: 1116px;
+    }
+    .auto-style25 {
+        width: 1250px;
+    }
+    .auto-style26 {
+        width: 610px;
+    }
+    .auto-style27 {
+        height: 24px;
+        width: 610px;
+    }
+    .auto-style29 {
+        height: 26px;
+        width: 1185px;
+    }
+    .auto-style31 {
+        width: 1235px;
+    }
+    .auto-style33 {
+        margin-left: 0px;
+    }
+    .auto-style34 {
+        width: 1185px;
+    }
+    .auto-style35 {
+        width: 1116px;
+    }
     </style>
 <link href="../css/css_radgrid.css" rel="stylesheet" />
 <div class="box">
-    <table class="table" style="width: 100%;">
+    <table class="auto-style21">
     <div class="panel-heading panel-title">
                 <center><h1 class="auto-style12">ผลิตยาตัวอย่างเพื่อขอขึ้นทะเบียนตำรับยา (ผย8)</h1></center> <center>(หากมีปัญหาเกี่ยวกับการใช้งานระบบหรือไม่พบตัวเลือกโปรดแจ้ง Drug-SmartHelp@fda.moph.go.th)</center>
             </div>
         <br />
                 </table>
     </div>
- <center><h3>ข้อมูลทั่วไป</h3></center>
+ <center><h3 class="auto-style22">ข้อมูลทั่วไป</h3></center>
           <div class="box">
-              <table class="table" style="width: 100%;">
+              <table class="auto-style31">
     <tr>
-        <td align="right" class="auto-style13" >
-            เขียนที่ :</td>
-        <td class="auto-style7">
-    
-            <asp:TextBox ID="txt_WRITE_AT" runat="server"></asp:TextBox>
-        </td>
-        </tr>
+        <td align="right" class="auto-style29" >เขียนที่ :</td>
+        <td class="auto-style23"><asp:TextBox ID="txt_WRITE_AT" runat="server"></asp:TextBox></td>
+    </tr>
         <tr>
-        <td align="right" class="auto-style13">
+        <td align="right" class="auto-style34">
            วันที่ :</td>
-        <td>
-            <asp:TextBox ID="txt_WRITE_DATE" runat="server" ReadOnly="True"></asp:TextBox>
+        <td class="auto-style35">
+            <asp:TextBox ID="txt_WRITE_DATE" runat="server" ReadOnly="True" CssClass="auto-style33"></asp:TextBox>
             <asp:Label ID="lbl_date" runat="server" Text="(ตัวอย่าง 31/12/2560)"></asp:Label>
         </td>
         </tr>
          <tr>
-            <td align="right" class="auto-style13">
+            <td align="right" class="auto-style34">
                 บัญชีรายการยา :</td>
-            <td>
+            <td class="auto-style35">
                 <%--<asp:DropDownList ID="ddl_search" runat="server" CssClass="btn-lg" Width="21%" Height="24px"></asp:DropDownList>
                 <asp:button ID="btn_search" runat="server" Text="ดึงข้อมูล" CssClass="auto-style11" Height="53px" Width="100px"></asp:button>--%>
                 <asp:Label ID="pid" runat="server"></asp:Label>
@@ -88,18 +110,18 @@
                      </table>
           </div>
 
-    <center><h3>ข้อมูลใบอนุญาต</h3></center>
+    <center><h3 class="auto-style25">ข้อมูลใบอนุญาต</h3></center>
 <div class="box">
-<table class="table" style="width:100%;">
+<table class="auto-style21">
         <tr>
-            <td align="right" class="auto-style14">
+            <td align="right" class="auto-style26">
                 ชื่อผู้รับอนุญาต :</td>
             <td>
                 <asp:Label ID="lbl_lcnsnm" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style14">
+            <td align="right" class="auto-style26">
                 เลขที่ใบอนุญาต :</td>
             <td>
                 <asp:Label ID="lbl_lcnno" runat="server" Text="-"></asp:Label>
@@ -107,77 +129,77 @@
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style14">
+            <td align="right" class="auto-style26">
                 สถานที่ผลิต/นำสั่ง :</td>
             <td>
                 <asp:Label ID="lbl_place_name" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
          <tr>
-        <td align="right" class="auto-style14">
+        <td align="right" class="auto-style26">
             ชื่อผู้ดำเนินกิจการ :</td>
         <td>
             <asp:Label ID="lbl_bsn_name" runat="server" Text="-"></asp:Label>
         </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style14">
+            <td align="right" class="auto-style26">
                ที่อยู่ :</td>
             <td class="auto-style1">
                 <asp:Label ID="lbl_number" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style14">
+            <td align="right" class="auto-style26">
                 ซอย :</td>
             <td>
                 <asp:Label ID="lbl_lane" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style14">
+            <td align="right" class="auto-style26">
                ถนน :</td>
             <td>
                 <asp:Label ID="lbl_road" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style14">
+            <td align="right" class="auto-style26">
                หมู่ :</td>
             <td>
                 <asp:Label ID="lbl_village_no" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style14">
+            <td align="right" class="auto-style26">
                 ตำบล :</td>
             <td>
                 <asp:Label ID="lbl_sub_district" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style15">
+            <td align="right" class="auto-style27">
                 อำเภอ :</td>
             <td class="auto-style9">
                 <asp:Label ID="lbl_district" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style14">
+            <td align="right" class="auto-style26">
                 จังหวัด :</td>
             <td>
                 <asp:Label ID="lbl_province" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style14">
+            <td align="right" class="auto-style26">
              โทรศัพท์ :</td>
             <td class="auto-style9">
                 <asp:Label ID="lbl_tel" runat="server" Text="-"></asp:Label>
             </td>
         </tr>
         <tr>
-                <td align="right" class="auto-style21">ผู้มีหน้าที่ปฏิบัติการ :</td>
+                <td align="right" class="auto-style26">ผู้มีหน้าที่ปฏิบัติการ :</td>
                 <td class="auto-style9">
                     <asp:DropDownList ID="ddl_phesaj" runat="server">
                     </asp:DropDownList>
@@ -186,9 +208,9 @@
      </table>
     </div>
 
-    <center><h3>ข้อมูลผลิตภัณฑ์ยา</h3></center>
+    <center><h3 class="auto-style22">ข้อมูลผลิตภัณฑ์ยา</h3></center>
 <div class="box">
-    <table class="table" style="width: 100%;">
+    <table class="auto-style21">
             <tr>
             <td align="right" class="auto-style18">
              ชื่อยา :</td>
@@ -207,7 +229,7 @@
             <tr>
               <td class="auto-style18">
 
-                   <telerik:RadGrid ID="RadGrid1" runat="server" GridLines="None"  ShowFooter="True" Width="150%" AutoGenerateColumns="False" CellSpacing="0" HorizontalAlign="Center">
+                   <telerik:RadGrid ID="RadGrid1" runat="server" GridLines="None"  ShowFooter="True" Width="204%" AutoGenerateColumns="False" CellSpacing="0" HorizontalAlign="Center">
                    <MasterTableView>
                         <Columns>
                             <telerik:GridBoundColumn UniqueName="RowNumber" HeaderText="ลำดับ" DataField="RowNumber" >
@@ -291,7 +313,7 @@
         </tr>
         <tr >
                         <td colspan="2" style="padding-left: 33%;">
-                <telerik:RadGrid ID="RadGrid5" runat="server" GridLines="None" width="500px" ShowFooter="true"  AutoGenerateColumns="false">
+                <telerik:RadGrid ID="RadGrid5" runat="server" GridLines="None" width="694px" ShowFooter="true"  AutoGenerateColumns="false">
                    <MasterTableView>
                         <Columns>
                            <%-- <telerik:GridTemplateColumn UniqueName="TemplateColumn">
