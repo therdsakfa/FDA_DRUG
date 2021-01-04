@@ -1481,11 +1481,7 @@ Public Class WebForm35
         End If
 
 
-        p_dalcn = class_xml
 
-
-        Dim p_dalcn2 As New XML_CENTER.CLASS_DALCN
-        p_dalcn2 = p_dalcn
         ' p_dalcn2.DT_MASTER = Nothing
 
         'Dim cls_sop1 As New CLS_SOP
@@ -1583,8 +1579,29 @@ Public Class WebForm35
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
         Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", PROCESS_ID, YEAR, _TR_ID)
-        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, PROCESS_ID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+
         'load_pdf(filename)
+
+        Try
+            Dim url As String = ""
+            ' If Request.QueryString("status") = 8 Or Request.QueryString("status") = 14 Then
+            url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
+            'Else
+            '    url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF_VIEW.aspx?filename=" & filename
+            'End If
+
+            'Dim url As String 
+            class_xml.QR_CODE = QR_CODE_IMG(url)
+        Catch ex As Exception
+
+        End Try
+        p_dalcn = class_xml
+
+
+        Dim p_dalcn2 As New XML_CENTER.CLASS_DALCN
+        p_dalcn2 = p_dalcn
+        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, PROCESS_ID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+
 
         lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
         'hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่

@@ -1197,14 +1197,11 @@ Public Class FRM_LCN_CONFIRM_DRUG
 
 
 
-        p_dalcn = class_xml
-        Dim p_dalcn2 As New XML_CENTER.CLASS_DALCN
-        p_dalcn2 = p_dalcn
+
         'p_dalcn2.DT_MASTER = Nothing
 
         Dim cls_sop1 As New CLS_SOP
-        Session("b64") = cls_sop1.CLASS_TO_BASE64(p_dalcn2)
-        b64 = cls_sop1.CLASS_TO_BASE64(p_dalcn2)
+
 
         Dim statusId As Integer = dao.fields.STATUS_ID
         Dim lcntype As String = dao.fields.lcntpcd
@@ -1330,8 +1327,28 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
         Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", PROCESS_ID, YEAR, _TR_ID)
         'load_PDF(filename)
-        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
 
+        Try
+            Dim url As String = ""
+            ' If Request.QueryString("status") = 8 Or Request.QueryString("status") = 14 Then
+            url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
+            'Else
+            '    url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF_VIEW.aspx?filename=" & filename
+            'End If
+
+            'Dim url As String 
+            class_xml.QR_CODE = QR_CODE_IMG(url)
+        Catch ex As Exception
+
+        End Try
+
+        p_dalcn = class_xml
+        Dim p_dalcn2 As New XML_CENTER.CLASS_DALCN
+        p_dalcn2 = p_dalcn
+
+        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+        Session("b64") = cls_sop1.CLASS_TO_BASE64(p_dalcn2)
+        b64 = cls_sop1.CLASS_TO_BASE64(p_dalcn2)
 
         lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
         hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
