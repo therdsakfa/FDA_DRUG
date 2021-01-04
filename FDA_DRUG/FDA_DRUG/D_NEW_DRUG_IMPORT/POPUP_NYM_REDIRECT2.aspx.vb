@@ -53,6 +53,8 @@
                 NYM = "4"
             Case "1030"
                 NYM = "5"
+            Case "1031"
+                NYM = "7"
         End Select
         'url = "http://10.111.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process ' & " & NYM2_ida" & _IDA
         'Response.Clear()

@@ -5052,6 +5052,19 @@ Namespace BAO
 
             Return dt
         End Function
+        Public Function SP_DATA_NYM4_2_STAFF() As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DATA_NYM4_2_STAFF"
+            Dim dt As New DataTable
+            Try
+                dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
+
+            Return dt
+        End Function
         Public Function SP_DATA_NYM5_STAFF() As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_DATA_NYM5_STAFF"
@@ -5115,6 +5128,13 @@ Namespace BAO
         Public Function SP_DATA_NYM4_USER(ByVal dl As String) As DataTable   'ดึงข้อมูล นยม 2 มาทั้งหมดที่จำเป็น 
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_DATA_NYM4_USER @DL= '" & dl & "' "
+            Dim dt As New DataTable
+            dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
+            Return dt
+        End Function
+        Public Function SP_DATA_NYM4_2_USER(ByVal dl As String) As DataTable   'ดึงข้อมูล นยม 2 มาทั้งหมดที่จำเป็น 
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DATA_NYM4_2_USER @DL= '" & dl & "' "
             Dim dt As New DataTable
             dt = clsds.dsQueryselect(sql, condrugimport).Tables(0)
             Return dt

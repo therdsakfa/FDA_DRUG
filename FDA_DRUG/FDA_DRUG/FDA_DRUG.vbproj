@@ -662,6 +662,7 @@
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM2_V2.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM3.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4.aspx" />
+    <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4_2.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\POPUP_NYM_REDIRECT.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\POPUP_NYM_REDIRECT2.aspx" />
@@ -675,6 +676,7 @@
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM2.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM3.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM4.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM4_2.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM5.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_MAIN_NYM.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx" />
@@ -3171,6 +3173,13 @@
       <DependentUpon>FRM_DRUG_IMPORT_NYM4.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4_2.aspx.designer.vb">
+      <DependentUpon>FRM_DRUG_IMPORT_NYM4_2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4_2.aspx.vb">
+      <DependentUpon>FRM_DRUG_IMPORT_NYM4_2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx.designer.vb">
       <DependentUpon>FRM_DRUG_IMPORT_NYM5.aspx</DependentUpon>
     </Compile>
@@ -3593,6 +3602,13 @@
     </Compile>
     <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM4.aspx.vb">
       <DependentUpon>FRM_STAFF_NYM4.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM4_2.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM4_2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM4_2.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM4_2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM5.aspx.designer.vb">

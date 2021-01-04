@@ -1,6 +1,5 @@
 ﻿Imports Telerik.Web.UI
-
-Public Class FRM_STAFF_NYM4
+Public Class FRM_STAFF_NYM4_2
     Inherits System.Web.UI.Page
     Private _CLS As New CLS_SESSION         'public class
     Private _process As String
@@ -62,7 +61,7 @@ Public Class FRM_STAFF_NYM4
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
 
-        dt = bao.SP_DATA_NYM4_STAFF()
+        dt = bao.SP_DATA_NYM4_2_STAFF()
         RadGrid1.DataSource = dt
 
     End Sub
@@ -70,9 +69,9 @@ Public Class FRM_STAFF_NYM4
         If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
             Dim item As GridDataItem
             item = e.Item
-            Dim IDA As String = item("NYM4_IDA").Text
+            Dim IDA As String = item("NYM4_COMPANY_IDA").Text
             Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
-            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
             dao.GetDataby_IDA(IDA)
             btn_edit.Style.Add("display", "none")
             Try
@@ -90,9 +89,9 @@ Public Class FRM_STAFF_NYM4
         If TypeOf e.Item Is GridDataItem Then
             Dim item As GridDataItem = e.Item
 
-            Dim NYM As String = "4"
-            Dim NYM4_ida As String = item("NYM4_IDA").Text
-            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+            Dim NYM As String = "7"
+            Dim NYM4_ida As String = item("NYM4_COMPANY_IDA").Text
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
 
 
             If e.CommandName = "sel" Then

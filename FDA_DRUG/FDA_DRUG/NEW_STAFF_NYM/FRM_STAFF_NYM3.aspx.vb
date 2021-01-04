@@ -124,7 +124,7 @@ Public Class FRM_STAFF_NYM3
         Dim dao As New DAO_DRUG.clsDBMAS_NYMSTAFF_PROCESS
         process_id = ddl_search.SelectedValue
         If ddl_search.SelectedValue <> "0" Then
-            If process_id = "1026" Or process_id = "1027" Or process_id = "1028" Or process_id = "1029" Or process_id = "1030" Then
+            If process_id = "1026" Or process_id = "1027" Or process_id = "1028" Or process_id = "1029" Or process_id = "1030" Or process_id = "1031" Then
                 Select Case process_id
                     Case "1027"
                         NYM = "2"
@@ -141,7 +141,9 @@ Public Class FRM_STAFF_NYM3
                     Case "1030"
                         NYM = "5"
                         url = "../NEW_STAFF_NYM/FRM_STAFF_NYM5.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
-
+                    Case "1031"
+                        NYM = "7"
+                        url = "../NEW_STAFF_NYM/FRM_STAFF_NYM4_2.aspx?process=" & ddl_search.SelectedValue & "&NYM=" & NYM
                 End Select
                 Response.Redirect(url)
             End If
