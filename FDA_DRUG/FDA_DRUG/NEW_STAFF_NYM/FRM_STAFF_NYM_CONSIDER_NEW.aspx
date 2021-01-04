@@ -15,9 +15,15 @@
                         <asp:TextBox ID="Txt_Remark" runat="server" CssClass="input-lg"></asp:TextBox>
                         </td></tr>
 
+                    <tr ><td>เลขบัตรประชาชนผู้ลงนาม</td><td>
+                        <asp:TextBox ID="txt_consider_iden" runat="server" class="input-lg" Height="16px" Width="270px"></asp:TextBox>
+                  <asp:Button ID="btn_search" runat="server" Text="ค้นหา" CssClass="btn-lg" />
+                        </td></tr>
+
                     <tr ><td>ชื่อผู้ลงนาม </td><td>
-                        <asp:DropDownList ID="ddl_staff_offer" runat="server" DataTextField="STAFF_OFFER_NAME" DataValueField="IDA" CssClass="input-lg" Width="200px">
-                        </asp:DropDownList>
+                        <asp:Label ID="lbl_consider_name" runat="server" Text="-"></asp:Label>
+                        <%--<asp:DropDownList ID="ddl_staff_offer" runat="server" DataTextField="STAFF_OFFER_NAME" DataValueField="IDA" CssClass="input-lg" Width="200px">
+                        </asp:DropDownList>--%>
                         </td></tr>
                       <tr ><td>ตำแหน่งบรรทัดที่ 1</td><td>
                         <asp:TextBox ID="TextBox2" runat="server" class="input-lg" Height="16px" Width="270px"></asp:TextBox></td></tr>

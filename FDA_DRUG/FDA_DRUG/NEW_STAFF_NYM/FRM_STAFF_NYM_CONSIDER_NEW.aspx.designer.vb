@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class FRM_STAFF_NYM_CONSIDER_NEW
-
+    
     '''<summary>
     '''Txt_Remark control.
     '''</summary>
@@ -21,16 +21,34 @@ Partial Public Class FRM_STAFF_NYM_CONSIDER_NEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Txt_Remark As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
-    '''ddl_staff_offer control.
+    '''txt_consider_iden control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddl_staff_offer As Global.System.Web.UI.WebControls.DropDownList
-
+    Protected WithEvents txt_consider_iden As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''btn_search control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_search As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''lbl_consider_name control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_consider_name As Global.System.Web.UI.WebControls.Label
+    
     '''<summary>
     '''TextBox2 control.
     '''</summary>
@@ -39,7 +57,7 @@ Partial Public Class FRM_STAFF_NYM_CONSIDER_NEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''TextBox3 control.
     '''</summary>
@@ -48,7 +66,7 @@ Partial Public Class FRM_STAFF_NYM_CONSIDER_NEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''TextBox4 control.
     '''</summary>
@@ -57,7 +75,7 @@ Partial Public Class FRM_STAFF_NYM_CONSIDER_NEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox4 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''TextBox5 control.
     '''</summary>
@@ -66,7 +84,7 @@ Partial Public Class FRM_STAFF_NYM_CONSIDER_NEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox5 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''TextBox6 control.
     '''</summary>
@@ -75,7 +93,7 @@ Partial Public Class FRM_STAFF_NYM_CONSIDER_NEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox6 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''TextBox1 control.
     '''</summary>
@@ -84,7 +102,7 @@ Partial Public Class FRM_STAFF_NYM_CONSIDER_NEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''txt_app_date control.
     '''</summary>
@@ -93,7 +111,7 @@ Partial Public Class FRM_STAFF_NYM_CONSIDER_NEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_app_date As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Button1 control.
     '''</summary>
@@ -102,7 +120,7 @@ Partial Public Class FRM_STAFF_NYM_CONSIDER_NEW
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Button2 control.
     '''</summary>

@@ -236,7 +236,73 @@
             Next
         End Sub
     End Class
+    Public Class TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
+        Inherits MAINCONTEXT
+        Public fields As New FDA_DRUG_IMPORT_NYM_4_COMPANY
 
+        Public Sub insert()
+            db.FDA_DRUG_IMPORT_NYM_4_COMPANies.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub delete()
+            db.FDA_DRUG_IMPORT_NYM_4_COMPANies.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+
+        Public Sub getdata_ida(ByVal ida As Integer)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4_COMPANies Where p.NYM4_IDA = ida Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub getdata_dl(ByVal DL As String)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4_COMPANies Where p.DL = DL Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_TR_ID(ByVal TR_ID As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4_COMPANies Where p.TR_ID = TR_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataAll()
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4_COMPANies Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4_COMPANies Where p.NYM4_COMPANY_IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA_STATUS(ByVal IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4_COMPANies Where p.NYM4_COMPANY_IDA = IDA And p.STATUS_ID Is Nothing Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA(ByVal FK_IDA As Integer)
+
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4_COMPANies Where p.FK_IDA = FK_IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA_and_PROCESS_ID(ByVal DL As String)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4_COMPANies Where p.DL = DL And p.STATUS_ID = 8 Select p)     'อย่าลืมเช็คตรงนี้
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
     Public Class TB_FDA_DRUG_IMPORT_NYM_5
         Inherits MAINCONTEXT
         Public fields As New FDA_DRUG_IMPORT_NYM_5

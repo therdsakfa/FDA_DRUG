@@ -311,6 +311,15 @@ Module BAO_COMMON
             _p_nym4 = value
         End Set
     End Property
+    Private _p_nym4_2 As New CLASS_NYM_4_COMPANY
+    Public Property p_nym4_2() As CLASS_NYM_4_COMPANY
+        Get
+            Return _p_nym4_2
+        End Get
+        Set(ByVal value As CLASS_NYM_4_COMPANY)
+            _p_nym4_2 = value
+        End Set
+    End Property
     Private _extend As New CLASS_EXTEND
     Public Property extend() As CLASS_EXTEND
         Get

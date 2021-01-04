@@ -231,8 +231,8 @@ Public Class FRM_STAFFNYM_CONFIRM
 
             Dim dao_app As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
             Try    'ชื่อผู้ลงนาม                                                                'หาชื่อผู้ลงนาม
-                dao_s.GetDataby_IDA(dao.fields.NYM2_IDENTIFY_STAFF)
-                lbl_staff_consider.Text = dao_s.fields.STAFF_OFFER_NAME
+                'dao_s.GetDataby_IDA(dao.fields.NYM2_IDENTIFY_STAFF)
+                lbl_staff_consider.Text = dao.fields.STAFF_NAME 'dao_s.fields.STAFF_OFFER_NAME
             Catch ex As Exception
                 lbl_staff_consider.Text = "-"
             End Try
@@ -261,8 +261,8 @@ Public Class FRM_STAFFNYM_CONFIRM
 
             Dim dao_app As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
             Try    'ชื่อผู้ลงนาม                                                                'หาชื่อผู้ลงนาม
-                dao_s.GetDataby_IDA(dao.fields.NYM3_IDENTIFY_STAFF)
-                lbl_staff_consider.Text = dao_s.fields.STAFF_OFFER_NAME
+                'dao_s.GetDataby_IDA(dao.fields.NYM3_IDENTIFY_STAFF)
+                lbl_staff_consider.Text = dao.fields.STAFF_NAME 'dao_s.fields.STAFF_OFFER_NAME
             Catch ex As Exception
                 lbl_staff_consider.Text = "-"
             End Try
@@ -291,8 +291,8 @@ Public Class FRM_STAFFNYM_CONFIRM
 
             Dim dao_app As New DAO_DRUG.ClsDBDRUG_PROJECT_SUM
             Try    'ชื่อผู้ลงนาม                                                                'หาชื่อผู้ลงนาม
-                dao_s.GetDataby_IDA(dao.fields.NYM4_IDENTIFY_STAFF)
-                lbl_staff_consider.Text = dao_s.fields.STAFF_OFFER_NAME
+                'dao_s.GetDataby_IDA(dao.fields.NYM4_IDENTIFY_STAFF)
+                lbl_staff_consider.Text = dao.fields.STAFF_NAME 'dao_s.fields.STAFF_OFFER_NAME
             Catch ex As Exception
                 lbl_staff_consider.Text = "-"
             End Try
@@ -1258,6 +1258,9 @@ Public Class FRM_STAFFNYM_CONFIRM
         Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        Dim dao4_2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
+
+
         Dim NYM_STATUS As Integer = 0
         Dim dao_rg As New DAO_DRUG.ClsDBDRUG_REGISTRATION
         Try
@@ -1298,6 +1301,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         'Dim class_xml22 As New CLASS_NYM_2
         Dim class_xml3 As New CLASS_NYM_3_SM
         Dim class_xml4 As New CLASS_NYM_4_SM
+        Dim class_xml4_2 As New CLASS_NYM_4_COMPANY
 
         Try
             class_xml21.NYM_2s = dao2.fields
@@ -1311,6 +1315,11 @@ Public Class FRM_STAFFNYM_CONFIRM
         End Try
         Try
             class_xml4.NYM_4s = dao4.fields
+        Catch ex As Exception
+
+        End Try
+        Try
+            class_xml4_2.NYM_4_COMPANYs = dao4_2.fields
         Catch ex As Exception
 
         End Try
@@ -1417,9 +1426,9 @@ Public Class FRM_STAFFNYM_CONFIRM
 
             End Try
             Try
-                Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
-                dao_st.GetDataby_IDA(dao2.fields.NYM2_IDENTIFY_STAFF)
-                class_xml21.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+                'Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
+                'dao_st.GetDataby_IDA(dao2.fields.NYM2_IDENTIFY_STAFF)
+                class_xml21.APPROVE_NAME = dao2.fields.STAFF_NAME  'dao_st.fields.STAFF_OFFER_NAME
             Catch ex As Exception
 
             End Try
@@ -1549,7 +1558,8 @@ Public Class FRM_STAFFNYM_CONFIRM
             Try
                 Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
                 dao_st.GetDataby_IDA(dao3.fields.NYM3_IDENTIFY_STAFF)
-                class_xml3.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+                'class_xml3.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+                class_xml3.APPROVE_NAME = dao3.fields.STAFF_NAME
             Catch ex As Exception
 
             End Try
@@ -1679,7 +1689,8 @@ Public Class FRM_STAFFNYM_CONFIRM
             Try
                 Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
                 dao_st.GetDataby_IDA(dao4.fields.NYM4_IDENTIFY_STAFF)
-                class_xml4.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+                'class_xml4.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+                class_xml4.APPROVE_NAME = dao4.fields.STAFF_NAME
             Catch ex As Exception
 
             End Try
@@ -1730,6 +1741,137 @@ Public Class FRM_STAFFNYM_CONFIRM
             Catch ex As Exception
 
             End Try
+
+        ElseIf _process = 1031 Then
+            Try
+                NYM_STATUS = dao4_2.fields.STATUS_ID
+            Catch ex As Exception
+
+            End Try
+            Try
+
+                class_xml4_2.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.FK_IDA) 'ข้อมูลสถานที่จำลอง
+            Catch ex As Exception
+
+            End Try
+            Try
+                Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT
+                dao_unit.GetDataby_sunitcd(dao_rg.fields.UNIT_NORMAL)
+                class_xml4_2.SMALL_UNIT = CStr(dao4_2.fields.NYM4_COMPANY_COUNT_MED) & " " & dao_unit.fields.unit_name
+            Catch ex As Exception
+
+            End Try
+            class_xml4_2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4_ONLY1(_IDA)
+            class_xml4_2.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)
+            class_xml4_2.DT_SHOW.DT7 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(_DL) 'ดึงตัวยาสำคัญ
+            class_xml4_2.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
+            class_xml4_2.DT_SHOW.DT11 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(_DL)
+            class_xml4_2.DT_SHOW.DT6 = bao_n.SP_regis(_DL)
+            Try
+                class_xml4_2.DT_SHOW.DT10 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_rg.fields.CITIZEN_ID_AUTHORIZE, 0)
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml4_2.REMARK = dao4_2.fields.REMARK
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml4_2.DRUG_COLOR = dao_rg.fields.DRUG_COLOR
+            Catch ex As Exception
+
+            End Try
+            Try
+
+                class_xml4_2.PACK_SIZE = dao_rg.fields.PACKAGE_DETAIL
+            Catch ex As Exception
+                class_xml4_2.PACK_SIZE = "-"
+            End Try
+            Try
+                class_xml4_2.LONG_APPDATE = CDate(dao4_2.fields.APPROVE_DATE).ToLongDateString()
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml4_2.DRUG_NAME = drug_name
+            Catch ex As Exception
+
+            End Try
+            Dim rcvno_format As String = ""
+            Try
+                Try
+
+                    If Len(dao4_2.fields.NYM4_COMPANY_NO) > 0 Then
+                        rcvno_format = CStr(CInt(Right(dao4.fields.NYM4_NO, 5))) & "/" & Left(dao4_2.fields.NYM4_COMPANY_NO, 2)
+                        class_xml4_2.RCVNO_FORMAT = rcvno_format
+                    End If
+                Catch ex As Exception
+
+                End Try
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml4_2.LONG_RCVDATE = CDate(dao4_2.fields.rcvdate).ToLongDateString()
+            Catch ex As Exception
+
+            End Try
+            Try
+                Dim dao_st As New DAO_DRUG.TB_MAS_STAFF_OFFER
+                dao_st.GetDataby_IDA(dao4_2.fields.NYM4_IDENTIFY_STAFF)
+                'class_xml4_2.APPROVE_NAME = dao_st.fields.STAFF_OFFER_NAME
+                class_xml4_2.APPROVE_NAME = dao4_2.fields.STAFF_NAME
+            Catch ex As Exception
+
+            End Try
+            Try
+                class_xml4_2.RECEIVER_NAME = set_name_company(dao4_2.fields.STAFF_RECEIVE_IDEN)
+            Catch ex As Exception
+
+            End Try
+            Try
+                If dao_lcn.fields.PROCESS_ID = "201" Or dao_lcn.fields.PROCESS_ID = "202" Or dao_lcn.fields.PROCESS_ID = "203" Or
+                    dao_lcn.fields.PROCESS_ID = "204" Or dao_lcn.fields.PROCESS_ID = "205" Or dao_lcn.fields.PROCESS_ID = "206" Then
+                    Dim val As String = ""
+                    val = dao_lcn.fields.Co_name
+                    If val = "1" Or val = "2" Or val = "3" Or val = "4" Or val = "5" Or val = "9" Or val = "10" Then
+                        class_xml4_2.CHK_TYPE_LCN = val
+                        If dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000160127" Then
+                            class_xml4_2.CHK_TYPE_LCN = "4"
+                        ElseIf dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000165315" Then
+                            class_xml4_2.CHK_TYPE_LCN = "5"
+                        End If
+                    ElseIf val = "9" Or val = "10" Then
+                        If dao_lcn.fields.lcntpcd.Contains("ผย") Then
+                            class_xml4_2.CHK_TYPE_LCN = "6"
+                        ElseIf dao_lcn.fields.lcntpcd.Contains("นย") Then
+                            class_xml4_2.CHK_TYPE_LCN = "7"
+                        End If
+
+                        If dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000160127" Then
+                            class_xml4_2.CHK_TYPE_LCN = "4"
+                        ElseIf dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000165315" Then
+                            class_xml4_2.CHK_TYPE_LCN = "5"
+                        End If
+
+                    End If
+                Else
+                    If dao_lcn.fields.lcntpcd.Contains("ผย") Then
+                        class_xml4_2.CHK_TYPE_LCN = "6"
+                    ElseIf dao_lcn.fields.lcntpcd.Contains("นย") Then
+                        class_xml4_2.CHK_TYPE_LCN = "7"
+                    End If
+                    If dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000160127" Then
+                        class_xml4_2.CHK_TYPE_LCN = "4"
+                    ElseIf dao_lcn.fields.CITIZEN_ID_AUTHORIZE = "0994000165315" Then
+                        class_xml4_2.CHK_TYPE_LCN = "5"
+                    End If
+                End If
+
+            Catch ex As Exception
+
+            End Try
         End If
 
 
@@ -1738,12 +1880,15 @@ Public Class FRM_STAFFNYM_CONFIRM
         Dim dao_nym2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao_nym3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao_nym4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        Dim dao_nym4_2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
         If _process = 1027 Then
             dao_nym2.GetDataby_IDA(_IDA)                                                     'ดึงข่้อมูลจาก IDA
         ElseIf _process = 1028 Then
             dao_nym3.GetDataby_IDA(_IDA)                                                     'ดึงข่้อมูลจาก IDA
         ElseIf _process = 1029 Then
             dao_nym4.GetDataby_IDA(_IDA)                                                     'ดึงข่้อมูลจาก IDA
+        ElseIf _process = 1031 Then
+            dao_nym4_2.GetDataby_IDA(_IDA)
         End If
 
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
@@ -1764,6 +1909,9 @@ Public Class FRM_STAFFNYM_CONFIRM
         ElseIf _process = 1029 Then
             filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym4.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
             Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym4.fields.TR_ID) 'load_PDF(filename)
+        ElseIf _process = 1031 Then
+            filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym4.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym4.fields.TR_ID) 'load_PDF(filename)
         End If
 
         Try
@@ -1773,12 +1921,14 @@ Public Class FRM_STAFFNYM_CONFIRM
             class_xml21.QR_CODE = QR_CODE_IMG(url)
             class_xml3.QR_CODE = QR_CODE_IMG(url)
             class_xml4.QR_CODE = QR_CODE_IMG(url)
+            class_xml4_2.QR_CODE = QR_CODE_IMG(url)
         Catch ex As Exception
 
         End Try
         p_nym2 = class_xml21
         p_nym3 = class_xml3
         p_nym4 = class_xml4
+        p_nym4_2 = class_xml4_2
         LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML  เอง AUTO        DAO COMMON  483 558 602 และ  CLASS GEN XML
 
 
@@ -1793,6 +1943,8 @@ Public Class FRM_STAFFNYM_CONFIRM
             _CLS.FILENAME_PDF = NAME_PDF("DA", _process, year, dao_nym3.fields.TR_ID)
         ElseIf _process = 1029 Then
             _CLS.FILENAME_PDF = NAME_PDF("DA", _process, year, dao_nym4.fields.TR_ID)
+        ElseIf _process = 1031 Then
+            _CLS.FILENAME_PDF = NAME_PDF("DA", _process, year, dao_nym4_2.fields.TR_ID)
         End If
         _CLS.PDFNAME = filename
 
