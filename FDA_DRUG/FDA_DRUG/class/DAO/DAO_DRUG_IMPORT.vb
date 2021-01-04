@@ -254,7 +254,7 @@
 
 
         Public Sub getdata_ida(ByVal ida As Integer)
-            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4_COMPANies Where p.NYM4_IDA = ida Select p)
+            datas = (From p In db.FDA_DRUG_IMPORT_NYM_4_COMPANies Where p.NYM4_COMPANY_IDA = ida Select p)
             For Each Me.fields In datas
 
             Next

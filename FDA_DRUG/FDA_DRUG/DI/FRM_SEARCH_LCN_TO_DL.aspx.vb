@@ -96,7 +96,7 @@ Public Class FRM_SEARCH_LCN_TO_DL
 
                 Dim url As String = ""
                 Dim NYM As String = ""
-                If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Then
+                If _process = "1026" Or _process = "1027" Or _process = "1028" Or _process = "1029" Or _process = "1030" Or _process = "1031" Then
                     Select Case _process
                         Case "1027"
                             NYM = "2"
@@ -113,7 +113,9 @@ Public Class FRM_SEARCH_LCN_TO_DL
                         Case "1030"
                             NYM = "5"
                             url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM5.aspx?DL=" & str_ID & "&IDA=" & str_ID & "&NYM=" & NYM & "&process=" & _process & "&lcnida=" & dao.fields.FK_IDA
-
+                        Case "1031"
+                            NYM = "7"
+                            url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_NYM4.aspx?DL=" & str_ID & "&IDA=" & str_ID & "&NYM=" & NYM & "&process=" & _process & "&lcnida=" & dao.fields.FK_IDA
                     End Select
                     'url = "../D_NEW_DRUG_IMPORT/FRM_DRUG_IMPORT_MAIN.aspx?DL=" & rcb_search.SelectedValue & "&NYM=" & NYM & "&process=" & _process
                     Response.Redirect(url)
