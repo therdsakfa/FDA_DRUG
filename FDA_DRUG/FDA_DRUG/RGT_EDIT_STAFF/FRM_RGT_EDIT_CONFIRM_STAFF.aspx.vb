@@ -93,7 +93,7 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
             Try
                 Dim dao_stat As New DAO_DRUG.ClsDBMAS_STATUS
                 dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 8)
-                lbl_current_stat.Text = dao_stat.fields.STATUS_NAME
+                lbl_current_stat.Text = dao_stat.fields.STATUS_NAME_STAFF
             Catch ex As Exception
 
             End Try

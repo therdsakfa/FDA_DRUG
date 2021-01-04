@@ -1041,16 +1041,6 @@
       <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.MAS_STATUS" Member="MAS_STATUS">
-    <Type Name="MAS_STATUS">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="STATUS_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="STATUS_ID" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="STATUS_GROUP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="READ_ONLY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CAL_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.E_TRACK_STAFF_STATUS" Member="E_TRACK_STAFF_STATUS">
     <Type Name="E_TRACK_STAFF_STATUS">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6853,6 +6843,21 @@
       <Column Name="syn" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
       <Column Name="IS_CANCEL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="add_digit" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_STATUS" Member="MAS_STATUS">
+    <Type Name="MAS_STATUS">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STATUS_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STATUS_GROUP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="READ_ONLY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CAL_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GROUP_DDL_SHOW" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SEQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_NAME_STAFF" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SOP_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
