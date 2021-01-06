@@ -308,6 +308,8 @@
     <Content Include="CER_FOREIGN\CER_FOREIGN_MAIN.aspx" />
     <Content Include="CER_FOREIGN\POPUP_CER_FOREIGN_CONFIRM.aspx" />
     <Content Include="CER_FOREIGN\POPUP_CER_FOREIGN_UPLOAD.aspx" />
+    <Content Include="CHANGE_NAME_RQT\FRM_CHANGE_NAME_MAIN.aspx" />
+    <Content Include="CHANGE_NAME_RQT\FRM_CHANGE_NAME_POPUP.aspx" />
     <Content Include="CHEMICAL\FRM_CHEMICAL_BIO_MAIN.aspx" />
     <Content Include="CHEMICAL\FRM_CHEMICAL_HERB_MAIN.aspx" />
     <Content Include="CHEMICAL\FRM_CHEMICAL_MAINV2.aspx" />
@@ -2097,6 +2099,20 @@
     <Compile Include="CER_FOREIGN\POPUP_CER_FOREIGN_UPLOAD.aspx.vb">
       <DependentUpon>POPUP_CER_FOREIGN_UPLOAD.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CHANGE_NAME_RQT\FRM_CHANGE_NAME_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_CHANGE_NAME_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CHANGE_NAME_RQT\FRM_CHANGE_NAME_MAIN.aspx.vb">
+      <DependentUpon>FRM_CHANGE_NAME_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CHANGE_NAME_RQT\FRM_CHANGE_NAME_POPUP.aspx.designer.vb">
+      <DependentUpon>FRM_CHANGE_NAME_POPUP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CHANGE_NAME_RQT\FRM_CHANGE_NAME_POPUP.aspx.vb">
+      <DependentUpon>FRM_CHANGE_NAME_POPUP.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CHEMICAL\FRM_CHEMICAL_BIO_MAIN.aspx.designer.vb">
       <DependentUpon>FRM_CHEMICAL_BIO_MAIN.aspx</DependentUpon>

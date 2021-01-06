@@ -14038,6 +14038,46 @@ Namespace DAO_DRUG
             db.SubmitChanges()
         End Sub
     End Class
+
+    Public Class TB_CHANGE_NAME_REQUEST
+        Inherits MAINCONTEXT
+        Public fields As New CHANGE_NAME_REQUEST
+        Public Sub insert()
+            db.CHANGE_NAME_REQUESTs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.CHANGE_NAME_REQUESTs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+            datas = (From p In db.CHANGE_NAME_REQUESTs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+    Public Class TB_CHANGE_NAME_REQUEST_DETAIL
+        Inherits MAINCONTEXT
+        Public fields As New CHANGE_NAME_REQUEST_DETAIL
+        Public Sub insert()
+            db.CHANGE_NAME_REQUEST_DETAILs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.CHANGE_NAME_REQUEST_DETAILs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+    End Class
 End Namespace
 
 
