@@ -68,6 +68,30 @@ Namespace BAO
             Return dta
         End Function
         '
+        Public Function GET_LIST_LCN_BY_IDENTIFY(ByVal identify As String) As DataTable
+            Dim sql As String = "exec GET_LIST_LCN_BY_IDENTIFY @IDENTIFY='" & identify & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+
+            Return dta
+        End Function
+        '
+        Public Function GET_LIST_DR_BY_IDENTIFY(ByVal identify As String) As DataTable
+            Dim sql As String = "exec GET_LIST_DR_BY_IDENTIFY @IDENTIFY='" & identify & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+
+            Return dta
+        End Function
+        '
+        Public Function SP_GET_CHANGE_NAME_REQUEST_DATA_BY_IDENTIFY(ByVal identify As String) As DataTable
+            Dim sql As String = "exec SP_GET_CHANGE_NAME_REQUEST_DATA_BY_IDENTIFY @identify='" & identify & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+
+            Return dta
+        End Function
+
         Public Function SP_GET_GROUP_IOWA(ByVal iowacd As String) As DataTable
 
             Dim sql As String = "exec SP_GET_GROUP_IOWA @iowacd= '" & iowacd & "'"

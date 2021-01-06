@@ -2108,5 +2108,17 @@
         <elementListCompartment Id="6a7f7af8-d34c-485d-a832-2bfa0e7e1686" absoluteBounds="0.51499999999999968, 36.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="a57254ee-2a14-4066-9467-bf2c441258c4" absoluteBounds="9.375, 31.75, 2, 2.155499674479163">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/CHANGE_NAME_REQUEST_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d6c2843-4754-4dc1-86a8-0fbe03a72208" absoluteBounds="9.39, 32.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1bd44ed2-b40e-4f9e-8acb-c35f6c2d214d" isExpanded="false" absoluteBounds="30.625, 7.25, 2, 0.45">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/CHANGE_NAME_REQUEST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="673ef939-dd71-4b80-badf-0d15b57d40ce" absoluteBounds="30.64, 7.71, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
