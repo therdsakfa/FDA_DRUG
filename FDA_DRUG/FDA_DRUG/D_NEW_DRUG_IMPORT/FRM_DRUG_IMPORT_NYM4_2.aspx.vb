@@ -101,7 +101,7 @@ Public Class FRM_DRUG_IMPORT_NYM4_2
         'url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & 2 & "&process=" & "1027" ' & " & NYM2_ida" & _IDA
         'Response.Redirect(url)
         'End If
-        url = "../D_NEW_DRUG_IMPORT/POPUP_NYM_REDIRECT2.aspx?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & 2 & "&process=" & "1029" ' & " & NYM2_ida" & _IDA
+        url = "../D_NEW_DRUG_IMPORT/POPUP_NYM_REDIRECT2.aspx?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & 2 & "&process=" & "1031" ' & " & NYM2_ida" & _IDA
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
     End Sub
     Private Sub RadGrid1_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid1.ItemCommand    'กดปุ่มใน grid ให้ทำอะไร จากหหน้
@@ -122,7 +122,7 @@ Public Class FRM_DRUG_IMPORT_NYM4_2
 
                 'End Try
 
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM4_ida & "&Process= " & _process & "&DL=" & _DL & "&TR_ID=" & item("TR_ID").Text & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM4_ida & "&Process=1031" & "&DL=" & _DL & "&TR_ID=" & item("TR_ID").Text & "');", True)
             ElseIf e.CommandName = "edit" Then
                 dao.GetDataby_IDA_STATUS(NYM4_ida)
                 'Dim DL As Integer = 0
@@ -134,7 +134,7 @@ Public Class FRM_DRUG_IMPORT_NYM4_2
                 Response.Redirect(url)
             ElseIf e.CommandName = "upload" Then
                 'หา Code ที่ทำให้อัพโหลดขึ้นเซิฟ                   น่าจะต้องเอามาจาก LCN_UPLOAD
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_UPLOAD_PDF_PROOF.aspx?IDA=" & NYM4_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_UPLOAD_PDF_PROOF.aspx?IDA=" & NYM4_ida & "&Process=1031" & "&DL=" & _DL & "');", True)
             End If
         End If
     End Sub

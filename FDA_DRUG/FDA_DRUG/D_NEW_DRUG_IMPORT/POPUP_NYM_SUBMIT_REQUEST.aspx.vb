@@ -41,6 +41,8 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             type = 3
         ElseIf _process = 1029 Then
             type = 4
+        ElseIf _process = 1031 Then
+            type = 7
         End If
 
         If Not IsPostBack Then
@@ -62,6 +64,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        Dim dao4_2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
         If _process = 1027 Then
             dao2.GetDataby_IDA(_IDA)
             Return dao2.fields.STATUS_ID.ToString()
@@ -71,16 +74,21 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         ElseIf _process = 1029 Then
             dao4.GetDataby_IDA(_IDA)
             Return dao4.fields.STATUS_ID.ToString()
+        ElseIf _process = 1031 Then
+            dao4_2.GetDataby_IDA(_IDA)
+            Return dao4.fields.STATUS_ID.ToString()
         End If
+
     End Function
     Sub show_btn(ByVal ID As String)
         Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        Dim dao4_2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
         dao2.GetDataby_IDA(ID)
         dao3.GetDataby_IDA(ID)
         dao4.GetDataby_IDA(ID)
-
+        dao4_2.GetDataby_IDA(ID)
         If dao2.fields.STATUS_ID <> 1 And _process = 1027 Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
@@ -92,6 +100,11 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             btn_confirm.CssClass = "btn-danger btn-lg"
             btn_cancel.CssClass = "btn-danger btn-lg"
         ElseIf dao4.fields.STATUS_ID <> 1 And _process = 1029 Then
+            btn_confirm.Enabled = False
+            btn_cancel.Enabled = False
+            btn_confirm.CssClass = "btn-danger btn-lg"
+            btn_cancel.CssClass = "btn-danger btn-lg"
+        ElseIf dao4_2.fields.STATUS_ID <> 1 And _process = 1031 Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
             btn_confirm.CssClass = "btn-danger btn-lg"
@@ -194,6 +207,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        Dim dao4_2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
         Dim bao As New BAO.ClsDBSqlcommand
         Dim TR_ID As String = ""
         If _process = 1027 Then                                   'เช็ค Status เป็น nym อะไร และการกดปุ่มในแต่ละอันจะอัพเดท ststus_id ใน base TB_FDA_DRUG_IMPORT_NYM_ ของ NYM นั้นๆ
@@ -250,6 +264,24 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 'dao4.fields.FK_IDA = TR_ID
             End If
             dao4.update()
+        ElseIf _process = 1031 Then
+            dao4_2.GetDataby_IDA(Integer.Parse(_IDA))
+            If Request.QueryString("staff") <> "" Then
+                dao4_2.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                'Dim bao_tran As New BAO_TRANSECTION
+                'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+                'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+                'TR_ID = bao_tran.insert_transection_new(_process)
+                'dao4.fields.FK_IDA = TR_ID
+            Else
+                dao4_2.fields.STATUS_ID = 2                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                'Dim bao_tran As New BAO_TRANSECTION
+                'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+                'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+                'TR_ID = bao_tran.insert_transection_new(_process)
+                'dao4.fields.FK_IDA = TR_ID
+            End If
+            dao4_2.update()
         End If
         Dim years As String = ""
 
@@ -267,6 +299,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        Dim dao4_2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
         If _process = 1027 Then
             dao2.GetDataby_IDA(Integer.Parse(_IDA))
             dao2.fields.STATUS_ID = 7                                                                            'status ยกเลิกคำขอ ยังไม่มี
@@ -281,6 +314,11 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             dao4.GetDataby_IDA(Integer.Parse(_IDA))
             dao4.fields.STATUS_ID = 7                                                                            'status ยกเลิกคำขอ ยังไม่มี
             dao4.update()
+            AddLogStatusnymimport(7, _process, _CLS.CITIZEN_ID, _IDA)
+        ElseIf _process = 1031 Then
+            dao4_2.GetDataby_IDA(Integer.Parse(_IDA))
+            dao4_2.fields.STATUS_ID = 7                                                                            'status ยกเลิกคำขอ ยังไม่มี
+            dao4_2.update()
             AddLogStatusnymimport(7, _process, _CLS.CITIZEN_ID, _IDA)
         End If
         Response.Write("<script type='text/javascript'>parent.close_modal(); </script> ")
@@ -380,6 +418,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         dao2.GetDataby_IDA(_IDA)
         dao3.getdata_ida(_IDA)
         dao4.getdata_ida(_IDA)
+        dao4_2.getdata_ida(_IDA)
         Dim class_xml21 As New CLASS_NYM_2
         'Dim class_xml22 As New CLASS_NYM_2
         Dim class_xml3 As New CLASS_NYM_3_SM
@@ -844,8 +883,8 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             Catch ex As Exception
 
             End Try
-            class_xml4_2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4_ONLY1(_IDA)
-            class_xml4_2.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4(_IDA)
+            class_xml4_2.DT_SHOW.DT26 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4_2_ONLY1(_IDA)
+            class_xml4_2.DT_SHOW.DT28 = bao_show.SP_LOCATION_ADDRESS_BY_IDA_NYM4_2(_IDA)
             class_xml4_2.DT_SHOW.DT7 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(_DL) 'ดึงตัวยาสำคัญ
             class_xml4_2.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
             class_xml4_2.DT_SHOW.DT11 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(_DL)
@@ -994,8 +1033,8 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym4.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
             Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym4.fields.TR_ID) 'load_PDF(filename)
         ElseIf _process = 1031 Then
-            filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym4.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
-            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym4.fields.TR_ID) 'load_PDF(filename)
+            filename = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, year, dao_nym4_2.fields.TR_ID) 'แก้ข้างหลังสุดให้เป็น field ที่มีใน NYM2
+            Path_XML = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _process, year, dao_nym4_2.fields.TR_ID) 'load_PDF(filename)
         End If
 
         Try

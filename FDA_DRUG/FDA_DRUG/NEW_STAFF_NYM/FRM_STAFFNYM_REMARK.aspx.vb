@@ -87,6 +87,16 @@
                 dao.update()
                 AddLogStatustodrugimport(5, _process, _CLS.CITIZEN_ID, _IDA)
                 alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+            ElseIf _process = 1031 Then
+                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
+                dao.GetDataby_IDA(_IDA)
+                dao.fields.REMARK_EDIT = TextBox1.Text
+
+                dao.fields.STATUS_ID = 5
+
+                dao.update()
+                AddLogStatustodrugimport(5, _process, _CLS.CITIZEN_ID, _IDA)
+                alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
             End If
 
         ElseIf _status = 7 Then
@@ -115,6 +125,17 @@
 
             ElseIf _process = 1029 Then
                 Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+                dao.GetDataby_IDA(_IDA)
+                dao.fields.REMARK = TextBox1.Text
+
+                dao.fields.STATUS_ID = 7
+
+                dao.update()
+                AddLogStatustodrugimport(7, _process, _CLS.CITIZEN_ID, _IDA)
+                alert("ดำเนินการคืนคำขอเรียบร้อยแล้ว")
+
+            ElseIf _process = 1031 Then
+                Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
                 dao.GetDataby_IDA(_IDA)
                 dao.fields.REMARK = TextBox1.Text
 

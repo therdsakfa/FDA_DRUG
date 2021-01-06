@@ -1191,13 +1191,21 @@ Public Class WebForm35
                 'lcnno_format = 
                 'class_xml.HEAD_LCNNO = CStr(CInt(Right(dao_main2.fields.lcnno, 5))) & "/25" & Left(dao_main2.fields.lcnno, 2)
 
+                'If Right(Left(dao_main2.fields.lcnno, 3), 1) = "5" Then
+                '    class_xml.HEAD_LCNNO = "จ. " & CStr(CInt(Right(dao_main2.fields.lcnno, 4))) & "/25" & Left(dao_main2.fields.lcnno, 2)
+                'Else
+                '    class_xml.HEAD_LCNNO = dao_main2.fields.pvnabbr & " " & CStr(CInt(Right(dao_main2.fields.lcnno, 5))) & "/25" & Left(dao_main2.fields.lcnno, 2)
+                'End If
                 If Right(Left(dao_main2.fields.lcnno, 3), 1) = "5" Then
-                    class_xml.HEAD_LCNNO = "จ. " & CStr(CInt(Right(dao_main2.fields.lcnno, 4))) & "/25" & Left(dao_main2.fields.lcnno, 2)
+                    class_xml.HEAD_LCNNO_NCT = dao_main2.fields.lcntpcd & " จ. " & CStr(CInt(Right(dao_main2.fields.lcnno, 4))) & "/25" & Left(dao_main2.fields.lcnno, 2)
+                    class_xml.HEAD_LCNNO = dao_main2.fields.lcntpcd & " จ. " & CStr(CInt(Right(dao_main2.fields.lcnno, 4))) & "/25" & Left(dao_main2.fields.lcnno, 2)
                 Else
-                    class_xml.HEAD_LCNNO = dao_main2.fields.pvnabbr & " " & CStr(CInt(Right(dao_main2.fields.lcnno, 5))) & "/25" & Left(dao_main2.fields.lcnno, 2)
+                    class_xml.HEAD_LCNNO_NCT = dao_main2.fields.lcntpcd & " " & dao_main2.fields.pvnabbr & " " & CStr(CInt(Right(dao_main2.fields.lcnno, 5))) & "/25" & Left(dao_main2.fields.lcnno, 2)
+                    class_xml.HEAD_LCNNO = dao_main2.fields.lcntpcd & " " & dao_main2.fields.pvnabbr & " " & CStr(CInt(Right(dao_main2.fields.lcnno, 5))) & "/25" & Left(dao_main2.fields.lcnno, 2)
                 End If
 
                 class_xml.HEAD_LCNNO = NumEng2Thai(class_xml.HEAD_LCNNO)
+                class_xml.HEAD_LCNNO_NCT = NumEng2Thai(class_xml.HEAD_LCNNO_NCT)
             Catch ex As Exception
 
             End Try

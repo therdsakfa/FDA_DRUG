@@ -121,7 +121,7 @@ Public Class FRM_DRUG_IMPORT_NYM3
                 '    tr_id = dao.fields.TR_ID
                 'Catch ex As Exception
                 'End Try
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "&DL=" & _DL & "&TR_ID=" & item("TR_ID").Text & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM3_ida & "&Process=" & _process & "&DL=" & _DL & "&TR_ID=" & item("TR_ID").Text & "');", True)
             ElseIf e.CommandName = "edit" Then
                 dao.GetDataby_IDA_STATUS(NYM3_ida)
                 'Dim DL As Integer = 0
@@ -133,7 +133,7 @@ Public Class FRM_DRUG_IMPORT_NYM3
                 Response.Redirect(url)
             ElseIf e.CommandName = "upload" Then
                 'หา Code ที่ทำให้อัพโหลดขึ้นเซิฟ                   น่าจะต้องเอามาจาก LCN_UPLOAD
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_UPLOAD_PDF_PROOF.aspx?IDA=" & NYM3_ida & "&Process= " & _process & "&DL=" & _DL & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_UPLOAD_PDF_PROOF.aspx?IDA=" & NYM3_ida & "&Process=" & _process & "&DL=" & _DL & "');", True)
 
 
             End If
