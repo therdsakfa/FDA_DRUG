@@ -203,17 +203,23 @@ Public Class UC_DS_NORYOR8
 
         'End Try
 
-        Dim bao As New BAO_MASTER
-        ddl_phesaj.DataSource = bao.SP_DALCN_PHR_BY_FK_IDA(dao_lcn.fields.IDA)
-        ddl_phesaj.DataTextField = "FULLNAMEs"
-        ddl_phesaj.DataValueField = "IDA"
-        ddl_phesaj.DataBind()
-        Dim item As New ListItem
-        item.Text = "เลือกผู้มีหน้าที่ปฏิบัติการ"
-        item.Value = "0"
-        ddl_phesaj.Items.Insert(0, item)
-
-
+        If Request.QueryString("staff") <> 1 Then
+            Dim bao As New BAO_MASTER
+            ddl_phesaj.DataSource = bao.SP_DALCN_PHR_BY_FK_IDA_AND_PHR_CTZNO(_CLS.CITIZEN_ID, dao_lcn.fields.IDA)
+            ddl_phesaj.DataTextField = "FULLNAMEs"
+            ddl_phesaj.DataValueField = "IDA"
+            ddl_phesaj.DataBind()
+        Else
+            Dim bao As New BAO_MASTER
+            ddl_phesaj.DataSource = bao.SP_DALCN_PHR_BY_FK_IDA(dao_lcn.fields.IDA)
+            ddl_phesaj.DataTextField = "FULLNAMEs"
+            ddl_phesaj.DataValueField = "IDA"
+            ddl_phesaj.DataBind()
+            Dim item As New ListItem
+            item.Text = "เลือกผู้มีหน้าที่ปฏิบัติการ"
+            item.Value = "0"
+            ddl_phesaj.Items.Insert(0, item)
+        End If
 
         Dim baophr As New BAO.ClsDBSqlcommand
         ddl_snunit.DataSource = baophr.SP_DRUG_REGISTRATION_PACKAGE_BY_IDA(dao_drugname.fields.IDA)
