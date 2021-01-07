@@ -452,7 +452,7 @@ Public Class UC_DS_PORYOR8
                 save.fields.CHK_PRODUCT_FOR = 1 'เก็บค่า chk การศึกษาวิจัยในมนุษย์
             ElseIf chk_forother.Checked = True Then
                 save.fields.CHK_PRODUCT_FOR = 2
-                save.fields.CHK_FOR_OTHER = txt_forother.Text
+                save.fields.REMARK_OTHER = txt_forother.Text
             Else
 
             End If

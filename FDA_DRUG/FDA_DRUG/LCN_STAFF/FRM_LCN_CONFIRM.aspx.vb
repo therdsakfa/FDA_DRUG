@@ -1078,7 +1078,7 @@ Public Class WebForm35
         Catch ex As Exception
 
         End Try
-        class_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(dao.fields.IDA)
+        class_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(dao.fields.IDA, 2)
         Dim DT25 As New DataTable
         Try
             DT25 = class_xml.DT_MASTER.DT25
