@@ -15,6 +15,8 @@
                         </td>
                         <td>
                             <asp:Label ID="lbl_oldname" runat="server" Text="-"></asp:Label>
+                            <asp:ScriptManager ID="ScriptManager1" runat="server">
+                            </asp:ScriptManager>
                         </td>
                     </tr>
                 </table>

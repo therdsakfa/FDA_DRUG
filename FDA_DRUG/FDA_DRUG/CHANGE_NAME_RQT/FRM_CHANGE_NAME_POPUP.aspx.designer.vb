@@ -23,6 +23,15 @@ Partial Public Class FRM_CHANGE_NAME_POPUP
     Protected WithEvents lbl_oldname As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''ScriptManager1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+    
+    '''<summary>
     '''RadGrid1 control.
     '''</summary>
     '''<remarks>
