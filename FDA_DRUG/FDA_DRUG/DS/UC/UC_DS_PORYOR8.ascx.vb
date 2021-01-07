@@ -134,8 +134,8 @@ Public Class UC_DS_PORYOR8
             item2.Value = "0"
             ddl_package_sum.Items.Insert(0, item2)
             ' ddl_package_sum.Items.Insert(0, New ListItem("กรุณาเลือก", 5))
-            ddl_package_sum.Items.Add(New ListItem("kilogram", 769))
-            ddl_package_sum.Items.Add(New ListItem("LITS", 773))
+            'ddl_package_sum.Items.Add(New ListItem("kilogram", 769))
+            'ddl_package_sum.Items.Add(New ListItem("LITS", 773))
         End If
     End Sub
 
@@ -1005,7 +1005,7 @@ Public Class UC_DS_PORYOR8
 
     Protected Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         sum_finally.Text = txt_summ.Text
-        unit_finally.Text = ddl_package_sum.Text
+        unit_finally.Text = ddl_package_sum.SelectedItem.Text
         'Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
         'dao.GetDataby_IDA(main_ida)
         'Dim dao_drsamp As New DAO_DRUG.ClsDBdrsamp
@@ -1083,12 +1083,11 @@ Public Class UC_DS_PORYOR8
             imp_unit.Visible = False
             lbl_import_sum.Visible = False
             Button3.Visible = False
+            dao_package.GetDataby_FK_IDA(main_ida)
             setsum(dao_package.fields.IDA)
-
         End If
-
-
     End Sub
+
 
 
 
