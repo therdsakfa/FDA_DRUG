@@ -793,16 +793,16 @@
         dt.TableName = "SP_PHR_NOT_ROW_1_BY_FK_IDA"
         Try
             dt = clsds.dsQueryselect(sql, conn).Tables(0)
-            If dt.Rows.Count() > 1 Then
-                '  dt = AddDatatable(dt)
-                dt.Clear()
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+                ''dt.Clear()
             End If
         Catch ex As Exception
 
         End Try
-        If dt.Rows.Count() > 1 Then
-            'dt = AddDatatable(dt)
-            dt.Clear()
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+            ''dt.Clear()
         End If
         Return dt
     End Function
@@ -821,14 +821,16 @@
         dt.TableName = "SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE"
         Try
             dt = clsds.dsQueryselect(sql, conn).Tables(0)
-            If dt.Rows.Count() = 0 Then
-                dt = AddDatatable(dt)
+            If dt.Rows.Count() > 1 Then
+                ''dt = AddDatatable(dt)
+                dt.Clear()
             End If
         Catch ex As Exception
 
         End Try
-        If dt.Rows.Count() = 0 Then
-            dt = AddDatatable(dt)
+        If dt.Rows.Count() > 1 Then
+            ''dt = AddDatatable(dt)
+            dt.Clear()
         End If
 
         Return dt
