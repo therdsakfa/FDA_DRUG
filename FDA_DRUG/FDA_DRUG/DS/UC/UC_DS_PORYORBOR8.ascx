@@ -355,11 +355,8 @@
                <%-- <asp:DropDownList ID="ddl_unit2" runat="server" DataTextField="unit_name" DataValueField="unit_name">
                 </asp:DropDownList>--%>
              <tr>
-        <td align="right" class="auto-style14">
-            &nbsp;</td>
-        <td>
-               <asp:Button ID="btn_package" runat="server" Height="53px" Text="เพิ่ม/ลบ ขนาดบรรจุ" Width="180px" CssClass="auto-style11" />
-
+        <td align="right" class="auto-style14"></td>
+        <td align="left"><asp:Button ID="btn_package" runat="server" Height="53px" Text="เพิ่ม/ลบ ขนาดบรรจุ" Width="180px" CssClass="auto-style11" />
             <asp:Label ID="Label2" runat="server" Text="on" Visible="False"></asp:Label>
         </td>
         </tr>
@@ -376,7 +373,7 @@
                 จำนวน
                 <asp:TextBox ID="txt_sunit" runat="server" Height="22px"></asp:TextBox>
                     <asp:Label ID="lbl_sunit" runat="server" Text="-" AutoPostBack="True"></asp:Label>
-                    &nbsp;ต่อ จำนวน 1
+                    ต่อ จำนวน 1
                 <%--<asp:TextBox ID="txt_size2" runat="server"></asp:TextBox>--%>
                     <asp:DropDownList ID="ddl_munit" runat="server" DataTextField="sunitengnm" DataValueField="sunitengnm" AutoPostBack="True"></asp:DropDownList>
                     ต่อ
@@ -384,7 +381,7 @@
                     จำนวน
                 <asp:TextBox ID="txt_mamount" runat="server"></asp:TextBox>
                     <asp:Label ID="lbl_munit" runat="server" Text="-" AutoPostBack="True"></asp:Label>
-                    &nbsp;ต่อ จำนวน
+                    ต่อ จำนวน
                 <%--<asp:TextBox ID="txt_size4" runat="server"></asp:TextBox>--%>
                 1
                 <asp:DropDownList ID="ddl_bunit" runat="server" DataTextField="sunitengnm" DataValueField="sunitengnm"></asp:DropDownList>
