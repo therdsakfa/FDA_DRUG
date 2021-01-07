@@ -27,10 +27,13 @@ Public Class FRM_CHANGE_NAME_MAIN
             '        hl_pay.NavigateUrl &= "&staff=1&identify=" & _CLS.CITIZEN_ID_AUTHORIZE
             '    End If
             'Else
-            hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug"
-                If Request.QueryString("staff") = 1 Then
-                    hl_pay.NavigateUrl &= "&staff=1&identify=" & _CLS.CITIZEN_ID_AUTHORIZE
-                End If
+
+            If Request.QueryString("staff") = 1 Then
+                hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=staffdrug"
+                hl_pay.NavigateUrl &= "&staff=1&identify=" & _CLS.CITIZEN_ID_AUTHORIZE
+            Else
+                hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug"
+            End If
             'End If
         Catch ex As Exception
 
@@ -91,5 +94,9 @@ Public Class FRM_CHANGE_NAME_MAIN
             End Try
 
         End If
+    End Sub
+
+    Private Sub btn_reload_Click(sender As Object, e As EventArgs) Handles btn_reload.Click
+        RadGrid1.Rebind()
     End Sub
 End Class

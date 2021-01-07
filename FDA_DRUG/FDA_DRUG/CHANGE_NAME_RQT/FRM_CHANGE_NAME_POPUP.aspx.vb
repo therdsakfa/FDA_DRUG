@@ -8,6 +8,7 @@ Public Class FRM_CHANGE_NAME_POPUP
     Private Sub RunQuery()
         '_ProcessID = 101
         Try
+            _ProcessID = Request.QueryString("process")
             _CLS = Session("CLS")
         Catch ex As Exception
             Response.Redirect("https://privus.fda.moph.go.th")
@@ -110,6 +111,13 @@ Public Class FRM_CHANGE_NAME_POPUP
             End With
             dao_det.insert()
         Next
+        alert("ยื่นคำขอเรียบร้อย")
+    End Sub
+    Sub alert(ByVal text As String)
+        Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');parent.close_modal();</script> ")
+    End Sub
 
+    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Response.Write("<script type='text/javascript'>window.parent.close_modal();</script> ")
     End Sub
 End Class

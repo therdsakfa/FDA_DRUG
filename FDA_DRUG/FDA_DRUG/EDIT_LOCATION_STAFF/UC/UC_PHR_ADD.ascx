@@ -76,7 +76,7 @@
         <td>
             <asp:DropDownList ID="ddl_PHR_MEDICAL_TYPE" runat="server">
                 <asp:ListItem Value="1">เภสัชกร</asp:ListItem>
-                <asp:ListItem Value="2">ผู้ประกอบวิชาชีะ</asp:ListItem>
+                <asp:ListItem Value="2">ผู้ประกอบวิชาชีพ</asp:ListItem>
                 <asp:ListItem Value="3">ผู้ได้รับมอบหมายการอบรมมาตรา 48</asp:ListItem>
             </asp:DropDownList>
         </td>
