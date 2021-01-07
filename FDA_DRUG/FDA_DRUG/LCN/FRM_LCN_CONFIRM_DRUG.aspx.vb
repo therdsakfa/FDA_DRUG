@@ -917,11 +917,16 @@ Public Class FRM_LCN_CONFIRM_DRUG
                         'class_xml.HEAD_LCNNO = CStr(CInt(Right(dao_main2.fields.lcnno, 5))) & "/25" & Left(dao_main2.fields.lcnno, 2)
 
                         If Right(Left(dao_main3.fields.lcnno, 3), 1) = "5" Then
-                            class_xml.HEAD_LCNNO_NCT = dao_main3.fields.lcntpcd & " จ. " & CStr(CInt(Right(dao_main3.fields.lcnno, 4))) & "/25" & Left(dao_main3.fields.lcnno, 2)
-                            class_xml.HEAD_LCNNO = dao_main3.fields.lcntpcd & " จ. " & CStr(CInt(Right(dao_main3.fields.lcnno, 4))) & "/25" & Left(dao_main3.fields.lcnno, 2)
+                            class_xml.HEAD_LCNNO_NCT = "จ. " & CStr(CInt(Right(dao_main3.fields.lcnno, 4))) & "/25" & Left(dao_main3.fields.lcnno, 2)
+                            class_xml.HEAD_LCNNO = "จ. " & CStr(CInt(Right(dao_main3.fields.lcnno, 4))) & "/25" & Left(dao_main3.fields.lcnno, 2)
                         Else
-                            class_xml.HEAD_LCNNO_NCT = dao_main3.fields.lcntpcd & " " & dao_main3.fields.pvnabbr & " " & CStr(CInt(Right(dao_main3.fields.lcnno, 5))) & "/25" & Left(dao_main3.fields.lcnno, 2)
-                            class_xml.HEAD_LCNNO = dao_main3.fields.lcntpcd & " " & dao_main3.fields.pvnabbr & " " & CStr(CInt(Right(dao_main3.fields.lcnno, 5))) & "/25" & Left(dao_main3.fields.lcnno, 2)
+                            class_xml.HEAD_LCNNO_NCT = dao_main3.fields.pvnabbr & " " & CStr(CInt(Right(dao_main3.fields.lcnno, 5))) & "/25" & Left(dao_main3.fields.lcnno, 2)
+                            class_xml.HEAD_LCNNO = dao_main3.fields.pvnabbr & " " & CStr(CInt(Right(dao_main3.fields.lcnno, 5))) & "/25" & Left(dao_main3.fields.lcnno, 2)
+                        End If
+
+                        If _ProcessID = 133 Or _ProcessID = 134 Then
+                            class_xml.HEAD_LCNNO_NCT = dao_main3.fields.lcntpcd & " " & class_xml.HEAD_LCNNO_NCT
+                            class_xml.HEAD_LCNNO = dao_main3.fields.lcntpcd & " " & class_xml.HEAD_LCNNO
                         End If
 
                         class_xml.HEAD_LCNNO_NCT = NumEng2Thai(class_xml.HEAD_LCNNO_NCT)
