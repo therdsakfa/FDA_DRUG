@@ -649,7 +649,7 @@ Public Class FRM_SUBSTITUTE_NCT_STAFF_PREVIEW
         End Try
 
 
-        class_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(dao.fields.IDA)
+        class_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(dao.fields.IDA, 1)
 
         Dim DT25 As New DataTable
         Try

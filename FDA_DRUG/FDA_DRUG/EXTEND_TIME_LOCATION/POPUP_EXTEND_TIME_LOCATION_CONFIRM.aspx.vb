@@ -834,7 +834,7 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
         'End Try
 
 
-        class_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(dao_lcn.fields.IDA)
+        class_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(dao_lcn.fields.IDA, 1)
 
         'Dim DT25 As New DataTable
         'Try

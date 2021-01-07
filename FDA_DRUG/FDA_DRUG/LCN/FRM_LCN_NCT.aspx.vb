@@ -498,8 +498,8 @@ Public Class FRM_LCN_NCT
             cls_xml.DT_MASTER.DT24 = dt
             cls_xml.DT_MASTER.DT24.TableName = "SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_BY_IDA"
         End If
-        cls_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(_lcn_ida)
-        cls_xml.DT_MASTER.DT26 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(_lcn_ida, 1)
+        cls_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(_lcn_ida, 1)
+        cls_xml.DT_MASTER.DT26 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(_lcn_ida, 2)
         cls_xml.DT_MASTER.DT27 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(_lcn_ida, 2)
         cls_xml.DT_MASTER.DT27.TableName = "SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE_2"
         cls_xml.DT_MASTER.DT28 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE_2(_lcn_ida, 1)
