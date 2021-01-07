@@ -785,9 +785,9 @@
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function SP_PHR_NOT_ROW_1_BY_FK_IDA(ByVal FK_IDA As Integer) As DataTable
+    Public Function SP_PHR_NOT_ROW_1_BY_FK_IDA(ByVal FK_IDA As Integer, ByVal PHR_MEDICAL_TYPE As String) As DataTable
         Dim clsds As New ClassDataset
-        Dim sql As String = "exec SP_PHR_NOT_ROW_1_BY_FK_IDA @FK_IDA =  " & FK_IDA
+        Dim sql As String = "exec SP_PHR_NOT_ROW_1_BY_FK_IDA @FK_IDA =  " & FK_IDA & ",@PHR_MEDICAL_TYPE =" & PHR_MEDICAL_TYPE
         Dim dt As New DataTable
         dt = clsds.dsQueryselect(sql, conn).Tables(0)
         dt.TableName = "SP_PHR_NOT_ROW_1_BY_FK_IDA"
