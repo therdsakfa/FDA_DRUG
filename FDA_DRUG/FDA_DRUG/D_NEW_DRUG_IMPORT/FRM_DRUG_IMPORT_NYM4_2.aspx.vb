@@ -110,7 +110,7 @@ Public Class FRM_DRUG_IMPORT_NYM4_2
             Dim url As String = ""
             Dim NYM As String = "7"
             Dim NYM4_ida As String = item("NYM4_COMPANY_IDA").Text
-            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
 
 
             If e.CommandName = "sel" Then
