@@ -109,7 +109,7 @@
                 </td>
             </tr>--%>
             <tr>
-                <td>เเลขที่ใบอนุญาตสถานที่</td>
+                <td>เลขที่ใบอนุญาตสถานที่</td>
                 <td Width="70%">
                                 <asp:TextBox ID="txt_lcnno_no" runat="server" CssClass="input-lg" Width="70%"></asp:TextBox>
                 &nbsp;(ตัวอย่าง กท 1/2555)</td>
