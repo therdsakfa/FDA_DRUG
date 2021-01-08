@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_STAFF_LCN_CONSIDER
+Partial Public Class FRM_STAFF_LCN_APPROVE
     
     '''<summary>
     '''ScriptManager1 control.
@@ -23,22 +23,13 @@ Partial Public Class FRM_STAFF_LCN_CONSIDER
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
     
     '''<summary>
-    '''Txt_Remark control.
+    '''txt_name control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Txt_Remark As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''rcb_staff_offer control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rcb_staff_offer As Global.Telerik.Web.UI.RadComboBox
+    Protected WithEvents txt_name As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''txt_position control.
@@ -50,22 +41,13 @@ Partial Public Class FRM_STAFF_LCN_CONSIDER
     Protected WithEvents txt_position As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox1 control.
+    '''lbl_app_date control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''txt_app_date control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txt_app_date As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lbl_app_date As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Button1 control.

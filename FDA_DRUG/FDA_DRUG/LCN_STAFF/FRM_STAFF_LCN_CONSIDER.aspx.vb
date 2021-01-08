@@ -119,6 +119,11 @@
 
             End Try
             Try
+                dao.fields.PHARMACEUTICAL_CHEMICALS = txt_position.Text
+            Catch ex As Exception
+
+            End Try
+            Try
                 dao.fields.appdate = CDate(txt_app_date.Text)
             Catch ex As Exception
 

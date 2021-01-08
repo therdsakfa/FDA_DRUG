@@ -291,127 +291,104 @@ Public Class WebForm35
         ElseIf STATUS_ID = 6 Then
             Response.Redirect("FRM_STAFF_LCN_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
         ElseIf STATUS_ID = 8 Then
+            Response.Redirect("FRM_STAFF_LCN_APPROVE.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
+            'dao.fields.STATUS_ID = STATUS_ID
 
-            dao.fields.STATUS_ID = STATUS_ID
-            'Dim chw As String = ""
-            'Dim dao_cpn As New DAO_CPN.clsDBsyschngwt
+            'Dim r_no As String = ""
             'Try
-            '    dao_cpn.GetData_by_chngwtcd(dao.fields.pvncd)
-            '    chw = dao_cpn.fields.thacwabbr
+            '    r_no = dao.fields.TEMPORARY_RCVNO
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    If Trim(r_no) <> "" Then
+            '        Dim dao_r As New DAO_DRUG.TB_DRUG_REQUEST_CENTER
+            '        dao_r.get_data_by_rno(r_no)
+            '        Dim ws_runno As New WS_REQUEST_NO.SV_REQUEST_NO
+            '        Dim A_NO As String = ""
+            '        A_NO = ws_runno.WS_INSERT_A_NO(r_no, txt_ref_no.Text, dao.fields.appdate)
+            '        Dim result As String = ""
+            '        Dim ws2 As New SV_CHK_PAYMENT.SV_CHECK_PAYMENT
+            '        result = ws2.CHECK_PAYMENT(txt_ref_no.Text, dao.fields.CITIZEN_ID_AUTHORIZE, 1)
+            '        If result = "บันทึกข้อมูลการชำระเงินเรียบร้อย" Then
+
+            '            If A_NO = "Success" Then
+            '                Dim count_3 As Integer = 0
+            '                Dim count_10 As Integer = 0
+            '                Dim daoA As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
+            '                daoA.GetDataby_R_and_C_V2(r_no)
+            '                Dim chk_stat As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
+            '                count_3 = chk_stat.GetDataby_FK_IDA_AND_STAT(daoA.fields.IDA, 3)
+            '                chk_stat = New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
+            '                count_10 = chk_stat.GetDataby_FK_IDA_AND_STAT(daoA.fields.IDA, 10)
+
+            '                If count_3 = 0 Then
+            '                    Dim dao3 As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
+            '                    dao3.fields.HEAD_STATUS_ID = 3
+            '                    dao3.fields.FK_IDA = daoA.fields.IDA
+            '                    dao3.fields.IS_EXTRA_STAGE = 0
+            '                    dao3.fields.STATUS_INDEX = 3
+            '                    dao3.fields.PRODUCT_TYPE = 99
+            '                    Try
+            '                        dao3.fields.START_DATE = dao.fields.rcvdate
+            '                    Catch ex As Exception
+
+            '                    End Try
+            '                    Try
+            '                        dao3.fields.END_DATE = dao.fields.CONSIDER_DATE
+            '                    Catch ex As Exception
+
+            '                    End Try
+
+            '                    dao3.insert()
+            '                End If
+            '                If count_10 = 0 Then
+            '                    Dim dao10 As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
+            '                    dao10.fields.HEAD_STATUS_ID = 10
+            '                    dao10.fields.FK_IDA = daoA.fields.IDA
+            '                    dao10.fields.IS_EXTRA_STAGE = 0
+            '                    dao10.fields.STATUS_INDEX = 10
+            '                    dao10.fields.PRODUCT_TYPE = 99
+            '                    Try
+            '                        dao10.fields.START_DATE = dao.fields.CONSIDER_DATE
+            '                    Catch ex As Exception
+
+            '                    End Try
+            '                    Try
+            '                        dao10.fields.END_DATE = dao.fields.appdate
+            '                    Catch ex As Exception
+
+            '                    End Try
+
+            '                    dao10.insert()
+            '                End If
+
+
+            '            End If
+            '        End If
+
+            '    End If
+
+
             'Catch ex As Exception
 
             'End Try
 
-            'Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
-            'dao_p.GetDataby_Process_ID(PROCESS_ID)
-            'Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
-            'Dim bao2 As New BAO.GenNumber
-            'Dim LCNNO As Integer
-            'LCNNO = bao2.GEN_NO_01(con_year(Date.Now.Year), _CLS.PVCODE, GROUP_NUMBER, PROCESS_ID, 0, 0, _IDA, "")
-            'dao.fields.lcnno = LCNNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year), LCNNO)
+            'Try
+            '    Dim ws_update As New WS_DRUG.WS_DRUG
+            '    ws_update.DRUG_INSERT_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+            'Catch ex As Exception
 
-            'If chw <> "" Then
-            '    dao.fields.LCNNO_DISPLAY = chw & " " & bao.FORMAT_NUMBER_YEAR_FULL(con_year(Date.Now.Year), LCNNO) ' & " (ขย." & GROUP_NUMBER & ")"
+            'End Try
 
-            'Else
-            '    dao.fields.LCNNO_DISPLAY = bao.FORMAT_NUMBER_YEAR_FULL(con_year(Date.Now.Year), LCNNO) ' & " (ขย." & GROUP_NUMBER & ")"
-            'End If
+            'Try
+            '    Dim ws_update126 As New WS_DRUG_126.WS_DRUG
+            '    ws_update126.DRUG_INSERT_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+            'Catch ex As Exception
 
-            Dim r_no As String = ""
-            Try
-                r_no = dao.fields.TEMPORARY_RCVNO
-            Catch ex As Exception
+            'End Try
 
-            End Try
-            Try
-                If Trim(r_no) <> "" Then
-                    Dim dao_r As New DAO_DRUG.TB_DRUG_REQUEST_CENTER
-                    dao_r.get_data_by_rno(r_no)
-                    Dim ws_runno As New WS_REQUEST_NO.SV_REQUEST_NO
-                    Dim A_NO As String = ""
-                    A_NO = ws_runno.WS_INSERT_A_NO(r_no, txt_ref_no.Text, dao.fields.appdate)
-                    Dim result As String = ""
-                    Dim ws2 As New SV_CHK_PAYMENT.SV_CHECK_PAYMENT
-                    result = ws2.CHECK_PAYMENT(txt_ref_no.Text, dao.fields.CITIZEN_ID_AUTHORIZE, 1)
-                    If result = "บันทึกข้อมูลการชำระเงินเรียบร้อย" Then
-
-                        If A_NO = "Success" Then
-                            Dim count_3 As Integer = 0
-                            Dim count_10 As Integer = 0
-                            Dim daoA As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
-                            daoA.GetDataby_R_and_C_V2(r_no)
-                            Dim chk_stat As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
-                            count_3 = chk_stat.GetDataby_FK_IDA_AND_STAT(daoA.fields.IDA, 3)
-                            chk_stat = New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
-                            count_10 = chk_stat.GetDataby_FK_IDA_AND_STAT(daoA.fields.IDA, 10)
-
-                            If count_3 = 0 Then
-                                Dim dao3 As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
-                                dao3.fields.HEAD_STATUS_ID = 3
-                                dao3.fields.FK_IDA = daoA.fields.IDA
-                                dao3.fields.IS_EXTRA_STAGE = 0
-                                dao3.fields.STATUS_INDEX = 3
-                                dao3.fields.PRODUCT_TYPE = 99
-                                Try
-                                    dao3.fields.START_DATE = dao.fields.rcvdate
-                                Catch ex As Exception
-
-                                End Try
-                                Try
-                                    dao3.fields.END_DATE = dao.fields.CONSIDER_DATE
-                                Catch ex As Exception
-
-                                End Try
-
-                                dao3.insert()
-                            End If
-                            If count_10 = 0 Then
-                                Dim dao10 As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
-                                dao10.fields.HEAD_STATUS_ID = 10
-                                dao10.fields.FK_IDA = daoA.fields.IDA
-                                dao10.fields.IS_EXTRA_STAGE = 0
-                                dao10.fields.STATUS_INDEX = 10
-                                dao10.fields.PRODUCT_TYPE = 99
-                                Try
-                                    dao10.fields.START_DATE = dao.fields.CONSIDER_DATE
-                                Catch ex As Exception
-
-                                End Try
-                                Try
-                                    dao10.fields.END_DATE = dao.fields.appdate
-                                Catch ex As Exception
-
-                                End Try
-
-                                dao10.insert()
-                            End If
-
-
-                        End If
-                    End If
-
-                End If
-
-
-            Catch ex As Exception
-
-            End Try
-
-            Try
-                Dim ws_update As New WS_DRUG.WS_DRUG
-                ws_update.DRUG_INSERT_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
-            Catch ex As Exception
-
-            End Try
-
-            Try
-                Dim ws_update126 As New WS_DRUG_126.WS_DRUG
-                ws_update126.DRUG_INSERT_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
-            Catch ex As Exception
-
-            End Try
-
-            AddLogStatus(STATUS_ID, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+            'AddLogStatus(STATUS_ID, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
 
             'Try
             '    send_mail_mini(dao.fields.CITIZEN_ID, "FDATH", "คำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " ได้รับการอนุมัติคำขอแล้ว")
@@ -419,14 +396,20 @@ Public Class WebForm35
 
             'End Try
 
-            dao.update()
+            'dao.update()
+
+
+
+
+
+
             '-----------------ลิ้งไปหน้าคีย์มือ----------
             'Response.Redirect("FRM_STAFF_LCN_LCNNO_MANUAL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
             '--------------------------------
-            Dim cls_sop As New CLS_SOP
-            cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", PROCESS_ID, _CLS.PVCODE, 8, "อนุมัติ", "SOP-DRUG-10-" & PROCESS_ID & "-3", "อนุมัติ", "เจ้าหน้าที่อนุมัติคำขอแล้ว", "STAFF", _TR_ID, SOP_STATUS:="อนุมัติ")
+            'Dim cls_sop As New CLS_SOP
+            'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", PROCESS_ID, _CLS.PVCODE, 8, "อนุมัติ", "SOP-DRUG-10-" & PROCESS_ID & "-3", "อนุมัติ", "เจ้าหน้าที่อนุมัติคำขอแล้ว", "STAFF", _TR_ID, SOP_STATUS:="อนุมัติ")
 
-            alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
+            'alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
             'alert_reload("ดำเนินการอนุมัติเรียบร้อยแล้ว")
         ElseIf STATUS_ID = 7 Then
             Response.Redirect("FRM_STAFF_LCN_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
