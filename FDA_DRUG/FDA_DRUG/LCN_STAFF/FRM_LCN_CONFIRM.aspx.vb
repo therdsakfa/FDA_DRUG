@@ -1078,30 +1078,62 @@ Public Class WebForm35
         Catch ex As Exception
 
         End Try
-        class_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(dao.fields.IDA, 2)
-        Dim DT25 As New DataTable
-        Try
-            DT25 = class_xml.DT_MASTER.DT25
-            For Each drr As DataRow In DT25.Rows
-                drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
-                drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
-                drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
-            Next
-        Catch ex As Exception
 
-        End Try
-        class_xml.DT_MASTER.DT26 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(dao.fields.IDA, 1)
-        Dim DT26 As New DataTable
-        Try
-            DT26 = class_xml.DT_MASTER.DT26
-            For Each drr As DataRow In DT26.Rows
-                drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
-                drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
-                drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
-            Next
-        Catch ex As Exception
+        If dao.fields.PROCESS_ID = 103 Then
+            class_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA_1(dao.fields.IDA, 1)
+            Dim DT25 As New DataTable
+            Try
+                DT25 = class_xml.DT_MASTER.DT25
+                For Each drr As DataRow In DT25.Rows
+                    drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
+                    drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
+                    drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
+                Next
+            Catch ex As Exception
 
-        End Try
+            End Try
+        Else
+            class_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(dao.fields.IDA)
+            Dim DT25 As New DataTable
+            Try
+                DT25 = class_xml.DT_MASTER.DT25
+                For Each drr As DataRow In DT25.Rows
+                    drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
+                    drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
+                    drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
+                Next
+            Catch ex As Exception
+
+            End Try
+        End If
+        If dao.fields.PROCESS_ID = 103 Then
+            class_xml.DT_MASTER.DT26 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(dao.fields.IDA, 2)
+            Dim DT26 As New DataTable
+            Try
+                DT26 = class_xml.DT_MASTER.DT26
+                For Each drr As DataRow In DT26.Rows
+                    drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
+                    drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
+                    drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
+                Next
+            Catch ex As Exception
+
+            End Try
+        Else
+            class_xml.DT_MASTER.DT26 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(dao.fields.IDA, 1)
+            Dim DT26 As New DataTable
+            Try
+                DT26 = class_xml.DT_MASTER.DT26
+                For Each drr As DataRow In DT26.Rows
+                    drr("PHR_CTZNO") = NumEng2Thai(drr("PHR_CTZNO"))
+                    drr("PHR_TEXT_NUM") = NumEng2Thai(drr("PHR_TEXT_NUM"))
+                    drr("PHR_TEXT_WORK_TIME") = NumEng2Thai(drr("PHR_TEXT_WORK_TIME"))
+                Next
+            Catch ex As Exception
+
+            End Try
+        End If
+
         class_xml.DT_MASTER.DT27 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(dao.fields.IDA, 2)
         Dim DT27 As New DataTable
         Try

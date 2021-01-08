@@ -134,8 +134,8 @@ Public Class FRM_XML
 
         Dim bao_master As New BAO_MASTER
         cls_xml.DT_MASTER.DT18 = bao_master.SP_PHR_BY_FK_IDA(11)
-        cls_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(11, 1)
-        cls_xml.DT_MASTER.DT26 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(11, 2)
+        cls_xml.DT_MASTER.DT25 = bao_master.SP_PHR_NOT_ROW_1_BY_FK_IDA(11)
+        cls_xml.DT_MASTER.DT26 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(11, 1)
         cls_xml.DT_MASTER.DT27 = bao_master.SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE(11, 2)
         cls_xml.DT_MASTER.DT27.TableName = "SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE_2"
         Dim bao_app As New BAO.AppSettings
