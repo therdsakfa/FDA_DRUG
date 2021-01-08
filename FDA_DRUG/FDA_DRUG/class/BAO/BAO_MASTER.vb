@@ -843,14 +843,14 @@
         dt.TableName = "SP_PHR_BY_FK_IDA_and_PHR_MEDICAL_TYPE"
         Try
             dt = clsds.dsQueryselect(sql, conn).Tables(0)
-            If dt.Rows.Count() > 1 Then
+            If dt.Rows.Count() = 0 Then
                 dt = AddDatatable(dt)
                 ''dt.Clear()
             End If
         Catch ex As Exception
 
         End Try
-        If dt.Rows.Count() > 1 Then
+        If dt.Rows.Count() = 0 Then
             dt = AddDatatable(dt)
             ''dt.Clear()
         End If
