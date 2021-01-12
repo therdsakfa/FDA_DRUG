@@ -53,6 +53,64 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
 
             End Try
             Try
+                If dao.fields.PROCESS_ID = "101" Then
+                    For Each item As ListItem In cbl_chk_sell_type_ky1.Items
+                        If Trim(dao.fields.CHK_SELL_TYPE) = "1" Then
+                            If item.Value = "1" Then
+                                item.Selected = True
+                            End If
+                        End If
+                        If Trim(dao.fields.CHK_SELL_TYPE1) = "1" Then
+                            If item.Value = "2" Then
+                                item.Selected = True
+                            End If
+                        End If
+                        If Trim(dao.fields.CHK_SELL_TYPE2) = "1" Then
+                            If item.Value = "3" Then
+                                item.Selected = True
+                            End If
+                        End If
+                    Next
+
+                    Dim daoc As New DAO_DRUG.TB_DALCN_SELL_TYPE
+                    daoc.GetDataby_FK_IDA(Request.QueryString("ida"))
+                    For Each daoc.fields In daoc.datas
+                        For Each item As ListItem In cbl_chk_sell_type_ky1_2.Items
+                            If item.Value = daoc.fields.SELL_TYPE Then
+                                item.Selected = True
+                            End If
+                        Next
+                    Next
+
+
+                End If
+            Catch ex As Exception
+
+            End Try
+            bind_selltype()
+
+            Try
+                If dao.fields.PROCESS_ID = "104" Then
+                    For Each item As ListItem In cbl_chk_sell_type_ky4.Items
+                        If Trim(dao.fields.CHK_SELL_TYPE) = "13" Then
+                            If item.Value = "13" Then
+                                item.Selected = True
+                            End If
+                        End If
+                        If Trim(dao.fields.CHK_SELL_TYPE1) = "12" Then
+                            If item.Value = "12" Then
+                                item.Selected = True
+                            End If
+                        End If
+
+                    Next
+                End If
+            Catch ex As Exception
+
+            End Try
+
+
+            Try
                 lcntpcd = dao.fields.lcntpcd
             Catch ex As Exception
 
@@ -80,6 +138,14 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
             If process_id = "109" Or process_id = "110" Or process_id = "122" Or process_id = "127" Or process_id = "128" Then
                 Panel1.Style.Add("display", "block")
             End If
+            If process_id = "101" Then
+                Panel2.Style.Add("display", "block")
+            End If
+            If process_id = "104" Then
+                Panel3.Style.Add("display", "block")
+            End If
+
+
             Try
                 ccc = dao.fields.cnccscd
                 'dao.fields.cnccscd = Nothing
@@ -998,5 +1064,122 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
         Else
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาแนบไฟล์');", True)
         End If
+    End Sub
+
+    Private Sub btn_save_ky1_Click(sender As Object, e As EventArgs) Handles btn_save_ky1.Click
+        Dim i As Integer = 0
+        For Each item As ListItem In cbl_chk_sell_type_ky1.Items
+            If item.Selected Then
+                i += 1
+            End If
+        Next
+
+        If i > 0 Then
+            Dim dao As New DAO_DRUG.ClsDBdalcn
+            dao.GetDataby_IDA(Request.QueryString("IDA"))
+            dao.fields.CHK_SELL_TYPE = ""
+            dao.fields.CHK_SELL_TYPE1 = ""
+            dao.fields.CHK_SELL_TYPE2 = ""
+            dao.update()
+
+            For Each item As ListItem In cbl_chk_sell_type_ky1.Items
+                If item.Selected Then
+                    Dim dao2 As New DAO_DRUG.ClsDBdalcn
+                    dao2.GetDataby_IDA(Request.QueryString("IDA"))
+                    If item.Text = "ขายปลีก" Then
+                        dao2.fields.CHK_SELL_TYPE = "1"
+                    ElseIf item.Text = "ขายส่ง" Then
+                        dao2.fields.CHK_SELL_TYPE1 = "1"
+                    ElseIf item.Text = "ปรุงยาสำหรับผู้ป่วยเฉพาะราย" Then
+                        dao2.fields.CHK_SELL_TYPE2 = "1"
+                    End If
+
+                    KEEP_LOGS_EDIT(Request.QueryString("ida"), "แก้ไขประเภทการขาย " & item.Text, _CLS.CITIZEN_ID)
+
+                    dao2.update()
+                End If
+
+            Next
+
+
+            Dim ii As Integer = 0
+            For Each item As ListItem In cbl_chk_sell_type_ky1.Items
+                If item.Value = "2" Then
+                    ii += 1
+                End If
+            Next
+            If ii > 0 Then
+                Dim dao22 As New DAO_DRUG.TB_DALCN_SELL_TYPE
+                dao22.GetDataby_FK_IDA(Request.QueryString("IDA"))
+                For Each dao22.fields In dao22.datas
+                    dao22.delete()
+                Next
+
+                For Each item As ListItem In cbl_chk_sell_type_ky1_2.Items
+                    If item.Selected Then
+                        Dim dao3 As New DAO_DRUG.TB_DALCN_SELL_TYPE
+                        dao3.fields.FK_IDA = Request.QueryString("IDA")
+                        dao3.fields.SELL_TYPE = item.Value
+                        dao3.insert()
+                    End If
+
+                Next
+            End If
+
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
+        Else
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกประเภทขายส่ง');", True)
+
+        End If
+    End Sub
+
+    Private Sub btn_save_ky4_Click(sender As Object, e As EventArgs) Handles btn_save_ky4.Click
+        Dim i As Integer = 0
+        For Each item As ListItem In cbl_chk_sell_type_ky4.Items
+            If item.Selected Then
+                i += 1
+            End If
+        Next
+
+        If i > 0 Then
+            Dim dao As New DAO_DRUG.ClsDBdalcn
+            dao.GetDataby_IDA(Request.QueryString("IDA"))
+            dao.fields.CHK_SELL_TYPE = ""
+            dao.fields.CHK_SELL_TYPE1 = ""
+            dao.fields.CHK_SELL_TYPE2 = ""
+            dao.update()
+            For Each item As ListItem In cbl_chk_sell_type_ky4.Items
+                If item.Selected Then
+                    Dim dao2 As New DAO_DRUG.ClsDBdalcn
+                    dao2.GetDataby_IDA(Request.QueryString("IDA"))
+                    If item.Text = "ขายส่งยาสำเร็จรูป" Then
+                        dao2.fields.CHK_SELL_TYPE = "13"
+                    ElseIf item.Text = "ขายส่งเภสัชเคมีภัณฑ์" Then
+                        dao2.fields.CHK_SELL_TYPE1 = "12"
+                    End If
+                    KEEP_LOGS_EDIT(Request.QueryString("ida"), "แก้ไขประเภทการขายส่ง " & item.Text, _CLS.CITIZEN_ID)
+                    dao2.update()
+                End If
+
+            Next
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
+        Else
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกประเภทขายส่ง');", True)
+
+        End If
+    End Sub
+
+    Private Sub cbl_chk_sell_type_ky1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbl_chk_sell_type_ky1.SelectedIndexChanged
+        bind_selltype()
+    End Sub
+    Sub bind_selltype()
+        Dim dao As New DAO_DRUG.ClsDBdalcn
+        dao.GetDataby_IDA(Request.QueryString("IDA"))
+        If dao.fields.PROCESS_ID = "101" And cbl_chk_sell_type_ky1.SelectedValue = "2" Then
+            cbl_chk_sell_type_ky1_2.Style.Add("display", "block")
+        Else
+            cbl_chk_sell_type_ky1_2.Style.Add("display", "none")
+        End If
+
     End Sub
 End Class

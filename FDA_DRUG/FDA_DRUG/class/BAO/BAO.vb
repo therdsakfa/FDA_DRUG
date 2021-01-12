@@ -60,6 +60,15 @@ Namespace BAO
         Dim strSQL As String = String.Empty
         '
         ''
+        Public Function GET_Vw_dalcn_phr() As DataTable
+            Dim sql As String = "select * from [dbo].[Vw_dalcn_phr]"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+
+            Return dta
+        End Function
+        '
+
         Public Function GET_IOWA_NULL() As DataTable
             Dim sql As String = "select * from [dbo].[driowa_temp] where  NO_ITEM is null"
             Dim dta As New DataTable
@@ -4452,6 +4461,7 @@ Namespace BAO
             conn.Close()
 
         End Sub
+
         '
         Public Sub SP_DALCN_STAFF_SEARCH()
 

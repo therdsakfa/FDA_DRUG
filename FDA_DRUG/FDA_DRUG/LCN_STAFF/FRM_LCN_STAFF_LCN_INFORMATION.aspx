@@ -95,6 +95,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <td> วันที่ออกให้ครั้งแรก</td>
+                    <td>  
+                        <asp:Label ID="lbl_first_appdate" runat="server" Text="-"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="2"> 
                         <h2>การขอเปลี่ยนแปลงสถานะ&nbsp;</h2>
                     </td>
@@ -201,7 +207,53 @@
         </table>
     </h2>
     <br />
+    <asp:Panel ID="Panel2" runat="server" style="display:none;">
+         <h2>ประเภทการขาย</h2>
+         <table>
+             <tr>
+                 <td>
+                     <asp:CheckBoxList ID="cbl_chk_sell_type_ky1" runat="server" AutoPostBack="true">
+                         <asp:ListItem Value="1">ขายปลีก</asp:ListItem>
+                         <asp:ListItem Value="2">ขายส่ง</asp:ListItem>
+                         <asp:ListItem Value="3">ปรุงยาสำหรับผู้ป่วยเฉพาะราย</asp:ListItem>
+                     </asp:CheckBoxList>
+                 </td>
+                 <td>
+                     <asp:CheckBoxList ID="cbl_chk_sell_type_ky1_2" runat="server" style="display:none;">
+                         <asp:ListItem Value="13">ขายส่งยาสำเร็จรูป</asp:ListItem>
+                         <asp:ListItem Value="12">ขายส่งเภสัชเคมีภัณฑ์</asp:ListItem>
+                     </asp:CheckBoxList>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <asp:Button ID="btn_save_ky1" runat="server" Text="บันทึก" CssClass="btn-sm" />
+                 </td>
+             </tr>
+         </table>
+     </asp:Panel>
+    <br />
+    <asp:Panel ID="Panel3" runat="server" style="display:none;">
+         <h2>ประเภทการขายส่ง</h2>
+         <table>
+             <tr>
+                 <td>
+                     <asp:CheckBoxList ID="cbl_chk_sell_type_ky4" runat="server">
+                         <asp:ListItem Value="13">ขายส่งยาสำเร็จรูป</asp:ListItem>
+                         <asp:ListItem Value="12">ขายส่งเภสัชเคมีภัณฑ์</asp:ListItem>
+                     </asp:CheckBoxList>
+                 </td>
+                 <td>
 
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <asp:Button ID="btn_save_ky4" runat="server" Text="บันทึก" CssClass="btn-sm" />
+                 </td>
+             </tr>
+         </table>
+     </asp:Panel>
 
     <h2>
         รายละเอียดสถานที่ตั้ง
@@ -424,6 +476,8 @@
             </tr>
         </table>
     </asp:Panel>
+    <br />
+     
     <div class=" modal fade" id="myModal">              
                <div class="panel panel-info" style="width:100%;">
                    <div class="panel-heading  text-center"><h1>

@@ -25,7 +25,7 @@
                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                 <table class="table">
                     
-                    <tr ><td>ชื่อผู้ลงนาม </td><td>
+                    <tr ><td width="30%">ชื่อผู้ลงนาม </td><td>
                         <%--<asp:DropDownList ID="ddl_staff_offer" runat="server" DataTextField="STAFF_OFFER_NAME" DataValueField="IDA" CssClass="input-lg" Width="200px">
                         </asp:DropDownList>--%>
                         <asp:TextBox ID="txt_name" runat="server" class="input-lg" Width="100%"></asp:TextBox>

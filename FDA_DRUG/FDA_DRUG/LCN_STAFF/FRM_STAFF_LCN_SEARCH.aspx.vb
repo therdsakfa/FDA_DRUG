@@ -234,7 +234,11 @@ Public Class FRM_STAFF_LCN_SEARCH
 
         End Try
         str_where = "pvncd = '" & _CLS.PVCODE & "'"
+        If rdl_stat.SelectedValue <> "0" Then
+            str_where &= " and lcn_stat = '" & rdl_stat.SelectedValue & "'"
+        End If
         r_result = dt.Select(str_where)
+
 
         Dim dt2 As New DataTable
         dt2 = dt.Clone
@@ -360,5 +364,104 @@ Public Class FRM_STAFF_LCN_SEARCH
         If txt_CITIZEN_AUTHORIZE.Text <> "" Or txt_lcnno_no.Text <> "" Then
             Search_FN()
         End If
+    End Sub
+
+    Protected Sub btn_export_phr_Click(sender As Object, e As EventArgs) Handles btn_export_phr.Click
+        Dim bao As New BAO.ClsDBSqlcommand
+        Dim dt As New DataTable
+        dt = bao.GET_Vw_dalcn_phr()
+
+        Dim str_where As String = ""
+        Dim r_result As DataRow()
+
+        str_where = "pvncd = '" & _CLS.PVCODE & "'"
+        If rdl_stat.SelectedValue <> "0" Then
+            str_where &= " and cncnm = '" & rdl_stat.SelectedItem.Text & "'"
+        End If
+        r_result = dt.Select(str_where)
+
+
+        Dim dt2 As New DataTable
+        dt2 = dt.Clone
+
+        For Each dr As DataRow In r_result
+            dt2.Rows.Add(dr.ItemArray)
+        Next
+
+        export_excel2(dt2)
+    End Sub
+    Private Sub export_excel2(ByVal dt As DataTable)
+        Dim dt2 As New DataTable
+        dt2.Columns.Add("ชื่อ")
+        dt2.Columns.Add("นามสกุล")
+        dt2.Columns.Add("เวลาทำการ")
+
+        dt2.Columns.Add("เลขภ.")
+        dt2.Columns.Add("เลขใบอนุญาต")
+
+        dt2.Columns.Add("สถานะ")
+
+        For Each dr As DataRow In dt.Rows
+            Dim dr2 As DataRow = dt2.NewRow()
+            dr2("ชื่อ") = dr("phrnm")
+            dr2("นามสกุล") = dr("thalnm")
+            dr2("เวลาทำการ") = dr("PHR_TEXT_WORK_TIME")
+            dr2("เลขภ.") = dr("PHR_TEXT_NUM")
+            dr2("เลขใบอนุญาต") = dr("LCNNO_MANUAL")
+            dr2("สถานะ") = dr("cncnm")
+            dt2.Rows.Add(dr2)
+        Next
+
+        'For ii As Integer = 0 To dt2.Columns.Count - 1
+        '    If ii > 1 Then
+        '        dt2.Columns.RemoveAt(ii)
+        '    End If
+
+        'Next
+
+        Dim filename As String = ""
+        filename = "Export_" & Date.Now.ToString("ddMMyyyy")
+
+        Dim attachment As String = "attachment; filename=" & filename & ".xls"
+        Response.ClearContent()
+        Response.Charset = "windows-874"
+        Response.ContentEncoding = System.Text.Encoding.GetEncoding(874)
+        Response.AddHeader("content-disposition", attachment)
+        Response.ContentType = "application/vnd.ms-excel"
+        Dim tab As String = ""
+        For Each dc As DataColumn In dt2.Columns
+            Response.Write(tab + dc.ColumnName)
+            tab = vbTab
+        Next
+        Response.Write(vbLf)
+        Dim i As Integer
+        For Each dr As DataRow In dt2.Rows
+            tab = ""
+            For i = 0 To dt2.Columns.Count - 1
+                Response.Write(tab & dr(i).ToString())
+                tab = vbTab
+            Next
+            Response.Write(vbLf)
+        Next
+        Response.[End]()
+
+    End Sub
+
+    Protected Sub btn_template_Click(sender As Object, e As EventArgs) Handles btn_template.Click
+        Dim bao As New BAO.AppSettings
+        Dim clsds As New ClassDataset
+
+        Dim path As String = bao._PATH_DEFAULT '"C:\path\XML_CLASS\"
+        'path = path & filename.ToString() & ".xml"
+        path = path & "PDF_TEMPLATE\" & "lcn_template.xlsx"
+
+        Response.Clear()
+        Response.ContentType = "Application/pdf"
+        Response.AddHeader("Content-Disposition", "attachment; filename=" & "LCN_TEMPLATE.xlsx")
+        Response.BinaryWrite(clsds.UpLoadImageByte(path)) '"C:\path\PDF_XML_CLASS\"
+
+        Response.Flush()
+        Response.Close()
+        Response.End()
     End Sub
 End Class

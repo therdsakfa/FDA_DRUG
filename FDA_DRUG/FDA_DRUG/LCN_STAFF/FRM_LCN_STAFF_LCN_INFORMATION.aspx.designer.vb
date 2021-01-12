@@ -77,6 +77,15 @@ Partial Public Class FRM_LCN_STAFF_LCN_INFORMATION
     Protected WithEvents lbl_date_cancel As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''lbl_first_appdate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_first_appdate As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''ddl_stat control.
     '''</summary>
     '''<remarks>
@@ -201,6 +210,69 @@ Partial Public Class FRM_LCN_STAFF_LCN_INFORMATION
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_upload_img As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Panel2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''cbl_chk_sell_type_ky1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbl_chk_sell_type_ky1 As Global.System.Web.UI.WebControls.CheckBoxList
+    
+    '''<summary>
+    '''cbl_chk_sell_type_ky1_2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbl_chk_sell_type_ky1_2 As Global.System.Web.UI.WebControls.CheckBoxList
+    
+    '''<summary>
+    '''btn_save_ky1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_save_ky1 As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Panel3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel3 As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''cbl_chk_sell_type_ky4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbl_chk_sell_type_ky4 As Global.System.Web.UI.WebControls.CheckBoxList
+    
+    '''<summary>
+    '''btn_save_ky4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_save_ky4 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''btn_location_select control.

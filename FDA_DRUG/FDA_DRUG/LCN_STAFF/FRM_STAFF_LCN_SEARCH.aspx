@@ -171,6 +171,8 @@
            
             <tr>
                <td align="right">
+                   <asp:Button ID="btn_template" runat="server" Text="Template เพื่อส่งนำเข้าข้อมูล" CssClass="btn-lg" />
+                   <asp:Button ID="btn_export_phr" runat="server" Text="Export ผู้มีหน้าที่ปฏิบัติงาน" CssClass="btn-lg" />
                    <asp:Button ID="btn_export" runat="server" Text="Export ใบอนุญาตทั้งหมด" CssClass="btn-lg" />
                </td>
            </tr>
