@@ -146,7 +146,7 @@
                      </tr>--%>
                      <tr>
                          <td>
-                             <asp:DropDownList ID="ddl_template" runat="server" Width="80%" AutoPostBack="True" style="display:none;">
+                             <asp:DropDownList ID="ddl_template" runat="server" Width="80%" AutoPostBack="True" >
                                  <asp:ListItem Value="0">---เลือกแบบ pdf---</asp:ListItem>
                                  <asp:ListItem Value="1">pdf แบบปกติ</asp:ListItem>
                                  <asp:ListItem Value="2">pdf แบบบ้านเลขที่ยาว</asp:ListItem>

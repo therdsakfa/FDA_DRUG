@@ -53,6 +53,11 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
 
             End Try
             Try
+                lbl_first_appdate.Text = CDate(dao.fields.frtappdate).ToShortDateString
+            Catch ex As Exception
+
+            End Try
+            Try
                 If dao.fields.PROCESS_ID = "101" Then
                     For Each item As ListItem In cbl_chk_sell_type_ky1.Items
                         If Trim(dao.fields.CHK_SELL_TYPE) = "1" Then

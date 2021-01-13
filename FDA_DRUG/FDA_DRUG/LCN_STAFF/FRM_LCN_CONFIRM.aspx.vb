@@ -1514,7 +1514,16 @@ Public Class WebForm35
             End If
         End If
 
+        Try
+            class_xml.ALLOW_NAME = dao.fields.TABLET_CAPSULE
+        Catch ex As Exception
 
+        End Try
+        Try
+            class_xml.Position_name = dao.fields.PHARMACEUTICAL_CHEMICALS
+        Catch ex As Exception
+
+        End Try
 
         ' p_dalcn2.DT_MASTER = Nothing
 
@@ -1625,7 +1634,9 @@ Public Class WebForm35
             'End If
 
             'Dim url As String 
-            class_xml.QR_CODE = QR_CODE_IMG(url)
+            If dao.fields.STATUS_ID = 8 Then
+                class_xml.QR_CODE = QR_CODE_IMG(url)
+            End If
         Catch ex As Exception
 
         End Try
