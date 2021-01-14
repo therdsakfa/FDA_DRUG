@@ -314,6 +314,7 @@ Public Class FRM_DS_STAFF_CONFIRM
         ddl_cnsdcd.DataSource = dt
         ddl_cnsdcd.DataValueField = "STATUS_ID"
         ddl_cnsdcd.DataTextField = "STATUS_NAME_STAFF"
+        ddl_cnsdcd.DataBind()
         Dim item As New ListItem
         item.Text = "กรุณาเลือกสถานะ"
         item.Value = "0"
