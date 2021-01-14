@@ -149,7 +149,7 @@ Public Class FRM_DRUG_IMPORT_NYM4_2
             Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
             Dim btn_Select As LinkButton = DirectCast(item("btn_Select").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
-            dao.getdata_dl(DL)
+            dao.getdata_dl(NYM4_ida)
             btn_upload.Style.Add("display", "none")
             btn_edit.Style.Add("display", "none")
             Try

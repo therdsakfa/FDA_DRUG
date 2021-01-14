@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="FRM_STAFF_LCN_CONSIDER.aspx.vb" Inherits="FDA_DRUG.FRM_STAFF_LCN_CONSIDER" %>
-
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="FRM_STAFF_LCN_APPROVE.aspx.vb" Inherits="FDA_DRUG.FRM_STAFF_LCN_APPROVE" %>
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -20,31 +19,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="panel" style="width:100%">
             <div class="panel-heading panel-title">
-                <h1>เสนอลงนาม</h1>
+                <h1>อนุญาตคำขอ</h1>
             </div>
             <div class="panel-body">
                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                 <table class="table">
-                    <tr ><td>หมายเหตุ</td><td>
-                        <asp:TextBox ID="Txt_Remark" runat="server" CssClass="input-lg"></asp:TextBox>
-                        </td></tr>
-
-                    <tr ><td>ชื่อผู้ลงนาม </td><td>
+                    
+                    <tr ><td width="30%">ชื่อผู้ลงนาม </td><td>
                         <%--<asp:DropDownList ID="ddl_staff_offer" runat="server" DataTextField="STAFF_OFFER_NAME" DataValueField="IDA" CssClass="input-lg" Width="200px">
                         </asp:DropDownList>--%>
-                        <telerik:RadComboBox ID="rcb_staff_offer" Runat="server" DataTextField="STAFF_OFFER_NAME" DataValueField="IDA" Filter="Contains">
-                        </telerik:RadComboBox>
+                        <asp:TextBox ID="txt_name" runat="server" class="input-lg" Width="100%"></asp:TextBox>
                         </td></tr>
 
                     <tr ><td>ตำแหน่ง</td><td>
                         <asp:TextBox ID="txt_position" runat="server" class="input-lg" Width="100%"></asp:TextBox>
                         </td></tr>
 
-                    <tr ><td>วันที่เสนอลงนาม</td><td>
-                        <asp:TextBox ID="TextBox1" runat="server" class="input-lg"></asp:TextBox></td></tr>
-
-                    <tr ><td>วันที่คาดว่าจะอนุมัติ</td><td>
-                        <asp:TextBox ID="txt_app_date" runat="server" class="input-lg"></asp:TextBox></td></tr>
+                    <tr ><td>วันที่อนุมัติ</td><td>
+                        <asp:Label ID="lbl_app_date" runat="server" Text="-"></asp:Label>
+                        </td></tr>
 
                 </table>
             </div>

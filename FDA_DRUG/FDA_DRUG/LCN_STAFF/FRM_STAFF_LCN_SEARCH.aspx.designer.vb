@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class FRM_STAFF_LCN_SEARCH
-
+    
     '''<summary>
     '''rdl_stat control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class FRM_STAFF_LCN_SEARCH
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rdl_stat As Global.System.Web.UI.WebControls.RadioButtonList
-
+    
     '''<summary>
     '''txt_CITIZEN_AUTHORIZE control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class FRM_STAFF_LCN_SEARCH
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_CITIZEN_AUTHORIZE As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''txt_lcnno_no control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class FRM_STAFF_LCN_SEARCH
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_lcnno_no As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btn_search control.
     '''</summary>
@@ -48,7 +48,25 @@ Partial Public Class FRM_STAFF_LCN_SEARCH
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_search As Global.System.Web.UI.WebControls.Button
-
+    
+    '''<summary>
+    '''btn_template control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_template As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btn_export_phr control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_export_phr As Global.System.Web.UI.WebControls.Button
+    
     '''<summary>
     '''btn_export control.
     '''</summary>
@@ -57,7 +75,7 @@ Partial Public Class FRM_STAFF_LCN_SEARCH
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_export As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''RadScriptManager1 control.
     '''</summary>
@@ -66,7 +84,7 @@ Partial Public Class FRM_STAFF_LCN_SEARCH
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadScriptManager1 As Global.Telerik.Web.UI.RadScriptManager
-
+    
     '''<summary>
     '''RadGrid1 control.
     '''</summary>

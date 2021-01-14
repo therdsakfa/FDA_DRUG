@@ -1135,7 +1135,16 @@ Public Class FRM_LCN_CONFIRM_DRUG
         'Catch ex As Exception
 
         'End Try
+        Try
+            class_xml.ALLOW_NAME = dao.fields.TABLET_CAPSULE
+        Catch ex As Exception
 
+        End Try
+        Try
+            class_xml.Position_name = dao.fields.PHARMACEUTICAL_CHEMICALS
+        Catch ex As Exception
+
+        End Try
         class_xml.syslctaddr_engaddr = dao.fields.syslctaddr_engaddr
         class_xml.syslctaddr_floor = dao.fields.syslctaddr_floor
         class_xml.syslctaddr_mu = dao.fields.syslctaddr_mu
@@ -1345,7 +1354,10 @@ Public Class FRM_LCN_CONFIRM_DRUG
             'End If
 
             'Dim url As String 
-            class_xml.QR_CODE = QR_CODE_IMG(url)
+            If dao.fields.STATUS_ID = 8 Then
+                class_xml.QR_CODE = QR_CODE_IMG(url)
+            End If
+
         Catch ex As Exception
 
         End Try

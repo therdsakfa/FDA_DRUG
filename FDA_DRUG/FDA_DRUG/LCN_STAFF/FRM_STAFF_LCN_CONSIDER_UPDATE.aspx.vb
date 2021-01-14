@@ -56,7 +56,16 @@
         dao.fields.FK_STAFF_OFFER_IDA = ddl_staff_offer.SelectedValue
         Try
             dao.fields.appdate = CDate(txt_app_date.Text)
+            Try
+                dao.fields.frtappdate = CDate(txt_app_date.Text)
+            Catch ex As Exception
 
+            End Try
+            Try
+                dao.fields.FIRST_APP_DATE = CDate(txt_app_date.Text)
+            Catch ex As Exception
+
+            End Try
             If IsNothing(dao.fields.appdate) = False Then
                 Dim appdate As Date = CDate(dao.fields.appdate)
                 Dim expyear As Integer = 0

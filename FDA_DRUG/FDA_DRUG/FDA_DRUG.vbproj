@@ -672,6 +672,7 @@
     <Content Include="EXTEND_TIME_LOCATION_STAFF\POPUP_EXTEND_TIME_LOCATION_STAFF_REMARK_RETURN.aspx" />
     <Content Include="LCN\FRM_LCN_DRUG_CHOOSE_TYPE.aspx" />
     <Content Include="LCN\POPUP_LCN_PRODUCTION_DRUG_GROUP3.aspx" />
+    <Content Include="LCN_STAFF\FRM_STAFF_LCN_APPROVE.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_CONFIRM.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_RCV_MANUAL.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFFNYM_REMARK.aspx" />
@@ -3450,6 +3451,13 @@
     </Compile>
     <Compile Include="LCN_STAFF\FRM_STAFF_LCN_ADD_LOCATION.aspx.vb">
       <DependentUpon>FRM_STAFF_LCN_ADD_LOCATION.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_STAFF_LCN_APPROVE.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_LCN_APPROVE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_STAFF_LCN_APPROVE.aspx.vb">
+      <DependentUpon>FRM_STAFF_LCN_APPROVE.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx.designer.vb">

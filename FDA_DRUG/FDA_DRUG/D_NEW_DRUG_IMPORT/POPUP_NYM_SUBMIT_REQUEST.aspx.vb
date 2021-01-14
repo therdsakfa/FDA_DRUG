@@ -115,9 +115,11 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2
         Dim dao3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+        Dim dao4_2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
         dao2.GetDataby_IDA(IDA)
         dao3.GetDataby_IDA(IDA)
         dao4.GetDataby_IDA(IDA)
+        dao4_2.GetDataby_IDA(IDA)
         If _process = 1027 Then
             If dao2.fields.STATUS_ID = 5 Then
                 btn_confirm.Enabled = False
@@ -177,6 +179,26 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 txt_title.Style.Add("display", "block")
                 txt_edit_remark.Style.Add("display", "block")
                 txt_edit_remark.Text = dao4.fields.REMARK           'อย่าลืม เพิ่มตารางใน base 
+            End If
+        ElseIf _process = 1031 Then
+            If dao4_2.fields.STATUS_ID = 5 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
+
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao4_2.fields.REMARK_EDIT
+            ElseIf dao4_2.fields.STATUS_ID = 7 Then
+                btn_confirm.Enabled = False
+                btn_cancel.Enabled = False
+                btn_confirm.CssClass = "btn-danger btn-lg"
+                btn_cancel.CssClass = "btn-danger btn-lg"
+
+                txt_title.Style.Add("display", "block")
+                txt_edit_remark.Style.Add("display", "block")
+                txt_edit_remark.Text = dao4_2.fields.REMARK           'อย่าลืม เพิ่มตารางใน base 
             End If
         Else
             txt_title.Style.Add("display", "none")
