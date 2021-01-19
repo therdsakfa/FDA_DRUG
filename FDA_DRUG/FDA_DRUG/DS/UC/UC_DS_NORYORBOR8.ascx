@@ -426,8 +426,14 @@
                                  <ItemStyle HorizontalAlign="Left" />
                             </telerik:GridBoundColumn>
 
-                             <telerik:GridBoundColumn UniqueName="IM_DETAIL" HeaderText="ชื่อขนาดบรรจุ" DataField="IM_DETAIL" >
-                                  <ItemStyle HorizontalAlign="Left" />
+                            <telerik:GridBoundColumn UniqueName="IM_DETAIL" HeaderText="รายละเอียดของสินค้าที่อนุญาต" DataField="IM_DETAIL" >
+                                 <ItemStyle HorizontalAlign="Left" />
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn UniqueName="SUM" HeaderText="จำนวนปริมาณนำสั่ง / ผลิต" DataField="SUM" >
+                                 <ItemStyle HorizontalAlign="Center" />
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn UniqueName="SMALL_UNIT" HeaderText="หน่วย" DataField="SMALL_UNIT" >
+                                 <ItemStyle HorizontalAlign="Center" />
                             </telerik:GridBoundColumn>
                             <telerik:GridButtonColumn UniqueName="del" ButtonType="LinkButton" Text="ลบข้อมูล" CommandName="del">
                             </telerik:GridButtonColumn>

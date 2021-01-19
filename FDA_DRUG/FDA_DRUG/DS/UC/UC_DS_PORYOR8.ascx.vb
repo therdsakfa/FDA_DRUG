@@ -252,10 +252,6 @@ Public Class UC_DS_PORYOR8
             ddl_phesaj.DataTextField = "FULLNAMEs"
             ddl_phesaj.DataValueField = "IDA"
             ddl_phesaj.DataBind()
-            'Dim item As New ListItem
-            'item.Text = "เลือกผู้มีหน้าที่ปฏิบัติการ"
-            'item.Value = "0"
-            'ddl_phesaj.Items.Insert(0, item)
         Else
             Dim bao As New BAO_MASTER
             ddl_phesaj.DataSource = bao.SP_DALCN_PHR_BY_FK_IDA(dao_lcn.fields.IDA)
