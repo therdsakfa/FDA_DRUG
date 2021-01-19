@@ -827,6 +827,9 @@ Public Class WebForm35
             ' class_xml.DT_SHOW.DT12 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao.fields.CITIZEN_ID_AUTHORIZE, dao.fields.lcnsid) 'ข้อมูลบริษัท
             'SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFYV2
             class_xml.DT_SHOW.DT12 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFYV2(dao.fields.CITIZEN_ID_AUTHORIZE, dao.fields.lcnsid)
+            For Each dr As DataRow In class_xml.DT_SHOW.DT12.Rows
+                dr("thanm") = NumEng2Thai(dr("thanm"))
+            Next
         Catch ex As Exception
 
         End Try

@@ -51,13 +51,13 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
             Dim dao_copy As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
 
-            Dim newcode As String = ""
-            Try
-                dao_copy.GetDataby_IDA_drrgt(_IDA)
-                newcode = dao_copy.fields.Newcode_U
-            Catch ex As Exception
+            Dim newcode As String = Request.QueryString("newcode")
+            'Try
+            '    dao_copy.GetDataby_IDA_drrgt(_IDA)
+            '    newcode = dao_copy.fields.Newcode_U
+            'Catch ex As Exception
 
-            End Try
+            'End Try
 
 
 

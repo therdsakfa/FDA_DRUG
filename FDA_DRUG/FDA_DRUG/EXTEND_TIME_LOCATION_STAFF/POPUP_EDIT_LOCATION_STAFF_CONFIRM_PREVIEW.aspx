@@ -222,7 +222,7 @@
                              <asp:ListItem>ที่ 5</asp:ListItem>
                              <asp:ListItem>ที่ 6</asp:ListItem>
                              <asp:ListItem>ออกใบใหม่</asp:ListItem>
-                         </asp:DropDownList>
+                         </asp:DropDownList>  
                          <br />
                              <asp:Label ID="lbl_permiss" runat="server" Text="-" Visible ="false"></asp:Label>
                          <br />
