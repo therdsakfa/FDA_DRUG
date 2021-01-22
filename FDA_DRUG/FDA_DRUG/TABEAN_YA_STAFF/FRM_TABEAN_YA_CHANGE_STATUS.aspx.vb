@@ -24,6 +24,7 @@
                     dao_q.fields.STATUS_ID = 3
                     dao_q.update()
                     i += 1
+                    INSERT_LOG(dao_q.fields.IDA, "1400001", 3)
                 End If
             End If
             If Trim(txt_no_2.Text) <> "" Then
@@ -32,6 +33,7 @@
                     dao_q.fields.STATUS_ID = 3
                     dao_q.update()
                     i += 1
+                    INSERT_LOG(dao_q.fields.IDA, "1400001", 3)
                 End If
             End If
             If Trim(txt_no_3.Text) <> "" Then
@@ -40,6 +42,7 @@
                     dao_q.fields.STATUS_ID = 3
                     dao_q.update()
                     i += 1
+                    INSERT_LOG(dao_q.fields.IDA, "1400001", 3)
                 End If
             End If
             If Trim(txt_no_4.Text) <> "" Then
@@ -48,6 +51,7 @@
                     dao_q.fields.STATUS_ID = 3
                     dao_q.update()
                     i += 1
+                    INSERT_LOG(dao_q.fields.IDA, "1400001", 3)
                 End If
             End If
             If Trim(txt_no_5.Text) <> "" Then
@@ -56,6 +60,7 @@
                     dao_q.fields.STATUS_ID = 3
                     dao_q.update()
                     i += 1
+                    INSERT_LOG(dao_q.fields.IDA, "1400001", 3)
                 End If
             End If
         ElseIf rdl_type.SelectedValue = "2" Then
@@ -68,6 +73,7 @@
                     dao_q.fields.STATUS_ID = 3
                     dao_q.update()
                     i += 1
+                    INSERT_LOG(dao_q.fields.IDA, "130099", 3)
                 End If
             End If
             If Trim(txt_no_2.Text) <> "" Then
@@ -76,6 +82,7 @@
                     dao_q.fields.STATUS_ID = 3
                     dao_q.update()
                     i += 1
+                    INSERT_LOG(dao_q.fields.IDA, "130099", 3)
                 End If
             End If
             If Trim(txt_no_3.Text) <> "" Then
@@ -84,6 +91,7 @@
                     dao_q.fields.STATUS_ID = 3
                     dao_q.update()
                     i += 1
+                    INSERT_LOG(dao_q.fields.IDA, "130099", 3)
                 End If
             End If
             If Trim(txt_no_4.Text) <> "" Then
@@ -92,6 +100,7 @@
                     dao_q.fields.STATUS_ID = 3
                     dao_q.update()
                     i += 1
+                    INSERT_LOG(dao_q.fields.IDA, "130099", 3)
                 End If
             End If
             If Trim(txt_no_5.Text) <> "" Then
@@ -100,6 +109,7 @@
                     dao_q.fields.STATUS_ID = 3
                     dao_q.update()
                     i += 1
+                    INSERT_LOG(dao_q.fields.IDA, "130099", 3)
                 End If
             End If
 
@@ -111,5 +121,14 @@
 
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');</script> ")
+    End Sub
+    Sub INSERT_LOG(ByVal IDA As Integer, ByVal process_id As String, ByVal STATUS_ID As Integer)
+        Dim dao As New DAO_DRUG.TB_LOG_CHANGE_STATUS_MN
+        dao.fields.FK_IDA = IDA
+        dao.fields.IDENTIFY = _CLS.CITIZEN_ID
+        dao.fields.PROCESS_ID = process_id
+        dao.fields.STATUS_DATE = Date.Now
+        dao.fields.STATUS_ID = STATUS_ID
+        dao.insert()
     End Sub
 End Class

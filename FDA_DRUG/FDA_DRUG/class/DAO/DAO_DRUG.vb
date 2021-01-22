@@ -14078,6 +14078,37 @@ Namespace DAO_DRUG
             db.SubmitChanges()
         End Sub
     End Class
+    Public Class TB_LOG_CHANGE_STATUS_MN
+        Inherits MAINCONTEXT 'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
+
+        Public fields As New LOG_CHANGE_STATUS_MN
+
+        Public Sub insert()
+            db.LOG_CHANGE_STATUS_MNs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.LOG_CHANGE_STATUS_MNs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal _IDA As Integer)
+
+            datas = (From p In db.LOG_CHANGE_STATUS_MNs Where p.IDA = _IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataALL()
+            datas = (From p In db.LOG_CHANGE_STATUS_MNs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
 End Namespace
 
 
