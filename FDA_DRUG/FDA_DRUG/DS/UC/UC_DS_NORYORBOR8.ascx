@@ -477,7 +477,7 @@
                     จำนวน
                 <asp:TextBox ID="txt_mamount" runat="server"></asp:TextBox>
                     <asp:Label ID="lbl_munit" runat="server" Text="-" AutoPostBack="True"></asp:Label>
-                    &nbsp;ต่อ จำนวน
+                    ต่อ จำนวน
                 <%--<asp:TextBox ID="txt_size4" runat="server"></asp:TextBox>--%>
                 1
                 <asp:DropDownList ID="ddl_bunit" runat="server" DataTextField="sunitengnm" DataValueField="sunitengnm"></asp:DropDownList>
