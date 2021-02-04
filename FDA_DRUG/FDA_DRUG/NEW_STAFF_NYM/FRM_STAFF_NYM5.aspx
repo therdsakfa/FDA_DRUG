@@ -160,7 +160,7 @@
         <div class="panel panel-info" style="width: 100%">
             <div class="panel-heading">
                 <div class="modal-title text-center h1 ">
-                    ยายกเว้นทะเบียน<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                    ระบบนำเข้ายาเฉพาะครั้ง<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
                 </div>
                 <div class="panel-body panel-info" style="width: 100%">
 
