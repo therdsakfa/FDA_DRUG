@@ -914,6 +914,39 @@ Namespace DAO_DRUG
         End Sub
     End Class
 
+    Public Class ClsDBDRSAMP_EDIT_REQUEST
+        Inherits MAINCONTEXT
+
+        Public fields As New DRSAMP_EDIT_REQUEST
+
+        Public Sub insert()
+            db.DRSAMP_EDIT_REQUESTs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.DRSAMP_EDIT_REQUESTs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.DRSAMP_EDIT_REQUESTs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub Getdataby_FK_IDA(ByVal FK_IDA As Integer)
+
+            datas = (From p In db.DRSAMP_EDIT_REQUESTs Where p.FK_IDA = FK_IDA Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+    End Class
+
     Public Class ClsDBdrsamp
         Inherits MAINCONTEXT
 

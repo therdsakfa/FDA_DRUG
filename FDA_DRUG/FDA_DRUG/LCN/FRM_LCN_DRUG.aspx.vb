@@ -45,7 +45,8 @@ Public Class FRM_LCN_DRUG
                 lbl_head_org.Style.Add("display", "block")
                 ddl_org.Style.Add("display", "block")
                 Bind_rdl()
-
+            Else
+                ddl_org.Style.Add("display", "none")
             End If
 
 
@@ -576,4 +577,6 @@ Public Class FRM_LCN_DRUG
     Protected Sub GV_lcnno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GV_lcnno.SelectedIndexChanged
 
     End Sub
+
+
 End Class

@@ -113,11 +113,10 @@ Public Class UC_DS_DRUG8_ADD
     Public Sub set_label() 'ดึงข้อมูลแสดง
         Dim dao_drugname As New DAO_DRUG.ClsDBDRUG_REGISTRATION
         dao_drugname.GetDataby_IDA(main_ida)
-        Dim dao_package As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
-        dao_package.GetDataby_FK_IDA(dao_drugname.fields.IDA)
+
         Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT 'ตารางเก็บหน่วยขนาดบรรจุ
         Try
-            dao_unit.GetDataby_sunitcd(dao_package.fields.SMALL_UNIT)
+            dao_unit.GetDataby_sunitcd(dao_drugname.fields.UNIT_NORMAL)
             lbl_sunit.Text = dao_unit.fields.unit_name 'หน่วยของขนาดบรรจุ
         Catch ex As Exception
         End Try

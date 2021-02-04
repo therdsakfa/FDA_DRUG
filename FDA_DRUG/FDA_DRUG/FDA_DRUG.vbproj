@@ -659,6 +659,7 @@
     <Content Include="DRUG_STAFF_PORYORBOR5\WebForm84.aspx" />
     <Content Include="DRUG_STAFF_PRODUCER_ABROAD\FRM_STAFF_PRODUCER_ABROAD_MAIN.aspx" />
     <Content Include="DRUG_STAFF_PRODUCER_ABROAD\WebForm88.aspx" />
+    <Content Include="DS\FRM_DS_EDIT_REQUEST.aspx" />
     <Content Include="DS\POPUP_DS_UPLOAD_NORYORMOR.aspx" />
     <Content Include="DS_STAFF\FRM_DS_STAFF_EDIT.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM2_V2.aspx" />
@@ -3133,6 +3134,13 @@
     <Compile Include="DS\FRM_DS_DRUG8_ADD.aspx.vb">
       <DependentUpon>FRM_DS_DRUG8_ADD.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DS\FRM_DS_EDIT_REQUEST.aspx.designer.vb">
+      <DependentUpon>FRM_DS_EDIT_REQUEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DS\FRM_DS_EDIT_REQUEST.aspx.vb">
+      <DependentUpon>FRM_DS_EDIT_REQUEST.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="DS\POPUP_DS_UPLOAD_NORYORMOR.aspx.designer.vb">
       <DependentUpon>POPUP_DS_UPLOAD_NORYORMOR.aspx</DependentUpon>

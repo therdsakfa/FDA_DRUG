@@ -359,8 +359,8 @@ Public Class UC_DS_MAIN
 
     Private Sub GV_lcnno_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles GV_lcnno.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
-            Dim btn_select As Button = DirectCast(e.Row.FindControl("btn_select"), Button)
-            ''Dim btn_edit As Button = DirectCast(e.Row.FindControl("btn_choose"), Button)
+            Dim btn_select As Button = DirectCast(e.Row.FindControl("btn_Select"), Button)
+            Dim btn_Edit As Button = DirectCast(e.Row.FindControl("btn_Edit"), Button)
             'Dim ida As String = GV_lcnno.DataKeys.Item(e.Row.RowIndex).Value.ToString()
             Try
                 Dim dao As New DAO_DRUG.ClsDBdrsamp
@@ -368,9 +368,13 @@ Public Class UC_DS_MAIN
                 If dao.fields.STATUS_ID >= 2 Then
                     btn_select.Style.Add("display", "none")
                 End If
+                If dao.fields.STATUS_ID <> 5 Then
+                    btn_Edit.Style.Add("display", "none")
+                End If
             Catch ex As Exception
 
             End Try
+
         End If
     End Sub
 

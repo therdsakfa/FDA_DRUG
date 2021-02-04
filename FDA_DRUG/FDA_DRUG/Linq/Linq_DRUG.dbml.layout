@@ -2126,5 +2126,11 @@
         <elementListCompartment Id="2d8254f3-913b-47fa-b3dd-b61d7d12abe9" absoluteBounds="3.89, 49.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="69c38ccd-f46c-40fa-8643-c18c4758516b" isExpanded="false" absoluteBounds="0.625, 17.625, 2, 0.45">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/DRSAMP_EDIT_REQUEST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6145b1b5-3783-4598-b9d8-23df7e223380" absoluteBounds="0.63999999999999968, 18.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

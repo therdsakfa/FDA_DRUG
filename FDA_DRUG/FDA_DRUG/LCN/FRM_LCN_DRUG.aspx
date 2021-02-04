@@ -137,13 +137,15 @@
                                               <%-- <asp:RadioButtonList ID="rdl_org" runat="server" RepeatDirection="Horizontal" RepeatColumns="6" style="display:none;">
                                                </asp:RadioButtonList>--%>
                                            </td>
+                                           
                                        </tr>
-                                   </table>
+                                       
+                                       </table>
                                      <asp:Button ID="btn_reload" runat="server" Text="" style="display:none;"  />
                                      <asp:Button ID="Button1" runat="server" Text="" style="display:none;"  />
         </p>
 
-
+                              <br />
                           </div>
             
          </div>

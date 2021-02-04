@@ -116,9 +116,9 @@
                <AlternatingRowStyle BackColor="White" />
                <Columns>
                 
-                   <asp:BoundField DataField="UPLOAD_DATE" HeaderText="วันเวลาที่ส่งคำขอ" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="center">
+                   <%--<asp:BoundField DataField="UPLOAD_DATE" HeaderText="วันเวลาที่ส่งคำขอ" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="center">
                        <ItemStyle HorizontalAlign="center" Width="15%"></ItemStyle>
-                   </asp:BoundField>
+                   </asp:BoundField>--%>
                    <asp:BoundField DataField="LCNNO_DISPLAY" HeaderText="รหัสบัญชีรายการยา" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="center">
                        <ItemStyle HorizontalAlign="center" Width="20%"></ItemStyle>
                    </asp:BoundField>
@@ -136,6 +136,14 @@
                    <asp:TemplateField ItemStyle-Width="15%" ItemStyle-HorizontalAlign="center">
                        <ItemTemplate>
                            <asp:Button ID="btn_Select" runat="server" Text="ดูข้อมูล/ยื่นคำขอ" CommandName="sel" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
+                           &nbsp; &nbsp; &nbsp;                        
+                       </ItemTemplate>
+                       
+                       <ItemStyle Width="15%" HorizontalAlign="center"></ItemStyle>
+                   </asp:TemplateField>
+                   <asp:TemplateField ItemStyle-Width="15%" ItemStyle-HorizontalAlign="center">
+                       <ItemTemplate>
+                           <asp:Button ID="btn_Edit" runat="server" Text="ดูรายละเอียดที่ต้องแก้ไข" CommandName="edit" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
                            &nbsp; &nbsp; &nbsp;                        
                        </ItemTemplate>
                        
