@@ -1,4 +1,6 @@
-﻿Public Class FRM_DS_STAFF_EDIT
+﻿Imports Telerik.Web.UI
+
+Public Class FRM_DS_STAFF_EDIT
     Inherits System.Web.UI.Page
     Private _TR_ID As Integer
     Private _IDA As Integer
@@ -21,8 +23,7 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         runQuery()
         If Not IsPostBack Then
-            'txt_lmdfdate.Text = Date.Now.ToShortDateString()
-            'default_Remark()
+            rdp_cncdate.SelectedDate = Date.Now
         End If
 
     End Sub
@@ -57,6 +58,7 @@
         Catch ex As Exception
             '' Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")
         End Try
+        AddLogStatusDS(5, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
     End Sub
     Sub alert_reload(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');</script> ")

@@ -28,7 +28,15 @@
         </style>
 </head>
 <body>
+
     <form id="form1" runat="server">
+        <div>
+
+         <asp:HyperLink ID="hl_reader" runat="server" Target="_blank" CssClass="btn-control" >
+                 <input type="button" value="เปิดจาก acrobat reader"   class="btn-lg"   style="  Width:70%;" />
+                       </asp:HyperLink>
+         <asp:HiddenField ID="HiddenField1" runat="server" />
+    </div>
         <div>
             <center><h1>รายละเอียดการแก้ไข</h1></center>
         </div>
