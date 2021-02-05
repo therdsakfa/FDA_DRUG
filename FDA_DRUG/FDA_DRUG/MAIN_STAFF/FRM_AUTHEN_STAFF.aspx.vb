@@ -112,8 +112,12 @@
 
         Session("CLS") = _CLS
 
+        Try
+            ws.Authen_Login_MENU(token, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, "70001")
+        Catch ex As Exception
 
-        ws.Authen_Login_MENU(token, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, "70001")
+        End Try
+
 
 
         ' ws.Authen_Login(token)
