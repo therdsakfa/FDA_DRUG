@@ -19,6 +19,12 @@
             width: 30%;
             height: 264px;
         }
+        .auto-style5 {
+            width: 204px;
+        }
+        .auto-style6 {
+            width: 120px;
+        }
         </style>
 </head>
 <body>
@@ -39,7 +45,16 @@
         </table>
     </div>
     <br />
-        * กำหนดส่งเอกสารในะบบวันที่ <asp:Label ID="lbl_DATE" runat="server"></asp:Label> ก่อนเวลา 23.59 น. ของวันที่ระบุข้างต้น
+    <div>
+        <table>
+            <tr>
+                <td class="auto-style5">* กำหนดส่งเอกสารในะบบวันที่</td>
+                <td class="auto-style6"><center><asp:Label ID="lbl_DATE" runat="server"></asp:Label></center></td>
+                <td>ก่อนเวลา 23.59 น. ของวันที่ระบุข้างต้น</td>
+            </tr>
+        </table>
+    </div>
+         
     <br />
     <br />
     <div>

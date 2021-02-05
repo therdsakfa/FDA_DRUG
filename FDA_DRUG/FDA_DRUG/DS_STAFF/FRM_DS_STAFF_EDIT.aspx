@@ -22,7 +22,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="panel" style="width:100%">
             <div class="panel-heading panel-title">
-                <h1>&nbsp; หมายเหตุการแก้ไข</h1>
+                <center><h1>หมายเหตุการแก้ไข</h1></center>
             </div>
             <div class="panel-body">
 
@@ -31,7 +31,7 @@
                 <table class="table">
                     <tr >
                         <td align="right" class="auto-style3"><h4>หมายเหตุ :</h4></td>
-                        <td class="auto-style2"><asp:TextBox ID="Txt_EDIT" runat="server" CssClass="auto-style1" Width="454px" Height="211px"></asp:TextBox></td>
+                        <td class="auto-style2"><asp:TextBox ID="Txt_EDIT" runat="server" CssClass="auto-style1" Width="454px" Height="245px"></asp:TextBox></td>
                         <td><h4>ไฟล์แนบ(รายละเอียดเพิ่มเติม)</h4>
                             <asp:FileUpload ID="FileUpload1" runat="server" CssClass="btn-default" /><br />
                             <asp:FileUpload ID="FileUpload2" runat="server" CssClass="btn-default" />

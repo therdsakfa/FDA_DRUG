@@ -308,9 +308,12 @@ Public Class UC_DS_MAIN
 
     Private Sub GV_lcnno_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles GV_lcnno.RowCommand
 
+        Dim ws_118 As New WS_AUTHENTICATION.Authentication
+        Dim ws_66 As New Authentication_66.Authentication
+        Dim ws_104 As New AUTHENTICATION_104.Authentication
         Dim int_index As Integer = Convert.ToInt32(e.CommandArgument)
         Dim str_ID As String = GV_lcnno.DataKeys.Item(int_index)("IDA").ToString()
-
+        Dim url As String
 
         Dim dao As New DAO_DRUG.ClsDBdrsamp
         dao.GetDataby_IDA(str_ID)
@@ -322,7 +325,57 @@ Public Class UC_DS_MAIN
             Catch ex As Exception
 
             End Try
-        ElseIf e.CommandName = "choose" Then
+
+            url = "../DS/POPUP_DS_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lcn_ida=" & _lcn_ida
+
+            Try
+                ws_118.Timeout = 10000
+                ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+            Catch ex As Exception
+                Try
+                    ws_66.Timeout = 10000
+                    ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+
+                Catch ex2 As Exception
+                    Try
+                        ws_104.Timeout = 10000
+                        ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+
+                    Catch ex3 As Exception
+                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'http://privus.fda.moph.go.th';", True)
+                    End Try
+                End Try
+            End Try
+
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
+
+        ElseIf e.CommandName = "edit" Then
+
+            Try
+                tr_id = dao.fields.TR_ID
+            Catch ex As Exception
+
+            End Try
+            url = "../DS/FRM_DS_EDIT_REQUEST.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lcn_ida=" & _lcn_ida
+            Try
+                ws_118.Timeout = 10000
+                ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+            Catch ex As Exception
+                Try
+                    ws_66.Timeout = 10000
+                    ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+
+                Catch ex2 As Exception
+                    Try
+                        ws_104.Timeout = 10000
+                        ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+
+                    Catch ex3 As Exception
+                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'http://privus.fda.moph.go.th';", True)
+                    End Try
+                End Try
+            End Try
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
 
         End If
 
@@ -331,29 +384,29 @@ Public Class UC_DS_MAIN
         'Dim ws As New AUTHEN_LOG.Authentication
         'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", dao.fields.TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
 
-        Dim ws_118 As New WS_AUTHENTICATION.Authentication
-        Dim ws_66 As New Authentication_66.Authentication
-        Dim ws_104 As New AUTHENTICATION_104.Authentication
-        Try
-            ws_118.Timeout = 10000
-            ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
-        Catch ex As Exception
-            Try
-                ws_66.Timeout = 10000
-                ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+        'Dim ws_118 As New WS_AUTHENTICATION.Authentication
+        'Dim ws_66 As New Authentication_66.Authentication
+        'Dim ws_104 As New AUTHENTICATION_104.Authentication
+        'Try
+        '    ws_118.Timeout = 10000
+        '    ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+        'Catch ex As Exception
+        '    Try
+        '        ws_66.Timeout = 10000
+        '        ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
 
-            Catch ex2 As Exception
-                Try
-                    ws_104.Timeout = 10000
-                    ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
+        '    Catch ex2 As Exception
+        '        Try
+        '            ws_104.Timeout = 10000
+        '            ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
 
-                Catch ex3 As Exception
-                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'http://privus.fda.moph.go.th';", True)
-                End Try
-            End Try
-        End Try
+        '        Catch ex3 As Exception
+        '            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'http://privus.fda.moph.go.th';", True)
+        '        End Try
+        '    End Try
+        'End Try
 
-        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../DS/POPUP_DS_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lcn_ida=" & _lcn_ida & "');", True)
+        'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
 
     End Sub
 
