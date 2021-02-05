@@ -70,6 +70,11 @@
             dao.fields.TYPE = type 'ลำดับไฟล์เก็บไว้เรียกข้อมูล
             dao.fields.TRANSACTION_ID = transection 'เลขอ้างอิงPDFเก็บไว้เรียกข้อมูล
             dao.fields.PROCESS_ID = PROCESS_ID
+            Try
+                dao.fields.DESCRIPTION = Label1.Text
+            Catch ex As Exception
+
+            End Try
             dao.insert()
 
         End If
