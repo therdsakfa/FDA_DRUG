@@ -48,31 +48,10 @@ Public Class FRM_DS_EDIT_REQUEST
         Dim dao As New DAO_DRUG.ClsDBdrsamp
         dao.GetDataby_IDA(_IDA)
 
-        Dim url As String = "../REGISTRATION/FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & dao.fields.PRODUCT_ID_IDA & "&process=" & _ProcessID
-        Dim ws_118 As New WS_AUTHENTICATION.Authentication
-        Dim ws_66 As New Authentication_66.Authentication
-        Dim ws_104 As New AUTHENTICATION_104.Authentication
-        Try
-            ws_118.Timeout = 10000
-            ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "แก้ไขข้อมูล DL", _ProcessID)
-        Catch ex As Exception
-            Try
-                ws_66.Timeout = 10000
-                ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "แก้ไขข้อมูล DL", _ProcessID)
+        Response.Redirect("../REGISTRATION/FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & dao.fields.PRODUCT_ID_IDA & "&process=" & _ProcessID)
 
-            Catch ex2 As Exception
-                Try
-                    ws_104.Timeout = 10000
-                    ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "แก้ไขข้อมูล DL", _ProcessID)
-
-                Catch ex3 As Exception
-                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'http://privus.fda.moph.go.th';", True)
-                    'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'http://10.111.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=';", True)
-                End Try
-            End Try
-        End Try
-
-        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
+        'Dim url As String = "../REGISTRATION/FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & dao.fields.PRODUCT_ID_IDA & "&process=" & _ProcessID
+        'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
 
     End Sub
 End Class
