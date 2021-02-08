@@ -55,30 +55,35 @@
     End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim dao As New DAO_DRUG.ClsDBdalcn
-        dao.GetDataby_IDA(_IDA)
-        dao.fields.STATUS_ID = 8
-        dao.fields.PHARMACEUTICAL_CHEMICALS = txt_position.Text
+        If Len(txt_name.Text) = 0 Or Len(txt_position.Text) = 0 Then
+            Response.Write("<script type='text/javascript'>alert('กรุณากรอกข้อมูลให้ครบถ้วน');</script> ")
+        Else
+            Dim dao As New DAO_DRUG.ClsDBdalcn
+            dao.GetDataby_IDA(_IDA)
+            dao.fields.STATUS_ID = 8
+            dao.fields.PHARMACEUTICAL_CHEMICALS = txt_position.Text
 
-        dao.fields.TABLET_CAPSULE = txt_name.Text
-        dao.update()
+            dao.fields.TABLET_CAPSULE = txt_name.Text
+            dao.update()
 
-        Try
-            Dim ws_update As New WS_DRUG.WS_DRUG
-            ws_update.DRUG_INSERT_LICEN(Request.QueryString("IDA"), _CLS.CITIZEN_ID)
-        Catch ex As Exception
+            Try
+                Dim ws_update As New WS_DRUG.WS_DRUG
+                ws_update.DRUG_INSERT_LICEN(Request.QueryString("IDA"), _CLS.CITIZEN_ID)
+            Catch ex As Exception
 
-        End Try
+            End Try
 
-        Try
-            Dim ws_update126 As New WS_DRUG_126.WS_DRUG
-            ws_update126.DRUG_INSERT_LICEN_126(Request.QueryString("IDA"), _CLS.CITIZEN_ID)
-        Catch ex As Exception
+            Try
+                Dim ws_update126 As New WS_DRUG_126.WS_DRUG
+                ws_update126.DRUG_INSERT_LICEN_126(Request.QueryString("IDA"), _CLS.CITIZEN_ID)
+            Catch ex As Exception
 
-        End Try
+            End Try
 
-        AddLogStatus(8, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
-        alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
+            AddLogStatus(8, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+            alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
+        End If
+
     End Sub
     Private Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>alert('" + text + "');parent.close_modal();</script> ")

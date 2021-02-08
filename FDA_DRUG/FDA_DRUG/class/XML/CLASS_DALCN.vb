@@ -484,7 +484,16 @@
                 _Drug_Type3 = value
             End Set
         End Property
-
+        '
+        Private _frtappdate As String
+        Public Property frtappdate() As String
+            Get
+                Return _frtappdate
+            End Get
+            Set(ByVal value As String)
+                _frtappdate = value
+            End Set
+        End Property
 #End Region
 
     End Class

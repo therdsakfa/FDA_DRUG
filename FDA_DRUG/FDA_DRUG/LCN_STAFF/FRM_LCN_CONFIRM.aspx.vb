@@ -1341,7 +1341,16 @@ Public Class WebForm35
                 class_xml.EXP_YEAR = NumEng2Thai(expyear)
             End If
         End If
+        Try
+            If IsNothing(dao.fields.frtappdate) = False Then
+                Dim frtappdate As Date
+                If Date.TryParse(dao.fields.frtappdate, frtappdate) = True Then
+                    class_xml.frtappdate = NumEng2Thai(frtappdate.Day) & " " & frtappdate.ToString("MMMM") & " " & NumEng2Thai(con_year(frtappdate.Year))
+                End If
+            End If
+        Catch ex As Exception
 
+        End Try
         '-------------------เก่า------------------
         'For Each dao_PHR.fields In dao_PHR.datas
         '    Dim cls_DALCN_PHR As New DALCN_PHRi
