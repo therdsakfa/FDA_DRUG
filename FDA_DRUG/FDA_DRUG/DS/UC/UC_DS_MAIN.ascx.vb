@@ -327,56 +327,21 @@ Public Class UC_DS_MAIN
             End Try
 
             url = "../DS/POPUP_DS_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lcn_ida=" & _lcn_ida
-
-            Try
-                ws_118.Timeout = 10000
-                ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
-            Catch ex As Exception
-                Try
-                    ws_66.Timeout = 10000
-                    ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
-
-                Catch ex2 As Exception
-                    Try
-                        ws_104.Timeout = 10000
-                        ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
-
-                    Catch ex3 As Exception
-                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'http://privus.fda.moph.go.th';", True)
-                    End Try
-                End Try
-            End Try
-
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
 
-        ElseIf e.CommandName = "edit" Then
-
+        ElseIf e.CommandName = "Rowedit" Then
+            Dim tr_id As String = 0
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
 
             End Try
             url = "../DS/FRM_DS_EDIT_REQUEST.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lcn_ida=" & _lcn_ida
-            Try
-                ws_118.Timeout = 10000
-                ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
-            Catch ex As Exception
-                Try
-                    ws_66.Timeout = 10000
-                    ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
-
-                Catch ex2 As Exception
-                    Try
-                        ws_104.Timeout = 10000
-                        ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "ดูข้อมูลยาตัวอย่าง", _process)
-
-                    Catch ex3 As Exception
-                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'http://privus.fda.moph.go.th';", True)
-                    End Try
-                End Try
-            End Try
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
 
+            'ElseIf e.CommandName = "choose" Then
+            '    url = "../REGISTRATION/FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & dao.fields.PRODUCT_ID_IDA & "&process=" & _process
+            '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
         End If
 
 
@@ -414,15 +379,17 @@ Public Class UC_DS_MAIN
         If e.Row.RowType = DataControlRowType.DataRow Then
             Dim btn_select As Button = DirectCast(e.Row.FindControl("btn_Select"), Button)
             Dim btn_Edit As Button = DirectCast(e.Row.FindControl("btn_Edit"), Button)
+            Dim btn_Choose As Button = DirectCast(e.Row.FindControl("btn_Choose"), Button)
             'Dim ida As String = GV_lcnno.DataKeys.Item(e.Row.RowIndex).Value.ToString()
             Try
                 Dim dao As New DAO_DRUG.ClsDBdrsamp
                 dao.GetDataby_PRODUCT_ID_IDA(_main_ida)
                 If dao.fields.STATUS_ID >= 2 Then
                     btn_select.Style.Add("display", "none")
-                End If
-                If dao.fields.STATUS_ID <> 5 Then
+                ElseIf dao.fields.STATUS_ID <> 5 Then
                     btn_Edit.Style.Add("display", "none")
+                    'ElseIf dao.fields.STATUS_ID <> 5 Then
+                    '    btn_Choose.Style.Add("display", "none")
                 End If
             Catch ex As Exception
 

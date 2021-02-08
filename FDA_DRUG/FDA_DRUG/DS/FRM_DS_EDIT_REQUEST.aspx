@@ -1,11 +1,8 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="FRM_DS_EDIT_REQUEST.aspx.vb" Inherits="FDA_DRUG.FRM_DS_EDIT_REQUEST" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/POPUP.Master" CodeBehind="FRM_DS_EDIT_REQUEST.aspx.vb" Inherits="FDA_DRUG.FRM_DS_EDIT_REQUEST" %>
+
 <%@ Register Src="~/UC/UC_GRID_ATTACH.ascx" TagPrefix="uc1" TagName="UC_GRID_ATTACH" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style2 {
             width: 552px;
@@ -20,35 +17,95 @@
             height: 264px;
         }
         .auto-style5 {
-            width: 204px;
+            width: 209px;
         }
         .auto-style6 {
             width: 120px;
         }
         </style>
-</head>
-<body>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <form id="form1" runat="server">
-        <div>
+    <script type="text/javascript" >
+        $(document).ready(function () {
+            $(window).load(function () {
+                $.ajax({
+                    type: 'POST',
+                    data: { submit: true },
+                    success: function (result) {
+                        //    $('#spinner').fadeOut('slow');
+                    }
+                });
+            });
 
-         <asp:HyperLink ID="hl_reader" runat="server" Target="_blank" CssClass="btn-control" >
-                 <input type="button" value="เปิดจาก acrobat reader"   class="btn-lg"   style="  Width:70%;" />
-                       </asp:HyperLink>
-         <asp:HiddenField ID="HiddenField1" runat="server" />
-    </div>
+            function CloseSpin() {
+                $('#spinner').toggle('slow');
+            }
+
+            $('#ContentPlaceHolder1_btn_upload').click(function () {
+
+                $('#spinner').toggle('slow');
+                Popups('POPUP_LCN_UPLOAD.aspx');
+                return false;
+            });
+
+            $('#ContentPlaceHolder1_btn_download').click(function () {
+                $('#spinner').fadeIn('slow');
+                Popups('POPUP_LCN_DOWNLOAD.aspx');
+                return false;
+            });
+
+            function Popups(url) { // สำหรับทำ Div Popup
+                $('#myModal').modal('toggle'); // เป็นคำสั่งเปิดปิด
+                var i = $('#f1'); // ID ของ iframe   
+                i.attr("src", url); //  url ของ form ที่จะเปิด
+            }
+            
+            function close_modal() { // คำสั่งสั่งปิด PopUp
+                $('#myModal').modal('hide');
+                $('#ContentPlaceHolder1_btn_reload').click(); // ตัวอย่างให้คำสั่งปุ่มที่ซ่อนอยู่ Click
+            }
+        });
+        function Popups2(url) { // สำหรับทำ Div Popup
+
+            $('#myModal').modal('toggle'); // เป็นคำสั่งเปิดปิด
+            var i = $('#f1'); // ID ของ iframe   
+            i.attr("src", url); //  url ของ form ที่จะเปิด
+        }
+        function spin_space() { // คำสั่งสั่งปิด PopUp
+            //    alert('123456');
+            $('#spinner').toggle('slow');
+            //$('#myModal').modal('hide');
+            //$('#ContentPlaceHolder1_Button2').click(); // ตัวอย่างให้คำสั่งปุ่มที่ซ่อนอยู่ Click
+
+        }
+        function closespinner() {
+            $('#spinner').fadeOut('slow');
+            alert('Download Success');
+            Loaddata();
+        }
+        </script> 
+  <div id="spinner" style=" background-color:transparent;display:none; " >
+  <img src="../imgs/spinner.gif" alt="Loading" style="position: absolute; top: 120px; left: 293px; height: 185px; width: 207px;" />
+                
+</div>
+    
+
+
         <div>
             <center><h1>รายละเอียดการแก้ไข</h1></center>
         </div>
-    </form>
+    
     <div>
         <table class="table">
             <tr>
                 <td align="right" class="auto-style3"><h4>รายละเอียดการแก้ไข : </h4></td>
-                <td class="auto-style2"><asp:Label ID="lbl_EDIT" runat="server"></asp:Label></td>
-                <td style="padding-left:10%" class="auto-style4"><uc1:UC_GRID_ATTACH runat="server" ID="UC_GRID_ATTACH" /></td>
-                <br />
-                <br />
+                <td class="auto-style2"><h4><asp:Label ID="lbl_EDIT" runat="server"></asp:Label></h4></td>
+                <td style="padding-left:10%" class="auto-style4">
+                    <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" />
+
+                </td>
+                
             </tr>
         </table>
     </div>
@@ -56,7 +113,7 @@
     <div>
         <table>
             <tr>
-                <td class="auto-style5">* กำหนดส่งเอกสารในะบบวันที่</td>
+                <td class="auto-style5" align="right">* กำหนดส่งเอกสารในะบบวันที่</td>
                 <td class="auto-style6"><center><asp:Label ID="lbl_DATE" runat="server"></asp:Label></center></td>
                 <td>ก่อนเวลา 23.59 น. ของวันที่ระบุข้างต้น</td>
             </tr>
@@ -68,5 +125,5 @@
     <div>
         <center><asp:Button ID="Button_DL" runat="server" Text="แก้ไขข้อมูลส่วนที่ 2"  CssClass="btn-lg" Height="45px"/></center>
     </div>
-</body>
-</html>
+
+    </asp:Content>

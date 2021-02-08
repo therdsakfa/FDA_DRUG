@@ -14,33 +14,6 @@ Option Explicit On
 Partial Public Class FRM_DS_EDIT_REQUEST
 
     '''<summary>
-    '''form1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
-    '''<summary>
-    '''hl_reader control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
-
-    '''<summary>
-    '''HiddenField1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
-
-    '''<summary>
     '''lbl_EDIT control.
     '''</summary>
     '''<remarks>
