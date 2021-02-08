@@ -71,11 +71,12 @@
                  <table style="width:100%;">
                      <tr>
                          <td>
- <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True">
-                     <asp:ListItem Value="1">1. ยื่นผ่านระบบ eReview</asp:ListItem>
-                     <asp:ListItem Value="2">2. ยื่นผ่านระบบ Skynet Smart Dropbox</asp:ListItem>
-                     <asp:ListItem Value="3">3. ยื่นผ่านระบบ PDF ผ่านระบบนี้ หรือยื่นแบบ walk in</asp:ListItem>
-                 </asp:RadioButtonList>
+                             <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True">
+                                 <asp:ListItem Value="1">1. ยื่นผ่านระบบ eReview/docuBridge</asp:ListItem>
+                                 <asp:ListItem Value="2">2. ยื่นผ่านระบบ Skynet Smart Dropbox</asp:ListItem>
+                                 <asp:ListItem Value="3">3. ยื่นผ่านระบบ PDF ผ่านระบบนี้ </asp:ListItem>
+                                 <asp:ListItem Value="4">4. ยื่นผ่านระบบ walk in</asp:ListItem>
+                             </asp:RadioButtonList>
                          </td>
                      </tr>
                      <tr>

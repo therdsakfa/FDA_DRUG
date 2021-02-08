@@ -149,6 +149,10 @@
                        <telerik:GridBoundColumn DataField="RGTNO_DISPLAY" FilterControlAltText="Filter RGTNO_DISPLAY column"
                            HeaderText="เลขทะเบียน" SortExpression="RGTNO_DISPLAY" UniqueName="RGTNO_DISPLAY">
                        </telerik:GridBoundColumn>
+                       
+                       <telerik:GridBoundColumn DataField="drugname" FilterControlAltText="Filter drugname column"
+                           HeaderText="ชื่อยา" SortExpression="drugname" UniqueName="drugname">
+                       </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="TR_ID" FilterControlAltText="Filter TR_ID column"
                            HeaderText="เลขดำเนินการ" SortExpression="TR_ID" UniqueName="TR_ID" AllowFiltering="true">
                        </telerik:GridBoundColumn>

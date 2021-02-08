@@ -39,6 +39,7 @@
         <asp:Button ID="btn_hen_tr_id" runat="server" Text="grn_td_nym" />
         <asp:Button ID="btn_iowa_run" runat="server" Text="Run iowa" />
         <asp:Button ID="btn_test_str" runat="server" Text="test str" />
+        <asp:Button ID="Button33" runat="server" Text="ดึงสาร transfer" />
     <h2>
         บันทึกข้อมูลวันที่ขอตรวจ
         <telerik:RadScriptManager ID="RadScriptManager1" Runat="server">

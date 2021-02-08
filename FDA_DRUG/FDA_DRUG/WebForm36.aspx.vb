@@ -2909,5 +2909,57 @@ Public Class WebForm36
         Dim str_acc As String = ""
         str_acc = "บันทึกเลข 555555 เรียบร้อยแล้ว เมื่อเวลา " & Date.Now.ToString("HH:mm") & " วันที่ " & Date.Now.ToLongDateString
     End Sub
+
+    Protected Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
+        Try
+            Dim dao_cas As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_IOW
+            dao_cas.GetDataby_Newcode_U("U1DR2F1042500004711C")
+            For Each dao_cas.fields In dao_cas.datas
+                Dim dao_rgt_cas As New DAO_DRUG.TB_DRRQT_DETAIL_CAS
+                With dao_rgt_cas.fields
+                    .AORI = dao_cas.fields.aori
+                    .BASE_FORM = dao_cas.fields.qtytxt_all
+                    '.FK_IDA = 0
+                    .FK_SET = dao_cas.fields.flineno
+                    .IOWA = dao_cas.fields.iowacd
+                    .QTY = dao_cas.fields.qty
+                    .ROWS = dao_cas.fields.rid
+                    .FK_IDA = 103327
+                    Try
+                        .REMARK = dao_cas.fields.remark
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        Dim dao_u As New DAO_DRUG.TB_drsunit
+                        dao_u.GetDataby_sunitengnm(dao_cas.fields.sunitengnm)
+                        .SUNITCD = dao_u.fields.sunitcd
+                    Catch ex As Exception
+
+                    End Try
+
+                End With
+                dao_rgt_cas.insert()
+
+                Dim dao_eq As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_IOW_EQ
+                dao_eq.GetDataby_Newcode_rid_flineno(dao_cas.fields.Newcode_rid, dao_cas.fields.flineno)
+                For Each dao_eq.fields In dao_eq.datas
+                    Dim dao_eq_rgt As New DAO_DRUG.TB_DRRQT_EQTO
+                    With dao_eq_rgt.fields
+                        .FK_IDA = dao_rgt_cas.fields.IDA
+                        .IOWA = dao_eq.fields.iowacd
+                        .QTY = dao_eq.fields.qty
+                        .ROWS = dao_eq.fields.rid
+                        .REMARK = dao_eq.fields.remark
+                        .FK_SET = dao_eq.fields.flineno
+                        .FK_DRRQT_IDA = 103327
+                    End With
+                    dao_eq_rgt.insert()
+                Next
+            Next
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
 
