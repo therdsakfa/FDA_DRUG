@@ -117,11 +117,12 @@
                          (ตัวอย่าง 10/12/2563)
                          
                          </td></tr>
+                     <tr><td><asp:Button ID="btn_edit" runat="server" Text="แก้ไขรายละเอียดคำขอ" CssClass="btn-lg"   Width="80%" /></td></tr>
                      <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยืนยัน" CssClass="btn-lg" OnClientClick="return confirm('คุณต้องการยืนยันข้อมูลหรือไม่?');"   Width="80%" /></td></tr>
                      <tr><td>
                          <asp:Button ID="btn_send_edit" runat="server" CssClass="btn-lg"  Text="ระบบปรับปรุงข้อมูลทะเบียน" Width="80%" />
                          </td></tr>
-                     <tr><td> <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก" CssClass="btn-lg"   Width="80%"/></td></tr>
+                     <tr><td> <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก/ยกเลิกคำขอ" CssClass="btn-lg"   Width="80%"/></td></tr>
                      <tr><td>  <asp:Button ID="btn_load" runat="server" Text="Download PDF" CssClass="btn-lg"   Width="80%" /></td></tr>
                      <tr><td>  <asp:Button ID="btn_load0" runat="server" Text="กลับหน้ารายการ" CssClass="btn-lg"   Width="80%" Height="53px" /></td></tr>
 

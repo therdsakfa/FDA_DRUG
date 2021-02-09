@@ -161,10 +161,10 @@
                            CommandName="sel" Text="ดูข้อมูล">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
-                       <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edt"
+                       <%--<telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edt"
                            CommandName="edt" Text="แก้ไข">
                            <HeaderStyle Width="70px" />
-                       </telerik:GridButtonColumn>
+                       </telerik:GridButtonColumn>--%>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_report2"
                            CommandName="_report" Text="ใบนัด">
                            <HeaderStyle Width="70px" />

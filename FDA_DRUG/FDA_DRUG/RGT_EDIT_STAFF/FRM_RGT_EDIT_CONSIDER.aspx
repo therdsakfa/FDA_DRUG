@@ -36,6 +36,10 @@
                         </telerik:RadComboBox>
                         </td></tr>
 
+                    <tr ><td>ตำแหน่ง</td><td>
+                        <asp:TextBox ID="txt_position" runat="server" CssClass="input-lg" Width="500px"></asp:TextBox>
+                        </td></tr>
+
                     <tr ><td>วันที่เสนอลงนาม</td><td>
                         <asp:TextBox ID="TextBox1" runat="server" class="input-lg"></asp:TextBox></td></tr>
 

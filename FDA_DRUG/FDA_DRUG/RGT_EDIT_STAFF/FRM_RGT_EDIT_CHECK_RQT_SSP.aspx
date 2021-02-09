@@ -54,7 +54,7 @@
                     <%-- <tr ><td>เลขรับ</td><td>
                         <asp:TextBox ID="Txt_rcvno_no" runat="server" CssClass="input-lg"></asp:TextBox>
                         (เช่น 1/62)</td></tr>--%>
-                   <tr ><td class="auto-style1">วันที่ตรวจคำขอ</td><td class="auto-style1">
+                   <tr ><td class="auto-style1">วันที่รับคำขอ</td><td class="auto-style1">
                         <asp:TextBox ID="txt_rcvdate" runat="server" CssClass="input-lg"></asp:TextBox>
                         </td></tr>
 

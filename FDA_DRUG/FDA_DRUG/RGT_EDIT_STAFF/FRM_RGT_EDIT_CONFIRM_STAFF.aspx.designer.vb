@@ -104,6 +104,15 @@ Partial Public Class FRM_RGT_EDIT_CONFIRM_STAFF
     Protected WithEvents txt_appdate As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''btn_edit control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_edit As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''btn_confirm control.
     '''</summary>
     '''<remarks>
