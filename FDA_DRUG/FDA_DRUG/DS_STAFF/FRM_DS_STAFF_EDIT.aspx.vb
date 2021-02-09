@@ -14,7 +14,7 @@ Public Class FRM_DS_STAFF_EDIT
             _TR_ID = Request.QueryString("TR_ID")
             _IDA = Request.QueryString("IDA")
             _CLS = Session("CLS")
-            '_ProcessID = Request.QueryString("process")
+            _ProcessID = Request.QueryString("PROCESS_ID")
             ' _type = "1"
         End If
 
@@ -68,6 +68,9 @@ Public Class FRM_DS_STAFF_EDIT
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');parent.close_modal();</script> ")
     End Sub
+    Sub alert1(ByVal text As String)
+        Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');</script> ")
+    End Sub
 
     Protected Sub btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
         Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
@@ -78,27 +81,25 @@ Public Class FRM_DS_STAFF_EDIT
         Else
             alert("กรุณาแนบไฟล์คำขอ")
         End If
-
+        alert1("ดำเนินการ UPLOAD FILE แก้ไขคำขอเรียบร้อยแล้ว")
     End Sub
 
     Sub upload()
         Try
             If FileUpload1.HasFile Or FileUpload2.HasFile Then
-                Dim bao As New BAO.AppSettings
-                bao.RunAppSettings()
+                'Dim bao As New BAO.AppSettings
+                'bao.RunAppSettings()
 
 
-                Dim TR_ID As String = ""
-                Dim bao_tran As New BAO_TRANSECTION
-                bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
-                bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-                TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
-                'If Upload_Attach(TR_ID) Then
+                Dim TR_ID As String = _TR_ID
+                'Dim bao_tran As New BAO_TRANSECTION
+                'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+                'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+                'TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
 
-                'ตรวจสอบไฟล์แนบ
                 If FileUpload1.HasFile Then
                     insert_file(TR_ID, FileUpload1)
-                Else
+                ElseIf FileUpload2.HasFile Then
                     insert_file(TR_ID, FileUpload2)
                 End If
             End If
@@ -113,7 +114,7 @@ Public Class FRM_DS_STAFF_EDIT
             Dim bao As New BAO.AppSettings
             bao.RunAppSettings()
 
-            Dim TYPE As String = fileupload.ID.ToString.Substring(10, 1) - 1
+            Dim TYPE As String = 99
 
             Dim extensionname As String = GetExtension(fileupload.FileName).ToLower()
             fileupload.SaveAs(bao._PATH_DEFAULT & "/upload/" & "DA-" & _ProcessID & "-" & con_year(Date.Now().Year()) & "-" & TR_ID & "-" & TYPE & "." & extensionname)

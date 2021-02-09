@@ -26,7 +26,7 @@ Public Class FRM_DS_EDIT_REQUEST
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunQuery()
         If Not IsPostBack Then
-            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
+            UC_GRID_ATTACH.load_gv_V4(_TR_ID, 99, _ProcessID)
             set_label()
         End If
 
@@ -36,7 +36,13 @@ Public Class FRM_DS_EDIT_REQUEST
         Dim dao_edit As New DAO_DRUG.ClsDBDRSAMP_EDIT_REQUEST
         dao_edit.Getdataby_FK_IDA(_IDA)
         Try
-            lbl_EDIT.Text = dao_edit.fields.DESCRIPTION
+            If dao_edit.fields.DESCRIPTION IsNot Nothing Then
+                Txt_EDIT.Text = dao_edit.fields.DESCRIPTION
+            End If
+        Catch ex As Exception
+
+        End Try
+        Try
             lbl_DATE.Text = dao_edit.fields.CREATE_DATE
         Catch ex As Exception
 

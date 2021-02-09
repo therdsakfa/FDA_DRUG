@@ -11,6 +11,7 @@ Public Class POPUP_DS_UPLOAD2
     Private _YEARS As String
     Private _lcn_ida As String
     Private _staff As String
+    Private _main_ida As String
     'Private _result As String = "กรุณาแนบไฟล์ดังนี้\n"
 
     Sub RunSession()
@@ -22,6 +23,7 @@ Public Class POPUP_DS_UPLOAD2
             _CLS = Session("CLS")
             _YEARS = con_year(Date.Now.Year)
             _staff = Request.QueryString("staff")
+            _main_ida = Request.QueryString("main_ida")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
@@ -104,13 +106,20 @@ Public Class POPUP_DS_UPLOAD2
         If FileUpload1.HasFile Then
             Dim bao As New BAO.AppSettings
             bao.RunAppSettings()
-
-
+            Dim dao_ds As New DAO_DRUG.ClsDBdrsamp
+            dao_ds.GetDataby_PRODUCT_ID_IDA(_main_ida)
             Dim TR_ID As String = ""
-            Dim bao_tran As New BAO_TRANSECTION
-            bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
-            bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-            TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
+            Try
+                If dao_ds.fields.TR_ID Is Nothing Then
+                    Dim bao_tran As New BAO_TRANSECTION
+                    bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+                    bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+                    TR_ID = bao_tran.insert_transection_new(_ProcessID)
+                End If
+            Catch ex As Exception
+
+            End Try
+            'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
             'If Upload_Attach(TR_ID) Then
 
             'ตรวจสอบไฟล์แนบ
@@ -216,8 +225,10 @@ Public Class POPUP_DS_UPLOAD2
         objStreamReader.Close()
         Dim dao As New DAO_DRUG.ClsDBdrsamp
         dao.GetDataby_IDA(p2.drsamp.IDA)
-        Try
+        Dim dao_ds As New DAO_DRUG.ClsDBdrsamp
+        dao_ds.GetDataby_PRODUCT_ID_IDA(_main_ida)
 
+        Try
             If dao.fields.CUSTOMER_CITIZEN_AUTHORIZE <> _CLS.CITIZEN_ID_AUTHORIZE Then
                 cause = "บริษัทของผู้ทำคำขอกับบริษัทของผู้ยื่นคำขอไม่ตรงกัน"
                 Throw New System.Exception("")  'บังคับให้ออกจาก try catch
@@ -231,45 +242,63 @@ Public Class POPUP_DS_UPLOAD2
                 End If
             End If
 
-            dao.fields.process_id = _ProcessID
-            dao.fields.STATUS_ID = 0 'บันทึกและรอส่งเรื่อง
-            dao.fields.event_start = Date.Now
-            dao.fields.TR_ID = TR_ID
-            Try
-                If Request.QueryString("tt") <> "" Then
-                    'Dim dao_regist As New DAO_DRUG.ClsDBDRUG_REGISTRATION
-                    'dao_regist.GetDataby_IDA(Request.QueryString("main_ida"))
-                    dao.fields.cndno = Request.QueryString("tt") 'dao_regist.fields.DRUG_EQ_TO
+            If dao_ds.fields.TR_ID Is Nothing Then
+
+                dao.fields.process_id = _ProcessID
+                dao.fields.STATUS_ID = 0 'บันทึกและรอส่งเรื่อง
+                dao.fields.event_start = Date.Now
+                dao.fields.TR_ID = TR_ID
+                Try
+                    If Request.QueryString("tt") <> "" Then
+                        'Dim dao_regist As New DAO_DRUG.ClsDBDRUG_REGISTRATION
+                        'dao_regist.GetDataby_IDA(Request.QueryString("main_ida"))
+                        dao.fields.cndno = Request.QueryString("tt") 'dao_regist.fields.DRUG_EQ_TO
+                    End If
+
+                Catch ex As Exception
+
+                End Try
+
+                dao.update()
+
+                Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+                dao_up.GetDataby_TR_ID_Process(dao.fields.TR_ID, dao.fields.process_id)
+                dao_up.fields.REF_NO = dao.fields.IDA
+                dao_up.update()
+
+                Dim dao_pack_copy As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
+                dao_pack_copy.GetDataby_FK_IDA(p2.drsamp.IDA)
+                If IsNothing(dao_pack_copy.fields.FK_IDA) Then
+                    Dim dao_pack As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
+                    dao_pack_copy = New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
+                    dao_pack.GetData_chk_by_FK_IDA(p2.drsamp.PRODUCT_ID_IDA)
+                    For Each dao_pack.fields In dao_pack.datas
+                        dao_pack_copy.fields = dao_pack.fields
+                        dao_pack_copy.fields.FK_IDA = p2.drsamp.IDA
+                        dao_pack_copy.insert()
+                        dao_pack = New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
+                    Next
                 End If
-
-            Catch ex As Exception
-
-            End Try
-
-            dao.update()
-
-            Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-            dao_up.GetDataby_TR_ID_Process(dao.fields.TR_ID, dao.fields.process_id)
-            dao_up.fields.REF_NO = dao.fields.IDA
-            dao_up.update()
-
-            Dim dao_pack_copy As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
-            dao_pack_copy.GetDataby_FK_IDA(p2.drsamp.IDA)
-            If IsNothing(dao_pack_copy.fields.FK_IDA) Then
-                Dim dao_pack As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
-                dao_pack_copy = New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
-                dao_pack.GetData_chk_by_FK_IDA(p2.drsamp.PRODUCT_ID_IDA)
-                For Each dao_pack.fields In dao_pack.datas
-                    dao_pack_copy.fields = dao_pack.fields
-                    dao_pack_copy.fields.FK_IDA = p2.drsamp.IDA
-                    dao_pack_copy.insert()
-                    dao_pack = New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
-                Next
+                AddLogStatusEtracking(0, 0, _CLS.CITIZEN_ID, "อัพโหลดเอกสารยาตัวอย่าง " & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, dao.fields.TR_ID, dao.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
+            Else
+                Dim dao_pack_copy As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
+                dao_pack_copy.GetDataby_FK_IDA(p2.drsamp.IDA)
+                If IsNothing(dao_pack_copy.fields.FK_IDA) Then
+                    Dim dao_pack As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
+                    dao_pack_copy = New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
+                    dao_pack.GetData_chk_by_FK_IDA(p2.drsamp.PRODUCT_ID_IDA)
+                    For Each dao_pack.fields In dao_pack.datas
+                        dao_pack_copy.fields = dao_pack.fields
+                        dao_pack_copy.fields.FK_IDA = p2.drsamp.IDA
+                        dao_pack_copy.update()
+                        dao_pack = New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
+                    Next
+                End If
+                AddLogStatusEtracking(0, 0, _CLS.CITIZEN_ID, "อัพเดตเอกสารยาตัวอย่าง " & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, dao.fields.TR_ID, dao.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
             End If
         Catch ex As Exception
             check = False
         End Try
-        AddLogStatusEtracking(0, 0, _CLS.CITIZEN_ID, "อัพโหลดเอกสารยาตัวอย่าง " & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, dao.fields.TR_ID, dao.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
 
         Return {check, cause}
     End Function

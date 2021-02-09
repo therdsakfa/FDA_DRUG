@@ -234,7 +234,7 @@ Public Class FRM_DS_STAFF_CONFIRM
             AddLogStatusDS(10, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
             alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.rcvno)
         ElseIf STATUS_ID = 5 Then 'ยื่นแก้ไข
-            Response.Redirect("FRM_DS_STAFF_EDIT.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
+            Response.Redirect("FRM_DS_STAFF_EDIT.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&PROCESS_ID=" & PROCESS_ID)
             AddLogStatusDS(5, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
         ElseIf STATUS_ID = 9 Then 'เสนอลงนาม
             'dao.fields.STATUS_ID = STATUS_ID

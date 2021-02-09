@@ -5,15 +5,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style2 {
-            width: 552px;
+            width: 485px;
             height: 264px;
         }
         .auto-style3 {
             width: 201px;
-            height: 264px;
-        }
-        .auto-style4 {
-            width: 30%;
             height: 264px;
         }
         .auto-style5 {
@@ -100,8 +96,8 @@
         <table class="table">
             <tr>
                 <td align="right" class="auto-style3"><h4>รายละเอียดการแก้ไข : </h4></td>
-                <td class="auto-style2"><h4><asp:Label ID="lbl_EDIT" runat="server"></asp:Label></h4></td>
-                <td style="padding-left:10%" class="auto-style4">
+                <td class="auto-style2"><h4><asp:TextBox ID="Txt_EDIT" TextMode="MultiLine" runat="server" CssClass="auto-style1" Width="530px" Height="245px">-</asp:TextBox></h4></td>
+                <td >
                     <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" />
 
                 </td>
@@ -109,7 +105,7 @@
             </tr>
         </table>
     </div>
-    <br />
+    
     <div>
         <table>
             <tr>
@@ -120,7 +116,7 @@
         </table>
     </div>
          
-    <br />
+    
     <br />
     <div>
         <center><asp:Button ID="Button_DL" runat="server" Text="แก้ไขข้อมูลส่วนที่ 2"  CssClass="btn-lg" Height="45px"/></center>
