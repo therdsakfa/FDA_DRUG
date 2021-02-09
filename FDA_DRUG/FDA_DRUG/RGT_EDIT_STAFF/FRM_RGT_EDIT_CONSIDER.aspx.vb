@@ -60,7 +60,10 @@
         rcb_staff_offer.DataBind()
     End Sub
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Try
+        'Try
+        If Len(txt_app_date.Text) = 0 Then
+            Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")
+        Else
             If Len(txt_position.Text) = 0 Then
                 Response.Write("<script type='text/javascript'>alert('กรุณากรอกตำแหน่ง');</script> ")
             Else
@@ -104,11 +107,13 @@
                 'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", PROCESS_ID, _CLS.PVCODE, 6, "เสนอลงนาม", "SOP-DRUG-10-" & PROCESS_ID & "-3", "อนุมัติ", "รอเจ้าหน้าที่อนุมัติคำขอ", "STAFF", _TR_ID, SOP_STATUS:="เสนอลงนาม")
                 alert("บันทึกข้อมูลเรียบร้อย")
             End If
+        End If
 
-        Catch ex As Exception
-            Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")
 
-        End Try
+        'Catch ex As Exception
+        '    Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")
+
+        'End Try
 
     End Sub
 
