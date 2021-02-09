@@ -41,6 +41,15 @@ Partial Public Class FRM_RGT_EDIT_CONSIDER
     Protected WithEvents rcb_staff_offer As Global.Telerik.Web.UI.RadComboBox
     
     '''<summary>
+    '''txt_position control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_position As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''TextBox1 control.
     '''</summary>
     '''<remarks>

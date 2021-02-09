@@ -61,45 +61,50 @@
     End Sub
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
-            Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-            Dim bao As New BAO.GenNumber
-
-            dao.GetDatabyIDA(_IDA)
-            If Len(_TR_ID) >= 9 Then
-                dao_up.GetDataby_TR_ID_Process(_TR_ID, dao.fields.PROCESS_ID)
+            If Len(txt_position.Text) = 0 Then
+                Response.Write("<script type='text/javascript'>alert('กรุณากรอกตำแหน่ง');</script> ")
             Else
-                dao_up.GetDataby_IDA(_TR_ID)
+                Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
+                Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+                Dim bao As New BAO.GenNumber
+
+                dao.GetDatabyIDA(_IDA)
+                If Len(_TR_ID) >= 9 Then
+                    dao_up.GetDataby_TR_ID_Process(_TR_ID, dao.fields.PROCESS_ID)
+                Else
+                    dao_up.GetDataby_IDA(_TR_ID)
+                End If
+
+                AddLogStatus(6, dao.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
+
+                Dim PROCESS_ID As String = dao.fields.PROCESS_ID
+
+                'Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
+                'dao_p.GetDataby_PROCESS_ID(PROCESS_ID)
+                Dim GROUP_NUMBER As String = dao.fields.PROCESS_ID
+
+                Dim CONSIDER_DATE As Date = CDate(TextBox1.Text)
+
+                '--------------------------------
+
+                dao.fields.REMARK = Txt_Remark.Text
+                dao.fields.STATUS_ID = 14
+                dao.fields.CONSIDER_DATE = CONSIDER_DATE
+                dao.fields.SIGN_POSITION = txt_position.Text
+                dao.fields.CHK_ATTACH1 = rcb_staff_offer.SelectedValue
+                Try
+                    dao.fields.CONSIDER_DATE = CDate(txt_app_date.Text)
+                Catch ex As Exception
+
+                End Try
+
+                dao.update()
+
+                'Dim cls_sop As New CLS_SOP
+                'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", PROCESS_ID, _CLS.PVCODE, 6, "เสนอลงนาม", "SOP-DRUG-10-" & PROCESS_ID & "-3", "อนุมัติ", "รอเจ้าหน้าที่อนุมัติคำขอ", "STAFF", _TR_ID, SOP_STATUS:="เสนอลงนาม")
+                alert("บันทึกข้อมูลเรียบร้อย")
             End If
 
-            AddLogStatus(6, dao.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
-
-            Dim PROCESS_ID As String = dao.fields.PROCESS_ID
-
-            'Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
-            'dao_p.GetDataby_PROCESS_ID(PROCESS_ID)
-            Dim GROUP_NUMBER As String = dao.fields.PROCESS_ID
-
-            Dim CONSIDER_DATE As Date = CDate(TextBox1.Text)
-
-            '--------------------------------
-
-            dao.fields.remark = Txt_Remark.Text
-            dao.fields.STATUS_ID = 14
-            dao.fields.CONSIDER_DATE = CONSIDER_DATE
-
-            dao.fields.CHK_ATTACH1 = rcb_staff_offer.SelectedValue
-            Try
-                dao.fields.CONSIDER_DATE = CDate(txt_app_date.Text)
-            Catch ex As Exception
-
-            End Try
-
-            dao.update()
-
-            'Dim cls_sop As New CLS_SOP
-            'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", PROCESS_ID, _CLS.PVCODE, 6, "เสนอลงนาม", "SOP-DRUG-10-" & PROCESS_ID & "-3", "อนุมัติ", "รอเจ้าหน้าที่อนุมัติคำขอ", "STAFF", _TR_ID, SOP_STATUS:="เสนอลงนาม")
-            alert("บันทึกข้อมูลเรียบร้อย")
         Catch ex As Exception
             Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")
 
