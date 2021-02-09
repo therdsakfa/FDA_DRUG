@@ -296,6 +296,8 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
         Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB 'DAO_DRUG.ClsDBdrrgt
 
+        Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
+        dao_rg.GetDataby_IDA(dao.fields.FK_IDA)
 
         dao.GetDatabyIDA(_IDA)
         
@@ -308,7 +310,8 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         End Try
 
         Try
-            dao_drrgt.GetDataby_IDA_drrgt(dao.fields.FK_IDA)
+            'dao_drrgt.GetDataby_IDA_drrgt(dao.fields.FK_IDA)
+            dao_drrgt.GetDataby_4Key(dao_rg.fields.rgtno, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.pvncd)
         Catch ex As Exception
 
         End Try
@@ -1929,5 +1932,54 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Protected Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
+        Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB 'DAO_DRUG.ClsDBdalcn
+        Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
+        Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB 'DAO_DRUG.ClsDBdrrgt
+
+        Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
+        dao_rg.GetDataby_IDA(dao.fields.FK_IDA)
+
+        dao.GetDatabyIDA(_IDA)
+        Dim tr_id_rg As Integer = 0
+        Dim r_IDA As Integer = 0
+        Try
+            r_IDA = dao_rg.fields.IDA
+
+        Catch ex As Exception
+
+        End Try
+        Try
+            tr_id_rg = dao_rg.fields.TR_ID
+        Catch ex As Exception
+
+        End Try
+
+        'Dim drgtpcd_edt As String = ""
+
+        'Try
+        '    drgtpcd_edt = dao.fields.drgtpcd
+        'Catch ex As Exception
+
+        'End Try
+
+        'Try
+        '    'dao_drrgt.GetDataby_IDA_drrgt(dao.fields.FK_IDA)
+        '    dao_drrgt.GetDataby_4Key(dao_rg.fields.rgtno, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.pvncd)
+        'Catch ex As Exception
+
+        'End Try
+
+        'Try
+        '    dao_lcn.GetDataby_u1(dao_drrgt.fields.Newcode_not)
+        'Catch ex As Exception
+
+        'End Try
+
+
+
+        Response.Redirect("../TABEAN_YA/FRM_RQT_EDIT_V2.aspx?IDA=" & r_IDA & "&TR_ID=" & tr_id_rg & "&STATUS_ID=" & 8 & "&ida_e=" & Request.QueryString("IDA") & "&Newcode=" & Request.QueryString("Newcode") & "&e=1")
     End Sub
 End Class
