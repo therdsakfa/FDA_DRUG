@@ -120,7 +120,7 @@
                        <ItemStyle HorizontalAlign="center" Width="15%"></ItemStyle>
                    </asp:BoundField>--%>
                    <asp:BoundField DataField="LCNNO_DISPLAY" HeaderText="รหัสบัญชีรายการยา" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="center">
-                       <ItemStyle HorizontalAlign="center" Width="15%"></ItemStyle>
+                       <ItemStyle HorizontalAlign="center" Width="10%"></ItemStyle>
                    </asp:BoundField>
                    <asp:BoundField DataField="drug_name" HeaderText="ชื่อยา (Th/Eng)" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="center">
                        <ItemStyle HorizontalAlign="center" Width="15%"></ItemStyle>
@@ -149,14 +149,14 @@
                        
                        <ItemStyle Width="15%" HorizontalAlign="center"></ItemStyle>
                    </asp:TemplateField>
-                  <%-- <asp:TemplateField ItemStyle-Width="15%" ItemStyle-HorizontalAlign="center">
+                   <asp:TemplateField ItemStyle-Width="15%" ItemStyle-HorizontalAlign="center">
                        <ItemTemplate>
-                           <asp:Button ID="btn_Choose" runat="server" Text="แก้ไขข้อมูล DL" CommandName="choose" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
+                           <asp:Button ID="btn_Upload" runat="server" Text="อัพโหลดเอกสารชี้แจง" CommandName="Upload" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />
                                              
                        </ItemTemplate>
                        
                        <ItemStyle Width="10%" HorizontalAlign="center"></ItemStyle>
-                   </asp:TemplateField>--%>
+                   </asp:TemplateField>
                    <%--<asp:TemplateField ItemStyle-Width="15%" ItemStyle-HorizontalAlign="center">
                        <ItemTemplate>
                            <asp:Button ID="btn_choose" runat="server" Text="แก้ไขข้อมูลส่วนที่ 2" CommandName="choose" Width="100%" CssClass="btn-link" CommandArgument='<%# DataBinder.Eval(Container, "RowIndex") %>' />

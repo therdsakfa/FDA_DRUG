@@ -975,6 +975,21 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+
+        Public Sub GetDataby_PRODUCT_ID_IDA_AND_TR_ID_AND_STATUS(ByVal PRODUCT_ID_IDA As Integer, ByVal TR_ID As String, ByVal STATUS_ID As String)
+
+            datas = (From p In db.drsamps Where p.PRODUCT_ID_IDA = PRODUCT_ID_IDA And p.TR_ID = TR_ID And p.STATUS_ID = STATUS_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_PRODUCT_ID_IDA_MAX(ByVal PRODUCT_ID_IDA As Integer, ByVal STATUS_ID As String)
+
+            datas = (From p In db.drsamps Where p.PRODUCT_ID_IDA = PRODUCT_ID_IDA And p.STATUS_ID = STATUS_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
         Public Sub by_lcntpcd_and_regis_status8(ByVal lcntpcd As String, ByVal regis As Integer)
 
             datas = (From p In db.drsamps Where p.lcntpcd = lcntpcd And p.STATUS_ID = 8 And p.PRODUCT_ID_IDA = regis Select p)

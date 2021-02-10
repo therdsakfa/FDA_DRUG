@@ -339,9 +339,9 @@ Public Class UC_DS_MAIN
             url = "../DS/FRM_DS_EDIT_REQUEST.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lcn_ida=" & _lcn_ida
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
 
-            'ElseIf e.CommandName = "choose" Then
-            '    url = "../REGISTRATION/FRM_REGISTRATION_DETAIL_OTHER.aspx?IDA=" & dao.fields.PRODUCT_ID_IDA & "&process=" & _process
-            '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
+        ElseIf e.CommandName = "Upload" Then
+            url = "../DS/POPUP_DS_UPLOAD_EDIT.aspx?process=" & _process & "&lcn_ida=" & _lcn_ida & "&staff=" & _staff & "&tt=" & Request.QueryString("tt") & "&main_ida=" & _main_ida
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
         End If
 
 
@@ -379,7 +379,7 @@ Public Class UC_DS_MAIN
         If e.Row.RowType = DataControlRowType.DataRow Then
             Dim btn_select As Button = DirectCast(e.Row.FindControl("btn_Select"), Button)
             Dim btn_Edit As Button = DirectCast(e.Row.FindControl("btn_Edit"), Button)
-            'Dim btn_Choose As Button = DirectCast(e.Row.FindControl("btn_Choose"), Button)
+            Dim btn_Upload As Button = DirectCast(e.Row.FindControl("btn_Upload"), Button)
             'Dim ida As String = GV_lcnno.DataKeys.Item(e.Row.RowIndex).Value.ToString()
             Try
                 Dim dao As New DAO_DRUG.ClsDBdrsamp
@@ -390,6 +390,7 @@ Public Class UC_DS_MAIN
 
                 If dao.fields.STATUS_ID <> 5 Then
                     btn_Edit.Style.Add("display", "none")
+                    btn_Upload.Style.Add("display", "none")
                 End If
 
             Catch ex As Exception
