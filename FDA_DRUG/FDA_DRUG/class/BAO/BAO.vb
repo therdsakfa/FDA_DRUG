@@ -2014,7 +2014,12 @@ Namespace BAO
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_MEMBER_THANM_THANM_by_thanm_and_IDENTIFY @THANM= N'" & THANM & "' ,@IDENTIFY = N'" & IDENTIFY & "' "
             Dim dta As New DataTable
-            dta = clsds.dsQueryselect(sql, conn_CPN.ConnectionString).Tables(0)
+            Try
+                dta = clsds.dsQueryselect(sql, conn_CPN.ConnectionString).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
             Return dta
         End Function
         Public Function SP_SYSISOCNT() As DataTable
