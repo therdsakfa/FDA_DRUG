@@ -117,12 +117,12 @@ Public Class POPUP_DS_UPLOAD_EDIT
 
             insert_file(TR_ID, FileUpload2)
 
-            Dim PDF_TRADER As String = paths & "PDF_TRADER_UPLOAD\" & NAME_UPLOAD_PDF("DA", _ProcessID, Date.Now.Year, TR_ID)
+            Dim PDF_TRADER As String = paths & "PDF_TRADER_UPLOAD\" & NAME_UPLOAD_PDF_EDIT("DA", _ProcessID, Date.Now.Year, TR_ID, 99)
             'PDF_TRADER คือ Folder จัดเก็บ PDF ที่ ผปก Upload เข้ามา
             FileUpload1.SaveAs(PDF_TRADER) '"C:\path\PDF_TRADER\"   
             'PDF_XML_CLASS คือ Folder จัดเก็บ XML ที่แยกออกมาจาก PDF Upload เข้ามา
             'Dim XML_TRADER As String = bao._PATH_XML_TRADER & NAME_UPLOAD_XML("DA", _ProcessID, Date.Now.Year, TR_ID)
-            Dim XML_TRADER As String = paths & "XML_TRADER_UPLOAD\" & NAME_UPLOAD_XML("DA", _ProcessID, Date.Now.Year, TR_ID)
+            Dim XML_TRADER As String = paths & "XML_TRADER_UPLOAD\" & NAME_UPLOAD_XML_EDIT("DA", _ProcessID, Date.Now.Year, TR_ID, 99)
             'ทำการแปลงส่ง PDF เข้าไปแล้วแปลงออกเป็น XML
             convert_PDF_To_XML(PDF_TRADER, XML_TRADER)
 
@@ -243,7 +243,7 @@ Public Class POPUP_DS_UPLOAD_EDIT
                     dao_pack = New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
                 Next
             End If
-            AddLogStatusEtracking(0, 0, _CLS.CITIZEN_ID, "อัพโหลดคำขอแก้ไขยาตัวอย่าง " & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, dao_ds.fields.TR_ID, dao_ds.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
+            AddLogStatusEtracking(0, 0, _CLS.CITIZEN_ID, "อัพโหลดเอกสารชี้แจง" & dao_process.fields.PROCESS_NAME, dao_process.fields.PROCESS_NAME, dao_ds.fields.TR_ID, dao_ds.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
 
         Catch ex As Exception
             check = False
