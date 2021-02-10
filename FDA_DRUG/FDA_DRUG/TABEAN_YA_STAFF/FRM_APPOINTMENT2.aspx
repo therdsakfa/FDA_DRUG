@@ -143,6 +143,23 @@
                             </td>
                         </tr>
                         
+                    <tr>
+                        <td>ระบุผู้รับผิดชอบหลัก</td>
+                        <td>
+                            <asp:TextBox ID="txt_namestaff_search" runat="server" CssClass="input-sm" Width="70%"></asp:TextBox>
+                            <asp:Button ID="btn_search_name" runat="server" CssClass="btn-lg" Text="ค้นหาชื่อ" />
+                        </td>
+                   </tr>
+                        
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <asp:DropDownList ID="ddl_name" runat="server" DataTextField="fullname2" DataValueField="IDENTITY">
+                            </asp:DropDownList>
+                            <asp:Label ID="lbl_staff_name" runat="server" Text="-"></asp:Label>
+                        </td>
+                   </tr>
+                        
                     </table>
         </asp:Panel>
     <div  class="col-lg-8 col-md-8">

@@ -109,6 +109,11 @@
                 btn_company.Visible = False
                 btn_day.Visible = False
                 btn_report.Visible = False
+                btn_search_name.Visible = False
+                ddl_name.Visible = False
+                lbl_staff_name.Visible = True
+            Else
+                lbl_staff_name.Visible = False
             End If
         End If
         lbl_company.Text = set_name_company(txt_company.Text)
@@ -169,39 +174,79 @@
 
         Dim dao_edit As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
         dao_edit.GetDatabyIDA(Request.QueryString("IDA"))
-        If i = 0 Then
-            Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_APPOINTMENT
-            With dao.fields
-                .APPOINT_DATE = HiddenField1.Value
-                .APPOINT_DAY = txt_number.Text
-                .CITIZEN_AUTHORIZE = txt_company.Text
-                .FK_IDA = Request.QueryString("IDA")
-                Try
-                    .REQUEST_DATE = CDate(txt_date.Text)
-                Catch ex As Exception
-
-                End Try
-                .TYPE_REQUESTS_ID = dao_edit.fields.TYPE_REQUESTS_ID
-            End With
-            dao.insert()
+        If ddl_name.Items.Count = 0 Then
+            Response.Write("<script type='text/javascript'>window.parent.alert('กรุณาตรวจสอบชื่อเจ้าหน้าที่ผู้รับผิดชอบคำขอ');</script> ")
         Else
-            Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_APPOINTMENT
-            dao.GetDataby_FK_IDA(Request.QueryString("IDA"))
-            With dao.fields
-                .APPOINT_DATE = HiddenField1.Value
-                .APPOINT_DAY = txt_number.Text
-                .CITIZEN_AUTHORIZE = txt_company.Text
-                .FK_IDA = Request.QueryString("IDA")
-                Try
-                    .REQUEST_DATE = CDate(txt_date.Text)
-                Catch ex As Exception
+            If ddl_name.SelectedValue <> "" Then
+                If i = 0 Then
+                    Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_APPOINTMENT
+                    With dao.fields
+                        .APPOINT_DATE = HiddenField1.Value
+                        .APPOINT_DAY = txt_number.Text
+                        .CITIZEN_AUTHORIZE = txt_company.Text
+                        .FK_IDA = Request.QueryString("IDA")
+                        Try
+                            .OWN_STAFF_IDENTIFY = ddl_name.SelectedValue
+                        Catch ex As Exception
 
-                End Try
-                .TYPE_REQUESTS_ID = dao_edit.fields.TYPE_REQUESTS_ID
-            End With
-            dao.update()
+                        End Try
+                        Try
+                            .OWN_STAFF_NAME = ddl_name.SelectedItem.Text
+                        Catch ex As Exception
+
+                        End Try
+                        Try
+                            .REQUEST_DATE = CDate(txt_date.Text)
+                        Catch ex As Exception
+
+                        End Try
+                        .TYPE_REQUESTS_ID = dao_edit.fields.TYPE_REQUESTS_ID
+                    End With
+                    dao.insert()
+                Else
+                    Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_APPOINTMENT
+                    dao.GetDataby_FK_IDA(Request.QueryString("IDA"))
+                    With dao.fields
+                        .APPOINT_DATE = HiddenField1.Value
+                        .APPOINT_DAY = txt_number.Text
+                        .CITIZEN_AUTHORIZE = txt_company.Text
+                        .FK_IDA = Request.QueryString("IDA")
+                        Try
+                            .OWN_STAFF_IDENTIFY = ddl_name.SelectedValue
+                        Catch ex As Exception
+
+                        End Try
+                        Try
+                            .OWN_STAFF_NAME = ddl_name.SelectedItem.Text
+                        Catch ex As Exception
+
+                        End Try
+                        Try
+                            .REQUEST_DATE = CDate(txt_date.Text)
+                        Catch ex As Exception
+
+                        End Try
+                        .TYPE_REQUESTS_ID = dao_edit.fields.TYPE_REQUESTS_ID
+                    End With
+                    dao.update()
+                End If
+                Response.Write("<script type='text/javascript'>window.parent.alert('บันทึกเรียบร้อย');</script> ")
+            Else
+                Response.Write("<script type='text/javascript'>window.parent.alert('กรุณาตรวจสอบชื่อเจ้าหน้าที่ผู้รับผิดชอบคำขอ');</script> ")
+            End If
+
         End If
-        Response.Write("<script type='text/javascript'>window.parent.alert('บันทึกเรียบร้อย');</script> ")
+
         'parent.close_modal();
+    End Sub
+
+    Protected Sub btn_search_name_Click(sender As Object, e As EventArgs) Handles btn_search_name.Click
+        Dim bao As New BAO.ClsDBSqlcommand
+        Dim dt As New DataTable
+        dt = bao.SP_MEMBER_THANM_THANM_by_thanm_and_IDENTIFY(txt_namestaff_search.Text, "")
+
+        ddl_name.DataSource = dt
+        ddl_name.DataBind()
+
     End Sub
 End Class
