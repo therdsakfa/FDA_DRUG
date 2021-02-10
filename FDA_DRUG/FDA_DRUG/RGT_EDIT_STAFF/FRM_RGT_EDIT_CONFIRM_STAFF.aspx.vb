@@ -296,11 +296,11 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
         Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB 'DAO_DRUG.ClsDBdrrgt
 
-        Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
-        dao_rg.GetDataby_IDA(dao.fields.FK_IDA)
+
 
         dao.GetDatabyIDA(_IDA)
-        
+        Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
+        dao_rg.GetDataby_IDA(dao.fields.FK_IDA)
         Dim drgtpcd_edt As String = ""
 
         Try
@@ -1985,6 +1985,6 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
 
 
 
-        Response.Redirect("../TABEAN_YA/FRM_RQT_EDIT_V2.aspx?IDA=" & r_IDA & "&TR_ID=" & tr_id_rg & "&STATUS_ID=" & 8 & "&ida_e=" & Request.QueryString("IDA") & "&Newcode=" & Request.QueryString("Newcode") & "&e=1")
+        Response.Redirect("../TABEAN_YA/FRM_RQT_EDIT_V2.aspx?IDA=" & r_IDA & "&TR_ID=" & tr_id_rg & "&STATUS_ID=8&ida_e=" & Request.QueryString("IDA") & "&Newcode=" & Request.QueryString("Newcode") & "&e=1")
     End Sub
 End Class
