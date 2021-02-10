@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class FRM_APPOINTMENT2
-
+    
     '''<summary>
     '''Panel1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''lbl_TR_ID control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_TR_ID As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lbl_name_drug control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_name_drug As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lbl_group_name control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_group_name As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lbl_type_name control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_type_name As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lbl_rgtno control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_rgtno As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txt_date control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_date As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''text control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents text As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txt_company control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_company As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btn_company control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_company As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''lbl_company control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_company As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txt_number control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_number As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btn_day control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_day As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''lbl_number_day control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_number_day As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''HiddenField1 control.
     '''</summary>
@@ -147,7 +147,43 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
-
+    
+    '''<summary>
+    '''txt_namestaff_search control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_namestaff_search As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''btn_search_name control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_search_name As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''ddl_name control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_name As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''lbl_staff_name control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_staff_name As Global.System.Web.UI.WebControls.Label
+    
     '''<summary>
     '''btn_add control.
     '''</summary>
@@ -156,7 +192,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_add As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Button1 control.
     '''</summary>
@@ -165,7 +201,7 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_report control.
     '''</summary>
