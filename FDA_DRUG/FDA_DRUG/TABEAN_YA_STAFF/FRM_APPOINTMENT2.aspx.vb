@@ -97,6 +97,11 @@
                 Catch ex As Exception
 
                 End Try
+                Try
+                    lbl_staff_name.Text = dao_edit.fields.OWN_STAFF_NAME
+                Catch ex As Exception
+
+                End Try
             Catch ex As Exception
 
             End Try
