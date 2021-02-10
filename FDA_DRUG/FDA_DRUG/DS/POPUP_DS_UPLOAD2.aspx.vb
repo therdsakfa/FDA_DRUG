@@ -104,44 +104,60 @@ Public Class POPUP_DS_UPLOAD2
 
     Sub upload()
         If FileUpload1.HasFile Then
+            'Dim TD As String = ""
+            Dim TR_ID As String = ""
+            Dim PDF_TRADER As String
+            Dim XML_TRADER As String
             Dim bao As New BAO.AppSettings
+            Dim paths As String = bao._PATH_DEFAULT
             bao.RunAppSettings()
             Dim dao_ds As New DAO_DRUG.ClsDBdrsamp
             dao_ds.GetDataby_PRODUCT_ID_IDA(_main_ida)
-            Dim TR_ID As String = ""
+
             Try
                 If dao_ds.fields.TR_ID Is Nothing Then
+
                     Dim bao_tran As New BAO_TRANSECTION
                     bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                     bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
                     TR_ID = bao_tran.insert_transection_new(_ProcessID)
+
+                    insert_file(TR_ID, FileUpload2, 1)
+
+                    PDF_TRADER = paths & "PDF_TRADER_UPLOAD\" & NAME_UPLOAD_PDF("DA", _ProcessID, Date.Now.Year, TR_ID)
+                    FileUpload1.SaveAs(PDF_TRADER)
+                    XML_TRADER = paths & "XML_TRADER_UPLOAD\" & NAME_UPLOAD_XML("DA", _ProcessID, Date.Now.Year, TR_ID)
+                    convert_PDF_To_XML(PDF_TRADER, XML_TRADER)
+
+                Else
+
+                    Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+                    dao_up.GetDataby_TR_ID_Process(dao_ds.fields.TR_ID, dao_ds.fields.process_id)
+                    dao_up.fields.UPLOAD_DATE = Date.Now
+                    dao_up.update()
+
+                    TR_ID = dao_ds.fields.TR_ID
+
+                    insert_file(TR_ID, FileUpload2, 99)
+
+                    PDF_TRADER = paths & "PDF_TRADER_UPLOAD\" & NAME_UPLOAD_PDF_EDIT("DA", _ProcessID, Date.Now.Year, TR_ID, 99)
+                    FileUpload1.SaveAs(PDF_TRADER)
+                    XML_TRADER = paths & "XML_TRADER_UPLOAD\" & NAME_UPLOAD_XML_EDIT("DA", _ProcessID, Date.Now.Year, TR_ID, 99)
+                    convert_PDF_To_XML(PDF_TRADER, XML_TRADER)
+
                 End If
             Catch ex As Exception
 
             End Try
-            'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
-            'If Upload_Attach(TR_ID) Then
 
-            'ตรวจสอบไฟล์แนบ
-            insert_file(TR_ID, FileUpload2)
-            'insert_file(TR_ID, FileUpload3)
-            'insert_file(TR_ID, FileUpload4)
-
-
-            'If UC_ATTACH1.ATTACH(TR_ID, _ProcessID, con_year(Date.Now.Year), "1") = False Then
-            '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('กรุณาแนบไฟล์');", True)
-            '    Exit Sub
-            'End If
-            Dim paths As String = bao._PATH_DEFAULT
-            'Dim PDF_TRADER As String = bao._PATH_PDF_TRADER & NAME_UPLOAD_PDF("DA", _ProcessID, Date.Now.Year, TR_ID)
-            Dim PDF_TRADER As String = paths & "PDF_TRADER_UPLOAD\" & NAME_UPLOAD_PDF("DA", _ProcessID, Date.Now.Year, TR_ID)
-            'PDF_TRADER คือ Folder จัดเก็บ PDF ที่ ผปก Upload เข้ามา
-            FileUpload1.SaveAs(PDF_TRADER) '"C:\path\PDF_TRADER\"   
-            'PDF_XML_CLASS คือ Folder จัดเก็บ XML ที่แยกออกมาจาก PDF Upload เข้ามา
-            'Dim XML_TRADER As String = bao._PATH_XML_TRADER & NAME_UPLOAD_XML("DA", _ProcessID, Date.Now.Year, TR_ID)
-            Dim XML_TRADER As String = paths & "XML_TRADER_UPLOAD\" & NAME_UPLOAD_XML("DA", _ProcessID, Date.Now.Year, TR_ID)
-            'ทำการแปลงส่ง PDF เข้าไปแล้วแปลงออกเป็น XML
-            convert_PDF_To_XML(PDF_TRADER, XML_TRADER)
+            'Dim PDF_TRADER As String = paths & "PDF_TRADER_UPLOAD\" & NAME_UPLOAD_PDF("DA", _ProcessID, Date.Now.Year, TR_ID)
+            ''PDF_TRADER คือ Folder จัดเก็บ PDF ที่ ผปก Upload เข้ามา
+            'FileUpload1.SaveAs(PDF_TRADER) '"C:\path\PDF_TRADER\"   
+            ''PDF_XML_CLASS คือ Folder จัดเก็บ XML ที่แยกออกมาจาก PDF Upload เข้ามา
+            ''Dim XML_TRADER As String = bao._PATH_XML_TRADER & NAME_UPLOAD_XML("DA", _ProcessID, Date.Now.Year, TR_ID)
+            'Dim XML_TRADER As String = paths & "XML_TRADER_UPLOAD\" & NAME_UPLOAD_XML("DA", _ProcessID, Date.Now.Year, TR_ID)
+            ''ทำการแปลงส่ง PDF เข้าไปแล้วแปลงออกเป็น XML
+            'convert_PDF_To_XML(PDF_TRADER, XML_TRADER)
 
 
             'convert_PDF_To_XML(bao._PATH_PDF_TRADER & "FA-5-2558-" & TR_ID & ".pdf", TR_ID) '"C:\path\PDF_TRADER\"
@@ -283,7 +299,7 @@ Public Class POPUP_DS_UPLOAD2
             Else
                 Dim dao_pack_copy As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
                 dao_pack_copy.GetDataby_FK_IDA(p2.drsamp.IDA)
-                If IsNothing(dao_pack_copy.fields.FK_IDA) Then
+                If dao_pack_copy.fields.FK_IDA.HasValue Then
                     Dim dao_pack As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
                     dao_pack_copy = New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
                     dao_pack.GetData_chk_by_FK_IDA(p2.drsamp.PRODUCT_ID_IDA)
@@ -302,23 +318,42 @@ Public Class POPUP_DS_UPLOAD2
 
         Return {check, cause}
     End Function
-    Private Sub insert_file(ByVal TR_ID As Integer, ByVal fileupload As FileUpload)
+    Private Sub insert_file(ByVal TR_ID As Integer, ByVal fileupload As FileUpload, ByVal TD As String)
         If fileupload.HasFile Then
-            Dim bao As New BAO.AppSettings
-            bao.RunAppSettings()
+            If TD = 1 Then
+                Dim bao As New BAO.AppSettings
+                bao.RunAppSettings()
 
-            Dim TYPE As String = fileupload.ID.ToString.Substring(10, 1) - 1
+                Dim TYPE As String = fileupload.ID.ToString.Substring(10, 1) - 1
 
-            Dim extensionname As String = GetExtension(fileupload.FileName).ToLower()
-            fileupload.SaveAs(bao._PATH_DEFAULT & "/upload/" & "DA-" & _ProcessID & "-" & con_year(Date.Now().Year()) & "-" & TR_ID & "-" & TYPE & "." & extensionname)
-            Dim dao_file As New DAO_DRUG.ClsDBFILE_ATTACH
+                Dim extensionname As String = GetExtension(fileupload.FileName).ToLower()
+                fileupload.SaveAs(bao._PATH_DEFAULT & "/upload/" & "DA-" & _ProcessID & "-" & con_year(Date.Now().Year()) & "-" & TR_ID & "-" & TYPE & "." & extensionname)
+                Dim dao_file As New DAO_DRUG.ClsDBFILE_ATTACH
 
-            dao_file.fields.NAME_FAKE = "DA-" & _ProcessID & "-" & con_year(Date.Now().Year()) & "-" & TR_ID & "-" & TYPE & "." & extensionname
-            dao_file.fields.NAME_REAL = fileupload.FileName
-            dao_file.fields.TYPE = TYPE
-            dao_file.fields.TRANSACTION_ID = TR_ID
-            dao_file.fields.PROCESS_ID = _ProcessID
-            dao_file.insert()
+                dao_file.fields.NAME_FAKE = "DA-" & _ProcessID & "-" & con_year(Date.Now().Year()) & "-" & TR_ID & "-" & TYPE & "." & extensionname
+                dao_file.fields.NAME_REAL = fileupload.FileName
+                dao_file.fields.TYPE = TYPE
+                dao_file.fields.TRANSACTION_ID = TR_ID
+                dao_file.fields.PROCESS_ID = _ProcessID
+                dao_file.insert()
+
+            ElseIf TD = 99 Then
+                Dim bao As New BAO.AppSettings
+                bao.RunAppSettings()
+
+                Dim TYPE As String = 99
+
+                Dim extensionname As String = GetExtension(fileupload.FileName).ToLower()
+                fileupload.SaveAs(bao._PATH_DEFAULT & "/upload/" & "DA-" & _ProcessID & "-" & con_year(Date.Now().Year()) & "-" & TR_ID & "-" & TYPE & "." & extensionname)
+                Dim dao_file As New DAO_DRUG.ClsDBFILE_ATTACH
+
+                dao_file.fields.NAME_FAKE = "DA-" & _ProcessID & "-" & con_year(Date.Now().Year()) & "-" & TR_ID & "-" & TYPE & "." & extensionname
+                dao_file.fields.NAME_REAL = fileupload.FileName
+                dao_file.fields.TYPE = TYPE
+                dao_file.fields.TRANSACTION_ID = TR_ID
+                dao_file.fields.PROCESS_ID = _ProcessID
+                dao_file.insert()
+            End If
         End If
 
     End Sub

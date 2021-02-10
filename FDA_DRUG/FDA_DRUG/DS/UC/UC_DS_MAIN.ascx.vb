@@ -379,18 +379,19 @@ Public Class UC_DS_MAIN
         If e.Row.RowType = DataControlRowType.DataRow Then
             Dim btn_select As Button = DirectCast(e.Row.FindControl("btn_Select"), Button)
             Dim btn_Edit As Button = DirectCast(e.Row.FindControl("btn_Edit"), Button)
-            Dim btn_Choose As Button = DirectCast(e.Row.FindControl("btn_Choose"), Button)
+            'Dim btn_Choose As Button = DirectCast(e.Row.FindControl("btn_Choose"), Button)
             'Dim ida As String = GV_lcnno.DataKeys.Item(e.Row.RowIndex).Value.ToString()
             Try
                 Dim dao As New DAO_DRUG.ClsDBdrsamp
                 dao.GetDataby_PRODUCT_ID_IDA(_main_ida)
                 If dao.fields.STATUS_ID >= 2 Then
                     btn_select.Style.Add("display", "none")
-                ElseIf dao.fields.STATUS_ID <> 5 Then
-                    btn_Edit.Style.Add("display", "none")
-                    'ElseIf dao.fields.STATUS_ID <> 5 Then
-                    '    btn_Choose.Style.Add("display", "none")
                 End If
+
+                If dao.fields.STATUS_ID <> 5 Then
+                    btn_Edit.Style.Add("display", "none")
+                End If
+
             Catch ex As Exception
 
             End Try
