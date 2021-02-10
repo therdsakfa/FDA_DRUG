@@ -799,54 +799,59 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         ElseIf ddl_status.SelectedValue = 8 Then
 
             If ddl_status.SelectedItem.Text = "อนุมัติโดยไม่แก้ไข" Then
-                Dim bao As New BAO.GenNumber 'test
-                Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
-                dao.GetDatabyIDA(_IDA)
+                If IsDate(CDate(txt_appdate.Text)) Then
+                    Dim bao As New BAO.GenNumber 'test
+                    Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
+                    dao.GetDatabyIDA(_IDA)
 
-                Dim STATUS_ID As Integer = ddl_status.SelectedItem.Value
-                ' Dim RCVNO As Integer
+                    Dim STATUS_ID As Integer = ddl_status.SelectedItem.Value
+                    ' Dim RCVNO As Integer
 
-                dao.fields.STATUS_ID = STATUS_ID
-                dao.fields.cnccd = 1
-                Try
-                    dao.fields.cncdate = CDate(txt_appdate.Text)
-                Catch ex As Exception
+                    dao.fields.STATUS_ID = STATUS_ID
+                    dao.fields.cnccd = 1
+                    Try
+                        dao.fields.cncdate = CDate(txt_appdate.Text)
+                    Catch ex As Exception
 
-                End Try
+                    End Try
 
-                Dim years As String = ""
-                Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-                dao_tr.GetDataby_IDA(dao.fields.TR_ID)
-                Try
-                    years = dao_tr.fields.YEAR
+                    Dim years As String = ""
+                    Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+                    dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+                    Try
+                        years = dao_tr.fields.YEAR
 
-                Catch ex As Exception
+                    Catch ex As Exception
 
-                End Try
-                Dim tr_id As String = ""
-                tr_id = "DA-" & _ProcessID & "-" & years & "-" & _TR_ID
+                    End Try
+                    Dim tr_id As String = ""
+                    tr_id = "DA-" & _ProcessID & "-" & years & "-" & _TR_ID
 
-                dao.update()
-                Dim result As String = ""
-                'Dim ws_drug As New WS_DRUG_LOG_DR.WS_DRUG
-                'result = "APPROVE"
-                'ws_drug.Timeout = 8000
-                Dim url As String = HttpContext.Current.Request.Url.AbsoluteUri
-                Dim dao_rg2 As New DAO_DRUG.ClsDBdrrgt
-                dao_rg2.GetDataby_IDA(dao.fields.FK_IDA)
-                'result = ws_drug.XML_DRUG_MERGE_UPDATE(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, _CLS.CITIZEN_ID)
+                    dao.update()
+                    Dim result As String = ""
+                    'Dim ws_drug As New WS_DRUG_LOG_DR.WS_DRUG
+                    'result = "APPROVE"
+                    'ws_drug.Timeout = 8000
+                    Dim url As String = HttpContext.Current.Request.Url.AbsoluteUri
+                    Dim dao_rg2 As New DAO_DRUG.ClsDBdrrgt
+                    dao_rg2.GetDataby_IDA(dao.fields.FK_IDA)
+                    'result = ws_drug.XML_DRUG_MERGE_UPDATE(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, _CLS.CITIZEN_ID)
 
-                'KEEP_LOGS_TABEAN_BC(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, dao_rg2.fields.IDA,
-                '                                    dao_rg2.fields.IDENTIFY, "", "", "", result, url, _CLS.CITIZEN_ID)
+                    'KEEP_LOGS_TABEAN_BC(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, dao_rg2.fields.IDA,
+                    '                                    dao_rg2.fields.IDENTIFY, "", "", "", result, url, _CLS.CITIZEN_ID)
 
-                Dim cls_sop As New CLS_SOP
-                cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", _ProcessID, _CLS.PVCODE, 8, "อนุญาตให้แก้ไขเปลี่ยนแปลงฯ", "SOP-DRUG-10-" & _ProcessID & "-13", "อนุญาตให้แก้ไขเปลี่ยนแปลงฯ", "อนุญาตให้แก้ไขเปลี่ยนแปลงฯ", "STAFF", tr_id, SOP_STATUS:="อนุญาตให้แก้ไขเปลี่ยนแปลงฯ")
+                    Dim cls_sop As New CLS_SOP
+                    cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", _ProcessID, _CLS.PVCODE, 8, "อนุญาตให้แก้ไขเปลี่ยนแปลงฯ", "SOP-DRUG-10-" & _ProcessID & "-13", "อนุญาตให้แก้ไขเปลี่ยนแปลงฯ", "อนุญาตให้แก้ไขเปลี่ยนแปลงฯ", "STAFF", tr_id, SOP_STATUS:="อนุญาตให้แก้ไขเปลี่ยนแปลงฯ")
 
 
 
-                AddLogStatus(8, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
-                'update_rgt()
-                alert("อนุมัติคำขอเรียบร้อยแล้ว")
+                    AddLogStatus(8, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+                    'update_rgt()
+                    alert("อนุมัติคำขอเรียบร้อยแล้ว")
+                Else
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถอนุมัติได้ เนื่องจากยังไม่ได้กรอกวันที่อนุมัติ');</script> ")
+                End If
+
             Else
                 Dim dao_dem As New DAO_DRUG_DEMO.TB_XML_NAME_TEST
                 dao_dem.GetDataby_TR_ID(_TR_ID)
