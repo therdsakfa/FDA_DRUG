@@ -1944,10 +1944,10 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
         Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB 'DAO_DRUG.ClsDBdrrgt
 
+        dao.GetDatabyIDA(_IDA)
+
         Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
         dao_rg.GetDataby_IDA(dao.fields.FK_IDA)
-
-        dao.GetDatabyIDA(_IDA)
         Dim tr_id_rg As Integer = 0
         Dim r_IDA As Integer = 0
         Try
