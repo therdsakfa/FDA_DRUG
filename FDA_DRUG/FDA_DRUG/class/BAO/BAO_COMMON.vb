@@ -59,9 +59,22 @@ Module BAO_COMMON
         Return filename
     End Function
 
+    Public Function NAME_UPLOAD_PDF_EDIT(ByVal SYS As String, ByVal PROSESS_ID As String, ByVal YEAR As String, ByVal ID_TRANSECTION_UPLOAD As String, ByVal TD As String) As String
+
+        Dim filename As String = SYS & "-" & PROSESS_ID & "-" & con_year(YEAR) & "-" & ID_TRANSECTION_UPLOAD & "-" & TD & ".pdf"
+        Return filename
+    End Function
+
     Public Function NAME_UPLOAD_XML(ByVal SYS As String, ByVal PROSESS_ID As String, ByVal YEAR As String, ByVal ID_TRANSECTION_UPLOAD As String) As String
 
         Dim filename As String = SYS & "-" & PROSESS_ID & "-" & con_year(YEAR) & "-" & ID_TRANSECTION_UPLOAD & ".xml"
+
+        Return filename
+    End Function
+
+    Public Function NAME_UPLOAD_XML_EDIT(ByVal SYS As String, ByVal PROSESS_ID As String, ByVal YEAR As String, ByVal ID_TRANSECTION_UPLOAD As String, ByVal TD As String) As String
+
+        Dim filename As String = SYS & "-" & PROSESS_ID & "-" & con_year(YEAR) & "-" & ID_TRANSECTION_UPLOAD & "-" & TD & ".xml"
 
         Return filename
     End Function
