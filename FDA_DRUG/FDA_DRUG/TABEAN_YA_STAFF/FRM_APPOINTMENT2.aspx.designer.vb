@@ -167,15 +167,6 @@ Partial Public Class FRM_APPOINTMENT2
     Protected WithEvents btn_search_name As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''ddl_name control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ddl_name As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
     '''lbl_staff_name control.
     '''</summary>
     '''<remarks>
@@ -183,6 +174,15 @@ Partial Public Class FRM_APPOINTMENT2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_staff_name As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''ddl_name control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_name As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''btn_add control.
