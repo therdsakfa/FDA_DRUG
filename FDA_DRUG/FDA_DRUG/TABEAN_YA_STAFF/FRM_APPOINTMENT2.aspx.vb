@@ -117,6 +117,7 @@
                 btn_search_name.Visible = False
                 ddl_name.Visible = False
                 lbl_staff_name.Visible = True
+                txt_namestaff_search.Visible = False
             Else
                 lbl_staff_name.Visible = False
             End If
