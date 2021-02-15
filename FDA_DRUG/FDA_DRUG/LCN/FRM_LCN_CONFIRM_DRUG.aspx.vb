@@ -1019,7 +1019,13 @@ Public Class FRM_LCN_CONFIRM_DRUG
                 If expyear = 0 Then
                     expyear = con_year(appdate.Year)
                 End If
-                class_xml.EXP_YEAR = NumEng2Thai(expyear)
+
+                If _ProcessID = "105" Then
+                    class_xml.EXP_YEAR = NumEng2Thai("31 ธันวาคม " & expyear)
+                Else
+                    class_xml.EXP_YEAR = NumEng2Thai(expyear)
+                End If
+
 
             End If
         End If
