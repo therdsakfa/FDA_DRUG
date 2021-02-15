@@ -16,6 +16,56 @@
         .auto-style3 {
             width: 160px;
         }
+        .auto-style5 {
+            width: 262px;
+            height: 48px;
+        }
+        .auto-style11 {
+            width: 425px;
+            height: 28px;
+        }
+        .auto-style12 {
+            width: 196px;
+            height: 44px;
+        }
+        .auto-style13 {
+            height: 44px;
+        }
+        .auto-style17 {
+            width: 196px;
+            height: 29px;
+        }
+        .auto-style18 {
+            height: 29px;
+        }
+        .auto-style20 {
+            width: 196px;
+            height: 48px;
+        }
+        .auto-style22 {
+            height: 51px;
+        }
+        .auto-style23 {
+            width: 196px;
+            height: 51px;
+        }
+        .auto-style24 {
+            width: 196px;
+            height: 32px;
+        }
+        .auto-style25 {
+            height: 32px;
+        }
+        .auto-style26 {
+            margin-left: 14px;
+        }
+        .auto-style27 {
+            height: 58px;
+        }
+        .auto-style28 {
+            height: 58px;
+            width: 196px;
+        }
     </style>
  <script type="text/javascript" >
 
@@ -83,21 +133,42 @@
                 <table class="table">
                     <tr >
                         <td align="right" class="auto-style3"><h4>หมายเหตุ :</h4></td>
-                        <td class="auto-style2"><asp:TextBox ID="Txt_EDIT" TextMode="MultiLine" runat="server" CssClass="auto-style1" Width="454px" Height="245px"></asp:TextBox></td>
-                        <td><h4>ไฟล์แนบ(รายละเอียดเพิ่มเติม)</h4>
-                            <asp:FileUpload ID="FileUpload1" runat="server" CssClass="btn-default" /><br />
-                            <asp:FileUpload ID="FileUpload2" runat="server" CssClass="btn-default" />
-                            <br />
-                            <h5>กำหนดส่งเอกสาร</h5>
-                            <telerik:RadDatePicker ID="rdp_cncdate" Runat="server"></telerik:RadDatePicker>
-                            <br />
-                            <br />
-                            <asp:Button ID="btn_Upload" runat="server" Text="อัพโหลด"   CssClass=" btn-lg" />
-                        </td>
+                        <td class="auto-style2"><asp:TextBox ID="Txt_EDIT" TextMode="MultiLine" runat="server" CssClass="auto-style1" Width="454px" Height="245px"></asp:TextBox></td>                     
                     </tr>
-                </table>
-        
+                </table>        
         </div>
+    <div>
+        <h4>ไฟล์แนบ (รายละเอียดเพิ่มเติม)</h4>
+    </div>
+    <div>
+        <table>
+            
+            <tr>
+                <td class="auto-style17" align="right">รายละเอียดไฟล์แนบ 1 :</td>
+                <td class="auto-style18"><asp:TextBox ID="TXT_DESCIPTION1" runat="server" Width="388px"></asp:TextBox></td>
+            </tr>
+            <tr>           
+                <td class="auto-style20"></td>
+                <td class="auto-style5"><asp:FileUpload ID="FileUpload1" runat="server" Width="243px" /><asp:Label ID="lbl_attach1" runat="server" Text=""></asp:Label></td>
+            </tr>
+            <tr>
+                <td class="auto-style24" align="right">รายละเอียดไฟล์แนบ 2 :</td>
+                <td class="auto-style25"><asp:TextBox ID="TXT_DESCIPTION2" runat="server" Width="388px"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td class="auto-style23"></td>
+                <td class="auto-style22"><asp:FileUpload ID="FileUpload2" runat="server" CssClass="auto-style11" Width="243px"  /><asp:Label ID="lbl_attach2" runat="server" Text=""></asp:Label></td>                
+            </tr>
+            <tr>
+                <td class="auto-style12"></td>
+                <td class="auto-style13"><asp:Button ID="btn_Upload" runat="server" Text="Upload File" /></td>
+            </tr>
+            <tr>
+                <td align="right" class="auto-style28">กำหนดส่งเอกสาร :</td>
+                <td class="auto-style27"><telerik:RadDatePicker ID="rdp_cncdate" Runat="server" CssClass="auto-style26"></telerik:RadDatePicker></td>
+            </tr>
+        </table>
+    </div>
         <div>
               <div class="panel-footer " style="text-align:center;">
                   <asp:Button ID="Button1" runat="server" Text="บันทึก" CssClass="btn-lg" OnClientClick="return confirm('คุณต้องการบันทึกข้อมูลหรือไม่')"/>

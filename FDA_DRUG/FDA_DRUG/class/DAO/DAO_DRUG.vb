@@ -963,6 +963,12 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_TR_ID_AND_PROCESS_ID(ByVal TR_ID As Integer, ByVal PROCESS_ID As Integer)
+
+            datas = (From p In db.drsamps Where p.TR_ID = TR_ID And p.process_id = PROCESS_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub GetDataby_FK_IDA(ByVal IDA As Integer)
 
             datas = (From p In db.drsamps Where p.FK_IDA = IDA Select p)

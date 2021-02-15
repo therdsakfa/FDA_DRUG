@@ -32,6 +32,15 @@ Partial Public Class FRM_DS_STAFF_EDIT
     Protected WithEvents Txt_EDIT As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''TXT_DESCIPTION1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TXT_DESCIPTION1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''FileUpload1 control.
     '''</summary>
     '''<remarks>
@@ -39,6 +48,24 @@ Partial Public Class FRM_DS_STAFF_EDIT
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''lbl_attach1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_attach1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TXT_DESCIPTION2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TXT_DESCIPTION2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''FileUpload2 control.
@@ -50,13 +77,13 @@ Partial Public Class FRM_DS_STAFF_EDIT
     Protected WithEvents FileUpload2 As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
-    '''rdp_cncdate control.
+    '''lbl_attach2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents rdp_cncdate As Global.Telerik.Web.UI.RadDatePicker
+    Protected WithEvents lbl_attach2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''btn_Upload control.
@@ -66,6 +93,15 @@ Partial Public Class FRM_DS_STAFF_EDIT
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_Upload As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''rdp_cncdate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdp_cncdate As Global.Telerik.Web.UI.RadDatePicker
 
     '''<summary>
     '''Button1 control.
