@@ -10,6 +10,8 @@ Public Class FRM_DS_EDIT_REQUEST
     Private _YEARS As String
     Private _TR_ID As String
     Private _lcn_ida As String
+    Private msg As String
+    Private msg1 As String
     Private Sub RunQuery()
         '_ProcessID = 101
         Try
@@ -28,6 +30,13 @@ Public Class FRM_DS_EDIT_REQUEST
         If Not IsPostBack Then
             UC_GRID_ATTACH.load_gv_V4(_TR_ID, 99, _ProcessID)
             set_label()
+            Try
+                If msg = "success" Then
+                    lbl_attach1.Text = "Upload Flie แนบสำเร็จ"
+                End If
+            Catch ex As Exception
+
+            End Try
         End If
 
     End Sub
@@ -69,24 +78,36 @@ Public Class FRM_DS_EDIT_REQUEST
 
     End Sub
 
-    Protected Sub btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
+    Function btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
+
         Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
         dao_p.GetDataby_Process_ID(_ProcessID)
+        Try
+            If FileUpload1.HasFile Then
+                upload()
+            Else
+                alert("กรุณาแนบไฟล์คำขอ")
+            End If
 
-        If FileUpload1.HasFile Then
-            upload()
-        Else
-            alert("กรุณาแนบไฟล์คำขอ")
-        End If
+        Catch ex As Exception
+            msg = "FAIL"
+        End Try
+        msg = "success"
         alert1("ดำเนินการ UPLOAD FILE แก้ไขคำขอเรียบร้อยแล้ว")
-    End Sub
+
+        Return msg
+    End Function
 
     Protected Sub Button_confirm_Click(sender As Object, e As EventArgs) Handles Button_confirm.Click
         Dim dao As New DAO_DRUG.ClsDBdrsamp
         dao.GetDataby_TR_ID_AND_PROCESS_ID(_TR_ID, _ProcessID)
+        Try
+            dao.fields.STATUS_ID = 6
+            dao.fields.lmdfdate = Date.Now
 
-        dao.fields.STATUS_ID = 6
-        dao.fields.lmdfdate = Date.Now
+        Catch ex As Exception
+
+        End Try
         dao.update()
 
         alert("ส่งเรื่องคืนเจ้าหน้าที่เรียบร้อย")

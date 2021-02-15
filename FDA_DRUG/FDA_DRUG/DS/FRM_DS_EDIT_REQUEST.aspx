@@ -209,7 +209,7 @@
         <table style="width:100%">
             <tr>
                 <td align="right" class="auto-style22" ><asp:Button ID="Button_DL" runat="server" Text="แก้ไขข้อมูลส่วนที่ 2" Height="35px" /></td>
-                <td class="auto-style23"><asp:Button ID="Button_confirm" runat="server" Text="แก้ไขเสร็จแล้ว ส่งเรื่องคืนเจ้าหน้าที่" Height="35px" CssClass="auto-style24"/></td>
+                <td class="auto-style23"><asp:Button ID="Button_confirm" runat="server" Text="แก้ไขเสร็จแล้ว ส่งเรื่องคืนเจ้าหน้าที่" Height="35px" CssClass="auto-style24" OnClientClick="กรุณาตรวจสอบข้อมูลให้ถูกต้องก่อนส่งเรื่องให้เจ้าหน้าที่"/></td>
             </tr>
         </table>
         

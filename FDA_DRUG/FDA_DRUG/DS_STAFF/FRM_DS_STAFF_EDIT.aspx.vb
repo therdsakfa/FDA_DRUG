@@ -7,6 +7,7 @@ Public Class FRM_DS_STAFF_EDIT
     Private _CLS As New CLS_SESSION
     ' Private _type As String
     Private _ProcessID As String
+    Private msg As String
     Private Sub runQuery()
         If Session("CLS") Is Nothing Then
             Response.Redirect("http://privus.fda.moph.go.th/")
@@ -24,6 +25,9 @@ Public Class FRM_DS_STAFF_EDIT
         runQuery()
         If Not IsPostBack Then
             rdp_cncdate.SelectedDate = Date.Now
+            If msg = "success" Then
+                lbl_attach1.Text = "Upload File แนบสำเร็จ"
+            End If
         End If
 
     End Sub
@@ -72,17 +76,20 @@ Public Class FRM_DS_STAFF_EDIT
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');</script> ")
     End Sub
 
-    Protected Sub btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
+    Function btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
         Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
         dao_p.GetDataby_Process_ID(_ProcessID)
 
         If FileUpload1.HasFile Then
             upload()
+            msg = "success"
         Else
             alert("กรุณาแนบไฟล์คำขอ")
         End If
+
         alert1("ดำเนินการ UPLOAD FILE แก้ไขคำขอเรียบร้อยแล้ว")
-    End Sub
+        Return msg
+    End Function
 
     Sub upload()
         Try
