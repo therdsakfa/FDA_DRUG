@@ -1323,7 +1323,11 @@ Public Class WebForm35
                 If expyear = 0 Then
                     expyear = con_year(appdate.Year)
                 End If
-                class_xml.EXP_YEAR = NumEng2Thai(expyear)
+                If ProcessID = "105" Then
+                    class_xml.EXP_YEAR = NumEng2Thai("31 ธันวาคม " & expyear)
+                Else
+                    class_xml.EXP_YEAR = NumEng2Thai(expyear)
+                End If
             End If
         Else
             If IsNothing(dao.fields.expyear) = False Then
@@ -1338,7 +1342,11 @@ Public Class WebForm35
                 Catch ex As Exception
 
                 End Try
-                class_xml.EXP_YEAR = NumEng2Thai(expyear)
+                If ProcessID = "105" Then
+                    class_xml.EXP_YEAR = NumEng2Thai("31 ธันวาคม " & expyear)
+                Else
+                    class_xml.EXP_YEAR = NumEng2Thai(expyear)
+                End If
             End If
         End If
         Try
