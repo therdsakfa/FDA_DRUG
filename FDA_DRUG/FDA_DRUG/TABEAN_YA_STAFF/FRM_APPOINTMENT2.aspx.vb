@@ -98,14 +98,18 @@
 
                 End Try
                 Try
-                    lbl_staff_name.Text = dao_edit.fields.OWN_STAFF_NAME
+                    lbl_staff_name.Text = dao.fields.OWN_STAFF_NAME
                 Catch ex As Exception
 
                 End Try
             Catch ex As Exception
 
             End Try
+            Try
 
+            Catch ex As Exception
+
+            End Try
             If Request.QueryString("p") = "1" Then
                 txt_date.Enabled = False
                 txt_company.Enabled = False
@@ -116,10 +120,10 @@
                 btn_report.Visible = False
                 btn_search_name.Visible = False
                 ddl_name.Visible = False
-                lbl_staff_name.Visible = True
+                'lbl_staff_name.Style.Add("display", "block")
                 txt_namestaff_search.Visible = False
             Else
-                lbl_staff_name.Visible = False
+                'lbl_staff_name.Style.Add("display", "none")
             End If
         End If
         lbl_company.Text = set_name_company(txt_company.Text)
