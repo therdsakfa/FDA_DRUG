@@ -89,18 +89,14 @@ Public Class FRM_DS_STAFF_EDIT
             If FileUpload1.HasFile Or FileUpload2.HasFile Then
                 'Dim bao As New BAO.AppSettings
                 'bao.RunAppSettings()
-
-
                 Dim TR_ID As String = _TR_ID
-                'Dim bao_tran As New BAO_TRANSECTION
-                'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
-                'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-                'TR_ID = bao_tran.insert_transection_new(_ProcessID) 'ทำการบันทึกเพื่อให้ได้เลข Transection ID’class จาก BAO_TRANSECTION
 
                 If FileUpload1.HasFile Then
-                    insert_file(TR_ID, FileUpload1)
+                    insert_file(TR_ID, FileUpload1, TXT_DESCIPTION1.Text)
+                    lbl_attach1.Text = "อัพโหลดไฟล์แนบสำเร็จ"
                 ElseIf FileUpload2.HasFile Then
-                    insert_file(TR_ID, FileUpload2)
+                    insert_file(TR_ID, FileUpload2, TXT_DESCIPTION2.Text)
+                    lbl_attach2.Text = "อัพโหลดไฟล์แนบสำเร็จ"
                 End If
             End If
         Catch ex As Exception
@@ -109,7 +105,7 @@ Public Class FRM_DS_STAFF_EDIT
 
     End Sub
 
-    Private Sub insert_file(ByVal TR_ID As Integer, ByVal fileupload As FileUpload)
+    Private Sub insert_file(ByVal TR_ID As Integer, ByVal fileupload As FileUpload, ByVal DESCRIPTION As String)
         If fileupload.HasFile Then
             Dim bao As New BAO.AppSettings
             bao.RunAppSettings()
@@ -124,6 +120,7 @@ Public Class FRM_DS_STAFF_EDIT
             dao_file.fields.NAME_REAL = fileupload.FileName
             dao_file.fields.TYPE = TYPE
             dao_file.fields.TRANSACTION_ID = TR_ID
+            dao_file.fields.DESCRIPTION = DESCRIPTION
             dao_file.fields.PROCESS_ID = _ProcessID
             dao_file.insert()
         End If
