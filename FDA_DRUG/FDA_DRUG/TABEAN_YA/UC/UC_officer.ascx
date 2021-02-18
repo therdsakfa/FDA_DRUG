@@ -82,6 +82,10 @@
                                                 <telerik:RadComboBoxItem runat="server" Text="ตรวจปล่อยหรือผ่านเพื่อจำหน่าย" Value="3" />
                                                 <telerik:RadComboBoxItem runat="server" Text="อื่นๆ" Value="9" />
                                                 <telerik:RadComboBoxItem runat="server" Text="ผู้แบ่งบรรจุผลิตภัณฑ์ยาที่ไม่สัมผัสยา" Value="10" />
+                                                <telerik:RadComboBoxItem runat="server" Text="ผลิตยาสำเร็จรูป (แห่งที่ 2)" Value="11" />
+                                                <telerik:RadComboBoxItem runat="server" Text="แบ่งบรรจุผลิตภัณฑ์ยาที่ไม่สัมผัสยา (แห่งที่ 2)" Value="12" />
+                                                <telerik:RadComboBoxItem runat="server" Text="แบ่งบรรจุ (แห่งที่ 2)" Value="13" />
+                                                <telerik:RadComboBoxItem runat="server" Text="ตรวจปล่อยหรือผ่านเพื่อจำหน่าย (แห่งที่ 2)" Value="14" />
                                             </Items>
                                         </telerik:RadComboBox>
                                         <asp:Label ID="lbl_work_type" runat="server" Text="" style="display:none;"></asp:Label>
