@@ -91,7 +91,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก" CssClass="btn-lg" Width="80%" /></td>
+                            <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก/ยกเลิกคำขอ" CssClass="btn-lg" Width="80%" /></td>
                     </tr>
                     <tr>
                         <td>

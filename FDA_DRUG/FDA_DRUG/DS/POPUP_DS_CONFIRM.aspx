@@ -90,7 +90,7 @@
                          <asp:TextBox ID="txt_ref_no" runat="server"></asp:TextBox>
                          </td></tr>--%>
                      <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยื่นคำขอ" CssClass="btn-lg"   Width="80%" /></td></tr>
-                     <tr><td> <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก" CssClass="btn-lg"   Width="80%" OnClientClick="confirm('คุณต้องการยกเลิกหรือไม่');" /></td></tr>
+                     <tr><td> <asp:Button ID="btn_cancel" runat="server" Text="ยกเลิก/ยกเลิกคำขอ" CssClass="btn-lg"   Width="80%" OnClientClick="confirm('คุณต้องการยกเลิกหรือไม่');" /></td></tr>
                      <tr><td>  <asp:Button ID="btn_load" runat="server" Text="ดาวน์โหลด PDF" CssClass="btn-lg"   Width="80%" /></td></tr>
                      <tr><td>  <asp:Button ID="btn_load0" runat="server" Text="กลับหน้ารายการ" CssClass="btn-lg"   Width="80%" /></td></tr>
 
