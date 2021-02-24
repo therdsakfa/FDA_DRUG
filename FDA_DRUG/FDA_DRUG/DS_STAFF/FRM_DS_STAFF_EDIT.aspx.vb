@@ -63,6 +63,7 @@ Public Class FRM_DS_STAFF_EDIT
             '' Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")
         End Try
         AddLogStatusDS(5, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+        ''SendMail()
     End Sub
     Sub alert_reload(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');</script> ")
@@ -131,6 +132,21 @@ Public Class FRM_DS_STAFF_EDIT
             dao_file.fields.PROCESS_ID = _ProcessID
             dao_file.insert()
         End If
+
+    End Sub
+
+    Public Sub SendMail(ByVal Content As String, ByVal email As String, ByVal title As String, ByVal CC As String, ByVal string_xml As String, ByVal filename As String)
+        Dim mm As New FDA_MAIL.FDA_MAIL
+        Dim mcontent As New FDA_MAIL.Fields_Mail
+
+        mcontent.EMAIL_CONTENT = Content
+        mcontent.EMAIL_FROM = "fda_info@fda.moph.go.th"
+        mcontent.EMAIL_PASS = "deeku181"
+        mcontent.EMAIL_TILE = title
+        mcontent.EMAIL_TO = email
+
+
+        mm.SendMail(mcontent)
 
     End Sub
 End Class
