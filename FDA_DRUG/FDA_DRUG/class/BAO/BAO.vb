@@ -646,7 +646,7 @@ Namespace BAO
             Dim dao_ani_rq As New DAO_DRUG.ClsDBdrramldrg
             dao_ani_rq.GetData_by_FK_IDA(FK_IDA)
             For Each dao_ani_rq.fields In dao_ani_rq.datas
-                Dim dao_ani_rg As New DAO_DRUG.ClsDBdrramldrg
+                Dim dao_ani_rg As New DAO_DRUG.ClsDBdramldrg
                 With dao_ani_rg.fields
                     .amlsubcd = dao_ani_rq.fields.amlsubcd
                     .amltpcd = dao_ani_rq.fields.amltpcd
@@ -663,7 +663,7 @@ Namespace BAO
             Dim dao_aniuse_rq As New DAO_DRUG.ClsDBdrramluse
             dao_aniuse_rq.GetDatabyFKIDA(FK_IDA)
             For Each dao_aniuse_rq.fields In dao_aniuse_rq.datas
-                Dim dao_aniuse_rg As New DAO_DRUG.ClsDBdrramluse
+                Dim dao_aniuse_rg As New DAO_DRUG.ClsDBdramluse
                 With dao_aniuse_rg.fields
                     .amlsubcd = dao_aniuse_rg.fields.amlsubcd
                     .amltpcd = dao_aniuse_rg.fields.amltpcd
@@ -673,7 +673,7 @@ Namespace BAO
                     .rgtno = dao_aniuse_rg.fields.rgtno
                     .rgttpcd = dao_aniuse_rg.fields.rgttpcd
                     .usetpcd = dao_aniuse_rg.fields.usetpcd
-                    .rcvno = dao_aniuse_rg.fields.rcvno
+                    '.rcvno = dao_aniuse_rg.fields.rcvno
                     .nouse = dao_aniuse_rg.fields.nouse
                     .packuse = dao_aniuse_rg.fields.packuse
                     .pvncd = dao_aniuse_rg.fields.pvncd
