@@ -626,4 +626,43 @@
             Next
         End Sub
     End Class
+    Public Class TB_DRUG_IMPORT_SEND_EDIT
+        Inherits MAINCONTEXT
+
+        Public fields As New DRUG_IMPORT_SEND_EDIT
+
+
+        Public Sub insert()
+            db.DRUG_IMPORT_SEND_EDITs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.DRUG_IMPORT_SEND_EDITs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.DRUG_IMPORT_SEND_EDITs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal IDA As String)                                   'หาข้อมูล แต่หาจากตัวแม่คือ FK IDA
+            datas = (From p In db.DRUG_IMPORT_SEND_EDITs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_FK_IDA_Process(ByVal IDA As Integer, ByVal process As String)
+
+            datas = (From p In db.DRUG_IMPORT_SEND_EDITs Where p.FK_IDA = IDA And p.PROCESS_ID = process Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
 End Class

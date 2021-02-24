@@ -26,6 +26,7 @@
                     i += 1
                     INSERT_LOG(dao_q.fields.IDA, "1400001", 3)
                 End If
+                'ข้ามสถานะ
             End If
             If Trim(txt_no_2.Text) <> "" Then
                 dao_q.GetDataby_TR_ID_PROCESS_ID(Trim(txt_no_2.Text), "1400001")
