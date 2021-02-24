@@ -136,6 +136,46 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="UPDATE_TRANFERS_DR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pvncd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rgttpcd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drgtpcd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rgtno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY_EDIT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="system" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPDATE_TRANFERS_DRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UPDATE_TRANFERS_DRResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPDATE_SMP_DR_126">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pvncd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rgttpcd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="drgtpcd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rgtno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY_EDIT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="system" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPDATE_SMP_DR_126Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UPDATE_SMP_DR_126Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="XML_DRUG_BC_UPDATE_TB">
         <s:complexType>
           <s:sequence>
@@ -268,6 +308,18 @@
   <wsdl:message name="DRUG_DELETE_DR_126SoapOut">
     <wsdl:part name="parameters" element="tns:DRUG_DELETE_DR_126Response" />
   </wsdl:message>
+  <wsdl:message name="UPDATE_TRANFERS_DRSoapIn">
+    <wsdl:part name="parameters" element="tns:UPDATE_TRANFERS_DR" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_TRANFERS_DRSoapOut">
+    <wsdl:part name="parameters" element="tns:UPDATE_TRANFERS_DRResponse" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_SMP_DR_126SoapIn">
+    <wsdl:part name="parameters" element="tns:UPDATE_SMP_DR_126" />
+  </wsdl:message>
+  <wsdl:message name="UPDATE_SMP_DR_126SoapOut">
+    <wsdl:part name="parameters" element="tns:UPDATE_SMP_DR_126Response" />
+  </wsdl:message>
   <wsdl:message name="XML_DRUG_BC_UPDATE_TBSoapIn">
     <wsdl:part name="parameters" element="tns:XML_DRUG_BC_UPDATE_TB" />
   </wsdl:message>
@@ -344,6 +396,16 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">UPDATE_DR_ESUB_126</wsdl:documentation>
       <wsdl:input message="tns:DRUG_DELETE_DR_126SoapIn" />
       <wsdl:output message="tns:DRUG_DELETE_DR_126SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_TRANFERS_DR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">UPDATE_TRANFERS_DR_ESUB_126</wsdl:documentation>
+      <wsdl:input message="tns:UPDATE_TRANFERS_DRSoapIn" />
+      <wsdl:output message="tns:UPDATE_TRANFERS_DRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_SMP_DR_126">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">UPDATE_SMP_DR_126_ESUB_126</wsdl:documentation>
+      <wsdl:input message="tns:UPDATE_SMP_DR_126SoapIn" />
+      <wsdl:output message="tns:UPDATE_SMP_DR_126SoapOut" />
     </wsdl:operation>
     <wsdl:operation name="XML_DRUG_BC_UPDATE_TB">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">XML_DRUG_BC_UPDATE_TB</wsdl:documentation>
@@ -443,6 +505,24 @@
     </wsdl:operation>
     <wsdl:operation name="DRUG_DELETE_DR_126">
       <soap:operation soapAction="http://tempuri.org/DRUG_DELETE_DR_126" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_TRANFERS_DR">
+      <soap:operation soapAction="http://tempuri.org/UPDATE_TRANFERS_DR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_SMP_DR_126">
+      <soap:operation soapAction="http://tempuri.org/UPDATE_SMP_DR_126" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -572,6 +652,24 @@
     </wsdl:operation>
     <wsdl:operation name="DRUG_DELETE_DR_126">
       <soap12:operation soapAction="http://tempuri.org/DRUG_DELETE_DR_126" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_TRANFERS_DR">
+      <soap12:operation soapAction="http://tempuri.org/UPDATE_TRANFERS_DR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE_SMP_DR_126">
+      <soap12:operation soapAction="http://tempuri.org/UPDATE_SMP_DR_126" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
