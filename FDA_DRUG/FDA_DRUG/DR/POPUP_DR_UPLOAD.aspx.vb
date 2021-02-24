@@ -2531,7 +2531,7 @@ Public Class POPUP_DR_UPLOAD
         Dim dao_ani_rq As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_ANIMAL
         dao_ani_rq.GetDataby_Newcode(newcode)
         For Each dao_ani_rq.fields In dao_ani_rq.datas
-            Dim dao_anih_ins As New DAO_DRUG.ClsDBdramldrg
+            Dim dao_anih_ins As New DAO_DRUG.ClsDBdrramldrg
             With dao_anih_ins.fields
                 Try
                     Dim dao_amlsub As New DAO_DRUG.TB_dramlsubtp
@@ -2586,7 +2586,7 @@ Public Class POPUP_DR_UPLOAD
         Dim dao_aniuse_rq As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_ANIMAL_CONSUME
         dao_aniuse_rq.GetDataby_Newcode(newcode)
         For Each dao_aniuse_rq.fields In dao_aniuse_rq.datas
-            Dim dao_ani_ins As New DAO_DRUG.ClsDBdramluse
+            Dim dao_ani_ins As New DAO_DRUG.ClsDBdrramluse
             With dao_ani_ins.fields
                 Try
                     Dim dao_amlsub As New DAO_DRUG.TB_dramlsubtp
