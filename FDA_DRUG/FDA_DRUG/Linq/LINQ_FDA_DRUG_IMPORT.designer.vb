@@ -151,6 +151,12 @@ Partial Public Class LINQ_FDA_DRUG_IMPORTDataContext
     End Sub
   Partial Private Sub DeleteFDA_DRUG_IMPORT_NYM_5(instance As FDA_DRUG_IMPORT_NYM_5)
     End Sub
+  Partial Private Sub InsertDRUG_IMPORT_SEND_EDIT(instance As DRUG_IMPORT_SEND_EDIT)
+    End Sub
+  Partial Private Sub UpdateDRUG_IMPORT_SEND_EDIT(instance As DRUG_IMPORT_SEND_EDIT)
+    End Sub
+  Partial Private Sub DeleteDRUG_IMPORT_SEND_EDIT(instance As DRUG_IMPORT_SEND_EDIT)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -295,6 +301,12 @@ Partial Public Class LINQ_FDA_DRUG_IMPORTDataContext
 	Public ReadOnly Property FDA_DRUG_IMPORT_NYM_5s() As System.Data.Linq.Table(Of FDA_DRUG_IMPORT_NYM_5)
 		Get
 			Return Me.GetTable(Of FDA_DRUG_IMPORT_NYM_5)
+		End Get
+	End Property
+	
+	Public ReadOnly Property DRUG_IMPORT_SEND_EDITs() As System.Data.Linq.Table(Of DRUG_IMPORT_SEND_EDIT)
+		Get
+			Return Me.GetTable(Of DRUG_IMPORT_SEND_EDIT)
 		End Get
 	End Property
 End Class
@@ -21669,6 +21681,222 @@ Partial Public Class FDA_DRUG_IMPORT_NYM_5
 				Me._CONSIDER_IDENTIFY = value
 				Me.SendPropertyChanged("CONSIDER_IDENTIFY")
 				Me.OnCONSIDER_IDENTIFYChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DRUG_IMPORT_SEND_EDIT")>  _
+Partial Public Class DRUG_IMPORT_SEND_EDIT
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _FK_IDA As System.Nullable(Of Integer)
+	
+	Private _CITIZEN_AUTHORIZE As String
+	
+	Private _DESCRIPTION As String
+	
+	Private _CREATE_DATE As System.Nullable(Of Date)
+	
+	Private _PROCESS_ID As System.Nullable(Of Integer)
+	
+	Private _CITIZEN_STAFF As String
+	
+	Private _SEND_BACK_DATE As System.Nullable(Of Date)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnFK_IDAChanged()
+    End Sub
+    Partial Private Sub OnCITIZEN_AUTHORIZEChanging(value As String)
+    End Sub
+    Partial Private Sub OnCITIZEN_AUTHORIZEChanged()
+    End Sub
+    Partial Private Sub OnDESCRIPTIONChanging(value As String)
+    End Sub
+    Partial Private Sub OnDESCRIPTIONChanged()
+    End Sub
+    Partial Private Sub OnCREATE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnCREATE_DATEChanged()
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanged()
+    End Sub
+    Partial Private Sub OnCITIZEN_STAFFChanging(value As String)
+    End Sub
+    Partial Private Sub OnCITIZEN_STAFFChanged()
+    End Sub
+    Partial Private Sub OnSEND_BACK_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnSEND_BACK_DATEChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
+	Public Property FK_IDA() As System.Nullable(Of Integer)
+		Get
+			Return Me._FK_IDA
+		End Get
+		Set
+			If (Me._FK_IDA.Equals(value) = false) Then
+				Me.OnFK_IDAChanging(value)
+				Me.SendPropertyChanging
+				Me._FK_IDA = value
+				Me.SendPropertyChanged("FK_IDA")
+				Me.OnFK_IDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITIZEN_AUTHORIZE", DbType:="NVarChar(50)")>  _
+	Public Property CITIZEN_AUTHORIZE() As String
+		Get
+			Return Me._CITIZEN_AUTHORIZE
+		End Get
+		Set
+			If (String.Equals(Me._CITIZEN_AUTHORIZE, value) = false) Then
+				Me.OnCITIZEN_AUTHORIZEChanging(value)
+				Me.SendPropertyChanging
+				Me._CITIZEN_AUTHORIZE = value
+				Me.SendPropertyChanged("CITIZEN_AUTHORIZE")
+				Me.OnCITIZEN_AUTHORIZEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DESCRIPTION", DbType:="NVarChar(MAX)")>  _
+	Public Property DESCRIPTION() As String
+		Get
+			Return Me._DESCRIPTION
+		End Get
+		Set
+			If (String.Equals(Me._DESCRIPTION, value) = false) Then
+				Me.OnDESCRIPTIONChanging(value)
+				Me.SendPropertyChanging
+				Me._DESCRIPTION = value
+				Me.SendPropertyChanged("DESCRIPTION")
+				Me.OnDESCRIPTIONChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATE_DATE", DbType:="Date")>  _
+	Public Property CREATE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CREATE_DATE
+		End Get
+		Set
+			If (Me._CREATE_DATE.Equals(value) = false) Then
+				Me.OnCREATE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATE_DATE = value
+				Me.SendPropertyChanged("CREATE_DATE")
+				Me.OnCREATE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROCESS_ID", DbType:="Int")>  _
+	Public Property PROCESS_ID() As System.Nullable(Of Integer)
+		Get
+			Return Me._PROCESS_ID
+		End Get
+		Set
+			If (Me._PROCESS_ID.Equals(value) = false) Then
+				Me.OnPROCESS_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._PROCESS_ID = value
+				Me.SendPropertyChanged("PROCESS_ID")
+				Me.OnPROCESS_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITIZEN_STAFF", DbType:="NVarChar(50)")>  _
+	Public Property CITIZEN_STAFF() As String
+		Get
+			Return Me._CITIZEN_STAFF
+		End Get
+		Set
+			If (String.Equals(Me._CITIZEN_STAFF, value) = false) Then
+				Me.OnCITIZEN_STAFFChanging(value)
+				Me.SendPropertyChanging
+				Me._CITIZEN_STAFF = value
+				Me.SendPropertyChanged("CITIZEN_STAFF")
+				Me.OnCITIZEN_STAFFChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEND_BACK_DATE", DbType:="DateTime")>  _
+	Public Property SEND_BACK_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._SEND_BACK_DATE
+		End Get
+		Set
+			If (Me._SEND_BACK_DATE.Equals(value) = false) Then
+				Me.OnSEND_BACK_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._SEND_BACK_DATE = value
+				Me.SendPropertyChanged("SEND_BACK_DATE")
+				Me.OnSEND_BACK_DATEChanged
 			End If
 		End Set
 	End Property

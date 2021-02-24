@@ -122,5 +122,11 @@
         <elementListCompartment Id="c2e54ea4-a220-433a-909c-ff297173a26a" absoluteBounds="9.515, 9.21, 1.9700000000000002, 19.2872314453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="835c2c3a-24f4-4fc8-bfaa-5d35b6839856" absoluteBounds="8.25, 1.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/LINQ_FDA_DRUG_IMPORTDataContext/DRUG_IMPORT_SEND_EDIT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b8320d7-42fd-49c9-bf88-7127fafdb4ce" absoluteBounds="8.265, 2.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

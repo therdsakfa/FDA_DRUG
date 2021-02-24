@@ -685,6 +685,7 @@
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM5.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_MAIN_NYM.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_CONSIDER_NEW.aspx" />
+    <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_EDIT.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_PROOF_NEW.aspx" />
     <Content Include="NEW_STAFF_NYM\FRM_STAFF_NYM_REMARK_EDIT.aspx" />
     <Content Include="RGT_EDIT_STAFF\FRM_RGT_EDIT_CONSIDER.aspx" />
@@ -3656,6 +3657,13 @@
     </Compile>
     <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM5.aspx.vb">
       <DependentUpon>FRM_STAFF_NYM5.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_NYM_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_EDIT.aspx.vb">
+      <DependentUpon>FRM_STAFF_NYM_EDIT.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="NEW_STAFF_NYM\FRM_STAFF_NYM_REMARK_EDIT.aspx.designer.vb">
