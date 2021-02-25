@@ -89,7 +89,7 @@ Public Class FRM_DRUG_IMPORT_MAIN
         'url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & 2 & "&process=" & "1027" ' & " & NYM2_ida" & _IDA
         'Response.Redirect(url)
         'End If
-        url = "../D_NEW_DRUG_IMPORT/POPUP_NYM_REDIRECT2.aspx?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & 2 & "&process=" & "1027" & "&CHK_SAVE=1" ' & " & NYM2_ida" & _IDA
+        url = "../D_NEW_DRUG_IMPORT/POPUP_NYM_REDIRECT2.aspx?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & 2 & "&process=" & "1027" & "&CHK_SAVE=1&IDA=0" ' & " & NYM2_ida" & _IDA
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url & "');", True)
 
     End Sub
