@@ -123,8 +123,9 @@ Public Class FRM_DRUG_IMPORT_MAIN
 
                 'End Try
 
-                url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process & "&IDA=" & NYM2_ida
-                Response.Redirect(url)
+                'url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process & "&IDA=" & NYM2_ida
+                'Response.Redirect(url)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_EDIT_REQUEST.aspx?IDA=" & NYM2_ida & "&TR_ID=" & item("TR_ID").Text & "&Process=" & _process & "&DL=" & _DL & "');", True)
             ElseIf e.CommandName = "_trid" Then
                 Dim TR_ID As String = ""
                 Dim _ProcessID As String = ""
