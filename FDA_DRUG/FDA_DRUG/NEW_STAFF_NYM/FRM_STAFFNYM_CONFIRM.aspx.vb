@@ -1186,7 +1186,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         If STATUS_ID = 3 Then
             Dim item2 As New ListItem
             item2.Text = "คืนให้แก้ไขคำขอ"
-            item2.Value = "4"
+            item2.Value = "5"
             ddl_cnsdcd.Items.Insert(ddl_cnsdcd.Items.Count - 1, item2)
         End If
     End Sub
