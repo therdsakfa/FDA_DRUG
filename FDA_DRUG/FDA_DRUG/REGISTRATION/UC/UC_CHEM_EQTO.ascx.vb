@@ -38,12 +38,17 @@ Public Class UC_CHEM_EQTO
         If rcb_unit.SelectedValue <> 0 And txt_QTY.Text <> "" Then
 
             For Each item As GridDataItem In rg_search_iowa.SelectedItems
+                Dim dao_ea As New DAO_DRUG.TB_DRUG_REGISTRATION_DETAIL_CA
+                dao_ea.GetDataby_FK_IDA(_main_ida)
+
                 Dim dao As New DAO_DRUG.TB_DRUG_REGISTRATION_EQTO
                 dao.fields.IOWA = item("iowacd").Text
                 dao.fields.QTY = txt_QTY.Text
                 dao.fields.SUNITCD = rcb_unit.SelectedValue
                 dao.fields.aori = ddl_aori.SelectedValue
                 dao.fields.FK_IDA = _IDA
+                dao.fields.FK_REGIST = _main_ida
+                dao.fields.FK_SET = dao_ea.fields.FK_SET
                 Try
                     dao.fields.CONDITION = ddl_remark1.SelectedValue
                 Catch ex As Exception
@@ -72,7 +77,7 @@ Public Class UC_CHEM_EQTO
                 dao.insert()
             Next
 
-        rg_chem.Rebind()
+            rg_chem.Rebind()
         Else
         alert("กรุณากรอกข้อมูลให้ครบ")
         End If
@@ -498,7 +503,7 @@ Public Class UC_CHEM_EQTO
                     'Dim dao_eqto_ins As New DAO_DRUG.TB_DRUG_REGISTRATION_EQTO
                     'dao_eqto_ins.GetDataby_IDA(ida_)
                     dao_tt.fields.FK_IDA = _IDA
-                    'dao_eqto_ins.fields.FK_SET = dao_tt.fields.FK_SET
+                    dao_tt.fields.FK_SET = dao_tt.fields.FK_SET
                     dao_tt.fields.FK_REGIST = Request.QueryString("main_id")
                     'dao_tt.fields.IOWA = rcb_iowanm.SelectedValue
                     'dao_tt.fields.QTY = dao_eqto.fields.QTY

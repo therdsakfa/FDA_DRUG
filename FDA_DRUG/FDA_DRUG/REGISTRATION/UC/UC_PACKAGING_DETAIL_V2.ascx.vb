@@ -236,6 +236,7 @@ Public Class UC_PACKAGING_DETAIL_V2
             dao.fields.BIG_AMOUNT = 1
             dao.fields.BARCODE = txt_barcode.Text            'บาร์โค้ดขนาดบรรจุ
             dao.fields.DATE_ADD = Date.Now
+
             Try
                 Dim dao_mas_unit1 As New DAO_DRUG.TB_drsunit
                 dao_mas_unit1.GetDataby_sunitcd(dao_drugname.fields.UNIT_NORMAL)
@@ -246,8 +247,8 @@ Public Class UC_PACKAGING_DETAIL_V2
                 Dim sum As Integer = CInt(txt_sunit.Text) * CInt(dao.fields.MEDIUM_AMOUNT)
                 sum = sum * CInt(txt_sunit.Text)
 
-                dao.fields.IM_DETAIL = txt_sunit.Text & " " & dao_mas_unit1.fields.sunitthanm & " x " & dao.fields.MEDIUM_AMOUNT & " " & dao_mas_unit.fields.sunitthanm & _
-                    " x " & dao.fields.BIG_AMOUNT & " " & dao_mas_unit2.fields.sunitthanm & " จำนวน " & txt_sunit.Text & " " & dao_mas_unit.fields.sunitengnm & " (" & sum & " " & dao_mas_unit1.fields.sunitengnm & ")"
+                'dao.fields.IM_DETAIL = txt_sunit.Text & " " & dao_mas_unit1.fields.sunitthanm & " x " & dao.fields.MEDIUM_AMOUNT & " " & dao_mas_unit.fields.sunitthanm & _
+                '    " x " & dao.fields.BIG_AMOUNT & " " & dao_mas_unit2.fields.sunitthanm & " จำนวน " & txt_sunit.Text & " " & dao_mas_unit.fields.sunitengnm & " (" & sum & " " & dao_mas_unit1.fields.sunitengnm & ")"
             Catch ex As Exception
 
             End Try
