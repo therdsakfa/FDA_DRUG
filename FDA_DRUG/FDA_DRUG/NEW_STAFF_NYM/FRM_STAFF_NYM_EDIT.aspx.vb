@@ -1,7 +1,7 @@
 ﻿Imports Telerik.Web.UI
 Public Class FRM_STAFF_NYM_EDIT
     Inherits System.Web.UI.Page
-    Private _TR_ID As Integer
+    Private _TR_ID As String
     Private _IDA As Integer
     Private _CLS As New CLS_SESSION
     ' Private _type As String
