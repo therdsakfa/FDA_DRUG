@@ -1085,8 +1085,6 @@ Public Class UC_DS_PORYOR8
     End Sub
 
 
-
-
     'Protected Sub RadGrid2_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid2.NeedDataSource
     '    Dim bao As New BAO.ClsDBSqlcommand
     '    Dim dt As New DataTable
