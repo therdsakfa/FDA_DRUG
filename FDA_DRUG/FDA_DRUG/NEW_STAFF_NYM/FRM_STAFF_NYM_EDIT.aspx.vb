@@ -14,7 +14,7 @@ Public Class FRM_STAFF_NYM_EDIT
             _TR_ID = Request.QueryString("TR_ID")
             _IDA = Request.QueryString("IDA")
             _CLS = Session("CLS")
-            _ProcessID = Request.QueryString("PROCESS_ID")
+            _ProcessID = Request.QueryString("process")
             ' _type = "1"
         End If
 
@@ -134,11 +134,7 @@ Public Class FRM_STAFF_NYM_EDIT
         End Try
         AddLogStatusDS(5, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
     End Sub
-    Sub alert_reload(ByVal text As String)
-        Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');</script> ")
-        Response.Redirect("FRM_DS_STAFF_CONFIRM.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & _ProcessID)
 
-    End Sub
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');parent.close_modal();</script> ")
     End Sub
