@@ -668,6 +668,7 @@
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM4_2.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx" />
+    <Content Include="D_NEW_DRUG_IMPORT\POPUP_NYM_EDIT_REQUEST.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\POPUP_NYM_REDIRECT.aspx" />
     <Content Include="D_NEW_DRUG_IMPORT\POPUP_NYM_REDIRECT2.aspx" />
     <Content Include="EDIT_LOCATION_STAFF\UC\UC_TABLE_DRUG_GROUP_CHANGE_V2.ascx" />
@@ -3219,6 +3220,13 @@
     </Compile>
     <Compile Include="D_NEW_DRUG_IMPORT\FRM_DRUG_IMPORT_NYM5.aspx.vb">
       <DependentUpon>FRM_DRUG_IMPORT_NYM5.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\POPUP_NYM_EDIT_REQUEST.aspx.designer.vb">
+      <DependentUpon>POPUP_NYM_EDIT_REQUEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="D_NEW_DRUG_IMPORT\POPUP_NYM_EDIT_REQUEST.aspx.vb">
+      <DependentUpon>POPUP_NYM_EDIT_REQUEST.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="D_NEW_DRUG_IMPORT\POPUP_NYM_REDIRECT.aspx.designer.vb">

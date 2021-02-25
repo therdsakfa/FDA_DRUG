@@ -47,6 +47,10 @@ Namespace WS_DRUG_126
         
         Private DRUG_DELETE_DR_126OperationCompleted As System.Threading.SendOrPostCallback
         
+        Private UPDATE_TRANFERS_DROperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private UPDATE_SMP_DR_126OperationCompleted As System.Threading.SendOrPostCallback
+        
         Private XML_DRUG_BC_UPDATE_TBOperationCompleted As System.Threading.SendOrPostCallback
         
         Private XML_DRUG_FORMULAOperationCompleted As System.Threading.SendOrPostCallback
@@ -120,6 +124,12 @@ Namespace WS_DRUG_126
         
         '''<remarks/>
         Public Event DRUG_DELETE_DR_126Completed As DRUG_DELETE_DR_126CompletedEventHandler
+        
+        '''<remarks/>
+        Public Event UPDATE_TRANFERS_DRCompleted As UPDATE_TRANFERS_DRCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event UPDATE_SMP_DR_126Completed As UPDATE_SMP_DR_126CompletedEventHandler
         
         '''<remarks/>
         Public Event XML_DRUG_BC_UPDATE_TBCompleted As XML_DRUG_BC_UPDATE_TBCompletedEventHandler
@@ -352,6 +362,60 @@ Namespace WS_DRUG_126
             If (Not (Me.DRUG_DELETE_DR_126CompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
                 RaiseEvent DRUG_DELETE_DR_126Completed(Me, New DRUG_DELETE_DR_126CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UPDATE_TRANFERS_DR", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function UPDATE_TRANFERS_DR(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String) As String
+            Dim results() As Object = Me.Invoke("UPDATE_TRANFERS_DR", New Object() {pvncd, rgttpcd, drgtpcd, rgtno, remark, IDENTIFY_EDIT, system})
+            Return CType(results(0),String)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub UPDATE_TRANFERS_DRAsync(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String)
+            Me.UPDATE_TRANFERS_DRAsync(pvncd, rgttpcd, drgtpcd, rgtno, remark, IDENTIFY_EDIT, system, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub UPDATE_TRANFERS_DRAsync(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String, ByVal userState As Object)
+            If (Me.UPDATE_TRANFERS_DROperationCompleted Is Nothing) Then
+                Me.UPDATE_TRANFERS_DROperationCompleted = AddressOf Me.OnUPDATE_TRANFERS_DROperationCompleted
+            End If
+            Me.InvokeAsync("UPDATE_TRANFERS_DR", New Object() {pvncd, rgttpcd, drgtpcd, rgtno, remark, IDENTIFY_EDIT, system}, Me.UPDATE_TRANFERS_DROperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnUPDATE_TRANFERS_DROperationCompleted(ByVal arg As Object)
+            If (Not (Me.UPDATE_TRANFERS_DRCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent UPDATE_TRANFERS_DRCompleted(Me, New UPDATE_TRANFERS_DRCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UPDATE_SMP_DR_126", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function UPDATE_SMP_DR_126(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String) As String
+            Dim results() As Object = Me.Invoke("UPDATE_SMP_DR_126", New Object() {pvncd, rgttpcd, drgtpcd, rgtno, remark, IDENTIFY_EDIT, system})
+            Return CType(results(0),String)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub UPDATE_SMP_DR_126Async(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String)
+            Me.UPDATE_SMP_DR_126Async(pvncd, rgttpcd, drgtpcd, rgtno, remark, IDENTIFY_EDIT, system, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub UPDATE_SMP_DR_126Async(ByVal pvncd As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As String, ByVal remark As String, ByVal IDENTIFY_EDIT As String, ByVal system As String, ByVal userState As Object)
+            If (Me.UPDATE_SMP_DR_126OperationCompleted Is Nothing) Then
+                Me.UPDATE_SMP_DR_126OperationCompleted = AddressOf Me.OnUPDATE_SMP_DR_126OperationCompleted
+            End If
+            Me.InvokeAsync("UPDATE_SMP_DR_126", New Object() {pvncd, rgttpcd, drgtpcd, rgtno, remark, IDENTIFY_EDIT, system}, Me.UPDATE_SMP_DR_126OperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnUPDATE_SMP_DR_126OperationCompleted(ByVal arg As Object)
+            If (Not (Me.UPDATE_SMP_DR_126CompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent UPDATE_SMP_DR_126Completed(Me, New UPDATE_SMP_DR_126CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -733,6 +797,60 @@ Namespace WS_DRUG_126
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class DRUG_DELETE_DR_126CompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub UPDATE_TRANFERS_DRCompletedEventHandler(ByVal sender As Object, ByVal e As UPDATE_TRANFERS_DRCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class UPDATE_TRANFERS_DRCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As String
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),String)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub UPDATE_SMP_DR_126CompletedEventHandler(ByVal sender As Object, ByVal e As UPDATE_SMP_DR_126CompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class UPDATE_SMP_DR_126CompletedEventArgs
         Inherits System.ComponentModel.AsyncCompletedEventArgs
         
         Private results() As Object

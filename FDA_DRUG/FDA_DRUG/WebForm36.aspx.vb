@@ -2961,5 +2961,52 @@ Public Class WebForm36
 
         End Try
     End Sub
+
+    Protected Sub Button34_Click(sender As Object, e As EventArgs) Handles Button34.Click
+        Dim dao_ani_rq As New DAO_DRUG.ClsDBdrramldrg
+        dao_ani_rq.GetData_by_FK_IDA(92376)
+        For Each dao_ani_rq.fields In dao_ani_rq.datas
+            Dim dao_ani_rg As New DAO_DRUG.ClsDBdramldrg
+            With dao_ani_rg.fields
+                .amlsubcd = dao_ani_rq.fields.amlsubcd
+                .amltpcd = dao_ani_rq.fields.amltpcd
+                .drgtpcd = dao_ani_rq.fields.drgtpcd
+                .FK_IDA = 90208
+                .pvncd = dao_ani_rq.fields.pvncd
+                .rgtno = dao_ani_rq.fields.rgtno
+                .rgttpcd = dao_ani_rq.fields.rgttpcd
+                .usetpcd = dao_ani_rq.fields.usetpcd
+            End With
+            dao_ani_rg.insert()
+        Next
+
+        Dim dao_aniuse_rq As New DAO_DRUG.ClsDBdrramluse
+        dao_aniuse_rq.GetDatabyFKIDA(92376)
+        For Each dao_aniuse_rq.fields In dao_aniuse_rq.datas
+            Dim dao_aniuse_rg As New DAO_DRUG.ClsDBdramluse
+            With dao_aniuse_rg.fields
+                .amlsubcd = dao_aniuse_rg.fields.amlsubcd
+                .amltpcd = dao_aniuse_rg.fields.amltpcd
+                .drgtpcd = dao_aniuse_rg.fields.drgtpcd
+                .FK_IDA = 90208
+                .pvncd = dao_aniuse_rg.fields.pvncd
+                .rgtno = dao_aniuse_rg.fields.rgtno
+                .rgttpcd = dao_aniuse_rg.fields.rgttpcd
+                .usetpcd = dao_aniuse_rg.fields.usetpcd
+                '.rcvno = dao_aniuse_rg.fields.rcvno
+                .nouse = dao_aniuse_rg.fields.nouse
+                .packuse = dao_aniuse_rg.fields.packuse
+                .pvncd = dao_aniuse_rg.fields.pvncd
+                .STOP_UNIT1 = dao_aniuse_rg.fields.STOP_UNIT1
+                .STOP_UNIT2 = dao_aniuse_rg.fields.STOP_UNIT2
+                .STOP_VALUE1 = dao_aniuse_rg.fields.STOP_VALUE1
+                .STOP_VALUE2 = dao_aniuse_rg.fields.STOP_VALUE2
+                .stpdrg = dao_aniuse_rg.fields.stpdrg
+                .stpdrgcd = dao_aniuse_rg.fields.stpdrgcd
+                .usetpcd = dao_aniuse_rg.fields.usetpcd
+            End With
+            dao_aniuse_rg.insert()
+        Next
+    End Sub
 End Class
 

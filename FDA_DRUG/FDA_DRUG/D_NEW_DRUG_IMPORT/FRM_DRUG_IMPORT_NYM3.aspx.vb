@@ -129,8 +129,9 @@ Public Class FRM_DRUG_IMPORT_NYM3
                 '    DL = dao.fields.DL
                 'Catch ex As Exception
                 'End Try
-                url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process & "&IDA=" & NYM3_ida
-                Response.Redirect(url)
+                'url = "http://164.115.20.224/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & _DL & "&NYM=" & NYM & "&process=" & _process & "&IDA=" & NYM3_ida
+                'Response.Redirect(url)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_EDIT_REQUEST.aspx?IDA=" & NYM3_ida & "&TR_ID=" & item("TR_ID").Text & "&Process=" & _process & "&DL=" & _DL & "');", True)
             ElseIf e.CommandName = "upload" Then
                 'หา Code ที่ทำให้อัพโหลดขึ้นเซิฟ                   น่าจะต้องเอามาจาก LCN_UPLOAD
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_UPLOAD_PDF_PROOF.aspx?IDA=" & NYM3_ida & "&Process=" & _process & "&DL=" & _DL & "');", True)
