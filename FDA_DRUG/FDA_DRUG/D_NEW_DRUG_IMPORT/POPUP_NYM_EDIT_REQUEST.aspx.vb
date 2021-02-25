@@ -227,11 +227,11 @@ Public Class POPUP_NYM_EDIT_REQUEST
             url = "https://medicina.fda.moph.go.th/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & dao3.fields.DL & "&NYM=" & 3 & "&process=" & _ProcessID & "&IDA=" & _IDA & "&CHK_SAVE=2"
             Response.Redirect(url)
         ElseIf _ProcessID = 1029 Then
-            dao3.GetDataby_IDA(Integer.Parse(_IDA))
+            dao4.GetDataby_IDA(Integer.Parse(_IDA))
             url = "https://medicina.fda.moph.go.th/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & dao4.fields.DL & "&NYM=" & 4 & "&process=" & _ProcessID & "&IDA=" & _IDA & "&CHK_SAVE=2"
             Response.Redirect(url)
         ElseIf _ProcessID = 1031 Then
-            dao3.GetDataby_IDA(Integer.Parse(_IDA))
+            dao4_2.GetDataby_IDA(Integer.Parse(_IDA))
             url = "https://medicina.fda.moph.go.th/FDA_DRUG_IMPORT/AUTHEN/AUTHEN_GATEWAY?TOKEN=" & _CLS.TOKEN & "&DL=" & dao4_2.fields.DL & "&NYM=" & 7 & "&process=" & _ProcessID & "&IDA=" & _IDA & "&CHK_SAVE=2"
             Response.Redirect(url)
         End If
