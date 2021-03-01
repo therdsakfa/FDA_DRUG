@@ -103,6 +103,7 @@ Public Class FRM_DS_STAFF_EDIT
                     insert_file(TR_ID, FileUpload1, TXT_DESCIPTION1.Text)
                     lbl_attach1.Text = "อัพโหลดไฟล์แนบสำเร็จ"
                 End If
+
                 If FileUpload2.HasFile Then
                     insert_file(TR_ID, FileUpload2, TXT_DESCIPTION2.Text)
                     lbl_attach2.Text = "อัพโหลดไฟล์แนบสำเร็จ"
@@ -158,11 +159,12 @@ Public Class FRM_DS_STAFF_EDIT
         If FileUpload1.HasFile Then
             upload()
             msg = "success"
+            alert1("ดำเนินการ UPLOAD FILE แก้ไขคำขอเรียบร้อยแล้ว")
         Else
             alert("กรุณาแนบไฟล์คำขอ")
         End If
 
-        alert1("ดำเนินการ UPLOAD FILE แก้ไขคำขอเรียบร้อยแล้ว")
+
     End Sub
 
 End Class
