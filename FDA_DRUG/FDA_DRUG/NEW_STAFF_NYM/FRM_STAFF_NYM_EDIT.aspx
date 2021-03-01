@@ -161,7 +161,10 @@
             </tr>
             <tr>
                 <td class="auto-style12"></td>
-                <td class="auto-style13"><asp:Button ID="btn_Upload" runat="server" Text="Upload File" /></td>
+                <td class="auto-style13">
+                    <%--<asp:Button ID="btn_Upload" runat="server" Text="Upload File" />--%>
+                    <asp:Button ID="btn_Upload1" runat="server" Text="Upload File" />
+                </td>
             </tr>
             <tr>
                 <td align="right" class="auto-style28">กำหนดส่งเอกสาร :</td>

@@ -142,20 +142,10 @@ Public Class FRM_STAFF_NYM_EDIT
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');</script> ")
     End Sub
 
-    Function btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
-        Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
-        dao_p.GetDataby_Process_ID(_ProcessID)
+    'Function btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
 
-        If FileUpload1.HasFile Then
-            upload()
-            msg = "success"
-        Else
-            alert("กรุณาแนบไฟล์คำขอ")
-        End If
-
-        alert1("ดำเนินการ UPLOAD FILE แก้ไขคำขอเรียบร้อยแล้ว")
-        Return msg
-    End Function
+    '    Return msg
+    'End Function
 
     Sub upload()
         Try
@@ -167,7 +157,9 @@ Public Class FRM_STAFF_NYM_EDIT
                 If FileUpload1.HasFile Then
                     insert_file(TR_ID, FileUpload1, TXT_DESCIPTION1.Text)
                     lbl_attach1.Text = "อัพโหลดไฟล์แนบสำเร็จ"
-                ElseIf FileUpload2.HasFile Then
+                End If
+
+                If FileUpload2.HasFile Then
                     insert_file(TR_ID, FileUpload2, TXT_DESCIPTION2.Text)
                     lbl_attach2.Text = "อัพโหลดไฟล์แนบสำเร็จ"
                 End If
@@ -197,6 +189,21 @@ Public Class FRM_STAFF_NYM_EDIT
             dao_file.fields.PROCESS_ID = _ProcessID
             dao_file.insert()
         End If
+
+    End Sub
+
+    Protected Sub btn_Upload1_Click(sender As Object, e As EventArgs) Handles btn_Upload1.Click
+        Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
+        dao_p.GetDataby_Process_ID(_ProcessID)
+
+        If FileUpload1.HasFile Or FileUpload2.HasFile Then
+            upload()
+            msg = "success"
+            alert1("ดำเนินการ UPLOAD FILE แก้ไขคำขอเรียบร้อยแล้ว")
+        Else
+            alert("กรุณาแนบไฟล์คำขอ")
+        End If
+
 
     End Sub
 End Class
