@@ -86,13 +86,13 @@ Partial Public Class FRM_STAFF_NYM_EDIT
     Protected WithEvents lbl_attach2 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''btn_Upload control.
+    '''btn_Upload1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_Upload As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_Upload1 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''rdp_cncdate control.

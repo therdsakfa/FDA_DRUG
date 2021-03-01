@@ -82,7 +82,7 @@ Public Class FRM_STAFF_NYM2
 
                 End Try
 
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM2_ida & "&process=" & _process & "&DL=" & _DL & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFFNYM_CONFIRM.aspx?IDA=" & NYM2_ida & "&process=" & _process & "&TR_ID=" & dao.fields.TR_ID & "&DL=" & _DL & "');", True)
             ElseIf e.CommandName = "_edit" Then
                 dao.GetDataby_IDA(NYM2_ida)
                 Dim _DL As String = 0
@@ -91,7 +91,7 @@ Public Class FRM_STAFF_NYM2
                 Catch ex As Exception
 
                 End Try
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & NYM2_ida & "&process=" & _process & "&DL=" & _DL & " &edit=" & 0 & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../NEW_STAFF_NYM/FRM_STAFF_NYM_CONSIDER_NEW.aspx?IDA=" & NYM2_ida & "&process=" & _process & "&TR_ID=" & dao.fields.TR_ID & "&DL=" & _DL & " &edit=" & 0 & "');", True)
 
             End If
         End If

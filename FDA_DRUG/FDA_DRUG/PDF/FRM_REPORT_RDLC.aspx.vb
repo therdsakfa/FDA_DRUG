@@ -62,14 +62,14 @@ Public Class FRM_REPORT_RDLC
                 tr_id = dao_rgt.fields.IDA
             End Try
             Dim newcode As String = Request.QueryString("NEWCODE")
-            Dim IDA As Integer = 0
-            Try
-                Dim dao_xml As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
-                dao_xml.GetDataby_u1(newcode)
-                IDA = dao_xml.fields.IDA_drrgt
-            Catch ex As Exception
+            'Dim IDA As Integer = 0
+            'Try
+            '    Dim dao_xml As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+            '    dao_xml.GetDataby_u1(newcode)
+            '    IDA = dao_xml.fields.IDA_drrgt
+            'Catch ex As Exception
 
-            End Try
+            'End Try
             'dt_drug_general = bao_master_2.SP_drug_general(Request.QueryString("IDA")) 'SP_drug_general_sai
             'dt_formula = bao_master_2.SP_drug_formula_rg(Request.QueryString("IDA")) 'SP_drug_formula_rg_by_Newcode
             'dt_frgn = bao_show.SP_DRRGT_PRODUCER_ALL_BY_FK_IDA(Request.QueryString("IDA")) 'SP_DRRGT_PRODUCER_ALL_BY_NEWCODE

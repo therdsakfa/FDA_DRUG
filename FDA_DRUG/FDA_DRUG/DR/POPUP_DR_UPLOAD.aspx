@@ -69,7 +69,7 @@
         </h3>
 
          <table class="table"> <tr><td style="width:15%;">   แบบคำขอ ย.1</td><td>   <asp:FileUpload ID="FileUpload1" runat="server" CssClass="btn-default" />  </td></tr>
-             <tr><td style="width:15%;"> <asp:Label ID="lbl_niti" runat="server" Text="เลขนิติ(กรณี Transfer)"></asp:Label>  </td><td>   
+             <tr><td style="width:15%;"> <asp:Label ID="lbl_niti" runat="server" Text="เลขนิติฯ แห่งใหม่(กรณี Transfer)"></asp:Label>  </td><td>   
                  <asp:TextBox ID="txt_citizenid" runat="server"></asp:TextBox>
                  </td></tr>
              <tr><td style="width:15%;">   
