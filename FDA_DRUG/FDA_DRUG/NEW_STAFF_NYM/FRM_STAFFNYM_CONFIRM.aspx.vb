@@ -1116,6 +1116,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         ElseIf _ProcessID = 1028 Then                                                                              'กระบวนการอื่นๆ
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3                                     'เชื่อม base 
             dao.GetDataby_IDA(_IDA)
+            STATUS_ID = dao.fields.STATUS_ID
             ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
             If dao.fields.STATUS_ID <= 3 Then                                                    'ถ้า starus2
                 int_group_ddl = 11
@@ -1131,6 +1132,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         ElseIf _ProcessID = 1029 Then                                                                              'กระบวนการอื่นๆ
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4                                     'เชื่อม base 
             dao.GetDataby_IDA(_IDA)
+            STATUS_ID = dao.fields.STATUS_ID
             ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
             If dao.fields.STATUS_ID <= 3 Then                                                    'ถ้า starus2
                 int_group_ddl = 11
@@ -1146,6 +1148,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         ElseIf _ProcessID = 1030 Then                                                                              'กระบวนการอื่นๆ
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_5                                     'เชื่อม base 
             dao.GetDataby_IDA(_IDA)
+            STATUS_ID = dao.fields.STATUS_ID
             ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
             If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
                 int_group_ddl = 11
@@ -1159,6 +1162,7 @@ Public Class FRM_STAFFNYM_CONFIRM
         ElseIf _ProcessID = 1031 Then                                                                              'กระบวนการอื่นๆ
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY                                 'เชื่อม base 
             dao.GetDataby_IDA(_IDA)
+            STATUS_ID = dao.fields.STATUS_ID
             ' dao_up.GetDataby_IDA(dao.fields.TR_ID)                                          'เอาข้อมูลจาก IDA
             If dao.fields.STATUS_ID <= 2 Then                                                    'ถ้า starus2
                 int_group_ddl = 11
