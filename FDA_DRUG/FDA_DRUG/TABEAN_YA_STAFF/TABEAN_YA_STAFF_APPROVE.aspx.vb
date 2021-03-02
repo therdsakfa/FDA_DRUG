@@ -251,13 +251,13 @@
                 dao_rg.fields.cnccscd = 68
                 dao_rg.update()
 
-                Try
-                    Dim ws_drug1 As New WS_DRUG.WS_DRUG
-                    ws_drug1.DRUG_UPDATE_DR(dao_rg.fields.pvncd, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.rgtno, "เจ้าหน้าที่กดอนุมัติทะเบียนทรานสเฟอร์ ต้องทำการยกเลิกทะเบียนเดิม", _CLS.CITIZEN_ID, "DRUG")
+                'Try
+                '    Dim ws_drug1 As New WS_DRUG.WS_DRUG
+                '    ws_drug1.DRUG_UPDATE_DR(dao_rg.fields.pvncd, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.rgtno, "เจ้าหน้าที่กดอนุมัติทะเบียนทรานสเฟอร์ ต้องทำการยกเลิกทะเบียนเดิม", _CLS.CITIZEN_ID, "DRUG")
 
-                Catch ex As Exception
+                'Catch ex As Exception
 
-                End Try
+                'End Try
 
                 Try
                     Dim ws_drug126 As New WS_DRUG_126.WS_DRUG
@@ -271,12 +271,12 @@
 
         End If
 
-        Try
-            Dim ws_drug As New WS_DRUG.WS_DRUG
-            ws_drug.DRUG_INSERT_DR(dao_rqt.fields.pvncd, dao_rqt.fields.rgttpcd, dao_rqt.fields.drgtpcd, dao_rqt.fields.rgtno, "อนุมัติทะเบียน", _CLS.CITIZEN_ID, "DRUG")
-        Catch ex As Exception
+        'Try
+        '    Dim ws_drug As New WS_DRUG.WS_DRUG
+        '    ws_drug.DRUG_INSERT_DR(dao_rqt.fields.pvncd, dao_rqt.fields.rgttpcd, dao_rqt.fields.drgtpcd, dao_rqt.fields.rgtno, "อนุมัติทะเบียน", _CLS.CITIZEN_ID, "DRUG")
+        'Catch ex As Exception
 
-        End Try
+        'End Try
 
         Try
             Dim ws_drug111 As New WS_DRUG_126.WS_DRUG

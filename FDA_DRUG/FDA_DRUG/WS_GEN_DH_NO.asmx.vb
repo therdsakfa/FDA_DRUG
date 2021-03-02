@@ -59,12 +59,12 @@ Public Class WS_GEN_DH_NO
                     ' Next
                     dao.fields.STATUS_ID = 8
                     dao.update()
-                    Try
-                        Dim ws_update As New WS_DRUG.WS_DRUG
-                        ws_update.DRUG_INSERT_DR15(IDA, "1710500118665")
-                    Catch ex As Exception
+                    'Try
+                    '    Dim ws_update As New WS_DRUG.WS_DRUG
+                    '    ws_update.DRUG_INSERT_DR15(IDA, "1710500118665")
+                    'Catch ex As Exception
 
-                    End Try
+                    'End Try
 
                     Try
                         Dim ws_update126 As New WS_DRUG_126.WS_DRUG
