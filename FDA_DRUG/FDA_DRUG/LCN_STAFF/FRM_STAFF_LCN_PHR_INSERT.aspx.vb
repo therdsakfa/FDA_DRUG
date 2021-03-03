@@ -29,9 +29,11 @@
         dao.fields.PHR_STATUS_UPLOAD = 1
         dao.insert()
         'dao_hs.insert()
-        Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+        'Dim ws_update As New WS_DRUG.WS_DRUG
+        'ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
 
+        Dim ws_update126 As New WS_DRUG_126.WS_DRUG
+        ws_update126.DRUG_UPDATE_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
         KEEP_LOGS_EDIT(Request.QueryString("ida"), "บันทึกผู้ปฏิบัติการ " & UC_PHR_ADD1.Get_Name_In(), _CLS.CITIZEN_ID)
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');parent.close_modal();", True)
     End Sub

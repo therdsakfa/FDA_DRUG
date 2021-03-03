@@ -15,12 +15,12 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
         End Try
     End Sub
     Sub Run_Service(ByVal IDA As Integer)
-        Try
-            Dim ws_update As New WS_DRUG.WS_DRUG
-            ws_update.DRUG_UPDATE_LICEN(IDA, _CLS.CITIZEN_ID)
-        Catch ex As Exception
+        'Try
+        '    Dim ws_update As New WS_DRUG.WS_DRUG
+        '    ws_update.DRUG_UPDATE_LICEN(IDA, _CLS.CITIZEN_ID)
+        'Catch ex As Exception
 
-        End Try
+        'End Try
 
 
         Try
@@ -635,8 +635,8 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
                         Catch ex As Exception
 
                         End Try
-                        Dim ws_update As New WS_DRUG.WS_DRUG
-                        ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+                        'Dim ws_update As New WS_DRUG.WS_DRUG
+                        'ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
 
                         Dim ws_update126 As New WS_DRUG_126.WS_DRUG
                         ws_update126.DRUG_UPDATE_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
@@ -713,8 +713,8 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
 
 
                 KEEP_LOGS_EDIT(Request.QueryString("IDA"), "อัพเดตข้อมูลผู้รับอนุญาต - " & dao.fields.CITIZEN_ID_AUTHORIZE, _CLS.CITIZEN_ID, url:=HttpContext.Current.Request.Url.AbsoluteUri)
-                Dim ws_update As New WS_DRUG.WS_DRUG
-                ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+                'Dim ws_update As New WS_DRUG.WS_DRUG
+                'ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
 
                 Dim ws_update126 As New WS_DRUG_126.WS_DRUG
                 ws_update126.DRUG_UPDATE_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
@@ -754,8 +754,8 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
                 name_del = dao.fields.PHR_NAME
                 dao.delete()
 
-                Dim ws_update As New WS_DRUG.WS_DRUG
-                ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+                'Dim ws_update As New WS_DRUG.WS_DRUG
+                'ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
 
                 Dim ws_update126 As New WS_DRUG_126.WS_DRUG
                 ws_update126.DRUG_UPDATE_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)

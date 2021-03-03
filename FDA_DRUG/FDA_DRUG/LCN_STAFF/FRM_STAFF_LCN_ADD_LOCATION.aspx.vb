@@ -376,8 +376,8 @@
             KEEP_LOGS_EDIT(Request.QueryString("ida"), "เลือกสถานที่ตั้งใหม่", _CLS.CITIZEN_ID)
             Response.Write("<script type='text/javascript'>window.parent.alert('บันทึกข้อมูลเรียบร้อยแล้ว');parent.close_modal();</script> ")
         End If
-        Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+        'Dim ws_update As New WS_DRUG.WS_DRUG
+        'ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
         Dim ws_update126 As New WS_DRUG_126.WS_DRUG
         ws_update126.DRUG_UPDATE_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
     End Sub
@@ -474,8 +474,8 @@
 
     Private Sub btn_save_sel_Click(sender As Object, e As EventArgs) Handles btn_save_sel.Click
         save()
-        Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+        'Dim ws_update As New WS_DRUG.WS_DRUG
+        'ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
         Dim ws_update126 As New WS_DRUG_126.WS_DRUG
         ws_update126.DRUG_UPDATE_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
     End Sub
