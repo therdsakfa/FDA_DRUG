@@ -2243,7 +2243,8 @@ Public Class POPUP_DR_UPLOAD
             Catch ex As Exception
 
             End Try
-
+            Dim dao_main As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+            dao_main.GetDataby_NEWCODE(newcode)
             Dim dao_XML_DRUG_FRGN As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_FRGN
             dao_XML_DRUG_FRGN.GetDataby_u1(newcode)
             If dao_XML_DRUG_FRGN.fields.engcntnm = "ไทย" Then
@@ -2254,7 +2255,8 @@ Public Class POPUP_DR_UPLOAD
                         Try
                             Dim dao_dal As New DAO_DRUG.ClsDBdalcn
                             'dao_dal.GetDataby_pvncd_lcnno_lcntpcd(dao_XML_DRUG_FRGN.fields.pvncd, dao_XML_DRUG_FRGN.fields.lcnno, dao_XML_DRUG_FRGN.fields.lcntpcd)
-                            dao_dal.GetDataby_citi_lcnno(dao_XML_DRUG_FRGN.fields.CITIZEN_AUTHORIZE, dao_XML_DRUG_FRGN.fields.lcnno)
+                            'dao_dal.GetDataby_citi_lcnno(dao_XML_DRUG_FRGN.fields.CITIZEN_AUTHORIZE, dao_XML_DRUG_FRGN.fields.lcnno)
+                            dao_dal.GetDataby_citi_lcnno_lcntpcd(dao_XML_DRUG_FRGN.fields.CITIZEN_AUTHORIZE, dao_main.fields.lcnno, dao_main.fields.lcntpcd)
                             .FK_LCN_IDA = dao_dal.fields.IDA
                         Catch ex As Exception
 

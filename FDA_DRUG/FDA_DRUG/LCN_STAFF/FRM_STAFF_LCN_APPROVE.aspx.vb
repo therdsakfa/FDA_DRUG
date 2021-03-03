@@ -66,12 +66,12 @@
             dao.fields.TABLET_CAPSULE = txt_name.Text
             dao.update()
 
-            Try
-                Dim ws_update As New WS_DRUG.WS_DRUG
-                ws_update.DRUG_INSERT_LICEN(Request.QueryString("IDA"), _CLS.CITIZEN_ID)
-            Catch ex As Exception
+            'Try
+            '    Dim ws_update As New WS_DRUG.WS_DRUG
+            '    ws_update.DRUG_INSERT_LICEN(Request.QueryString("IDA"), _CLS.CITIZEN_ID)
+            'Catch ex As Exception
 
-            End Try
+            'End Try
 
             Try
                 Dim ws_update126 As New WS_DRUG_126.WS_DRUG

@@ -614,8 +614,11 @@
             set_data_dalcn(dao_dalcn)
             dao_dalcn.update()
             KEEP_LOGS_EDIT(Request.QueryString("ida"), "เปลี่ยนผู้ดำเนินกิจการ", _CLS.CITIZEN_ID)
-            Dim ws_update As New WS_DRUG.WS_DRUG
-            ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+            'Dim ws_update As New WS_DRUG.WS_DRUG
+            'ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+
+            Dim ws_update126 As New WS_DRUG_126.WS_DRUG
+            ws_update126.DRUG_UPDATE_LICEN_126(Request.QueryString("ida"), _CLS.CITIZEN_ID)
 
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('เปลี่ยนผู้ดำเนินกิจการเรียบร้อยแล้ว');parent.close_modal();", True)
         Else

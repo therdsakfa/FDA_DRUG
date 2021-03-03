@@ -731,7 +731,7 @@ Public Class WebForm36
 
     Protected Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim bao As New BAO.ClsDBSqlcommand
-        bao.insert_tabean_sub(98311)
+        bao.insert_tabean_sub(93995)
         ' insert_tabean(TextBox1.Text)
     End Sub
     Sub insert_tabean(ByVal FK_IDA As Integer)
@@ -2963,50 +2963,127 @@ Public Class WebForm36
     End Sub
 
     Protected Sub Button34_Click(sender As Object, e As EventArgs) Handles Button34.Click
-        Dim dao_ani_rq As New DAO_DRUG.ClsDBdrramldrg
-        dao_ani_rq.GetData_by_FK_IDA(92376)
-        For Each dao_ani_rq.fields In dao_ani_rq.datas
-            Dim dao_ani_rg As New DAO_DRUG.ClsDBdramldrg
-            With dao_ani_rg.fields
-                .amlsubcd = dao_ani_rq.fields.amlsubcd
-                .amltpcd = dao_ani_rq.fields.amltpcd
-                .drgtpcd = dao_ani_rq.fields.drgtpcd
-                .FK_IDA = 90208
-                .pvncd = dao_ani_rq.fields.pvncd
-                .rgtno = dao_ani_rq.fields.rgtno
-                .rgttpcd = dao_ani_rq.fields.rgttpcd
-                .usetpcd = dao_ani_rq.fields.usetpcd
-            End With
-            dao_ani_rg.insert()
-        Next
+        Dim dao_XML_DRUG_FRGN As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_FRGN
+        dao_XML_DRUG_FRGN.GetDataby_u1("U1DR1A1052630004211C")
+        Dim dao_main As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+        dao_main.GetDataby_NEWCODE("U1DR1A1052630004211C")
+        'Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+        'dao_lcn.GetDataby_u1(dao_main.fields.Newcode_not)
+        If dao_XML_DRUG_FRGN.fields.engcntnm = "ไทย" Then
+            For Each dao_XML_DRUG_FRGN.fields In dao_XML_DRUG_FRGN.datas
+                Dim dao_in As New DAO_DRUG.TB_DRRQT_PRODUCER_IN
+                With dao_in.fields
+                    .FK_IDA = 0
+                    Try
+                        Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+                        'dao_dal.GetDataby_pvncd_lcnno_lcntpcd(dao_main.fields.pvncd, dao_main.fields.lcnno, dao_main.fields.lcntpcd)
+                        dao_dal.GetDataby_citi_lcnno_lcntpcd(dao_XML_DRUG_FRGN.fields.CITIZEN_AUTHORIZE, dao_main.fields.lcnno, dao_main.fields.lcntpcd)
+                        'dao_dal.GetDataby_citi_lcnno(dao_XML_DRUG_FRGN.fields.CITIZEN_AUTHORIZE, dao_main.fields.lcnno)
+                        .FK_LCN_IDA = dao_dal.fields.IDA
+                    Catch ex As Exception
 
-        Dim dao_aniuse_rq As New DAO_DRUG.ClsDBdrramluse
-        dao_aniuse_rq.GetDatabyFKIDA(92376)
-        For Each dao_aniuse_rq.fields In dao_aniuse_rq.datas
-            Dim dao_aniuse_rg As New DAO_DRUG.ClsDBdramluse
-            With dao_aniuse_rg.fields
-                .amlsubcd = dao_aniuse_rg.fields.amlsubcd
-                .amltpcd = dao_aniuse_rg.fields.amltpcd
-                .drgtpcd = dao_aniuse_rg.fields.drgtpcd
-                .FK_IDA = 90208
-                .pvncd = dao_aniuse_rg.fields.pvncd
-                .rgtno = dao_aniuse_rg.fields.rgtno
-                .rgttpcd = dao_aniuse_rg.fields.rgttpcd
-                .usetpcd = dao_aniuse_rg.fields.usetpcd
-                '.rcvno = dao_aniuse_rg.fields.rcvno
-                .nouse = dao_aniuse_rg.fields.nouse
-                .packuse = dao_aniuse_rg.fields.packuse
-                .pvncd = dao_aniuse_rg.fields.pvncd
-                .STOP_UNIT1 = dao_aniuse_rg.fields.STOP_UNIT1
-                .STOP_UNIT2 = dao_aniuse_rg.fields.STOP_UNIT2
-                .STOP_VALUE1 = dao_aniuse_rg.fields.STOP_VALUE1
-                .STOP_VALUE2 = dao_aniuse_rg.fields.STOP_VALUE2
-                .stpdrg = dao_aniuse_rg.fields.stpdrg
-                .stpdrgcd = dao_aniuse_rg.fields.stpdrgcd
-                .usetpcd = dao_aniuse_rg.fields.usetpcd
-            End With
-            dao_aniuse_rg.insert()
-        Next
+                    End Try
+                    .funccd = dao_XML_DRUG_FRGN.fields.funccd
+                    'dao_in.insert()
+                End With
+            Next
+        Else
+            For Each dao_XML_DRUG_FRGN.fields In dao_XML_DRUG_FRGN.datas
+                Dim dao_pro As New DAO_DRUG.TB_DRRQT_PRODUCER
+                With dao_pro.fields
+                    .FK_IDA = 0
+                    .PRODUCER_WORK_TYPE = dao_XML_DRUG_FRGN.fields.funccd
+                    .funccd = dao_XML_DRUG_FRGN.fields.funccd
+                    Dim frgncd As Integer = 0
+                    Dim FK_PRODUCER As Integer = 0
+                    Dim addr_ida As Integer = 0
+                    Dim frgnlctcd As Integer = 0
+                    Dim dao_frgn_name As New DAO_DRUG.ClsDBsyspdcfrgn
+                    dao_frgn_name.GetData_by_engfrgnnm(dao_XML_DRUG_FRGN.fields.engfrgnnm)
+                    For Each dao_frgn_name.fields In dao_frgn_name.datas
+                        Dim icc As Integer = 0
+                        Dim bao_iso As New BAO.ClsDBSqlcommand
+                        Dim dt_iso As New DataTable
+                        dt_iso = bao_iso.SP_sysisocnt_SAI_by_engcntnm(dao_XML_DRUG_FRGN.fields.engcntnm) '
+                        Dim alpha3 As String = ""
+                        Try
+                            alpha3 = dt_iso(0)("alpha3")
+                        Catch ex As Exception
+
+                        End Try
+                        Dim dao_frgn_addr As New DAO_DRUG.ClsDBdrfrgnaddr
+                        'dao_frgn_addr.GetDataAll_v2(dao_XML_DRUG_FRGN.fields.addr, alpha3, dao_XML_DRUG_FRGN.fields.district, dao_XML_DRUG_FRGN.fields.fax, dao_XML_DRUG_FRGN.fields.mu, _
+                        'dao_XML_DRUG_FRGN.fields.Province, dao_XML_DRUG_FRGN.fields.road, dao_XML_DRUG_FRGN.fields.soi, dao_XML_DRUG_FRGN.fields.subdiv, dao_XML_DRUG_FRGN.fields.tel, _
+                        'dao_XML_DRUG_FRGN.fields.zipcode, dao_frgn_name.fields.frgncd)
+                        dao_frgn_addr.GetDataAll_v3(dao_XML_DRUG_FRGN.fields.addr, alpha3, dao_XML_DRUG_FRGN.fields.district, dao_XML_DRUG_FRGN.fields.Province, dao_XML_DRUG_FRGN.fields.subdiv, dao_frgn_name.fields.frgncd)
+
+                        For Each dao_frgn_addr.fields In dao_frgn_addr.datas
+                            addr_ida = dao_frgn_addr.fields.IDA
+                            frgnlctcd = dao_frgn_addr.fields.frgnlctcd
+                            frgncd = dao_frgn_addr.fields.frgnlctcd
+
+                        Next
+                        FK_PRODUCER = dao_frgn_name.fields.IDA
+                    Next
+
+                    .frgncd = dao_frgn_name.fields.frgncd
+                    .addr_ida = addr_ida
+                    .FK_PRODUCER = FK_PRODUCER
+                    .frgnlctcd = frgnlctcd
+                End With
+                'dao_pro.insert()
+            Next
+
+
+        End If
+
+
+
+
+        'Dim dao_ani_rq As New DAO_DRUG.ClsDBdrramldrg
+        'dao_ani_rq.GetData_by_FK_IDA(92376)
+        'For Each dao_ani_rq.fields In dao_ani_rq.datas
+        '    Dim dao_ani_rg As New DAO_DRUG.ClsDBdramldrg
+        '    With dao_ani_rg.fields
+        '        .amlsubcd = dao_ani_rq.fields.amlsubcd
+        '        .amltpcd = dao_ani_rq.fields.amltpcd
+        '        .drgtpcd = dao_ani_rq.fields.drgtpcd
+        '        .FK_IDA = 90208
+        '        .pvncd = dao_ani_rq.fields.pvncd
+        '        .rgtno = dao_ani_rq.fields.rgtno
+        '        .rgttpcd = dao_ani_rq.fields.rgttpcd
+        '        .usetpcd = dao_ani_rq.fields.usetpcd
+        '    End With
+        '    dao_ani_rg.insert()
+        'Next
+
+        'Dim dao_aniuse_rq As New DAO_DRUG.ClsDBdrramluse
+        'dao_aniuse_rq.GetDatabyFKIDA(92376)
+        'For Each dao_aniuse_rq.fields In dao_aniuse_rq.datas
+        '    Dim dao_aniuse_rg As New DAO_DRUG.ClsDBdramluse
+        '    With dao_aniuse_rg.fields
+        '        .amlsubcd = dao_aniuse_rg.fields.amlsubcd
+        '        .amltpcd = dao_aniuse_rg.fields.amltpcd
+        '        .drgtpcd = dao_aniuse_rg.fields.drgtpcd
+        '        .FK_IDA = 90208
+        '        .pvncd = dao_aniuse_rg.fields.pvncd
+        '        .rgtno = dao_aniuse_rg.fields.rgtno
+        '        .rgttpcd = dao_aniuse_rg.fields.rgttpcd
+        '        .usetpcd = dao_aniuse_rg.fields.usetpcd
+        '        '.rcvno = dao_aniuse_rg.fields.rcvno
+        '        .nouse = dao_aniuse_rg.fields.nouse
+        '        .packuse = dao_aniuse_rg.fields.packuse
+        '        .pvncd = dao_aniuse_rg.fields.pvncd
+        '        .STOP_UNIT1 = dao_aniuse_rg.fields.STOP_UNIT1
+        '        .STOP_UNIT2 = dao_aniuse_rg.fields.STOP_UNIT2
+        '        .STOP_VALUE1 = dao_aniuse_rg.fields.STOP_VALUE1
+        '        .STOP_VALUE2 = dao_aniuse_rg.fields.STOP_VALUE2
+        '        .stpdrg = dao_aniuse_rg.fields.stpdrg
+        '        .stpdrgcd = dao_aniuse_rg.fields.stpdrgcd
+        '        .usetpcd = dao_aniuse_rg.fields.usetpcd
+        '    End With
+        '    dao_aniuse_rg.insert()
+        'Next
     End Sub
 End Class
 
