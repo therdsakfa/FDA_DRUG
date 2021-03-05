@@ -270,6 +270,11 @@ Public Class FRM_STAFFNYM_CONFIRM
             Catch ex As Exception
 
             End Try
+            Try
+                txt_REMARK.Text = dao.fields.REMARK
+            Catch ex As Exception
+
+            End Try
         ElseIf _ProcessID = 1028 Then
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
             dao.GetDataby_IDA(_IDA)
@@ -297,6 +302,11 @@ Public Class FRM_STAFFNYM_CONFIRM
             Try
                 dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 9)
                 lbl_Status.Text = dao_stat.fields.STATUS_NAME
+            Catch ex As Exception
+
+            End Try
+            Try
+                txt_REMARK.Text = dao.fields.REMARK
             Catch ex As Exception
 
             End Try
@@ -330,6 +340,11 @@ Public Class FRM_STAFFNYM_CONFIRM
             Catch ex As Exception
 
             End Try
+            Try
+                txt_REMARK.Text = dao.fields.REMARK
+            Catch ex As Exception
+
+            End Try
         ElseIf _ProcessID = 1031 Then
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
             dao.GetDataby_IDA(_IDA)
@@ -357,6 +372,11 @@ Public Class FRM_STAFFNYM_CONFIRM
             Try
                 dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 9)
                 lbl_Status.Text = dao_stat.fields.STATUS_NAME
+            Catch ex As Exception
+
+            End Try
+            Try
+                txt_REMARK.Text = dao.fields.REMARK
             Catch ex As Exception
 
             End Try
