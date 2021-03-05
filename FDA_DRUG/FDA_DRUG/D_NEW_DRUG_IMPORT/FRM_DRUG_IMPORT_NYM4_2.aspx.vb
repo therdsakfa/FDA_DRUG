@@ -123,7 +123,7 @@ Public Class FRM_DRUG_IMPORT_NYM4_2
                 'End Try
 
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../D_NEW_DRUG_IMPORT/POPUP_NYM_SUBMIT_REQUEST.aspx?IDA=" & NYM4_ida & "&Process=1031" & "&DL=" & _DL & "&TR_ID=" & item("TR_ID").Text & "');", True)
-            ElseIf e.CommandName = "edit" Then
+            ElseIf e.CommandName = "_edit" Then
                 dao.GetDataby_IDA_STATUS(NYM4_ida)
                 'Dim DL As Integer = 0
                 'Try

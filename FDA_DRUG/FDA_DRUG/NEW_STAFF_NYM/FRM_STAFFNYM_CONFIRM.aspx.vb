@@ -2085,11 +2085,13 @@ Public Class FRM_STAFFNYM_CONFIRM
         Try
             Dim url As String = ""
             url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
+            If NYM_STATUS = 8 Then
+                class_xml21.QR_CODE = QR_CODE_IMG(url)
+                class_xml3.QR_CODE = QR_CODE_IMG(url)
+                class_xml4.QR_CODE = QR_CODE_IMG(url)
+                class_xml4_2.QR_CODE = QR_CODE_IMG(url)
+            End If
 
-            class_xml21.QR_CODE = QR_CODE_IMG(url)
-            class_xml3.QR_CODE = QR_CODE_IMG(url)
-            class_xml4.QR_CODE = QR_CODE_IMG(url)
-            class_xml4_2.QR_CODE = QR_CODE_IMG(url)
         Catch ex As Exception
 
         End Try

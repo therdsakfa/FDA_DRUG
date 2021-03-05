@@ -152,7 +152,7 @@
                         <HeaderStyle Width="70px" />
                     </telerik:GridButtonColumn>
                      <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
-                        CommandName="sel" Text="แก้ไข">
+                        CommandName="_edit" Text="แก้ไข">
                         <HeaderStyle Width="70px" />
                     </telerik:GridButtonColumn>
                     <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_upload"
