@@ -152,7 +152,7 @@
                      <tr id="remark_box" runat="server" style="display:none;" ><td> 
                          <asp:CheckBox ID="CheckBox1" runat="server" Text="เงื่อนไข/หมายเหตุ" AutoPostBack="True" style="display:none;" />
 
-                         <br />
+                         เงื่อนไข/เหตุผลประกอบการอนุญาต/ไม่อนุญาต<br />
                          <asp:TextBox ID="txt_REMARK" runat="server" CssClass="auto-style1" Height="100px" TextMode="MultiLine" Width="270px" ></asp:TextBox>
 
                          </td></tr>

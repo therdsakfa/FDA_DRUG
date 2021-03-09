@@ -404,6 +404,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Dim dao4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
         Dim dao4_2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
 
+        'Dim status_id As Integer = 0
 
         Dim dao_rg As New DAO_DRUG.ClsDBDRUG_REGISTRATION
         Dim NYM_STATUS As Integer = 0
@@ -1062,11 +1063,13 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
         Try
             Dim url As String = ""
             url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
+            If NYM_STATUS = 8 Then
+                class_xml21.QR_CODE = QR_CODE_IMG(url)
+                class_xml3.QR_CODE = QR_CODE_IMG(url)
+                class_xml4.QR_CODE = QR_CODE_IMG(url)
+                class_xml4_2.QR_CODE = QR_CODE_IMG(url)
+            End If
 
-            class_xml21.QR_CODE = QR_CODE_IMG(url)
-            class_xml3.QR_CODE = QR_CODE_IMG(url)
-            class_xml4.QR_CODE = QR_CODE_IMG(url)
-            class_xml4_2.QR_CODE = QR_CODE_IMG(url)
         Catch ex As Exception
 
         End Try

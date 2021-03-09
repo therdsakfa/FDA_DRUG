@@ -2472,11 +2472,11 @@ Public Class WebForm36
         'ws_gen.GEN_DH_NO(48968)
 
 
-        Dim ws_update As New WS_DRUG.WS_DRUG
+        Dim ws_update As New WS_DRUG_126.WS_DRUG
         Dim bao As New BAO.ClsDBSqlcommand
 
         If txt_dh_ida.Text <> "" Then
-            ws_update.DRUG_INSERT_DR15(txt_dh_ida.Text, "1710500118665")
+            ws_update.DRUG_INSERT_DH15_126(txt_dh_ida.Text, "1710500118665")
             'Else
             '    Dim dt As New DataTable
             '    dt = bao.SELECT_TEMP_DH()

@@ -270,6 +270,11 @@ Public Class FRM_STAFFNYM_CONFIRM
             Catch ex As Exception
 
             End Try
+            Try
+                txt_REMARK.Text = dao.fields.REMARK
+            Catch ex As Exception
+
+            End Try
         ElseIf _ProcessID = 1028 Then
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
             dao.GetDataby_IDA(_IDA)
@@ -297,6 +302,11 @@ Public Class FRM_STAFFNYM_CONFIRM
             Try
                 dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 9)
                 lbl_Status.Text = dao_stat.fields.STATUS_NAME
+            Catch ex As Exception
+
+            End Try
+            Try
+                txt_REMARK.Text = dao.fields.REMARK
             Catch ex As Exception
 
             End Try
@@ -330,6 +340,11 @@ Public Class FRM_STAFFNYM_CONFIRM
             Catch ex As Exception
 
             End Try
+            Try
+                txt_REMARK.Text = dao.fields.REMARK
+            Catch ex As Exception
+
+            End Try
         ElseIf _ProcessID = 1031 Then
             Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
             dao.GetDataby_IDA(_IDA)
@@ -357,6 +372,11 @@ Public Class FRM_STAFFNYM_CONFIRM
             Try
                 dao_stat.GetDataby_IDA_Group(dao.fields.STATUS_ID, 9)
                 lbl_Status.Text = dao_stat.fields.STATUS_NAME
+            Catch ex As Exception
+
+            End Try
+            Try
+                txt_REMARK.Text = dao.fields.REMARK
             Catch ex As Exception
 
             End Try
@@ -1110,10 +1130,10 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '    int_group_ddl = 44
             ElseIf dao.fields.STATUS_ID = 4 Then               'ถ้า starus2 to 6 
                 int_group_ddl = 33
-                'ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
-                '    int_group_ddl = 33
-            ElseIf dao.fields.STATUS_ID = 5 Then
+            ElseIf dao.fields.STATUS_ID = 6 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 11
+                'ElseIf dao.fields.STATUS_ID = 5 Then
+                '    int_group_ddl = 11
             ElseIf dao.fields.STATUS_ID = 9 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 44
             End If
@@ -1128,10 +1148,10 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '    int_group_ddl = 44
             ElseIf dao.fields.STATUS_ID = 4 Then               'ถ้า starus2 to 6 
                 int_group_ddl = 33
-                'ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
-                '    int_group_ddl = 33
-            ElseIf dao.fields.STATUS_ID = 5 Then
+            ElseIf dao.fields.STATUS_ID = 6 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 11
+                'ElseIf dao.fields.STATUS_ID = 5 Then
+                '    int_group_ddl = 11
             ElseIf dao.fields.STATUS_ID = 9 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 44
             End If
@@ -1146,10 +1166,10 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '    int_group_ddl = 44
             ElseIf dao.fields.STATUS_ID = 4 Then               'ถ้า starus2 to 6 
                 int_group_ddl = 33
-                'ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
-                '    int_group_ddl = 33
-            ElseIf dao.fields.STATUS_ID = 5 Then
+            ElseIf dao.fields.STATUS_ID = 6 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 11
+                'ElseIf dao.fields.STATUS_ID = 5 Then
+                '    int_group_ddl = 11
             ElseIf dao.fields.STATUS_ID = 9 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 44
             End If
@@ -1164,10 +1184,10 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '    int_group_ddl = 44
             ElseIf dao.fields.STATUS_ID = 4 Then               'ถ้า starus2 to 6 
                 int_group_ddl = 33
-                'ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
-                '    int_group_ddl = 33
-            ElseIf dao.fields.STATUS_ID = 5 Then
+            ElseIf dao.fields.STATUS_ID = 5 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 11
+                'ElseIf dao.fields.STATUS_ID = 5 Then
+                '    int_group_ddl = 11
             ElseIf dao.fields.STATUS_ID = 9 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 44
             End If
@@ -1182,10 +1202,10 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '    int_group_ddl = 44
             ElseIf dao.fields.STATUS_ID = 4 Then               'ถ้า starus2 to 6 
                 int_group_ddl = 33
-                'ElseIf dao.fields.STATUS_ID >= 6 Then                                      'แก้ตอนของ นยม อื่น 
-                '    int_group_ddl = 33
-            ElseIf dao.fields.STATUS_ID = 5 Then
+            ElseIf dao.fields.STATUS_ID = 5 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 11
+                'ElseIf dao.fields.STATUS_ID = 5 Then
+                '    int_group_ddl = 11
             ElseIf dao.fields.STATUS_ID = 9 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 44
             End If
@@ -2085,11 +2105,13 @@ Public Class FRM_STAFFNYM_CONFIRM
         Try
             Dim url As String = ""
             url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
+            If NYM_STATUS = 8 Then
+                class_xml21.QR_CODE = QR_CODE_IMG(url)
+                class_xml3.QR_CODE = QR_CODE_IMG(url)
+                class_xml4.QR_CODE = QR_CODE_IMG(url)
+                class_xml4_2.QR_CODE = QR_CODE_IMG(url)
+            End If
 
-            class_xml21.QR_CODE = QR_CODE_IMG(url)
-            class_xml3.QR_CODE = QR_CODE_IMG(url)
-            class_xml4.QR_CODE = QR_CODE_IMG(url)
-            class_xml4_2.QR_CODE = QR_CODE_IMG(url)
         Catch ex As Exception
 
         End Try
