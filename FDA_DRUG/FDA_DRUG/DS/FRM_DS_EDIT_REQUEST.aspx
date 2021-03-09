@@ -9,7 +9,7 @@
             height: 264px;
         }
         .auto-style3 {
-            width: 201px;
+            width: 233px;
             height: 264px;
         }
         .auto-style5 {
@@ -49,11 +49,11 @@
         }
         .auto-style13 {
             height: 35px;
-            width: 259px;
+            width: 288px;
         }
         .auto-style14 {
             height: 32px;
-            width: 259px;
+            width: 288px;
         }
         .auto-style15 {
             height: 32px;
@@ -67,7 +67,7 @@
             height: 45px;
         }
         .auto-style18 {
-            width: 806px;
+            width: 839px;
         }
         .auto-style19 {
             width: 115px;
@@ -75,7 +75,7 @@
         }
         .auto-style20 {
             height: 45px;
-            width: 259px;
+            width: 288px;
         }
         .auto-style22 {
             width: 526px;
@@ -179,12 +179,12 @@
             <tr>
                 <td class="auto-style12">ฉลากและเอกสารกำกับผลิตภัณฑ์ ทุกภาชนะบรรจุ ( ไฟล์ PDF เท่านั้น )</td>
                 <td class="auto-style13"><asp:FileUpload ID="FileUpload1" runat="server" CssClass="auto-style9" Width="243px" /></td>
-                <td class="auto-style16" align="right" style="color:red"><asp:Label ID="lbl_attach1" runat="server" Text=""></asp:Label></td>
+                <td class="auto-style16" style="color:red"><asp:Label ID="lbl_attach1" runat="server" Text=""></asp:Label></td>
             </tr>
             <tr>
                 <td class="auto-style15">อื่นๆ</td>
                 <td class="auto-style14"><asp:FileUpload ID="FileUpload2" runat="server" CssClass="auto-style11" Width="243px"  /></td>                
-                <td class="auto-style19" align="right" style="color:red"><asp:Label ID="lbl_attach2" runat="server" Text=""></asp:Label></td>
+                <td class="auto-style19" style="color:red"><asp:Label ID="lbl_attach2" runat="server" Text=""></asp:Label></td>
             </tr>
             <tr>
                 <td class="auto-style17"></td>

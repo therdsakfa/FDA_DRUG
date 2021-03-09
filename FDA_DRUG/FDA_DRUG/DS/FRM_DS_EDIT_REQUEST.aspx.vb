@@ -30,13 +30,13 @@ Public Class FRM_DS_EDIT_REQUEST
         If Not IsPostBack Then
             UC_GRID_ATTACH.load_gv_V4(_TR_ID, 99, _ProcessID)
             set_label()
-            Try
-                If msg = "success" Then
-                    lbl_attach1.Text = "Upload Flie แนบสำเร็จ"
-                End If
-            Catch ex As Exception
+            'Try
+            '    If msg = "success" Then
+            '        lbl_attach1.Text = "Upload Flie แนบสำเร็จ"
+            '    End If
+            'Catch ex As Exception
 
-            End Try
+            'End Try
         End If
 
     End Sub
@@ -83,17 +83,17 @@ Public Class FRM_DS_EDIT_REQUEST
         Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
         dao_p.GetDataby_Process_ID(_ProcessID)
         Try
-            If FileUpload1.HasFile Then
+            If FileUpload1.HasFile Or FileUpload2.HasFile Then
                 upload()
             Else
-                alert("กรุณาแนบไฟล์คำขอ")
+                alert("กรุณาแนบไฟล์")
             End If
 
         Catch ex As Exception
             msg = "FAIL"
         End Try
         msg = "success"
-        alert1("ดำเนินการ UPLOAD FILE แก้ไขคำขอเรียบร้อยแล้ว")
+        alert1("ดำเนินการ UPLOAD FILE เรียบร้อยแล้ว")
 
         Return msg
     End Function
@@ -115,19 +115,18 @@ Public Class FRM_DS_EDIT_REQUEST
 
     Sub upload()
         Try
-            If FileUpload1.HasFile Or FileUpload2.HasFile Then
-                'Dim bao As New BAO.AppSettings
-                'bao.RunAppSettings()
-                Dim TR_ID As String = _TR_ID
 
-                If FileUpload1.HasFile Then
-                    insert_file(TR_ID, FileUpload1, 1)
-                    lbl_attach1.Text = "อัพโหลดไฟล์แนบสำเร็จ"
-                ElseIf FileUpload2.HasFile Then
-                    insert_file(TR_ID, FileUpload2, 2)
-                    lbl_attach2.Text = "อัพโหลดไฟล์แนบสำเร็จ"
-                End If
+            Dim TR_ID As String = _TR_ID
+
+            If FileUpload1.HasFile Then
+                insert_file(TR_ID, FileUpload1, 1)
+                lbl_attach1.Text = "อัพโหลดไฟล์แนบสำเร็จ"
             End If
+            If FileUpload2.HasFile Then
+                insert_file(TR_ID, FileUpload2, 2)
+                lbl_attach2.Text = "อัพโหลดไฟล์แนบสำเร็จ"
+            End If
+
         Catch ex As Exception
 
         End Try
