@@ -1570,6 +1570,11 @@ Public Class POPUP_DR_UPLOAD
                     Dim dao_r_atc As New DAO_DRUG.TB_DRRQT_ATC_DETAIL
                     dao_r_atc.fields.FK_IDA = main_ida
                     Try
+                        dao_r_atc.fields.ATC_IDA = dr("ATC_IDA")
+                    Catch ex As Exception
+
+                    End Try
+                    Try
                         dao_r_atc.fields.ATC_CODE = dr("ATC_CODE")
                     Catch ex As Exception
 
