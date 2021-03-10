@@ -1184,7 +1184,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '    int_group_ddl = 44
             ElseIf dao.fields.STATUS_ID = 4 Then               'ถ้า starus2 to 6 
                 int_group_ddl = 33
-            ElseIf dao.fields.STATUS_ID = 5 Then                                      'แก้ตอนของ นยม อื่น 
+            ElseIf dao.fields.STATUS_ID = 6 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 11
                 'ElseIf dao.fields.STATUS_ID = 5 Then
                 '    int_group_ddl = 11
@@ -1202,7 +1202,7 @@ Public Class FRM_STAFFNYM_CONFIRM
                 '    int_group_ddl = 44
             ElseIf dao.fields.STATUS_ID = 4 Then               'ถ้า starus2 to 6 
                 int_group_ddl = 33
-            ElseIf dao.fields.STATUS_ID = 5 Then                                      'แก้ตอนของ นยม อื่น 
+            ElseIf dao.fields.STATUS_ID = 6 Then                                      'แก้ตอนของ นยม อื่น 
                 int_group_ddl = 11
                 'ElseIf dao.fields.STATUS_ID = 5 Then
                 '    int_group_ddl = 11
