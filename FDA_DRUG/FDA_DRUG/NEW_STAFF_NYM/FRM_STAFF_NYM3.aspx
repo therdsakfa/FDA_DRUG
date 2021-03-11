@@ -117,6 +117,7 @@
                    </td>
                </tr>
            </table>
+           <h1>นยม. 3</h1>
            <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="15" AllowFilteringByColumn="True">
                <MasterTableView AutoGenerateColumns="False">
                    <Columns>
@@ -132,9 +133,9 @@
                        <telerik:GridBoundColumn DataField="NYM3_DATE_TOP" FilterControlAltText="Filter NYM3_DATE_TOP column"
                            HeaderText="วันเวลาที่ส่งคำขอ" SortExpression="NYM3_DATE_TOP" UniqueName="NYM3_DATE_TOP">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
+                       <%--<telerik:GridBoundColumn DataField="NYM_TYPE" FilterControlAltText="Filter NYM_TYPE column"
                            HeaderText="ประเภท" SortExpression="NYM_TYPE" UniqueName="NYM_TYPE">
-                       </telerik:GridBoundColumn>
+                       </telerik:GridBoundColumn>--%>
                        <telerik:GridBoundColumn DataField="RCVNO_DISPLAY" FilterControlAltText="Filter RCVNO_DISPLAY column"
                            HeaderText="รหัสบัญชีรายการยา" SortExpression="RCVNO_DISPLAY" UniqueName="RCVNO_DISPLAY">
                        </telerik:GridBoundColumn>

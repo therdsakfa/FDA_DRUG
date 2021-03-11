@@ -236,6 +236,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             dao2.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
                 dao2.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                dao2.fields.NYM2_DATE_TOP = Date.Now
                 'Dim bao_tran As New BAO_TRANSECTION
                 'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -243,6 +244,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 'dao2.fields.FK_IDA = TR_ID
             Else
                 dao2.fields.STATUS_ID = 2                       'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง      ตรงนี้ตามจริงต้องเป็น 2 เหมือนกันไหม
+                dao2.fields.NYM2_DATE_TOP = Date.Now
                 'Dim bao_tran As New BAO_TRANSECTION
                 'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -254,6 +256,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             dao3.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
                 dao3.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                dao3.fields.NYM3_DATE_TOP = Date.Now
                 'Dim bao_tran As New BAO_TRANSECTION
                 'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -261,6 +264,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 'dao3.fields.FK_IDA = TR_ID
             Else
                 dao3.fields.STATUS_ID = 2                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                dao3.fields.NYM3_DATE_TOP = Date.Now
                 'Dim bao_tran As New BAO_TRANSECTION
                 'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -272,6 +276,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             dao4.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
                 dao4.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                dao4.fields.NYM4_DATE_TOP = Date.Now
                 'Dim bao_tran As New BAO_TRANSECTION
                 'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -279,6 +284,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 'dao4.fields.FK_IDA = TR_ID
             Else
                 dao4.fields.STATUS_ID = 2                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                dao4.fields.NYM4_DATE_TOP = Date.Now
                 'Dim bao_tran As New BAO_TRANSECTION
                 'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -290,6 +296,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
             dao4_2.GetDataby_IDA(Integer.Parse(_IDA))
             If Request.QueryString("staff") <> "" Then
                 dao4_2.fields.STATUS_ID = 2                       'ถ้าเป็น staff ทำแทน เข้าอันนี้ 
+                dao4_2.fields.NYM4_COMPANY_DATE_TOP = Date.Now
                 'Dim bao_tran As New BAO_TRANSECTION
                 'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -297,6 +304,7 @@ Public Class POPUP_NYM_SUBMIT_REQUEST
                 'dao4.fields.FK_IDA = TR_ID
             Else
                 dao4_2.fields.STATUS_ID = 2                        'ถ้าเป็นอันนี้คือผู้ประกอบการยื่นเอง
+                dao4_2.fields.NYM4_COMPANY_DATE_TOP = Date.Now
                 'Dim bao_tran As New BAO_TRANSECTION
                 'bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
                 'bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE

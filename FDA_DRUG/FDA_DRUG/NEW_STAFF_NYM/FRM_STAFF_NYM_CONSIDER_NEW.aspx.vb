@@ -30,6 +30,66 @@
         If Not IsPostBack Then
             TextBox1.Text = Date.Now.ToShortDateString()
             txt_app_date.Text = Date.Now.ToShortDateString()
+            If _edit <> "" Then
+                Dim dao_prf2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2                       'เอาไว้ทำอะไร ยังไม่รู็ต้องแก้ 
+                Dim dao_prf3 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3
+                Dim dao_prf4 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4
+                Dim dao_prf4_2 As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY
+
+                If _process = 1027 Then
+                    dao_prf2.GetDataby_IDA(_IDA)
+                    Try
+                        Txt_Remark.Text = dao_prf2.fields.REMARK
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        txt_consider_iden.Text = dao_prf2.fields.CONSIDER_IDENTIFY
+                    Catch ex As Exception
+
+                    End Try
+
+                ElseIf _process = 1028 Then
+                    dao_prf3.GetDataby_IDA(_IDA)
+                    Try
+                        Txt_Remark.Text = dao_prf3.fields.REMARK
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        txt_consider_iden.Text = dao_prf3.fields.CONSIDER_IDENTIFY
+                    Catch ex As Exception
+
+                    End Try
+                ElseIf _process = 1029 Then
+                    dao_prf4.GetDataby_IDA(_IDA)
+                    Try
+                        Txt_Remark.Text = dao_prf4.fields.REMARK
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        txt_consider_iden.Text = dao_prf4.fields.CONSIDER_IDENTIFY
+                    Catch ex As Exception
+
+                    End Try
+                    'ElseIf _process = 1030 Then
+                    '    dao_prf5.GetDataby_IDA(_IDA)
+                ElseIf _process = 1031 Then
+                    dao_prf4_2.GetDataby_IDA(_IDA)
+                    Try
+                        Txt_Remark.Text = dao_prf4_2.fields.REMARK
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        txt_consider_iden.Text = dao_prf4_2.fields.CONSIDER_IDENTIFY
+                    Catch ex As Exception
+
+                    End Try
+                End If
+            End If
+
             Bind_ddl_staff_offer()
         End If
     End Sub
