@@ -6,7 +6,7 @@
     Private _IDA As Integer
     Private _CLS As New CLS_SESSION
     Private _DL As String
-    Private _edit As Integer
+    Private _edit As String = ""
     Public Property _process As Integer
     ' Private _type As String
 
