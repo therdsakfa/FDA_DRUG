@@ -39,6 +39,8 @@
                       <Columns>
                           <telerik:GridClientSelectColumn HeaderText="เลือก" UniqueName="chk">
                           </telerik:GridClientSelectColumn>
+                          <telerik:GridBoundColumn DataField="IDA" FilterControlAltText="Filter IDA column" HeaderText="IDA" SortExpression="IDA" UniqueName="IDA" Display="false">
+                          </telerik:GridBoundColumn>
                           <telerik:GridBoundColumn DataField="atc_code" FilterControlAltText="Filter atc_code column" HeaderText="ATC Code" SortExpression="atc_code" UniqueName="atc_code" Display="false">
                           </telerik:GridBoundColumn>
                           <telerik:GridBoundColumn DataField="atcnm" FilterControlAltText="Filter atcnm column" HeaderText="ชื่อกลุ่มตำรับ" SortExpression="atcnm" UniqueName="atcnm">

@@ -1680,11 +1680,11 @@ Public Class BAO_SHOW
         dt.TableName = "SP_LOCATION_ADDRESS_BY_IDA_NYM3"
         Try
             dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
-            If dt.Rows.Count() = 1 Then
-                dt.Clear()
-            Else
-                dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
-            End If
+            'If dt.Rows.Count() = 1 Then
+            '    dt.Clear()
+            'Else
+            '    dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
+            'End If
         Catch ex As Exception
 
         End Try
@@ -1745,11 +1745,11 @@ Public Class BAO_SHOW
         dt.TableName = "SP_LOCATION_ADDRESS_BY_IDA_NYM2"
         Try
             dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
-            If dt.Rows.Count() = 1 Then
-                dt.Clear()
-            Else
-                ' dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
-            End If
+            'If dt.Rows.Count() = 1 Then
+            '    dt.Clear()
+            'Else
+            '    ' dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
+            'End If
         Catch ex As Exception
 
         End Try
@@ -1810,11 +1810,11 @@ Public Class BAO_SHOW
         dt.TableName = "SP_LOCATION_ADDRESS_BY_IDA_NYM4"
         Try
             dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
-            If dt.Rows.Count() = 1 Then
-                dt.Clear()
-            Else
-                dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
-            End If
+            'If dt.Rows.Count() = 1 Then
+            '    dt.Clear()
+            'Else
+            '    dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
+            'End If
         Catch ex As Exception
 
         End Try
@@ -1832,11 +1832,11 @@ Public Class BAO_SHOW
         dt.TableName = "SP_LOCATION_ADDRESS_BY_IDA_NYM4"
         Try
             dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
-            If dt.Rows.Count() = 1 Then
-                dt.Clear()
-            Else
-                dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
-            End If
+            'If dt.Rows.Count() = 1 Then
+            '    dt.Clear()
+            'Else
+            '    dt = clsds.dsQueryselect(sql, conn_DRUG_IMPORT).Tables(0)
+            'End If
         Catch ex As Exception
 
         End Try

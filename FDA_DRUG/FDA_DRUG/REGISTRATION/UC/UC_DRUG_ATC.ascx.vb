@@ -58,6 +58,11 @@ Public Class UC_DRUG_ATC
             Catch ex As Exception
 
             End Try
+            Try
+                dao.fields.ATC_IDA = item("IDA").Text
+            Catch ex As Exception
+
+            End Try
             dao.fields.FK_IDA = Request.QueryString("IDA")
             dao.insert()
         Next
