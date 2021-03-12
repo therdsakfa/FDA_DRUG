@@ -48,7 +48,11 @@
                     Catch ex As Exception
 
                     End Try
-
+                    TextBox2.Text = dao_prf2.fields.POSITION_CONSIDER_LINE1
+                    TextBox3.Text = dao_prf2.fields.POSITION_CONSIDER_LINE2
+                    TextBox4.Text = dao_prf2.fields.POSITION_CONSIDER_LINE3
+                    TextBox5.Text = dao_prf2.fields.POSITION_CONSIDER_LINE4
+                    TextBox6.Text = dao_prf2.fields.POSITION_CONSIDER_LINE5
                 ElseIf _process = 1028 Then
                     dao_prf3.GetDataby_IDA(_IDA)
                     Try
@@ -61,6 +65,11 @@
                     Catch ex As Exception
 
                     End Try
+                    TextBox2.Text = dao_prf3.fields.POSITION_CONSIDER_LINE1
+                    TextBox3.Text = dao_prf3.fields.POSITION_CONSIDER_LINE2
+                    TextBox4.Text = dao_prf3.fields.POSITION_CONSIDER_LINE3
+                    TextBox5.Text = dao_prf3.fields.POSITION_CONSIDER_LINE4
+                    TextBox6.Text = dao_prf3.fields.POSITION_CONSIDER_LINE5
                 ElseIf _process = 1029 Then
                     dao_prf4.GetDataby_IDA(_IDA)
                     Try
@@ -73,6 +82,11 @@
                     Catch ex As Exception
 
                     End Try
+                    TextBox2.Text = dao_prf4.fields.POSITION_CONSIDER_LINE1
+                    TextBox3.Text = dao_prf4.fields.POSITION_CONSIDER_LINE2
+                    TextBox4.Text = dao_prf4.fields.POSITION_CONSIDER_LINE3
+                    TextBox5.Text = dao_prf4.fields.POSITION_CONSIDER_LINE4
+                    TextBox6.Text = dao_prf4.fields.POSITION_CONSIDER_LINE5
                     'ElseIf _process = 1030 Then
                     '    dao_prf5.GetDataby_IDA(_IDA)
                 ElseIf _process = 1031 Then
@@ -87,6 +101,11 @@
                     Catch ex As Exception
 
                     End Try
+                    TextBox2.Text = dao_prf4_2.fields.POSITION_CONSIDER_LINE1
+                    TextBox3.Text = dao_prf4_2.fields.POSITION_CONSIDER_LINE2
+                    TextBox4.Text = dao_prf4_2.fields.POSITION_CONSIDER_LINE3
+                    TextBox5.Text = dao_prf4_2.fields.POSITION_CONSIDER_LINE4
+                    TextBox6.Text = dao_prf4_2.fields.POSITION_CONSIDER_LINE5
                 End If
             End If
 
