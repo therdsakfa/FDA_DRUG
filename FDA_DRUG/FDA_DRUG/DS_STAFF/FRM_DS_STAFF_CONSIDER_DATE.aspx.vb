@@ -22,30 +22,30 @@
             'TextBox1.Text = Date.Now.ToShortDateString()
             'txt_app_date.Text = Date.Now.ToShortDateString()
             Bind_ddl_staff_offer()
-            Dim dao As New DAO_DRUG.ClsDBdalcn
-            dao.GetDataby_IDA(_IDA)
-            getdata(dao)
+            'Dim dao As New DAO_DRUG.ClsDBdalcn
+            'dao.GetDataby_IDA(_IDA)
+            'getdata(dao)
         End If
     End Sub
-    Public Sub getdata(ByRef dao As DAO_DRUG.ClsDBdalcn)
-        'Try
-        '    TextBox1.Text = CDate(dao.fields.CONSIDER_DATE)
-        'Catch ex As Exception
-        '    TextBox1.Text = Date.Now.ToShortDateString()
-        'End Try
-        'Try
-        '    ddl_staff_offer.SelectedValue = dao.fields.FK_STAFF_OFFER_IDA
-        'Catch ex As Exception
+    'Public Sub getdata(ByRef dao As DAO_DRUG.ClsDBdalcn)
+    'Try
+    '    TextBox1.Text = CDate(dao.fields.CONSIDER_DATE)
+    'Catch ex As Exception
+    '    TextBox1.Text = Date.Now.ToShortDateString()
+    'End Try
+    'Try
+    '    ddl_staff_offer.SelectedValue = dao.fields.FK_STAFF_OFFER_IDA
+    'Catch ex As Exception
 
-        'End Try
+    'End Try
 
-        'Try
-        '    txt_app_date.Text = CDate(dao.fields.appdate).ToShortDateString()
-        'Catch ex As Exception
-        '    txt_app_date.Text = Date.Now.ToShortDateString()
-        'End Try
-        Txt_Remark.Text = dao.fields.remark
-    End Sub
+    'Try
+    '    txt_app_date.Text = CDate(dao.fields.appdate).ToShortDateString()
+    'Catch ex As Exception
+    '    txt_app_date.Text = Date.Now.ToShortDateString()
+    'End Try
+    '    Txt_Remark.Text = dao.fields.remark
+    'End Sub
     Public Sub set_data(ByRef dao As DAO_DRUG.ClsDBdalcn)
         dao.fields.remark = Txt_Remark.Text
         'Try

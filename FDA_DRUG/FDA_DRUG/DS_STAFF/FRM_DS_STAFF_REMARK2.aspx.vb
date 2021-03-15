@@ -21,6 +21,11 @@
         runQuery()
         If Not IsPostBack Then
             txt_app_date.Text = Date.Now.ToShortDateString()
+            If _ProcessID = "1701" Then
+                Txt_Remark.Text = "ภายใน 2 ปี นับตั้งแต่วันที่อนุญาต"
+            ElseIf _ProcessID = "1702" Then
+                Txt_Remark.Text = "ใช้ได้ครั้งเดียวเท่านั้น นับตั้งแต่วันที่อนุญาต"
+            End If
             'default_Remark()
             Try
                 Dim dao As New DAO_DRUG.ClsDBdrsamp
@@ -35,6 +40,7 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim RCVNO As Integer
         Dim bao As New BAO.GenNumber
+
         Try
             Dim dao As New DAO_DRUG.ClsDBdrsamp
             dao.GetDataby_IDA(_IDA)

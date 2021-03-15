@@ -14,13 +14,13 @@ Option Explicit On
 Partial Public Class UC_DS_PORYOR8
 
     '''<summary>
-    '''txt_WRITE_AT control.
+    '''lbl_WRITE_AT control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txt_WRITE_AT As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lbl_WRITE_AT As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''txt_WRITE_DATE control.

@@ -14,13 +14,13 @@ Option Explicit On
 Partial Public Class FRM_DS_EDIT_REQUEST
 
     '''<summary>
-    '''Txt_EDIT control.
+    '''lbl_EDIT control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Txt_EDIT As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lbl_EDIT As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''UC_GRID_ATTACH control.

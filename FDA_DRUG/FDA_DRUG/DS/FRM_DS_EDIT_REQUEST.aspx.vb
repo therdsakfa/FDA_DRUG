@@ -53,7 +53,7 @@ Public Class FRM_DS_EDIT_REQUEST
         dao_edit.Getdataby_FK_IDA(_IDA)
         Try
             If dao_edit.fields.DESCRIPTION IsNot Nothing Then
-                Txt_EDIT.Text = dao_edit.fields.DESCRIPTION
+                lbl_EDIT.Text = dao_edit.fields.DESCRIPTION
             End If
         Catch ex As Exception
 

@@ -345,7 +345,7 @@
                             SortExpression="iowacd" UniqueName="iowacd" Display="false">
                         </telerik:GridBoundColumn>--%>
                         <telerik:GridBoundColumn DataField="iowanm" FilterControlAltText="Filter iowanm column"
-                            HeaderText="ชื่อสาร" SortExpression="iowanm" UniqueName="iowanm" Display="false">
+                            HeaderText="ชื่อสาร" SortExpression="iowanm" UniqueName="iowanm" >  <%--Display="false"--%>
                         </telerik:GridBoundColumn>
                         <%--<telerik:GridTemplateColumn UniqueName="iowanm2" HeaderText="ชื่อสาร">
                                     <ItemTemplate>

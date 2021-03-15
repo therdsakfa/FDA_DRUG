@@ -165,7 +165,7 @@
         <table class="table">
             <tr>
                 <td align="right" class="auto-style3"><h4>รายละเอียดการแก้ไข : </h4></td>
-                <td class="auto-style2"><h4><asp:TextBox ID="Txt_EDIT" TextMode="MultiLine" runat="server" CssClass="auto-style1" Width="530px" Height="245px">-</asp:TextBox></h4></td>
+                <td class="auto-style2"><h4><asp:Label ID="lbl_EDIT"  runat="server" CssClass="auto-style1" Width="530px" Height="245px">-</asp:Label></h4></td>
                 <td class="auto-style7" ><uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" /></td>
                 <td></td>               
             </tr>
