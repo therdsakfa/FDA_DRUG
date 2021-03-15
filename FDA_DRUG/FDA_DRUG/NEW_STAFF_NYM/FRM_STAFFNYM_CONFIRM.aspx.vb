@@ -1236,7 +1236,42 @@ Public Class FRM_STAFFNYM_CONFIRM
     End Sub
 
     Protected Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
-        Response.Write("<script type='text/javascript'>parent.close_modal(); </script> ")
+        If _ProcessID = 1026 Then
+
+        ElseIf _ProcessID = 1027 Then                                                                              'กระบวนการอื่นๆ
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_2                                     'เชื่อม base 
+            dao.GetDataby_IDA(_IDA)
+            dao.fields.STATUS_ID = 7
+            dao.update()
+            alert("ยกเลิกเรียบร้อยแล้ว")
+        ElseIf _ProcessID = 1028 Then                                                                              'กระบวนการอื่นๆ
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_3                                     'เชื่อม base 
+            dao.GetDataby_IDA(_IDA)
+            dao.fields.STATUS_ID = 7
+            dao.update()
+            alert("ยกเลิกเรียบร้อยแล้ว")
+        ElseIf _ProcessID = 1029 Then                                                                              'กระบวนการอื่นๆ
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4                                     'เชื่อม base 
+            dao.GetDataby_IDA(_IDA)
+            dao.fields.STATUS_ID = 7
+            dao.update()
+            alert("ยกเลิกเรียบร้อยแล้ว")
+        ElseIf _ProcessID = 1030 Then                                                                              'กระบวนการอื่นๆ
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_5                                     'เชื่อม base 
+            dao.GetDataby_IDA(_IDA)
+            dao.fields.STATUS_ID = 7
+            dao.update()
+            alert("ยกเลิกเรียบร้อยแล้ว")
+        ElseIf _ProcessID = 1031 Then                                                                              'กระบวนการอื่นๆ
+            Dim dao As New DAO_DRUG_IMPORT.TB_FDA_DRUG_IMPORT_NYM_4_COMPANY                                 'เชื่อม base 
+            dao.GetDataby_IDA(_IDA)
+            dao.fields.STATUS_ID = 7
+            dao.update()
+            alert("ยกเลิกเรียบร้อยแล้ว")
+        End If
+
+        AddLogStatus(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+        'Response.Write("<script type='text/javascript'>parent.close_modal(); </script> ")
     End Sub
 
     Protected Sub btn_load_Click(sender As Object, e As EventArgs) Handles btn_load.Click
