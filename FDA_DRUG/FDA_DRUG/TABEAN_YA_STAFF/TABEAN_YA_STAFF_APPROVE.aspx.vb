@@ -258,15 +258,26 @@
                 'Catch ex As Exception
 
                 'End Try
-
+                'AddLogStatus(77, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
                 Try
                     Dim ws_drug126 As New WS_DRUG_126.WS_DRUG
-                    ws_drug126.DRUG_UPDATE_DR_126(dao_rg.fields.pvncd, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.rgtno, "เจ้าหน้าที่กดอนุมัติทะเบียนทรานสเฟอร์ ต้องทำการยกเลิกทะเบียนเดิม", _CLS.CITIZEN_ID, "DRUG")
+                    ws_drug126.UPDATE_TRANFERS_DR(dao_rg.fields.pvncd, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.rgtno, "เจ้าหน้าที่กดอนุมัติทะเบียนทรานสเฟอร์ ต้องทำการยกเลิกทะเบียนเดิม", _CLS.CITIZEN_ID, "DRUG")
                 Catch ex As Exception
 
                 End Try
+            ElseIf dao_rqt.fields.TRANSFER_TYPE = 4 Then
+                Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
+                dao_rg.GetDataby_IDA(dao_rqt.fields.FK_TRANSFER)
+                dao_rg.fields.cnccd = 4
+                dao_rg.fields.cncdate = CDate(txt_rcvdate.Text)
+                'dao_rg.fields.cnccscd = 68
+                dao_rg.update()
+                Try
+                    Dim ws_drug126 As New WS_DRUG_126.WS_DRUG
+                    ws_drug126.UPDATE_SMP_DR_126(dao_rg.fields.pvncd, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.rgtno, "เจ้าหน้าที่กดอนุมัติทะเบียนทรานสเฟอร์ ต้องทำการยกเลิกทะเบียนเดิม", _CLS.CITIZEN_ID, "DRUG")
+                Catch ex As Exception
 
-
+                End Try
             End If
 
         End If
