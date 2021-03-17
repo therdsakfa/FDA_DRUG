@@ -13,10 +13,12 @@
             height: 264px;
         }
         .auto-style5 {
-            width: 209px;
+            width: 327px;
+            height: 20px;
         }
         .auto-style6 {
-            width: 120px;
+            width: 134px;
+            height: 20px;
         }
         .auto-style7 {
             width: 367px;
@@ -29,10 +31,7 @@
             color: #fff;
             border: 2px solid #111;
             background: #111;
-            margin-left: 121;
-        }
-        .auto-style10 {
-            width: 432px;
+            margin-left: 0px;
         }
         .auto-style11 {
             text-shadow: 0 1px 0 #fff;
@@ -43,31 +42,12 @@
             border: 2px solid #111;
             background: #111;
         }
-        .auto-style12 {
-            width: 432px;
-            height: 35px;
-        }
-        .auto-style13 {
-            height: 35px;
-            width: 288px;
-        }
         .auto-style14 {
             height: 32px;
-            width: 288px;
-        }
-        .auto-style15 {
-            height: 32px;
-            width: 432px;
-        }
-        .auto-style16 {
-            width: 115px;
-            height: 35px;
-        }
-        .auto-style17 {
-            height: 45px;
+            width: 257px;
         }
         .auto-style18 {
-            width: 839px;
+            width: 994px;
         }
         .auto-style19 {
             width: 115px;
@@ -75,7 +55,7 @@
         }
         .auto-style20 {
             height: 45px;
-            width: 288px;
+            width: 257px;
         }
         .auto-style22 {
             width: 526px;
@@ -86,6 +66,30 @@
         }
         .auto-style24 {
             margin-left: 16px;
+        }
+        .auto-style28 {
+            height: 45px;
+            width: 455px;
+        }
+        .auto-style31 {
+            width: 455px;
+            height: 32px;
+        }
+        .auto-style32 {
+            width: 455px;
+        }
+        .auto-style33 {
+            width: 719px;
+        }
+        .auto-style34 {
+            height: 20px;
+        }
+        .auto-style36 {
+            width: 614px;
+            height: 27px;
+        }
+        .auto-style37 {
+            width: 409px;
         }
         </style>
 </asp:Content>
@@ -165,7 +169,10 @@
         <table class="table">
             <tr>
                 <td align="right" class="auto-style3"><h4>รายละเอียดการแก้ไข : </h4></td>
-                <td class="auto-style2"><h4><asp:Label ID="lbl_EDIT"  runat="server" CssClass="auto-style1" Width="530px" Height="245px">-</asp:Label></h4></td>
+                <td class="auto-style2">
+                    <asp:Label ID="lbl_EDIT"  runat="server" CssClass="auto-style1" >-</asp:Label>
+
+                </td>
                 <td class="auto-style7" ><uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" /></td>
                 <td></td>               
             </tr>
@@ -174,31 +181,38 @@
     <div>
         <table class="auto-style18">
             <tr>
-                <td class="auto-style10" ><h4>แนบเอกสารเพิ่มเติม</h4></td>
+                <td class="auto-style32"><h4 class="auto-style37"  >ส่วนสำหรับผู้ประกอบการ : แนบเอกสารเพิ่มเติม</h4></td>
             </tr>
             <tr>
-                <td class="auto-style12">ฉลากและเอกสารกำกับผลิตภัณฑ์ ทุกภาชนะบรรจุ ( ไฟล์ PDF เท่านั้น )</td>
-                <td class="auto-style13"><asp:FileUpload ID="FileUpload1" runat="server" CssClass="auto-style9" Width="243px" /></td>
-                <td class="auto-style16" style="color:red"><asp:Label ID="lbl_attach1" runat="server" Text=""></asp:Label></td>
+                <td class="auto-style32">ฉลากและเอกสารกำกับผลิตภัณฑ์ ทุกภาชนะบรรจุ ( ไฟล์ PDF เท่านั้น )</td>
+                <td ><asp:FileUpload ID="FileUpload1" runat="server" CssClass="auto-style9" Width="243px" /></td>
+                <td  style="color:red"><asp:Label ID="lbl_attach1" runat="server" Text=""></asp:Label></td>
             </tr>
             <tr>
-                <td class="auto-style15">อื่นๆ</td>
+                <td class="auto-style31">อื่นๆ</td>
                 <td class="auto-style14"><asp:FileUpload ID="FileUpload2" runat="server" CssClass="auto-style11" Width="243px"  /></td>                
                 <td class="auto-style19" style="color:red"><asp:Label ID="lbl_attach2" runat="server" Text=""></asp:Label></td>
             </tr>
             <tr>
-                <td class="auto-style17"></td>
+                <td class="auto-style28"></td>
                 <td class="auto-style20"><asp:Button ID="btn_Upload" runat="server" Text="Upload File" /></td>
             </tr>
         </table>
     </div>
     <br />
     <div>
-        <table>
+        <table class="auto-style33">
             <tr>
-                <td class="auto-style5" align="right">* กำหนดส่งเอกสารในะบบวันที่</td>
+                <td class="auto-style5" align="right">* กำหนดส่งเอกสารภายในระบบ ภายในวันที่</td>
                 <td class="auto-style6"><center><asp:Label ID="lbl_DATE" runat="server"></asp:Label></center></td>
-                <td>ก่อนเวลา 23.59 น. ของวันที่ระบุข้างต้น</td>
+                <td class="auto-style34">ก่อนเวลา 23.59 น. ของวันที่ระบุข้างต้น</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table class="auto-style36" >
+            <tr>
+                <td align="right">หากพ้นกำหนดส่งเอกสารระบบจะคืนคำขออัตโนมัติ ท่านต้องยื่นคำขอและชำระเงินใหม่อีกครั้ง</td>
             </tr>
         </table>
     </div>

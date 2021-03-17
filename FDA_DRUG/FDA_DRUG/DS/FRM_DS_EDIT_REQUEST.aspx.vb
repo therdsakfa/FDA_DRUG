@@ -59,7 +59,10 @@ Public Class FRM_DS_EDIT_REQUEST
 
         End Try
         Try
-            lbl_DATE.Text = dao_edit.fields.CREATE_DATE
+            Dim WRITEDATE As Date = dao_edit.fields.CREATE_DATE
+            WRITEDATE = dao_edit.fields.CREATE_DATE
+            WRITEDATE = DateAdd(DateInterval.Year, 543, WRITEDATE)
+            lbl_DATE.Text = CDate(WRITEDATE).ToLongDateString
         Catch ex As Exception
 
         End Try

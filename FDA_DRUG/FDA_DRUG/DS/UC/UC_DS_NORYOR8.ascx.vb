@@ -478,7 +478,7 @@ Public Class UC_DS_NORYOR8
         cls_xml.DT_SHOW.DT5 = bao.SP_DRSAMP_PACKAGE_DETAIL_CHK_BY_FK_IDA(dao.fields.IDA) 'ขนาดบรรจุ
         Try
             cls_xml.DT_SHOW.DT6 = bao.SP_regis(dao.fields.IDA)
-            cls_xml.DT_SHOW.DT9 = bao.SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA(dao.fields.IDA)
+            cls_xml.DT_SHOW.DT11 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(dao.fields.IDA)
         Catch ex As Exception
 
         End Try
