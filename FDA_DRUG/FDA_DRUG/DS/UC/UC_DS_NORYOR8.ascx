@@ -193,8 +193,8 @@
         <table class="auto-style29">
             <tr>
                 <td align="right" class="auto-style19">เขียนที่ :</td>
-                <td class="auto-style11"><asp:TextBox ID="txt_WRITE_AT" runat="server"></asp:TextBox>
-
+                <td class="auto-style11">
+                    <asp:Label ID="lbl_WRITE_AT" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>

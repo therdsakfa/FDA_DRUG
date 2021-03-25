@@ -61,7 +61,7 @@ Public Class UC_DS_PORYOR8
         Page.MaintainScrollPositionOnPostBack = True
         RunSession()
         If Not IsPostBack Then
-
+            lbl_WRITE_AT.Text = "ระบบ Skynet อ.ย."
             txt_WRITE_DATE.Text = Date.Now.ToShortDateString 'แสดงวันที่
             bind_ddl_unit()
             'load_ddl()
@@ -278,10 +278,10 @@ Public Class UC_DS_PORYOR8
         item2.Text = "เลือกหน่วยนับตามรูปแบบยา"
         item2.Value = "0"
         ddl_snunit.Items.Insert(0, item2)
-        Try
-            lbl_WRITE_AT.Text = _write_at
-        Catch ex As Exception
-        End Try
+        'Try
+        '    lbl_WRITE_AT.Text = _write_at
+        'Catch ex As Exception
+        'End Try
         Try
             ddl_phesaj.SelectedValue = _phesaj
         Catch ex As Exception

@@ -95,6 +95,8 @@ Public Class FRM_REPORT_REGIST
         Dim dao_pro_in As New DAO_DRUG.TB_DRUG_REGISTRATION_PRODUCER_IN
         dao_pro_in.GetDataby_FK_IDA(_IDA)
 
+        Dim dao_aml As New DAO_DRUG.TB_DRUG_REGISTRATION_ANIMAL
+        dao_aml.GetData_by_FK_IDA(_IDA)
 
         If statusID = "7" Then
             dao.fields.STATUS_ID = statusID
@@ -179,6 +181,10 @@ Public Class FRM_REPORT_REGIST
                     Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 ElseIf dao_pro.fields.FK_IDA Is Nothing And dao_pro_in.fields.FK_IDA Is Nothing Then
                     Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
+                ElseIf _ProcessID = "130002" Or _ProcessID = "130004" Then
+                    If dao_aml.fields.FK_IDA Is Nothing Then
+                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
+                    End If
                 ElseIf dao.fields.UNIT_NORMAL = "" Then
                     Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 ElseIf dao.fields.DRUG_GROUP = "" Then

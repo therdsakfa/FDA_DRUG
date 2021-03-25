@@ -96,7 +96,7 @@ Public Class UC_DS_NORYOR8
     End Sub
 
     Sub setdata(ByRef dao As DAO_DRUG.ClsDBdrsamp)
-        dao.fields.WRITE_AT = txt_WRITE_AT.Text     'เขียนที่
+        dao.fields.WRITE_AT = lbl_WRITE_AT.Text     'เขียนที่
         dao.fields.WRITE_DATE = txt_WRITE_DATE.Text 'วันที่เขียน
         Try
             dao.fields.WRITE_DATE = CDate(txt_WRITE_DATE.Text) 'ดึงข้อมูลเขียนที่
@@ -232,12 +232,10 @@ Public Class UC_DS_NORYOR8
         ddl_snunit.Items.Insert(0, item2)
 
         Try
-            txt_WRITE_AT.Text = _write_at
+            lbl_WRITE_AT.Text = "ระบบ Skynet อ.ย."
         Catch ex As Exception
         End Try
-        If _write_at = "" Then
 
-        End If
         Try
             ddl_phesaj.SelectedValue = _phesaj
         Catch ex As Exception
@@ -369,7 +367,7 @@ Public Class UC_DS_NORYOR8
     Protected Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click 'ปุ่มบันทึกข้อมูล
         If main_ida = 0 Then
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกเลขบัญชีรายการยา');", True)
-        ElseIf txt_WRITE_AT.Text = "" Then
+        ElseIf lbl_WRITE_AT.Text = "" Then
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณากรอกเขียนที่');", True)
         ElseIf ddl_phesaj.SelectedValue = 0 Then
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกผู้มีหน้าที่ปฏิบัติการ');", True)
@@ -379,7 +377,7 @@ Public Class UC_DS_NORYOR8
             Dim save As New DAO_DRUG.ClsDBdrsamp 'เก็บข้อมูลในตาราง drsamp
             'chk_package()
             Thread.CurrentThread.CurrentCulture = New CultureInfo("th-TH")
-            save.fields.WRITE_AT = txt_WRITE_AT.Text 'เก็บเขียนที่
+            save.fields.WRITE_AT = lbl_WRITE_AT.Text 'เก็บเขียนที่
             save.fields.WRITE_DATE = Date.Now 'เก็บวันที่
 
             Dim dao_drugname As New DAO_DRUG.ClsDBDRUG_REGISTRATION 'ชื่อยา
@@ -713,7 +711,7 @@ Public Class UC_DS_NORYOR8
         End Try
 
         ' System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Response.Redirect('" & "../DS/DURG8_ADD.aspx?IDA=" & main_ida & "&sunit_ida=" & lbl_sunit_ida.Text & "&process=" & _process & "');", True)
-        Response.Redirect("../DS/FRM_DS_DRUG8_ADD.aspx?main_ida=" & main_ida & "&lcn_ida=" & _lcn_ida & "&sunit_ida=" & lbl_sunit_ida.Text & "&process=" & _process & "&write_at=" & txt_WRITE_AT.Text & "&phesaj=" & ddl_phesaj.Text)
+        Response.Redirect("../DS/FRM_DS_DRUG8_ADD.aspx?main_ida=" & main_ida & "&lcn_ida=" & _lcn_ida & "&sunit_ida=" & lbl_sunit_ida.Text & "&process=" & _process & "&write_at=" & lbl_WRITE_AT.Text & "&phesaj=" & ddl_phesaj.Text)
         'Response.Write("<script>window.open('" + ("../DS/UC/UC_DRUG8_ADD.aspx?IDA=" & main_ida & "&sunit_ida=" & lbl_sunit_ida.Text & "&process=" & _process) + "','_ new', 'width=400,height=200');</script>")
         'If Label2.Text = "on" Then
         '    Label2.Text = "off"
