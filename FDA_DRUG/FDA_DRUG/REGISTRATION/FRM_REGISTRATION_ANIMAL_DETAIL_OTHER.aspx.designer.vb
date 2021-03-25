@@ -167,6 +167,24 @@ Partial Public Class FRM_REGISTRATION_ANIMAL_DETAIL_OTHER
     Protected WithEvents UC_CHEM As Global.FDA_DRUG.UC_CHEM
 
     '''<summary>
+    '''RadPageView10 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RadPageView10 As Global.Telerik.Web.UI.RadPageView
+
+    '''<summary>
+    '''UC_ANIMAL1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ANIMAL1 As Global.FDA_DRUG.UC_ANIMAL
+
+    '''<summary>
     '''RadPageView5 control.
     '''</summary>
     '''<remarks>
@@ -237,22 +255,4 @@ Partial Public Class FRM_REGISTRATION_ANIMAL_DETAIL_OTHER
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UC_DRUG_COLOR1 As Global.FDA_DRUG.UC_DRUG_COLOR
-
-    '''<summary>
-    '''RadPageView10 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RadPageView10 As Global.Telerik.Web.UI.RadPageView
-
-    '''<summary>
-    '''UC_ANIMAL1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents UC_ANIMAL1 As Global.FDA_DRUG.UC_ANIMAL
 End Class

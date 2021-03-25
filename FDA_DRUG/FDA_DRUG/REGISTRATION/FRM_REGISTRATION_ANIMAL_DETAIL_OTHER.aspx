@@ -160,6 +160,17 @@
                 </tr>
             </table>
         </telerik:RadPageView>
+        <telerik:RadPageView ID="RadPageView10" runat="server" TabIndex="11">
+            <table class="table" width="100%">
+                <tr>
+                    <td>
+                        
+                        <uc7:UC_ANIMAL ID="UC_ANIMAL1" runat="server" />
+                        
+                    </td>
+                </tr>
+            </table>
+        </telerik:RadPageView>
         <telerik:RadPageView ID="RadPageView5" runat="server" TabIndex="6">
             <table class="table" width="100%">
                 <tr>
@@ -197,16 +208,6 @@
             </table>
         </telerik:RadPageView>
 
-        <telerik:RadPageView ID="RadPageView10" runat="server" TabIndex="11">
-            <table class="table" width="100%">
-                <tr>
-                    <td>
-                        
-                        <uc7:UC_ANIMAL ID="UC_ANIMAL1" runat="server" />
-                        
-                    </td>
-                </tr>
-            </table>
-        </telerik:RadPageView>
+        
     </telerik:RadMultiPage>
 </asp:Content>
