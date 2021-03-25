@@ -64,13 +64,13 @@ Public Class UC_DS_PORYORBOR8_
             'load_ddl()
             set_label()
             If Request.QueryString("tt") <> "" Then
-                txt_WRITE_AT.Text = "ออกโดยระบบอิเล็กทรอนิกส์"
+                lbl_WRITE_AT.Text = "ออกโดยระบบอิเล็กทรอนิกส์"
             End If
             If Request.QueryString("tt") <> "" Then
                 btn_save.Text = "บันทึก ยบ.8"
                 btn_package.Visible = False
                 btn_add.Visible = False
-                txt_WRITE_AT.Enabled = True
+                lbl_WRITE_AT.Enabled = True
             End If
         End If
         'set_bio()
@@ -112,7 +112,7 @@ Public Class UC_DS_PORYORBOR8_
         'ddl_bunit.Items.Insert(0, item)
     End Sub
     Sub setdata(ByRef dao As DAO_DRUG.ClsDBdrsamp)
-        dao.fields.WRITE_AT = txt_WRITE_AT.Text     'เขียนที่
+        dao.fields.WRITE_AT = lbl_WRITE_AT.Text     'เขียนที่
         dao.fields.WRITE_DATE = txt_WRITE_DATE.Text 'วันที่เขียน
         Try
             dao.fields.WRITE_DATE = CDate(txt_WRITE_DATE.Text) 'ดึงข้อมูลเขียนที่
@@ -253,7 +253,7 @@ Public Class UC_DS_PORYORBOR8_
         ddl_snunit.Items.Insert(0, item2)
 
         Try
-            txt_WRITE_AT.Text = _write_at
+            lbl_WRITE_AT.Text = "ระบบ Skynet อ.ย."
         Catch ex As Exception
         End Try
         Try
@@ -407,7 +407,7 @@ Public Class UC_DS_PORYORBOR8_
         i = dao_package.CountDataby_FK_IDA(_main_ida)
         If main_ida = 0 Then
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกเลขบัญชีรายการยา');", True)
-        ElseIf txt_WRITE_AT.Text = "" Then
+        ElseIf lbl_WRITE_AT.Text = "" Then
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณากรอกเขียนที่');", True)
         ElseIf ddl_phesaj.SelectedValue = 0 Then
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกผู้มีหน้าที่ปฏิบัติการ');", True)
@@ -420,7 +420,7 @@ Public Class UC_DS_PORYORBOR8_
             Thread.CurrentThread.CurrentCulture = New CultureInfo("th-TH")
             'chk_package() 'อัพเดท checkbox ใน radgrid
             'chk_package()
-            save.fields.WRITE_AT = txt_WRITE_AT.Text 'เก็บเขียนที่
+            save.fields.WRITE_AT = lbl_WRITE_AT.Text 'เก็บเขียนที่
             save.fields.WRITE_DATE = Date.Now 'เก็บวันที่
 
             Dim dao_drugname As New DAO_DRUG.ClsDBDRUG_REGISTRATION 'ชื่อยา
@@ -769,7 +769,7 @@ Public Class UC_DS_PORYORBOR8_
     Protected Sub btn_package_Click(sender As Object, e As EventArgs) Handles btn_package.Click
 
         ' System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Response.Redirect('" & "../DS/DURG8_ADD.aspx?IDA=" & main_ida & "&sunit_ida=" & lbl_sunit_ida.Text & "&process=" & _process & "');", True)
-        Response.Redirect("../DS/FRM_DS_DRUG8_ADD.aspx?main_ida=" & main_ida & "&lcn_ida=" & _lcn_ida & "&sunit_ida=" & lbl_sunit_ida.Text & "&process=" & _process & "&write_at=" & txt_WRITE_AT.Text & "&phesaj=" & ddl_phesaj.Text)
+        Response.Redirect("../DS/FRM_DS_DRUG8_ADD.aspx?main_ida=" & main_ida & "&lcn_ida=" & _lcn_ida & "&sunit_ida=" & lbl_sunit_ida.Text & "&process=" & _process & "&write_at=" & lbl_WRITE_AT.Text & "&phesaj=" & ddl_phesaj.Text)
         'Response.Write("<script>window.open('" + ("../DS/UC/UC_DRUG8_ADD.aspx?IDA=" & main_ida & "&sunit_ida=" & lbl_sunit_ida.Text & "&process=" & _process) + "','_ new', 'width=400,height=200');</script>")
         'If Label2.Text = "on" Then
         '    Label2.Text = "off"

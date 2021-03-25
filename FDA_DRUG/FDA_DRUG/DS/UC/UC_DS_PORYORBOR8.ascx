@@ -85,7 +85,7 @@
         <td align="right" class="auto-style14" >
             เขียนที่ :</td>
         <td class="auto-style16">
-            <asp:TextBox ID="txt_WRITE_AT" runat="server"></asp:TextBox>
+            <asp:Label ID="lbl_WRITE_AT" runat="server"></asp:Label>
         </td>
         </tr>
         <tr>
