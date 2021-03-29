@@ -2120,16 +2120,16 @@
         <elementListCompartment Id="6145b1b5-3783-4598-b9d8-23df7e223380" absoluteBounds="0.63999999999999968, 18.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4ca10c6f-5cb0-4f9e-a770-945f3dae8445" isExpanded="false" absoluteBounds="12.375, 31.75, 2, 0.45">
-      <DataClassMoniker Name="/Linq_DRUGDataContext/DRRGT_EDIT_REQUEST" />
-      <nestedChildShapes>
-        <elementListCompartment Id="3682c109-0fb6-45c1-8904-668b21d3b865" absoluteBounds="12.39, 32.21, 1.9700000000000002, 15.056599934895832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="f8aab846-41df-4602-b05c-8566fbcfe081" isExpanded="false" absoluteBounds="14.5, 31.75, 2, 0.45">
       <DataClassMoniker Name="/Linq_DRUGDataContext/DRRGT_EDIT_APPOINTMENT" />
       <nestedChildShapes>
         <elementListCompartment Id="fc35017f-a587-410b-a3d7-92468a03fdf3" absoluteBounds="14.515, 32.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2a2a32a0-954f-479a-901f-9acd7a03b969" isExpanded="false" absoluteBounds="12.375, 31.75, 2, 0.45">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/DRRGT_EDIT_REQUEST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5a2beaf-5976-46c3-9df6-42def99ce0df" absoluteBounds="12.39, 32.21, 1.9700000000000002, 15.441202799479166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

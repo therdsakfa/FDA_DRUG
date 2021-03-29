@@ -1425,22 +1425,41 @@ Public Class FRM_XML
     End Sub
 
     Protected Sub btn_drrgt_req_Click(sender As Object, e As EventArgs) Handles btn_drrgt_req.Click
-        Dim filename As String = "EDIT_DRRGT"
+        Dim filename As String = "EDIT_DRRGT_Y4"
         Dim cityzen_id As String = "0000000000000"
         Dim lcnsid As Integer = 252565
         Dim lcnno As String = "6000240"
         Dim lcntpcd As String = "ขย1"
         Dim pvncd As String = "10"
         Dim bao_show As New BAO_SHOW
-        Dim cls As New CLASS_GEN_XML.EDIT_DRRGT(cityzen_id, lcnsid, "1", pvncd) 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
-        Dim cls_xml As New CLASS_EDIT_DRRGT                                                                 ' ประกาศตัวแปรจาก CLASS_DALCN 
-        cls_xml = cls.gen_xml()
-
-        Dim dao As New DAO_DRUG.ClsDBdalcn
-        dao.GetDataby_IDA(1)
+        Dim cls As New CLASS_GEN_XML.EDIT_DRRGT("0000000000000", 0, "1", 10) 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
+        Dim cls_xml As New CLASS_EDIT_DRRGT                                                                     ' ประกาศตัวแปรจาก CLASS_DALCN 
+        cls_xml = cls.gen_xml()                                                                               'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
+        Dim lct_ida As Integer = 0
 
         Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
-        dao_drrgt.GetDataby_IDA(1)
+        dao_drrgt.GetDataby_IDA(96596)
+
+        Dim dao_sc As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+        'dao_sc.GetDataby_IDA_drrgt(_rgt_ida)
+        dao_sc.GetDataby_NEWCODE("U1DR1F1022640000311C")
+
+        Dim dao_lcn_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+        Try
+            dao_lcn_e.GetDataby_u1(dao_sc.fields.Newcode_not)
+        Catch ex As Exception
+
+        End Try
+
+
+        Dim dao As New DAO_DRUG.ClsDBdalcn
+        Try
+            dao.GetDataby_IDA(dao_lcn_e.fields.IDA_dalcn)
+        Catch ex As Exception
+
+        End Try
+
+
 
         Dim rcvno_format As String = ""
         Dim LCN_TYPE As String = ""
@@ -1455,28 +1474,29 @@ Public Class FRM_XML
         Dim pvnabbr As String = ""
         Dim rcvno As String = ""
         Dim rcvno_auto As String = ""
+
         Try
-            rcvno_auto = dao_drrgt.fields.rcvno
+            rcvno_auto = dao_sc.fields.rcvno
         Catch ex As Exception
 
         End Try
         Try
-            rgttpcd = dao_drrgt.fields.rgttpcd
+            rgttpcd = dao_sc.fields.rgttpcd
         Catch ex As Exception
 
         End Try
         Try
-            rcvno = dao_drrgt.fields.rcvno
+            rcvno = "" 'dao_drrgt.fields.rcvno
         Catch ex As Exception
 
         End Try
         Try
-            lcnno = dao_drrgt.fields.lcnno
+            lcnno = dao_sc.fields.lcnno
         Catch ex As Exception
 
         End Try
         Try
-            rgtno = dao_drrgt.fields.rgtno
+            rgtno = dao_sc.fields.rgtno
         Catch ex As Exception
 
         End Try
@@ -1486,17 +1506,17 @@ Public Class FRM_XML
 
         End Try
         Try
-            pvnabbr = dao_drrgt.fields.pvnabbr
+            pvnabbr = dao_sc.fields.pvnabbr
         Catch ex As Exception
 
         End Try
         Try
-            drug_name = dao_drrgt.fields.thadrgnm & " / " & dao_drrgt.fields.engdrgnm
+            drug_name = dao_sc.fields.thadrgnm & " / " & dao_sc.fields.engdrgnm
         Catch ex As Exception
 
         End Try
         Try
-            If dao.fields.lcntpcd.Contains("ผยบ") Or dao.fields.lcntpcd.Contains("นยบ") Then
+            If dao_lcn_e.fields.lcntpcd.Contains("ผยบ") Or dao_lcn_e.fields.lcntpcd.Contains("นยบ") Then
                 LCN_TYPE = "2"
             Else
                 LCN_TYPE = "1"
@@ -1505,7 +1525,7 @@ Public Class FRM_XML
 
         End Try
         Try
-            If dao.fields.lcntpcd.Contains("ผย") Then
+            If dao_lcn_e.fields.lcntpcd.Contains("ผย") Then
                 LCNTPCD_GROUP = "2"
             Else
                 LCNTPCD_GROUP = "1"
@@ -1521,7 +1541,12 @@ Public Class FRM_XML
 
         End Try
         Try
-            LCNNO_FORMAT = dao.fields.lcntpcd & " " & CStr(CInt(Right(dao.fields.lcnno, 5))) & "/" & Left(dao.fields.lcnno, 2)
+            If Right(Left(dao_lcn_e.fields.lcnno, 3), 1) <> "5" Then
+                LCNNO_FORMAT = dao_lcn_e.fields.pvnabbr & " " & CStr(CInt(Right(dao_lcn_e.fields.lcnno, 5))) & "/25" & Left(dao_lcn_e.fields.lcnno, 2)
+            Else
+                LCNNO_FORMAT = dao_lcn_e.fields.pvnabbr & " " & CStr(CInt(Right(dao_lcn_e.fields.lcnno, 4))) & "/25" & Left(dao_lcn_e.fields.lcnno, 2)
+            End If
+
         Catch ex As Exception
 
         End Try
@@ -1540,10 +1565,20 @@ Public Class FRM_XML
         Catch ex As Exception
 
         End Try
+
+        Dim dt_rgtno As New DataTable
+        Dim bao_rgtno As New BAO.ClsDBSqlcommand
+        dt_rgtno = bao_rgtno.SP_DRRGT_RGTNO_DISPLAY_BY_IDA(96596)
+        Try
+            rgtno_format = dt_rgtno(0)("rgtno_display")
+        Catch ex As Exception
+
+        End Try
+
         cls_xml.LCN_TYPE = LCN_TYPE
         cls_xml.LCNTPCD_GROUP = LCNTPCD_GROUP
         cls_xml.LCNNO_FORMAT = LCNNO_FORMAT
-        cls_xml.RCVNO_FORMAT = "เลขรับ"
+        cls_xml.RCVNO_FORMAT = "" 'rcvno_format
         cls_xml.RGTNO_FORMAT = rgtno_format
 
         cls_xml.APP_TYPE1 = ""
@@ -1552,15 +1587,16 @@ Public Class FRM_XML
         cls_xml.APP_TYPE3 = ""
         cls_xml.APP_TYPE3_PURPOSE = ""
         cls_xml.DRUG_NAME = drug_name
-        cls_xml.OLD_NAME_TH = dao_drrgt.fields.thadrgnm
-        cls_xml.OLD_NAME_EN = dao_drrgt.fields.engdrgnm
+        cls_xml.OLD_NAME_TH = dao_sc.fields.thadrgnm
+        cls_xml.OLD_NAME_EN = dao_sc.fields.engdrgnm
         Try
-            cls_xml.PHR_IDENTIFY = ""
+            cls_xml.PHR_IDENTIFY = "0000000000000"
             cls_xml.PHR_NAME = "เภสัช"
         Catch ex As Exception
 
         End Try
-        'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
+
+
         Dim UNIT_NAME As String = ""
         Dim dao_package As New DAO_DRUG.TB_DRRGT_PACKAGE_DETAIL
         dao_package.GetDataby_FKIDA(dao_drrgt.fields.IDA)
@@ -1571,24 +1607,13 @@ Public Class FRM_XML
         Catch ex As Exception
         End Try
         cls_xml.UNIT_NAME = UNIT_NAME
-        Dim dao_color As New DAO_DRUG.TB_DRRGT_COLOR
-        dao_color.GetDataby_FK_IDA(dao.fields.FK_IDA)
+        'Dim dao_color As New DAO_DRUG.TB_DRRGT_COLOR
+        'dao_color.GetDataby_FK_IDA(dao.fields.FK_IDA)
         'cls_xml.DRRGT_COLORs = dao_color.fields
         Dim bao_mas As New BAO_MASTER
 
         '------------------SHOW
         'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
-        cls_xml.DT_SHOW.DT1 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY("", lcnsid) 'ข้อมูลบริษัท
-
-        '-----------------------------MASTER
-        'cls_xml.DT_MASTER.DT1 = bao_mas.SP_MASTER_driowa() 'สาร
-        'cls_xml.DT_MASTER.DT2 = bao_mas.SP_MASTER_drsunit() 'หน่วย
-        Try
-            cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_drrgt.fields.FK_LCN_IDA) 'ผู้ดำเนิน
-            'class_xml.DT_SHOW.DT14.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
-        Catch ex As Exception
-
-        End Try
         Try
             If Request.QueryString("identify") <> "" Then
                 cls_xml.DT_SHOW.DT1 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(Request.QueryString("identify"), lcnsid) 'ข้อมูลบริษัท
@@ -1599,15 +1624,23 @@ Public Class FRM_XML
 
         End Try
         Try
+            Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+            dao_dal.GetDataby_IDA(dao_lcn_e.fields.IDA_dalcn)
+            cls_xml.DT_SHOW.DT18 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_dal.fields.FK_IDA)
+            cls_xml.DT_SHOW.DT18.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_FULLADDR"
+        Catch ex As Exception
+
+        End Try
+
+        Try
             Dim dt_temp As New DataTable
-            dt_temp = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_drrgt.fields.FK_LCN_IDA) 'ผู้ดำเนิน
+            dt_temp = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_lcn_e.fields.IDA_dalcn) 'ผู้ดำเนิน
 
             cls_xml.BSN_THAIFULLNAME = dt_temp(0)("BSN_THAIFULLNAME")
             'class_xml.DT_SHOW.DT14.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
         Catch ex As Exception
             cls_xml.BSN_THAIFULLNAME = ""
         End Try
-        Dim lct_ida As Integer = 106675
 
         Dim bao_app As New BAO.AppSettings
 
