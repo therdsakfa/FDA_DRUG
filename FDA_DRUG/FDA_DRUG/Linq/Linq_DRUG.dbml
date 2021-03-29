@@ -6828,6 +6828,19 @@
       <Column Name="CITIZEN_STAFF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.DRRGT_EDIT_APPOINTMENT" Member="DRRGT_EDIT_APPOINTMENTs">
+    <Type Name="DRRGT_EDIT_APPOINTMENT">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE_REQUESTS_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="APPOINT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPOINT_DAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQUEST_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CITIZEN_AUTHORIZE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OWN_STAFF_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OWN_STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.DRRGT_EDIT_REQUEST" Member="DRRGT_EDIT_REQUESTs">
     <Type Name="DRRGT_EDIT_REQUEST">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6907,19 +6920,8 @@
       <Column Name="SIGN_POSITION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="OWN_STAFF_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="OWN_STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DRRGT_EDIT_APPOINTMENT" Member="DRRGT_EDIT_APPOINTMENTs">
-    <Type Name="DRRGT_EDIT_APPOINTMENT">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TYPE_REQUESTS_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="APPOINT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="APPOINT_DAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="REQUEST_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="CITIZEN_AUTHORIZE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OWN_STAFF_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="OWN_STAFF_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="WRITE_AT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="WRITE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

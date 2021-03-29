@@ -2107,17 +2107,17 @@ Partial Public Class Linq_DRUGDataContext
     End Sub
   Partial Private Sub DeleteDRSAMP_EDIT_REQUEST(instance As DRSAMP_EDIT_REQUEST)
     End Sub
-  Partial Private Sub InsertDRRGT_EDIT_REQUEST(instance As DRRGT_EDIT_REQUEST)
-    End Sub
-  Partial Private Sub UpdateDRRGT_EDIT_REQUEST(instance As DRRGT_EDIT_REQUEST)
-    End Sub
-  Partial Private Sub DeleteDRRGT_EDIT_REQUEST(instance As DRRGT_EDIT_REQUEST)
-    End Sub
   Partial Private Sub InsertDRRGT_EDIT_APPOINTMENT(instance As DRRGT_EDIT_APPOINTMENT)
     End Sub
   Partial Private Sub UpdateDRRGT_EDIT_APPOINTMENT(instance As DRRGT_EDIT_APPOINTMENT)
     End Sub
   Partial Private Sub DeleteDRRGT_EDIT_APPOINTMENT(instance As DRRGT_EDIT_APPOINTMENT)
+    End Sub
+  Partial Private Sub InsertDRRGT_EDIT_REQUEST(instance As DRRGT_EDIT_REQUEST)
+    End Sub
+  Partial Private Sub UpdateDRRGT_EDIT_REQUEST(instance As DRRGT_EDIT_REQUEST)
+    End Sub
+  Partial Private Sub DeleteDRRGT_EDIT_REQUEST(instance As DRRGT_EDIT_REQUEST)
     End Sub
   #End Region
 	
@@ -4264,15 +4264,15 @@ Partial Public Class Linq_DRUGDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property DRRGT_EDIT_REQUESTs() As System.Data.Linq.Table(Of DRRGT_EDIT_REQUEST)
-		Get
-			Return Me.GetTable(Of DRRGT_EDIT_REQUEST)
-		End Get
-	End Property
-	
 	Public ReadOnly Property DRRGT_EDIT_APPOINTMENTs() As System.Data.Linq.Table(Of DRRGT_EDIT_APPOINTMENT)
 		Get
 			Return Me.GetTable(Of DRRGT_EDIT_APPOINTMENT)
+		End Get
+	End Property
+	
+	Public ReadOnly Property DRRGT_EDIT_REQUESTs() As System.Data.Linq.Table(Of DRRGT_EDIT_REQUEST)
+		Get
+			Return Me.GetTable(Of DRRGT_EDIT_REQUEST)
 		End Get
 	End Property
 End Class
@@ -136637,6 +136637,244 @@ Partial Public Class DRSAMP_EDIT_REQUEST
 	End Sub
 End Class
 
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DRRGT_EDIT_APPOINTMENT")>  _
+Partial Public Class DRRGT_EDIT_APPOINTMENT
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _FK_IDA As System.Nullable(Of Integer)
+	
+	Private _TYPE_REQUESTS_ID As String
+	
+	Private _APPOINT_DATE As System.Nullable(Of Date)
+	
+	Private _APPOINT_DAY As System.Nullable(Of Integer)
+	
+	Private _REQUEST_DATE As System.Nullable(Of Date)
+	
+	Private _CITIZEN_AUTHORIZE As String
+	
+	Private _OWN_STAFF_IDENTIFY As String
+	
+	Private _OWN_STAFF_NAME As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnFK_IDAChanged()
+    End Sub
+    Partial Private Sub OnTYPE_REQUESTS_IDChanging(value As String)
+    End Sub
+    Partial Private Sub OnTYPE_REQUESTS_IDChanged()
+    End Sub
+    Partial Private Sub OnAPPOINT_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnAPPOINT_DATEChanged()
+    End Sub
+    Partial Private Sub OnAPPOINT_DAYChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnAPPOINT_DAYChanged()
+    End Sub
+    Partial Private Sub OnREQUEST_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnREQUEST_DATEChanged()
+    End Sub
+    Partial Private Sub OnCITIZEN_AUTHORIZEChanging(value As String)
+    End Sub
+    Partial Private Sub OnCITIZEN_AUTHORIZEChanged()
+    End Sub
+    Partial Private Sub OnOWN_STAFF_IDENTIFYChanging(value As String)
+    End Sub
+    Partial Private Sub OnOWN_STAFF_IDENTIFYChanged()
+    End Sub
+    Partial Private Sub OnOWN_STAFF_NAMEChanging(value As String)
+    End Sub
+    Partial Private Sub OnOWN_STAFF_NAMEChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
+	Public Property FK_IDA() As System.Nullable(Of Integer)
+		Get
+			Return Me._FK_IDA
+		End Get
+		Set
+			If (Me._FK_IDA.Equals(value) = false) Then
+				Me.OnFK_IDAChanging(value)
+				Me.SendPropertyChanging
+				Me._FK_IDA = value
+				Me.SendPropertyChanged("FK_IDA")
+				Me.OnFK_IDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TYPE_REQUESTS_ID", DbType:="NVarChar(50)")>  _
+	Public Property TYPE_REQUESTS_ID() As String
+		Get
+			Return Me._TYPE_REQUESTS_ID
+		End Get
+		Set
+			If (String.Equals(Me._TYPE_REQUESTS_ID, value) = false) Then
+				Me.OnTYPE_REQUESTS_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._TYPE_REQUESTS_ID = value
+				Me.SendPropertyChanged("TYPE_REQUESTS_ID")
+				Me.OnTYPE_REQUESTS_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_APPOINT_DATE", DbType:="DateTime")>  _
+	Public Property APPOINT_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._APPOINT_DATE
+		End Get
+		Set
+			If (Me._APPOINT_DATE.Equals(value) = false) Then
+				Me.OnAPPOINT_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._APPOINT_DATE = value
+				Me.SendPropertyChanged("APPOINT_DATE")
+				Me.OnAPPOINT_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_APPOINT_DAY", DbType:="Int")>  _
+	Public Property APPOINT_DAY() As System.Nullable(Of Integer)
+		Get
+			Return Me._APPOINT_DAY
+		End Get
+		Set
+			If (Me._APPOINT_DAY.Equals(value) = false) Then
+				Me.OnAPPOINT_DAYChanging(value)
+				Me.SendPropertyChanging
+				Me._APPOINT_DAY = value
+				Me.SendPropertyChanged("APPOINT_DAY")
+				Me.OnAPPOINT_DAYChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REQUEST_DATE", DbType:="DateTime")>  _
+	Public Property REQUEST_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._REQUEST_DATE
+		End Get
+		Set
+			If (Me._REQUEST_DATE.Equals(value) = false) Then
+				Me.OnREQUEST_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._REQUEST_DATE = value
+				Me.SendPropertyChanged("REQUEST_DATE")
+				Me.OnREQUEST_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITIZEN_AUTHORIZE", DbType:="NVarChar(50)")>  _
+	Public Property CITIZEN_AUTHORIZE() As String
+		Get
+			Return Me._CITIZEN_AUTHORIZE
+		End Get
+		Set
+			If (String.Equals(Me._CITIZEN_AUTHORIZE, value) = false) Then
+				Me.OnCITIZEN_AUTHORIZEChanging(value)
+				Me.SendPropertyChanging
+				Me._CITIZEN_AUTHORIZE = value
+				Me.SendPropertyChanged("CITIZEN_AUTHORIZE")
+				Me.OnCITIZEN_AUTHORIZEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OWN_STAFF_IDENTIFY", DbType:="NVarChar(MAX)")>  _
+	Public Property OWN_STAFF_IDENTIFY() As String
+		Get
+			Return Me._OWN_STAFF_IDENTIFY
+		End Get
+		Set
+			If (String.Equals(Me._OWN_STAFF_IDENTIFY, value) = false) Then
+				Me.OnOWN_STAFF_IDENTIFYChanging(value)
+				Me.SendPropertyChanging
+				Me._OWN_STAFF_IDENTIFY = value
+				Me.SendPropertyChanged("OWN_STAFF_IDENTIFY")
+				Me.OnOWN_STAFF_IDENTIFYChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OWN_STAFF_NAME", DbType:="NVarChar(MAX)")>  _
+	Public Property OWN_STAFF_NAME() As String
+		Get
+			Return Me._OWN_STAFF_NAME
+		End Get
+		Set
+			If (String.Equals(Me._OWN_STAFF_NAME, value) = false) Then
+				Me.OnOWN_STAFF_NAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._OWN_STAFF_NAME = value
+				Me.SendPropertyChanged("OWN_STAFF_NAME")
+				Me.OnOWN_STAFF_NAMEChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DRRGT_EDIT_REQUEST")>  _
 Partial Public Class DRRGT_EDIT_REQUEST
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -136796,6 +137034,10 @@ Partial Public Class DRRGT_EDIT_REQUEST
 	Private _OWN_STAFF_IDENTIFY As String
 	
 	Private _OWN_STAFF_NAME As String
+	
+	Private _WRITE_AT As String
+	
+	Private _WRITE_DATE As System.Nullable(Of Date)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -137111,6 +137353,14 @@ Partial Public Class DRRGT_EDIT_REQUEST
     Partial Private Sub OnOWN_STAFF_NAMEChanging(value As String)
     End Sub
     Partial Private Sub OnOWN_STAFF_NAMEChanged()
+    End Sub
+    Partial Private Sub OnWRITE_ATChanging(value As String)
+    End Sub
+    Partial Private Sub OnWRITE_ATChanged()
+    End Sub
+    Partial Private Sub OnWRITE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnWRITE_DATEChanged()
     End Sub
     #End Region
 	
@@ -138352,240 +138602,34 @@ Partial Public Class DRRGT_EDIT_REQUEST
 		End Set
 	End Property
 	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DRRGT_EDIT_APPOINTMENT")>  _
-Partial Public Class DRRGT_EDIT_APPOINTMENT
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _IDA As Integer
-	
-	Private _FK_IDA As System.Nullable(Of Integer)
-	
-	Private _TYPE_REQUESTS_ID As String
-	
-	Private _APPOINT_DATE As System.Nullable(Of Date)
-	
-	Private _APPOINT_DAY As System.Nullable(Of Integer)
-	
-	Private _REQUEST_DATE As System.Nullable(Of Date)
-	
-	Private _CITIZEN_AUTHORIZE As String
-	
-	Private _OWN_STAFF_IDENTIFY As String
-	
-	Private _OWN_STAFF_NAME As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnIDAChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnIDAChanged()
-    End Sub
-    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnFK_IDAChanged()
-    End Sub
-    Partial Private Sub OnTYPE_REQUESTS_IDChanging(value As String)
-    End Sub
-    Partial Private Sub OnTYPE_REQUESTS_IDChanged()
-    End Sub
-    Partial Private Sub OnAPPOINT_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnAPPOINT_DATEChanged()
-    End Sub
-    Partial Private Sub OnAPPOINT_DAYChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnAPPOINT_DAYChanged()
-    End Sub
-    Partial Private Sub OnREQUEST_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnREQUEST_DATEChanged()
-    End Sub
-    Partial Private Sub OnCITIZEN_AUTHORIZEChanging(value As String)
-    End Sub
-    Partial Private Sub OnCITIZEN_AUTHORIZEChanged()
-    End Sub
-    Partial Private Sub OnOWN_STAFF_IDENTIFYChanging(value As String)
-    End Sub
-    Partial Private Sub OnOWN_STAFF_IDENTIFYChanged()
-    End Sub
-    Partial Private Sub OnOWN_STAFF_NAMEChanging(value As String)
-    End Sub
-    Partial Private Sub OnOWN_STAFF_NAMEChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property IDA() As Integer
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_WRITE_AT", DbType:="NVarChar(MAX)")>  _
+	Public Property WRITE_AT() As String
 		Get
-			Return Me._IDA
+			Return Me._WRITE_AT
 		End Get
 		Set
-			If ((Me._IDA = value)  _
-						= false) Then
-				Me.OnIDAChanging(value)
+			If (String.Equals(Me._WRITE_AT, value) = false) Then
+				Me.OnWRITE_ATChanging(value)
 				Me.SendPropertyChanging
-				Me._IDA = value
-				Me.SendPropertyChanged("IDA")
-				Me.OnIDAChanged
+				Me._WRITE_AT = value
+				Me.SendPropertyChanged("WRITE_AT")
+				Me.OnWRITE_ATChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
-	Public Property FK_IDA() As System.Nullable(Of Integer)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_WRITE_DATE", DbType:="DateTime")>  _
+	Public Property WRITE_DATE() As System.Nullable(Of Date)
 		Get
-			Return Me._FK_IDA
+			Return Me._WRITE_DATE
 		End Get
 		Set
-			If (Me._FK_IDA.Equals(value) = false) Then
-				Me.OnFK_IDAChanging(value)
+			If (Me._WRITE_DATE.Equals(value) = false) Then
+				Me.OnWRITE_DATEChanging(value)
 				Me.SendPropertyChanging
-				Me._FK_IDA = value
-				Me.SendPropertyChanged("FK_IDA")
-				Me.OnFK_IDAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TYPE_REQUESTS_ID", DbType:="NVarChar(50)")>  _
-	Public Property TYPE_REQUESTS_ID() As String
-		Get
-			Return Me._TYPE_REQUESTS_ID
-		End Get
-		Set
-			If (String.Equals(Me._TYPE_REQUESTS_ID, value) = false) Then
-				Me.OnTYPE_REQUESTS_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._TYPE_REQUESTS_ID = value
-				Me.SendPropertyChanged("TYPE_REQUESTS_ID")
-				Me.OnTYPE_REQUESTS_IDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_APPOINT_DATE", DbType:="DateTime")>  _
-	Public Property APPOINT_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._APPOINT_DATE
-		End Get
-		Set
-			If (Me._APPOINT_DATE.Equals(value) = false) Then
-				Me.OnAPPOINT_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._APPOINT_DATE = value
-				Me.SendPropertyChanged("APPOINT_DATE")
-				Me.OnAPPOINT_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_APPOINT_DAY", DbType:="Int")>  _
-	Public Property APPOINT_DAY() As System.Nullable(Of Integer)
-		Get
-			Return Me._APPOINT_DAY
-		End Get
-		Set
-			If (Me._APPOINT_DAY.Equals(value) = false) Then
-				Me.OnAPPOINT_DAYChanging(value)
-				Me.SendPropertyChanging
-				Me._APPOINT_DAY = value
-				Me.SendPropertyChanged("APPOINT_DAY")
-				Me.OnAPPOINT_DAYChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REQUEST_DATE", DbType:="DateTime")>  _
-	Public Property REQUEST_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._REQUEST_DATE
-		End Get
-		Set
-			If (Me._REQUEST_DATE.Equals(value) = false) Then
-				Me.OnREQUEST_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._REQUEST_DATE = value
-				Me.SendPropertyChanged("REQUEST_DATE")
-				Me.OnREQUEST_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITIZEN_AUTHORIZE", DbType:="NVarChar(50)")>  _
-	Public Property CITIZEN_AUTHORIZE() As String
-		Get
-			Return Me._CITIZEN_AUTHORIZE
-		End Get
-		Set
-			If (String.Equals(Me._CITIZEN_AUTHORIZE, value) = false) Then
-				Me.OnCITIZEN_AUTHORIZEChanging(value)
-				Me.SendPropertyChanging
-				Me._CITIZEN_AUTHORIZE = value
-				Me.SendPropertyChanged("CITIZEN_AUTHORIZE")
-				Me.OnCITIZEN_AUTHORIZEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OWN_STAFF_IDENTIFY", DbType:="NVarChar(MAX)")>  _
-	Public Property OWN_STAFF_IDENTIFY() As String
-		Get
-			Return Me._OWN_STAFF_IDENTIFY
-		End Get
-		Set
-			If (String.Equals(Me._OWN_STAFF_IDENTIFY, value) = false) Then
-				Me.OnOWN_STAFF_IDENTIFYChanging(value)
-				Me.SendPropertyChanging
-				Me._OWN_STAFF_IDENTIFY = value
-				Me.SendPropertyChanged("OWN_STAFF_IDENTIFY")
-				Me.OnOWN_STAFF_IDENTIFYChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OWN_STAFF_NAME", DbType:="NVarChar(MAX)")>  _
-	Public Property OWN_STAFF_NAME() As String
-		Get
-			Return Me._OWN_STAFF_NAME
-		End Get
-		Set
-			If (String.Equals(Me._OWN_STAFF_NAME, value) = false) Then
-				Me.OnOWN_STAFF_NAMEChanging(value)
-				Me.SendPropertyChanging
-				Me._OWN_STAFF_NAME = value
-				Me.SendPropertyChanged("OWN_STAFF_NAME")
-				Me.OnOWN_STAFF_NAMEChanged
+				Me._WRITE_DATE = value
+				Me.SendPropertyChanged("WRITE_DATE")
+				Me.OnWRITE_DATEChanged
 			End If
 		End Set
 	End Property
