@@ -12,7 +12,9 @@
     }
     </style>
 <table width="70%">
-
+    <tr>
+        <td>1.1</td>
+    </tr>
     <tr>
         <td>
             ระบุปริมาณที่ใช้เป็น 1 หน่วย</td>
@@ -80,6 +82,9 @@
         <td></td>
     </tr>
     <tr>
+        <td>1.2</td>
+    </tr>
+    <tr>
         <td>
             ระบุส่วนประกอบของตำรับ</td>
     </tr>
@@ -90,6 +95,7 @@
             <asp:Button ID="btn_rqt" runat="server" OnClientClick="alert('ส่งเมลไปที่ drug-smarthelp@fda.moph.go.th หรือ แนบ cpp');" Text="การขอเพิ่มสาร" />
         </td>
     </tr>
+   
     <tr>
         <td></td>
     </tr>
@@ -307,6 +313,10 @@
     <tr>
         <td>
 
+        </td>
+    </tr>
+    <tr>
+        <td>1.3
         </td>
     </tr>
     <tr>
