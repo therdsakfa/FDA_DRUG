@@ -72,7 +72,7 @@
             </telerik:RadTab>
             <telerik:RadTab runat="server" Text="4.สูตรสาร" Value="5" ForeColor="Red">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="5.ข้อมูลยาสัตว์" Value="11" ForeColor="Red">
+            <telerik:RadTab runat="server" Text="5.ข้อมูลยาสัตว์" Value="11">
             </telerik:RadTab>
             <telerik:RadTab runat="server" Text="6.การเก็บรักษา" Value="6">
             </telerik:RadTab>     

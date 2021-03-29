@@ -175,76 +175,38 @@ Public Class FRM_REPORT_REGIST
                 Dim rcvno As String = bao.GEN_NO_06(con_year(Date.Now.Year()), _CLS.PVCODE, "130001", _CLS.LCNNO, "", "", _IDA, "")
                 Dim rcv_format As String = bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), rcvno)
 
-                If _ProcessID = "130002" Or _ProcessID = "130004" Then
-                    If dao_pc.fields.FK_IDA Is Nothing Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao_iow.fields.FK_IDA Is Nothing Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao_pro.fields.FK_IDA Is Nothing And dao_pro_in.fields.FK_IDA Is Nothing Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao_aml.fields.FK_IDA Is Nothing Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao.fields.UNIT_NORMAL = "" Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao.fields.DRUG_GROUP = "" Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao.fields.GROUP_TYPE = 0 Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao.fields.FK_DOSAGE_FORM = "" Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    Else
-                        Try
-                            dao.fields.RCVDATE = Date.Now 'CDate(txt_app_date.Text)
-                        Catch ex As Exception
-
-                        End Try
-
-                        If dao.fields.LCNTPCD = "ผย1" Then
-                            dao.fields.DALCNTYPE_CD = "1"
-                        ElseIf dao.fields.LCNTPCD = "นย1" Then
-                            dao.fields.DALCNTYPE_CD = "2"
-                        End If
-
-                        dao.fields.RCVNO = rcvno
-                        dao.fields.RCVNO_DISPLAY = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
-                        dao.fields.REGIS_NO = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
-                        dao.update()
-                        alert("ยืนยันข้อมูลแล้ว คุณได้เลขรับที่ " & "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5))
-                    End If
+                If dao_pc.fields.FK_IDA Is Nothing Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
+                ElseIf dao_iow.fields.FK_IDA Is Nothing Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
+                ElseIf dao_pro.fields.FK_IDA Is Nothing And dao_pro_in.fields.FK_IDA Is Nothing Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
+                ElseIf dao.fields.UNIT_NORMAL = "" Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
+                ElseIf dao.fields.DRUG_GROUP = "" Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
+                ElseIf dao.fields.GROUP_TYPE = 0 Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
+                ElseIf dao.fields.FK_DOSAGE_FORM = "" Then
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
                 Else
-                    If dao_pc.fields.FK_IDA Is Nothing Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao_iow.fields.FK_IDA Is Nothing Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao_pro.fields.FK_IDA Is Nothing And dao_pro_in.fields.FK_IDA Is Nothing Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao.fields.UNIT_NORMAL = "" Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao.fields.DRUG_GROUP = "" Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao.fields.GROUP_TYPE = 0 Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    ElseIf dao.fields.FK_DOSAGE_FORM = "" Then
-                        Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นคำขอได้ กรุณากรอกข้อมูลส่วนที่ 2');</script> ")
-                    Else
-                        Try
-                            dao.fields.RCVDATE = Date.Now 'CDate(txt_app_date.Text)
-                        Catch ex As Exception
+                    Try
+                        dao.fields.RCVDATE = Date.Now 'CDate(txt_app_date.Text)
+                    Catch ex As Exception
 
-                        End Try
+                    End Try
 
-                        If dao.fields.LCNTPCD = "ผย1" Then
-                            dao.fields.DALCNTYPE_CD = "1"
-                        ElseIf dao.fields.LCNTPCD = "นย1" Then
-                            dao.fields.DALCNTYPE_CD = "2"
-                        End If
-
-                        dao.fields.RCVNO = rcvno
-                        dao.fields.RCVNO_DISPLAY = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
-                        dao.fields.REGIS_NO = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
-                        dao.update()
-                        alert("ยืนยันข้อมูลแล้ว คุณได้เลขรับที่ " & "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5))
+                    If dao.fields.LCNTPCD = "ผย1" Then
+                        dao.fields.DALCNTYPE_CD = "1"
+                    ElseIf dao.fields.LCNTPCD = "นย1" Then
+                        dao.fields.DALCNTYPE_CD = "2"
                     End If
+
+                    dao.fields.RCVNO = rcvno
+                    dao.fields.RCVNO_DISPLAY = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
+                    dao.fields.REGIS_NO = "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5)
+                    dao.update()
+                    alert("ยืนยันข้อมูลแล้ว คุณได้เลขรับที่ " & "DL-" & Left(rcvno, 2) & "-" & Right(rcvno, 5))
                 End If
             End If
         End If
