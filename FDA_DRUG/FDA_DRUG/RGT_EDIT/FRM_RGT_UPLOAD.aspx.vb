@@ -161,7 +161,37 @@ Public Class FRM_RGT_UPLOAD
             dao.fields.STATUS_ID = 1
             dao.fields.TR_ID = TR_ID
             Try
+                dao.fields.CHK_ATTACH1 = p2.DRRGT_EDIT_REQUESTs.CHK_ATTACH1
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao.fields.CHK_ATTACH1 = p2.DRRGT_EDIT_REQUESTs.CHK_ATTACH2
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao.fields.CHK_ATTACH1 = p2.DRRGT_EDIT_REQUESTs.CHK_ATTACH3
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao.fields.CHK_ATTACH1 = p2.DRRGT_EDIT_REQUESTs.CHK_ATTACH4
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao.fields.CHK_ATTACH1 = p2.DRRGT_EDIT_REQUESTs.ATTACH4_OTHER
+            Catch ex As Exception
+
+            End Try
+            Try
                 dao.fields.RQT_TYPE = RadioButtonList1.SelectedValue
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao.fields.DETAIL_YOR4 = p2.DRRGT_EDIT_REQUESTs.DETAIL_YOR4
             Catch ex As Exception
 
             End Try
