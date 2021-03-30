@@ -563,6 +563,7 @@ Namespace BAO
                     .FK_IDA = IDA_rgt
                     .sunitcd = dao_each.fields.sunitcd
                     .FK_SET = dao_each.fields.FK_SET
+                    .EACH_TXT = dao_each.fields.EACH_TXT
                 End With
                 dao_each_rgt.insert()
             Next
