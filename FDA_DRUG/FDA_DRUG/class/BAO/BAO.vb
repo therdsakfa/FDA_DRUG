@@ -665,25 +665,25 @@ Namespace BAO
             For Each dao_aniuse_rq.fields In dao_aniuse_rq.datas
                 Dim dao_aniuse_rg As New DAO_DRUG.ClsDBdramluse
                 With dao_aniuse_rg.fields
-                    .amlsubcd = dao_aniuse_rg.fields.amlsubcd
-                    .amltpcd = dao_aniuse_rg.fields.amltpcd
-                    .drgtpcd = dao_aniuse_rg.fields.drgtpcd
+                    .amlsubcd = dao_aniuse_rq.fields.amlsubcd
+                    .amltpcd = dao_aniuse_rq.fields.amltpcd
+                    .drgtpcd = dao_aniuse_rq.fields.drgtpcd
                     .FK_IDA = IDA_rgt
-                    .pvncd = dao_aniuse_rg.fields.pvncd
-                    .rgtno = dao_aniuse_rg.fields.rgtno
-                    .rgttpcd = dao_aniuse_rg.fields.rgttpcd
-                    .usetpcd = dao_aniuse_rg.fields.usetpcd
+                    .pvncd = dao_aniuse_rq.fields.pvncd
+                    .rgtno = dao_aniuse_rq.fields.rgtno
+                    .rgttpcd = dao_aniuse_rq.fields.rgttpcd
+                    .usetpcd = dao_aniuse_rq.fields.usetpcd
                     '.rcvno = dao_aniuse_rg.fields.rcvno
-                    .nouse = dao_aniuse_rg.fields.nouse
-                    .packuse = dao_aniuse_rg.fields.packuse
-                    .pvncd = dao_aniuse_rg.fields.pvncd
-                    .STOP_UNIT1 = dao_aniuse_rg.fields.STOP_UNIT1
-                    .STOP_UNIT2 = dao_aniuse_rg.fields.STOP_UNIT2
-                    .STOP_VALUE1 = dao_aniuse_rg.fields.STOP_VALUE1
-                    .STOP_VALUE2 = dao_aniuse_rg.fields.STOP_VALUE2
-                    .stpdrg = dao_aniuse_rg.fields.stpdrg
-                    .stpdrgcd = dao_aniuse_rg.fields.stpdrgcd
-                    .usetpcd = dao_aniuse_rg.fields.usetpcd
+                    .nouse = dao_aniuse_rq.fields.nouse
+                    .packuse = dao_aniuse_rq.fields.packuse
+                    .pvncd = dao_aniuse_rq.fields.pvncd
+                    .STOP_UNIT1 = dao_aniuse_rq.fields.STOP_UNIT1
+                    .STOP_UNIT2 = dao_aniuse_rq.fields.STOP_UNIT2
+                    .STOP_VALUE1 = dao_aniuse_rq.fields.STOP_VALUE1
+                    .STOP_VALUE2 = dao_aniuse_rq.fields.STOP_VALUE2
+                    .stpdrg = dao_aniuse_rq.fields.stpdrg
+                    .stpdrgcd = dao_aniuse_rq.fields.stpdrgcd
+                    .usetpcd = dao_aniuse_rq.fields.usetpcd
                 End With
                 dao_aniuse_rg.insert()
             Next

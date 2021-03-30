@@ -278,4 +278,24 @@
             _STAFF_IDEN_RECEIVE = value
         End Set
     End Property
+
+    Private _RCV_DATE_FORMAT As String
+    Public Property RCV_DATE_FORMAT() As String
+        Get
+            Return _RCV_DATE_FORMAT
+        End Get
+        Set(ByVal value As String)
+            _RCV_DATE_FORMAT = value
+        End Set
+    End Property
+
+    Private _WRITE_DATE_FORMAT As String
+    Public Property WRITE_DATE_FORMAT() As String
+        Get
+            Return _WRITE_DATE_FORMAT
+        End Get
+        Set(ByVal value As String)
+            _WRITE_DATE_FORMAT = value
+        End Set
+    End Property
 End Class
