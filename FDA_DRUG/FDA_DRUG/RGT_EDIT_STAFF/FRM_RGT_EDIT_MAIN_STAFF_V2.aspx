@@ -86,7 +86,7 @@
      <div class="panel" style="text-align:left ;width:100%">
          <div class="panel-heading panel-title" style="height:70px" > 
             
-             <div  class="col-lg-4 col-md-4"><h4> คำขอแก้ไขเปลี่ยนแปลงทะเบียน</h4> </div>
+             <div  class="col-lg-4 col-md-4"><h4> คำขอแก้ไขเปลี่ยนแปลงรายการในทะเบียนตำรับยา เกี่ยวกับผู้รับอนุญาตและสถานที่ผลิตในต่างประเทศ</h4> </div>
              <div  class="col-lg-8 col-md-8">
                                <p style="text-align:right;padding-right:5%;">
                                    <table width="100%">
@@ -129,6 +129,10 @@
                        <telerik:GridBoundColumn DataField="P_IDA" DataType="System.Int32" FilterControlAltText="Filter P_IDA column" HeaderText="P_IDA"
                            SortExpression="P_IDA" UniqueName="P_IDA" Display="false" AllowFiltering="true">
                        </telerik:GridBoundColumn>
+                        <telerik:GridBoundColumn DataField="Newcode" FilterControlAltText="Filter Newcode column" HeaderText="Newcode"
+                           SortExpression="Newcode" UniqueName="Newcode" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
+                       
                         <telerik:GridBoundColumn DataField="STATUS_ID" DataType="System.Int32" FilterControlAltText="Filter STATUS_ID column" HeaderText="STATUS_ID"
                            SortExpression="STATUS_ID" UniqueName="STATUS_ID" Display="false" AllowFiltering="true">
                        </telerik:GridBoundColumn>
@@ -157,10 +161,10 @@
                            CommandName="sel" Text="ดูข้อมูล">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
-                       <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edt"
+                       <%--<telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edt"
                            CommandName="edt" Text="แก้ไข">
                            <HeaderStyle Width="70px" />
-                       </telerik:GridButtonColumn>
+                       </telerik:GridButtonColumn>--%>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_report2"
                            CommandName="_report" Text="ใบนัด">
                            <HeaderStyle Width="70px" />
@@ -211,3 +215,4 @@
      <asp:Button ID="btn_reload" runat="server" Text="" style="display:none;"  />
 
     &nbsp;
+</asp:Content>

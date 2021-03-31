@@ -3,7 +3,6 @@ Imports System.Xml.Serialization
 Imports Telerik.Web.UI
 Public Class FRM_RGT_EDIT_MAIN_STAFF_V2
     Inherits System.Web.UI.Page
-
     Private _CLS As New CLS_SESSION             'ประกาศชื่อตัวแปรของ   CLS_SESSION 
     Private _process As String                  'ประกาศชื่อตัวแปร _process
     Private _lcn_ida As String = ""
@@ -72,18 +71,24 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF_V2
             Catch ex As Exception
 
             End Try
-
+            Dim iden As String = ""
             Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
             Dim stat As String = ""
             Try
                 dao_rg.GetDataby_IDA(dao.fields.FK_IDA)
                 stat = dao_rg.fields.STATUS_ID
-
+                iden = dao_rg.fields.IDENTIFY
             Catch ex As Exception
 
             End Try
 
-            Dim tr_id As String= 0
+            Dim tr_id As String = 0
+            Dim tr_id_rg As String = 0
+            Try
+                tr_id_rg = dao_rg.fields.TR_ID
+            Catch ex As Exception
+
+            End Try
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -94,19 +99,29 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF_V2
 
                 Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
                 Try
-                    dao_tr.GetDataby_IDA(tr_id)
-                    _process_id = dao_tr.fields.PROCESS_ID
+                    If Len(tr_id) >= 9 Then
+                        dao_tr.GetDataby_TR_ID_Process(tr_id, _process)
+                        _process_id = _process
+                    Else
+                        dao_tr.GetDataby_IDA(tr_id)
+                        _process_id = dao_tr.fields.PROCESS_ID
+                    End If
+
                 Catch ex As Exception
 
                 End Try
 
-                Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
-                dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
+                'Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
+                'dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
                 'lbl_titlename.Text = "พิจารณาคำขอขึ้นทะเบียนตำรับ"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../RGT_EDIT_STAFF/FRM_RGT_EDIT_CONFIRM_STAFF.aspx?IDA=" & IDA & "&TR_ID=" & item("TR_ID").Text & "&Process=" & _process_id & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../RGT_EDIT_STAFF/FRM_RGT_EDIT_CONFIRM_STAFF.aspx?IDA=" & IDA & "&TR_ID=" & item("TR_ID").Text & "&Process=" & dao.fields.PROCESS_ID & "&Newcode=" & item("Newcode").Text & "&citizen_authen=" & iden & "');", True)
             ElseIf e.CommandName = "edt" Then
                 'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_EDIT.aspx?IDA=" & R_IDA & "&TR_ID=" & dao_rg.fields.TR_ID & "&STATUS_ID=" & stat & "&e=1'); ", True)
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_EDIT.aspx?IDA=" & R_IDA & "&TR_ID=" & dao_rg.fields.TR_ID & "&STATUS_ID=" & 8 & "&ida_e=" & IDA & "&e=1'); ", True)
+                'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_EDIT.aspx?IDA=" & R_IDA & "&TR_ID=" & dao_rg.fields.TR_ID & "&STATUS_ID=" & 8 & "&ida_e=" & IDA & "&e=1'); ", True)
+
+                '
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_EDIT_V2.aspx?IDA=" & R_IDA & "&TR_ID=" & tr_id_rg & "&STATUS_ID=" & 8 & "&ida_e=" & IDA & "&Newcode=" & item("Newcode").Text & "&e=1'); ", True)
+
 
                 'ElseIf e.CommandName = "add" Then
                 '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('../TABEAN_YA/FRM_RQT_REGIST_INFORMATION.aspx?IDA=" & IDA & "&tr_id=" & tr_id & "&status=" & item("STATUS_ID").Text & "'); ", True)
@@ -178,7 +193,7 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF_V2
             Dim btn_report As LinkButton = DirectCast(item("btn_report2").Controls(0), LinkButton)
             Dim btn_trid As LinkButton = DirectCast(item("btn_trid").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
-            Dim tr_id As String= 0
+            Dim tr_id As String = 0
             dao.GetDatabyIDA(IDA)
 
             Try
@@ -196,6 +211,8 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF_V2
             End Try
             If tr_id = 0 Then
                 btn_trid.Style.Add("display", "block")
+            Else
+                btn_trid.Style.Add("display", "none")
             End If
             Try
                 If dao.fields.STATUS_ID >= 3 Then
@@ -218,7 +235,7 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF_V2
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
         Try
-            dt = bao.SP_DRRGT_EDIT_REQUEST_STAFF()
+            dt = bao.SP_DRRGT_EDIT_REQUEST_STAFF_PROCESS("130097")
         Catch ex As Exception
 
         End Try

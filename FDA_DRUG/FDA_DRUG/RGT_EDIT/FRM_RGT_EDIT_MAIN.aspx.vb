@@ -542,7 +542,8 @@ Public Class FRM_RGT_EDIT_MAIN
         Dim dt As New DataTable
         Try
             'dt = bao.SP_DRRGT_EDIT_REQUEST_BY_FK_IDA(Request.QueryString("rgt_ida"))
-            dt = bao.SP_DRRGT_EDIT_REQUEST_BY_NEWCODE(Request.QueryString("newcode"))
+            'dt = bao.SP_DRRGT_EDIT_REQUEST_BY_NEWCODE(Request.QueryString("newcode"))
+            dt = bao.SP_DRRGT_EDIT_REQUEST_BY_NEWCODE_PROCESS(Request.QueryString("newcode"), _process)
         Catch ex As Exception
 
         End Try

@@ -1389,6 +1389,14 @@ Namespace BAO
             dta.TableName = "SP_DRRGT_EDIT_REQUEST_BY_NEWCODE"
             Return dta
         End Function
+        '
+        Public Function SP_DRRGT_EDIT_REQUEST_BY_NEWCODE_PROCESS(ByVal newcode As String, ByVal process_id As String) As DataTable
+            Dim sql As String = "exec SP_DRRGT_EDIT_REQUEST_BY_NEWCODE_PROCESS @newcode='" & newcode & "' ,@process_id='" & process_id & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DRRGT_EDIT_REQUEST_BY_NEWCODE_PROCESS"
+            Return dta
+        End Function
         Public Function SP_DRRGT_SUBSTITUTE_BY_FK_IDA(ByVal FK_IDA As Integer) As DataTable
             Dim sql As String = "exec SP_DRRGT_SUBSTITUTE_BY_FK_IDA @FK_IDA=" & FK_IDA
             Dim dta As New DataTable
@@ -1446,6 +1454,14 @@ Namespace BAO
             Dim dta As New DataTable
             dta = Queryds(sql)
             dta.TableName = "SP_DRRGT_EDIT_REQUEST_STAFF"
+            Return dta
+        End Function
+        '
+        Public Function SP_DRRGT_EDIT_REQUEST_STAFF_PROCESS(ByVal process_id As String) As DataTable
+            Dim sql As String = "exec SP_DRRGT_EDIT_REQUEST_STAFF_PROCESS @process_id='" & process_id & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DRRGT_EDIT_REQUEST_STAFF_PROCESS"
             Return dta
         End Function
         Public Function SP_GET_FULL_ADDR_DALCN_LOCATION_ADDRESS_BY_IDA(ByVal IDA As Integer) As DataTable

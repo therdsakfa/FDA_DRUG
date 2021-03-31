@@ -235,7 +235,7 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt As New DataTable
         Try
-            dt = bao.SP_DRRGT_EDIT_REQUEST_STAFF()
+            dt = bao.SP_DRRGT_EDIT_REQUEST_STAFF_PROCESS("130099")
         Catch ex As Exception
 
         End Try
