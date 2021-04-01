@@ -563,6 +563,14 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Catch ex As Exception
 
         End Try
+        Try
+            Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+            dao_dal.GetDataby_IDA(dao_lcn.fields.IDA_dalcn)
+            class_xml.DT_SHOW.DT18 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_dal.fields.FK_IDA)
+            class_xml.DT_SHOW.DT18.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_FULLADDR"
+        Catch ex As Exception
+
+        End Try
         p_rgt_edt = class_xml
 
 
