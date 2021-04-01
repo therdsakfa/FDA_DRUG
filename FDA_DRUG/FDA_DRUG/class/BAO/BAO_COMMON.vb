@@ -524,7 +524,7 @@ Module BAO_COMMON
                     Or PROSESS_ID = 100746 Or PROSESS_ID = 100747 Or PROSESS_ID = 100748 Or PROSESS_ID = 100749 Or PROSESS_ID = 100750 Or PROSESS_ID = 100751 Or PROSESS_ID = "100753" Or PROSESS_ID = "100752" Or PROSESS_ID = "100754" Or PROSESS_ID = "100755" Then 'ต่ออายุใบอนุญาตสถานที่
                     Dim cls_xml As New CLASS_GEN_XML.EXTEND
                     cls_xml.GEN_XML_EXTEND(PATH_XML, extend)
-                ElseIf PROSESS_ID = "130099" Then
+                ElseIf PROSESS_ID = "130099" Or PROSESS_ID = "130097" Then
                     Dim cls_xml As New CLASS_GEN_XML.EDIT_DRRGT
                     cls_xml.GEN_XML_EDT_DRRGT(PATH_XML, p_rgt_edt)
                 ElseIf PROSESS_ID = "130098" Then
@@ -736,7 +736,7 @@ Module BAO_COMMON
                         End Using
                     End Using
                 End Using
-            ElseIf PROSESS_ID = "130099" Then
+            ElseIf PROSESS_ID = "130099" Or PROSESS_ID = "130097" Then
                 Dim cls_xml As New CLASS_GEN_XML.EDIT_DRRGT
                 cls_xml.GEN_XML_EDT_DRRGT(PATH_XML, p_rgt_edt)
                 Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\

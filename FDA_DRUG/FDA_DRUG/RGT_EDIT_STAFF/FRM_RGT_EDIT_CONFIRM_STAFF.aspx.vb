@@ -471,10 +471,26 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
                 If Date.TryParse(dao.fields.rcvdate, rcvdate) = True Then
                     class_xml.rcvdate = rcvdate.Day & "/" & rcvdate.Month & "/" & con_year(rcvdate.Year)
                 End If
+
+                If Date.TryParse(dao.fields.rcvdate, rcvdate) = True Then
+                    class_xml.RCV_DATE_FORMAT = CStr(rcvdate.Day) & " " & rcvdate.ToString("MMMM") & " " & con_year(rcvdate.Year)
+                End If
             End If
         Catch ex As Exception
 
         End Try
+
+        Try
+            If IsNothing(dao.fields.rcvdate) = False Then
+                Dim write_date As Date
+                If Date.TryParse(dao.fields.WRITE_DATE, write_date) = True Then
+                    class_xml.WRITE_DATE_FORMAT = CStr(write_date.Day) & " " & write_date.ToString("MMMM") & " " & con_year(write_date.Year)
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+
 
         Try
             class_xml.STAFF_IDEN_RECEIVE = set_name_company(dao.fields.STAFF_IDEN_RECEIVE)
