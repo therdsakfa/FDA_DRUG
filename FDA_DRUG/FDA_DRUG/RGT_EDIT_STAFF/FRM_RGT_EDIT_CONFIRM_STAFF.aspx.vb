@@ -513,6 +513,11 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         class_xml.RGTNO_FORMAT = rgtno_format
         class_xml.OLD_NAME_TH = dao_drrgt.fields.thadrgnm
         class_xml.OLD_NAME_EN = dao_drrgt.fields.engdrgnm
+        Try
+            class_xml.WRITE_AT = dao.fields.WRITE_AT
+        Catch ex As Exception
+
+        End Try
 
         Dim dao_color As New DAO_DRUG.TB_DRRGT_COLOR
         dao_color.GetDataby_FK_IDA(dao.fields.FK_IDA)

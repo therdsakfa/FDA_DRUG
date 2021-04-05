@@ -298,4 +298,13 @@
             _WRITE_DATE_FORMAT = value
         End Set
     End Property
+    Private _WRITE_AT As String
+    Public Property WRITE_AT() As String
+        Get
+            Return _WRITE_AT
+        End Get
+        Set(ByVal value As String)
+            _WRITE_AT = value
+        End Set
+    End Property
 End Class
