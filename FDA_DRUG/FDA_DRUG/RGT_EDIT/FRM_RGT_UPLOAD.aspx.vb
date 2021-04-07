@@ -35,6 +35,13 @@ Public Class FRM_RGT_UPLOAD
             Panel201.Style.Add("display", "block")
         End If
         If Not IsPostBack Then
+            If _ProcessID = "130099" Then
+                Panel101.Style.Add("display", "block")
+                Panel201.Style.Add("display", "none")
+            Else
+                Panel101.Style.Add("display", "none")
+                Panel201.Style.Add("display", "block")
+            End If
             If Request.QueryString("identify") <> "" Then
                 If Request.QueryString("identify") <> _CLS.CITIZEN_ID_AUTHORIZE Then
                     AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("identify"), 0, HttpContext.Current.Request.Url.AbsoluteUri)
