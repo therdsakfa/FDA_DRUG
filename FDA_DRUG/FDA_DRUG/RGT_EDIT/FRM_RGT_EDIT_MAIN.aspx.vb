@@ -121,8 +121,8 @@ Public Class FRM_RGT_EDIT_MAIN
         Response.Write("<script type='text/javascript'>alert('" + text + "');</script> ") 'จาวาคำสั่ง Alert
     End Sub
     Private Sub btn_download_Click(sender As Object, e As EventArgs) Handles btn_download.Click
-        If rcb_phr_name.SelectedValue = "0" Then
-            alert("กรุณาเลือกเลขที่ใบอนุญาต")
+        If rcb_phr_name.SelectedValue = "0" Or rcb_phr_name.SelectedItem.Text = "" Then
+            alert("กรุณาเลือกผู้ปฏิบัติการ")
         Else
             Bind_PDF()
         End If

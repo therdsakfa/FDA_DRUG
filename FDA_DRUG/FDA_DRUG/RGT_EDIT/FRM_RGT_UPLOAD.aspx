@@ -89,7 +89,7 @@
                  
                  </td></tr>
              <tr><td colspan="2">  
-                 <asp:Panel ID="Panel101" runat="server">
+                 <asp:Panel ID="Panel101" runat="server" style="display:none;">
                      <%--<uc1:UC_ATTACH_DRUG ID="uc102_1" runat="server" />
                      <uc1:UC_ATTACH_DRUG ID="uc102_2" runat="server" />--%>
                      <uc1:UC_ATTACH_DRUG ID="uc102_3" runat="server" />
@@ -98,7 +98,36 @@
                      <uc1:UC_ATTACH_DRUG ID="uc102_6" runat="server" />
                      <uc1:UC_ATTACH_DRUG ID="uc102_7" runat="server" />
                      <uc1:UC_ATTACH_DRUG ID="uc102_8" runat="server" />
-                 </asp:Panel></td></tr>
+                 </asp:Panel>
+                 <asp:Panel ID="Panel201" runat="server" style="display:none;">
+                     <table>
+                         <tr>
+                             <td>
+                                 <uc1:UC_ATTACH_DRUG ID="uc201" runat="server" />
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <uc1:UC_ATTACH_DRUG ID="uc202" runat="server" />
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <table>
+                                     <tr>
+                                         <td><uc1:UC_ATTACH_DRUG ID="uc203" runat="server" /></td><td><font color="red">*</font></td>
+                                     </tr>
+                                 </table>
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <uc1:UC_ATTACH_DRUG ID="uc204" runat="server" />
+                             </td>
+                         </tr>
+                     </table>
+                 </asp:Panel>
+                 </td></tr>
              <tr><td colspan="2">&nbsp;</td></tr>
              <tr><td colspan="2"> <asp:Button ID="btn_Upload" runat="server" Text="อัพโหลด"   CssClass=" btn-lg" />
                  &nbsp;

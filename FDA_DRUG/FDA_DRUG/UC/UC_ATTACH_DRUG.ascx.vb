@@ -89,11 +89,11 @@
         Dim _check As String
         _check = FileUpload1.HasFile
         If _check = True Then
-
+            _check += 1
         End If
         Return _check
     End Function
-    Public Function check2() As String
+    Public Function check2() As Integer
         Dim _check As Integer = 0
 
         If FileUpload1.HasFile Then

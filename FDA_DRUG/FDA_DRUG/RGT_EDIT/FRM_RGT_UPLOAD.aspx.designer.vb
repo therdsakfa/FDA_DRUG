@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class FRM_RGT_UPLOAD
-
+    
     '''<summary>
     '''rbtn_bangkok control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rbtn_bangkok As Global.System.Web.UI.WebControls.RadioButton
-
+    
     '''<summary>
     '''rbtn_other control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rbtn_other As Global.System.Web.UI.WebControls.RadioButton
-
+    
     '''<summary>
     '''FileUpload1 control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
-
+    
     '''<summary>
     '''RadioButtonList1 control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadioButtonList1 As Global.System.Web.UI.WebControls.RadioButtonList
-
+    
     '''<summary>
     '''TextBox1 control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Panel101 control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Panel101 As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''uc102_3 control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents uc102_3 As Global.FDA_DRUG.UC_ATTACH_DRUG
-
+    
     '''<summary>
     '''uc102_4 control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents uc102_4 As Global.FDA_DRUG.UC_ATTACH_DRUG
-
+    
     '''<summary>
     '''uc102_5 control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents uc102_5 As Global.FDA_DRUG.UC_ATTACH_DRUG
-
+    
     '''<summary>
     '''uc102_6 control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents uc102_6 As Global.FDA_DRUG.UC_ATTACH_DRUG
-
+    
     '''<summary>
     '''uc102_7 control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents uc102_7 As Global.FDA_DRUG.UC_ATTACH_DRUG
-
+    
     '''<summary>
     '''uc102_8 control.
     '''</summary>
@@ -120,7 +120,52 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents uc102_8 As Global.FDA_DRUG.UC_ATTACH_DRUG
-
+    
+    '''<summary>
+    '''Panel201 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel201 As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''uc201 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc201 As Global.FDA_DRUG.UC_ATTACH_DRUG
+    
+    '''<summary>
+    '''uc202 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc202 As Global.FDA_DRUG.UC_ATTACH_DRUG
+    
+    '''<summary>
+    '''uc203 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc203 As Global.FDA_DRUG.UC_ATTACH_DRUG
+    
+    '''<summary>
+    '''uc204 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc204 As Global.FDA_DRUG.UC_ATTACH_DRUG
+    
     '''<summary>
     '''btn_Upload control.
     '''</summary>
@@ -129,7 +174,7 @@ Partial Public Class FRM_RGT_UPLOAD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_Upload As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Button1 control.
     '''</summary>

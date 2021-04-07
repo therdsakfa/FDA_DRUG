@@ -32,7 +32,7 @@ Public Class FRM_RGT_UPLOAD
         set_txt_label()
         If _ProcessID = "15" Then
             Panel101.Style.Add("display", "block")
-
+            Panel201.Style.Add("display", "block")
         End If
         If Not IsPostBack Then
             If Request.QueryString("identify") <> "" Then
@@ -43,8 +43,10 @@ Public Class FRM_RGT_UPLOAD
             End If
             If RadioButtonList1.SelectedValue = "3" Then
                 Panel101.Style.Add("display", "block")
+                Panel201.Style.Add("display", "block")
             Else
                 Panel101.Style.Add("display", "none")
+                Panel201.Style.Add("display", "none")
             End If
         End If
         ' UC_ATTACH1.SETTING_INFORMATION("เอกสาร CER", 1)
@@ -53,23 +55,39 @@ Public Class FRM_RGT_UPLOAD
 
         'uc102_1.ATTACH(TR_ID, PROCESS_ID, YEAR, "1")
         'uc102_2.ATTACH(TR_ID, PROCESS_ID, YEAR, "2")
-        uc102_3.ATTACH1(TR_ID, PROCESS_ID, YEAR, "1")
-        uc102_4.ATTACH1(TR_ID, PROCESS_ID, YEAR, "2")
-        uc102_5.ATTACH1(TR_ID, PROCESS_ID, YEAR, "3")
-        uc102_6.ATTACH1(TR_ID, PROCESS_ID, YEAR, "4")
-        uc102_7.ATTACH1(TR_ID, PROCESS_ID, YEAR, "5")
-        uc102_8.ATTACH1(TR_ID, PROCESS_ID, YEAR, "6")
+        If _ProcessID = "130099" Then
+            uc102_3.ATTACH1(TR_ID, PROCESS_ID, YEAR, "1")
+            uc102_4.ATTACH1(TR_ID, PROCESS_ID, YEAR, "2")
+            uc102_5.ATTACH1(TR_ID, PROCESS_ID, YEAR, "3")
+            uc102_6.ATTACH1(TR_ID, PROCESS_ID, YEAR, "4")
+            uc102_7.ATTACH1(TR_ID, PROCESS_ID, YEAR, "5")
+            uc102_8.ATTACH1(TR_ID, PROCESS_ID, YEAR, "6")
+        Else
+            uc201.ATTACH1(TR_ID, PROCESS_ID, YEAR, "1")
+            uc202.ATTACH1(TR_ID, PROCESS_ID, YEAR, "2")
+            uc203.ATTACH1(TR_ID, PROCESS_ID, YEAR, "3")
+            uc204.ATTACH1(TR_ID, PROCESS_ID, YEAR, "4")
+        End If
+
 
     End Sub
     Public Sub set_txt_label()
         'uc102_1.get_label("1.สำเนาใบสำคัญการขึ้นทะเบียนตำรับยาหรือใบแทน")
         'uc102_2.get_label("2.สำเนาใบอนุญาต")
-        uc102_3.get_label("1.เอกสารตาม AVG")
-        uc102_4.get_label("2.กรณีที่นอกเหนือ AVG")
-        uc102_5.get_label("3.ฉลาก/เอกสารกำกับยา")
-        uc102_6.get_label("4.รายละเอียดการแก้ไขเปลี่ยนแปลงสูตรตำรับยา")
-        uc102_7.get_label("5.รายละเอียดการแก้ไขเปลี่ยนแปลงวิธีวิเคราะห์และข้อกำหนดมาตรฐาน")
-        uc102_8.get_label("6.อื่นๆ")
+        If _ProcessID = "130099" Then
+            uc102_3.get_label("1.เอกสารตาม AVG")
+            uc102_4.get_label("2.กรณีที่นอกเหนือ AVG")
+            uc102_5.get_label("3.ฉลาก/เอกสารกำกับยา")
+            uc102_6.get_label("4.รายละเอียดการแก้ไขเปลี่ยนแปลงสูตรตำรับยา")
+            uc102_7.get_label("5.รายละเอียดการแก้ไขเปลี่ยนแปลงวิธีวิเคราะห์และข้อกำหนดมาตรฐาน")
+            uc102_8.get_label("6.อื่นๆ")
+        Else
+            uc201.get_label("1.สำเนาใบอนุญาต")
+            uc202.get_label("2.ใบสำคัญการขึ้นทะเบียนตำรับยาหรือใบแทน")
+            uc203.get_label("3.เอกสารที่เป็นหลักฐานเกี่ยวข้องกับรายการที่ขอแก้ไขหรือเปลี่ยนแปลง")
+            uc204.get_label("4.อื่นๆ")
+        End If
+
     End Sub
     Protected Sub btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
 
@@ -116,10 +134,17 @@ Public Class FRM_RGT_UPLOAD
         Try
             check = insrt_to_database(XML_TRADER, TR_ID)
             If check = True Then
-                SET_ATTACH(TR_ID, _ProcessID, con_year(Date.Now.Year))
-                alert("รหัสการดำเนินการ คือ DA-" & _ProcessID & "-" & con_year(Date.Now.Date().Year()) & "-" + TR_ID)
-            Else
-
+                If _ProcessID = "130099" Then
+                    SET_ATTACH(TR_ID, _ProcessID, con_year(Date.Now.Year))
+                    alert("รหัสการดำเนินการ คือ DA-" & _ProcessID & "-" & con_year(Date.Now.Date().Year()) & "-" + TR_ID)
+                Else
+                    If uc203.check2 > 1 Then
+                        SET_ATTACH(TR_ID, _ProcessID, con_year(Date.Now.Year))
+                        alert("รหัสการดำเนินการ คือ DA-" & _ProcessID & "-" & con_year(Date.Now.Date().Year()) & "-" + TR_ID)
+                    Else
+                        Response.Write("<script type='text/javascript'>window.parent.alert('กรุณาแนบเอกสารที่เป็นหลักฐานเกี่ยวข้องกับรายการที่ขอแก้ไขหรือเปลี่ยนแปลง')</script> ")
+                    End If
+                End If
             End If
         Catch ex As Exception
 
