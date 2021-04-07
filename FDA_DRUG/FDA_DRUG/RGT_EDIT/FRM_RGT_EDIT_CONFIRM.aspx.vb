@@ -396,14 +396,16 @@ Public Class FRM_RGT_EDIT_CONFIRM
         Catch ex As Exception
 
         End Try
-
+        class_xml.WRITE_DATE_FORMAT = ""
         Try
-            If IsNothing(dao.fields.rcvdate) = False Then
-                Dim write_date As Date
-                If Date.TryParse(dao.fields.WRITE_DATE, write_date) = True Then
-                    class_xml.WRITE_DATE_FORMAT = write_date.Day & " " & write_date.ToString("MMMM") & " " & con_year(write_date.Year)
-                End If
-            End If
+            'If IsNothing(dao.fields.rcvdate) = False Then
+            '    Dim write_date As Date
+            '    If Date.TryParse(dao.fields.WRITE_DATE, write_date) = True Then
+            '        class_xml.WRITE_DATE_FORMAT = write_date.Day & " " & write_date.ToString("MMMM") & " " & con_year(write_date.Year)
+            '    End If
+            'End If
+            Dim write_date As Date = CDate(dao.fields.WRITE_DATE)
+            class_xml.WRITE_DATE_FORMAT = write_date.Day & " " & write_date.ToString("MMMM") & " " & con_year(write_date.Year)
         Catch ex As Exception
 
         End Try
