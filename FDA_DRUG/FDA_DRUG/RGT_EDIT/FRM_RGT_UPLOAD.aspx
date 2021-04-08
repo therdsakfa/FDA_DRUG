@@ -89,7 +89,7 @@
                  
                  </td></tr>
              <tr><td colspan="2">  
-                 <asp:Panel ID="Panel101" runat="server" style="display:none;">
+                 <asp:Panel ID="Panel101" runat="server" >
                      <%--<uc1:UC_ATTACH_DRUG ID="uc102_1" runat="server" />
                      <uc1:UC_ATTACH_DRUG ID="uc102_2" runat="server" />--%>
                      <uc1:UC_ATTACH_DRUG ID="uc102_3" runat="server" />
@@ -99,7 +99,7 @@
                      <uc1:UC_ATTACH_DRUG ID="uc102_7" runat="server" />
                      <uc1:UC_ATTACH_DRUG ID="uc102_8" runat="server" />
                  </asp:Panel>
-                 <asp:Panel ID="Panel201" runat="server" style="display:none;">
+                 <asp:Panel ID="Panel201" runat="server" >
                      <table>
                          <tr>
                              <td>

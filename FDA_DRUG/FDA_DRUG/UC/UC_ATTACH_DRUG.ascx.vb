@@ -97,7 +97,7 @@
         Dim _check As Integer = 0
 
         If FileUpload1.HasFile Then
-            _check += 1
+            _check = 1
         End If
         Return _check
     End Function

@@ -34,6 +34,8 @@ Public Class FRM_RGT_UPLOAD
             Panel101.Style.Add("display", "block")
             Panel201.Style.Add("display", "block")
         End If
+
+
         If Not IsPostBack Then
             If _ProcessID = "130099" Then
                 Panel101.Style.Add("display", "block")
@@ -49,13 +51,21 @@ Public Class FRM_RGT_UPLOAD
                 End If
             End If
             If RadioButtonList1.SelectedValue = "3" Then
-                Panel101.Style.Add("display", "block")
-                Panel201.Style.Add("display", "block")
+                If _ProcessID = "130099" Then
+                    Panel101.Style.Add("display", "block")
+                Else
+                    Panel201.Style.Add("display", "block")
+                End If
             Else
-                Panel101.Style.Add("display", "none")
-                Panel201.Style.Add("display", "none")
+                If _ProcessID = "130099" Then
+                    Panel101.Style.Add("display", "none")
+                Else
+                    Panel201.Style.Add("display", "none")
+                End If
             End If
         End If
+
+
         ' UC_ATTACH1.SETTING_INFORMATION("เอกสาร CER", 1)
     End Sub
     Public Sub SET_ATTACH(ByVal TR_ID As String, ByVal PROCESS_ID As String, ByVal YEAR As String)
@@ -145,7 +155,7 @@ Public Class FRM_RGT_UPLOAD
                     SET_ATTACH(TR_ID, _ProcessID, con_year(Date.Now.Year))
                     alert("รหัสการดำเนินการ คือ DA-" & _ProcessID & "-" & con_year(Date.Now.Date().Year()) & "-" + TR_ID)
                 Else
-                    If uc203.check2 > 1 Then
+                    If uc203.check2() > 0 Then
                         SET_ATTACH(TR_ID, _ProcessID, con_year(Date.Now.Year))
                         alert("รหัสการดำเนินการ คือ DA-" & _ProcessID & "-" & con_year(Date.Now.Date().Year()) & "-" + TR_ID)
                     Else
@@ -726,10 +736,24 @@ Public Class FRM_RGT_UPLOAD
     End Function
 
     Private Sub RadioButtonList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RadioButtonList1.SelectedIndexChanged
+        'If RadioButtonList1.SelectedValue = "3" Then
+        '    Panel101.Style.Add("display", "block")
+        'Else
+        '    Panel101.Style.Add("display", "none")
+        'End If
         If RadioButtonList1.SelectedValue = "3" Then
-            Panel101.Style.Add("display", "block")
+            If _ProcessID = "130099" Then
+                Panel101.Style.Add("display", "block")
+                Panel201.Style.Add("display", "none")
+            Else
+                Panel101.Style.Add("display", "none")
+                Panel201.Style.Add("display", "block")
+            End If
+
         Else
             Panel101.Style.Add("display", "none")
+            Panel201.Style.Add("display", "none")
         End If
+
     End Sub
 End Class
