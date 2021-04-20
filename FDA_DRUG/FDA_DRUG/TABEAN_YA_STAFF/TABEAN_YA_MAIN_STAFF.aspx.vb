@@ -245,7 +245,7 @@ Public Class TABEAN_YA_MAIN_STAFF
             End If
 
 
-            
+
             If e.CommandName = "sel" Then
 
 
@@ -276,6 +276,19 @@ Public Class TABEAN_YA_MAIN_STAFF
                 Dim id_r As String = item("IDA").Text
                 Dim url2 As String = "../E_TRACKING/FRM_RQT_ALL_STOPTIME.aspx?id_r=" & id_r & "&type=1"
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & url2 & "');", True)
+            ElseIf e.CommandName = "_assign" Then
+                If item("STATUS_ID").Text <> "8" Then
+                    Dim dao As New DAO_DRUG.ClsDBdrrqt
+                    dao.GetDataby_IDA(IDA)
+                    Try
+                        tr_id = dao.fields.TR_ID
+                        _process_id = dao.fields.PROCESS_ID
+                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../ASSIGN/POPUP_ASSIGN_STAFF.aspx?IDA=" & IDA & "&process=" & dao.fields.PROCESS_ID & "&group=2" & "');", True)
+                    Catch ex As Exception
+
+                    End Try
+                End If
+
             End If
         
         End If
@@ -290,11 +303,11 @@ Public Class TABEAN_YA_MAIN_STAFF
             'Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
             Dim btn_add As LinkButton = DirectCast(item("btn_add").Controls(0), LinkButton)
             Dim btn_report As LinkButton = DirectCast(item("btn_report2").Controls(0), LinkButton)
-
+            Dim btn_assign As LinkButton = DirectCast(item("btn_assign").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG.ClsDBdrrqt
             Dim tr_id As String= 0
             dao.GetDataby_IDA(IDA)
-
+            btn_assign.Style.Add("display", "none")
             Try
                 tr_id = dao.fields.TR_ID
             Catch ex As Exception
@@ -321,6 +334,17 @@ Public Class TABEAN_YA_MAIN_STAFF
             Try
                 If dao.fields.STATUS_ID = 8 Then
                     btn_add.Style.Add("display", "none")
+                End If
+            Catch ex As Exception
+
+            End Try
+            Try
+                Dim dao_as As New DAO_DRUG.TB_STAFF_ASSIGNING_WORK
+                dao_as.GetDataby_FK_IDA_Process(IDA, dao.fields.PROCESS_ID)
+                If dao_as.fields.IDA <> 0 Then
+                    btn_assign.Style.Add("display", "none")
+                Else
+                    btn_assign.Style.Add("display", "block")
                 End If
             Catch ex As Exception
 

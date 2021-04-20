@@ -131,6 +131,9 @@
                        <telerik:GridBoundColumn DataField="REMARK" FilterControlAltText="Filter REMARK column"
                            HeaderText="เหตุผลการคืนคำขอ" SortExpression="REMARK" UniqueName="REMARK">
                        </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="STAFF_NAME" FilterControlAltText="Filter STAFF_NAME column"
+                           HeaderText="ผู้รับผิดชอบคำขอ" SortExpression="STAFF_NAME" UniqueName="STAFF_NAME">
+                       </telerik:GridBoundColumn>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
                            CommandName="sel" Text="ดูข้อมูล">
                            <HeaderStyle Width="70px" />
@@ -153,6 +156,10 @@
                            CommandName="_edit" Text="แก้ไขการเสนอลงนาม">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>--%>
+                       <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_assign"
+                           CommandName="_assign" Text="เพิ่มผู้รับผิดชอบคำขอ">
+                           <HeaderStyle Width="70px" />
+                       </telerik:GridButtonColumn>
                    </Columns>
                </MasterTableView>
            </telerik:radgrid>

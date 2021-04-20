@@ -179,6 +179,17 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF
                 'End Try
 
                 RadGrid1.Rebind()
+
+            ElseIf e.CommandName = "_assign" Then
+                If item("STATUS_ID").Text <> "8" Then
+
+                    Try
+
+                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../ASSIGN/POPUP_ASSIGN_STAFF.aspx?IDA=" & IDA & "&process=" & dao.fields.PROCESS_ID & "&group=2" & "');", True)
+                    Catch ex As Exception
+
+                    End Try
+                End If
             End If
         End If
     End Sub
@@ -192,7 +203,9 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF
 
             Dim btn_report As LinkButton = DirectCast(item("btn_report2").Controls(0), LinkButton)
             Dim btn_trid As LinkButton = DirectCast(item("btn_trid").Controls(0), LinkButton)
+            Dim btn_assign As LinkButton = DirectCast(item("btn_assign").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
+            btn_assign.Style.Add("display", "none")
             Dim tr_id As String= 0
             dao.GetDatabyIDA(IDA)
 
@@ -223,7 +236,17 @@ Public Class FRM_RGT_EDIT_MAIN_STAFF
             Catch ex As Exception
 
             End Try
-           
+            Try
+                Dim dao_as As New DAO_DRUG.TB_STAFF_ASSIGNING_WORK
+                dao_as.GetDataby_FK_IDA_Process(IDA, dao.fields.PROCESS_ID)
+                If dao_as.fields.IDA <> 0 Then
+                    btn_assign.Style.Add("display", "none")
+                Else
+                    btn_assign.Style.Add("display", "block")
+                End If
+            Catch ex As Exception
+
+            End Try
             'lbl_titlename.Text = "แก้ไขการเสนอลงนาม"
             ''        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../TABEAN_YA_STAFF/POPUP_TABEAN_YA_STAFF_CONSIDER_UPDATE.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
             'Dim url As String = "../TABEAN_YA_STAFF/POPUP_TABEAN_YA_STAFF_CONSIDER_UPDATE.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & _process_id '"../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA

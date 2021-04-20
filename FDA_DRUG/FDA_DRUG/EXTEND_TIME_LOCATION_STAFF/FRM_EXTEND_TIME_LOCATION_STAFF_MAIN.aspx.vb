@@ -235,7 +235,7 @@ Public Class FRM_STAFF_EXTEND_TIME_LOCATION_MAIN2
             If e.CommandName = "sel" Then
                 Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
                 dao.GetDataby_IDA(IDA)
-                Dim tr_id As String= 0
+                Dim tr_id As String = 0
                 Try
                     tr_id = dao.fields.TR_ID
                 Catch ex As Exception
@@ -324,7 +324,10 @@ Public Class FRM_STAFF_EXTEND_TIME_LOCATION_MAIN2
                 'lcntpcd_old = lcntpcd_old.EncodeBase64
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "window.open('FRM_REPORT_ADDRESS.aspx?IDA=" & IDA & "&lcncode=" & lcntpcd & "&lcn=" & lcnno & "&c=" & _CLS.CITIZEN_ID & "&lcncode_o=" & lcntpcd_old & "&FK_IDA=" & item("FK_IDA").Text & "'); ", True)  '& "&type=" & item("type_table").Text
                 'Response.Redirect("FRM_REPORT_ADDRESS.aspx?u1=" & u1)
-
+            ElseIf e.CommandName = "_assign" Then
+                Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
+                dao.GetDataby_IDA(IDA)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../ASSIGN/POPUP_ASSIGN_STAFF.aspx?IDA=" & IDA & "&process=" & dao.fields.PROCESS_ID & "&group=1" & "');", True)
             End If
 
         End If
@@ -391,9 +394,10 @@ Public Class FRM_STAFF_EXTEND_TIME_LOCATION_MAIN2
             Dim lc_IDA As String = ""
             lc_IDA = item("lc_IDA").Text
             'Dim btn_Select1 As LinkButton = DirectCast(item("btn_Select1").Controls(0), LinkButton)
+            Dim btn_assign As LinkButton = DirectCast(item("btn_assign").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
             dao.GetDataby_IDA(IDA)
-
+            btn_assign.Style.Add("display", "none")
             'btn_Select1.Style.Add("display", "none")
             '    Try
             '    If dao.fields.lcntpcd = "ขย1" Then
@@ -402,6 +406,17 @@ Public Class FRM_STAFF_EXTEND_TIME_LOCATION_MAIN2
             '    Catch ex As Exception
 
             '    End Try
+            Try
+                Dim dao_as As New DAO_DRUG.TB_STAFF_ASSIGNING_WORK
+                dao_as.GetDataby_FK_IDA_Process(IDA, dao.fields.PROCESS_ID)
+                If dao_as.fields.IDA <> 0 Then
+                    btn_assign.Style.Add("display", "none")
+                Else
+                    btn_assign.Style.Add("display", "block")
+                End If
+            Catch ex As Exception
+
+            End Try
             Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
             'btn_Select1.Attributes.Add("OnClick", "window.open('" & "FRM_EXTEND_TIME_LOCATION_MAIN_STAFF.aspx?IDA=" & IDA & "&lc_IDA=" & lc_IDA & "'); return true;")
         End If
