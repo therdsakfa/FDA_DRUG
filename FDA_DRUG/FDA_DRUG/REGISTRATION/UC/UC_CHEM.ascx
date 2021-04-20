@@ -41,8 +41,15 @@
                         </asp:DropDownList>
                     </td>
                   <td>
-                      
+                      Each
                   </td>
+                  <td>
+                      <asp:TextBox ID="txt_each" runat="server"></asp:TextBox>
+                  </td>
+                  <td>
+                      <asp:DropDownList ID="ddl_unit" runat="server"></asp:DropDownList>
+                  </td>
+                  <td>Contains</td>
               </tr>
               <tr>
                   <td>
@@ -60,16 +67,7 @@
                       &nbsp;</td>
               </tr>
               <tr>
-                  <td>
-                      Each
-                  </td>
-                  <td>
-                      <asp:TextBox ID="txt_each" runat="server"></asp:TextBox>
-                  </td>
-                  <td>
-                      <asp:DropDownList ID="ddl_unit" runat="server"></asp:DropDownList>
-                  </td>
-                  <td>Contains</td>
+                  
               </tr>
           </table>
         </td>
@@ -81,12 +79,13 @@
     <tr>
         <td></td>
     </tr>
+   
     <tr>
-        <td>1.2</td>
+        <td>1.2  ระบุส่วนประกอบของตำรับ</td>
     </tr>
     <tr>
         <td>
-            ระบุส่วนประกอบของตำรับ</td>
+            </td>
     </tr>
 
     <tr>
@@ -316,14 +315,15 @@
         </td>
     </tr>
     <tr>
-        <td>1.3
-        </td>
-    </tr>
-    <tr>
         <td>
 
-            รายละเอียดสูตร/ส่วนประกอบที่บันทึกข้อมูล</td>
+            </td>
     </tr>
+    <tr>
+        <td>1.3  รายละเอียดสูตร/ส่วนประกอบที่บันทึกข้อมูล
+        </td>
+    </tr>
+    
     <tr>
         <td>
 
