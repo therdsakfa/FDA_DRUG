@@ -14163,6 +14163,44 @@ Namespace DAO_DRUG
             Next
         End Sub
     End Class
+
+    Public Class TB_STAFF_ASSIGNING_WORK
+        Inherits MAINCONTEXT 'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
+
+        Public fields As New STAFF_ASSIGNING_WORK
+
+        Public Sub insert()
+            db.STAFF_ASSIGNING_WORKs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.STAFF_ASSIGNING_WORKs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal _IDA As Integer)
+
+            datas = (From p In db.STAFF_ASSIGNING_WORKs Where p.IDA = _IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_FK_IDA_Process(ByVal _IDA As Integer, ByVal process As String)
+
+            datas = (From p In db.STAFF_ASSIGNING_WORKs Where p.IDA = _IDA And p.PROCESS_ID = process Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataALL()
+            datas = (From p In db.STAFF_ASSIGNING_WORKs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
 End Namespace
 
 

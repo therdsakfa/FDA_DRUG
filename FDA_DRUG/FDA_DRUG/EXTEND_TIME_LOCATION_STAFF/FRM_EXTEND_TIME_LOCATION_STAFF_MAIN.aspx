@@ -207,53 +207,60 @@
            <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" PageSize="15" AllowFilteringByColumn="True">
                <MasterTableView AutoGenerateColumns="False">
                    <Columns>
-             <telerik:GridBoundColumn DataField="lc_IDA"  FilterControlAltText="Filter lcnno column"
-             HeaderText="lc_IDA" ReadOnly="True" SortExpression="lc_IDA" UniqueName="lc_IDA" Display="false">
-        </telerik:GridBoundColumn>
-                      <telerik:GridBoundColumn DataField="CITIZEN_ID"  FilterControlAltText="Filter CITIZEN_ID column"
-             HeaderText="CITIZEN_ID" ReadOnly="True" SortExpression="CITIZEN_ID" UniqueName="CITIZEN_ID" Display="false">
-        </telerik:GridBoundColumn>
-       <telerik:GridBoundColumn DataField="lcntpcd2" FilterControlAltText="Filter lcntpcd2 column"
-             HeaderText="lcntpcd2" ReadOnly="True" SortExpression="lcntpcd2" UniqueName="lcntpcd2" Display="false">
-        </telerik:GridBoundColumn>
-                      <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
+                       <telerik:GridBoundColumn DataField="lc_IDA" FilterControlAltText="Filter lcnno column"
+                           HeaderText="lc_IDA" ReadOnly="True" SortExpression="lc_IDA" UniqueName="lc_IDA" Display="false">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="CITIZEN_ID" FilterControlAltText="Filter CITIZEN_ID column"
+                           HeaderText="CITIZEN_ID" ReadOnly="True" SortExpression="CITIZEN_ID" UniqueName="CITIZEN_ID" Display="false">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="lcntpcd2" FilterControlAltText="Filter lcntpcd2 column"
+                           HeaderText="lcntpcd2" ReadOnly="True" SortExpression="lcntpcd2" UniqueName="lcntpcd2" Display="false">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
                            SortExpression="IDA" UniqueName="IDA" Display="false">
                        </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn DataField="FK_IDA" DataType="System.Int32" FilterControlAltText="Filter FK_IDA column" HeaderText="FK_IDA"
+                       <telerik:GridBoundColumn DataField="FK_IDA" DataType="System.Int32" FilterControlAltText="Filter FK_IDA column" HeaderText="FK_IDA"
                            SortExpression="FK_IDA" UniqueName="FK_IDA" Display="false">
                        </telerik:GridBoundColumn>
-                      <telerik:GridBoundColumn DataField="lcnno_no" FilterControlAltText="Filter lcnno_no column"
+                       <telerik:GridBoundColumn DataField="lcnno_no" FilterControlAltText="Filter lcnno_no column"
                            HeaderText="เลขที่ใบอนุญาต" SortExpression="lcnno_no" UniqueName="lcnno_no">
                        </telerik:GridBoundColumn>
-                      <telerik:GridBoundColumn DataField="lcntpcd" FilterControlAltText="Filter lcntpcd column"
+                       <telerik:GridBoundColumn DataField="lcntpcd" FilterControlAltText="Filter lcntpcd column"
                            HeaderText="ประเภท" SortExpression="lcntpcd" UniqueName="lcntpcd">
                        </telerik:GridBoundColumn>
-                      <telerik:GridBoundColumn DataField="addr" FilterControlAltText="Filter addr column"
+                       <telerik:GridBoundColumn DataField="addr" FilterControlAltText="Filter addr column"
                            HeaderText="ที่อยู่" SortExpression="addr" UniqueName="addr">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="lcnsid" FilterControlAltText="Filter lcnsid column"
                            HeaderText="รหัสผู้ประกอบการ" SortExpression="lcnsid" UniqueName="lcnsid">
                        </telerik:GridBoundColumn>
-                <%--       <telerik:GridBoundColumn DataField="house_no" FilterControlAltText="Filter house_no column"
+                       <%--       <telerik:GridBoundColumn DataField="house_no" FilterControlAltText="Filter house_no column"
                            HeaderText="เลขสถานที่" SortExpression="house_no" UniqueName="house_no">
                        </telerik:GridBoundColumn>--%>
                        <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
                            HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
                        </telerik:GridBoundColumn>
-                               <telerik:GridBoundColumn DataField="extend_year" FilterControlAltText="Filter extend_year column"
+                       <telerik:GridBoundColumn DataField="extend_year" FilterControlAltText="Filter extend_year column"
                            HeaderText="ต่ออายุในปี" SortExpression="extend_year" UniqueName="extend_year">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="TRANSACTION_UPLOAD" FilterControlAltText="Filter TRANSACTION_UPLOAD column"
                            HeaderText="เลขดำเนินการ" SortExpression="TRANSACTION_UPLOAD" UniqueName="TRANSACTION_UPLOAD">
                        </telerik:GridBoundColumn>
-                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
+                       <telerik:GridBoundColumn DataField="STAFF_NAME" FilterControlAltText="Filter STAFF_NAME column"
+                           HeaderText="ผู้รับผิดชอบคำขอ" SortExpression="STAFF_NAME" UniqueName="STAFF_NAME">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
                            CommandName="sel" Text="ดูข้อมูล">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
-                                <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_print"
-                       CommandName="print" Text="พิมพ์ที่อยู่">
-                       <HeaderStyle Width="70px" />
-                   </telerik:GridButtonColumn>
+                       <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_print"
+                           CommandName="print" Text="พิมพ์ที่อยู่">
+                           <HeaderStyle Width="70px" />
+                       </telerik:GridButtonColumn>
+                       <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_assign"
+                           CommandName="_assign" Text="เพิ่มผู้รับผิดชอบคำขอ">
+                           <HeaderStyle Width="70px" />
+                       </telerik:GridButtonColumn>
                    </Columns>
                </MasterTableView>
            </telerik:RadGrid>

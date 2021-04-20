@@ -139,20 +139,21 @@ Public Class FRM_LCN_DRUG1
             Catch ex As Exception
 
             End Try
+            Dim dao As New DAO_DRUG.ClsDBdalcn
+            dao.GetDataby_IDA(IDA)
+            Dim tr_id As String = 0
+            Try
+                tr_id = dao.fields.TR_ID
+            Catch ex As Exception
 
+            End Try
             If e.CommandName = "sel" Then
-                Dim dao As New DAO_DRUG.ClsDBdalcn
-                dao.GetDataby_IDA(IDA)
-                Dim tr_id As String= 0
-                Try
-                    tr_id = dao.fields.TR_ID
-                Catch ex As Exception
-
-                End Try
-
                 Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
                 dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_LCN_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & dao_pro.fields.PROCESS_ID & "');", True)
+
+            ElseIf e.CommandName = "_assign" Then
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../ASSIGN/POPUP_ASSIGN_STAFF.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & dao.fields.PROCESS_ID & "&group=1" & "');", True)
             End If
 
         End If
@@ -165,11 +166,22 @@ Public Class FRM_LCN_DRUG1
             Dim IDA As String = item("IDA").Text
             Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
             Dim dao As New DAO_DRUG.ClsDBdalcn
+            Dim btn_assign As LinkButton = DirectCast(item("btn_assign").Controls(0), LinkButton)
             dao.GetDataby_IDA(IDA)
             btn_edit.Style.Add("display", "none")
             Try
                 If dao.fields.STATUS_ID = 6 Then
                     btn_edit.Style.Add("display", "block")
+                End If
+            Catch ex As Exception
+
+            End Try
+
+            Try
+                Dim dao_as As New DAO_DRUG.TB_STAFF_ASSIGNING_WORK
+                dao_as.GetDataby_FK_IDA_Process(IDA, dao.fields.PROCESS_ID)
+                If dao_as.fields.IDA <> 0 Then
+                    btn_assign.Style.Add("display", "none")
                 End If
             Catch ex As Exception
 

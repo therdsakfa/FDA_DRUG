@@ -157,6 +157,9 @@
                        <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
                            HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
                        </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="STAFF_NAME" FilterControlAltText="Filter STAFF_NAME column"
+                           HeaderText="ผู้รับผิดชอบคำขอ" SortExpression="STAFF_NAME" UniqueName="STAFF_NAME">
+                       </telerik:GridBoundColumn>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_Select"
                            CommandName="sel" Text="ดูข้อมูล">
                            <HeaderStyle Width="70px" />
@@ -175,6 +178,10 @@
                        CommandName="_trid" Text="ขอเลขดำเนินการ" ConfirmText="คุณต้องการทำต่อหรือไม่?">
                        <HeaderStyle Width="70px" />
                    </telerik:GridButtonColumn>
+                       <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_assign"
+                           CommandName="_assign" Text="เพิ่มผู้รับผิดชอบคำขอ">
+                           <HeaderStyle Width="70px" />
+                       </telerik:GridButtonColumn>
                    </Columns>
                </MasterTableView>
            </telerik:RadGrid>

@@ -290,6 +290,8 @@
     <Content Include="assets\Charts\VBullet.swf" />
     <Content Include="assets\Charts\VLED.swf" />
     <Content Include="assets\Charts\ZoomLine.swf" />
+    <Content Include="ASSIGN\FRM_MAIN_ASSIGN.aspx" />
+    <Content Include="ASSIGN\POPUP_ASSIGN_STAFF.aspx" />
     <Content Include="BOOKING\FRM_RCA.aspx" />
     <Content Include="BOOKING\FRM_REPLACEMENT_BOOKING.aspx" />
     <Content Include="BOOKING\FRM_REPLACEMENT_BOOKING_DOCUMENT.aspx" />
@@ -1979,6 +1981,20 @@
     <Content Include="word\test.docx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ASSIGN\FRM_MAIN_ASSIGN.aspx.designer.vb">
+      <DependentUpon>FRM_MAIN_ASSIGN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASSIGN\FRM_MAIN_ASSIGN.aspx.vb">
+      <DependentUpon>FRM_MAIN_ASSIGN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ASSIGN\POPUP_ASSIGN_STAFF.aspx.designer.vb">
+      <DependentUpon>POPUP_ASSIGN_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASSIGN\POPUP_ASSIGN_STAFF.aspx.vb">
+      <DependentUpon>POPUP_ASSIGN_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="BOOKING\FRM_RCA.aspx.designer.vb">
       <DependentUpon>FRM_RCA.aspx</DependentUpon>
     </Compile>

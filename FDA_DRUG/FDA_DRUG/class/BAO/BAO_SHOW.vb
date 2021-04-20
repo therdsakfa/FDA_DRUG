@@ -1338,6 +1338,20 @@ Public Class BAO_SHOW
         Return dt
     End Function
     '
+    Public Function SP_SYSLCNSNM_BY_NAME_SEARCH(ByVal name As String) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_SYSLCNSNM_BY_NAME_SEARCH @name='" & name & "'"
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn).Tables(0)
+        Catch ex As Exception
+
+        End Try
+
+        dt.TableName = "SP_SYSLCNSNM_BY_NAME_SEARCH"
+        Return dt
+    End Function
+    '
     ''' <summary>
     ''' สถานที่จำลอง
     ''' </summary>

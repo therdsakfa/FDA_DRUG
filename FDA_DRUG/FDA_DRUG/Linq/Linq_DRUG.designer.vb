@@ -2119,6 +2119,12 @@ Partial Public Class Linq_DRUGDataContext
     End Sub
   Partial Private Sub DeleteDRRGT_EDIT_REQUEST(instance As DRRGT_EDIT_REQUEST)
     End Sub
+  Partial Private Sub InsertSTAFF_ASSIGNING_WORK(instance As STAFF_ASSIGNING_WORK)
+    End Sub
+  Partial Private Sub UpdateSTAFF_ASSIGNING_WORK(instance As STAFF_ASSIGNING_WORK)
+    End Sub
+  Partial Private Sub DeleteSTAFF_ASSIGNING_WORK(instance As STAFF_ASSIGNING_WORK)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -4273,6 +4279,12 @@ Partial Public Class Linq_DRUGDataContext
 	Public ReadOnly Property DRRGT_EDIT_REQUESTs() As System.Data.Linq.Table(Of DRRGT_EDIT_REQUEST)
 		Get
 			Return Me.GetTable(Of DRRGT_EDIT_REQUEST)
+		End Get
+	End Property
+	
+	Public ReadOnly Property STAFF_ASSIGNING_WORKs() As System.Data.Linq.Table(Of STAFF_ASSIGNING_WORK)
+		Get
+			Return Me.GetTable(Of STAFF_ASSIGNING_WORK)
 		End Get
 	End Property
 End Class
@@ -138630,6 +138642,222 @@ Partial Public Class DRRGT_EDIT_REQUEST
 				Me._WRITE_DATE = value
 				Me.SendPropertyChanged("WRITE_DATE")
 				Me.OnWRITE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.STAFF_ASSIGNING_WORK")>  _
+Partial Public Class STAFF_ASSIGNING_WORK
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _FK_IDA As System.Nullable(Of Integer)
+	
+	Private _PROCESS_ID As String
+	
+	Private _ASSIGN_IDENTIFY As String
+	
+	Private _STAFF_IDENTIFY As String
+	
+	Private _CREATE_DATE As System.Nullable(Of Date)
+	
+	Private _GROUP_SYSTEM As System.Nullable(Of Integer)
+	
+	Private _STAFF_NAME As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnFK_IDAChanged()
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROCESS_IDChanged()
+    End Sub
+    Partial Private Sub OnASSIGN_IDENTIFYChanging(value As String)
+    End Sub
+    Partial Private Sub OnASSIGN_IDENTIFYChanged()
+    End Sub
+    Partial Private Sub OnSTAFF_IDENTIFYChanging(value As String)
+    End Sub
+    Partial Private Sub OnSTAFF_IDENTIFYChanged()
+    End Sub
+    Partial Private Sub OnCREATE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnCREATE_DATEChanged()
+    End Sub
+    Partial Private Sub OnGROUP_SYSTEMChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnGROUP_SYSTEMChanged()
+    End Sub
+    Partial Private Sub OnSTAFF_NAMEChanging(value As String)
+    End Sub
+    Partial Private Sub OnSTAFF_NAMEChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
+	Public Property FK_IDA() As System.Nullable(Of Integer)
+		Get
+			Return Me._FK_IDA
+		End Get
+		Set
+			If (Me._FK_IDA.Equals(value) = false) Then
+				Me.OnFK_IDAChanging(value)
+				Me.SendPropertyChanging
+				Me._FK_IDA = value
+				Me.SendPropertyChanged("FK_IDA")
+				Me.OnFK_IDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROCESS_ID", DbType:="NVarChar(MAX)")>  _
+	Public Property PROCESS_ID() As String
+		Get
+			Return Me._PROCESS_ID
+		End Get
+		Set
+			If (String.Equals(Me._PROCESS_ID, value) = false) Then
+				Me.OnPROCESS_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._PROCESS_ID = value
+				Me.SendPropertyChanged("PROCESS_ID")
+				Me.OnPROCESS_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ASSIGN_IDENTIFY", DbType:="NVarChar(MAX)")>  _
+	Public Property ASSIGN_IDENTIFY() As String
+		Get
+			Return Me._ASSIGN_IDENTIFY
+		End Get
+		Set
+			If (String.Equals(Me._ASSIGN_IDENTIFY, value) = false) Then
+				Me.OnASSIGN_IDENTIFYChanging(value)
+				Me.SendPropertyChanging
+				Me._ASSIGN_IDENTIFY = value
+				Me.SendPropertyChanged("ASSIGN_IDENTIFY")
+				Me.OnASSIGN_IDENTIFYChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STAFF_IDENTIFY", DbType:="NVarChar(MAX)")>  _
+	Public Property STAFF_IDENTIFY() As String
+		Get
+			Return Me._STAFF_IDENTIFY
+		End Get
+		Set
+			If (String.Equals(Me._STAFF_IDENTIFY, value) = false) Then
+				Me.OnSTAFF_IDENTIFYChanging(value)
+				Me.SendPropertyChanging
+				Me._STAFF_IDENTIFY = value
+				Me.SendPropertyChanged("STAFF_IDENTIFY")
+				Me.OnSTAFF_IDENTIFYChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATE_DATE", DbType:="DateTime")>  _
+	Public Property CREATE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CREATE_DATE
+		End Get
+		Set
+			If (Me._CREATE_DATE.Equals(value) = false) Then
+				Me.OnCREATE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATE_DATE = value
+				Me.SendPropertyChanged("CREATE_DATE")
+				Me.OnCREATE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_GROUP_SYSTEM", DbType:="Int")>  _
+	Public Property GROUP_SYSTEM() As System.Nullable(Of Integer)
+		Get
+			Return Me._GROUP_SYSTEM
+		End Get
+		Set
+			If (Me._GROUP_SYSTEM.Equals(value) = false) Then
+				Me.OnGROUP_SYSTEMChanging(value)
+				Me.SendPropertyChanging
+				Me._GROUP_SYSTEM = value
+				Me.SendPropertyChanged("GROUP_SYSTEM")
+				Me.OnGROUP_SYSTEMChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STAFF_NAME", DbType:="NVarChar(MAX)")>  _
+	Public Property STAFF_NAME() As String
+		Get
+			Return Me._STAFF_NAME
+		End Get
+		Set
+			If (String.Equals(Me._STAFF_NAME, value) = false) Then
+				Me.OnSTAFF_NAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._STAFF_NAME = value
+				Me.SendPropertyChanged("STAFF_NAME")
+				Me.OnSTAFF_NAMEChanged
 			End If
 		End Set
 	End Property
