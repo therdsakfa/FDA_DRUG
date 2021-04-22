@@ -13,7 +13,7 @@
     </style>
 <table width="70%">
     <tr>
-        <td>1.1</td>
+        <td style="background-color:#FFCE33">1.1 โปรดระบุ unit of formular composition</td>
     </tr>
     <tr>
         <td>
@@ -81,7 +81,7 @@
     </tr>
    
     <tr>
-        <td>1.2  ระบุส่วนประกอบของตำรับ</td>
+        <td style="background-color:#FFCE33">1.2  ระบุส่วนประกอบของตำรับ</td>
     </tr>
     <tr>
         <td>
@@ -320,10 +320,12 @@
             </td>
     </tr>
     <tr>
-        <td>1.3  รายละเอียดสูตร/ส่วนประกอบที่บันทึกข้อมูล
+        <td style="background-color:#FFCE33">1.3  รายละเอียดสูตร/ส่วนประกอบที่บันทึกข้อมูล
         </td>
     </tr>
-    
+    <tr>
+        <td></td>
+    </tr>
     <tr>
         <td>
 
