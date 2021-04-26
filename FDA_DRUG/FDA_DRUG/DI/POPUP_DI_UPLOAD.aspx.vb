@@ -44,7 +44,7 @@ Public Class POPUP_DI_UPLOAD
     Protected Sub btn_Upload_Click(sender As Object, e As EventArgs) Handles btn_Upload.Click
 
         If FileUpload1.HasFile Then
-            If UC_ATTACH_DRUG_0.check() = True Then
+            If UC_ATTACH_DRUG_0.check_new() = True Then
 
                 Dim bao As New BAO.AppSettings
                 bao.RunAppSettings()
