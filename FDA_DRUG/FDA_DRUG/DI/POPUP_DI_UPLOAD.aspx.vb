@@ -160,14 +160,49 @@ Public Class POPUP_DI_UPLOAD
                 Dim dao_CER_DETAIL_MANUFACTURE2 As New DAO_DRUG.TB_CER_DETAIL_MANUFACTURE
                 For Each dao_CER_DETAIL_MANUFACTURE2.fields In p2.CER_DETAIL_MANUFACTUREs
                     Dim iso1 As String = ""
+                    Dim standard As String = ""
                     Try
                         iso1 = Trim(dao_CER_DETAIL_MANUFACTURE2.fields.COUNTRY_ID)
+                    Catch ex As Exception
+
+                    End Try
+                    'Try
+                    '    standard = Trim(dao_CER_DETAIL_MANUFACTURE2.fields.STANDARD_ID)
+                    'Catch ex As Exception
+
+                    'End Try
+                    Try
+                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.NAME_ADDRESS) < 5 Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER) < 5 Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_CITY) < 5 Then
+                            Return False
+                        End If
                     Catch ex As Exception
 
                     End Try
                     Try
 
                         If iso1 = "" Or iso1 = "0" Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+
+                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.STANDARD_ID) < 5 Then
                             Return False
                         End If
                     Catch ex As Exception
@@ -182,6 +217,27 @@ Public Class POPUP_DI_UPLOAD
                     Dim iso2 As String = ""
                     Try
                         iso1 = Trim(dao_CER_DETAIL_MANUFACTURE2.fields.COUNTRY_ID)
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.NAME_ADDRESS) < 5 Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER) < 5 Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_CITY) < 5 Then
+                            Return False
+                        End If
                     Catch ex As Exception
 
                     End Try
@@ -209,6 +265,15 @@ Public Class POPUP_DI_UPLOAD
 
                     End Try
                 Next
+                Dim dao_c As New DAO_DRUG.TB_CER
+                Try
+                    If Len(p2.CERs.CERTIFICATION_NUMBER_ALL) < 5 Then
+                        Return False
+                    End If
+                Catch ex As Exception
+
+                End Try
+
             End If
             If _Process <> "32" Then
                 Dim dao_CER_DETAIL_MANUFACTURE2 As New DAO_DRUG.TB_CER_DETAIL_MANUFACTURE
@@ -224,6 +289,14 @@ Public Class POPUP_DI_UPLOAD
 
                     End Try
                 Next
+
+                Try
+                    If Len(p2.CERs.CERTIFICATION_NUMBER_ALL) < 5 Then
+                        Return False
+                    End If
+                Catch ex As Exception
+
+                End Try
             End If
 
             If _Process = "32" Then
@@ -241,8 +314,99 @@ Public Class POPUP_DI_UPLOAD
                     End Try
                 Next
             End If
+            If _Process = "33" Then
+                Dim dao_CER_DETAIL_MANUFACTURE2 As New DAO_DRUG.TB_CER_DETAIL_MANUFACTURE
+                For Each dao_CER_DETAIL_MANUFACTURE2.fields In p2.CER_DETAIL_MANUFACTUREs
+                    Try
+                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.NAME_ADDRESS) < 5 Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER) < 5 Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_CITY) < 5 Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                Next
+
+                Dim dao_c As New DAO_DRUG.TB_CER
+                Try
+                    If Len(p2.CERs.CERTIFICATION_NUMBER_ALL) < 5 Then
+                        Return False
+                    End If
+                Catch ex As Exception
+
+                End Try
+                Try
+                    If Len(p2.CERs.ORGANIZATION_CODE) < 4 Then
+                        Return False
+                    End If
+                Catch ex As Exception
+
+                End Try
+                Try
+                    If Len(p2.CERs.DEPARTMENT_REGIST_CER_NAME) < 5 Then
+                        Return False
+                    End If
+                Catch ex As Exception
+
+                End Try
+                Try
+                    If Len(p2.CERs.LOCATION_STANDARD) < 5 Then
+                        Return False
+                    End If
+                Catch ex As Exception
+
+                End Try
+            End If
+            If _Process = "36" Then
+                Try
+                    If Len(p2.CERs.CERTIFICATION_NUMBER_ALL) < 5 Then
+                        Return False
+                    End If
+                Catch ex As Exception
+
+                End Try
+                Try
+                    If Len(p2.CERs.DEPARTMENT_REGIST_CER_DOCNO) < 5 Then
+                        Return False
+                    End If
+                Catch ex As Exception
+
+                End Try
+                Dim iso1 As String = ""
+                Dim dao_CER_DETAIL_MANUFACTURE2 As New DAO_DRUG.TB_CER_DETAIL_MANUFACTURE
+                For Each dao_CER_DETAIL_MANUFACTURE2.fields In p2.CER_DETAIL_MANUFACTUREs
 
 
+                    Try
+                        iso1 = Trim(dao_CER_DETAIL_MANUFACTURE2.fields.COUNTRY_ID)
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+
+                        If iso1 = "" Or iso1 = "0" Then
+                            Return False
+                        End If
+
+                    Catch ex As Exception
+
+                    End Try
+                Next
+
+            End If
             'If chk_addr = False Then
             '    Return False
             'End If
