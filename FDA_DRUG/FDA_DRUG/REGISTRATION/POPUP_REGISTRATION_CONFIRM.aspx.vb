@@ -317,7 +317,7 @@ Public Class POPUP_REGISTRATION_CONFIRM
         Dim bao_show As New BAO_SHOW
 
         class_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(lct_ida) 'ข้อมูลสถานที่จำลอง
-        class_xml.DT_SHOW.DT10 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
+        class_xml.DT_SHOW.DT10 = bao_show.SP_MAINPERSON_CTZNO(dao.fields.CITIZEN_ID_UPLOAD) 'ผู้ยื่น 'bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
         class_xml.DT_SHOW.DT11 = bao_show.SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA(lct_ida) 'ผู้ดำเนิน
         'class_xml.DT_SHOW.DT12 = bao_show.SP_DATA_SHOW_PRODUCT_ID_BY_IDA(_product_id) 'ข้อมูลที่ดึงมาจาก Product ID
         class_xml.DT_SHOW.DT13 = bao_show.SP_DRUG_REGISTRATION_PACKAGE_BY_IDA(_IDA)

@@ -235,27 +235,21 @@ Public Class FRM_DS_STAFF_CONFIRM
             alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.rcvno)
         ElseIf STATUS_ID = 5 Then 'ยื่นแก้ไข
             Response.Redirect("FRM_DS_STAFF_EDIT.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&PROCESS_ID=" & PROCESS_ID)
-            AddLogStatusDS(5, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+
         ElseIf STATUS_ID = 9 Then 'เสนอลงนาม
-            'dao.fields.STATUS_ID = STATUS_ID
+
             Response.Redirect("FRM_DS_STAFF_CONSIDER_DATE.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
-            AddLogStatusDS(9, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+
         ElseIf STATUS_ID = 8 Then 'อนุมัติ
 
-            'dao.fields.STATUS_ID = STATUS_ID
-            'dao.fields.appdate = Date.Now.ToShortDateString()
-            'dao.fields.staff_approved_iden = _CLS.CITIZEN_ID
-            'dao.fields.REMARK = txt_REMARK.Text
-            'package()
             Response.Redirect("FRM_DS_STAFF_REMARK2.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&PROCESS_ID=" & PROCESS_ID)
-            AddLogStatusDS(8, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+
             _TR_ID = Request.QueryString("TR_ID")
             _IDA = Request.QueryString("IDA")
-            'alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
-            ' ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", _TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "อนุมัติคำขอยาตัวอย่าง", _ProcessID)
+
         ElseIf STATUS_ID = 7 Then
             Response.Redirect("FRM_DS_STAFF_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
-            AddLogStatusDS(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+
             _TR_ID = Request.QueryString("TR_ID")
             _IDA = Request.QueryString("IDA")
             dao.update()
@@ -687,10 +681,12 @@ Public Class FRM_DS_STAFF_CONFIRM
             Dim WRITEDATE As Date = dao.fields.WRITE_DATE
             class_xml.WRITE_DATE = CDate(WRITEDATE).ToLongDateString
 
-            If dao.fields.STATUS_ID = 9 Or dao.fields.STATUS_ID = 10 Or dao.fields.STATUS_ID = 8 Then
+            If dao.fields.STATUS_ID = 9 Or dao.fields.STATUS_ID = 10 Then
                 Dim RCVDATE As Date = dao.fields.rcvdate
                 class_xml.RCVDATE = CDate(RCVDATE).ToLongDateString
             ElseIf dao.fields.STATUS_ID = 8 Then
+                Dim RCVDATE As Date = dao.fields.rcvdate
+                class_xml.RCVDATE = CDate(RCVDATE).ToLongDateString
                 Dim APPDATE As Date = dao.fields.appdate
                 class_xml.APPDATE = CDate(APPDATE).ToLongDateString
             End If
