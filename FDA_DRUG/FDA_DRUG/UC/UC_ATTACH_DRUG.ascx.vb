@@ -86,11 +86,19 @@
 
 
     Public Function check() As String
-        Dim _check As String
+        Dim _check As Boolean
+
         _check = FileUpload1.HasFile
         If _check = True Then
             _check += 1
         End If
+        Return _check
+    End Function
+    Public Function check_new() As Boolean
+        Dim _check As Boolean
+
+        _check = FileUpload1.HasFile
+
         Return _check
     End Function
     Public Function check2() As Integer
@@ -102,7 +110,7 @@
         Return _check
     End Function
     Public Function chk(ByVal count As Integer) As String
-        Dim _check As String
+        Dim _check As Boolean
         _check = FileUpload1.HasFile
         If _check = True Then
             count += 1
