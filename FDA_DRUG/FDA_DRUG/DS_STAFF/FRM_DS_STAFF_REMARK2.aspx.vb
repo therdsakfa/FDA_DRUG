@@ -57,7 +57,7 @@
             End Try
             dao.update()
 
-            AddLogStatus(8, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+            AddLogStatusDS(8, _ProcessID, _CLS.CITIZEN_ID, _IDA)
             alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
         Catch ex As Exception
             Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")

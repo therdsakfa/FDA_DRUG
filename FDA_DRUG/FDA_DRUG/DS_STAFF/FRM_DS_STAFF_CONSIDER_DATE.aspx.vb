@@ -73,7 +73,7 @@
             dao.GetDataby_IDA(_IDA)
             dao_up.GetDataby_IDA(dao.fields.TR_ID)
 
-            AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
+            'AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
 
             Dim PROCESS_ID As Integer = dao.fields.PROCESS_ID
 
@@ -94,7 +94,7 @@
             'End Try
             dao.update()
 
-
+            AddLogStatusDS(9, dao.fields.process_id, _CLS.CITIZEN_ID, _IDA)
             alert("บันทึกข้อมูลเรียบร้อย")
         Catch ex As Exception
             Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")

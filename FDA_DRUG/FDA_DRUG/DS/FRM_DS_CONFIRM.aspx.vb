@@ -79,7 +79,7 @@ Public Class FRM_DS_CONFIRM
         dao.fields.STATUS_ID = 2
 
         dao.update()
-        AddLogStatus(2, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+        AddLogStatusDS(2, _ProcessID, _CLS.CITIZEN_ID, _IDA)
         alert("ยื่นเรื่องเรียบร้อยแล้ว")
         Response.Write("<script type langue =javascript>")
         Response.Write("window.location.href = '../DS/FRM_DS_MAIN.aspx?process=" & _ProcessID & "';")
