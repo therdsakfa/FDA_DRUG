@@ -202,9 +202,9 @@ Public Class POPUP_DI_UPLOAD
                     End Try
                     Try
 
-                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.STANDARD_ID) < 5 Then
-                            Return False
-                        End If
+                        'If Len(dao_CER_DETAIL_MANUFACTURE2.fields.STANDARD_ID) < 5 Then
+                        '    Return False
+                        'End If
                     Catch ex As Exception
 
                     End Try
