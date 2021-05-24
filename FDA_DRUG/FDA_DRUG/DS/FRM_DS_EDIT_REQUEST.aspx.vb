@@ -61,7 +61,7 @@ Public Class FRM_DS_EDIT_REQUEST
         Try
             Dim WRITEDATE As Date = dao_edit.fields.CREATE_DATE
             WRITEDATE = dao_edit.fields.CREATE_DATE
-            WRITEDATE = DateAdd(DateInterval.Year, 543, WRITEDATE)
+            'WRITEDATE = DateAdd(DateInterval.Year, -543, WRITEDATE)
             lbl_DATE.Text = CDate(WRITEDATE).ToLongDateString
         Catch ex As Exception
 
