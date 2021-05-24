@@ -469,7 +469,7 @@ Public Class POPUP_DS_CONFIRM
         Dim dao_pack As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
         dao_pack.GetDataby_FK_IDA(dao_pid.fields.IDA)
 
-        Dim cls_regis As New CLASS_GEN_XML.drsamp2(_CLS.CITIZEN_ID, dao_lcn.fields.lcnsid, dao_lcn.fields.lcnno, dao_lcn.fields.lcntpcd, dao_lcn.fields.pvncd, dao_lcn.fields.IDA, dao_pid.fields.IDA, dao_pid.fields.FK_IDA, dao_pid.fields.IDA, dao.fields.TR_ID, dao.fields.phr_fk)
+        Dim cls_regis As New CLASS_GEN_XML.drsamp2(_CLS.CITIZEN_ID, dao_lcn.fields.lcnsid, dao_lcn.fields.lcnno, dao_lcn.fields.lcntpcd, dao_lcn.fields.pvncd, dao_lcn.fields.IDA, dao_pid.fields.IDA, dao_pid.fields.FK_IDA, dao_pid.fields.IDA, dao.fields.TR_ID, dao.fields.phr_fk, dao.fields.CUSTOMER_CITIZEN_SUBMIT)
         'Dim cls_regis As New CLASS_GEN_XML.drsamp2(_CLS.CITIZEN_ID, dao_lcn.fields.lcnsid, dao_lcn.fields.lcnno, dao_lcn.fields.lcntpcd, dao_lcn.fields.pvncd, dao_lcn.fields.IDA, dao_pid.fields.IDA, dao_lcn.fields.IDA, dao_pid.fields.FK_IDA, dao_phr.fields.FK_IDA, dao.fields.TR_ID)
         Dim class_xml As New CLASS_DRSAMP
         class_xml = cls_regis.gen_xml()

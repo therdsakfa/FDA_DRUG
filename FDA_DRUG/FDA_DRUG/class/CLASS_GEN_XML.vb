@@ -2124,10 +2124,11 @@ Namespace CLASS_GEN_XML
             _staff_app = ""
             _staff_rcv = ""
             _phesaj_ida = ""
+
         End Sub
 
         Public Sub New(Optional citizen_id As String = "", Optional lcnsid As Integer = 0,
-                       Optional lcnno As String = "", Optional lcntpcd As String = "", Optional pvncd As String = "10", Optional CHK_SELL_TYPE As String = "", Optional phr_medical_type As String = "", Optional opentime As String = "", Optional product_ida As String = "", Optional product_lcnno As String = "", Optional product_fkida As String = "", Optional staff_app As String = "", Optional staff_rcv As String = "", Optional phesaj_ida As String = "")
+                       Optional lcnno As String = "", Optional lcntpcd As String = "", Optional pvncd As String = "10", Optional CHK_SELL_TYPE As String = "", Optional phr_medical_type As String = "", Optional opentime As String = "", Optional product_ida As String = "", Optional product_lcnno As String = "", Optional product_fkida As String = "", Optional staff_app As String = "", Optional staff_rcv As String = "", Optional phesaj_ida As String = "", Optional CITIZEN_SUBMIT As String = "")
             _CITIEZEN_ID = citizen_id
             _lcnsid_customer = lcnsid
             _lcntpcd = lcntpcd
@@ -2145,9 +2146,11 @@ Namespace CLASS_GEN_XML
             '_phr_fkida = product_lcnno
             _phr_fkida = Convert.ToInt32(product_lcnno)
             product_id_TR_ID = product_fkida
+            _citizen_submit = staff_app
             _staff_app = staff_app
             _phesaj_ida = phesaj_ida
             _staff_rcv = staff_rcv
+            _citizen_submit = CITIZEN_SUBMIT
 
         End Sub
 
@@ -2180,7 +2183,7 @@ Namespace CLASS_GEN_XML
             class_xml.DT_SHOW.DT7 = bao.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(product_id_ida) 'ดึงตัวยาสำคัญ multi
             class_xml.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
             class_xml.DT_SHOW.DT8 = bao.SP_DRSAMP_PACKAGE_DETAIL_CHK_BY_FK_IDA(product_id_ida)    'ขนาดบรรจุ multi
-            class_xml.DT_SHOW.DT10 = bao_show.SP_MAINPERSON_CTZNO(_CITIEZEN_ID) 'ผู้ยื่น
+            class_xml.DT_SHOW.DT10 = bao_show.SP_MAINPERSON_CTZNO(_citizen_submit) 'ผู้ยื่น
             class_xml.DT_SHOW.DT11 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_ALL_BY_FK_IDA(product_id_ida)  '
             Try
                 class_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA(product_id_FK_IDA) 'ผู้ดำเนิน
