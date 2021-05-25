@@ -220,34 +220,147 @@ Public Class FRM_STAFF_LCN_SEARCH
     End Sub
 
     Private Sub btn_export_Click(sender As Object, e As EventArgs) Handles btn_export.Click
-        'RadGrid1.ExportSettings.ExportOnlyData = True
-        'RadGrid1.MasterTableView.ExportToExcel()
-        'RadGrid1.ExportSettings.IgnorePaging = True
-        Dim bao As New BAO.ClsDBSqlcommand
-        bao.SP_DALCN_SEARCH_EDIT()
         Dim dt As New DataTable
-        Dim str_where As String = ""
-        Dim r_result As DataRow()
+        Dim command As String = " "
+        Dim bao_aa As New BAO.ClsDBSqlcommand
+        command = "select * from dbo.Vw_SP_DALCN_SEARCH_EDIT "
+        Dim pvncd As Integer = 0
         Try
-            dt = bao.dt
+            pvncd = _CLS.PVCODE
         Catch ex As Exception
 
         End Try
-        str_where = "pvncd = '" & _CLS.PVCODE & "'"
-        If rdl_stat.SelectedValue <> "0" Then
-            str_where &= " and lcn_stat = '" & rdl_stat.SelectedValue & "'"
-        End If
-        r_result = dt.Select(str_where)
+        'Dim dt As New DataTable
+        'Try
+        '    dt = bao.dt
+        'Catch ex As Exception
 
+        'End Try
 
+        'Dim r_result As DataRow()
+        Dim str_where As String = ""
         Dim dt2 As New DataTable
-        dt2 = dt.Clone
 
-        For Each dr As DataRow In r_result
-            dt2.Rows.Add(dr.ItemArray)
-        Next
+        If txt_CITIZEN_AUTHORIZE.Text = "" And txt_lcnno_no.Text = "" Then
+            'If pvncd = 10 Then
+            '    RadGrid1.DataSource = dt
+            'Else
+            '    RadGrid1.DataSource = dt.Select("pvncd = '" & pvncd & "'")
+            'End If
+            command &= str_where
+        Else
+            If txt_CITIZEN_AUTHORIZE.Text <> "" Then
+                str_where = "where CITIZEN_ID_AUTHORIZE='" & txt_CITIZEN_AUTHORIZE.Text & "'"
+                If txt_lcnno_no.Text <> "" Then
+                    If str_where <> "" Then
+                        str_where &= " and lcnno_no like '%" & txt_lcnno_no.Text & "%'"
+                    Else
+                        str_where &= "lcnno_no like '%" & txt_lcnno_no.Text & "%'"
+                    End If
 
-        export_excel(dt2)
+                End If
+                'r_result = dt.Select(str_where)
+                command &= str_where
+            Else
+                If str_where = "" Then
+                    If str_where <> "" Then
+                        If txt_lcnno_no.Text <> "" Then
+                            str_where &= " and lcnno_no like '%" & txt_lcnno_no.Text & "%'"
+                        End If
+                    Else
+                        If txt_lcnno_no.Text <> "" Then
+                            str_where = "where lcnno_no like '%" & txt_lcnno_no.Text & "%'"
+
+                        End If
+                    End If
+                    'r_result = dt.Select(str_where)
+                    command &= str_where
+                Else
+                    If txt_lcnno_no.Text <> "" Then
+                        str_where = "where lcnno_no like '%" & txt_lcnno_no.Text & "%'"
+
+                    End If
+                    'r_result = dt.Select(str_where)
+                    command &= str_where
+                End If
+                'r_result = dt.Select(str_where)
+                'command &= str_where
+            End If
+            'dt2 = dt.Clone
+
+            'For Each dr As DataRow In r_result
+            '    dt2.Rows.Add(dr.ItemArray)
+            'Next
+
+
+
+
+            '----new
+
+        End If
+        'pvncd = 12
+        If rdl_stat.SelectedValue = 0 Then
+            If pvncd = 10 Then
+                'RadGrid1.DataSource = dt2
+
+                'command &= str_where
+            Else
+                'RadGrid1.DataSource = dt2.Select("pvncd = '" & pvncd & "'")
+                If command.Contains("where") Then
+                    command &= " and pvncd = '" & pvncd & "' and lcntpcd <> 'ผย1' "
+                Else
+                    command &= "where pvncd = '" & pvncd & "' and lcntpcd <> 'ผย1'"
+                End If
+
+            End If
+
+        ElseIf rdl_stat.SelectedValue = 1 Then
+            If pvncd = 10 Then
+                'RadGrid1.DataSource = dt2.Select("lcn_stat=0")
+                If command.Contains("where") Then
+                    command &= " and lcn_stat=0"
+                Else
+                    If command.Contains("pvncd") Then
+                        command &= " and lcn_stat=0 and lcntpcd <> 'ผย1' "
+                    Else
+                        command &= "where lcn_stat=0 and lcntpcd <> 'ผย1' "
+                    End If
+                End If
+
+            Else
+                'RadGrid1.DataSource = dt2.Select("lcn_stat=0 and pvncd = '" & pvncd & "'")
+                If command.Contains("where") Then
+                    command &= " and lcn_stat=0 and pvncd = '" & pvncd & "'"
+                Else
+                    command &= "where lcn_stat=0 and pvncd = '" & pvncd & "'"
+                End If
+
+            End If
+
+        ElseIf rdl_stat.SelectedValue = 2 Then
+            If pvncd = 10 Then
+                If command.Contains("where") Then
+                    command &= " and lcn_stat=0"
+                Else
+                    If command.Contains("pvncd") Then
+                        command &= " and lcn_stat=0  and lcntpcd <> 'ผย1' "
+                    Else
+                        command &= "where lcn_stat=0  and lcntpcd <> 'ผย1' "
+                    End If
+                End If
+            Else
+                'RadGrid1.DataSource = dt2.Select("lcn_stat=1 and pvncd = '" & pvncd & "'")
+                If command.Contains("where") Then
+                    command &= " and lcn_stat=1 and pvncd = '" & pvncd & "'"
+                Else
+                    command &= "where lcn_stat=1 and pvncd = '" & pvncd & "'"
+                End If
+            End If
+
+        End If
+        dt = bao_aa.Queryds(command)
+
+        export_excel(dt)
 
 
     End Sub
@@ -373,20 +486,55 @@ Public Class FRM_STAFF_LCN_SEARCH
 
         Dim str_where As String = ""
         Dim r_result As DataRow()
-
-        str_where = "pvncd = '" & _CLS.PVCODE & "'"
-        If rdl_stat.SelectedValue <> "0" Then
-            str_where &= " and cncnm = '" & rdl_stat.SelectedItem.Text & "'"
-        End If
-        r_result = dt.Select(str_where)
-
-
         Dim dt2 As New DataTable
-        dt2 = dt.Clone
+        If _CLS.PVCODE <> 10 Then
+            str_where = "chngwtcd = '" & _CLS.PVCODE & "'"
+            If rdl_stat.SelectedValue <> "0" Then
+                str_where &= " and cncnm = '" & rdl_stat.SelectedItem.Text & "'"
+            End If
+            If txt_lcnno_no.Text <> "" Then
+                str_where &= " and LCNNO_MANUAL like '%" & txt_lcnno_no.Text & "%'"
+            End If
 
-        For Each dr As DataRow In r_result
-            dt2.Rows.Add(dr.ItemArray)
-        Next
+            If txt_CITIZEN_AUTHORIZE.Text <> "" Then
+                str_where &= " and CITIZEN_ID_AUTHORIZE = '" & txt_CITIZEN_AUTHORIZE.Text & "'"
+            End If
+            r_result = dt.Select(str_where)
+            dt2 = dt.Clone
+
+            For Each dr As DataRow In r_result
+                dt2.Rows.Add(dr.ItemArray)
+            Next
+        Else
+            If str_where = "" Then
+                If txt_lcnno_no.Text <> "" Then
+                    str_where &= "LCNNO_MANUAL like '%" & txt_lcnno_no.Text & "%'"
+                End If
+            Else
+                If txt_lcnno_no.Text <> "" Then
+                    str_where &= " and LCNNO_MANUAL like '%" & txt_lcnno_no.Text & "%'"
+                End If
+            End If
+
+            If str_where = "" Then
+                If txt_CITIZEN_AUTHORIZE.Text <> "" Then
+                    str_where &= "CITIZEN_ID_AUTHORIZE = '" & txt_CITIZEN_AUTHORIZE.Text & "'"
+                End If
+            Else
+                If txt_CITIZEN_AUTHORIZE.Text <> "" Then
+                    str_where &= " and CITIZEN_ID_AUTHORIZE = '" & txt_CITIZEN_AUTHORIZE.Text & "'"
+                End If
+            End If
+
+
+            r_result = dt.Select(str_where)
+            dt2 = dt.Clone
+
+            For Each dr As DataRow In r_result
+                dt2.Rows.Add(dr.ItemArray)
+            Next
+        End If
+
 
         export_excel2(dt2)
     End Sub
@@ -398,7 +546,7 @@ Public Class FRM_STAFF_LCN_SEARCH
 
         dt2.Columns.Add("เลขภ.")
         dt2.Columns.Add("เลขใบอนุญาต")
-
+        dt2.Columns.Add("จังหวัด")
         dt2.Columns.Add("สถานะ")
 
         For Each dr As DataRow In dt.Rows
@@ -408,6 +556,7 @@ Public Class FRM_STAFF_LCN_SEARCH
             dr2("เวลาทำการ") = dr("PHR_TEXT_WORK_TIME")
             dr2("เลขภ.") = dr("PHR_TEXT_NUM")
             dr2("เลขใบอนุญาต") = dr("LCNNO_MANUAL")
+            dr2("จังหวัด") = dr("thachngwtnm")
             dr2("สถานะ") = dr("cncnm")
             dt2.Rows.Add(dr2)
         Next

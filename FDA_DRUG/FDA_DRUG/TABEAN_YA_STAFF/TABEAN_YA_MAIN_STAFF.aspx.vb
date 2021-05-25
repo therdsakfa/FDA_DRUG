@@ -332,7 +332,7 @@ Public Class TABEAN_YA_MAIN_STAFF
 
             End Try
             Try
-                If dao.fields.STATUS_ID = 8 Then
+                If dao.fields.STATUS_ID = 8 Or dao.fields.STATUS_ID = 7 Then
                     btn_add.Style.Add("display", "none")
                 End If
             Catch ex As Exception
