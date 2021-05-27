@@ -1055,6 +1055,13 @@ Public Class FRM_LCN_CONFIRM_DRUG
                 Catch ex As Exception
 
                 End Try
+                Try
+                    If dao_PHR.fields.PHR_TEXT_NUM <> "" Then
+                        dao_PHR.fields.PHR_TEXT_NUM = NumEng2Thai(dao_PHR.fields.PHR_TEXT_NUM)
+                    End If
+                Catch ex As Exception
+
+                End Try
                 class_xml.DALCN_PHRs.Add(dao_PHR.fields)
             Next
 

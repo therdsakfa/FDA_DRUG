@@ -368,6 +368,7 @@ Public Class FRM_STAFF_LCN_SEARCH
         Dim dt2 As New DataTable
         dt2.Columns.Add("ประเภทคำขอ")
         dt2.Columns.Add("เลขที่ใบอนุญาต")
+        dt2.Columns.Add("ประเภทใบอนุญาต")
         dt2.Columns.Add("ชื่อสถานที่")
 
         dt2.Columns.Add("ที่อยู่")
@@ -375,15 +376,18 @@ Public Class FRM_STAFF_LCN_SEARCH
 
         dt2.Columns.Add("จังหวัด")
         dt2.Columns.Add("เลขดำเนินการ")
+        dt2.Columns.Add("สถานะ")
         For Each dr As DataRow In dt.Rows
             Dim dr2 As DataRow = dt2.NewRow()
             dr2("ประเภทคำขอ") = dr("lcntpcd")
             dr2("เลขที่ใบอนุญาต") = dr("lcnno_no")
+            dr2("ประเภทใบอนุญาต") = dr("lcntpcd")
             dr2("ชื่อสถานที่") = dr("thanm")
             dr2("ที่อยู่") = dr("thanm_addr")
             dr2("ชื่อผู้ดำเนินกิจการ") = dr("grannm_lo")
             dr2("จังหวัด") = dr("thachngwtnm")
             dr2("เลขดำเนินการ") = dr("TR_ID")
+            dr2("สถานะ") = dr("STAT_DA")
             dt2.Rows.Add(dr2)
         Next
 
