@@ -368,12 +368,12 @@ Public Class FRM_STAFF_LCN_SEARCH
         Dim dt2 As New DataTable
         dt2.Columns.Add("ประเภทคำขอ")
         dt2.Columns.Add("เลขที่ใบอนุญาต")
-        dt2.Columns.Add("ประเภทใบอนุญาต")
+        'dt2.Columns.Add("ประเภทใบอนุญาต")
         dt2.Columns.Add("ชื่อสถานที่")
 
         dt2.Columns.Add("ที่อยู่")
         dt2.Columns.Add("ชื่อผู้ดำเนินกิจการ")
-
+        dt2.Columns.Add("เลขนิติฯ")
         dt2.Columns.Add("จังหวัด")
         dt2.Columns.Add("เลขดำเนินการ")
         dt2.Columns.Add("สถานะ")
@@ -381,9 +381,11 @@ Public Class FRM_STAFF_LCN_SEARCH
             Dim dr2 As DataRow = dt2.NewRow()
             dr2("ประเภทคำขอ") = dr("lcntpcd")
             dr2("เลขที่ใบอนุญาต") = dr("lcnno_no")
-            dr2("ประเภทใบอนุญาต") = dr("lcntpcd")
+            'dr2("ประเภทใบอนุญาต") = dr("lcntpcd")
             dr2("ชื่อสถานที่") = dr("thanm")
             dr2("ที่อยู่") = dr("thanm_addr")
+            dr2("เลขนิติฯ") = dr("CITIZEN_ID_AUTHORIZE")
+
             dr2("ชื่อผู้ดำเนินกิจการ") = dr("grannm_lo")
             dr2("จังหวัด") = dr("thachngwtnm")
             dr2("เลขดำเนินการ") = dr("TR_ID")
@@ -547,9 +549,10 @@ Public Class FRM_STAFF_LCN_SEARCH
         dt2.Columns.Add("ชื่อ")
         dt2.Columns.Add("นามสกุล")
         dt2.Columns.Add("เวลาทำการ")
-
+        dt2.Columns.Add("เลขนิติฯ")
         dt2.Columns.Add("เลขภ.")
         dt2.Columns.Add("เลขใบอนุญาต")
+        dt2.Columns.Add("ประเภทคำขอ")
         dt2.Columns.Add("จังหวัด")
         dt2.Columns.Add("สถานะ")
 
@@ -557,9 +560,11 @@ Public Class FRM_STAFF_LCN_SEARCH
             Dim dr2 As DataRow = dt2.NewRow()
             dr2("ชื่อ") = dr("phrnm")
             dr2("นามสกุล") = dr("thalnm")
+            dr2("เลขนิติฯ") = dr("CITIZEN_ID_AUTHORIZE")
             dr2("เวลาทำการ") = dr("PHR_TEXT_WORK_TIME")
             dr2("เลขภ.") = dr("PHR_TEXT_NUM")
             dr2("เลขใบอนุญาต") = dr("LCNNO_MANUAL")
+            dr2("ประเภทคำขอ") = dr("lcntpcd")
             dr2("จังหวัด") = dr("thachngwtnm")
             dr2("สถานะ") = dr("cncnm")
             dt2.Rows.Add(dr2)
