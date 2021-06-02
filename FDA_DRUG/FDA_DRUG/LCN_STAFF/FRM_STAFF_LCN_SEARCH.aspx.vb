@@ -384,7 +384,12 @@ Public Class FRM_STAFF_LCN_SEARCH
             'dr2("ประเภทใบอนุญาต") = dr("lcntpcd")
             dr2("ชื่อสถานที่") = dr("thanm")
             dr2("ที่อยู่") = dr("thanm_addr")
-            dr2("เลขนิติฯ") = dr("CITIZEN_ID_AUTHORIZE")
+            Try
+                dr2("เลขนิติฯ") = dr("CITIZEN_ID_AUTHORIZE")
+            Catch ex As Exception
+
+            End Try
+
 
             dr2("ชื่อผู้ดำเนินกิจการ") = dr("grannm_lo")
             dr2("จังหวัด") = dr("thachngwtnm")
@@ -419,7 +424,12 @@ Public Class FRM_STAFF_LCN_SEARCH
         For Each dr As DataRow In dt2.Rows
             tab = ""
             For i = 0 To dt2.Columns.Count - 1
-                Response.Write(tab & dr(i).ToString())
+                If i = 5 Then
+                    Response.Write(tab & "'" & dr(i))
+                Else
+                    Response.Write(tab & dr(i).ToString())
+                End If
+
                 tab = vbTab
             Next
             Response.Write(vbLf)
@@ -593,10 +603,26 @@ Public Class FRM_STAFF_LCN_SEARCH
         Next
         Response.Write(vbLf)
         Dim i As Integer
+        'For Each dr As DataRow In dt2.Rows
+        '    tab = ""
+        '    For i = 0 To dt2.Columns.Count - 1
+        '        If i = 3 Then
+        '            Response.Write(tab & "'" & dr(i))
+        '        Else
+        '            Response.Write(tab & dr(i).ToString())
+        '        End If
+        '    Next
+        '    Response.Write(vbLf)
+        'Next
         For Each dr As DataRow In dt2.Rows
             tab = ""
             For i = 0 To dt2.Columns.Count - 1
-                Response.Write(tab & dr(i).ToString())
+                If i = 3 Then
+                    Response.Write(tab & "'" & dr(i))
+                Else
+                    Response.Write(tab & dr(i).ToString())
+                End If
+
                 tab = vbTab
             Next
             Response.Write(vbLf)

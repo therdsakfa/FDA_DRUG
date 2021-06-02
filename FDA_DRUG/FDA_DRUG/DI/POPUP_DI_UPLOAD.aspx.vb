@@ -348,13 +348,13 @@ Public Class POPUP_DI_UPLOAD
                 Catch ex As Exception
 
                 End Try
-                Try
-                    If Len(p2.CERs.ORGANIZATION_CODE) < 4 Then
-                        Return False
-                    End If
-                Catch ex As Exception
+                'Try
+                '    If Len(p2.CERs.ORGANIZATION_CODE) < 4 Then
+                '        Return False
+                '    End If
+                'Catch ex As Exception
 
-                End Try
+                'End Try
                 Try
                     If Len(p2.CERs.DEPARTMENT_REGIST_CER_NAME) < 5 Then
                         Return False
@@ -362,13 +362,13 @@ Public Class POPUP_DI_UPLOAD
                 Catch ex As Exception
 
                 End Try
-                Try
-                    If Len(p2.CERs.LOCATION_STANDARD) < 5 Then
-                        Return False
-                    End If
-                Catch ex As Exception
+                'Try
+                '    If Len(p2.CERs.LOCATION_STANDARD) < 5 Then
+                '        Return False
+                '    End If
+                'Catch ex As Exception
 
-                End Try
+                'End Try
             End If
             If _Process = "36" Then
                 Try

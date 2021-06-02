@@ -700,6 +700,7 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
     <None Include="Web References\WS_DRUG_126\WS_DRUG.disco" />
+    <Content Include="WS_ATC_DRUG.asmx" />
     <Content Include="XML_DRUG_RGT.asmx" />
     <None Include="DESIGN\Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="DESIGN\Scripts\jquery-1.8.2.js" />
@@ -7409,6 +7410,10 @@
     </Compile>
     <Compile Include="WS_ACCEPT_RGT_AUTO.asmx.vb">
       <DependentUpon>WS_ACCEPT_RGT_AUTO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS_ATC_DRUG.asmx.vb">
+      <DependentUpon>WS_ATC_DRUG.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WS_DRUG_XML.asmx.vb">

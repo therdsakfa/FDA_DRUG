@@ -367,7 +367,7 @@ Public Class POPUP_DH_COMFIRM
 
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         dao_pdftemplate.GetDataby_TEMPLAETE(_process, _process, statusId, 0)
-        class_xml = cls_regis.gen_xml()
+        'class_xml = cls_regis.gen_xml()
         Dim paths As String = bao._PATH_DEFAULT
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _process, _YEARS, _TR_ID)

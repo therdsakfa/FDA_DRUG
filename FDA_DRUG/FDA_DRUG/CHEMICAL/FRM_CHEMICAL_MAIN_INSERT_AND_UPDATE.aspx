@@ -196,23 +196,7 @@
                                     </tr>
                                 </table>
 
-                                <%--<table>
-
-                                    <tr>
-                                        <td align="right" valign="top">
-                                            <asp:Label ID="lb_paylist" runat="server" Text="ชื่อสาร :"></asp:Label>
-                                        </td>
-                                        <td valign="top">
-                                            <asp:DropDownList ID="ddl_chemecal" runat="server" DataTextField="iowanm" DataValueField="IDA" Width="200px">
-                                            </asp:DropDownList>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="right">&nbsp;</td>
-                                        <td>
-                                            &nbsp;</td>
-                                    </tr>
-                                </table>--%>
+ 
 
 
                             <table width="100%">

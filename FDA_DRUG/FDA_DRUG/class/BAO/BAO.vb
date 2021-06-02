@@ -60,6 +60,14 @@ Namespace BAO
         Dim strSQL As String = String.Empty
         '
         ''
+        Public Function SP_ATC_DRUG_ROOT5_ALL() As DataTable
+            Dim sql As String = "exec dbo.SP_ATC_DRUG_ROOT5_ALL"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+
+            dta.TableName = "SP_ATC_DRUG_ROOT5_ALL"
+            Return dta
+        End Function
         Public Function GET_Vw_dalcn_phr() As DataTable
             Dim sql As String = "select * from [dbo].[Vw_dalcn_phr]"
             Dim dta As New DataTable
