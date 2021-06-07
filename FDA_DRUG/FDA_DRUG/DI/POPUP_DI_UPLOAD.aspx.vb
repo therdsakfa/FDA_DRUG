@@ -172,21 +172,21 @@ Public Class POPUP_DI_UPLOAD
 
                     'End Try
                     Try
-                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.NAME_ADDRESS) < 5 Then
+                        If Len(Trim(dao_CER_DETAIL_MANUFACTURE2.fields.NAME_ADDRESS)) < 2 Then
                             Return False
                         End If
                     Catch ex As Exception
 
                     End Try
                     Try
-                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER) < 5 Then
+                        If Len(Trim(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER)) < 2 Then
                             Return False
                         End If
                     Catch ex As Exception
 
                     End Try
                     Try
-                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_CITY) < 5 Then
+                        If Len(Trim(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_CITY)) < 2 Then
                             Return False
                         End If
                     Catch ex As Exception
@@ -221,21 +221,21 @@ Public Class POPUP_DI_UPLOAD
 
                     End Try
                     Try
-                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.NAME_ADDRESS) < 5 Then
+                        If Len(Trim(dao_CER_DETAIL_MANUFACTURE2.fields.NAME_ADDRESS)) < 2 Then
                             Return False
                         End If
                     Catch ex As Exception
 
                     End Try
                     Try
-                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER) < 5 Then
+                        If Len(Trim(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER)) < 2 Then
                             Return False
                         End If
                     Catch ex As Exception
 
                     End Try
                     Try
-                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_CITY) < 5 Then
+                        If Len(Trim(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_CITY)) < 2 Then
                             Return False
                         End If
                     Catch ex As Exception
@@ -267,7 +267,7 @@ Public Class POPUP_DI_UPLOAD
                 Next
                 Dim dao_c As New DAO_DRUG.TB_CER
                 Try
-                    If Len(p2.CERs.CERTIFICATION_NUMBER_ALL) < 5 Then
+                    If Len(Trim(p2.CERs.CERTIFICATION_NUMBER_ALL)) < 2 Then
                         Return False
                     End If
                 Catch ex As Exception
@@ -281,7 +281,7 @@ Public Class POPUP_DI_UPLOAD
                     Dim addr As String = ""
                     Try
                         addr = Trim(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER)
-                        If Len(addr) < 5 Then
+                        If Len(addr) < 2 Then
                             'chk_addr = False
                             Return False
                         End If
@@ -291,7 +291,7 @@ Public Class POPUP_DI_UPLOAD
                 Next
 
                 Try
-                    If Len(p2.CERs.CERTIFICATION_NUMBER_ALL) < 5 Then
+                    If Len(Trim(p2.CERs.CERTIFICATION_NUMBER_ALL)) < 2 Then
                         Return False
                     End If
                 Catch ex As Exception
@@ -305,7 +305,7 @@ Public Class POPUP_DI_UPLOAD
                     Dim ISO_STANDARD As String = ""
                     Try
                         ISO_STANDARD = Trim(dao_CER_DETAIL_MANUFACTURE3.fields.LOCATION_STANDARD)
-                        If Len(ISO_STANDARD) < 5 Then
+                        If Len(Trim(ISO_STANDARD)) < 2 Then
 
                             Return False
                         End If
@@ -318,21 +318,21 @@ Public Class POPUP_DI_UPLOAD
                 Dim dao_CER_DETAIL_MANUFACTURE2 As New DAO_DRUG.TB_CER_DETAIL_MANUFACTURE
                 For Each dao_CER_DETAIL_MANUFACTURE2.fields In p2.CER_DETAIL_MANUFACTUREs
                     Try
-                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.NAME_ADDRESS) < 5 Then
+                        If Len(Trim(dao_CER_DETAIL_MANUFACTURE2.fields.NAME_ADDRESS)) < 2 Then
                             Return False
                         End If
                     Catch ex As Exception
 
                     End Try
                     Try
-                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER) < 5 Then
+                        If Len(Trim(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER)) < 2 Then
                             Return False
                         End If
                     Catch ex As Exception
 
                     End Try
                     Try
-                        If Len(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_CITY) < 5 Then
+                        If Len(Trim(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_CITY)) < 2 Then
                             Return False
                         End If
                     Catch ex As Exception
@@ -342,7 +342,7 @@ Public Class POPUP_DI_UPLOAD
 
                 Dim dao_c As New DAO_DRUG.TB_CER
                 Try
-                    If Len(p2.CERs.CERTIFICATION_NUMBER_ALL) < 5 Then
+                    If Len(Trim(p2.CERs.CERTIFICATION_NUMBER_ALL)) < 2 Then
                         Return False
                     End If
                 Catch ex As Exception
@@ -356,7 +356,7 @@ Public Class POPUP_DI_UPLOAD
 
                 'End Try
                 Try
-                    If Len(p2.CERs.DEPARTMENT_REGIST_CER_NAME) < 5 Then
+                    If Len(Trim(p2.CERs.DEPARTMENT_REGIST_CER_NAME)) < 2 Then
                         Return False
                     End If
                 Catch ex As Exception
@@ -372,14 +372,14 @@ Public Class POPUP_DI_UPLOAD
             End If
             If _Process = "36" Then
                 Try
-                    If Len(p2.CERs.CERTIFICATION_NUMBER_ALL) < 5 Then
+                    If Len(Trim(p2.CERs.CERTIFICATION_NUMBER_ALL)) < 2 Then
                         Return False
                     End If
                 Catch ex As Exception
 
                 End Try
                 Try
-                    If Len(p2.CERs.DEPARTMENT_REGIST_CER_DOCNO) < 5 Then
+                    If Len(Trim(p2.CERs.DEPARTMENT_REGIST_CER_DOCNO)) < 2 Then
                         Return False
                     End If
                 Catch ex As Exception
