@@ -459,6 +459,16 @@ Public Class BAO_SHOW
         dta.TableName = "SP_DRRGT_EDIT_REQUEST_HISTORY"
         Return dta
     End Function
+    '
+    Public Function SP_DRRGT_EDIT_HISTORY_BY_NEWCODE(ByVal newcode As String) As DataTable
+        Dim sql As String = "exec SP_DRRGT_EDIT_HISTORY_BY_NEWCODE @newcode='" & newcode & "'"
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_DRRGT_EDIT_HISTORY_BY_NEWCODE"
+        Return dta
+    End Function
+
+
     Public Function SP_DRRGT_SPC_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
         Dim sql As String = "exec SP_DRRGT_SPC_BY_FK_IDA @FK_IDA=" & fk_ida
         Dim dta As New DataTable

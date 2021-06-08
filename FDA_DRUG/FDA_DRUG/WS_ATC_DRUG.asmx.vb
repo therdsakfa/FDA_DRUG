@@ -17,5 +17,13 @@ Public Class WS_ATC_DRUG
         dt = bao_atc.SP_ATC_DRUG_ROOT5_ALL()
         Return dt
     End Function
+    '
 
+    <WebMethod()>
+    Public Function GET_DATA_EDIT_HISTORY(ByVal newcode As String) As DataTable
+        Dim dt As New DataTable
+        Dim bao_atc As New BAO_SHOW
+        dt = bao_atc.SP_DRRGT_EDIT_HISTORY_BY_NEWCODE(newcode)
+        Return dt
+    End Function
 End Class
