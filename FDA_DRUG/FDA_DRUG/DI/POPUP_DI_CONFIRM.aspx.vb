@@ -95,7 +95,7 @@ Public Class POPUP_DI_CONFIRM
         'Dim ws As New AUTHEN_LOG.Authentication
         'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", _TR_ID, HttpContext.Current.Request.Url.AbsoluteUri, "ยื่นคำขอ Cert", _ProcessID)
 
-        If date_now <= date_exp Then
+        If date_now <= date_exp And _ProcessID <> 34 Then
 
             dao.fields.STATUS_ID = 2
             dao.fields.REQUEST_DATE = Date.Now
@@ -109,7 +109,22 @@ Public Class POPUP_DI_CONFIRM
 
             alert("ยื่นคำขอเรียบร้อยแล้ว")
         Else
-            alert("ไม่สารมารถยื่นคำขอได้ เนื่องจาก Cert หมดอายุ")
+            If _ProcessID = 34 Then
+                dao.fields.STATUS_ID = 2
+                dao.fields.REQUEST_DATE = Date.Now
+                Try
+                    dao.fields.lmdfdate = Bind_Date(CDate(Date.Now))
+                Catch ex As Exception
+
+                End Try
+                dao.update()
+                AddLogStatus(2, Request.QueryString("ProcessID"), _CLS.CITIZEN_ID, _IDA)
+
+                alert("ยื่นคำขอเรียบร้อยแล้ว")
+            Else
+                alert("ไม่สารมารถยื่นคำขอได้ เนื่องจาก Cert หมดอายุ")
+            End If
+
         End If
 
     End Sub
