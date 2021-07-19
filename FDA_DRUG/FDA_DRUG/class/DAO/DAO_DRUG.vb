@@ -10790,7 +10790,7 @@ Namespace DAO_DRUG
         End Sub
 
         Public Sub GetDataAll()
-            datas = (From p In db.dramlparts Select p)
+            datas = (From p In db.dramlparts Select p Order By p.ampartcd Ascending)
             For Each Me.fields In datas
             Next
         End Sub

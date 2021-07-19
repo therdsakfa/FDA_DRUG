@@ -2656,15 +2656,32 @@ Public Class POPUP_DR_UPLOAD
                 Catch ex As Exception
 
                 End Try
+
+                'Dim dao_ani_rq As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_ANIMAL
+                'dao_ani_rq.GetDataby_Newcode(newcode)
+
+
                 Try
                     Dim dao_amluse As New DAO_DRUG.TB_dramlusetp
-                    dao_amluse.GetDataby_usetpnm(dao_aniuse_rq.fields.usetpnm)
+                    dao_amluse.GetDataby_usetpnm(Trim(dao_aniuse_rq.fields.usetpnm))
                     .usetpcd = dao_amluse.fields.usetpcd
                 Catch ex As Exception
 
                 End Try
             End With
             dao_ani_ins.insert()
+        Next
+
+
+        Dim dao_nouse As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_NO_USE
+        dao_nouse.GetDataby_Newcode(newcode)
+        For Each dao_nouse.fields In dao_nouse.datas
+            Dim dao_no As New DAO_DRUG.TB_DRRQT_NO_USE
+            With dao_no.fields
+                .FK_IDA = IDA_rgt
+                .NO_USE_DESCRIPTION = dao_nouse.fields.nouse
+            End With
+            dao_no.insert()
         Next
     End Sub
 End Class
