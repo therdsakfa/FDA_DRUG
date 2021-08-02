@@ -30,12 +30,25 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU
                 t_node.NavigateUrl = HttpContext.Current.Request.Url.AbsoluteUri & "#"
             Else
                 If Request.QueryString("lct_ida") <> "" Then
-                    t_node.NavigateUrl = dao.fields.URL & "&lct_ida=" & Request.QueryString("lct_ida")
+                    If dao.fields.URL.Contains("TOKEN") Or dao.fields.URL.Contains("AUTHEN") Then
+                        t_node.NavigateUrl = dao.fields.URL & "?Token=" & _CLS.TOKEN
+                    Else
+                        t_node.NavigateUrl = dao.fields.URL & "&lct_ida=" & Request.QueryString("lct_ida")
+                    End If
+
+                    't_node.NavigateUrl = dao.fields.URL & "&lct_ida=" & Request.QueryString("lct_ida")
                     If Request.QueryString("lcn_ida") <> "" Then
                         t_node.NavigateUrl = t_node.NavigateUrl & "&lcn_ida=" & Request.QueryString("lcn_ida")
                     End If
                 Else
-                    t_node.NavigateUrl = dao.fields.URL
+
+                    't_node.NavigateUrl = dao.fields.URL
+                    If dao.fields.URL.Contains("TOKEN") Or dao.fields.URL.Contains("AUTHEN") Then
+                        t_node.NavigateUrl = dao.fields.URL & "?Token=" & _CLS.TOKEN
+                    Else
+                        t_node.NavigateUrl = dao.fields.URL
+                    End If
+
                 End If
             End If
 
@@ -78,21 +91,43 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU
             End Try
             If dao.fields.URL <> "#" Then
                 If Request.QueryString("lct_ida") <> "" Then
-                    t_node2.NavigateUrl = dao.fields.URL & "&lct_ida=" & _lctida
+                    If dao.fields.URL.Contains("TOKEN") Or dao.fields.URL.Contains("AUTHEN") Then
+                        t_node2.NavigateUrl = dao.fields.URL & "?Token=" & _CLS.TOKEN
+                    Else
+                        t_node2.NavigateUrl = dao.fields.URL & "&lct_ida=" & _lctida
+                    End If
+
+                    't_node2.NavigateUrl = dao.fields.URL & "&lct_ida=" & _lctida
+
                     If Request.QueryString("lcn_ida") <> "" Then
                         t_node2.NavigateUrl = t_node2.NavigateUrl & "&lcn_ida=" & Request.QueryString("lcn_ida")
                     End If
                 Else
-                    t_node2.NavigateUrl = dao.fields.URL
+                    ' t_node2.NavigateUrl = dao.fields.URL
+                    If dao.fields.URL.Contains("TOKEN") Or dao.fields.URL.Contains("AUTHEN") Then
+                        t_node2.NavigateUrl = dao.fields.URL & "?Token=" & _CLS.TOKEN
+                    Else
+                        t_node2.NavigateUrl = dao.fields.URL
+                    End If
                 End If
             Else
                 If Request.QueryString("lct_ida") <> "" Then
-                    t_node2.NavigateUrl = dao.fields.URL & "&lct_ida=" & _lctida
+                    ' t_node2.NavigateUrl = dao.fields.URL & "&lct_ida=" & _lctida
+                    If dao.fields.URL.Contains("TOKEN") Or dao.fields.URL.Contains("AUTHEN") Then
+                        t_node2.NavigateUrl = dao.fields.URL & "?Token=" & _CLS.TOKEN
+                    Else
+                        t_node2.NavigateUrl = dao.fields.URL & "&lct_ida=" & _lctida
+                    End If
                     If Request.QueryString("lcn_ida") <> "" Then
                         t_node2.NavigateUrl = t_node2.NavigateUrl & "&lcn_ida=" & Request.QueryString("lcn_ida")
                     End If
                 Else
-                    t_node2.NavigateUrl = dao.fields.URL
+                    ' t_node2.NavigateUrl = dao.fields.URL
+                    If dao.fields.URL.Contains("TOKEN") Or dao.fields.URL.Contains("AUTHEN") Then
+                        t_node2.NavigateUrl = dao.fields.URL & "?Token=" & _CLS.TOKEN
+                    Else
+                        t_node2.NavigateUrl = dao.fields.URL
+                    End If
                 End If
             End If
 

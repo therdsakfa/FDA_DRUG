@@ -2125,6 +2125,12 @@ Partial Public Class Linq_DRUGDataContext
     End Sub
   Partial Private Sub DeleteSTAFF_ASSIGNING_WORK(instance As STAFF_ASSIGNING_WORK)
     End Sub
+  Partial Private Sub InsertLOG_CHEM(instance As LOG_CHEM)
+    End Sub
+  Partial Private Sub UpdateLOG_CHEM(instance As LOG_CHEM)
+    End Sub
+  Partial Private Sub DeleteLOG_CHEM(instance As LOG_CHEM)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -4285,6 +4291,12 @@ Partial Public Class Linq_DRUGDataContext
 	Public ReadOnly Property STAFF_ASSIGNING_WORKs() As System.Data.Linq.Table(Of STAFF_ASSIGNING_WORK)
 		Get
 			Return Me.GetTable(Of STAFF_ASSIGNING_WORK)
+		End Get
+	End Property
+	
+	Public ReadOnly Property LOG_CHEMs() As System.Data.Linq.Table(Of LOG_CHEM)
+		Get
+			Return Me.GetTable(Of LOG_CHEM)
 		End Get
 	End Property
 End Class
@@ -138858,6 +138870,178 @@ Partial Public Class STAFF_ASSIGNING_WORK
 				Me._STAFF_NAME = value
 				Me.SendPropertyChanged("STAFF_NAME")
 				Me.OnSTAFF_NAMEChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.LOG_CHEM")>  _
+Partial Public Class LOG_CHEM
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _FK_IDA As System.Nullable(Of Integer)
+	
+	Private _CREATE_DATE As System.Nullable(Of Date)
+	
+	Private _DESCRIPTION As String
+	
+	Private _CITIZEN_ID As String
+	
+	Private _URL As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnFK_IDAChanged()
+    End Sub
+    Partial Private Sub OnCREATE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnCREATE_DATEChanged()
+    End Sub
+    Partial Private Sub OnDESCRIPTIONChanging(value As String)
+    End Sub
+    Partial Private Sub OnDESCRIPTIONChanged()
+    End Sub
+    Partial Private Sub OnCITIZEN_IDChanging(value As String)
+    End Sub
+    Partial Private Sub OnCITIZEN_IDChanged()
+    End Sub
+    Partial Private Sub OnURLChanging(value As String)
+    End Sub
+    Partial Private Sub OnURLChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
+	Public Property FK_IDA() As System.Nullable(Of Integer)
+		Get
+			Return Me._FK_IDA
+		End Get
+		Set
+			If (Me._FK_IDA.Equals(value) = false) Then
+				Me.OnFK_IDAChanging(value)
+				Me.SendPropertyChanging
+				Me._FK_IDA = value
+				Me.SendPropertyChanged("FK_IDA")
+				Me.OnFK_IDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATE_DATE", DbType:="DateTime")>  _
+	Public Property CREATE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CREATE_DATE
+		End Get
+		Set
+			If (Me._CREATE_DATE.Equals(value) = false) Then
+				Me.OnCREATE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATE_DATE = value
+				Me.SendPropertyChanged("CREATE_DATE")
+				Me.OnCREATE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DESCRIPTION", DbType:="NVarChar(MAX)")>  _
+	Public Property DESCRIPTION() As String
+		Get
+			Return Me._DESCRIPTION
+		End Get
+		Set
+			If (String.Equals(Me._DESCRIPTION, value) = false) Then
+				Me.OnDESCRIPTIONChanging(value)
+				Me.SendPropertyChanging
+				Me._DESCRIPTION = value
+				Me.SendPropertyChanged("DESCRIPTION")
+				Me.OnDESCRIPTIONChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CITIZEN_ID", DbType:="NVarChar(50)")>  _
+	Public Property CITIZEN_ID() As String
+		Get
+			Return Me._CITIZEN_ID
+		End Get
+		Set
+			If (String.Equals(Me._CITIZEN_ID, value) = false) Then
+				Me.OnCITIZEN_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._CITIZEN_ID = value
+				Me.SendPropertyChanged("CITIZEN_ID")
+				Me.OnCITIZEN_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_URL", DbType:="NVarChar(MAX)")>  _
+	Public Property URL() As String
+		Get
+			Return Me._URL
+		End Get
+		Set
+			If (String.Equals(Me._URL, value) = false) Then
+				Me.OnURLChanging(value)
+				Me.SendPropertyChanging
+				Me._URL = value
+				Me.SendPropertyChanged("URL")
+				Me.OnURLChanged
 			End If
 		End Set
 	End Property
