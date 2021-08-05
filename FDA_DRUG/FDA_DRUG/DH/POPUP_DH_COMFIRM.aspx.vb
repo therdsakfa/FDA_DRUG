@@ -167,52 +167,76 @@ Public Class POPUP_DH_COMFIRM
                 AddLogStatus(8, _process, _CLS.CITIZEN_ID, _IDA)
                 alert("ยื่นคำขอเรียบร้อยแล้ว เลขจดแจ้ง 15 หลักคือ คือ " & run_number)
             Else
-                If _process = 14 Then
-                    dao.fields.STATUS_ID = 10
 
-                    Dim RCVNO As String = ""
-                    Dim run_number As String = ""
-                    Dim bao2 As New BAO.GenNumber
-                    RCVNO = bao2.GEN_NO_04(con_year(Date.Now.Year()), _CLS.PVCODE, _process, "", "", 0, _IDA, "")
-                    dao.fields.rcvno = RCVNO
-                    dao.fields.RCVNO_DISPLAY = bao2.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
-                    dao.fields.rcvdate = Date.Now
-                    dao.fields.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
-                    dao.fields.REQUEST_DATE = Date.Now
+                If chk_exp(_IDA) > 0 Then
+                    If _process = 14 Then
+                        dao.fields.STATUS_ID = 10
 
-                    Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
-                    dao_lcn.GetDataby_IDA(lcn_ida)
-                    Try
-                        dao.fields.lcntpcd = dao_lcn.fields.lcntpcd
-                    Catch ex As Exception
+                        Dim RCVNO As String = ""
+                        Dim run_number As String = ""
+                        Dim bao2 As New BAO.GenNumber
+                        RCVNO = bao2.GEN_NO_04(con_year(Date.Now.Year()), _CLS.PVCODE, _process, "", "", 0, _IDA, "")
+                        dao.fields.rcvno = RCVNO
+                        dao.fields.RCVNO_DISPLAY = bao2.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
+                        dao.fields.rcvdate = Date.Now
+                        dao.fields.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
+                        dao.fields.REQUEST_DATE = Date.Now
 
-                    End Try
-                    Try
-                        dao.fields.pvnabbr = dao_lcn.fields.pvnabbr
-                    Catch ex As Exception
+                        Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
+                        dao_lcn.GetDataby_IDA(lcn_ida)
+                        Try
+                            dao.fields.lcntpcd = dao_lcn.fields.lcntpcd
+                        Catch ex As Exception
 
-                    End Try
-                    Try
-                        dao.fields.lcnsid = dao_lcn.fields.lcnsid
-                    Catch ex As Exception
+                        End Try
+                        Try
+                            dao.fields.pvnabbr = dao_lcn.fields.pvnabbr
+                        Catch ex As Exception
 
-                    End Try
-                    dao.update()
-                ElseIf _process = 15 Then
-                    AddLogStatus(2, _process, _CLS.CITIZEN_ID, _IDA)
-                    dao.fields.STATUS_ID = 2
-                    dao.fields.REQUEST_DATE = Date.Now
-                    dao.update()
-                    alert("ยื่นคำขอเรียบร้อยแล้ว")
+                        End Try
+                        Try
+                            dao.fields.lcnsid = dao_lcn.fields.lcnsid
+                        Catch ex As Exception
+
+                        End Try
+                        dao.update()
+                    ElseIf _process = 15 Then
+                        AddLogStatus(2, _process, _CLS.CITIZEN_ID, _IDA)
+                        dao.fields.STATUS_ID = 2
+                        dao.fields.REQUEST_DATE = Date.Now
+                        dao.update()
+                        alert("ยื่นคำขอเรียบร้อยแล้ว")
+                    End If
+                Else
+                    Response.Write("<script type='text/javascript'>window.parent.alert('ไม่สามารถยื่นได้เนื่องจาก Cert ของท่านหมดอายุ');</script> ")
                 End If
 
+
+
             End If
+
+
+
+
         End If
 
 
         'End If
 
     End Sub
+    Function chk_exp(ByVal IDA As Integer) As Integer
+        Dim i As Integer = 0
+        Dim dao_cer As New DAO_DRUG.TB_DH15_DETAIL_CER
+        dao_cer.GetDataby_FK_IDA(IDA)
+        Try
+            If dao_cer.fields.EXP_DOCUMENT_DATE >= CDate(Date.Now) Then
+                i = 1
+            End If
+        Catch ex As Exception
+
+        End Try
+        Return i
+    End Function
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');parent.close_modal();</script> ")
     End Sub

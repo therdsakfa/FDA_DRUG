@@ -44,6 +44,7 @@
         <asp:Button ID="btn_test_str" runat="server" Text="test str" />
         <asp:Button ID="Button33" runat="server" Text="ดึงสาร transfer" />
         <asp:Button ID="Button34" runat="server" Text="Button" />
+        <asp:Button ID="Button35" runat="server" Text="test date" />
     <h2>
         บันทึกข้อมูลวันที่ขอตรวจ
         <telerik:RadScriptManager ID="RadScriptManager1" Runat="server">

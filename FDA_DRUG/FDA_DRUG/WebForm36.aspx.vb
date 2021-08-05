@@ -3085,5 +3085,18 @@ Public Class WebForm36
         '    dao_aniuse_rg.insert()
         'Next
     End Sub
+
+    Protected Sub Button35_Click(sender As Object, e As EventArgs) Handles Button35.Click
+        Dim i As Integer = 0
+        Dim dao_cer As New DAO_DRUG.TB_DH15_DETAIL_CER
+        dao_cer.GetDataby_FK_IDA(22158)
+        Try
+            If dao_cer.fields.EXP_DOCUMENT_DATE >= CDate(Date.Now) Then
+                i = 1
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
 
