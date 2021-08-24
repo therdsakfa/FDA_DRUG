@@ -2138,5 +2138,11 @@
         <elementListCompartment Id="0d46f756-1775-4e54-bb13-d6ff38d91eeb" absoluteBounds="7.265, 13.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="3f0a2093-a089-4b4b-a37f-390aa6a21d98" isExpanded="false" absoluteBounds="2.625, 5.875, 2, 0.45">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/LOG_CHEM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd4e81ff-429a-48e6-b990-9381280b0f26" absoluteBounds="2.6399999999999997, 6.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

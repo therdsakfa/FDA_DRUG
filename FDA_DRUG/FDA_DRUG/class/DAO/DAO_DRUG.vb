@@ -10790,7 +10790,7 @@ Namespace DAO_DRUG
         End Sub
 
         Public Sub GetDataAll()
-            datas = (From p In db.dramlparts Select p)
+            datas = (From p In db.dramlparts Select p Order By p.ampartcd Ascending)
             For Each Me.fields In datas
             Next
         End Sub
@@ -14197,6 +14197,38 @@ Namespace DAO_DRUG
 
         Public Sub GetDataALL()
             datas = (From p In db.STAFF_ASSIGNING_WORKs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+    '
+    Public Class TB_LOG_CHEM
+        Inherits MAINCONTEXT 'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
+
+        Public fields As New LOG_CHEM
+
+        Public Sub insert()
+            db.LOG_CHEMs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.LOG_CHEMs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal _IDA As Integer)
+
+            datas = (From p In db.LOG_CHEMs Where p.IDA = _IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataALL()
+            datas = (From p In db.LOG_CHEMs Select p)
             For Each Me.fields In datas
             Next
         End Sub

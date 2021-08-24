@@ -97,8 +97,8 @@ Public Class UC_SUB_DRUG_ANIMAL
         ddl_dramlpart.DataBind()
 
         Dim item As New ListItem
-        item.Text = "--กรุณาเลือก--"
-        item.Value = "0"
+        'item.Text = "--กรุณาเลือก--"
+        'item.Value = "0"
         ddl_dramlpart.Items.Insert(0, item)
     End Sub
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click

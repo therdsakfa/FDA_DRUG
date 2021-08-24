@@ -671,4 +671,58 @@
             Next
         End Sub
     End Class
+    '
+    Public Class TB_XML_DRUG_NO_USE
+        Inherits MAINCONTEXT2 'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
+
+        Public fields As New XML_DRUG_NO_USE
+        Private _Details As New List(Of XML_DRUG_NO_USE)
+        Public Property Details() As List(Of XML_DRUG_NO_USE)
+            Get
+                Return _Details
+            End Get
+            Set(ByVal value As List(Of XML_DRUG_NO_USE))
+                _Details = value
+            End Set
+        End Property
+
+        Private Sub AddDetails()
+            Details.Add(fields)
+            fields = New XML_DRUG_NO_USE
+        End Sub
+        Public Sub insert()
+            db.XML_DRUG_NO_USEs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.XML_DRUG_NO_USEs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.XML_DRUG_NO_USEs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.XML_DRUG_NO_USEs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_Newcode(ByVal newcode As String)
+
+            datas = (From p In db.XML_DRUG_NO_USEs Where p.Newcode = newcode Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+    End Class
 End Namespace

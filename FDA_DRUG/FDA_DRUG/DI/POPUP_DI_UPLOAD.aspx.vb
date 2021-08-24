@@ -275,29 +275,29 @@ Public Class POPUP_DI_UPLOAD
                 End Try
 
             End If
-            If _Process <> "32" Then
-                Dim dao_CER_DETAIL_MANUFACTURE2 As New DAO_DRUG.TB_CER_DETAIL_MANUFACTURE
-                For Each dao_CER_DETAIL_MANUFACTURE2.fields In p2.CER_DETAIL_MANUFACTUREs
-                    Dim addr As String = ""
-                    Try
-                        addr = Trim(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER)
-                        If Len(addr) < 2 Then
-                            'chk_addr = False
-                            Return False
-                        End If
-                    Catch ex As Exception
+            'If _Process <> "32" Then
+            '    Dim dao_CER_DETAIL_MANUFACTURE2 As New DAO_DRUG.TB_CER_DETAIL_MANUFACTURE
+            '    For Each dao_CER_DETAIL_MANUFACTURE2.fields In p2.CER_DETAIL_MANUFACTUREs
+            '        Dim addr As String = ""
+            '        Try
+            '            addr = Trim(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER)
+            '            If Len(addr) < 2 Then
+            '                'chk_addr = False
+            '                Return False
+            '            End If
+            '        Catch ex As Exception
 
-                    End Try
-                Next
+            '        End Try
+            '    Next
 
-                Try
-                    If Len(Trim(p2.CERs.CERTIFICATION_NUMBER_ALL)) < 2 Then
-                        Return False
-                    End If
-                Catch ex As Exception
+            '    Try
+            '        If Len(Trim(p2.CERs.CERTIFICATION_NUMBER_ALL)) < 2 Then
+            '            Return False
+            '        End If
+            '    Catch ex As Exception
 
-                End Try
-            End If
+            '    End Try
+            'End If
 
             If _Process = "32" Then
                 Dim dao_CER_DETAIL_MANUFACTURE3 As New DAO_DRUG.TB_CER_DETAIL_MANUFACTURE
@@ -312,6 +312,85 @@ Public Class POPUP_DI_UPLOAD
                     Catch ex As Exception
 
                     End Try
+                Next
+            End If
+            If _Process = "34" Then
+                Dim dao_CER_DETAIL_MANUFACTURE2 As New DAO_DRUG.TB_CER_DETAIL_MANUFACTURE
+                For Each dao_CER_DETAIL_MANUFACTURE2.fields In p2.CER_DETAIL_MANUFACTUREs
+                    Dim addr As String = ""
+                    Try
+                        addr = Trim(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_NUMBER)
+                        If Len(addr) < 2 Then
+                            'chk_addr = False
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        If Len(Trim(dao_CER_DETAIL_MANUFACTURE2.fields.ADDRESS_CITY)) < 2 Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+
+                    Dim iso1 As String = ""
+                    Dim LOCATION_STANDARD As String = ""
+                    Dim buyer_country As String = ""
+                    Try
+                        iso1 = dao_CER_DETAIL_MANUFACTURE2.fields.COUNTRY_ID
+                        If iso1 = "" Or iso1 = "0" Then
+                            Return False
+                        End If
+
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+
+                        LOCATION_STANDARD = dao_CER_DETAIL_MANUFACTURE2.fields.LOCATION_STANDARD
+                        If LOCATION_STANDARD = "" Or LOCATION_STANDARD = "0" Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        If Len(Trim(dao_CER_DETAIL_MANUFACTURE2.fields.GLN)) < 2 Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        Try
+                            If Len(Trim(p2.CERs.BUYER_NAME)) < 2 Then
+                                Return False
+                            End If
+                        Catch ex As Exception
+
+                        End Try
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        buyer_country = p2.CERs.BUYER_COUNTRY
+                        If buyer_country = "" Or buyer_country = "0" Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+
+                    Try
+                        If Len(Trim(p2.CERs.BUYER_STANDARD)) < 2 Then
+                            Return False
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+
                 Next
             End If
             If _Process = "33" Then

@@ -14,6 +14,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style2 {}
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -41,6 +44,7 @@
         <asp:Button ID="btn_test_str" runat="server" Text="test str" />
         <asp:Button ID="Button33" runat="server" Text="ดึงสาร transfer" />
         <asp:Button ID="Button34" runat="server" Text="Button" />
+        <asp:Button ID="Button35" runat="server" Text="test date" />
     <h2>
         บันทึกข้อมูลวันที่ขอตรวจ
         <telerik:RadScriptManager ID="RadScriptManager1" Runat="server">
@@ -139,16 +143,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>ชื่อสถานที่ :</td>
-                    <td>
+                    <td class="auto-style2">ชื่อสถานที่ :</td>
+                    <td class="auto-style2" rowspan="2">
                         <asp:Label ID="lbl_thanameplace" runat="server" Text="-"></asp:Label>
+                        <asp:Label ID="lbl_addr" runat="server" Text="-"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td>ที่ตั้ง :</td>
-                    <td>
-                        <asp:Label ID="lbl_addr" runat="server" Text="-"></asp:Label>
-                    </td>
                 </tr>
                 <tr>
                     <td>ประเภทใบอนุญาต :</td>

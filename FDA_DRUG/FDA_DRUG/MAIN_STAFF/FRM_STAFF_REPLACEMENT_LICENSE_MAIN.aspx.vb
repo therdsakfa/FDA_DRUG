@@ -126,7 +126,7 @@ Public Class FRM_STAFF_REPLACEMENT_LICENSE_MAIN
         If e.CommandName = "sel" Then
             Dim item As GridDataItem
             item = e.Item
-            _CLS.CITIZEN_ID_AUTHORIZE = item("IDENTIFY").Text
+            _CLS.CITIZEN_ID_AUTHORIZE = Trim(item("IDENTIFY").Text)
             _CLS = bao_infor.load_lcnsid_customer(_CLS)
             _CLS = bao_infor.load_name(_CLS)
             Session("CLS") = _CLS

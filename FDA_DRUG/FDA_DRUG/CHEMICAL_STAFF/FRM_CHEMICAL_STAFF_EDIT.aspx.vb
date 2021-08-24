@@ -1,7 +1,21 @@
 ﻿Public Class FRM_CHEMICAL_STAFF_EDIT
     Inherits System.Web.UI.Page
+    Private _CLS As New CLS_SESSION
+    Sub RunSession()
+        Try
+            If Session("CLS") Is Nothing Then
+                Response.Redirect("http://privus.fda.moph.go.th/")
+            Else
+                _CLS = Session("CLS")
+            End If
 
+        Catch ex As Exception
+            Response.Redirect("http://privus.fda.moph.go.th/")
+        End Try
+    End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        RunSession()
+
         If Not IsPostBack Then
             If Request.QueryString("IDA") <> "" Then
                 Dim dao As New DAO_DRUG.TB_MAS_CHEMICAL
@@ -91,19 +105,65 @@
     End Sub
 
     Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
+        Dim old_data As String = ""
+        Dim new_data As String = ""
+        Dim FK_IDA As Integer = 0
         If Request.QueryString("IDA") <> "" Then
             Dim dao As New DAO_DRUG.TB_MAS_CHEMICAL
             dao.GetDataby_IDA(Request.QueryString("IDA"))
+            FK_IDA = dao.fields.IDA
+            Try
+                old_data = "เดิมชื่อสาร : " & dao.fields.iowanm & " CAS NUMBER : " & dao.fields.cas_number & " INN : " & dao.fields.INN & " INN_TH : " & dao.fields.INN_TH &
+                    " aori : " & dao.fields.aori & " iowacd : " & dao.fields.iowacd & " Run NO. : " & dao.fields.runno & " salt : " & dao.fields.salt & " syn : " & dao.fields.syn &
+                    " Look Type (Active or No) : " & dao.fields.look_type & " MODERN TRADITION : " & dao.fields.MODERN_TRADITION & " เป็นสารในทะเบียน : " & dao.fields.REGIS_STATUS
+            Catch ex As Exception
+
+            End Try
+            Try
+                new_data = "เดิมชื่อสาร : " & Txt_Name.Text & " CAS NUMBER : " & txt_cas.Text & " INN : " & txt_INN.Text & " INN_TH : " & txt_INN_TH.Text &
+                    " aori : " & ddl_aori.SelectedValue & " iowacd : " & txt_iowacd.Text & " Run NO. : " & txt_runno.Text & " salt : " & txt_salt.Text & " syn : " & txt_syn.Text &
+                    " Look Type (Active or No) : " & ddl_Look.SelectedValue & " MODERN TRADITION : " & ddl_Modern_drug.SelectedValue & " เป็นสารในทะเบียน : " & ddl_Regis.SelectedValue
+            Catch ex As Exception
+
+            End Try
+
             set_data(dao)
             dao.update()
-            alert("แก้ไขเรียบร้อยแล้ว")
+            'alert("แก้ไขเรียบร้อยแล้ว")
         ElseIf Request.QueryString("iowa") <> "" Then
             Dim dao As New DAO_DRUG.TB_MAS_CHEMICAL
             dao.Get_data_by_iowa(Request.QueryString("iowa"))
+            FK_IDA = dao.fields.IDA
+            Try
+                old_data = "แก้ไข เดิมชื่อสาร : " & dao.fields.iowanm & " CAS NUMBER : " & dao.fields.cas_number & " INN : " & dao.fields.INN & " INN_TH : " & dao.fields.INN_TH &
+                    " aori : " & dao.fields.aori & " iowacd : " & dao.fields.iowacd & " Run NO. : " & dao.fields.runno & " salt : " & dao.fields.salt & " syn : " & dao.fields.syn &
+                    " Look Type (Active or No) : " & dao.fields.look_type & " MODERN TRADITION : " & dao.fields.MODERN_TRADITION & " เป็นสารในทะเบียน : " & dao.fields.REGIS_STATUS
+            Catch ex As Exception
+
+            End Try
+            Try
+                new_data = "เป็น ชื่อสาร : " & Txt_Name.Text & " CAS NUMBER : " & txt_cas.Text & " INN : " & txt_INN.Text & " INN_TH : " & txt_INN_TH.Text &
+                    " aori : " & ddl_aori.SelectedValue & " iowacd : " & txt_iowacd.Text & " Run NO. : " & txt_runno.Text & " salt : " & txt_salt.Text & " syn : " & txt_syn.Text &
+                    " Look Type (Active or No) : " & ddl_Look.SelectedValue & " MODERN TRADITION : " & ddl_Modern_drug.SelectedValue & " เป็นสารในทะเบียน : " & ddl_Regis.SelectedValue
+            Catch ex As Exception
+
+            End Try
             set_data(dao)
             dao.update()
-            alert("แก้ไขเรียบร้อยแล้ว")
+
         End If
+        Dim dao_log As New DAO_DRUG.TB_LOG_CHEM
+        Try
+            dao_log.fields.CITIZEN_ID = _CLS.CITIZEN_ID
+        Catch ex As Exception
+
+        End Try
+        dao_log.fields.CREATE_DATE = Date.Now
+        dao_log.fields.DESCRIPTION = old_data & " " & new_data
+        dao_log.fields.FK_IDA = FK_IDA
+        dao_log.insert()
+
+        alert("แก้ไขเรียบร้อยแล้ว")
     End Sub
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');parent.close_modal();</script> ")

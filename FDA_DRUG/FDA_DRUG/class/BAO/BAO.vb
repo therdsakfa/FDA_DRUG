@@ -678,6 +678,7 @@ Namespace BAO
                     .amltpcd = dao_aniuse_rq.fields.amltpcd
                     .drgtpcd = dao_aniuse_rq.fields.drgtpcd
                     .FK_IDA = IDA_rgt
+                    .ampartcd = dao_aniuse_rq.fields.ampartcd
                     .pvncd = dao_aniuse_rq.fields.pvncd
                     .rgtno = dao_aniuse_rq.fields.rgtno
                     .rgttpcd = dao_aniuse_rq.fields.rgttpcd

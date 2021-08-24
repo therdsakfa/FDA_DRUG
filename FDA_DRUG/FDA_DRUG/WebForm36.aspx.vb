@@ -20,7 +20,7 @@ Public Class WebForm36
         asas = CDate("2020-03-23").ToLongDateString()
 
 
-
+        Dim CurrentTime As DateTime = Date.Now
 
         If Not IsPostBack Then
             'UC_general_BC1.bind_dactg()
@@ -3085,5 +3085,40 @@ Public Class WebForm36
         '    dao_aniuse_rg.insert()
         'Next
     End Sub
+
+    Protected Sub Button35_Click(sender As Object, e As EventArgs) Handles Button35.Click
+        'Dim i As Integer = 0
+        'Dim dao_cer As New DAO_DRUG.TB_DH15_DETAIL_CER
+        'dao_cer.GetDataby_FK_IDA(22158)
+        'Try
+        '    If dao_cer.fields.EXP_DOCUMENT_DATE >= CDate(Date.Now) Then
+        '        i = 1
+        '    End If
+        'Catch ex As Exception
+
+        'End Try
+        Dim aa As String = "10/64 "
+        Dim rcvno As String = ""
+        Dim running As Integer = 0
+        Dim year_short As String = ""
+        Dim split_text As String() = aa.Split("/")
+
+        Try
+            running = CInt(split_text(0))
+            year_short = split_text(1)
+            rcvno = String.Format("{0:00000}", running.ToString("00000"))
+            rcvno = year_short & rcvno
+        Catch ex As Exception
+
+        End Try
+
+
+    End Sub
+
+
+    'Function GET_FORMAT_RCVNO(ByVal txt As String) As Integer
+
+    '    Return rcvno
+    'End Function
 End Class
 
