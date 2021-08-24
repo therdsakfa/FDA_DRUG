@@ -17,16 +17,20 @@
         'RunSession()
         If Not IsPostBack Then
             txt_date.Text = Date.Now.ToShortDateString
-            
-               
+
+
 
             Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_APPOINTMENT
             dao.GetDataby_FK_IDA(Request.QueryString("IDA"))
+            Dim dao_126 As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+
             Try
+
                 Dim dao_edit As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
                 dao_edit.GetDatabyIDA(Request.QueryString("IDA"))
                 Dim dao_drrqt As New DAO_DRUG.ClsDBdrrgt
                 dao_drrqt.GetDataby_IDA(dao_edit.fields.FK_IDA)
+                dao_126.GetDataby_IDA_drrgt(dao_edit.fields.FK_IDA)
                 Try
                     Dim bao_rg As New BAO.ClsDBSqlcommand
                     Dim dt As New DataTable
@@ -47,7 +51,7 @@
                     Catch ex As Exception
 
                     End Try
-                   
+
 
                     Try
                         txt_date.Text = CDate(.REQUEST_DATE).ToShortDateString
@@ -56,7 +60,7 @@
                     End Try
                 End With
                 Try
-                    txt_company.Text = dao_drrqt.fields.IDENTIFY
+                    txt_company.Text = dao_126.fields.Identify
 
                 Catch ex As Exception
 
@@ -102,6 +106,12 @@
                 Catch ex As Exception
 
                 End Try
+
+                Try
+                    lbl_company.Text = dao_126.fields.thanm 'set_name_company(txt_company.Text)
+                Catch ex As Exception
+
+                End Try
             Catch ex As Exception
 
             End Try
@@ -126,8 +136,9 @@
                 'lbl_staff_name.Style.Add("display", "none")
             End If
         End If
-        lbl_company.Text = set_name_company(txt_company.Text)
-       
+
+
+
     End Sub
     Sub Bind_Day()
         Try
