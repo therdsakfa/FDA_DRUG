@@ -98,12 +98,28 @@ Public Class FRM_ETRACKING_STATUS_HEAD_MAIN_RQ_CENTER
             Dim dao_c As New DAO_DRUG.TB_E_TRACKING_STOP_TIME
             i = dao_c.CountDataby_IDA(Request.QueryString("id_r"))
             If i = 0 Then
-                save()
+                Dim ii As Integer = 0
+                Dim daoss As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
+                ii = daoss.GetDataby_FK_IDA_AND_STAT(Request.QueryString("id_r"), 10)
+                If ii > 0 Then
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่สามารถเพิ่มสถานะได้เนื่องจากท่านปิดคำขอแล้ว');", True)
+                ElseIf ii = 0 Then
+                    save()
+                End If
+
             Else
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ท่านบันทึกวันที่ในหน้าหยุดเวลาไม่ครบ อาจมีผลต่อการคำนวณคำขอ');", True)
             End If
         Else
-            save()
+            Dim ii As Integer = 0
+            Dim daoss As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
+            ii = daoss.GetDataby_FK_IDA_AND_STAT(Request.QueryString("id_r"), 10)
+            If ii > 0 Then
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่สามารถเพิ่มสถานะได้เนื่องจากท่านปิดคำขอแล้ว');", True)
+            ElseIf ii = 0 Then
+                save()
+            End If
+
         End If
         
     End Sub

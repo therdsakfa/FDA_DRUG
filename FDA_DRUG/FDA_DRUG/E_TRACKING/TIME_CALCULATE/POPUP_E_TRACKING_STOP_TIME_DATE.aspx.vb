@@ -34,80 +34,87 @@
     End Sub
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         If Request.QueryString("ida") <> "" Then
+            Dim i As Integer = 0
+            Dim daoss As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
+            i = daoss.GetDataby_FK_IDA_AND_STAT(Request.QueryString("id_r"), 10)
 
-            If CHK_UPDATE() = True Then
-                Dim dao As New DAO_DRUG.TB_E_TRACKING_STOP_TIME
-                dao.GetDataby_IDA(Request.QueryString("ida"))
+            If i > 0 Then
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่สามารถบันทึกข้อมูลได้เนื่องจากท่านปิดคำขอแล้ว');", True)
+            ElseIf i = 0 Then
+                If CHK_UPDATE() = True Then
+                    Dim dao As New DAO_DRUG.TB_E_TRACKING_STOP_TIME
+                    dao.GetDataby_IDA(Request.QueryString("ida"))
 
-                Dim str As String = ""
-                Dim start_date As String = ""
-                Try
-                    start_date = CDate(dao.fields.START_DATE).ToShortDateString
-                Catch ex As Exception
-                    start_date = "-"
-                End Try
-                Dim end_date As String = ""
-                Try
-                    end_date = CDate(dao.fields.END_DATE).ToShortDateString
-                Catch ex As Exception
-                    end_date = "-"
-                End Try
-                str = "เพิ่ม/แก้ไขวันที่เริ่มหยุดเวลาจาก " & start_date & " เป็น " & txt_start_date.Text & " และเพิ่ม/แก้ไขวันที่เริมนับต่อจาก " & end_date & " เป็น " & txt_end_date.Text
-                AddLogStatusEtracking(0, 1, _CLS.CITIZEN_ID, str, "TIME STOP", Request.QueryString("id_r"), dao.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
-                'Request.QueryString("id_r") IDA เลข A
-                Try
-                    dao.fields.START_DATE = CDate(txt_start_date.Text)
-                Catch ex As Exception
+                    Dim str As String = ""
+                    Dim start_date As String = ""
+                    Try
+                        start_date = CDate(dao.fields.START_DATE).ToShortDateString
+                    Catch ex As Exception
+                        start_date = "-"
+                    End Try
+                    Dim end_date As String = ""
+                    Try
+                        end_date = CDate(dao.fields.END_DATE).ToShortDateString
+                    Catch ex As Exception
+                        end_date = "-"
+                    End Try
+                    str = "เพิ่ม/แก้ไขวันที่เริ่มหยุดเวลาจาก " & start_date & " เป็น " & txt_start_date.Text & " และเพิ่ม/แก้ไขวันที่เริมนับต่อจาก " & end_date & " เป็น " & txt_end_date.Text
+                    AddLogStatusEtracking(0, 1, _CLS.CITIZEN_ID, str, "TIME STOP", Request.QueryString("id_r"), dao.fields.IDA, 0, HttpContext.Current.Request.Url.AbsoluteUri)
+                    'Request.QueryString("id_r") IDA เลข A
+                    Try
+                        dao.fields.START_DATE = CDate(txt_start_date.Text)
+                    Catch ex As Exception
 
-                End Try
-                Try
-                    dao.fields.END_DATE = CDate(txt_end_date.Text)
-                Catch ex As Exception
+                    End Try
+                    Try
+                        dao.fields.END_DATE = CDate(txt_end_date.Text)
+                    Catch ex As Exception
 
-                End Try
-                'Try
-                '    Dim ws As New WS_GETDATE_WORKING.Service1
-                '    Dim date_result As Date
-                '    Dim startdate As Date
-                '    Dim enddate As Date
-                '    If start_date <> "-" Then
-                '        If end_date <> "-" Then
-                '            'ws.GETDATE_WORKING(CDate(txt_date.Text), True, txt_number.Text, True, date_result, True)
-                '            'ws.get
-                '        End If
-                '    End If
-
-
-
-                '    'dao.fields.st = date_result.ToLongDateString()
-                'Catch ex As Exception
-
-                'End Try
-
+                    End Try
+                    'Try
+                    '    Dim ws As New WS_GETDATE_WORKING.Service1
+                    '    Dim date_result As Date
+                    '    Dim startdate As Date
+                    '    Dim enddate As Date
+                    '    If start_date <> "-" Then
+                    '        If end_date <> "-" Then
+                    '            'ws.GETDATE_WORKING(CDate(txt_date.Text), True, txt_number.Text, True, date_result, True)
+                    '            'ws.get
+                    '        End If
+                    '    End If
 
 
-                dao.update()
-                Dim bao_update As New BAO.ClsDBSqlcommand
-                Try
-                    bao_update.SP_DRUG_CONSIDER_REQUESTS_STOP_DAY(dao.fields.FK_IDA)
-                Catch ex As Exception
 
-                End Try
-                Try
-                    bao_update.SP_DRUG_CONSIDER_REQUESTS_MAX_STOP_DAY(dao.fields.FK_IDA)
-                Catch ex As Exception
+                    '    'dao.fields.st = date_result.ToLongDateString()
+                    'Catch ex As Exception
 
-                End Try
-                Try
-                    bao_update.SP_DRUG_CONSIDER_REQUESTS_FINISH_DATE(dao.fields.FK_IDA)
-                Catch ex As Exception
+                    'End Try
 
-                End Try
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
-            Else
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกข้อมูลไม่ถูกต้อง');", True)
+
+
+                    dao.update()
+                    Dim bao_update As New BAO.ClsDBSqlcommand
+                    Try
+                        bao_update.SP_DRUG_CONSIDER_REQUESTS_STOP_DAY(dao.fields.FK_IDA)
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        bao_update.SP_DRUG_CONSIDER_REQUESTS_MAX_STOP_DAY(dao.fields.FK_IDA)
+                    Catch ex As Exception
+
+                    End Try
+                    Try
+                        bao_update.SP_DRUG_CONSIDER_REQUESTS_FINISH_DATE(dao.fields.FK_IDA)
+                    Catch ex As Exception
+
+                    End Try
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
+                Else
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกข้อมูลไม่ถูกต้อง');", True)
+                End If
+
             End If
-
         End If
     End Sub
     Function Chk_date(ByVal str_date As String) As Boolean
