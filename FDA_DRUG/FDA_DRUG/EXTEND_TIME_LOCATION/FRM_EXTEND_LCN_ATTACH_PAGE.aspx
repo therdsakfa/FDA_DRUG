@@ -178,6 +178,31 @@
                     </table>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <h2>
+                        รูปถ่ายสถานที่
+                    </h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                    <telerik:RadBinaryImage ID="RadBinaryImage2" runat="server" Width ="270px" Height="152px" />
+                    <br />
+                    รูปถ่ายด้านหน้าของสถานที่ที่ได้รับอนุญาต ( เห็นป้ายชื่อสถานที่ )
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="50%">
+                        <tr>
+                            <td width="50%"><asp:FileUpload ID="FileUpload2" runat="server" /></td>
+                            <td width="50%"><asp:Button ID="btn_upload_img2" runat="server" Text="Upload รูป" CssClass="btn-sm" /></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
         </table>
     </asp:Panel>
 

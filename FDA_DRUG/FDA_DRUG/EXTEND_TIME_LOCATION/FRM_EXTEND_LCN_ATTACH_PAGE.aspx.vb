@@ -183,6 +183,7 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
         End If
     End Sub
 
+
     Private Sub FRM_EXTEND_LCN_ATTACH_PAGE_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
         Try
             Dim IDA_dalcn As Integer = 0
@@ -195,8 +196,46 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
 
             RadBinaryImage1.DataValue = Convert.FromBase64String(dao_dal.fields.IMAGE_BSN)
             RadBinaryImage1.ResizeMode = BinaryImageResizeMode.Fit
+            RadBinaryImage2.DataValue = Convert.FromBase64String(dao_dal.fields.IMAGE_KEEP)
+            RadBinaryImage2.ResizeMode = BinaryImageResizeMode.Fit
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Protected Sub btn_upload_img2_Click1(sender As Object, e As EventArgs) Handles btn_upload_img2.Click
+        If FileUpload2.HasFile Then
+            Dim file_ex As String = ""
+            file_ex = file_extension_nm(FileUpload2.FileName)
+            If file_ex = "jpg" Or file_ex = "png" Then
+                Dim IDA_dalcn As Integer = 0
+                Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
+                dao.GetDataby_IDA(Request.QueryString("IDA"))
+                ' dao.GetDataby_TR_ID(Request.QueryString("TR_ID"))
+                Try
+                    IDA_dalcn = dao.fields.FK_IDA
+                Catch ex As Exception
+
+                End Try
+                dao.fields.IMAGE_KEEP = Convert.ToBase64String(FileUpload2.FileBytes)
+                dao.update()
+
+                Try
+                    Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+                    dao_dal.GetDataby_IDA(IDA_dalcn)
+                    dao_dal.fields.IMAGE_KEEP = Convert.ToBase64String(FileUpload2.FileBytes)
+                    dao_dal.update()
+                Catch ex As Exception
+
+                End Try
+
+                RadBinaryImage2.DataBind()
+
+            Else
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไฟล์ไม่ถูกต้อง ควรใช้ไฟล์นามสกุล .jpg หรือ .png');", True)
+            End If
+        Else
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาแนบไฟล์');", True)
+        End If
     End Sub
 End Class
