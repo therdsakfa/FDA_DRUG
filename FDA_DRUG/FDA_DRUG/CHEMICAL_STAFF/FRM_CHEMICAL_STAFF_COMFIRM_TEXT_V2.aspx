@@ -205,7 +205,7 @@
                          <asp:TextBox ID="txt_app_date" runat="server"></asp:TextBox>
                          </td></tr>
                      
-                     <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยืนยัน" CssClass="btn-lg"   Width="80%" /></td></tr>
+                     <tr><td><asp:Button ID="btn_confirm" runat="server" Text="ยืนยัน" CssClass="btn-lg"   Width="80%" OnClientClick="return confirm('ยืนยันหรือไม่');" /></td></tr>
                      <tr><td>  <asp:Button ID="btn_load0" runat="server" Text="กลับหน้ารายการ" CssClass="btn-lg"   Width="80%" /></td></tr>
 
                  </table>

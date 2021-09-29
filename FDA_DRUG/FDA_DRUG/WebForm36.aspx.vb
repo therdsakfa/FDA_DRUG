@@ -3097,22 +3097,45 @@ Public Class WebForm36
         'Catch ex As Exception
 
         'End Try
-        Dim aa As String = "10/64 "
-        Dim rcvno As String = ""
-        Dim running As Integer = 0
-        Dim year_short As String = ""
-        Dim split_text As String() = aa.Split("/")
-
-        Try
-            running = CInt(split_text(0))
-            year_short = split_text(1)
-            rcvno = String.Format("{0:00000}", running.ToString("00000"))
-            rcvno = year_short & rcvno
-        Catch ex As Exception
-
-        End Try
 
 
+
+
+
+        'Dim aa As String = "10/64 "
+        'Dim rcvno As String = ""
+        'Dim running As Integer = 0
+        'Dim year_short As String = ""
+        'Dim split_text As String() = aa.Split("/")
+
+        'Try
+        '    running = CInt(split_text(0))
+        '    year_short = split_text(1)
+        '    rcvno = String.Format("{0:00000}", running.ToString("00000"))
+        '    rcvno = year_short & rcvno
+        'Catch ex As Exception
+
+        'End Try
+
+
+
+        Dim aa As Date = CDate(CStr(CDate(Date.Now).Year + 543) & "-" & CStr(CDate(Date.Now).Month) & "-" & CStr(CDate(Date.Now).Day)).ToString("dd/MM/yyyy")
+
+
+
+    End Sub
+
+    Protected Sub Button36_Click(sender As Object, e As EventArgs) Handles Button36.Click
+        Dim ds As New DataSet
+        Dim dt As New DataTable
+        Dim bao As New BAO.ClsDBSqlcommand
+        dt = bao.SP_GET_NAME_LCN_Phesaj("1129900390293")
+        Dim dtCopy As New DataTable
+        dtCopy = dt.Copy()
+        dtCopy.TableName = "SP_GET_NAME_LCN_Phesaj"
+        ds.Tables.Add(dtCopy)
+
+        Dim aaa As String = ds.GetXml
     End Sub
 
 

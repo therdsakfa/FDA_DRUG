@@ -5039,6 +5039,20 @@ Namespace BAO
 
             Return dt
         End Function
+
+        Public Function SP_GET_NAME_LCN_Phesaj(ByVal identify As String) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_GET_NAME_LCN_Phesaj @identify='" & identify & "'"
+            Dim dt As New DataTable
+            Try
+                dt = clsds.dsQueryselect(sql, con_str).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
+            dt.TableName = "SP_GET_NAME_LCN_Phesaj"
+            Return dt
+        End Function
         Public Function SP_DALCN_EDIT_REQUEST_STAFF() As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_DALCN_EDIT_REQUEST_STAFF "

@@ -214,75 +214,84 @@ Public Class POPUP_E_TRACKING_STOP_TIME
         End If
     End Sub
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
-        Dim dao As New DAO_DRUG.TB_E_TRACKING_STOP_TIME
-        Dim head_id As Integer = 0
-  
-        With dao.fields
-            'Try
-            '    .END_DATE = CDate(txt_end_date_det.Text)
-            'Catch ex As Exception
+        Dim i As Integer = 0
+        Dim daoss As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
+        i = daoss.GetDataby_FK_IDA_AND_STAT(Request.QueryString("id_r"), 10)
 
-            'End Try
+        If i > 0 Then
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่สามารถเพิ่มข้อมูลได้เนื่องจากท่านปิดคำขอแล้ว');", True)
+        ElseIf i = 0 Then
+            Dim dao As New DAO_DRUG.TB_E_TRACKING_STOP_TIME
+            Dim head_id As Integer = 0
 
-            If ddl_period.SelectedValue = 2 Then
-                .EXPERT_TYPE_ID = ddl_expert_type.SelectedValue
-                .EXPERT_COUNT = ddl_expert_count.SelectedValue
-            End If
-            .PERIOD_COUNT = ddl_period_count.SelectedValue
-            'Try
-            '    .START_DATE = CDate(txt_start_date_det.Text)
-            'Catch ex As Exception
+            With dao.fields
+                'Try
+                '    .END_DATE = CDate(txt_end_date_det.Text)
+                'Catch ex As Exception
 
-            'End Try
-            .TYPE_PERIOD = ddl_period.SelectedValue
-            'Request.QueryString("rcvno"), Request.QueryString("ctzid"), Request.QueryString("ntype")
-            Try
-                .CTZID = Request.QueryString("ctzid")
-                .rcvno = Request.QueryString("rcvno")
-                .rgttpcd = Request.QueryString("ntype")
-                .PRODUCT_TYPE = Request.QueryString("b_type")
-                .SMALL_TYPE = Request.QueryString("s_type")
-                .lcnsid = Request.QueryString("lcnsid")
-            Catch ex As Exception
+                'End Try
 
-            End Try
-            If Request.QueryString("id_r") <> "" Then
-                .TYPE_P = 2
-                .FK_IDA = Request.QueryString("id_r")
+                If ddl_period.SelectedValue = 2 Then
+                    .EXPERT_TYPE_ID = ddl_expert_type.SelectedValue
+                    .EXPERT_COUNT = ddl_expert_count.SelectedValue
+                End If
+                .PERIOD_COUNT = ddl_period_count.SelectedValue
+                'Try
+                '    .START_DATE = CDate(txt_start_date_det.Text)
+                'Catch ex As Exception
 
-
-            End If
-        End With
-        dao.fields.CREATE_DATE = Date.Now
-        dao.insert()
-
-        AddLogStatusEtracking(0, 1, _CLS.CITIZEN_ID, "เพิ่ม" & ddl_period.SelectedItem.Text & " ครั้งที่ " & ddl_period_count.SelectedItem.Text, dao.fields.IDA, 0)
-
-        'Dim ws As New AUTHEN_LOG.Authentication
-        'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "เพิ่ม" & ddl_period.SelectedItem.Text & " ครั้งที่ " & ddl_period_count.SelectedItem.Text, "")
-        Dim ws_118 As New WS_AUTHENTICATION.Authentication
-        Dim ws_66 As New Authentication_66.Authentication
-        Dim ws_104 As New AUTHENTICATION_104.Authentication
-        Try
-            ws_118.Timeout = 10000
-            ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "เพิ่ม" & ddl_period.SelectedItem.Text & " ครั้งที่ " & ddl_period_count.SelectedItem.Text, "")
-        Catch ex As Exception
-            Try
-                ws_66.Timeout = 10000
-                ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "เพิ่ม" & ddl_period.SelectedItem.Text & " ครั้งที่ " & ddl_period_count.SelectedItem.Text, "")
-
-            Catch ex2 As Exception
+                'End Try
+                .TYPE_PERIOD = ddl_period.SelectedValue
+                'Request.QueryString("rcvno"), Request.QueryString("ctzid"), Request.QueryString("ntype")
                 Try
-                    ws_104.Timeout = 10000
-                    ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "เพิ่ม" & ddl_period.SelectedItem.Text & " ครั้งที่ " & ddl_period_count.SelectedItem.Text, "")
+                    .CTZID = Request.QueryString("ctzid")
+                    .rcvno = Request.QueryString("rcvno")
+                    .rgttpcd = Request.QueryString("ntype")
+                    .PRODUCT_TYPE = Request.QueryString("b_type")
+                    .SMALL_TYPE = Request.QueryString("s_type")
+                    .lcnsid = Request.QueryString("lcnsid")
+                Catch ex As Exception
 
-                Catch ex3 As Exception
-                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'https://privus.fda.moph.go.th';", True)
+                End Try
+                If Request.QueryString("id_r") <> "" Then
+                    .TYPE_P = 2
+                    .FK_IDA = Request.QueryString("id_r")
+
+
+                End If
+            End With
+            dao.fields.CREATE_DATE = Date.Now
+            dao.insert()
+
+            AddLogStatusEtracking(0, 1, _CLS.CITIZEN_ID, "เพิ่ม" & ddl_period.SelectedItem.Text & " ครั้งที่ " & ddl_period_count.SelectedItem.Text, dao.fields.IDA, 0)
+
+            'Dim ws As New AUTHEN_LOG.Authentication
+            'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "เพิ่ม" & ddl_period.SelectedItem.Text & " ครั้งที่ " & ddl_period_count.SelectedItem.Text, "")
+            Dim ws_118 As New WS_AUTHENTICATION.Authentication
+            Dim ws_66 As New Authentication_66.Authentication
+            Dim ws_104 As New AUTHENTICATION_104.Authentication
+            Try
+                ws_118.Timeout = 10000
+                ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "เพิ่ม" & ddl_period.SelectedItem.Text & " ครั้งที่ " & ddl_period_count.SelectedItem.Text, "")
+            Catch ex As Exception
+                Try
+                    ws_66.Timeout = 10000
+                    ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "เพิ่ม" & ddl_period.SelectedItem.Text & " ครั้งที่ " & ddl_period_count.SelectedItem.Text, "")
+
+                Catch ex2 As Exception
+                    Try
+                        ws_104.Timeout = 10000
+                        ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "เพิ่ม" & ddl_period.SelectedItem.Text & " ครั้งที่ " & ddl_period_count.SelectedItem.Text, "")
+
+                    Catch ex3 As Exception
+                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'https://privus.fda.moph.go.th';", True)
+                    End Try
                 End Try
             End Try
-        End Try
-        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกข้อมูลเรียบร้อย');", True)
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกข้อมูลเรียบร้อย');", True)
 
-        RadGrid1.Rebind()
+            RadGrid1.Rebind()
+
+        End If
     End Sub
 End Class
