@@ -830,6 +830,8 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
         Try
             RadBinaryImage1.DataValue = Convert.FromBase64String(dao_ya.fields.IMAGE_BSN)
             RadBinaryImage1.ResizeMode = BinaryImageResizeMode.Fit
+            RadBinaryImage2.DataValue = Convert.FromBase64String(dao_ya.fields.IMAGE_KEEP)
+            RadBinaryImage2.ResizeMode = BinaryImageResizeMode.Fit
         Catch ex As Exception
 
         End Try
@@ -1186,5 +1188,25 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
             cbl_chk_sell_type_ky1_2.Style.Add("display", "none")
         End If
 
+    End Sub
+
+    Protected Sub btn_upload_img2_Click(sender As Object, e As EventArgs) Handles btn_upload_img2.Click
+        If FileUpload2.HasFile Then
+            Dim file_ex As String = ""
+            file_ex = file_extension_nm(FileUpload2.FileName)
+            If file_ex = "jpg" Or file_ex = "png" Then
+                Dim dao As New DAO_DRUG.ClsDBdalcn
+                dao.GetDataby_IDA(Request.QueryString("IDA"))
+                dao.fields.IMAGE_KEEP = Convert.ToBase64String(FileUpload2.FileBytes)
+                dao.update()
+                RadBinaryImage2.DataBind()
+
+                KEEP_LOGS_EDIT(Request.QueryString("ida"), "อัพโหลดรูป", _CLS.CITIZEN_ID)
+            Else
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไฟล์ไม่ถูกต้อง ควรใช้ไฟล์นามสกุล .jpg หรือ .png');", True)
+            End If
+        Else
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาแนบไฟล์');", True)
+        End If
     End Sub
 End Class

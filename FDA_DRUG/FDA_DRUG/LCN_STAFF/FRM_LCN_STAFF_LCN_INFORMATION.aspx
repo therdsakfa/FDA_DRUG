@@ -207,6 +207,29 @@
         </table>
     </h2>
     <br />
+    <h2>
+        รูปถ่ายสถานที่ที่แนบในใบอนุญาต
+        <table class="table">
+            <tr>
+                <td>
+
+                    <telerik:RadBinaryImage ID="RadBinaryImage2" runat="server" Width ="270px" Height="152px" />
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="50%">
+                        <tr>
+                            <td width="50%"><asp:FileUpload ID="FileUpload2" runat="server" /></td>
+                            <td width="50%"><asp:Button ID="btn_upload_img2" runat="server" Text="Upload รูป" CssClass="btn-sm" /></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </h2>
+    <br />
     <asp:Panel ID="Panel2" runat="server" style="display:none;">
          <h2>ประเภทการขาย</h2>
          <table>
