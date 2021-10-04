@@ -145,7 +145,7 @@ Public Class POPUP_DI_CONFIRM
 
         dao.GetDataby_IDA2(Integer.Parse(_IDA))
         dao.fields.STATUS_ID = 77
-        AddLogStatus(7, Request.QueryString("ProcessID"), _CLS.CITIZEN_ID, _IDA)
+        AddLogStatus(77, Request.QueryString("ProcessID"), _CLS.CITIZEN_ID, _IDA)
         dao.update()
     End Sub
 

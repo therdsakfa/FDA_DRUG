@@ -131,7 +131,7 @@ Public Class FRM_LCN_CONFIRM_DRUG
         dao.GetDataby_IDA(Integer.Parse(_IDA))
         dao.fields.STATUS_ID = 77
         dao.update()
-        AddLogStatus(7, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+        AddLogStatus(77, _ProcessID, _CLS.CITIZEN_ID, _IDA)
     End Sub
 
     Protected Sub btn_load_Click(sender As Object, e As EventArgs) Handles btn_load.Click
