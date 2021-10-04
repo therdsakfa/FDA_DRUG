@@ -7,7 +7,8 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="../../Content/bootstrap-theme.min.css" rel="stylesheet" />   
+    <link href="../../Content/bootstrap-theme.min.css" rel="stylesheet" /> 
+   
     <link href="../../Content/bootstrap.css" rel="stylesheet" />
     <link href="../../css/style.css" rel="stylesheet" type="text/css" />
 
@@ -214,6 +215,9 @@
                                </telerik:GridBoundColumn>
                                <telerik:GridBoundColumn DataField="CONREQ_LAST_UPDATE_DATE" FilterControlAltText="Filter CONREQ_LAST_UPDATE_DATE column" DataType="System.DateTime"
                                    HeaderText="วันที่กำหนดต้องเสร็จสิ้น" SortExpression="CONREQ_LAST_UPDATE_DATE" UniqueName="CONREQ_LAST_UPDATE_DATE" DataFormatString="{0:dd/MM/yyyy}">
+                               </telerik:GridBoundColumn>
+                               <telerik:GridBoundColumn DataField="STATUS_NAME" FilterControlAltText="Filter STATUS_NAME column"
+                                   HeaderText="สถานะ" SortExpression="STATUS_NAME" UniqueName="STATUS_NAME">
                                </telerik:GridBoundColumn>
                                <telerik:GridBoundColumn DataField="CREATE_DATE" FilterControlAltText="Filter CREATE_DATE column"
                                    HeaderText="วันที่ของสถานะล่าสุด" SortExpression="CREATE_DATE" UniqueName="CREATE_DATE" DataType="System.DateTime" DataFormatString="{0:dd/MM/yyyy}">

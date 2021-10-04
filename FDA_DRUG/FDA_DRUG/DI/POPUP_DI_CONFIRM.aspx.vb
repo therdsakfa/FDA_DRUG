@@ -144,7 +144,7 @@ Public Class POPUP_DI_CONFIRM
         Dim rcvno As String = bao.GEN_CER_NO(con_year(Date.Now.Year.ToString()), _CLS.PVCODE(), _ProcessID, _CLS.LCNNO, "1", "2", _IDA, "")
 
         dao.GetDataby_IDA2(Integer.Parse(_IDA))
-        dao.fields.STATUS_ID = 7
+        dao.fields.STATUS_ID = 77
         AddLogStatus(7, Request.QueryString("ProcessID"), _CLS.CITIZEN_ID, _IDA)
         dao.update()
     End Sub

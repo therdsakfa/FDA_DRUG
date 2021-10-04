@@ -129,7 +129,7 @@ Public Class FRM_LCN_CONFIRM_DRUG
     Protected Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Dim dao As New DAO_DRUG.ClsDBdalcn
         dao.GetDataby_IDA(Integer.Parse(_IDA))
-        dao.fields.STATUS_ID = 7
+        dao.fields.STATUS_ID = 77
         dao.update()
         AddLogStatus(7, _ProcessID, _CLS.CITIZEN_ID, _IDA)
     End Sub

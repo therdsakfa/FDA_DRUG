@@ -47,7 +47,18 @@
     End Property
 
     Private dt As New DataTable
+    Private _CLS As New CLS_SESSION
+    Sub RunSession()
+        Try
+            _CLS = Session("CLS")
+            '_thanm_customer = Session("thanm_customer")
+            '    _thanm = Session("thanm")
+        Catch ex As Exception
+            Response.Redirect("http://privus.fda.moph.go.th/")
+        End Try
+    End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        RunSession()
         gen_treeview()
         '
     End Sub
@@ -144,11 +155,26 @@
                         Dim url As String = ""
                         url = dao.fields.URL
                         If Request.QueryString("identify") <> "" Then
+
                             url += "&identify=" & Request.QueryString("identify")
                         End If
                         If Request.QueryString("staff") <> "" Then
+
                             url += "&staff=" & Request.QueryString("staff")
+
                         End If
+
+                        If url.Contains("?") Or url.Contains("&") Then
+                            If url.Contains("FDA_GPP/DrugStore") Then
+                                url += "&Token=" & _CLS.TOKEN
+                            End If
+
+                        Else
+                            If url.Contains("FDA_GPP/DrugStore") Then
+                                url += "?Token=" & _CLS.TOKEN
+                            End If
+                        End If
+
                         t_node.NavigateUrl = url
                     End If
                 End If
@@ -272,6 +298,18 @@
                         If Request.QueryString("staff") <> "" Then
                             url += "&staff=" & Request.QueryString("staff")
                         End If
+
+                        If url.Contains("?") Or url.Contains("&") Then
+                            If url.Contains("FDA_GPP/DrugStore") Then
+                                url += "&Token=" & _CLS.TOKEN
+                            End If
+
+                        Else
+                            If url.Contains("FDA_GPP/DrugStore") Then
+                                url += "?Token=" & _CLS.TOKEN
+                            End If
+                        End If
+
                         t_node2.NavigateUrl = url
                     End If
                 End If
