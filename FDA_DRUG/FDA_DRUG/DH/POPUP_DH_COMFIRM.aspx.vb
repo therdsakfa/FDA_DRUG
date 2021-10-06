@@ -91,7 +91,7 @@ Public Class POPUP_DH_COMFIRM
 
         End Try
         Try
-            If dao.fields.lcntpcd = "ผย1" Then
+            If dao.fields.lcntpcd = "ผย1" Or dao.fields.lcntpcd.Contains("บ") Then
                 type_rqt = 1
             End If
         Catch ex As Exception

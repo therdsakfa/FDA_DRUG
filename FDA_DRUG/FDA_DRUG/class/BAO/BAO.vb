@@ -76,7 +76,22 @@ Namespace BAO
             Return dta
         End Function
         '
+        Public Function GET_A_RENEW_DATE() As DataTable
+            Dim sql As String = "select * from DRUG_CONSIDER_REQUESTS_TEMP3 where STATUS_UPDATE is null"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
 
+            Return dta
+        End Function
+        Public Sub UPDATE_RENEW(ByVal IDA As Integer)
+            Dim sql As String = "update dbo.DRUG_CONSIDER_REQUESTS_TEMP3 set STATUS_UPDATE = 1  where IDA=" & IDA
+            Dim MyConnection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("LGT_DRUGConnectionString").ConnectionString)
+            Dim mySqlDataAdapter As SqlCommand = New SqlCommand(sql, MyConnection)
+            MyConnection.Open()
+            mySqlDataAdapter.ExecuteNonQuery()
+            MyConnection.Close()
+
+        End Sub
         Public Function GET_IOWA_NULL() As DataTable
             Dim sql As String = "select * from [dbo].[driowa_temp] where  NO_ITEM is null"
             Dim dta As New DataTable

@@ -596,17 +596,39 @@ Public Class WebForm36
     End Sub
 
     Protected Sub btn_a_Click(sender As Object, e As EventArgs) Handles btn_a.Click
-        Dim dao As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
-        dao.GetDataAll_A()
-        For Each dao.fields In dao.datas
+
+        Dim bao As New BAO.ClsDBSqlcommand
+        Dim dt As New DataTable
+        dt = bao.GET_A_RENEW_DATE()
+        For Each dr As DataRow In dt.Rows
             Dim dao_get As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
-            dao_get.GetDataby_IDA(dao.fields.IDA)
+            dao_get.GetDataby_IDA(dr("IDA"))
             Dim date_result As Date
             Dim ws As New WS_GETDATE_WORKING.Service1
-            ws.GETDATE_WORKING(CDate(dao.fields.REQUESTS_DATE), True, dao.fields.CONREQ_NUMBER_DAY, True, date_result, True)
+            ws.GETDATE_WORKING(CDate(dr("REQUESTS_DATE")), True, dr("CONREQ_NUMBER_DAY"), True, date_result, True)
             dao_get.fields.CONREQ_LAST_UPDATE_DATE = date_result
             dao_get.update()
+
+            Dim bao2 As New BAO.ClsDBSqlcommand
+            bao2.UPDATE_RENEW(dr("IDA"))
         Next
+
+        'Dim dao As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
+        'dao.GetDataAll_A()
+
+        'Dim dt As New DataTable
+        'Dim bao As New BAO.ClsDBSqlcommand
+        'dt = bao.GET_A_RENEW_DATE()
+
+        'For Each dao.fields In dao.datas
+        '    Dim dao_get As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
+        '    dao_get.GetDataby_IDA(dao.fields.IDA)
+        '    Dim date_result As Date
+        '    Dim ws As New WS_GETDATE_WORKING.Service1
+        '    ws.GETDATE_WORKING(CDate(dao.fields.REQUESTS_DATE), True, dao.fields.CONREQ_NUMBER_DAY, True, date_result, True)
+        '    dao_get.fields.CONREQ_LAST_UPDATE_DATE = date_result
+        '    dao_get.update()
+        'Next
     End Sub
 
     Protected Sub btn_run_xml_Click(sender As Object, e As EventArgs) Handles btn_run_xml.Click
