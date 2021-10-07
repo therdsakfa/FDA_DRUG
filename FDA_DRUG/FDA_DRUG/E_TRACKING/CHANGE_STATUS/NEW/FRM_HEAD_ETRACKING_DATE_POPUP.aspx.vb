@@ -85,95 +85,104 @@
     End Sub
 
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
-        If Request.QueryString("IDA") <> "" Then
-            Dim dao As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
-            dao.GetDataby_IDA(Request.QueryString("IDA"))
-            Try
-                dao.fields.START_DATE = rd_start_date.SelectedDate 'CDate(txt_start_date.Text)
-            Catch ex As Exception
-                dao.fields.START_DATE = Nothing
-            End Try
-            Try
-                dao.fields.END_DATE = rd_end_date.SelectedDate 'CDate(txt_end_date.Text)
-            Catch ex As Exception
-                dao.fields.END_DATE = Nothing
-            End Try
 
-            Try
-                If dao.fields.HEAD_STATUS_ID = 10 Then
-                    dao.fields.REF_NO = txt_ref_no.Text
-                    dao.fields.SUB_STATUS_ID = ddl_app.SelectedValue
+        Dim ii As Integer = 0
+        Dim daoss As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
+        ii = daoss.GetDataby_FK_IDA_AND_STAT(Request.QueryString("IDA"), 10)
+        If ii > 0 Then
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่สามารถเพิ่มสถานะได้เนื่องจากท่านปิดคำขอแล้ว');", True)
+        ElseIf ii = 0 Then
 
-                    Dim dao_d As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
-                    dao_d.GetDataby_IDA(Request.QueryString("id_r"))
-                    dao_d.fields.SUB_STATUS = ddl_app.SelectedValue
-                    dao_d.update()
-                End If
-
-                'Dim bao_update As New BAO.ClsDBSqlcommand
-                'bao_update.SP_DRUG_CONSIDER_REQUESTS_FINISH_DATE(Request.QueryString("id_r"))
-            Catch ex As Exception
-
-            End Try
-            Try
-                Dim str As String = ""
-                Dim start_date As String = ""
+            If Request.QueryString("IDA") <> "" Then
+                Dim dao As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
+                dao.GetDataby_IDA(Request.QueryString("IDA"))
                 Try
-                    start_date = CDate(dao.fields.START_DATE).ToShortDateString
+                    dao.fields.START_DATE = rd_start_date.SelectedDate 'CDate(txt_start_date.Text)
                 Catch ex As Exception
-                    start_date = "-"
+                    dao.fields.START_DATE = Nothing
                 End Try
-                Dim end_date As String = ""
                 Try
-                    end_date = CDate(dao.fields.END_DATE).ToShortDateString
+                    dao.fields.END_DATE = rd_end_date.SelectedDate 'CDate(txt_end_date.Text)
                 Catch ex As Exception
-                    end_date = "-"
+                    dao.fields.END_DATE = Nothing
                 End Try
-                str = "เพิ่ม/แก้ไขวันที่เริ่มกระบวนการ " & start_date & " เป็น " & start_date & " และเพิ่ม/แก้ไขวันสิ้นสุดจาก " _
-                    & end_date & " เป็น " & end_date & " และเพิ่ม/แก้ไขการอนุมัติเป็น " & ddl_app.SelectedItem.Text & " และเพิ่ม/แก้ไขเลขอ้างอิงโฆษณาจาก " & IIf(Len(dao.fields.REF_NO) <= 0, "-", dao.fields.REF_NO) & " เป็น " _
-                    & txt_ref_no.Text & " เพิ่ม/แก้ไขหมายเหตุประกอบผลพิจารณาจาก " & "" & " เป็น " & txt_remark.Text
 
-                'Dim ws As New AUTHEN_LOG.Authentication
-                'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "บันทึกวันที่เริ่ม-สิ้นสุดของช่วงเวลา", "")
-
-                Dim ws_118 As New WS_AUTHENTICATION.Authentication
-                Dim ws_66 As New Authentication_66.Authentication
-                Dim ws_104 As New AUTHENTICATION_104.Authentication
                 Try
-                    ws_118.Timeout = 10000
-                    ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "บันทึกวันที่เริ่ม-สิ้นสุดของช่วงเวลา", "")
+                    If dao.fields.HEAD_STATUS_ID = 10 Then
+                        dao.fields.REF_NO = txt_ref_no.Text
+                        dao.fields.SUB_STATUS_ID = ddl_app.SelectedValue
+
+                        Dim dao_d As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
+                        dao_d.GetDataby_IDA(Request.QueryString("id_r"))
+                        dao_d.fields.SUB_STATUS = ddl_app.SelectedValue
+                        dao_d.update()
+                    End If
+
+                    'Dim bao_update As New BAO.ClsDBSqlcommand
+                    'bao_update.SP_DRUG_CONSIDER_REQUESTS_FINISH_DATE(Request.QueryString("id_r"))
                 Catch ex As Exception
+
+                End Try
+                Try
+                    Dim str As String = ""
+                    Dim start_date As String = ""
                     Try
-                        ws_66.Timeout = 10000
-                        ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "บันทึกวันที่เริ่ม-สิ้นสุดของช่วงเวลา", "")
+                        start_date = CDate(dao.fields.START_DATE).ToShortDateString
+                    Catch ex As Exception
+                        start_date = "-"
+                    End Try
+                    Dim end_date As String = ""
+                    Try
+                        end_date = CDate(dao.fields.END_DATE).ToShortDateString
+                    Catch ex As Exception
+                        end_date = "-"
+                    End Try
+                    str = "เพิ่ม/แก้ไขวันที่เริ่มกระบวนการ " & start_date & " เป็น " & start_date & " และเพิ่ม/แก้ไขวันสิ้นสุดจาก " _
+                            & end_date & " เป็น " & end_date & " และเพิ่ม/แก้ไขการอนุมัติเป็น " & ddl_app.SelectedItem.Text & " และเพิ่ม/แก้ไขเลขอ้างอิงโฆษณาจาก " & IIf(Len(dao.fields.REF_NO) <= 0, "-", dao.fields.REF_NO) & " เป็น " _
+                            & txt_ref_no.Text & " เพิ่ม/แก้ไขหมายเหตุประกอบผลพิจารณาจาก " & "" & " เป็น " & txt_remark.Text
 
-                    Catch ex2 As Exception
+                    'Dim ws As New AUTHEN_LOG.Authentication
+                    'ws.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "บันทึกวันที่เริ่ม-สิ้นสุดของช่วงเวลา", "")
+
+                    Dim ws_118 As New WS_AUTHENTICATION.Authentication
+                    Dim ws_66 As New Authentication_66.Authentication
+                    Dim ws_104 As New AUTHENTICATION_104.Authentication
+                    Try
+                        ws_118.Timeout = 10000
+                        ws_118.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "บันทึกวันที่เริ่ม-สิ้นสุดของช่วงเวลา", "")
+                    Catch ex As Exception
                         Try
-                            ws_104.Timeout = 10000
-                            ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "บันทึกวันที่เริ่ม-สิ้นสุดของช่วงเวลา", "")
+                            ws_66.Timeout = 10000
+                            ws_66.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "บันทึกวันที่เริ่ม-สิ้นสุดของช่วงเวลา", "")
 
-                        Catch ex3 As Exception
-                            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'https://privus.fda.moph.go.th';", True)
+                        Catch ex2 As Exception
+                            Try
+                                ws_104.Timeout = 10000
+                                ws_104.AUTHEN_LOG_DATA(_CLS.TOKEN, _CLS.CITIZEN_ID, _CLS.SYSTEM_ID, _CLS.GROUPS, _CLS.ID_MENU, "DRUG", 0, HttpContext.Current.Request.Url.AbsoluteUri, "บันทึกวันที่เริ่ม-สิ้นสุดของช่วงเวลา", "")
+
+                            Catch ex3 As Exception
+                                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'https://privus.fda.moph.go.th';", True)
+                            End Try
                         End Try
                     End Try
+                    AddLogStatusEtracking(status_id:=0, STATUS_TYPE:=1, iden:=_CLS.CITIZEN_ID, description:=str, PROCESS_NAME:="บันทึกวันที่เริ่ม-สิ้นสุดของช่วงเวลา", FK_IDA:=Request.QueryString("id_r"), SUB_IDA:=dao.fields.IDA, SUB_STATUS:=0, url:=HttpContext.Current.Request.Url.AbsoluteUri)
+
+                Catch ex As Exception
+
                 End Try
-                AddLogStatusEtracking(status_id:=0, STATUS_TYPE:=1, iden:=_CLS.CITIZEN_ID, description:=str, PROCESS_NAME:="บันทึกวันที่เริ่ม-สิ้นสุดของช่วงเวลา", FK_IDA:=Request.QueryString("id_r"), SUB_IDA:=dao.fields.IDA, SUB_STATUS:=0, url:=HttpContext.Current.Request.Url.AbsoluteUri)
 
-            Catch ex As Exception
+                Dim dao_d2 As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
+                dao_d2.GetDataby_IDA(Request.QueryString("id_r"))
+                Dim str_acc As String = ""
+                str_acc = "บันทึกเลข " & dao_d2.fields.RCVNO_DISPLAY & " เรียบร้อยแล้ว เมื่อเวลา " & Date.Now.ToString("HH:mm")
 
-            End Try
-
-            Dim dao_d2 As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
-            dao_d2.GetDataby_IDA(Request.QueryString("id_r"))
-            Dim str_acc As String = ""
-            str_acc = "บันทึกเลข " & dao_d2.fields.RCVNO_DISPLAY & " เรียบร้อยแล้ว เมื่อเวลา " & Date.Now.ToString("HH:mm")
-
-            dao.update()
+                dao.update()
 
 
 
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');", True)
 
+            End If
         End If
     End Sub
 

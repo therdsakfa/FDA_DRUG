@@ -14233,6 +14233,37 @@ Namespace DAO_DRUG
             Next
         End Sub
     End Class
+    Public Class TB_MAS_SUB_STATUS
+        Inherits MAINCONTEXT 'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
+
+        Public fields As New MAS_SUB_STATUS
+
+        Public Sub insert()
+            db.MAS_SUB_STATUS.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.MAS_SUB_STATUS.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal _IDA As Integer)
+
+            datas = (From p In db.MAS_SUB_STATUS Where p.IDA = _IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataALL()
+            datas = (From p In db.MAS_SUB_STATUS Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
 End Namespace
 
 

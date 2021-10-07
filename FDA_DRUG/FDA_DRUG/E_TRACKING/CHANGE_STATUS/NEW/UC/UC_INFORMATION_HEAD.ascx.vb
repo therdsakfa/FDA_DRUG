@@ -52,16 +52,47 @@
         Catch ex As Exception
 
         End Try
-        Dim dao_stat As New DAO_DRUG.TB_MAS_E_TRACKING_STATUS_NAME
-        dao_stat.GetDataby_IDA(stat_id)
+        'Dim dao_stat As New DAO_DRUG.TB_MAS_E_TRACKING_STATUS_NAME
+        'dao_stat.GetDataby_IDA(stat_id)
+        'Try
+        '    lbl_stat.Text = dao_stat.fields.STAFF_STATUS & " (" & dao_stat.fields.STAGE_NAME & ")"
+        'Catch ex As Exception
+        '    lbl_stat.Text = "-"
+        'End Try
+        'If stat_id = 0 Then
+        '    lbl_stat.Text = "รอบันทึกสถานะเข้าระบบ"
+        'End If
         Try
-            lbl_stat.Text = dao_stat.fields.STAFF_STATUS & " (" & dao_stat.fields.STAGE_NAME & ")"
+            Dim daoP As New DAO_DRUG.TB_DRUG_CONSIDER_REQUESTS
+            daoP.GetDataby_IDA(Request.QueryString("id_r"))
+            If daoP.fields.LASTEST_STATUS = 10 Then
+                If daoP.fields.SUB_STATUS = 2 Then
+                    lbl_stat.Text = "คืนคำขอโดยระบบ"
+                ElseIf daoP.fields.SUB_STATUS = 3 Then
+                    lbl_stat.Text = "ผปก.ยกเลิก"
+                ElseIf daoP.fields.SUB_STATUS = 4 Then
+                    lbl_stat.Text = "คืนคำขอโดยระบบ"
+                ElseIf daoP.fields.SUB_STATUS = 5 Then
+                    lbl_stat.Text = "ไม่อนุญาต"
+                Else
+                    If daoP.fields.SUB_STATUS IsNot Nothing Then
+                        Dim dao_s As New DAO_DRUG.TB_MAS_SUB_STATUS
+                        dao_s.GetDataby_IDA(daoP.fields.SUB_STATUS)
+                        lbl_stat.Text = "อนุญาต (" & dao_s.fields.STATUS_NAME & ")"
+                    Else
+                        lbl_stat.Text = "อนุญาต (รอบันทึกสถานะสุดท้าย)"
+                    End If
+
+                End If
+            ElseIf daoP.fields.LASTEST_STATUS = 12 Then
+                lbl_stat.Text = "หยุดเวลา"
+            Else
+                lbl_stat.Text = "อยู่ระหว่างดำเนินการ"
+            End If
         Catch ex As Exception
             lbl_stat.Text = "-"
         End Try
-        If stat_id = 0 Then
-            lbl_stat.Text = "รอบันทึกสถานะเข้าระบบ"
-        End If
+
         Try
             lbl_date.Text = CDate(dao_cur.fields.STATUS_DATE).ToShortDateString()
         Catch ex As Exception

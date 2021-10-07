@@ -2131,6 +2131,12 @@ Partial Public Class Linq_DRUGDataContext
     End Sub
   Partial Private Sub DeleteLCN_EXTEND_LITE(instance As LCN_EXTEND_LITE)
     End Sub
+  Partial Private Sub InsertMAS_SUB_STATUS(instance As MAS_SUB_STATUS)
+    End Sub
+  Partial Private Sub UpdateMAS_SUB_STATUS(instance As MAS_SUB_STATUS)
+    End Sub
+  Partial Private Sub DeleteMAS_SUB_STATUS(instance As MAS_SUB_STATUS)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -4297,6 +4303,12 @@ Partial Public Class Linq_DRUGDataContext
 	Public ReadOnly Property LCN_EXTEND_LITEs() As System.Data.Linq.Table(Of LCN_EXTEND_LITE)
 		Get
 			Return Me.GetTable(Of LCN_EXTEND_LITE)
+		End Get
+	End Property
+	
+	Public ReadOnly Property MAS_SUB_STATUS() As System.Data.Linq.Table(Of MAS_SUB_STATUS)
+		Get
+			Return Me.GetTable(Of MAS_SUB_STATUS)
 		End Get
 	End Property
 End Class
@@ -139064,6 +139076,112 @@ Partial Public Class LCN_EXTEND_LITE
 				Me._IMAGE_KEEP = value
 				Me.SendPropertyChanged("IMAGE_KEEP")
 				Me.OnIMAGE_KEEPChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.MAS_SUB_STATUS")>  _
+Partial Public Class MAS_SUB_STATUS
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _STATUS_ID As System.Nullable(Of Integer)
+	
+	Private _STATUS_NAME As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OnSTATUS_IDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnSTATUS_IDChanged()
+    End Sub
+    Partial Private Sub OnSTATUS_NAMEChanging(value As String)
+    End Sub
+    Partial Private Sub OnSTATUS_NAMEChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STATUS_ID", DbType:="Int")>  _
+	Public Property STATUS_ID() As System.Nullable(Of Integer)
+		Get
+			Return Me._STATUS_ID
+		End Get
+		Set
+			If (Me._STATUS_ID.Equals(value) = false) Then
+				Me.OnSTATUS_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._STATUS_ID = value
+				Me.SendPropertyChanged("STATUS_ID")
+				Me.OnSTATUS_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STATUS_NAME", DbType:="NVarChar(MAX)")>  _
+	Public Property STATUS_NAME() As String
+		Get
+			Return Me._STATUS_NAME
+		End Get
+		Set
+			If (String.Equals(Me._STATUS_NAME, value) = false) Then
+				Me.OnSTATUS_NAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._STATUS_NAME = value
+				Me.SendPropertyChanged("STATUS_NAME")
+				Me.OnSTATUS_NAMEChanged
 			End If
 		End Set
 	End Property

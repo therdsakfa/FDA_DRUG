@@ -53,6 +53,7 @@ Namespace BAO
         Dim conn_PERMISSION As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("LGT_PERMISSIONConnectionString").ConnectionString)
         Dim conn_NCT As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("LGT_NCTConnectionString").ConnectionString)
         Dim con_124_2 As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("FDA_XML_DRUG_ESUBConnectionString").ConnectionString)
+        Dim con45 As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("FDA_DRUG_SUBSCRIEConnectionString").ConnectionString)
 
         Dim SqlCmd As SqlCommand
         Dim dtAdapter As SqlDataAdapter
