@@ -1133,6 +1133,15 @@ Namespace BAO
             MyConnection.Close()
             Return dt
         End Function
+
+        Public Function Queryd45(ByVal Commands As String) As DataTable
+            Dim dt As New DataTable
+            Dim MyConnection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("FDA_DRUG_SUBSCRIEConnectionString").ConnectionString)
+            Dim mySqlDataAdapter As SqlDataAdapter = New SqlDataAdapter(Commands, MyConnection)
+            mySqlDataAdapter.Fill(dt)
+            MyConnection.Close()
+            Return dt
+        End Function
         Public Function SP_SPM_SYSTEM_DETAIL_SHOW_SEARCH(ByVal search As String, ByVal result As Integer, ByVal systems As Integer, ByVal type_pay As Integer) As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_SPM_SYSTEM_DETAIL_SHOW_SEARCH @search='" & search & "',@result=" & result & ",@systems='" & systems & "',@payment_type=" & type_pay & ""
@@ -1201,7 +1210,7 @@ Namespace BAO
         Public Function SP_drug_general_sai_by_newcode(ByVal newcode As String) As DataTable
             Dim sql As String = "exec SP_drug_general_sai_by_newcode @newcode='" & newcode & "'"
             Dim dta As New DataTable
-            dta = Queryds(sql)
+            dta = Queryd45(sql)
             dta.TableName = "SP_drug_general_sai_by_newcode"
             Return dta
         End Function
@@ -1341,7 +1350,7 @@ Namespace BAO
         Public Function SP_drug_formula_rg_by_Newcode(ByVal newcode As String) As DataTable
             Dim sql As String = "exec SP_drug_formula_rg_by_Newcode @newcode='" & newcode & "'"
             Dim dta As New DataTable
-            dta = Queryds(sql)
+            dta = Queryd45(sql)
             dta.TableName = "SP_drug_formula_rg_by_Newcode"
             Return dta
         End Function

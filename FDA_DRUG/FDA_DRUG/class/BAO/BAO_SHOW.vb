@@ -50,7 +50,14 @@ Public Class BAO_SHOW
         MyConnection.Close()
         Return dt
     End Function
-
+    Public Function Queryds45(ByVal Commands As String) As DataTable
+        Dim dt As New DataTable
+        Dim MyConnection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("FDA_DRUG_SUBSCRIEConnectionString").ConnectionString)
+        Dim mySqlDataAdapter As SqlDataAdapter = New SqlDataAdapter(Commands, MyConnection)
+        mySqlDataAdapter.Fill(dt)
+        MyConnection.Close()
+        Return dt
+    End Function
 
     ''' <summary>
     ''' ดึงข้อมูล จังหวัด
@@ -360,7 +367,7 @@ Public Class BAO_SHOW
     Public Function SP_dramldrg_BY_newcode(ByVal newcode As String) As DataTable
         Dim sql As String = "exec SP_dramldrg_BY_newcode @newcode='" & newcode & "'"
         Dim dta As New DataTable
-        dta = Queryds(sql)
+        dta = Queryds45(sql)
         dta.TableName = "SP_dramldrg_BY_newcode"
         Return dta
     End Function
@@ -448,7 +455,7 @@ Public Class BAO_SHOW
     Public Function SP_DRRGT_KEEP_DRUG_BY_newcode(ByVal newcode As String) As DataTable
         Dim sql As String = "exec SP_DRRGT_KEEP_DRUG_BY_newcode @newcode='" & newcode & "'"
         Dim dta As New DataTable
-        dta = Queryds(sql)
+        dta = Queryds45(sql)
         dta.TableName = "SP_DRRGT_KEEP_DRUG_BY_newcode"
         Return dta
     End Function
@@ -607,7 +614,7 @@ Public Class BAO_SHOW
     Public Function SP_DRRGT_ATC_DETAIL_BY_Newcode(ByVal newcode As String) As DataTable
         Dim sql As String = "exec SP_DRRGT_ATC_DETAIL_BY_Newcode @newcode='" & newcode & "'"
         Dim dta As New DataTable
-        dta = Queryds(sql)
+        dta = Queryds45(sql)
         dta.TableName = "SP_DRRGT_ATC_DETAIL_BY_FK_IDA"
         Return dta
     End Function
@@ -712,7 +719,7 @@ Public Class BAO_SHOW
     Public Function SP_DRRGT_PRODUCER_ALL_BY_NEWCODE(ByVal newcode As String) As DataTable
         Dim sql As String = "exec SP_DRRGT_PRODUCER_ALL_BY_NEWCODE @newcode='" & newcode & "'"
         Dim dta As New DataTable
-        dta = Queryds(sql)
+        dta = Queryds45(sql)
         dta.TableName = "SP_DRRGT_PRODUCER_ALL_BY_NEWCODE"
         Return dta
     End Function
