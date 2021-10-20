@@ -185,6 +185,15 @@ Partial Public Class WebForm36
     Protected WithEvents Button36 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''Button37 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button37 As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''RadScriptManager1 control.
     '''</summary>
     '''<remarks>

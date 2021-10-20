@@ -3160,6 +3160,11 @@ Public Class WebForm36
         Dim aaa As String = ds.GetXml
     End Sub
 
+    Protected Sub Button37_Click(sender As Object, e As EventArgs) Handles Button37.Click
+        Dim ws_update126 As New WS_DRUG_126.WS_DRUG
+        ws_update126.DRUG_UPDATE_LICEN_126(49505, "0000000000000")
+    End Sub
+
 
     'Function GET_FORMAT_RCVNO(ByVal txt As String) As Integer
 

@@ -30,7 +30,7 @@
         Dim dao As New DAO_DRUG.TB_DALCN_EDIT_REQUEST
         dao.GetDataby_IDA(_IDA)
         dao.fields.STATUS_ID = 7
-        dao.fields.remark = TextBox1.Text
+        dao.fields.REMARK = TextBox1.Text
         dao.update()
 
         Dim cls_sop As New CLS_SOP
