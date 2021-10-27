@@ -35,7 +35,7 @@
 
         dao.update()
         dao_hs.insert()
-
+        KEEP_LOGS_EDIT(dao.fields.FK_IDA, "แก้ไขเภสัชกร", _CLS.CITIZEN_ID, url:=HttpContext.Current.Request.Url.AbsoluteUri)
         Try
             Run_Service_LCN(dao.fields.FK_IDA, _CLS.CITIZEN_ID)
         Catch ex As Exception

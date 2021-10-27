@@ -53,6 +53,7 @@
         End With
         dao_hs.insert()
 
+        KEEP_LOGS_EDIT(Request.QueryString("ida"), "เพิ่มเภสัชกร", _CLS.CITIZEN_ID, url:=HttpContext.Current.Request.Url.AbsoluteUri)
         Run_Service(Request.QueryString("ida"))
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');parent.close_modal();", True)
     End Sub

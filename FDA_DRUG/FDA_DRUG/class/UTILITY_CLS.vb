@@ -483,8 +483,8 @@ Public Module UTILITY_CLS
 
     <System.Runtime.CompilerServices.Extension> _
     Sub Run_Service_LCN(ByVal IDA As Integer, ByVal citizen_id As String)
-        Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_UPDATE_LICEN(IDA, citizen_id)
+        Dim ws_update As New WS_DRUG_126.WS_DRUG
+        ws_update.DRUG_UPDATE_LICEN_126(IDA, citizen_id)
     End Sub
 
     <System.Runtime.CompilerServices.Extension> _
