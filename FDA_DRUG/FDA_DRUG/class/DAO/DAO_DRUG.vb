@@ -7959,6 +7959,14 @@ Namespace DAO_DRUG
             Next
             Return i
         End Function
+        Public Function GetDataby_FK_IDA_AND_STAT2(ByVal fk_ida As Integer, ByVal stat_id As Integer) As Integer
+            Dim i As Integer = 0
+            datas = (From p In db.E_TRACKING_HEAD_CURRENT_STATUS Where p.FK_IDA = fk_ida And p.HEAD_STATUS_ID = stat_id And p.SUB_STATUS_ID IsNot Nothing Select p)
+            For Each Me.fields In datas
+                i += 1
+            Next
+            Return i
+        End Function
     End Class
     '
     Public Class TB_MAS_HEAD_STATUS_E_TRACKING

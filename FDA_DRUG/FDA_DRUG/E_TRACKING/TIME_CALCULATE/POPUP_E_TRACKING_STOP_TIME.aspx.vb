@@ -216,7 +216,7 @@ Public Class POPUP_E_TRACKING_STOP_TIME
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         Dim i As Integer = 0
         Dim daoss As New DAO_DRUG.TB_E_TRACKING_HEAD_CURRENT_STATUS
-        i = daoss.GetDataby_FK_IDA_AND_STAT(Request.QueryString("id_r"), 10)
+        i = daoss.GetDataby_FK_IDA_AND_STAT2(Request.QueryString("id_r"), 10)
 
         If i > 0 Then
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่สามารถเพิ่มข้อมูลได้เนื่องจากท่านปิดคำขอแล้ว');", True)

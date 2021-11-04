@@ -26,16 +26,12 @@
         If dao1.fields.IDA = 0 Then
             Dim dao As New DAO_DRUG.TB_MAS_EXPERT_NAME
             dao.fields.IDENTIFY = txt_citizen_id_search.Text
-            'dao.fields.NAME = txt_name.Text
-            'dao.fields.SURNAME = txt_SURNAME.Text
-            dao.fields.FULLNAME = txt_name.Text 'txt_name.Text & " " & txt_SURNAME.Text
+            dao.fields.FULLNAME = txt_name.Text
             dao.fields.PREFIXCD = 0
             dao.insert()
         Else
             dao1.fields.IDENTIFY = txt_citizen_id_search.Text
-            'dao1.fields.NAME = txt_name.Text
-            'dao1.fields.SURNAME = txt_SURNAME.Text
-            dao1.fields.FULLNAME = txt_name.Text  'txt_name.Text & " " & txt_SURNAME.Text
+            dao1.fields.FULLNAME = txt_name.Text
             dao1.update()
         End If
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');parent.close_modal();", True)
