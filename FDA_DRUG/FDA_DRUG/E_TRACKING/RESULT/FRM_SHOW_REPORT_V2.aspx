@@ -143,6 +143,12 @@
                 </td>
             </tr>
             <tr>
+                <td>เจ้าหน้าที่ผู้รับผิดชอบ</td>
+                <td Width="70%">
+                                <asp:TextBox ID="txt_staff" runat="server" CssClass="input-lg" Width="70%"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
                 <td>&nbsp;</td>
                 <td Width="70%">
                                <asp:Button ID="btn_search" runat="server" Text="ค้นหาข้อมูล" CssClass="btn-lg"/>

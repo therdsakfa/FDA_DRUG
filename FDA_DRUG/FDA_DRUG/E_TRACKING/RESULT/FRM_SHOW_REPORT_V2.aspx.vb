@@ -38,7 +38,7 @@ Public Class FRM_SHOW_REPORT_V2
         Dim r_result As DataRow()
         Dim str_where As String = ""
         Dim dt2 As New DataTable
-        If txt_type_request.Text = "" And txt_r_no.Text = "" Then
+        If txt_type_request.Text = "" And txt_r_no.Text = "" And txt_staff.Text = "" Then
             cal_time(dt)
         Else
             If txt_type_request.Text <> "" Then
@@ -50,6 +50,14 @@ Public Class FRM_SHOW_REPORT_V2
                         str_where &= "RCVNO_DISPLAY like '%" & txt_r_no.Text & "%'"
                     End If
 
+                End If
+
+                If txt_staff.Text <> "" Then
+                    If str_where <> "" Then
+                        str_where &= " and staff_name like '%" & txt_staff.Text & "%'"
+                    Else
+                        str_where &= "staff_name like '%" & txt_staff.Text & "%'"
+                    End If
                 End If
                 r_result = dt.Select(str_where)
             Else
@@ -64,11 +72,25 @@ Public Class FRM_SHOW_REPORT_V2
 
                         End If
                     End If
+                    If txt_staff.Text <> "" Then
+                        If str_where <> "" Then
+                            str_where &= " and staff_name like '%" & txt_staff.Text & "%'"
+                        Else
+                            str_where &= "staff_name like '%" & txt_staff.Text & "%'"
+                        End If
+                    End If
                     r_result = dt.Select(str_where)
                 Else
                     If txt_r_no.Text <> "" Then
                         str_where = "RCVNO_DISPLAY like '%" & txt_r_no.Text & "%'"
 
+                    End If
+                    If txt_staff.Text <> "" Then
+                        If str_where <> "" Then
+                            str_where &= " and staff_name like '%" & txt_staff.Text & "%'"
+                        Else
+                            str_where &= "staff_name like '%" & txt_staff.Text & "%'"
+                        End If
                     End If
                     r_result = dt.Select(str_where)
                 End If
