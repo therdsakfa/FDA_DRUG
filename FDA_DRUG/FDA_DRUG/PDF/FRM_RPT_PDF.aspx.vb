@@ -71,7 +71,7 @@ Public Class FRM_RPT_PDF
 
 
 
-        dt_drug_general = bao_master_2.SP_drug_general_sai(IDA) '
+        dt_drug_general = bao_master_2.SP_drug_general_sai_by_newcode(Request.QueryString("NEWCODE")) '  bao_master_2.SP_drug_general_sai(IDA) '
         dt_formula = bao_master_2.SP_drug_formula_rg_by_Newcode(Request.QueryString("NEWCODE")) '
         dt_frgn = bao_show.SP_DRRGT_PRODUCER_ALL_BY_NEWCODE(Request.QueryString("NEWCODE")) '
         dt_drug_recipe = bao_show.SP_DRRGT_ATC_DETAIL_BY_Newcode(Request.QueryString("NEWCODE")) '
