@@ -185,19 +185,30 @@ Public Class FRM_EXTEND_LCN_ATTACH_PAGE
 
 
     Private Sub FRM_EXTEND_LCN_ATTACH_PAGE_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
+        Dim IDA_dalcn As Integer = 0
+        Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
+        'dao.GetDataby_IDA(Request.QueryString("IDA"))
+        dao.GetDataby_IDA(Request.QueryString("IDA"))
+
+        Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+        dao_dal.GetDataby_IDA(dao.fields.FK_IDA)
         Try
-            Dim IDA_dalcn As Integer = 0
-            Dim dao As New DAO_DRUG.TB_LCN_EXTEND_LITE
-            'dao.GetDataby_IDA(Request.QueryString("IDA"))
-            dao.GetDataby_IDA(Request.QueryString("IDA"))
 
-            Dim dao_dal As New DAO_DRUG.ClsDBdalcn
-            dao_dal.GetDataby_IDA(dao.fields.FK_IDA)
+            If dao_dal.fields.IMAGE_BSN IsNot Nothing Then
+                RadBinaryImage1.DataValue = Convert.FromBase64String(dao_dal.fields.IMAGE_BSN)
+                RadBinaryImage1.ResizeMode = BinaryImageResizeMode.Fit
+            End If
 
-            RadBinaryImage1.DataValue = Convert.FromBase64String(dao_dal.fields.IMAGE_BSN)
-            RadBinaryImage1.ResizeMode = BinaryImageResizeMode.Fit
-            RadBinaryImage2.DataValue = Convert.FromBase64String(dao_dal.fields.IMAGE_KEEP)
-            RadBinaryImage2.ResizeMode = BinaryImageResizeMode.Fit
+
+        Catch ex As Exception
+
+        End Try
+        Try
+            If dao_dal.fields.IMAGE_KEEP IsNot Nothing Then
+                RadBinaryImage2.DataValue = Convert.FromBase64String(dao_dal.fields.IMAGE_KEEP)
+                RadBinaryImage2.ResizeMode = BinaryImageResizeMode.Fit
+            End If
+
         Catch ex As Exception
 
         End Try
