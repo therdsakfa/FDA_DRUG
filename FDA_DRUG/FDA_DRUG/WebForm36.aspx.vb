@@ -3162,7 +3162,7 @@ Public Class WebForm36
 
     Protected Sub Button37_Click(sender As Object, e As EventArgs) Handles Button37.Click
         Dim ws_update126 As New WS_DRUG_126.WS_DRUG
-        ws_update126.DRUG_UPDATE_LICEN_126(72262, "0000000000000")
+        ws_update126.DRUG_UPDATE_LICEN_126(15700, "0000000000000")
     End Sub
 
 

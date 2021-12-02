@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class FRM_SHOW_REPORT_V2
-
+    
     '''<summary>
     '''txt_type_request control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class FRM_SHOW_REPORT_V2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_type_request As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''txt_r_no control.
     '''</summary>
@@ -30,7 +30,16 @@ Partial Public Class FRM_SHOW_REPORT_V2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_r_no As Global.System.Web.UI.WebControls.TextBox
-
+    
+    '''<summary>
+    '''txt_staff control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_staff As Global.System.Web.UI.WebControls.TextBox
+    
     '''<summary>
     '''btn_search control.
     '''</summary>
@@ -39,7 +48,7 @@ Partial Public Class FRM_SHOW_REPORT_V2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_search As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_export control.
     '''</summary>
@@ -48,7 +57,7 @@ Partial Public Class FRM_SHOW_REPORT_V2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_export As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''RadGrid1 control.
     '''</summary>
