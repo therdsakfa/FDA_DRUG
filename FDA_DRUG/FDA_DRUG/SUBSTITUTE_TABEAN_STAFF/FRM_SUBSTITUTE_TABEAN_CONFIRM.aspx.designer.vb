@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
-
+    
     '''<summary>
     '''hl_reader control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
-
+    
     '''<summary>
     '''HiddenField1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
-
+    
     '''<summary>
     '''lr_preview control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''RadScriptManager1 control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadScriptManager1 As Global.Telerik.Web.UI.RadScriptManager
-
+    
     '''<summary>
     '''ddl_cnsdcd control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_cnsdcd As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''txt_appdate control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_appdate As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btn_confirm control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_cancel control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_load control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_load0 control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''UC_GRID_ATTACH control.
     '''</summary>
@@ -111,4 +111,40 @@ Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UC_GRID_ATTACH As Global.FDA_DRUG.UC_GRID_ATTACH
+    
+    '''<summary>
+    '''Panel1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''cb_sending control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cb_sending As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''txt_sending_date control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_sending_date As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''btn_save_sending control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_save_sending As Global.System.Web.UI.WebControls.Button
 End Class
