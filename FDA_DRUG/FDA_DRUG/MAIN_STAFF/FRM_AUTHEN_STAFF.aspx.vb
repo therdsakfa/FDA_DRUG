@@ -52,15 +52,15 @@
         Dim ws_104 As New AUTHENTICATION_104.Authentication
         Dim xml As String = ""
         Try
-            ws_118.Timeout = 10000
-            xml = ws_118.Authen_Login(_TOKEN)
+            ws_104.Timeout = 10000
+            xml = ws_104.Authen_Login(_TOKEN)
 
             If xml = "" Then
                 ws_66.Timeout = 10000
                 xml = ws_66.Authen_Login(_TOKEN)
                 If xml = "" Then
-                    ws_104.Timeout = 10000
-                    xml = ws_104.Authen_Login(_TOKEN)
+                    ws_118.Timeout = 10000
+                    xml = ws_118.Authen_Login(_TOKEN)
                     If xml = "" Then
                         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('เกิดข้อผิดพลาดการเชื่อมต่อ');window.location.href = 'https://privus.fda.moph.go.th';", True)
                     End If
