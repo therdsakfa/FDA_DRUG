@@ -304,21 +304,24 @@ Public Class POPUP_LCN_UPLOAD_NCT
         dao.fields.MAIN_LCN_IDA = _lcn_ida
 
         Dim chw As String = ""
+        Dim dao_dalcn_MAIN1 As New DAO_DRUG.ClsDBdalcn
+        dao_dalcn_MAIN1.GetDataby_IDA(_lcn_ida)
+
         Dim dao_cpn As New DAO_CPN.clsDBsyschngwt
         Try
-            dao_cpn.GetData_by_chngwtcd(_pvncd)
+            dao_cpn.GetData_by_chngwtcd(dao_dalcn_MAIN1.fields.chngwtcd)
             chw = dao_cpn.fields.thacwabbr
         Catch ex As Exception
 
         End Try
         dao.fields.pvnabbr = chw
         Try
-            dao.fields.pvncd = _pvncd
+            dao.fields.pvncd = dao_dalcn_MAIN1.fields.chngwtcd
         Catch ex As Exception
 
         End Try
         Try
-            dao.fields.chngwtcd = _pvncd
+            dao.fields.chngwtcd = dao_dalcn_MAIN1.fields.chngwtcd
         Catch ex As Exception
 
         End Try

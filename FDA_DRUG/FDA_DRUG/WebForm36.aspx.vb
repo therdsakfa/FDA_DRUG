@@ -3148,16 +3148,18 @@ Public Class WebForm36
     End Sub
 
     Protected Sub Button36_Click(sender As Object, e As EventArgs) Handles Button36.Click
-        Dim ds As New DataSet
-        Dim dt As New DataTable
-        Dim bao As New BAO.ClsDBSqlcommand
-        dt = bao.SP_GET_NAME_LCN_Phesaj("1129900390293")
-        Dim dtCopy As New DataTable
-        dtCopy = dt.Copy()
-        dtCopy.TableName = "SP_GET_NAME_LCN_Phesaj"
-        ds.Tables.Add(dtCopy)
+        ''Dim ds As New DataSet
+        ''Dim dt As New DataTable
+        ''Dim bao As New BAO.ClsDBSqlcommand
+        ''dt = bao.SP_GET_NAME_LCN_Phesaj("1129900390293")
+        ''Dim dtCopy As New DataTable
+        ''dtCopy = dt.Copy()
+        ''dtCopy.TableName = "SP_GET_NAME_LCN_Phesaj"
+        ''ds.Tables.Add(dtCopy)
 
-        Dim aaa As String = ds.GetXml
+        ''Dim aaa As String = ds.GetXml
+        Dim pvncd As Integer = 0
+        pvncd = Personal_Province_NEW("3209900021111", "3209900021111", _CLS.Groups)
     End Sub
 
     Protected Sub Button37_Click(sender As Object, e As EventArgs) Handles Button37.Click
