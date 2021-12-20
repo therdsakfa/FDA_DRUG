@@ -3159,7 +3159,7 @@ Public Class WebForm36
 
         ''Dim aaa As String = ds.GetXml
         Dim pvncd As Integer = 0
-        pvncd = Personal_Province_NEW("3209900021111", "3209900021111", _CLS.Groups)
+        pvncd = Personal_Province_NEW("3209900021111", "3209900021111", "")
     End Sub
 
     Protected Sub Button37_Click(sender As Object, e As EventArgs) Handles Button37.Click
