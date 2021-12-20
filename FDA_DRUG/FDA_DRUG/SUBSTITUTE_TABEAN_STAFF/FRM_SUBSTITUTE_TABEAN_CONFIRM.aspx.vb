@@ -40,7 +40,36 @@
             'bind_ddl_rqt()
             show_btn(_IDA)
             UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
-            Bind_ddl_Status_staff()
+
+            Dim dao_a As New DAO_DRUG.TB_DRRGT_SUBSTITUTE
+            dao_a.GetDatabyIDA(_IDA)
+            If dao_a.fields.STATUS_ID <> 8 Then
+                Bind_ddl_Status_staff()
+            Else
+                ddl_cnsdcd.Enabled = False
+            End If
+            Try
+                If dao_a.fields.STATUS_ID = 8 Then
+                    Panel1.Style.Add("display", "block")
+                Else
+                    Panel1.Style.Add("display", "none")
+                End If
+            Catch ex As Exception
+
+            End Try
+            Try
+                txt_sending_date.Text = CDate(dao_a.fields.SENDING_DATE).ToShortDateString()
+            Catch ex As Exception
+
+            End Try
+            Try
+                If dao_a.fields.SENDING_STATUS = 1 Then
+                    cb_sending.Checked = True
+                End If
+            Catch ex As Exception
+
+            End Try
+
         End If
     End Sub
     Sub show_btn(ByVal ID As String)
@@ -77,7 +106,7 @@
         If status_id1 = 2 Then
             int_group_ddl1 = 1
             int_group_ddl2 = 0
-        ElseIf status_id1 = 4 Then
+        ElseIf status_id1 = 3 Then
             int_group_ddl1 = 2
             int_group_ddl2 = 0
         ElseIf status_id1 = 5 Then
@@ -348,7 +377,7 @@
             End Try
             dao.fields.STATUS_ID = STATUS_ID
             dao.update()
-
+            AddLogStatus(3, _ProcessID, _CLS.CITIZEN_ID, _IDA)
             alert("ดำเนินการรับคำขอเรียบร้อยแล้ว เลขรับ คือ " & dao.fields.rcvno)
         ElseIf STATUS_ID = 5 Then
             Response.Redirect("FRM_SUBSTITUTE_TABEAN_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&process=" & PROCESS_ID)
@@ -357,11 +386,34 @@
             dao.fields.appdate = CDate(txt_appdate.Text)
             dao.fields.STATUS_ID = STATUS_ID
             dao.update()
-
+            AddLogStatus(8, _ProcessID, _CLS.CITIZEN_ID, _IDA)
             alert("ดำเนินการอนุมัติแล้ว")
         End If
     End Sub
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>alert('" + text + "'); parent.close_modal();</script> ")
+    End Sub
+
+    Protected Sub btn_save_sending_Click(sender As Object, e As EventArgs) Handles btn_save_sending.Click
+        Dim dao_a As New DAO_DRUG.TB_DRRGT_SUBSTITUTE
+        dao_a.GetDatabyIDA(_IDA)
+        Try
+            dao_a.fields.SENDING_DATE = CDate(txt_sending_date.Text)
+        Catch ex As Exception
+
+        End Try
+        Try
+            If cb_sending.Checked = True Then
+                dao_a.fields.SENDING_STATUS = 1
+            Else
+                dao_a.fields.SENDING_STATUS = 0
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        AddLogStatus(88, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+        dao_a.update()
+        Response.Write("<script type='text/javascript'>alert('บันทึกการจ่ายใบสำคัญแล้ว');</script> ")
     End Sub
 End Class

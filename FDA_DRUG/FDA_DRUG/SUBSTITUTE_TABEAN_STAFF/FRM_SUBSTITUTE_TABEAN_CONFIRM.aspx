@@ -4,6 +4,11 @@
 <%@ Register src="../UC/UC_GRID_PHARMACIST.ascx" tagname="UC_GRID_PHARMACIST" tagprefix="uc2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            height: 25px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
        
@@ -118,7 +123,36 @@
                  <uc1:UC_GRID_ATTACH runat="server" id="UC_GRID_ATTACH" />
            
                  <br />
-           
+           <br />
+                 <asp:Panel ID="Panel1" runat="server">
+                    <table>
+                            <tr>
+                                <td class="auto-style1">
+                                    การจ่ายใบสำคัญ
+                                </td>
+                                <td class="auto-style1">
+                                    &nbsp;
+                                    <asp:CheckBox ID="cb_sending" runat="server" Text="จ่ายใบสำคัญแล้ว" />
+                                </td>
+                              
+                            </tr>
+                        <tr>
+                            <td>
+                                วันที่จ่ายใบสำคัญ
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txt_sending_date" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <asp:Button ID="btn_save_sending" runat="server" Text="บันทึกการจ่ายใบสำคัญ" />
+                            </td>
+                        </tr>
+                        </table>
+                 </asp:Panel>
+            
              </td>
         </tr>
         </table> 

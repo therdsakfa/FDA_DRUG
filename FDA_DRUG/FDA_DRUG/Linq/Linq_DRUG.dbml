@@ -4427,44 +4427,6 @@
       <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DRRGT_SUBSTITUTE" Member="DRRGT_SUBSTITUTEs">
-    <Type Name="DRRGT_SUBSTITUTE">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CTZNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CHK_LCN_SUBTYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TABEAN_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="rcvno" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="rcvdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="pvncd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="drgtpcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="rgttpcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="pvnabbr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="lpvncd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="lcntpcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="lcnno" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="lcnsid" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="lcnscd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="appdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="rgtno" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="STAFF_RCV_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PURPOSE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TYPE_REQUEST_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CONSIDER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FK_LCN_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TEMPLATE_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PREFIXCD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="POSITION_NAME1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="POSITION_NAME2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="STAFF_SIGN_IDA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="STAFF_SIGN_IDEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.MAS_STAFF_POSITION" Member="MAS_STAFF_POSITIONs">
     <Type Name="MAS_STAFF_POSITION">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6952,6 +6914,46 @@
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="STATUS_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DRRGT_SUBSTITUTE" Member="DRRGT_SUBSTITUTEs">
+    <Type Name="DRRGT_SUBSTITUTE">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CTZNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CHK_LCN_SUBTYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TABEAN_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="rcvno" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rcvdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="pvncd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="drgtpcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rgttpcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pvnabbr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lpvncd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcntpcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnno" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnscd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="appdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="rgtno" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STAFF_RCV_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PURPOSE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TYPE_REQUEST_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CONSIDER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FK_LCN_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TEMPLATE_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PREFIXCD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="POSITION_NAME1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="POSITION_NAME2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STAFF_SIGN_IDA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STAFF_SIGN_IDEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SENDING_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SENDING_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
