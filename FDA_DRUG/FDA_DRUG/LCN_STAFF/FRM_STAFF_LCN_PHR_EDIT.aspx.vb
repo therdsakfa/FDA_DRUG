@@ -36,8 +36,8 @@
         dao.update()
         'dao_hs.insert()
         Try
-            Dim ws_update As New WS_DRUG.WS_DRUG
-            ws_update.DRUG_UPDATE_LICEN(dao.fields.FK_IDA, _CLS.CITIZEN_ID)
+            Dim ws_update As New WS_DRUG_126.WS_DRUG
+            ws_update.DRUG_UPDATE_LICEN_126(dao.fields.FK_IDA, _CLS.CITIZEN_ID)
         Catch ex As Exception
 
         End Try
