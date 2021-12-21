@@ -113,9 +113,18 @@ Public Class FRM_RGT_EDIT_MAIN
 
 
         Dim item As New RadComboBoxItem
+        Dim item2 As New RadComboBoxItem
         item.Text = "กรุณาเลือกผู้ปฏิบัติการ"
         item.Value = "0"
+
+        If Request.QueryString("staff") <> "" Then
+            item2.Text = "ไม่ระบุผู้ปฏิบัติการ"
+            item2.Value = "9999999999999"
+        Else
+        End If
+
         rcb_phr_name.Items.Insert(0, item)
+        rcb_phr_name.Items.Insert(1, item2)
     End Sub
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>alert('" + text + "');</script> ") 'จาวาคำสั่ง Alert
