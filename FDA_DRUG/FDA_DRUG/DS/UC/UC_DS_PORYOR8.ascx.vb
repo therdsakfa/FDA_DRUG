@@ -309,6 +309,7 @@ Public Class UC_DS_PORYOR8
         package(dao_drugname.fields.IDA)
         RadGrid5_NeedDataSource(dao_drugname.fields.IDA)
         Smtext_unit(dao_drugname.fields.IDA)
+
     End Sub
     Private Sub RadGrid1_NeedDataSource(lcnno As Integer) 'ตัวยาสำคัญ
         Dim dt As New DataTable
